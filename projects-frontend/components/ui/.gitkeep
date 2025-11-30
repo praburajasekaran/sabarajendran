@@ -1,0 +1,10 @@
+# UI Components Directory
+
+This directory will contain reusable UI components such as:
+- Buttons
+- Cards
+- Badges
+- Loading states
+- Filters
+- Pagination
+- etc.
