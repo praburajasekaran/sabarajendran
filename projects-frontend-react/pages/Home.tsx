@@ -80,9 +80,10 @@ export const Home: React.FC = () => {
             <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-primary-600 overflow-hidden shadow-2xl shadow-primary-900/50 bg-black">
               {/* Image of MLA Saba Rajendran */}
               <img
-                src="/assets/images/saba_rajendran.png"
+                src="/assets/images/saba_rajendran.webp"
                 alt="MLA Saba Rajendran"
                 className="w-full h-full object-cover"
+                fetchPriority="high"
               />
             </div>
           </div>

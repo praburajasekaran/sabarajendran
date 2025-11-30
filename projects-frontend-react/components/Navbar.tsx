@@ -48,7 +48,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+            <Link to="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer" aria-label={t.nav.title}>
               <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-primary-600 border border-primary-600">
                 <RisingSunIcon size={24} />
               </div>
@@ -65,8 +65,8 @@ export const Navbar: React.FC = () => {
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) => `flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive
-                    ? 'text-primary-700 bg-primary-50 font-bold'
-                    : 'text-stone-600 hover:text-primary-600 hover:bg-stone-50'
+                  ? 'text-primary-700 bg-primary-50 font-bold'
+                  : 'text-stone-600 hover:text-primary-600 hover:bg-stone-50'
                   }`}
               >
                 <item.icon size={18} className="mr-1.5" />
@@ -97,6 +97,7 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-stone-400 hover:text-stone-500 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+              aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -114,8 +115,8 @@ export const Navbar: React.FC = () => {
                 to={item.path}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) => `block w-full text-left pl-3 pr-4 py-3 rounded-md text-base font-medium ${isActive
-                    ? 'bg-primary-50 text-primary-700 border-l-4 border-primary-600'
-                    : 'text-stone-600 hover:bg-stone-50 hover:text-stone-900 border-l-4 border-transparent'
+                  ? 'bg-primary-50 text-primary-700 border-l-4 border-primary-600'
+                  : 'text-stone-600 hover:bg-stone-50 hover:text-stone-900 border-l-4 border-transparent'
                   }`}
               >
                 <div className="flex items-center">

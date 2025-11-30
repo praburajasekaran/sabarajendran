@@ -43,9 +43,9 @@ export const About: React.FC = () => {
                         <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-t-8 border-primary-600">
                             <div className="h-80 bg-stone-200 relative overflow-hidden group">
                                 <img
-                                    src="/assets/images/saba_rajendran.png"
-                                    alt="Saba Rajendran"
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    src="/assets/images/saba_rajendran.webp"
+                                    alt="MLA Saba Rajendran"
+                                    className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                 <div className="absolute bottom-4 left-4 text-white">
