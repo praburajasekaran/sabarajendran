@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Users, CheckCircle, Clock, PieChart, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { ProjectCard } from '../components/ProjectCard';
+import { SEO } from '../components/SEO';
 import { useLanguage } from '../contexts/LanguageContext';
 import { wpService } from '../services/wpService';
 import { Project, ProjectStatus } from '../types';
