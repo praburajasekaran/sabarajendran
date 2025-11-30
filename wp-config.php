@@ -2,10 +2,10 @@
 
 // BEGIN iThemes Security - Do not modify or remove this line
 // iThemes Security Config Details: 2
-define( 'DISALLOW_FILE_EDIT', true ); // Disable File Editor - Security > Settings > WordPress Tweaks > File Editor
+define('DISALLOW_FILE_EDIT', true); // Disable File Editor - Security > Settings > WordPress Tweaks > File Editor
 // END iThemes Security - Do not modify or remove this line
 
-define( 'ITSEC_ENCRYPTION_KEY', 'JEZOdW1Ue0ZdUWhQcXtAelF1I1B0PXpnYmFYKkBEQVpxVmVXYk14X0ojQGdPZzBJfSUyTCsoSXIxfmRQcTQtWA==' );
+define('ITSEC_ENCRYPTION_KEY', 'JEZOdW1Ue0ZdUWhQcXtAelF1I1B0PXpnYmFYKkBEQVpxVmVXYk14X0ojQGdPZzBJfSUyTCsoSXIxfmRQcTQtWA==');
 
 /**
  * WordPress Configuration for Saba Rajendran MLA Project
@@ -13,25 +13,25 @@ define( 'ITSEC_ENCRYPTION_KEY', 'JEZOdW1Ue0ZdUWhQcXtAelF1I1B0PXpnYmFYKkBEQVpxVmV
 
 // ** Database settings - MAMP ** //
 define('WP_CACHE', true);
-define( 'WPCACHEHOME', '/Applications/MAMP/htdocs/sabarajendran/wp-content/plugins/wp-super-cache/' );
-define( 'DB_NAME', 'sabarajendran' );
-define( 'DB_USER', 'root' );
-define( 'DB_PASSWORD', 'root' );
-define( 'DB_HOST', 'localhost:8118' );
-define( 'DB_CHARSET', 'utf8mb4' );
-define( 'DB_COLLATE', '' );
+define('WPCACHEHOME', '/Applications/MAMP/htdocs/sabarajendran/wp-content/plugins/wp-super-cache/');
+define('DB_NAME', 'sabarajendran');
+define('DB_USER', 'root');
+define('DB_PASSWORD', 'root');
+define('DB_HOST', 'localhost:8118');
+define('DB_CHARSET', 'utf8mb4');
+define('DB_COLLATE', '');
 
 /**#@+
  * Authentication unique keys and salts.
  */
-define('AUTH_KEY',         'J,2.!JK{BV=IIhC8>3k616g0/=FghMVex-k;(7ZlMJ02<_Ll}Gi387:E:~Wp*TIU');
-define('SECURE_AUTH_KEY',  'hMBGdb &W-ttxf#s}!4WRe/WjjOh=Os%Hc&s=x+0#A^(L+G|-j{%2L&9{||PDJe3');
-define('LOGGED_IN_KEY',    'D1XR MqJOR>u<G)}=&g.AihkQ{zDY>*5:2]Fdce+|j^86F2561@9wKuP(Ww~ooOb');
-define('NONCE_KEY',        'NX3tKx1uSR Rj/IMc~8?R2lK;BJZrk19K#lHVR ^dM$QMeD=1o:2:lXJi?}|8jLr');
-define('AUTH_SALT',        '3LC-s3;gF5844cg2ckM*|%yN/!IE2t?L% k}XtepmI<-!|mV>mrHEy}3yo>H+w< ');
+define('AUTH_KEY', 'J,2.!JK{BV=IIhC8>3k616g0/=FghMVex-k;(7ZlMJ02<_Ll}Gi387:E:~Wp*TIU');
+define('SECURE_AUTH_KEY', 'hMBGdb &W-ttxf#s}!4WRe/WjjOh=Os%Hc&s=x+0#A^(L+G|-j{%2L&9{||PDJe3');
+define('LOGGED_IN_KEY', 'D1XR MqJOR>u<G)}=&g.AihkQ{zDY>*5:2]Fdce+|j^86F2561@9wKuP(Ww~ooOb');
+define('NONCE_KEY', 'NX3tKx1uSR Rj/IMc~8?R2lK;BJZrk19K#lHVR ^dM$QMeD=1o:2:lXJi?}|8jLr');
+define('AUTH_SALT', '3LC-s3;gF5844cg2ckM*|%yN/!IE2t?L% k}XtepmI<-!|mV>mrHEy}3yo>H+w< ');
 define('SECURE_AUTH_SALT', 'iYE<A-jZ6uvYH*e&T;;wjHRAUwUN%$(x9r%g4?Bb:M=SS@^Q&M)l23rQ.8+A}[wx');
-define('LOGGED_IN_SALT',   'C_7VyvpZZl|QB,Fr;] xt:E&n|bE[vms]{te{S]DRBd.|8lZ#y?VGonk2+o;1A?>');
-define('NONCE_SALT',       'S1jFNEZ5oKf=ER+boveiNP}.2m>msQ _)c-Q<=6_tT`yH 3?VJ<54^H3|z@/izpL');
+define('LOGGED_IN_SALT', 'C_7VyvpZZl|QB,Fr;] xt:E&n|bE[vms]{te{S]DRBd.|8lZ#y?VGonk2+o;1A?>');
+define('NONCE_SALT', 'S1jFNEZ5oKf=ER+boveiNP}.2m>msQ _)c-Q<=6_tT`yH 3?VJ<54^H3|z@/izpL');
 
 /**#@-*/
 
@@ -43,9 +43,9 @@ $table_prefix = 'wp_';
 /**
  * For developers: WordPress debugging mode.
  */
-define( 'WP_DEBUG', true );
-define( 'WP_DEBUG_LOG', true );
-define( 'WP_DEBUG_DISPLAY', false );
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
 
 /* Add any custom values between this line and the "stop editing" line. */
 
@@ -56,23 +56,23 @@ define( 'WP_DEBUG_DISPLAY', false );
 // Note: DISALLOW_FILE_EDIT is already defined by iThemes Security above (line 5)
 
 // Disable File Modifications (Plugin/Theme Install/Update)
-define( 'DISALLOW_FILE_MODS', false ); // Set to true for maximum security after site setup
+define('DISALLOW_FILE_MODS', false); // Set to true for maximum security after site setup
 
 // Force SSL for Admin and Login
-define( 'FORCE_SSL_ADMIN', false ); // Set to true when SSL certificate is installed
+define('FORCE_SSL_ADMIN', false); // Set to true when SSL certificate is installed
 
 // Disable XML-RPC (common attack vector) - using constant instead of filter
-define( 'XMLRPC_ENABLED', false );
+define('XMLRPC_ENABLED', false);
 
 // Limit Post Revisions
-define( 'WP_POST_REVISIONS', 5 );
+define('WP_POST_REVISIONS', 5);
 
 // Set Autosave Interval (in seconds)
-define( 'AUTOSAVE_INTERVAL', 160 );
+define('AUTOSAVE_INTERVAL', 160);
 
 // Increase Memory Limit for Security Scans
-define( 'WP_MEMORY_LIMIT', '256M' );
-define( 'WP_MAX_MEMORY_LIMIT', '512M' );
+define('WP_MEMORY_LIMIT', '512M');
+define('WP_MAX_MEMORY_LIMIT', '1024M');
 
 // Block External HTTP Requests (uncomment when ready)
 // define( 'WP_HTTP_BLOCK_EXTERNAL', true );
@@ -82,18 +82,18 @@ define( 'WP_MAX_MEMORY_LIMIT', '512M' );
 // define( 'DISALLOW_FILE_MODS', true ); // Uncomment after all plugins installed
 
 // Security Headers (additional layer)
-header( 'X-Frame-Options: SAMEORIGIN' );
-header( 'X-Content-Type-Options: nosniff' );
-header( 'X-XSS-Protection: 1; mode=block' );
-header( 'Referrer-Policy: strict-origin-when-cross-origin' );
+header('X-Frame-Options: SAMEORIGIN');
+header('X-Content-Type-Options: nosniff');
+header('X-XSS-Protection: 1; mode=block');
+header('Referrer-Policy: strict-origin-when-cross-origin');
 
 // ===================================================================
 
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
-if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/' );
+if (!defined('ABSPATH')) {
+	define('ABSPATH', __DIR__ . '/');
 }
 
 /** Sets up WordPress vars and included files. */

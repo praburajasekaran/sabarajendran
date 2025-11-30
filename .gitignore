@@ -1,0 +1,13 @@
+# WordPress
+wp-content/ai1wm-backups/
+wp-content/plugins/all-in-one-wp-migration/storage/
+wp-content/debug.log
+wp-content/uploads/
+*.wpress
+
+# Node
+node_modules/
+dist/
+.DS_Store
+.env
+.env.local
