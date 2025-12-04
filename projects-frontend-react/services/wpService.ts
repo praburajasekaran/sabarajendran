@@ -17,30 +17,51 @@ export const wpService = {
         const startTime = performance.now();
         console.log('[wpService] Fetching projects...');
 
-        // Check in-memory cache first
+        // Check in-memory cache first (always fast)
         if (memoryCache && (Date.now() - lastFetchTime < CACHE_DURATION)) {
             console.log(`[wpService] Serving from memory cache (${(performance.now() - startTime).toFixed(2)}ms)`);
             return memoryCache;
         }
 
-        // Check IndexedDB cache
+        // Check IndexedDB cache - STALE-WHILE-REVALIDATE
+        let cachedData: Project[] | null = null;
         try {
             const cached = await get(CACHE_KEY);
             if (cached) {
                 const { data, timestamp } = cached;
-                if (Date.now() - timestamp < CACHE_DURATION) {
+                const isStale = Date.now() - timestamp >= CACHE_DURATION;
+
+                if (!isStale) {
+                    // Fresh cache - use it
                     memoryCache = data;
                     lastFetchTime = timestamp;
                     console.log(`[wpService] Serving from IndexedDB cache (${(performance.now() - startTime).toFixed(2)}ms)`);
                     return data;
                 } else {
-                    console.log('[wpService] IndexedDB cache expired');
+                    // Stale cache - return it immediately but fetch fresh data in background
+                    cachedData = data;
+                    console.log('[wpService] Using stale cache, fetching fresh data in background...');
                 }
             } else {
                 console.log('[wpService] No IndexedDB cache found');
             }
         } catch (e) {
             console.warn('[wpService] Error reading from IndexedDB', e);
+        }
+
+        // If we have stale cached data, return it immediately and fetch in background
+        if (cachedData) {
+            // Return stale data immediately
+            memoryCache = cachedData;
+
+            // Fetch fresh data in background (non-blocking)
+            wpService.fetchFreshProjects().then(() => {
+                console.log('[wpService] Background refresh completed');
+            }).catch(err => {
+                console.warn('[wpService] Background refresh failed', err);
+            });
+
+            return cachedData;
         }
 
         try {
@@ -95,6 +116,48 @@ export const wpService = {
             } catch (e) { /* ignore */ }
 
             return [];
+        }
+    },
+
+    // Helper method to fetch fresh projects in the background
+    fetchFreshProjects: async (): Promise<void> => {
+        try {
+            console.log('[wpService] Background fetch started...');
+            // Initial fetch to get the first page and total pages
+            const response = await axios.get(`${WP_API_URL}/?rest_route=/wp/v2/project&per_page=100&_embed`);
+            let allProjects = response.data;
+
+            const totalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
+
+            if (totalPages > 1) {
+                const pagePromises = [];
+                for (let i = 2; i <= totalPages; i++) {
+                    pagePromises.push(
+                        axios.get(`${WP_API_URL}/?rest_route=/wp/v2/project&per_page=100&_embed&page=${i}`)
+                    );
+                }
+                const responses = await Promise.all(pagePromises);
+                responses.forEach(res => {
+                    allProjects = [...allProjects, ...res.data];
+                });
+            }
+
+            const mappedProjects = allProjects.map((item: any) => mapWpProjectToAppProject(item));
+
+            // Update caches
+            memoryCache = mappedProjects;
+            lastFetchTime = Date.now();
+
+            // Store in IndexedDB
+            await set(CACHE_KEY, {
+                data: mappedProjects,
+                timestamp: lastFetchTime
+            });
+
+            console.log('[wpService] Background fetch completed successfully');
+        } catch (error) {
+            console.error('[wpService] Background fetch failed:', error);
+            throw error;
         }
     }
 };
