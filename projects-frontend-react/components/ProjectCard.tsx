@@ -59,10 +59,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <>
       {/* Magazine-Style Editorial Card */}
-      <div className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 card-lift flex flex-col h-full">
+      <div className="group relative bg-white rounded-2xl overflow-hidden shadow-md flex flex-col h-full">
 
         {/* Full-Bleed Image */}
-        <div className="relative h-64 overflow-hidden image-zoom">
+        <div className="relative h-64 overflow-hidden">
           <img
             src={project.imageUrl || typeConfig.image}
             alt={displayTitle}
