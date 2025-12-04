@@ -274,49 +274,55 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Block Cards Section */}
-      <section className="py-20 bg-white border-b border-stone-100">
+      {/* Block Cards Section - Editorial Style */}
+      <section className="py-20 bg-white border-b border-accent-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4">
+          {/* Editorial Section Header */}
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-12 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
+              <span className="text-sm font-mono uppercase tracking-wider text-accent-600">
+                Constituency Coverage
+              </span>
+            </div>
+            <h2 className="font-serif text-h1 font-bold text-neutral-900 mb-4">
               {t.home.blockSectionTitle}
             </h2>
-            <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+            <p className="text-body-lg text-neutral-600 max-w-2xl">
               {t.home.blockSectionDesc}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blockCounts.map(({ name, count }) => (
               <div
                 key={name}
                 onClick={() => navigate(`/projects?block=${encodeURIComponent(name)}`)}
-                className="group relative p-8 bg-gradient-to-br from-stone-50 to-white border-2 border-stone-200 rounded-2xl hover:border-primary-400 hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden"
+                className="group relative p-8 bg-white border-2 border-accent-200 rounded-2xl hover:border-primary-500 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
               >
-                {/* Decorative Elements */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary-100 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-100 transition-opacity"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary-100 rounded-full -ml-12 -mb-12 opacity-30 group-hover:opacity-60 transition-opacity"></div>
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-50 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="p-3 rounded-xl bg-primary-100 text-primary-700 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                    <div className="p-3 rounded-xl bg-accent-100 text-accent-700 group-hover:bg-primary-600 group-hover:text-white transition-all">
                       <Building2 size={28} />
                     </div>
-                    <ArrowRight className="text-stone-400 group-hover:text-primary-600 group-hover:translate-x-2 transition-all" size={24} />
+                    <ArrowRight className="text-accent-400 group-hover:text-primary-600 group-hover:translate-x-2 transition-all" size={24} />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-stone-900 mb-3 group-hover:text-primary-700 transition-colors">
+                  <h3 className="font-serif text-2xl font-bold text-neutral-900 mb-3 group-hover:text-primary-700 transition-colors">
                     {name}
                   </h3>
 
                   <div className="flex items-baseline gap-2 mb-4">
-                    <span className="text-5xl font-bold text-primary-700">{count}</span>
-                    <span className="text-stone-500 font-medium">{t.home.projectsCount}</span>
+                    <span className="font-mono text-5xl font-bold text-primary-600">{count}</span>
+                    <span className="text-neutral-600 font-medium">{t.home.projectsCount}</span>
                   </div>
 
-                  <div className="pt-4 border-t border-stone-200">
-                    <span className="text-sm text-primary-700 font-semibold group-hover:text-primary-800 flex items-center gap-1">
+                  <div className="pt-4 border-t border-accent-100">
+                    <span className="text-sm text-primary-600 font-semibold group-hover:text-primary-700 flex items-center gap-1 link-expand relative pb-1">
                       {t.home.viewBlockProjects}
                       <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </span>
@@ -396,26 +402,32 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Quote/Vision Section */}
-      <section className="py-24 bg-stone-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
-          <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary-600 rounded-full mix-blend-screen filter blur-3xl"></div>
-          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary-600 rounded-full mix-blend-screen filter blur-3xl"></div>
-        </div>
+      {/* Quote/Vision Section - Editorial Style */}
+      <section className="py-24 bg-neutral-900 text-white relative overflow-hidden">
+        {/* Subtle Kolam Texture Overlay */}
+        <div className="absolute inset-0 kolam-texture opacity-[0.03] pointer-events-none"></div>
 
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <div className="mb-8 text-primary-500 opacity-50">
-            <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        {/* Subtle gradient overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/90 via-neutral-900/95 to-neutral-900/90"></div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          {/* Editorial Quote Icon */}
+          <div className="mb-8 text-primary-500 opacity-40">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="mx-auto">
               <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
             </svg>
           </div>
-          <blockquote className="text-3xl md:text-4xl lg:text-5xl font-serif font-medium leading-tight mb-10 text-stone-100">
+
+          {/* Quote Text - Serif Typography */}
+          <blockquote className="text-3xl md:text-4xl lg:text-5xl font-serif font-medium leading-tight mb-10 text-neutral-100">
             "{t.home.quote}"
           </blockquote>
+
+          {/* Attribution */}
           <cite className="not-italic flex flex-col items-center">
             <div className="w-16 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full mb-6"></div>
             <span className="font-bold text-xl text-white tracking-wide">Saba Rajendran</span>
-            <span className="text-stone-400 mt-1">{t.home.role}</span>
+            <span className="text-neutral-400 mt-1 text-sm font-medium">{t.home.role}</span>
           </cite>
         </div>
       </section>
