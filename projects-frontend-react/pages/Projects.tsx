@@ -1,29 +1,30 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Filter, Search, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, CheckCircle2, Clock, AlertCircle, LayoutGrid, XCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Sidebar } from '../components/Sidebar';
 import { ProjectCard } from '../components/ProjectCard';
 import { PartyBanner } from '../components/PartyBanner';
 import { ProjectStatus, ProjectType } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useUrlFilters } from '../hooks/useUrlFilters';
+import { validateFilters } from '../utils/urlValidation';
 
 import { wpService } from '../services/wpService';
 import { Project } from '../types';
 
 const ITEMS_PER_PAGE = 12;
 
-import { SEO } from '../components/SEO';
+import { SEO, ProjectsSEO } from '../components/SEO';
 
 export const ProjectsPage: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [selectedVillage, setSelectedVillage] = useState<string | null>(null);
-  const [filterYear, setFilterYear] = useState<string>('All');
-  const [filterStatus, setFilterStatus] = useState<string>('All');
-  const [filterType, setFilterType] = useState<string>('All');
-  const [searchQuery, setSearchQuery] = useState('');
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
   const { t } = useLanguage();
+  const navigate = useNavigate();
+
+  // URL-based filter management
+  const { filters, updateFilters, resetFilters } = useUrlFilters({ projects });
 
   // Fetch Projects from WP
   useEffect(() => {
@@ -35,6 +36,40 @@ export const ProjectsPage: React.FC = () => {
     };
     fetchProjects();
   }, []);
+
+  // Validate URL parameters after projects are loaded
+  useEffect(() => {
+    if (projects.length > 0 && !isLoading) {
+      const validation = validateFilters(filters, projects);
+
+      if (!validation.isValid) {
+        console.warn('Invalid URL parameters detected:', validation.errors);
+
+        // Redirect to corrected URL or main projects page
+        if (validation.correctedFilters) {
+          // Try to use corrected filters
+          const hasAnyValidFilters =
+            validation.correctedFilters.block !== 'All' ||
+            validation.correctedFilters.panchayat !== 'All' ||
+            validation.correctedFilters.village !== null ||
+            validation.correctedFilters.type !== 'All' ||
+            validation.correctedFilters.status !== 'All' ||
+            validation.correctedFilters.year !== 'All';
+
+          if (hasAnyValidFilters) {
+            // Update to corrected filters
+            updateFilters(validation.correctedFilters, { replace: true });
+          } else {
+            // All filters are invalid, go to main page
+            navigate('/projects', { replace: true });
+          }
+        } else {
+          // No corrected filters available, go to main page
+          navigate('/projects', { replace: true });
+        }
+      }
+    }
+  }, [projects.length, isLoading]);
 
   // Calculate counts per village for the sidebar
   const villageCounts = useMemo(() => {
@@ -60,34 +95,64 @@ export const ProjectsPage: React.FC = () => {
     return Array.from(y).sort().reverse();
   }, [projects]);
 
-  // Filtering Logic
+  // Extract unique blocks from projects
+  const blocks = useMemo(() => {
+    const uniqueBlocks = new Set<string>();
+    projects.forEach(p => {
+      if (p.block) uniqueBlocks.add(p.block);
+    });
+    return Array.from(uniqueBlocks).sort();
+  }, [projects]);
+
+  // Extract unique panchayats from projects (filtered by selected block if any)
+  const panchayats = useMemo(() => {
+    const uniquePanchayats = new Set<string>();
+    projects.forEach(p => {
+      // If a block is selected, only show panchayats from that block
+      if (filters.block !== 'All' && p.block !== filters.block) return;
+      if (p.panchayat) uniquePanchayats.add(p.panchayat);
+    });
+    return Array.from(uniquePanchayats).sort();
+  }, [projects, filters.block]);
+
+  // Filtering Logic (3-level hierarchy: Block → Panchayat → Village)
   const filteredProjects = useMemo(() => {
     return projects.filter(project => {
-      const matchVillage = selectedVillage ? project.village === selectedVillage : true;
-      const matchYear = filterYear !== 'All' ? project.year === filterYear : true;
-      const matchStatus = filterStatus !== 'All' ? project.status === filterStatus : true;
-      const matchType = filterType !== 'All' ? project.type === filterType : true;
-      const matchSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchBlock = filters.block !== 'All' ? project.block === filters.block : true;
+      const matchPanchayat = filters.panchayat !== 'All' ? project.panchayat === filters.panchayat : true;
+      const matchVillage = filters.village ? project.village === filters.village : true;
+      const matchYear = filters.year !== 'All' ? project.year === filters.year : true;
+      const matchStatus = filters.status !== 'All' ? project.status === filters.status : true;
+      const matchType = filters.type !== 'All' ? project.type === filters.type : true;
+      const matchSearch = project.title.toLowerCase().includes(filters.search.toLowerCase()) ||
+        project.description.toLowerCase().includes(filters.search.toLowerCase());
 
-      return matchVillage && matchYear && matchStatus && matchType && matchSearch;
+      return matchBlock && matchPanchayat && matchVillage && matchYear && matchStatus && matchType && matchSearch;
     });
-  }, [projects, selectedVillage, filterYear, filterStatus, filterType, searchQuery]);
+  }, [projects, filters]);
 
-  // Reset to page 1 when filters change
+  // Reset to page 1 when filters change (except page itself)
   useEffect(() => {
-    setCurrentPage(1);
-  }, [selectedVillage, filterYear, filterStatus, filterType, searchQuery]);
+    const { page, ...otherFilters } = filters;
+    updateFilters({ page: 1 }, { replace: true });
+  }, [filters.block, filters.panchayat, filters.village, filters.year, filters.status, filters.type, filters.search]);
+
+  // Reset panchayat filter when block changes
+  useEffect(() => {
+    if (filters.block === 'All' && filters.panchayat !== 'All') {
+      updateFilters({ panchayat: 'All' }, { replace: true });
+    }
+  }, [filters.block]);
 
   // Pagination Logic
   const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
   const paginatedProjects = useMemo(() => {
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const startIndex = (filters.page - 1) * ITEMS_PER_PAGE;
     return filteredProjects.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-  }, [filteredProjects, currentPage]);
+  }, [filteredProjects, filters.page]);
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+    updateFilters({ page }, { replace: false }); // Allow back navigation for pagination
     const gridElement = document.getElementById('projects-grid-top');
     if (gridElement) {
       gridElement.scrollIntoView({ behavior: 'smooth' });
@@ -101,7 +166,7 @@ export const ProjectsPage: React.FC = () => {
     let l;
 
     for (let i = 1; i <= totalPages; i++) {
-      if (i === 1 || i === totalPages || (i >= currentPage - delta && i <= currentPage + delta)) {
+      if (i === 1 || i === totalPages || (i >= filters.page - delta && i <= filters.page + delta)) {
         range.push(i);
       }
     }
@@ -129,19 +194,23 @@ export const ProjectsPage: React.FC = () => {
   }
 
   return (
-    <div className="flex min-h-[calc(100vh-64px)]">
-      {/* Sidebar (Desktop & Mobile) */}
-      <Sidebar
-        villages={dynamicVillages}
-        selectedVillage={selectedVillage}
-        onSelectVillage={setSelectedVillage}
-        isOpenMobile={isMobileSidebarOpen}
-        closeMobile={() => setIsMobileSidebarOpen(false)}
-        villageCounts={villageCounts}
-      />
+    <>
+      {/* SEO Meta Tags */}
+      <ProjectsSEO filters={filters} resultCount={filteredProjects.length} />
 
-      {/* Main Content Area */}
-      <div className="flex-1 flex flex-col bg-slate-50 w-full relative">
+      <div className="flex min-h-[calc(100vh-64px)]">
+        {/* Sidebar (Desktop & Mobile) */}
+        <Sidebar
+          villages={dynamicVillages}
+          selectedVillage={filters.village}
+          onSelectVillage={(village) => updateFilters({ village })}
+          isOpenMobile={isMobileSidebarOpen}
+          closeMobile={() => setIsMobileSidebarOpen(false)}
+          villageCounts={villageCounts}
+        />
+
+        {/* Main Content Area */}
+        <div className="flex-1 flex flex-col bg-slate-50 w-full relative">
 
         {/* Toolbar / Filter Bar */}
         <div className="bg-white border-b border-slate-200 z-20 shadow-sm flex-shrink-0">
@@ -158,11 +227,11 @@ export const ProjectsPage: React.FC = () => {
               {/* Title Section - Full Width on Mobile */}
               <div>
                 <h1 className="text-xl md:text-2xl font-bold text-slate-800 flex items-center gap-2">
-                  {selectedVillage ? (
+                  {filters.village ? (
                     <>
-                      {selectedVillage}
+                      {filters.village}
                       <button
-                        onClick={() => setSelectedVillage(null)}
+                        onClick={() => updateFilters({ village: null })}
                         className="text-slate-400 hover:text-red-500 transition-colors"
                       >
                         <XCircle size={20} />
@@ -193,8 +262,8 @@ export const ProjectsPage: React.FC = () => {
                     type="text"
                     placeholder={t.projects.searchPlaceholder}
                     className="w-full pl-9 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all hover:bg-slate-200 focus:bg-white"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    value={filters.search}
+                    onChange={(e) => updateFilters({ search: e.target.value })}
                   />
                 </div>
               </div>
@@ -204,8 +273,8 @@ export const ProjectsPage: React.FC = () => {
             <div className="flex overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
               <div className="flex p-1 bg-slate-100 rounded-lg whitespace-nowrap">
                 <button
-                  onClick={() => setFilterStatus('All')}
-                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${filterStatus === 'All'
+                  onClick={() => updateFilters({ status: 'All' })}
+                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${filters.status === 'All'
                     ? 'bg-white text-primary-700 shadow-sm'
                     : 'text-slate-600 hover:text-slate-900'
                     }`}
@@ -213,8 +282,8 @@ export const ProjectsPage: React.FC = () => {
                   <LayoutGrid size={16} /> {t.projects.filterAll}
                 </button>
                 <button
-                  onClick={() => setFilterStatus(ProjectStatus.COMPLETED)}
-                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${filterStatus === ProjectStatus.COMPLETED
+                  onClick={() => updateFilters({ status: ProjectStatus.COMPLETED })}
+                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${filters.status === ProjectStatus.COMPLETED
                     ? 'bg-white text-emerald-700 shadow-sm'
                     : 'text-slate-600 hover:text-emerald-700'
                     }`}
@@ -222,8 +291,8 @@ export const ProjectsPage: React.FC = () => {
                   <CheckCircle2 size={16} /> {t.projects.filterCompleted}
                 </button>
                 <button
-                  onClick={() => setFilterStatus(ProjectStatus.ONGOING)}
-                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${filterStatus === ProjectStatus.ONGOING
+                  onClick={() => updateFilters({ status: ProjectStatus.ONGOING })}
+                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${filters.status === ProjectStatus.ONGOING
                     ? 'bg-white text-blue-700 shadow-sm'
                     : 'text-slate-600 hover:text-blue-700'
                     }`}
@@ -233,12 +302,46 @@ export const ProjectsPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom Row: Pill Filters for Type & Year */}
+            {/* Bottom Row: Pill Filters for Block, Panchayat, Type & Year */}
             <div className="flex flex-wrap items-center gap-2 overflow-x-auto">
+              {/* Block Filter */}
               <select
-                value={filterType}
-                onChange={(e) => setFilterType(e.target.value)}
-                className={`appearance-none px-4 py-1.5 rounded-full text-sm border font-medium cursor-pointer transition-colors ${filterType !== 'All'
+                value={filters.block}
+                onChange={(e) => updateFilters({ block: e.target.value })}
+                className={`appearance-none px-4 py-1.5 rounded-full text-sm border font-medium cursor-pointer transition-colors ${filters.block !== 'All'
+                  ? 'bg-purple-50 border-purple-200 text-purple-700'
+                  : 'bg-white border-slate-300 text-slate-600 hover:border-slate-400'
+                  }`}
+              >
+                <option value="All">All Blocks</option>
+                {blocks.map(block => (
+                  <option key={block} value={block}>{block}</option>
+                ))}
+              </select>
+
+              {/* Panchayat Filter */}
+              <select
+                value={filters.panchayat}
+                onChange={(e) => updateFilters({ panchayat: e.target.value })}
+                className={`appearance-none px-4 py-1.5 rounded-full text-sm border font-medium cursor-pointer transition-colors ${filters.panchayat !== 'All'
+                  ? 'bg-indigo-50 border-indigo-200 text-indigo-700'
+                  : 'bg-white border-slate-300 text-slate-600 hover:border-slate-400'
+                  }`}
+                disabled={filters.block === 'All'}
+              >
+                <option value="All">
+                  {filters.block === 'All' ? 'Select Block First' : 'All Panchayats'}
+                </option>
+                {panchayats.map(panchayat => (
+                  <option key={panchayat} value={panchayat}>{panchayat}</option>
+                ))}
+              </select>
+
+              {/* Type Filter */}
+              <select
+                value={filters.type}
+                onChange={(e) => updateFilters({ type: e.target.value })}
+                className={`appearance-none px-4 py-1.5 rounded-full text-sm border font-medium cursor-pointer transition-colors ${filters.type !== 'All'
                   ? 'bg-primary-50 border-primary-200 text-primary-700'
                   : 'bg-white border-slate-300 text-slate-600 hover:border-slate-400'
                   }`}
@@ -249,10 +352,11 @@ export const ProjectsPage: React.FC = () => {
                 ))}
               </select>
 
+              {/* Year Filter */}
               <select
-                value={filterYear}
-                onChange={(e) => setFilterYear(e.target.value)}
-                className={`appearance-none px-4 py-1.5 rounded-full text-sm border font-medium cursor-pointer transition-colors ${filterYear !== 'All'
+                value={filters.year}
+                onChange={(e) => updateFilters({ year: e.target.value })}
+                className={`appearance-none px-4 py-1.5 rounded-full text-sm border font-medium cursor-pointer transition-colors ${filters.year !== 'All'
                   ? 'bg-primary-50 border-primary-200 text-primary-700'
                   : 'bg-white border-slate-300 text-slate-600 hover:border-slate-400'
                   }`}
@@ -263,12 +367,15 @@ export const ProjectsPage: React.FC = () => {
                 ))}
               </select>
 
-              {(filterYear !== 'All' || filterType !== 'All') && (
+              {/* Reset Button */}
+              {(filters.block !== 'All' || filters.panchayat !== 'All' || filters.year !== 'All' || filters.type !== 'All') && (
                 <button
-                  onClick={() => {
-                    setFilterYear('All');
-                    setFilterType('All');
-                  }}
+                  onClick={() => updateFilters({
+                    block: 'All',
+                    panchayat: 'All',
+                    year: 'All',
+                    type: 'All'
+                  })}
                   className="text-xs text-red-500 hover:text-red-700 underline px-2"
                 >
                   {t.projects.reset}
@@ -298,14 +405,14 @@ export const ProjectsPage: React.FC = () => {
                 <div className="flex justify-center items-center space-x-2 pb-8">
                   <button
                     onClick={() => handlePageChange(1)}
-                    disabled={currentPage === 1}
+                    disabled={filters.page === 1}
                     className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
                   >
                     <ChevronsLeft size={18} />
                   </button>
                   <button
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
+                    onClick={() => handlePageChange(filters.page - 1)}
+                    disabled={filters.page === 1}
                     className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
                   >
                     <ChevronLeft size={18} />
@@ -319,7 +426,7 @@ export const ProjectsPage: React.FC = () => {
                         ) : (
                           <button
                             onClick={() => handlePageChange(page as number)}
-                            className={`w-8 h-8 rounded-md text-sm font-semibold transition-all ${currentPage === page
+                            className={`w-8 h-8 rounded-md text-sm font-semibold transition-all ${filters.page === page
                               ? 'bg-primary-600 text-white shadow-sm'
                               : 'text-slate-600 hover:bg-slate-50'
                               }`}
@@ -332,15 +439,15 @@ export const ProjectsPage: React.FC = () => {
                   </div>
 
                   <button
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
+                    onClick={() => handlePageChange(filters.page + 1)}
+                    disabled={filters.page === totalPages}
                     className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
                   >
                     <ChevronRight size={18} />
                   </button>
                   <button
                     onClick={() => handlePageChange(totalPages)}
-                    disabled={currentPage === totalPages}
+                    disabled={filters.page === totalPages}
                     className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
                   >
                     <ChevronsRight size={18} />
@@ -350,7 +457,7 @@ export const ProjectsPage: React.FC = () => {
             </>
           ) : (
             <div className="flex flex-col items-center justify-center h-[60vh]">
-              {filteredProjects.length === 0 && selectedVillage && filterStatus === ProjectStatus.ONGOING && projects.some(p => p.village === selectedVillage && p.status === ProjectStatus.COMPLETED) ? (
+              {filteredProjects.length === 0 && filters.village && filters.status === ProjectStatus.ONGOING && projects.some(p => p.village === filters.village && p.status === ProjectStatus.COMPLETED) ? (
                 <>
                   <div className="relative">
                     <div className="absolute inset-0 bg-emerald-200 rounded-full opacity-20 blur-xl"></div>
@@ -360,7 +467,7 @@ export const ProjectsPage: React.FC = () => {
                   </div>
                   <h3 className="mt-6 text-xl font-bold text-slate-700">Great News!</h3>
                   <p className="text-slate-500 mt-2 max-w-md text-center">
-                    All planned projects in <span className="font-semibold text-slate-900">{selectedVillage}</span> are successfully completed!
+                    All planned projects in <span className="font-semibold text-slate-900">{filters.village}</span> are successfully completed!
                   </p>
                 </>
               ) : (
@@ -378,13 +485,7 @@ export const ProjectsPage: React.FC = () => {
                 </>
               )}
               <button
-                onClick={() => {
-                  setFilterYear('All');
-                  setFilterStatus('All');
-                  setFilterType('All');
-                  setSelectedVillage(null);
-                  setSearchQuery('');
-                }}
+                onClick={resetFilters}
                 className="mt-6 px-6 py-2 bg-white border border-slate-300 text-slate-700 font-medium rounded-full hover:bg-slate-50 hover:border-slate-400 transition-colors"
               >
                 {t.projects.clearFilters}
@@ -393,7 +494,8 @@ export const ProjectsPage: React.FC = () => {
           )}
         </div>
 
+        </div>
       </div>
-    </div >
+    </>
   );
 };

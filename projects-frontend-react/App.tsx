@@ -20,6 +20,9 @@ const AppContent: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:blockSlug" element={<ProjectsPage />} />
+            <Route path="/projects/:blockSlug/:panchayatSlug" element={<ProjectsPage />} />
+            <Route path="/projects/:blockSlug/:panchayatSlug/:villageSlug" element={<ProjectsPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
