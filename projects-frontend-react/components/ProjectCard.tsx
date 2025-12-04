@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  MapPin, Calendar, Banknote, CheckCircle2, Clock, AlertCircle,
+  MapPin, Calendar, Banknote,
   School, Droplets, Zap, HeartPulse, Users, Sprout, HardHat,
   ZoomIn
 } from 'lucide-react';
@@ -19,48 +19,37 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const displayTitle = (language === 'ta' && project.title_ta) ? project.title_ta : project.title;
   const displayDescription = (language === 'ta' && project.description_ta) ? project.description_ta : project.description;
 
-  const getStatusColor = (status: ProjectStatus) => {
+  // Status dot styles
+  const getStatusDot = (status: ProjectStatus) => {
     switch (status) {
       case ProjectStatus.COMPLETED:
-        return 'bg-emerald-100 text-emerald-800 border-emerald-200';
+        return 'status-dot completed';
       case ProjectStatus.ONGOING:
-        return 'bg-secondary-100 text-secondary-800 border-secondary-200';
-      case ProjectStatus.PLANNED:
-        return 'bg-stone-100 text-stone-800 border-stone-200';
+        return 'status-dot ongoing';
       default:
-        return 'bg-stone-100 text-stone-800 border-stone-200';
+        return 'status-dot planned';
     }
   };
 
-  const getStatusIcon = (status: ProjectStatus) => {
-    switch (status) {
-      case ProjectStatus.COMPLETED:
-        return <CheckCircle2 size={14} className="mr-1" />;
-      case ProjectStatus.ONGOING:
-        return <Clock size={14} className="mr-1" />;
-      default:
-        return <AlertCircle size={14} className="mr-1" />;
-    }
-  };
-
+  // Type configuration with icons
   const getTypeConfig = (type: ProjectType) => {
     switch (type) {
       case ProjectType.INFRASTRUCTURE:
-        return { color: 'bg-stone-800', icon: HardHat, image: '/assets/placeholders/infrastructure.png' }; // Dark Grey/Black for Roads
+        return { icon: HardHat, image: '/assets/placeholders/infrastructure.png', color: 'text-neutral-700' };
       case ProjectType.WATER:
-        return { color: 'bg-cyan-700', icon: Droplets, image: '/assets/placeholders/water.png' };
+        return { icon: Droplets, image: '/assets/placeholders/water.png', color: 'text-cyan-600' };
       case ProjectType.EDUCATION:
-        return { color: 'bg-primary-700', icon: School, image: '/assets/placeholders/education.png' }; // Red for Education
+        return { icon: School, image: '/assets/placeholders/education.png', color: 'text-primary-600' };
       case ProjectType.HEALTH:
-        return { color: 'bg-rose-600', icon: HeartPulse, image: '/assets/placeholders/health.png' };
+        return { icon: HeartPulse, image: '/assets/placeholders/health.png', color: 'text-rose-600' };
       case ProjectType.ELECTRICITY:
-        return { color: 'bg-secondary-600', icon: Zap, image: '/assets/placeholders/electricity.png' }; // Yellow/Orange for Power
+        return { icon: Zap, image: '/assets/placeholders/electricity.png', color: 'text-secondary-600' };
       case ProjectType.COMMUNITY:
-        return { color: 'bg-orange-700', icon: Users, image: '/assets/placeholders/community.png' };
+        return { icon: Users, image: '/assets/placeholders/community.png', color: 'text-orange-600' };
       case ProjectType.AGRICULTURE:
-        return { color: 'bg-emerald-700', icon: Sprout, image: '/assets/placeholders/agriculture.png' };
+        return { icon: Sprout, image: '/assets/placeholders/agriculture.png', color: 'text-emerald-600' };
       default:
-        return { color: 'bg-stone-600', icon: HardHat, image: '/assets/placeholders/infrastructure.png' };
+        return { icon: HardHat, image: '/assets/placeholders/infrastructure.png', color: 'text-neutral-700' };
     }
   };
 
@@ -69,86 +58,53 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <>
-      <div className="bg-white rounded-xl shadow-sm border border-stone-200 overflow-hidden hover:shadow-xl hover:border-primary-200 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group relative">
+      {/* Magazine-Style Editorial Card */}
+      <div className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 card-lift flex flex-col h-full">
 
-        {/* Party Strip at the top */}
-        <div className="h-1.5 w-full flex">
-          <div className="w-1/2 bg-black"></div>
-          <div className="w-1/2 bg-primary-600"></div>
-        </div>
+        {/* Full-Bleed Image */}
+        <div className="relative h-64 overflow-hidden image-zoom">
+          <img
+            src={project.imageUrl || typeConfig.image}
+            alt={displayTitle}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              // Fallback to placeholder if image fails
+              e.currentTarget.src = typeConfig.image;
+            }}
+          />
 
-        {/* Header Area: Visuals & Icon */}
-        <div className={`relative h-[140px] ${typeConfig.color} flex items-center justify-center overflow-hidden`}>
-          {/* Background pattern/gradient effect */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+          {/* Gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
 
-          {/* Placeholder Image Background */}
-          {!project.imageUrl && (
-            <div className="absolute inset-0 z-0">
-              <img
-                src={typeConfig.image}
-                alt=""
-                className="w-full h-full object-cover opacity-80"
-              />
-            </div>
-          )}
-
-          {/* Project Image Background (if available, overrides placeholder) */}
-          {project.imageUrl && (
-            <div className="absolute inset-0 z-0">
-              <img
-                src={project.imageUrl}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/50"></div>
-            </div>
-          )}
-
-          <div className="absolute -right-6 -top-6 text-white opacity-10 transform rotate-12 z-0">
-            <TypeIcon size={160} />
+          {/* Type Icon Badge (top-right) */}
+          <div className={`absolute top-4 right-4 p-2 rounded-full bg-white/90 backdrop-blur-sm ${typeConfig.color} shadow-lg`}>
+            <TypeIcon size={20} />
           </div>
 
-          {/* Center Icon */}
-          <div className="relative z-10 flex flex-col items-center text-white">
-            <div className="p-3 bg-white/20 backdrop-blur-sm rounded-full mb-2 border border-white/30 shadow-lg group-hover:scale-110 transition-transform">
-              <TypeIcon size={28} />
-            </div>
-            <span className="text-[10px] font-bold uppercase tracking-wider bg-black/40 px-2 py-0.5 rounded text-white/95 backdrop-blur-sm">
-              {t.types[project.type] || project.type}
-            </span>
-          </div>
-
-          {/* Status Badge */}
-          <div className="absolute top-3 left-3 z-20">
-            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border shadow-sm ${getStatusColor(project.status)} bg-white/95 backdrop-blur`}>
-              {getStatusIcon(project.status)}
+          {/* Status Dot (top-left) */}
+          <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm">
+            <span className={getStatusDot(project.status)}></span>
+            <span className="text-xs font-medium text-neutral-800">
               {t.status[project.status] || project.status}
             </span>
           </div>
 
-          {/* Image Thumbnail (if available) */}
+          {/* Zoom Button (bottom-right, shows on hover) */}
           {project.imageUrl && (
             <button
               onClick={() => setIsLightboxOpen(true)}
-              className="absolute bottom-3 right-3 z-20 w-10 h-10 rounded-lg border-2 border-white shadow-lg overflow-hidden group/thumb hover:scale-105 transition-transform"
+              className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white shadow-lg"
               title={t.card.viewPhoto}
             >
-              <img
-                src={project.imageUrl}
-                alt="Thumbnail"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/thumb:opacity-100 transition-opacity">
-                <ZoomIn size={14} className="text-white" />
-              </div>
+              <ZoomIn size={18} className="text-neutral-800" />
             </button>
           )}
         </div>
 
-        {/* Card Body */}
-        <div className="p-5 flex-1 flex flex-col">
-          <h3 className="text-lg font-bold text-stone-900 mb-2 leading-tight line-clamp-2 group-hover:text-primary-600 transition-colors" title={displayTitle}>
+        {/* Content Overlay Card (Bottom) */}
+        <div className="relative -mt-12 mx-4 mb-4 bg-white rounded-xl shadow-lg p-6 flex flex-col flex-1">
+          {/* Title */}
+          <h3 className="font-serif text-xl font-bold text-neutral-900 mb-2 leading-tight line-clamp-2" title={displayTitle}>
             {(() => {
               // Always try to split if @ is present
               const splitIndex = displayTitle.indexOf(' @ ');
@@ -158,14 +114,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               return displayTitle;
             })()}
           </h3>
+
+          {/* Description */}
           {(() => {
             const splitIndex = displayTitle.indexOf(' @ ');
 
             // Case 1: Split found - show the second part as description
             if (splitIndex !== -1) {
               return (
-                <p className="text-stone-600 text-sm mb-4 line-clamp-3 flex-1 leading-relaxed">
-                  {displayTitle.substring(splitIndex + 1)} {/* +1 to skip space, keep @ */}
+                <p className="text-neutral-600 text-sm mb-4 line-clamp-2 flex-1">
+                  {displayTitle.substring(splitIndex + 1)}
                 </p>
               );
             }
@@ -177,27 +135,40 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
             // Case 3: Different content - show description
             return (
-              <p className="text-stone-600 text-sm mb-4 line-clamp-3 flex-1 leading-relaxed">
+              <p className="text-neutral-600 text-sm mb-4 line-clamp-2 flex-1">
                 {displayDescription}
               </p>
             );
           })()}
 
-          <div className="space-y-3 text-sm text-stone-500 mt-auto pt-4 border-t border-stone-100 bg-stone-50/50 -mx-5 -mb-5 px-5 py-3">
-            <div className="flex items-center">
-              <MapPin size={16} className="mr-2 text-primary-600 flex-shrink-0" />
-              <span className="font-medium text-stone-700 truncate">{project.village}</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center" title="Project Year">
-                <Calendar size={16} className="mr-2 text-primary-600 flex-shrink-0" />
-                <span>{project.year}</span>
+          {/* Metadata Grid */}
+          <div className="mt-auto pt-4 border-t border-accent-100">
+            <div className="grid grid-cols-3 gap-4 text-sm">
+              {/* Location */}
+              <div className="flex items-start gap-2">
+                <MapPin size={16} className="text-primary-600 flex-shrink-0 mt-0.5" />
+                <span className="text-neutral-700 truncate text-xs font-medium">{project.village}</span>
               </div>
-              <div className="flex items-center" title="Budget">
-                <Banknote size={16} className="mr-2 text-primary-600 flex-shrink-0" />
-                <span className="font-semibold text-stone-900 bg-stone-100 border border-stone-200 px-2 py-0.5 rounded">{project.budget}</span>
+
+              {/* Year */}
+              <div className="flex items-start gap-2">
+                <Calendar size={16} className="text-secondary-600 flex-shrink-0 mt-0.5" />
+                <span className="text-neutral-700 text-xs font-medium">{project.year}</span>
+              </div>
+
+              {/* Budget */}
+              <div className="flex items-start gap-2">
+                <Banknote size={16} className="text-accent-600 flex-shrink-0 mt-0.5" />
+                <span className="text-neutral-900 font-mono text-xs font-bold">{project.budget}</span>
               </div>
             </div>
+          </div>
+
+          {/* Type Label (Bottom) */}
+          <div className="mt-3 pt-3 border-t border-accent-100">
+            <span className="text-xs text-neutral-500 uppercase tracking-wide">
+              {t.types[project.type] || project.type}
+            </span>
           </div>
         </div>
       </div>
@@ -206,7 +177,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       {isLightboxOpen && project.imageUrl && (
         <Lightbox
           imageUrl={project.imageUrl}
-          altText={project.title}
+          altText={displayTitle}
           onClose={() => setIsLightboxOpen(false)}
         />
       )}

@@ -1,1 +1,218 @@
 /* Tailwind loaded via CDN */
+
+/* ==========================================================================
+   Premium Editorial Design System - Custom Animations & Utilities
+   ========================================================================== */
+
+/* Parallax scroll effect */
+.parallax-slow {
+  transform: translateY(calc(var(--scroll) * -0.5px));
+  transition: transform 0.1s ease-out;
+}
+
+/* Image zoom on hover */
+.image-zoom {
+  transition: transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.image-zoom img {
+  transition: transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* Link underline expand animation */
+.link-expand {
+  position: relative;
+}
+
+.link-expand::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 300ms ease-out;
+}
+
+.link-expand:hover::after {
+  width: 100%;
+}
+
+/* Stagger animation for lists/grids */
+.stagger-item {
+  opacity: 0;
+  animation: fadeInUp 600ms ease-out forwards;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0ms; }
+.stagger-item:nth-child(2) { animation-delay: 100ms; }
+.stagger-item:nth-child(3) { animation-delay: 200ms; }
+.stagger-item:nth-child(4) { animation-delay: 300ms; }
+.stagger-item:nth-child(5) { animation-delay: 400ms; }
+.stagger-item:nth-child(6) { animation-delay: 500ms; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Number count-up animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.count-up {
+  animation: countUp 800ms ease-out forwards;
+}
+
+/* Kolam pattern background texture */
+.kolam-texture {
+  background-image: url('/assets/patterns/kolam.svg');
+  background-size: 400px;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Organic curved divider */
+.curved-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.curved-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Editorial content spacing */
+.editorial-spacing > * + * {
+  margin-top: 1.75rem;
+}
+
+/* Status dot indicator */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.status-dot.completed {
+  background-color: #528f4e;
+  box-shadow: 0 0 0 2px rgba(82, 143, 78, 0.2);
+}
+
+.status-dot.ongoing {
+  background-color: #e96e37;
+  box-shadow: 0 0 0 2px rgba(233, 110, 55, 0.2);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.status-dot.planned {
+  background-color: #a8a29e;
+  box-shadow: 0 0 0 2px rgba(168, 162, 158, 0.2);
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #e96e37 0%, #528f4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover lift effect */
+.card-lift {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Progress bar animation */
+.progress-bar {
+  position: relative;
+  height: 4px;
+  background: #e7e5e4;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #e96e37 0%, #528f4e 100%);
+  border-radius: 2px;
+  transition: width 1s ease-out;
+}
+
+/* Backdrop blur utility */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Responsive text utilities */
+@media (max-width: 640px) {
+  .text-display-lg {
+    font-size: 2.5rem;
+  }
+
+  .text-display-md {
+    font-size: 2rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
