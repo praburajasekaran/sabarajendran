@@ -140,5 +140,55 @@ function saba_projects_register_taxonomies() {
 			'show_in_rest'      => true,
 		)
 	);
+
+	// Register Project Panchayat
+	register_taxonomy(
+		'project_panchayat',
+		'project',
+		array(
+			'labels'            => array(
+				'name'              => _x( 'Panchayats', 'taxonomy general name', 'saba-projects' ),
+				'singular_name'     => _x( 'Panchayat', 'taxonomy singular name', 'saba-projects' ),
+				'search_items'      => __( 'Search Panchayats', 'saba-projects' ),
+				'all_items'         => __( 'All Panchayats', 'saba-projects' ),
+				'edit_item'         => __( 'Edit Panchayat', 'saba-projects' ),
+				'update_item'       => __( 'Update Panchayat', 'saba-projects' ),
+				'add_new_item'      => __( 'Add New Panchayat', 'saba-projects' ),
+				'new_item_name'     => __( 'New Panchayat Name', 'saba-projects' ),
+				'menu_name'         => __( 'Panchayats', 'saba-projects' ),
+			),
+			'hierarchical'      => true,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'panchayat' ),
+			'show_in_rest'      => true,
+		)
+	);
+
+	// Register Project Block
+	register_taxonomy(
+		'project_block',
+		'project',
+		array(
+			'labels'            => array(
+				'name'              => _x( 'Blocks', 'taxonomy general name', 'saba-projects' ),
+				'singular_name'     => _x( 'Block', 'taxonomy singular name', 'saba-projects' ),
+				'search_items'      => __( 'Search Blocks', 'saba-projects' ),
+				'all_items'         => __( 'All Blocks', 'saba-projects' ),
+				'edit_item'         => __( 'Edit Block', 'saba-projects' ),
+				'update_item'       => __( 'Update Block', 'saba-projects' ),
+				'add_new_item'      => __( 'Add New Block', 'saba-projects' ),
+				'new_item_name'     => __( 'New Block Name', 'saba-projects' ),
+				'menu_name'         => __( 'Blocks', 'saba-projects' ),
+			),
+			'hierarchical'      => true,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'block' ),
+			'show_in_rest'      => true,
+		)
+	);
 }
 add_action( 'init', 'saba_projects_register_taxonomies' );

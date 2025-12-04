@@ -136,6 +136,8 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
         });
     };
 
+    const block = getTaxonomyName(wpItem, 'project_block');
+    const panchayat = toSmartTitleCase(getTaxonomyName(wpItem, 'project_panchayat') || '');
     const village = toSmartTitleCase(getTaxonomyName(wpItem, 'project_village') || 'Unknown Village');
     const year = getTaxonomyName(wpItem, 'project_year') || '2024';
     const statusRaw = getTaxonomyName(wpItem, 'project_status');
@@ -176,6 +178,8 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
         title_ta: wpItem._project_title_tamil,
         description: wpItem._project_description_english || wpItem.content.rendered.replace(/<[^>]+>/g, ''), // Strip HTML
         description_ta: wpItem._project_description_tamil,
+        block,
+        panchayat,
         village,
         year,
         status,

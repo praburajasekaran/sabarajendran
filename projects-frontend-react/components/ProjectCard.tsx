@@ -69,7 +69,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <>
-      <div className="bg-white rounded-xl shadow-sm border border-stone-200 overflow-hidden hover:shadow-md hover:border-primary-200 transition-all duration-300 flex flex-col h-full group relative">
+      <div className="bg-white rounded-xl shadow-sm border border-stone-200 overflow-hidden hover:shadow-xl hover:border-primary-200 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group relative">
 
         {/* Party Strip at the top */}
         <div className="h-1.5 w-full flex">
@@ -78,7 +78,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
 
         {/* Header Area: Visuals & Icon */}
-        <div className={`relative h-40 ${typeConfig.color} flex items-center justify-center overflow-hidden`}>
+        <div className={`relative h-[140px] ${typeConfig.color} flex items-center justify-center overflow-hidden`}>
           {/* Background pattern/gradient effect */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
 
@@ -99,7 +99,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/50"></div>
             </div>
@@ -111,10 +111,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
           {/* Center Icon */}
           <div className="relative z-10 flex flex-col items-center text-white">
-            <div className="p-3 bg-white/20 backdrop-blur-sm rounded-full mb-2 border border-white/30 shadow-lg">
-              <TypeIcon size={32} />
+            <div className="p-3 bg-white/20 backdrop-blur-sm rounded-full mb-2 border border-white/30 shadow-lg group-hover:scale-110 transition-transform">
+              <TypeIcon size={28} />
             </div>
-            <span className="text-xs font-bold uppercase tracking-wider bg-black/40 px-2 py-0.5 rounded text-white/95 backdrop-blur-sm">
+            <span className="text-[10px] font-bold uppercase tracking-wider bg-black/40 px-2 py-0.5 rounded text-white/95 backdrop-blur-sm">
               {t.types[project.type] || project.type}
             </span>
           </div>
@@ -131,7 +131,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {project.imageUrl && (
             <button
               onClick={() => setIsLightboxOpen(true)}
-              className="absolute bottom-3 right-3 z-20 w-12 h-12 rounded-lg border-2 border-white shadow-lg overflow-hidden group/thumb hover:scale-105 transition-transform"
+              className="absolute bottom-3 right-3 z-20 w-10 h-10 rounded-lg border-2 border-white shadow-lg overflow-hidden group/thumb hover:scale-105 transition-transform"
               title={t.card.viewPhoto}
             >
               <img
@@ -140,7 +140,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/thumb:opacity-100 transition-opacity">
-                <ZoomIn size={16} className="text-white" />
+                <ZoomIn size={14} className="text-white" />
               </div>
             </button>
           )}
