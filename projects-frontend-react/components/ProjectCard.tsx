@@ -156,10 +156,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 <span className="text-neutral-700 text-xs font-medium">{project.year}</span>
               </div>
 
-              {/* Budget */}
+              {/* Budget - Prominent Display */}
               <div className="flex items-start gap-2">
-                <Banknote size={16} className="text-accent-600 flex-shrink-0 mt-0.5" />
-                <span className="text-neutral-900 font-mono text-xs font-bold">{project.budget}</span>
+                <Banknote size={18} className="text-primary-600 flex-shrink-0 mt-0.5" />
+                <span className="text-primary-700 font-mono text-base font-bold">{project.budget}</span>
               </div>
             </div>
           </div>
