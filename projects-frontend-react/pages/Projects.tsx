@@ -209,12 +209,12 @@ export const ProjectsPage: React.FC = () => {
           villageCounts={villageCounts}
         />
 
-        {/* Main Content Area */}
-        <div className="flex-1 flex flex-col bg-slate-50 w-full relative">
+        {/* Main Content Area - Editorial Style */}
+        <div className="flex-1 flex flex-col bg-accent-50 w-full relative">
 
         {/* Toolbar / Filter Bar */}
-        <div className="bg-white border-b border-slate-200 z-20 shadow-sm flex-shrink-0">
-          <div className="p-4 flex flex-col gap-4">
+        <div className="bg-white border-b border-accent-200 z-20 shadow-sm flex-shrink-0">
+          <div className="p-6 flex flex-col gap-6">
 
             {/* Party Banner integrated here */}
             <div className="hidden md:block">
@@ -224,22 +224,23 @@ export const ProjectsPage: React.FC = () => {
             {/* Top Row: Title & Mobile Toggle Layout */}
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
 
-              {/* Title Section - Full Width on Mobile */}
+              {/* Title Section - Editorial Style */}
               <div>
-                <h1 className="text-xl md:text-2xl font-bold text-slate-800 flex items-center gap-2">
+                <h1 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 flex items-center gap-3">
                   {filters.village ? (
                     <>
                       {filters.village}
                       <button
                         onClick={() => updateFilters({ village: null })}
-                        className="text-slate-400 hover:text-red-500 transition-colors"
+                        className="text-neutral-400 hover:text-primary-600 transition-colors"
+                        title="Clear village filter"
                       >
-                        <XCircle size={20} />
+                        <XCircle size={22} />
                       </button>
                     </>
                   ) : t.projects.allProjects}
                 </h1>
-                <p className="text-xs text-slate-500">
+                <p className="text-sm text-neutral-600 mt-1 font-medium">
                   {t.projects.showing} {filteredProjects.length} {t.projects.results}
                 </p>
               </div>
@@ -248,20 +249,20 @@ export const ProjectsPage: React.FC = () => {
               <div className="flex gap-3 w-full lg:w-auto">
                 {/* Prominent Village Filter Button for Mobile */}
                 <button
-                  className="lg:hidden flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-medium shadow-sm active:bg-primary-700 transition-colors shrink-0"
+                  className="lg:hidden flex items-center gap-2 px-5 py-2.5 bg-primary-500 text-white rounded-xl text-sm font-medium shadow-sm active:bg-primary-600 transition-all shrink-0 hover:shadow-md"
                   onClick={() => setIsMobileSidebarOpen(true)}
                 >
                   <Filter size={16} />
                   {t.projects.filterVillages}
                 </button>
 
-                {/* Search Bar */}
-                <div className="relative flex-grow lg:w-72">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
+                {/* Search Bar - Editorial Style */}
+                <div className="relative flex-grow lg:w-80">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-accent-500" size={16} />
                   <input
                     type="text"
                     placeholder={t.projects.searchPlaceholder}
-                    className="w-full pl-9 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all hover:bg-slate-200 focus:bg-white"
+                    className="w-full pl-10 pr-4 py-2.5 bg-white border-2 border-accent-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 transition-all placeholder:text-accent-400"
                     value={filters.search}
                     onChange={(e) => updateFilters({ search: e.target.value })}
                   />
@@ -269,32 +270,32 @@ export const ProjectsPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Middle Row: Visual Status Tabs */}
+            {/* Middle Row: Visual Status Tabs - Editorial Style */}
             <div className="flex overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-              <div className="flex p-1 bg-slate-100 rounded-lg whitespace-nowrap">
+              <div className="flex p-1.5 bg-accent-100 rounded-xl whitespace-nowrap">
                 <button
                   onClick={() => updateFilters({ status: 'All' })}
-                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${filters.status === 'All'
-                    ? 'bg-white text-primary-700 shadow-sm'
-                    : 'text-slate-600 hover:text-slate-900'
+                  className={`px-5 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${filters.status === 'All'
+                    ? 'bg-white text-primary-600 shadow-sm'
+                    : 'text-neutral-600 hover:text-neutral-900'
                     }`}
                 >
                   <LayoutGrid size={16} /> {t.projects.filterAll}
                 </button>
                 <button
                   onClick={() => updateFilters({ status: ProjectStatus.COMPLETED })}
-                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${filters.status === ProjectStatus.COMPLETED
-                    ? 'bg-white text-emerald-700 shadow-sm'
-                    : 'text-slate-600 hover:text-emerald-700'
+                  className={`px-5 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${filters.status === ProjectStatus.COMPLETED
+                    ? 'bg-white text-secondary-600 shadow-sm'
+                    : 'text-neutral-600 hover:text-secondary-600'
                     }`}
                 >
                   <CheckCircle2 size={16} /> {t.projects.filterCompleted}
                 </button>
                 <button
                   onClick={() => updateFilters({ status: ProjectStatus.ONGOING })}
-                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all flex items-center gap-2 ${filters.status === ProjectStatus.ONGOING
-                    ? 'bg-white text-blue-700 shadow-sm'
-                    : 'text-slate-600 hover:text-blue-700'
+                  className={`px-5 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${filters.status === ProjectStatus.ONGOING
+                    ? 'bg-white text-primary-600 shadow-sm'
+                    : 'text-neutral-600 hover:text-primary-600'
                     }`}
                 >
                   <Clock size={16} /> {t.projects.filterOngoing}
@@ -302,15 +303,15 @@ export const ProjectsPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom Row: Pill Filters for Block, Panchayat, Type & Year */}
-            <div className="flex flex-wrap items-center gap-2 overflow-x-auto">
+            {/* Bottom Row: Pill Filters for Block, Panchayat, Type & Year - Editorial Style */}
+            <div className="flex flex-wrap items-center gap-2.5 overflow-x-auto">
               {/* Block Filter */}
               <select
                 value={filters.block}
                 onChange={(e) => updateFilters({ block: e.target.value })}
-                className={`appearance-none px-4 py-1.5 rounded-full text-sm border font-medium cursor-pointer transition-colors ${filters.block !== 'All'
-                  ? 'bg-purple-50 border-purple-200 text-purple-700'
-                  : 'bg-white border-slate-300 text-slate-600 hover:border-slate-400'
+                className={`appearance-none px-5 py-2 rounded-full text-sm border-2 font-medium cursor-pointer transition-all ${filters.block !== 'All'
+                  ? 'bg-secondary-50 border-secondary-400 text-secondary-700'
+                  : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
                   }`}
               >
                 <option value="All">All Blocks</option>
@@ -323,9 +324,9 @@ export const ProjectsPage: React.FC = () => {
               <select
                 value={filters.panchayat}
                 onChange={(e) => updateFilters({ panchayat: e.target.value })}
-                className={`appearance-none px-4 py-1.5 rounded-full text-sm border font-medium cursor-pointer transition-colors ${filters.panchayat !== 'All'
-                  ? 'bg-indigo-50 border-indigo-200 text-indigo-700'
-                  : 'bg-white border-slate-300 text-slate-600 hover:border-slate-400'
+                className={`appearance-none px-5 py-2 rounded-full text-sm border-2 font-medium cursor-pointer transition-all ${filters.panchayat !== 'All'
+                  ? 'bg-accent-100 border-accent-400 text-accent-700'
+                  : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
                   }`}
                 disabled={filters.block === 'All'}
               >
@@ -341,9 +342,9 @@ export const ProjectsPage: React.FC = () => {
               <select
                 value={filters.type}
                 onChange={(e) => updateFilters({ type: e.target.value })}
-                className={`appearance-none px-4 py-1.5 rounded-full text-sm border font-medium cursor-pointer transition-colors ${filters.type !== 'All'
-                  ? 'bg-primary-50 border-primary-200 text-primary-700'
-                  : 'bg-white border-slate-300 text-slate-600 hover:border-slate-400'
+                className={`appearance-none px-5 py-2 rounded-full text-sm border-2 font-medium cursor-pointer transition-all ${filters.type !== 'All'
+                  ? 'bg-primary-50 border-primary-400 text-primary-700'
+                  : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
                   }`}
               >
                 <option value="All">{t.projects.allSectors}</option>
@@ -356,9 +357,9 @@ export const ProjectsPage: React.FC = () => {
               <select
                 value={filters.year}
                 onChange={(e) => updateFilters({ year: e.target.value })}
-                className={`appearance-none px-4 py-1.5 rounded-full text-sm border font-medium cursor-pointer transition-colors ${filters.year !== 'All'
-                  ? 'bg-primary-50 border-primary-200 text-primary-700'
-                  : 'bg-white border-slate-300 text-slate-600 hover:border-slate-400'
+                className={`appearance-none px-5 py-2 rounded-full text-sm border-2 font-medium cursor-pointer transition-all ${filters.year !== 'All'
+                  ? 'bg-primary-50 border-primary-400 text-primary-700'
+                  : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
                   }`}
               >
                 <option value="All">{t.projects.allYears}</option>
@@ -367,7 +368,7 @@ export const ProjectsPage: React.FC = () => {
                 ))}
               </select>
 
-              {/* Reset Button */}
+              {/* Reset Button - Editorial Style */}
               {(filters.block !== 'All' || filters.panchayat !== 'All' || filters.year !== 'All' || filters.type !== 'All') && (
                 <button
                   onClick={() => updateFilters({
@@ -376,7 +377,7 @@ export const ProjectsPage: React.FC = () => {
                     year: 'All',
                     type: 'All'
                   })}
-                  className="text-xs text-red-500 hover:text-red-700 underline px-2"
+                  className="text-xs text-primary-600 hover:text-primary-700 font-semibold underline px-3 py-2 transition-colors"
                 >
                   {t.projects.reset}
                 </button>
