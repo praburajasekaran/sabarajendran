@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { ArrowRight, Users, CheckCircle, Clock, PieChart, ChevronRight, Building2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { ProjectCard } from '../components/ProjectCard';
@@ -37,6 +37,21 @@ export const Home: React.FC = () => {
 
   // Get unique villages count
   const uniqueVillages = new Set(projects.map(p => p.village)).size;
+
+  // Calculate block counts
+  const blockCounts = useMemo(() => {
+    const counts: Record<string, number> = {
+      'Panruti': 0,
+      'NLC': 0,
+      'Kurinjipadi': 0
+    };
+    projects.forEach(p => {
+      if (p.block && counts.hasOwnProperty(p.block)) {
+        counts[p.block]++;
+      }
+    });
+    return Object.entries(counts).map(([name, count]) => ({ name, count }));
+  }, [projects]);
 
   const recentProjects = projects.slice(0, 3);
 
@@ -162,6 +177,60 @@ export const Home: React.FC = () => {
                 </>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Block Cards Section */}
+      <section className="py-20 bg-white border-b border-stone-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4">
+              {t.home.blockSectionTitle}
+            </h2>
+            <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+              {t.home.blockSectionDesc}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {blockCounts.map(({ name, count }) => (
+              <div
+                key={name}
+                onClick={() => navigate(`/projects?block=${encodeURIComponent(name)}`)}
+                className="group relative p-8 bg-gradient-to-br from-stone-50 to-white border-2 border-stone-200 rounded-2xl hover:border-primary-400 hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden"
+              >
+                {/* Decorative Elements */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary-100 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary-100 rounded-full -ml-12 -mb-12 opacity-30 group-hover:opacity-60 transition-opacity"></div>
+
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 rounded-xl bg-primary-100 text-primary-700 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                      <Building2 size={28} />
+                    </div>
+                    <ArrowRight className="text-stone-400 group-hover:text-primary-600 group-hover:translate-x-2 transition-all" size={24} />
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-stone-900 mb-3 group-hover:text-primary-700 transition-colors">
+                    {name}
+                  </h3>
+
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className="text-5xl font-bold text-primary-700">{count}</span>
+                    <span className="text-stone-500 font-medium">{t.home.projectsCount}</span>
+                  </div>
+
+                  <div className="pt-4 border-t border-stone-200">
+                    <span className="text-sm text-primary-700 font-semibold group-hover:text-primary-800 flex items-center gap-1">
+                      {t.home.viewBlockProjects}
+                      <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

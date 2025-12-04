@@ -25,6 +25,10 @@ export const TRANSLATIONS = {
       meetMlaTitle: 'Meet Your MLA',
       meetMlaDesc: 'Continuing the legacy of service and dedication to the people of Neyveli.',
       readMore: 'Read Full Biography',
+      blockSectionTitle: 'Projects by Block',
+      blockSectionDesc: 'Explore development projects across administrative blocks',
+      viewBlockProjects: 'View Projects',
+      projectsCount: 'Projects',
     },
     about: {
       title: 'About Saba Rajendran',
@@ -126,6 +130,10 @@ export const TRANSLATIONS = {
       meetMlaTitle: 'உங்கள் எம்.எல்.ஏ பற்றி',
       meetMlaDesc: 'மக்கள் சேவையே மகேசன் சேவை என்ற கொள்கையுடன் நெய்வேலி மக்களின் நலனுக்காக தொடர்ந்து உழைப்பவர்.',
       readMore: 'முழு சுயவிவரம்',
+      blockSectionTitle: 'வட்ட அடிப்படையில் திட்டங்கள்',
+      blockSectionDesc: 'நிர்வாக வட்டங்களில் மேம்பாட்டு திட்டங்களை ஆராயுங்கள்',
+      viewBlockProjects: 'திட்டங்களைக் காண்க',
+      projectsCount: 'திட்டங்கள்',
     },
     about: {
       title: 'திரு. சபா ராஜேந்திரன்',
