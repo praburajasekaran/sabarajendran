@@ -25,9 +25,14 @@ class Saba_Netlify_Webhook
 	private const TRANSIENT_KEY = 'saba_netlify_deployment_pending';
 
 	/**
-	 * Option key for webhook URL
+	 * Option key for API token
 	 */
-	private const WEBHOOK_URL_OPTION = 'saba_netlify_webhook_url';
+	private const API_TOKEN_OPTION = 'saba_netlify_api_token';
+
+	/**
+	 * Option key for site ID
+	 */
+	private const SITE_ID_OPTION = 'saba_netlify_site_id';
 
 	/**
 	 * Option key for auto-deploy enabled
@@ -82,8 +87,8 @@ class Saba_Netlify_Webhook
 			return;
 		}
 
-		// Check if webhook URL is configured
-		if (empty($this->get_webhook_url())) {
+		// Check if API credentials are configured
+		if (empty($this->get_api_token()) || empty($this->get_site_id())) {
 			return;
 		}
 
@@ -120,7 +125,7 @@ class Saba_Netlify_Webhook
 	}
 
 	/**
-	 * Actually trigger the Netlify webhook
+	 * Actually trigger the Netlify build via API
 	 * Called by cron or manual trigger
 	 *
 	 * @param string $reason Reason for deployment
@@ -128,10 +133,11 @@ class Saba_Netlify_Webhook
 	 */
 	public function trigger_deployment($reason = 'Scheduled deployment')
 	{
-		$webhook_url = $this->get_webhook_url();
+		$api_token = $this->get_api_token();
+		$site_id = $this->get_site_id();
 
-		if (empty($webhook_url)) {
-			$error_msg = 'Netlify webhook URL not configured';
+		if (empty($api_token) || empty($site_id)) {
+			$error_msg = 'Netlify API credentials not configured';
 			$this->log_event('error', $error_msg);
 			return array(
 				'success' => false,
@@ -142,23 +148,24 @@ class Saba_Netlify_Webhook
 		// Clear the transient
 		delete_transient(self::TRANSIENT_KEY);
 
-		// Make HTTP POST request to Netlify
-		$response = wp_remote_post($webhook_url, array(
+		// Make HTTP POST request to Netlify Build API
+		$api_url = 'https://api.netlify.com/api/v1/sites/' . $site_id . '/builds';
+		
+		$response = wp_remote_post($api_url, array(
 			'method' => 'POST',
-			'timeout' => 10,
+			'timeout' => 15,
 			'headers' => array(
+				'Authorization' => 'Bearer ' . $api_token,
 				'Content-Type' => 'application/json',
 			),
 			'body' => json_encode(array(
-				'trigger' => $reason,
-				'timestamp' => current_time('mysql'),
-				'site' => get_bloginfo('name')
+				'clear_cache' => false
 			))
 		));
 
 		// Check for errors
 		if (is_wp_error($response)) {
-			$error_msg = 'Webhook request failed: ' . $response->get_error_message();
+			$error_msg = 'API request failed: ' . $response->get_error_message();
 			$this->log_event('error', $error_msg);
 			return array(
 				'success' => false,
@@ -167,13 +174,15 @@ class Saba_Netlify_Webhook
 		}
 
 		$status_code = wp_remote_retrieve_response_code($response);
+		$body = wp_remote_retrieve_body($response);
 
 		if ($status_code !== 200 && $status_code !== 201) {
-			$error_msg = 'Netlify returned error: HTTP ' . $status_code;
-			$this->log_event('error', $error_msg);
+			$error_data = json_decode($body, true);
+			$error_msg = isset($error_data['message']) ? $error_data['message'] : 'HTTP ' . $status_code;
+			$this->log_event('error', 'Netlify API error: ' . $error_msg);
 			return array(
 				'success' => false,
-				'message' => $error_msg
+				'message' => 'Netlify API error: ' . $error_msg
 			);
 		}
 
@@ -182,7 +191,7 @@ class Saba_Netlify_Webhook
 
 		return array(
 			'success' => true,
-			'message' => 'Netlify deployment triggered successfully'
+			'message' => 'Netlify build triggered successfully'
 		);
 	}
 
@@ -212,23 +221,43 @@ class Saba_Netlify_Webhook
 	}
 
 	/**
-	 * Get webhook URL from settings
+	 * Get API token from settings
 	 *
-	 * @return string Webhook URL
+	 * @return string API token
 	 */
-	public function get_webhook_url()
+	public function get_api_token()
 	{
-		return get_option(self::WEBHOOK_URL_OPTION, '');
+		return get_option(self::API_TOKEN_OPTION, '');
 	}
 
 	/**
-	 * Set webhook URL
+	 * Set API token
 	 *
-	 * @param string $url Webhook URL
+	 * @param string $token API token
 	 */
-	public function set_webhook_url($url)
+	public function set_api_token($token)
 	{
-		update_option(self::WEBHOOK_URL_OPTION, esc_url_raw($url));
+		update_option(self::API_TOKEN_OPTION, sanitize_text_field($token));
+	}
+
+	/**
+	 * Get site ID from settings
+	 *
+	 * @return string Site ID
+	 */
+	public function get_site_id()
+	{
+		return get_option(self::SITE_ID_OPTION, 'gilded-scone-a9737b');
+	}
+
+	/**
+	 * Set site ID
+	 *
+	 * @param string $site_id Site ID
+	 */
+	public function set_site_id($site_id)
+	{
+		update_option(self::SITE_ID_OPTION, sanitize_text_field($site_id));
 	}
 
 	/**

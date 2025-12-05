@@ -83,9 +83,13 @@ function saba_netlify_handle_form_submission()
 
 	// Handle settings save
 	if (isset($_POST['action']) && $_POST['action'] === 'save_settings') {
-		// Save webhook URL
-		$webhook_url = isset($_POST['webhook_url']) ? sanitize_text_field($_POST['webhook_url']) : '';
-		$webhook->set_webhook_url($webhook_url);
+		// Save API token
+		$api_token = isset($_POST['api_token']) ? sanitize_text_field($_POST['api_token']) : '';
+		$webhook->set_api_token($api_token);
+
+		// Save site ID
+		$site_id = isset($_POST['site_id']) ? sanitize_text_field($_POST['site_id']) : '';
+		$webhook->set_site_id($site_id);
 
 		// Save auto-deploy enabled
 		$auto_deploy = isset($_POST['auto_deploy_enabled']) ? true : false;
@@ -107,7 +111,8 @@ add_action('admin_init', 'saba_netlify_handle_form_submission');
 function saba_netlify_render_settings_page()
 {
 	$webhook = Saba_Netlify_Webhook::get_instance();
-	$webhook_url = $webhook->get_webhook_url();
+	$api_token = $webhook->get_api_token();
+	$site_id = $webhook->get_site_id();
 	$auto_deploy_enabled = $webhook->is_auto_deploy_enabled();
 	$deployment_queued = $webhook->is_deployment_queued();
 	$log = $webhook->get_deployment_log(20);
@@ -120,10 +125,10 @@ function saba_netlify_render_settings_page()
 		<?php settings_errors('saba_netlify_messages'); ?>
 
 		<!-- Configuration Warning -->
-		<?php if (empty($webhook_url)) : ?>
+		<?php if (empty($api_token) || empty($site_id)) : ?>
 			<div class="notice notice-warning">
-				<p><strong><?php _e('⚠️ Netlify webhook not configured!', 'saba-projects'); ?></strong></p>
-				<p><?php _e('Please configure your Netlify build hook URL below to enable automatic deployments.', 'saba-projects'); ?></p>
+				<p><strong><?php _e('⚠️ Netlify API not configured!', 'saba-projects'); ?></strong></p>
+				<p><?php _e('Please configure your Netlify API credentials below to enable automatic deployments.', 'saba-projects'); ?></p>
 			</div>
 		<?php endif; ?>
 
@@ -159,19 +164,38 @@ function saba_netlify_render_settings_page()
 						<table class="form-table" role="presentation">
 							<tr>
 								<th scope="row">
-									<label for="webhook_url"><?php _e('Netlify Build Hook URL', 'saba-projects'); ?></label>
+									<label for="api_token"><?php _e('Netlify API Token', 'saba-projects'); ?></label>
 								</th>
 								<td>
 									<input 
-										type="url" 
-										name="webhook_url" 
-										id="webhook_url" 
-										value="<?php echo esc_attr($webhook_url); ?>" 
+										type="password" 
+										name="api_token" 
+										id="api_token" 
+										value="<?php echo esc_attr($api_token); ?>" 
 										class="regular-text code"
-										placeholder="https://api.netlify.com/build_hooks/..."
+										placeholder="nfp_..."
+										autocomplete="off"
 									>
 									<p class="description">
-										<?php _e('Your Netlify build hook URL. See instructions below.', 'saba-projects'); ?>
+										<?php _e('Your Netlify Personal Access Token. See instructions below.', 'saba-projects'); ?>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									<label for="site_id"><?php _e('Netlify Site ID', 'saba-projects'); ?></label>
+								</th>
+								<td>
+									<input 
+										type="text" 
+										name="site_id" 
+										id="site_id" 
+										value="<?php echo esc_attr($site_id); ?>" 
+										class="regular-text code"
+										placeholder="gilded-scone-a9737b"
+									>
+									<p class="description">
+										<?php _e('Your Netlify site ID (found in Site Settings → General → Site details).', 'saba-projects'); ?>
 									</p>
 								</td>
 							</tr>
@@ -213,36 +237,50 @@ function saba_netlify_render_settings_page()
 						<button 
 							type="submit" 
 							class="button button-primary button-large"
-							<?php echo empty($webhook_url) ? 'disabled' : ''; ?>
+							<?php echo (empty($api_token) || empty($site_id)) ? 'disabled' : ''; ?>
 							onclick="return confirm('<?php esc_attr_e('Are you sure you want to trigger a Netlify deployment now?', 'saba-projects'); ?>');"
 						>
 							🚀 <?php _e('Deploy Now', 'saba-projects'); ?>
 						</button>
 						
-						<?php if (empty($webhook_url)) : ?>
+						<?php if (empty($api_token) || empty($site_id)) : ?>
 							<p class="description" style="color: #d63638;">
-								<?php _e('Configure webhook URL above to enable manual deployment.', 'saba-projects'); ?>
+								<?php _e('Configure API credentials above to enable manual deployment.', 'saba-projects'); ?>
 							</p>
 						<?php endif; ?>
 					</form>
 				</div>
 
-				<!-- How to Get Webhook URL -->
+				<!-- How to Get API Credentials -->
 				<div class="card" style="max-width: none; margin-top: 20px; background: #f0f6fc; border-left: 4px solid #0073aa;">
-					<h2><?php _e('📖 How to Get Your Netlify Build Hook', 'saba-projects'); ?></h2>
+					<h2><?php _e('📖 How to Get Your Netlify API Credentials', 'saba-projects'); ?></h2>
+					
+					<h3 style="margin-top: 20px;"><?php _e('1. Get Personal Access Token', 'saba-projects'); ?></h3>
 					<ol style="line-height: 1.8; margin-left: 20px;">
 						<li><?php _e('Open your Netlify dashboard:', 'saba-projects'); ?> 
 							<a href="https://app.netlify.com" target="_blank">https://app.netlify.com</a>
 						</li>
-						<li><?php _e('Select your site:', 'saba-projects'); ?> <strong>gilded-scone-a9737b</strong></li>
-						<li><?php _e('Navigate to: <strong>Site Settings → Build & Deploy → Build Hooks</strong>', 'saba-projects'); ?></li>
-						<li><?php _e('Click <strong>"Add build hook"</strong>', 'saba-projects'); ?></li>
-						<li><?php _e('Enter a name:', 'saba-projects'); ?> <strong>WordPress Auto Deploy</strong></li>
-						<li><?php _e('Select branch: <strong>main</strong> (or your deploy branch)', 'saba-projects'); ?></li>
-						<li><?php _e('Click <strong>"Save"</strong>', 'saba-projects'); ?></li>
-						<li><?php _e('Copy the generated URL (looks like: <code>https://api.netlify.com/build_hooks/...</code>)', 'saba-projects'); ?></li>
-						<li><?php _e('Paste it in the field above and save', 'saba-projects'); ?></li>
+						<li><?php _e('Click your avatar (top right) → <strong>User settings</strong>', 'saba-projects'); ?></li>
+						<li><?php _e('Navigate to: <strong>Applications → Personal access tokens</strong>', 'saba-projects'); ?></li>
+						<li><?php _e('Click <strong>"New access token"</strong>', 'saba-projects'); ?></li>
+						<li><?php _e('Enter description:', 'saba-projects'); ?> <strong>WordPress Auto Deploy</strong></li>
+						<li><?php _e('Click <strong>"Generate token"</strong>', 'saba-projects'); ?></li>
+						<li><?php _e('Copy the token (starts with <code>nfp_...</code>)', 'saba-projects'); ?></li>
+						<li><?php _e('Paste it in the <strong>API Token</strong> field above', 'saba-projects'); ?></li>
 					</ol>
+
+					<h3 style="margin-top: 20px;"><?php _e('2. Get Site ID', 'saba-projects'); ?></h3>
+					<ol style="line-height: 1.8; margin-left: 20px;">
+						<li><?php _e('Go to your site:', 'saba-projects'); ?> <strong>gilded-scone-a9737b</strong></li>
+						<li><?php _e('Navigate: <strong>Site Settings → General → Site details</strong>', 'saba-projects'); ?></li>
+						<li><?php _e('Find <strong>Site ID</strong> (e.g., <code>gilded-scone-a9737b</code>)', 'saba-projects'); ?></li>
+						<li><?php _e('Copy and paste it in the <strong>Site ID</strong> field above', 'saba-projects'); ?></li>
+					</ol>
+
+					<p style="margin-top: 20px; padding: 10px; background: #fff3cd; border-left: 3px solid #ffc107;">
+						<strong><?php _e('⚠️ Security Note:', 'saba-projects'); ?></strong> 
+						<?php _e('Keep your API token secret! It grants access to your Netlify account.', 'saba-projects'); ?>
+					</p>
 				</div>
 
 			</div>
@@ -285,9 +323,9 @@ function saba_netlify_render_settings_page()
 								<td>
 									<?php if ($deployment_queued) : ?>
 										<span style="color: #f0b849;">⏳ <?php _e('Pending', 'saba-projects'); ?></span>
-									<?php elseif ($auto_deploy_enabled && !empty($webhook_url)) : ?>
+									<?php elseif ($auto_deploy_enabled && !empty($api_token) && !empty($site_id)) : ?>
 										<span style="color: #46b450;">✓ <?php _e('Active', 'saba-projects'); ?></span>
-									<?php elseif (empty($webhook_url)) : ?>
+									<?php elseif (empty($api_token) || empty($site_id)) : ?>
 										<span style="color: #d63638;">⚠️ <?php _e('Not Configured', 'saba-projects'); ?></span>
 									<?php else : ?>
 										<span style="color: #999;">⏸️ <?php _e('Disabled', 'saba-projects'); ?></span>
