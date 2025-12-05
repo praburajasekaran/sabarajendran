@@ -3,8 +3,8 @@ import { get, set } from 'idb-keyval';
 import { Project, ProjectStatus, ProjectType } from '../types';
 
 // WordPress API Endpoint
-// Using query parameter format to avoid permalink issues
 const WP_API_URL = import.meta.env.VITE_WP_API_URL || 'http://localhost:8888/sabarajendran/wp-json/wp/v2';
+console.log('[wpService] Using WP API URL:', WP_API_URL);
 
 // Cache configuration
 const CACHE_KEY = 'wp_projects_cache_v5';
@@ -67,7 +67,7 @@ export const wpService = {
         try {
             console.log('[wpService] Fetching from API...');
             // Initial fetch to get the first page and total pages
-            const response = await axios.get(`${WP_API_URL}/?rest_route=/wp/v2/project&per_page=100&_embed`);
+            const response = await axios.get(`${WP_API_URL}/project?per_page=100&_embed`);
             let allProjects = response.data;
 
             const totalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
@@ -78,7 +78,7 @@ export const wpService = {
                 const pagePromises = [];
                 for (let i = 2; i <= totalPages; i++) {
                     pagePromises.push(
-                        axios.get(`${WP_API_URL}/?rest_route=/wp/v2/project&per_page=100&_embed&page=${i}`)
+                        axios.get(`${WP_API_URL}/project?per_page=100&_embed&page=${i}`)
                     );
                 }
 
@@ -124,7 +124,7 @@ export const wpService = {
         try {
             console.log('[wpService] Background fetch started...');
             // Initial fetch to get the first page and total pages
-            const response = await axios.get(`${WP_API_URL}/?rest_route=/wp/v2/project&per_page=100&_embed`);
+            const response = await axios.get(`${WP_API_URL}/project?per_page=100&_embed`);
             let allProjects = response.data;
 
             const totalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
@@ -133,7 +133,7 @@ export const wpService = {
                 const pagePromises = [];
                 for (let i = 2; i <= totalPages; i++) {
                     pagePromises.push(
-                        axios.get(`${WP_API_URL}/?rest_route=/wp/v2/project&per_page=100&_embed&page=${i}`)
+                        axios.get(`${WP_API_URL}/project?per_page=100&_embed&page=${i}`)
                     );
                 }
                 const responses = await Promise.all(pagePromises);
@@ -236,7 +236,7 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
     // _embed adds 'wp:featuredmedia'.
     const imageUrl = wpItem._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
-    return {
+    const project = {
         id: wpItem.id.toString(),
         title: toSmartTitleCase(wpItem._project_title_english || wpItem.title.rendered),
         title_ta: wpItem._project_title_tamil,
@@ -253,6 +253,13 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
         rawBudget,
         imageUrl
     };
+
+    // Debug: Log projects without Tamil translation
+    if (!wpItem._project_title_tamil && wpItem.id) {
+        console.warn(`[wpService] Project ${wpItem.id} missing Tamil title:`, wpItem.title.rendered);
+    }
+
+    return project;
 };
 
 const getTaxonomyName = (wpItem: any, taxonomy: string): string | undefined => {
