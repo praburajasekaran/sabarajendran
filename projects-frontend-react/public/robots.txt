@@ -1,2 +1,9 @@
+# Allow all crawlers
 User-agent: *
-Disallow: /
+Allow: /
+
+# Sitemap location
+Sitemap: https://sabarajendran.com/sitemap.xml
+
+# Optional: Disallow search result pages
+Disallow: /projects?search=

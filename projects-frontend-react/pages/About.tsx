@@ -1,7 +1,9 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Award, Briefcase, Flag, Target } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { SEO } from '../components/SEO';
+import { generatePersonSchema } from '../utils/seo';
 
 export const About: React.FC = () => {
     const { t } = useLanguage();
@@ -13,6 +15,12 @@ export const About: React.FC = () => {
                 description="Learn more about Saba Rajendran, MLA of Neyveli Constituency, his vision, and his journey in public service."
                 url="/about"
             />
+            <Helmet>
+                {/* Enhanced Person Structured Data for About Page */}
+                <script type="application/ld+json">
+                    {JSON.stringify(generatePersonSchema())}
+                </script>
+            </Helmet>
             {/* Header Banner - Editorial Style */}
             <div className="bg-neutral-900 text-white py-20 relative overflow-hidden">
                 {/* Subtle Kolam Texture Overlay */}

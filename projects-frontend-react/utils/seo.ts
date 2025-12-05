@@ -286,6 +286,61 @@ const slugify = (text: string): string => {
 };
 
 /**
+ * Generate Organization schema for Neyveli Constituency Office
+ */
+export const generateOrganizationSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'GovernmentOrganization',
+  name: 'Neyveli Constituency Office',
+  url: SITE_URL,
+  logo: `${SITE_URL}/og-image.jpg`,
+  description: 'Official office of Saba Rajendran, MLA for Neyveli Constituency, Tamil Nadu',
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Neyveli Constituency',
+    containedInPlace: {
+      '@type': 'State',
+      name: 'Tamil Nadu',
+      containedInPlace: {
+        '@type': 'Country',
+        name: 'India'
+      }
+    }
+  },
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Dravida Munnetra Kazhagam (DMK)'
+  }
+});
+
+/**
+ * Generate Person schema for MLA Saba Rajendran
+ */
+export const generatePersonSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Saba Rajendran',
+  givenName: 'Saba',
+  familyName: 'Rajendran',
+  jobTitle: 'Member of Legislative Assembly',
+  description: 'MLA representing Neyveli Constituency in Tamil Nadu Legislative Assembly',
+  affiliation: {
+    '@type': 'Organization',
+    name: 'Dravida Munnetra Kazhagam (DMK)'
+  },
+  worksFor: {
+    '@type': 'GovernmentOrganization',
+    name: 'Tamil Nadu Legislative Assembly'
+  },
+  knowsAbout: [
+    'Constituency Development',
+    'Rural Infrastructure',
+    'Water Supply Management',
+    'Education Development'
+  ]
+});
+
+/**
  * Get breadcrumb structured data for location hierarchy
  */
 export const generateBreadcrumbStructuredData = (filters: FilterState): object | null => {

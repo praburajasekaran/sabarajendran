@@ -49,6 +49,11 @@ export const SEO: React.FC<SEOProps> = ({
             <meta name="description" content={metaDescription} />
             <link rel="canonical" href={fullUrl} />
 
+            {/* Language Alternates */}
+            <link rel="alternate" hrefLang="en" href={fullUrl} />
+            <link rel="alternate" hrefLang="ta" href={fullUrl} />
+            <link rel="alternate" hrefLang="x-default" href={fullUrl} />
+
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={type} />
             <meta property="og:url" content={fullUrl} />
@@ -96,6 +101,11 @@ export const ProjectsSEO: React.FC<ProjectsSEOProps> = ({ filters, resultCount }
             <title>{title}</title>
             <meta name="description" content={description} />
             <link rel="canonical" href={canonicalUrl} />
+
+            {/* Language Alternates */}
+            <link rel="alternate" hrefLang="en" href={canonicalUrl} />
+            <link rel="alternate" hrefLang="ta" href={canonicalUrl} />
+            <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
 
             {/* Robots Meta - Strategic Indexing */}
             {!shouldIndex && <meta name="robots" content="noindex, follow" />}

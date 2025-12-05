@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { ArrowRight, Users, CheckCircle, Clock, PieChart, ChevronRight, Building2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ProjectCard } from '../components/ProjectCard';
 import { SEO } from '../components/SEO';
 import { useLanguage } from '../contexts/LanguageContext';
 import { wpService } from '../services/wpService';
 import { Project, ProjectStatus } from '../types';
+import { generateOrganizationSchema, generatePersonSchema } from '../utils/seo';
 
 export const Home: React.FC = () => {
   const { t } = useLanguage();
@@ -61,6 +63,16 @@ export const Home: React.FC = () => {
         title="Home"
         description="Official website of Saba Rajendran, MLA of Neyveli Constituency. Explore development projects, news, and updates."
       />
+      <Helmet>
+        {/* Organization Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(generateOrganizationSchema())}
+        </script>
+        {/* Person Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(generatePersonSchema())}
+        </script>
+      </Helmet>
 
       {/* Hero Section - Editorial Split-Screen */}
       <section className="relative bg-neutral-900 text-white overflow-hidden min-h-[700px] flex items-stretch">
