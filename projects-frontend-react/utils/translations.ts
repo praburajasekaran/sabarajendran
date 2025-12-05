@@ -62,6 +62,7 @@ export const TRANSLATIONS = {
       clearFilters: 'Clear All Filters',
       allSectors: 'All Sectors',
       allYears: 'All Years',
+      allSchemes: 'All Schemes',
       filterVillages: 'Villages',
     },
     sidebar: {
@@ -167,6 +168,7 @@ export const TRANSLATIONS = {
       clearFilters: 'வடிப்பான்களை அழிக்கவும்',
       allSectors: 'அனைத்து துறைகள்',
       allYears: 'அனைத்து ஆண்டுகள்',
+      allSchemes: 'அனைத்து திட்டங்கள்',
       filterVillages: 'கிராமங்கள்',
     },
     sidebar: {

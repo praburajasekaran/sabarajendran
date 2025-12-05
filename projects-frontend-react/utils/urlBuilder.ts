@@ -12,6 +12,7 @@ export interface FilterState {
   type: string;
   status: string;
   year: string;
+  scheme: string;
   search: string;
   page: number;
 }
@@ -55,6 +56,7 @@ interface BuildUrlParams {
   type?: string;
   status?: string;
   year?: string;
+  scheme?: string;
   search?: string;
   page?: number;
   preserveParams?: URLSearchParams; // For preserving UTM parameters
@@ -86,6 +88,7 @@ export const buildProjectsUrl = (params: BuildUrlParams): string => {
     type,
     status,
     year,
+    scheme,
     search,
     page,
     preserveParams
@@ -120,6 +123,10 @@ export const buildProjectsUrl = (params: BuildUrlParams): string => {
 
   if (year && year !== 'All') {
     queryParams.set('year', year); // Keep year as-is (e.g., "2024-2025")
+  }
+
+  if (scheme && scheme !== 'All') {
+    queryParams.set('scheme', slugify(scheme));
   }
 
   if (search && search.trim()) {
@@ -180,6 +187,7 @@ export const parseProjectsUrl = (
   const type = searchParams.get('type') || 'All';
   const status = searchParams.get('status') || 'All';
   const year = searchParams.get('year') || 'All';
+  const scheme = searchParams.get('scheme') || 'All';
   const search = searchParams.get('search') || '';
   const page = parseInt(searchParams.get('page') || '1', 10);
 
@@ -190,6 +198,7 @@ export const parseProjectsUrl = (
     type,
     status,
     year,
+    scheme,
     search,
     page: isNaN(page) ? 1 : page
   };
@@ -208,6 +217,7 @@ export const normalizeFilterState = (filters: FilterState): Partial<FilterState>
   if (filters.type !== 'All') normalized.type = filters.type;
   if (filters.status !== 'All') normalized.status = filters.status;
   if (filters.year !== 'All') normalized.year = filters.year;
+  if (filters.scheme !== 'All') normalized.scheme = filters.scheme;
   if (filters.search) normalized.search = filters.search;
   if (filters.page > 1) normalized.page = filters.page;
 
@@ -225,6 +235,7 @@ export const hasActiveFilters = (filters: FilterState): boolean => {
     filters.type !== 'All' ||
     filters.status !== 'All' ||
     filters.year !== 'All' ||
+    filters.scheme !== 'All' ||
     filters.search !== ''
   );
 };
@@ -239,6 +250,7 @@ export const getDefaultFilterState = (): FilterState => ({
   type: 'All',
   status: 'All',
   year: 'All',
+  scheme: 'All',
   search: '',
   page: 1
 });

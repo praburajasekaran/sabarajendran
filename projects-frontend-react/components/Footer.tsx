@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Twitter, Globe } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const Footer: React.FC = () => {
@@ -23,25 +23,31 @@ export const Footer: React.FC = () => {
             {/* Social Links */}
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/SabaMlaDMK"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
               <a
-                href="#"
+                href="https://x.com/rajendran_saba"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all"
                 aria-label="Twitter"
               >
                 <Twitter size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/saba_rajendran_mla"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all"
-                aria-label="Website"
+                aria-label="Instagram"
               >
-                <Globe size={20} />
+                <Instagram size={20} />
               </a>
             </div>
           </div>

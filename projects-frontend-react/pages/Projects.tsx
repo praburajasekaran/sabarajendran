@@ -95,6 +95,15 @@ export const ProjectsPage: React.FC = () => {
     return Array.from(y).sort().reverse();
   }, [projects]);
 
+  // Extract unique schemes from projects for filter dropdown
+  const schemes = useMemo(() => {
+    const uniqueSchemes = new Set<string>();
+    projects.forEach(p => {
+      if (p.scheme) uniqueSchemes.add(p.scheme);
+    });
+    return Array.from(uniqueSchemes).sort();
+  }, [projects]);
+
   // Extract unique blocks from projects
   const blocks = useMemo(() => {
     const uniqueBlocks = new Set<string>();
@@ -124,10 +133,11 @@ export const ProjectsPage: React.FC = () => {
       const matchYear = filters.year !== 'All' ? project.year === filters.year : true;
       const matchStatus = filters.status !== 'All' ? project.status === filters.status : true;
       const matchType = filters.type !== 'All' ? project.type === filters.type : true;
+      const matchScheme = filters.scheme !== 'All' ? project.scheme === filters.scheme : true;
       const matchSearch = project.title.toLowerCase().includes(filters.search.toLowerCase()) ||
         project.description.toLowerCase().includes(filters.search.toLowerCase());
 
-      return matchBlock && matchPanchayat && matchVillage && matchYear && matchStatus && matchType && matchSearch;
+      return matchBlock && matchPanchayat && matchVillage && matchYear && matchStatus && matchType && matchScheme && matchSearch;
     });
   }, [projects, filters]);
 
@@ -135,7 +145,7 @@ export const ProjectsPage: React.FC = () => {
   useEffect(() => {
     const { page, ...otherFilters } = filters;
     updateFilters({ page: 1 }, { replace: true });
-  }, [filters.block, filters.panchayat, filters.village, filters.year, filters.status, filters.type, filters.search]);
+  }, [filters.block, filters.panchayat, filters.village, filters.year, filters.status, filters.type, filters.scheme, filters.search]);
 
   // Reset panchayat filter when block changes
   useEffect(() => {
@@ -368,14 +378,31 @@ export const ProjectsPage: React.FC = () => {
                 ))}
               </select>
 
+              {/* Scheme Filter */}
+              <select
+                value={filters.scheme}
+                onChange={(e) => updateFilters({ scheme: e.target.value })}
+                className={`appearance-none px-5 py-2 rounded-full text-sm border-2 font-medium cursor-pointer transition-all ${
+                  filters.scheme !== 'All'
+                    ? 'bg-primary-50 border-primary-400 text-primary-700'
+                    : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
+                }`}
+              >
+                <option value="All">{t.projects.allSchemes}</option>
+                {schemes.map(scheme => (
+                  <option key={scheme} value={scheme}>{scheme}</option>
+                ))}
+              </select>
+
               {/* Reset Button - Editorial Style */}
-              {(filters.block !== 'All' || filters.panchayat !== 'All' || filters.year !== 'All' || filters.type !== 'All') && (
+              {(filters.block !== 'All' || filters.panchayat !== 'All' || filters.year !== 'All' || filters.type !== 'All' || filters.scheme !== 'All') && (
                 <button
                   onClick={() => updateFilters({
                     block: 'All',
                     panchayat: 'All',
                     year: 'All',
-                    type: 'All'
+                    type: 'All',
+                    scheme: 'All'
                   })}
                   className="text-xs text-primary-600 hover:text-primary-700 font-semibold underline px-3 py-2 transition-colors"
                 >

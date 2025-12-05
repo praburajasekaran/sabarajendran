@@ -192,3 +192,85 @@ function saba_projects_register_taxonomies() {
 	);
 }
 add_action( 'init', 'saba_projects_register_taxonomies' );
+
+/**
+ * Add custom fields to village taxonomy edit form
+ */
+function saba_projects_village_edit_form_fields( $term ) {
+	$tamil_name = get_term_meta( $term->term_id, '_village_name_tamil', true );
+	$english_name = get_term_meta( $term->term_id, '_village_name_english', true );
+	?>
+	<tr class="form-field">
+		<th scope="row">
+			<label for="village_name_english"><?php _e( 'Village Name (English)', 'saba-projects' ); ?></label>
+		</th>
+		<td>
+			<div style="display: flex; gap: 10px; align-items: center;">
+				<input type="text" id="village_name_english" name="village_name_english" value="<?php echo esc_attr( $english_name ); ?>" class="regular-text" style="flex: 1;">
+				<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_english" data-target-field="village_name_tamil" data-term-id="<?php echo esc_attr( $term->term_id ); ?>" style="white-space: nowrap;">
+					<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+					<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+				</button>
+			</div>
+		</td>
+	</tr>
+	<tr class="form-field">
+		<th scope="row">
+			<label for="village_name_tamil"><?php _e( 'Village Name (Tamil)', 'saba-projects' ); ?></label>
+		</th>
+		<td>
+			<div style="display: flex; gap: 10px; align-items: center;">
+				<input type="text" id="village_name_tamil" name="village_name_tamil" value="<?php echo esc_attr( $tamil_name ); ?>" class="regular-text" style="flex: 1;">
+				<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_tamil" data-target-field="village_name_english" data-term-id="<?php echo esc_attr( $term->term_id ); ?>" style="white-space: nowrap;">
+					<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+					<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+				</button>
+			</div>
+		</td>
+	</tr>
+	<?php
+}
+add_action( 'project_village_edit_form_fields', 'saba_projects_village_edit_form_fields' );
+
+/**
+ * Add custom fields to village taxonomy add form
+ */
+function saba_projects_village_add_form_fields() {
+	?>
+	<div class="form-field">
+		<label for="village_name_english"><?php _e( 'Village Name (English)', 'saba-projects' ); ?></label>
+		<div style="display: flex; gap: 10px; align-items: center; margin-top: 5px;">
+			<input type="text" id="village_name_english" name="village_name_english" value="" class="regular-text" style="flex: 1;">
+			<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_english" data-target-field="village_name_tamil" data-term-id="0" style="white-space: nowrap;">
+				<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+				<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+			</button>
+		</div>
+	</div>
+	<div class="form-field">
+		<label for="village_name_tamil"><?php _e( 'Village Name (Tamil)', 'saba-projects' ); ?></label>
+		<div style="display: flex; gap: 10px; align-items: center; margin-top: 5px;">
+			<input type="text" id="village_name_tamil" name="village_name_tamil" value="" class="regular-text" style="flex: 1;">
+			<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_tamil" data-target-field="village_name_english" data-term-id="0" style="white-space: nowrap;">
+				<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+				<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+			</button>
+		</div>
+	</div>
+	<?php
+}
+add_action( 'project_village_add_form_fields', 'saba_projects_village_add_form_fields' );
+
+/**
+ * Save village translation fields
+ */
+function saba_projects_save_village_translation_fields( $term_id ) {
+	if ( isset( $_POST['village_name_english'] ) ) {
+		update_term_meta( $term_id, '_village_name_english', sanitize_text_field( $_POST['village_name_english'] ) );
+	}
+	if ( isset( $_POST['village_name_tamil'] ) ) {
+		update_term_meta( $term_id, '_village_name_tamil', sanitize_text_field( $_POST['village_name_tamil'] ) );
+	}
+}
+add_action( 'created_project_village', 'saba_projects_save_village_translation_fields', 10, 1 );
+add_action( 'edited_project_village', 'saba_projects_save_village_translation_fields', 10, 1 );

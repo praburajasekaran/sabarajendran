@@ -27,6 +27,7 @@ export interface Project {
   year: string; // Changed to string to support "2020-2021" format
   status: ProjectStatus;
   type: ProjectType;
+  scheme?: string; // Government scheme name (e.g., "MLACDS-Neyveli", "15th CFC (BP)")
   budget: string; // Display string e.g., "₹50 Lakhs"
   rawBudget: number; // Numeric value for calculations
   completionDate?: string;

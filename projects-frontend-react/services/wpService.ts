@@ -7,7 +7,7 @@ import { Project, ProjectStatus, ProjectType } from '../types';
 const WP_API_URL = import.meta.env.VITE_WP_API_URL || 'http://localhost:8888/sabarajendran/wp-json/wp/v2';
 
 // Cache configuration
-const CACHE_KEY = 'wp_projects_cache_v4';
+const CACHE_KEY = 'wp_projects_cache_v5';
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 let memoryCache: Project[] | null = null;
 let lastFetchTime = 0;
@@ -205,6 +205,7 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
     const year = getTaxonomyName(wpItem, 'project_year') || '2024';
     const statusRaw = getTaxonomyName(wpItem, 'project_status');
     const typeRaw = getTaxonomyName(wpItem, 'project_category'); // Plugin said project_category maps to type/sector
+    const scheme = getTaxonomyName(wpItem, 'project_scheme');
 
     // Map Status
     let status = ProjectStatus.ONGOING;
@@ -247,6 +248,7 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
         year,
         status,
         type,
+        scheme,
         budget: formattedBudget,
         rawBudget,
         imageUrl

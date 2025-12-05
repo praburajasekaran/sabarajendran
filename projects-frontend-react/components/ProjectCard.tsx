@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   MapPin, Calendar, Banknote,
   School, Droplets, Zap, HeartPulse, Users, Sprout, HardHat,
-  ZoomIn
+  ZoomIn, FileText
 } from 'lucide-react';
 import { Project, ProjectStatus, ProjectType } from '../types';
 import { Lightbox } from './Lightbox';
@@ -141,34 +141,45 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             );
           })()}
 
-          {/* Metadata Grid */}
+          {/* Metadata - Flex Layout with Right-Aligned Numbers */}
           <div className="mt-auto pt-4 border-t border-accent-100">
-            <div className="grid grid-cols-3 gap-4 text-sm">
-              {/* Location */}
-              <div className="flex items-start gap-2">
-                <MapPin size={16} className="text-primary-600 flex-shrink-0 mt-0.5" />
-                <span className="text-neutral-700 truncate text-xs font-medium">{project.village}</span>
+            <div className="flex flex-col gap-3 text-sm">
+              {/* Top Row: Village (left) + Year (right) */}
+              <div className="flex items-start justify-between gap-4">
+                {/* Village - Left */}
+                <div className="flex items-start gap-2 flex-1 min-w-0">
+                  <MapPin size={16} className="text-primary-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-neutral-700 truncate text-xs font-medium">{project.village}</span>
+                </div>
+
+                {/* Year - Right */}
+                <div className="flex items-start gap-2 flex-shrink-0">
+                  <Calendar size={16} className="text-secondary-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-neutral-700 text-xs font-medium whitespace-nowrap">{project.year}</span>
+                </div>
               </div>
 
-              {/* Year */}
-              <div className="flex items-start gap-2">
-                <Calendar size={16} className="text-secondary-600 flex-shrink-0 mt-0.5" />
-                <span className="text-neutral-700 text-xs font-medium">{project.year}</span>
-              </div>
+              {/* Bottom Row: Scheme (left) + Budget (right) */}
+              <div className="flex items-start justify-between gap-4">
+                {/* Scheme - Left */}
+                {project.scheme ? (
+                  <div className="flex items-start gap-2 flex-1 min-w-0">
+                    <FileText size={16} className="text-primary-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-neutral-700 text-xs font-medium truncate" title={project.scheme}>
+                      {project.scheme}
+                    </span>
+                  </div>
+                ) : (
+                  <div className="flex-1"></div>
+                )}
 
-              {/* Budget - Prominent Display */}
-              <div className="flex items-start gap-2">
-                <Banknote size={18} className="text-primary-600 flex-shrink-0 mt-0.5" />
-                <span className="text-primary-700 font-mono text-base font-bold">{project.budget}</span>
+                {/* Budget - Right */}
+                <div className="flex items-start gap-2 flex-shrink-0">
+                  <Banknote size={18} className="text-primary-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-primary-700 font-mono text-base font-bold whitespace-nowrap">{project.budget}</span>
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Type Label (Bottom) */}
-          <div className="mt-3 pt-3 border-t border-accent-100">
-            <span className="text-xs text-neutral-500 uppercase tracking-wide">
-              {t.types[project.type] || project.type}
-            </span>
           </div>
         </div>
       </div>

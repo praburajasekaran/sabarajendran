@@ -49,33 +49,61 @@ function saba_projects_render_meta_box( $post ) {
 			<br><em><?php _e( 'Enter the estimated amount in Rupees', 'saba-projects' ); ?></em>
 		</p>
 
-		<p>
-			<label for="project_title_tamil">
-				<strong><?php _e( 'Project Title (Tamil)', 'saba-projects' ); ?></strong>
-			</label><br>
-			<input type="text" id="project_title_tamil" name="project_title_tamil" value="<?php echo esc_attr( $title_tamil ); ?>" class="large-text">
-		</p>
+		<div class="saba-translation-field-group">
+			<p>
+				<label for="project_title_english">
+					<strong><?php _e( 'Project Title (English)', 'saba-projects' ); ?></strong>
+				</label><br>
+				<div style="display: flex; gap: 10px; align-items: flex-start;">
+					<input type="text" id="project_title_english" name="project_title_english" value="<?php echo esc_attr( $title_english ); ?>" class="large-text" style="flex: 1;">
+					<button type="button" class="button saba-translate-btn" data-field-type="title" data-source-field="project_title_english" data-target-field="project_title_tamil" data-project-id="<?php echo esc_attr( $post->ID ); ?>" style="white-space: nowrap;">
+						<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+						<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+					</button>
+				</div>
+			</p>
 
-		<p>
-			<label for="project_title_english">
-				<strong><?php _e( 'Project Title (English)', 'saba-projects' ); ?></strong>
-			</label><br>
-			<input type="text" id="project_title_english" name="project_title_english" value="<?php echo esc_attr( $title_english ); ?>" class="large-text">
-		</p>
+			<p>
+				<label for="project_title_tamil">
+					<strong><?php _e( 'Project Title (Tamil)', 'saba-projects' ); ?></strong>
+				</label><br>
+				<div style="display: flex; gap: 10px; align-items: flex-start;">
+					<input type="text" id="project_title_tamil" name="project_title_tamil" value="<?php echo esc_attr( $title_tamil ); ?>" class="large-text" style="flex: 1;">
+					<button type="button" class="button saba-translate-btn" data-field-type="title" data-source-field="project_title_tamil" data-target-field="project_title_english" data-project-id="<?php echo esc_attr( $post->ID ); ?>" style="white-space: nowrap;">
+						<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+						<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+					</button>
+				</div>
+			</p>
+		</div>
 
-		<p>
-			<label for="project_description_tamil">
-				<strong><?php _e( 'Description (Tamil)', 'saba-projects' ); ?></strong>
-			</label><br>
-			<textarea id="project_description_tamil" name="project_description_tamil" rows="5" class="large-text"><?php echo esc_textarea( $description_tamil ); ?></textarea>
-		</p>
+		<div class="saba-translation-field-group">
+			<p>
+				<label for="project_description_english">
+					<strong><?php _e( 'Description (English)', 'saba-projects' ); ?></strong>
+				</label><br>
+				<div style="display: flex; gap: 10px; align-items: flex-start;">
+					<textarea id="project_description_english" name="project_description_english" rows="5" class="large-text" style="flex: 1;"><?php echo esc_textarea( $description_english ); ?></textarea>
+					<button type="button" class="button saba-translate-btn" data-field-type="description" data-source-field="project_description_english" data-target-field="project_description_tamil" data-project-id="<?php echo esc_attr( $post->ID ); ?>" style="white-space: nowrap; align-self: flex-start;">
+						<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+						<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+					</button>
+				</div>
+			</p>
 
-		<p>
-			<label for="project_description_english">
-				<strong><?php _e( 'Description (English)', 'saba-projects' ); ?></strong>
-			</label><br>
-			<textarea id="project_description_english" name="project_description_english" rows="5" class="large-text"><?php echo esc_textarea( $description_english ); ?></textarea>
-		</p>
+			<p>
+				<label for="project_description_tamil">
+					<strong><?php _e( 'Description (Tamil)', 'saba-projects' ); ?></strong>
+				</label><br>
+				<div style="display: flex; gap: 10px; align-items: flex-start;">
+					<textarea id="project_description_tamil" name="project_description_tamil" rows="5" class="large-text" style="flex: 1;"><?php echo esc_textarea( $description_tamil ); ?></textarea>
+					<button type="button" class="button saba-translate-btn" data-field-type="description" data-source-field="project_description_tamil" data-target-field="project_description_english" data-project-id="<?php echo esc_attr( $post->ID ); ?>" style="white-space: nowrap; align-self: flex-start;">
+						<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+						<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+					</button>
+				</div>
+			</p>
+		</div>
 	</div>
 
 	<style>
@@ -85,6 +113,23 @@ function saba_projects_render_meta_box( $post ) {
 		.saba-projects-meta-box label {
 			display: block;
 			margin-bottom: 5px;
+		}
+		.saba-translation-field-group {
+			margin-bottom: 30px;
+		}
+		.saba-translate-btn {
+			position: relative;
+		}
+		.saba-translate-btn.loading {
+			opacity: 0.6;
+			pointer-events: none;
+		}
+		.saba-translate-btn.loading .dashicons {
+			animation: spin 1s linear infinite;
+		}
+		@keyframes spin {
+			from { transform: rotate(0deg); }
+			to { transform: rotate(360deg); }
 		}
 	</style>
 	<?php

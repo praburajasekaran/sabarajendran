@@ -173,6 +173,7 @@ export const useUrlFilters = ({ projects }: UseUrlFiltersOptions): UseUrlFilters
         type: updatedFilters.type,
         status: updatedFilters.status,
         year: updatedFilters.year,
+        scheme: updatedFilters.scheme,
         search: updatedFilters.search,
         page: updatedFilters.page,
         preserveParams: utmParams

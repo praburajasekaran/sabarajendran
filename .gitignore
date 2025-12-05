@@ -4,6 +4,18 @@ wp-content/plugins/all-in-one-wp-migration/storage/
 wp-content/debug.log
 wp-content/uploads/
 *.wpress
+wp-content/wflogs/
+
+# Database exports (too large for git)
+*.sql
+*.sql.bak
+*-db-export.sql
+*.!*!*.sql
+
+# Deployment scripts (local only)
+*.exp
+*.sh
+deployment-packages/
 
 # Node
 node_modules/
@@ -11,3 +23,16 @@ dist/
 .DS_Store
 .env
 .env.local
+.env.development
+
+# Build artifacts
+projects-frontend-react/node_modules/.package-lock.json
+projects-frontend-react/node_modules/.vite/
+
+# Local dev files
+check-*.php
+export-*.php
+import-*.php
+flush-*.php
+translate-*.php
+*-backup.php

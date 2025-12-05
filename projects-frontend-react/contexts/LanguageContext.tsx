@@ -7,6 +7,7 @@ interface LanguageContextType {
   t: typeof TRANSLATIONS['en'];
 }
 
+
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
