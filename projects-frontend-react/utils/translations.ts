@@ -64,6 +64,11 @@ export const TRANSLATIONS = {
       allYears: 'All Years',
       allSchemes: 'All Schemes',
       filterVillages: 'Villages',
+      labelBlock: 'Block',
+      labelPanchayat: 'Panchayat',
+      labelSector: 'Sector',
+      labelYear: 'Year',
+      labelScheme: 'Scheme',
     },
     sidebar: {
       title: 'Village List',
@@ -170,6 +175,11 @@ export const TRANSLATIONS = {
       allYears: 'அனைத்து ஆண்டுகள்',
       allSchemes: 'அனைத்து திட்டங்கள்',
       filterVillages: 'கிராமங்கள்',
+      labelBlock: 'பிரிவு',
+      labelPanchayat: 'பஞ்சாயத்து',
+      labelSector: 'துறை',
+      labelYear: 'ஆண்டு',
+      labelScheme: 'திட்டம்',
     },
     sidebar: {
       title: 'கிராமங்கள் பட்டியல்',

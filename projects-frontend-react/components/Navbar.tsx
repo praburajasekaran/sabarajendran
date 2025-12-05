@@ -1,20 +1,36 @@
 import React, { useState } from 'react';
 import { Menu, X, Languages } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { language, t } = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Get language prefix for all links
+  const langPrefix = language === 'ta' ? '/ta' : '';
 
   const navItems = [
-    { name: t.nav.home, path: '/' },
-    { name: t.nav.about, path: '/about' },
-    { name: t.nav.projects, path: '/projects' },
+    { name: t.nav.home, path: `${langPrefix}/` },
+    { name: t.nav.about, path: `${langPrefix}/about` },
+    { name: t.nav.projects, path: `${langPrefix}/projects` },
   ];
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'ta' : 'en');
+    const currentPath = location.pathname;
+    const searchParams = location.search; // Preserve query parameters
+    
+    if (language === 'en') {
+      // Switch to Tamil: /projects → /ta/projects
+      const newPath = '/ta' + currentPath;
+      navigate(newPath + searchParams);
+    } else {
+      // Switch to English: /ta/projects → /projects
+      const newPath = currentPath.replace(/^\/ta/, '') || '/';
+      navigate(newPath + searchParams);
+    }
   };
 
   return (
@@ -24,7 +40,7 @@ export const Navbar: React.FC = () => {
           {/* Logo - Editorial Serif Style */}
           <div className="flex items-center">
             <Link
-              to="/"
+              to={`${langPrefix}/`}
               className="flex-shrink-0 flex flex-col cursor-pointer group"
               aria-label={t.nav.title}
             >

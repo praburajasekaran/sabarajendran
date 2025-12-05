@@ -20,8 +20,11 @@ export const ProjectsPage: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
+  
+  // Get language prefix for all links
+  const langPrefix = language === 'ta' ? '/ta' : '';
 
   // URL-based filter management
   const { filters, updateFilters, resetFilters } = useUrlFilters({ projects });
@@ -61,11 +64,11 @@ export const ProjectsPage: React.FC = () => {
             updateFilters(validation.correctedFilters, { replace: true });
           } else {
             // All filters are invalid, go to main page
-            navigate('/projects', { replace: true });
+            navigate(`${langPrefix}/projects`, { replace: true });
           }
         } else {
           // No corrected filters available, go to main page
-          navigate('/projects', { replace: true });
+          navigate(`${langPrefix}/projects`, { replace: true });
         }
       }
     }
@@ -124,6 +127,16 @@ export const ProjectsPage: React.FC = () => {
     return Array.from(uniquePanchayats).sort();
   }, [projects, filters.block]);
 
+  // Helper function to find village's parent block and panchayat
+  const getVillageHierarchy = useCallback((villageName: string) => {
+    const project = projects.find(p => p.village === villageName);
+    return project ? {
+      block: project.block || 'All',
+      panchayat: project.panchayat || 'All',
+      village: villageName
+    } : { block: 'All', panchayat: 'All', village: villageName };
+  }, [projects]);
+
   // Filtering Logic (3-level hierarchy: Block → Panchayat → Village)
   const filteredProjects = useMemo(() => {
     return projects.filter(project => {
@@ -153,6 +166,24 @@ export const ProjectsPage: React.FC = () => {
       updateFilters({ panchayat: 'All' }, { replace: true });
     }
   }, [filters.block]);
+
+  // Clear village selection only when block or panchayat is manually changed (not when set via village selection)
+  // This allows the hierarchy to coexist when a village is selected from the sidebar
+  useEffect(() => {
+    // Only clear village if block/panchayat changed AND village doesn't match the new hierarchy
+    if ((filters.block !== 'All' || filters.panchayat !== 'All') && filters.village !== null) {
+      // Check if the current village belongs to the selected block/panchayat
+      const villageProject = projects.find(p => p.village === filters.village);
+      const villageMatchesHierarchy = villageProject && 
+        (filters.block === 'All' || villageProject.block === filters.block) &&
+        (filters.panchayat === 'All' || villageProject.panchayat === filters.panchayat);
+      
+      // Only clear village if it doesn't match the new hierarchy
+      if (!villageMatchesHierarchy) {
+        updateFilters({ village: null }, { replace: true });
+      }
+    }
+  }, [filters.block, filters.panchayat, filters.village, projects]);
 
   // Pagination Logic
   const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
@@ -213,18 +244,25 @@ export const ProjectsPage: React.FC = () => {
         <Sidebar
           villages={dynamicVillages}
           selectedVillage={filters.village}
-          onSelectVillage={(village) => updateFilters({ village })}
+          onSelectVillage={(village) => {
+            if (village === null) {
+              updateFilters({ village: null, block: 'All', panchayat: 'All' });
+            } else {
+              const hierarchy = getVillageHierarchy(village);
+              updateFilters(hierarchy);
+            }
+          }}
           isOpenMobile={isMobileSidebarOpen}
           closeMobile={() => setIsMobileSidebarOpen(false)}
           villageCounts={villageCounts}
         />
 
         {/* Main Content Area - Editorial Style */}
-        <div className="flex-1 flex flex-col bg-accent-50 w-full relative">
+        <div className="flex-1 flex flex-col bg-accent-50 w-full relative pb-0">
 
         {/* Toolbar / Filter Bar */}
         <div className="bg-white border-b border-accent-200 z-20 shadow-sm flex-shrink-0">
-          <div className="p-6 flex flex-col gap-6">
+          <div className="p-4 sm:p-6 flex flex-col gap-3 sm:gap-6">
 
             {/* Party Banner integrated here */}
             <div className="hidden md:block">
@@ -232,47 +270,47 @@ export const ProjectsPage: React.FC = () => {
             </div>
 
             {/* Top Row: Title & Mobile Toggle Layout */}
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-col gap-3 sm:gap-4 lg:flex-row lg:items-center lg:justify-between">
 
               {/* Title Section - Editorial Style */}
               <div>
-                <h1 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 flex items-center gap-3">
+                <h1 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 flex items-center gap-2 sm:gap-3">
                   {filters.village ? (
                     <>
                       {filters.village}
                       <button
-                        onClick={() => updateFilters({ village: null })}
+                        onClick={() => updateFilters({ village: null, block: 'All', panchayat: 'All' })}
                         className="text-neutral-400 hover:text-primary-600 transition-colors"
                         title="Clear village filter"
                       >
-                        <XCircle size={22} />
+                        <XCircle size={20} className="sm:w-[22px] sm:h-[22px]" />
                       </button>
                     </>
                   ) : t.projects.allProjects}
                 </h1>
-                <p className="text-sm text-neutral-600 mt-1 font-medium">
+                <p className="text-xs sm:text-sm text-neutral-600 mt-0.5 sm:mt-1 font-medium">
                   {t.projects.showing} {filteredProjects.length} {t.projects.results}
                 </p>
               </div>
 
               {/* Controls Section: Stacked on Mobile, Inline on Desktop */}
-              <div className="flex gap-3 w-full lg:w-auto">
+              <div className="flex gap-2 sm:gap-3 w-full lg:w-auto">
                 {/* Prominent Village Filter Button for Mobile */}
                 <button
-                  className="lg:hidden flex items-center gap-2 px-5 py-2.5 bg-primary-500 text-white rounded-xl text-sm font-medium shadow-sm active:bg-primary-600 transition-all shrink-0 hover:shadow-md"
+                  className="lg:hidden flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-5 sm:py-2.5 bg-primary-500 text-white rounded-xl text-xs sm:text-sm font-medium shadow-sm active:bg-primary-600 transition-all shrink-0 hover:shadow-md"
                   onClick={() => setIsMobileSidebarOpen(true)}
                 >
-                  <Filter size={16} />
+                  <Filter size={14} className="sm:w-4 sm:h-4" />
                   {t.projects.filterVillages}
                 </button>
 
                 {/* Search Bar - Editorial Style */}
                 <div className="relative flex-grow lg:w-80">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-accent-500" size={16} />
+                  <Search className="absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 text-accent-500" size={14} />
                   <input
                     type="text"
                     placeholder={t.projects.searchPlaceholder}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border-2 border-accent-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 transition-all placeholder:text-accent-400"
+                    className="w-full pl-8 sm:pl-10 pr-3 sm:pr-4 py-2 sm:py-2.5 bg-white border-2 border-accent-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 transition-all placeholder:text-accent-400"
                     value={filters.search}
                     onChange={(e) => updateFilters({ search: e.target.value })}
                   />
@@ -282,132 +320,160 @@ export const ProjectsPage: React.FC = () => {
 
             {/* Middle Row: Visual Status Tabs - Editorial Style */}
             <div className="flex overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-              <div className="flex p-1.5 bg-accent-100 rounded-xl whitespace-nowrap">
+              <div className="flex p-1 sm:p-1.5 bg-accent-100 rounded-xl whitespace-nowrap">
                 <button
                   onClick={() => updateFilters({ status: 'All' })}
-                  className={`px-5 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${filters.status === 'All'
+                  className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === 'All'
                     ? 'bg-white text-primary-600 shadow-sm'
                     : 'text-neutral-600 hover:text-neutral-900'
                     }`}
                 >
-                  <LayoutGrid size={16} /> {t.projects.filterAll}
+                  <LayoutGrid size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterAll}
                 </button>
                 <button
                   onClick={() => updateFilters({ status: ProjectStatus.COMPLETED })}
-                  className={`px-5 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${filters.status === ProjectStatus.COMPLETED
+                  className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === ProjectStatus.COMPLETED
                     ? 'bg-white text-secondary-600 shadow-sm'
                     : 'text-neutral-600 hover:text-secondary-600'
                     }`}
                 >
-                  <CheckCircle2 size={16} /> {t.projects.filterCompleted}
+                  <CheckCircle2 size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterCompleted}
                 </button>
                 <button
                   onClick={() => updateFilters({ status: ProjectStatus.ONGOING })}
-                  className={`px-5 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${filters.status === ProjectStatus.ONGOING
+                  className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === ProjectStatus.ONGOING
                     ? 'bg-white text-primary-600 shadow-sm'
                     : 'text-neutral-600 hover:text-primary-600'
                     }`}
                 >
-                  <Clock size={16} /> {t.projects.filterOngoing}
+                  <Clock size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterOngoing}
                 </button>
               </div>
             </div>
 
             {/* Bottom Row: Pill Filters for Block, Panchayat, Type & Year - Editorial Style */}
-            <div className="flex flex-wrap items-center gap-2.5 overflow-x-auto">
+            <div className="flex flex-wrap items-end gap-2 sm:gap-4 overflow-x-auto">
               {/* Block Filter */}
-              <select
-                value={filters.block}
-                onChange={(e) => updateFilters({ block: e.target.value })}
-                className={`appearance-none px-5 py-2 rounded-full text-sm border-2 font-medium cursor-pointer transition-all ${filters.block !== 'All'
-                  ? 'bg-secondary-50 border-secondary-400 text-secondary-700'
-                  : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                  }`}
-              >
-                <option value="All">All Blocks</option>
-                {blocks.map(block => (
-                  <option key={block} value={block}>{block}</option>
-                ))}
-              </select>
+              <div className="flex flex-col gap-0.5 sm:gap-1">
+                <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
+                  {t.projects.labelBlock} / பிரிவு
+                </label>
+                <select
+                  value={filters.block}
+                  onChange={(e) => updateFilters({ block: e.target.value })}
+                  className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.block !== 'All'
+                    ? 'bg-secondary-50 border-secondary-400 text-secondary-700'
+                    : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
+                    }`}
+                >
+                  <option value="All">All Blocks</option>
+                  {blocks.map(block => (
+                    <option key={block} value={block}>{block}</option>
+                  ))}
+                </select>
+              </div>
 
               {/* Panchayat Filter */}
-              <select
-                value={filters.panchayat}
-                onChange={(e) => updateFilters({ panchayat: e.target.value })}
-                className={`appearance-none px-5 py-2 rounded-full text-sm border-2 font-medium cursor-pointer transition-all ${filters.panchayat !== 'All'
-                  ? 'bg-accent-100 border-accent-400 text-accent-700'
-                  : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                  }`}
-                disabled={filters.block === 'All'}
-              >
-                <option value="All">
-                  {filters.block === 'All' ? 'Select Block First' : 'All Panchayats'}
-                </option>
-                {panchayats.map(panchayat => (
-                  <option key={panchayat} value={panchayat}>{panchayat}</option>
-                ))}
-              </select>
+              <div className="flex flex-col gap-0.5 sm:gap-1">
+                <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
+                  {t.projects.labelPanchayat} / பஞ்சாயத்து
+                </label>
+                <select
+                  value={filters.panchayat}
+                  onChange={(e) => updateFilters({ panchayat: e.target.value })}
+                  className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.panchayat !== 'All'
+                    ? 'bg-accent-100 border-accent-400 text-accent-700'
+                    : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
+                    }`}
+                  disabled={filters.block === 'All'}
+                >
+                  <option value="All">
+                    {filters.block === 'All' ? 'Select Block First' : 'All Panchayats'}
+                  </option>
+                  {panchayats.map(panchayat => (
+                    <option key={panchayat} value={panchayat}>{panchayat}</option>
+                  ))}
+                </select>
+              </div>
 
               {/* Type Filter */}
-              <select
-                value={filters.type}
-                onChange={(e) => updateFilters({ type: e.target.value })}
-                className={`appearance-none px-5 py-2 rounded-full text-sm border-2 font-medium cursor-pointer transition-all ${filters.type !== 'All'
-                  ? 'bg-primary-50 border-primary-400 text-primary-700'
-                  : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                  }`}
-              >
-                <option value="All">{t.projects.allSectors}</option>
-                {Object.values(ProjectType).map(type => (
-                  <option key={type} value={type}>{t.types[type] || type}</option>
-                ))}
-              </select>
-
-              {/* Year Filter */}
-              <select
-                value={filters.year}
-                onChange={(e) => updateFilters({ year: e.target.value })}
-                className={`appearance-none px-5 py-2 rounded-full text-sm border-2 font-medium cursor-pointer transition-all ${filters.year !== 'All'
-                  ? 'bg-primary-50 border-primary-400 text-primary-700'
-                  : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                  }`}
-              >
-                <option value="All">{t.projects.allYears}</option>
-                {years.map(year => (
-                  <option key={year} value={year}>{year}</option>
-                ))}
-              </select>
-
-              {/* Scheme Filter */}
-              <select
-                value={filters.scheme}
-                onChange={(e) => updateFilters({ scheme: e.target.value })}
-                className={`appearance-none px-5 py-2 rounded-full text-sm border-2 font-medium cursor-pointer transition-all ${
-                  filters.scheme !== 'All'
+              <div className="flex flex-col gap-0.5 sm:gap-1">
+                <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
+                  {t.projects.labelSector} / துறை
+                </label>
+                <select
+                  value={filters.type}
+                  onChange={(e) => updateFilters({ type: e.target.value })}
+                  className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.type !== 'All'
                     ? 'bg-primary-50 border-primary-400 text-primary-700'
                     : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                }`}
-              >
-                <option value="All">{t.projects.allSchemes}</option>
-                {schemes.map(scheme => (
-                  <option key={scheme} value={scheme}>{scheme}</option>
-                ))}
-              </select>
+                    }`}
+                >
+                  <option value="All">{t.projects.allSectors}</option>
+                  {Object.values(ProjectType).map(type => (
+                    <option key={type} value={type}>{t.types[type] || type}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Year Filter */}
+              <div className="flex flex-col gap-0.5 sm:gap-1">
+                <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
+                  {t.projects.labelYear} / ஆண்டு
+                </label>
+                <select
+                  value={filters.year}
+                  onChange={(e) => updateFilters({ year: e.target.value })}
+                  className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.year !== 'All'
+                    ? 'bg-primary-50 border-primary-400 text-primary-700'
+                    : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
+                    }`}
+                >
+                  <option value="All">{t.projects.allYears}</option>
+                  {years.map(year => (
+                    <option key={year} value={year}>{year}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Scheme Filter */}
+              <div className="flex flex-col gap-0.5 sm:gap-1">
+                <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
+                  {t.projects.labelScheme} / திட்டம்
+                </label>
+                <select
+                  value={filters.scheme}
+                  onChange={(e) => updateFilters({ scheme: e.target.value })}
+                  className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${
+                    filters.scheme !== 'All'
+                      ? 'bg-primary-50 border-primary-400 text-primary-700'
+                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
+                  }`}
+                >
+                  <option value="All">{t.projects.allSchemes}</option>
+                  {schemes.map(scheme => (
+                    <option key={scheme} value={scheme}>{scheme}</option>
+                  ))}
+                </select>
+              </div>
 
               {/* Reset Button - Editorial Style */}
               {(filters.block !== 'All' || filters.panchayat !== 'All' || filters.year !== 'All' || filters.type !== 'All' || filters.scheme !== 'All') && (
-                <button
-                  onClick={() => updateFilters({
-                    block: 'All',
-                    panchayat: 'All',
-                    year: 'All',
-                    type: 'All',
-                    scheme: 'All'
-                  })}
-                  className="text-xs text-primary-600 hover:text-primary-700 font-semibold underline px-3 py-2 transition-colors"
-                >
-                  {t.projects.reset}
-                </button>
+                <div className="flex flex-col gap-0.5 sm:gap-1">
+                  <div className="h-[14px] sm:h-[20px]"></div>
+                  <button
+                    onClick={() => updateFilters({
+                      block: 'All',
+                      panchayat: 'All',
+                      year: 'All',
+                      type: 'All',
+                      scheme: 'All'
+                    })}
+                    className="text-[10px] sm:text-xs text-primary-600 hover:text-primary-700 font-semibold underline px-2 py-1.5 sm:px-3 sm:py-2 transition-colors whitespace-nowrap"
+                  >
+                    {t.projects.reset}
+                  </button>
+                </div>
               )}
             </div>
           </div>

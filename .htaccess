@@ -65,6 +65,16 @@
 	</IfModule>
 # END iThemes Security - Do not modify or remove this line
 
+# BEGIN Custom Redirect to Admin
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /sabarajendran/
+	# Redirect root domain to wp-admin
+	RewriteCond %{REQUEST_URI} ^/sabarajendran/?$
+	RewriteRule ^(.*)$ /sabarajendran/wp-admin/ [R=301,L]
+</IfModule>
+# END Custom Redirect to Admin
+
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
 # dynamically generated, and should only be modified via WordPress filters.

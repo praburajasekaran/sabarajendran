@@ -46,9 +46,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Sidebar Container - Editorial Style */}
       <div className={`
-        fixed lg:sticky lg:top-0 inset-y-0 left-0 z-40 w-80 bg-accent-50 border-r border-accent-200 transform transition-transform duration-300 ease-in-out shadow-2xl lg:shadow-none
+        fixed lg:sticky lg:top-0 inset-y-0 left-0 z-40 w-80 bg-slate-50 border-r border-accent-200 transform transition-transform duration-300 ease-in-out shadow-2xl lg:shadow-none
         ${isOpenMobile ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-        h-full lg:h-[calc(100vh-80px)] overflow-hidden flex flex-col
+        h-full lg:h-[calc(100vh-80px)] overflow-hidden flex flex-col relative
       `}>
         {/* Header */}
         <div className="p-6 border-b border-accent-200 bg-white/60 backdrop-blur-sm shrink-0">
@@ -78,7 +78,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         {/* Scrollable List */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-accent-300 hover:scrollbar-thumb-accent-400">
+        <div className="flex-1 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-accent-300 hover:scrollbar-thumb-accent-400 min-h-0 bg-slate-50">
           {/* All Villages Option */}
           {!searchTerm && (
             <button
@@ -153,6 +153,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
           )}
         </div>
+        
       </div>
     </>
   );

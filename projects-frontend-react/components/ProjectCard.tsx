@@ -7,6 +7,7 @@ import {
 import { Project, ProjectStatus, ProjectType } from '../types';
 import { Lightbox } from './Lightbox';
 import { useLanguage } from '../contexts/LanguageContext';
+import { TruncatedText } from './TruncatedText';
 
 interface ProjectCardProps {
   project: Project;
@@ -104,7 +105,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         {/* Content Overlay Card (Bottom) */}
         <div className="relative -mt-12 mx-4 mb-4 bg-white rounded-xl shadow-lg p-6 flex flex-col flex-1">
           {/* Title */}
-          <h3 className="font-serif text-xl font-bold text-neutral-900 mb-2 leading-tight line-clamp-2" title={displayTitle}>
+          <TruncatedText
+            as="h3"
+            maxLines={2}
+            className="font-serif text-xl font-bold text-neutral-900 mb-2 leading-tight"
+          >
             {(() => {
               // Always try to split if @ is present
               const splitIndex = displayTitle.indexOf(' @ ');
@@ -113,7 +118,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               }
               return displayTitle;
             })()}
-          </h3>
+          </TruncatedText>
 
           {/* Description */}
           {(() => {
@@ -122,9 +127,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             // Case 1: Split found - show the second part as description
             if (splitIndex !== -1) {
               return (
-                <p className="text-neutral-600 text-sm mb-4 line-clamp-2 flex-1">
+                <TruncatedText
+                  as="p"
+                  maxLines={2}
+                  className="text-neutral-600 text-sm mb-4 flex-1"
+                >
                   {displayTitle.substring(splitIndex + 1)}
-                </p>
+                </TruncatedText>
               );
             }
 
@@ -135,9 +144,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
             // Case 3: Different content - show description
             return (
-              <p className="text-neutral-600 text-sm mb-4 line-clamp-2 flex-1">
+              <TruncatedText
+                as="p"
+                maxLines={2}
+                className="text-neutral-600 text-sm mb-4 flex-1"
+              >
                 {displayDescription}
-              </p>
+              </TruncatedText>
             );
           })()}
 
@@ -145,38 +158,40 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <div className="mt-auto pt-4 border-t border-accent-100">
             <div className="flex flex-col gap-3 text-sm">
               {/* Top Row: Village (left) + Year (right) */}
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex items-center justify-between gap-4">
                 {/* Village - Left */}
-                <div className="flex items-start gap-2 flex-1 min-w-0">
-                  <MapPin size={16} className="text-primary-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-neutral-700 truncate text-xs font-medium">{project.village}</span>
+                <div className="flex items-center gap-2 flex-1 min-w-0">
+                  <MapPin size={16} className="text-primary-600 flex-shrink-0" />
+                  <TruncatedText className="text-neutral-700 text-xs font-medium">
+                    {project.village}
+                  </TruncatedText>
                 </div>
 
                 {/* Year - Right */}
-                <div className="flex items-start gap-2 flex-shrink-0">
-                  <Calendar size={16} className="text-secondary-600 flex-shrink-0 mt-0.5" />
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <Calendar size={16} className="text-secondary-600 flex-shrink-0" />
                   <span className="text-neutral-700 text-xs font-medium whitespace-nowrap">{project.year}</span>
                 </div>
               </div>
 
               {/* Bottom Row: Scheme (left) + Budget (right) */}
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex items-end justify-between gap-4">
                 {/* Scheme - Left */}
                 {project.scheme ? (
-                  <div className="flex items-start gap-2 flex-1 min-w-0">
-                    <FileText size={16} className="text-primary-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-neutral-700 text-xs font-medium truncate" title={project.scheme}>
+                  <div className="flex items-center gap-2 flex-1 min-w-0">
+                    <FileText size={16} className="text-primary-600 flex-shrink-0" />
+                    <TruncatedText className="text-neutral-700 text-xs font-medium">
                       {project.scheme}
-                    </span>
+                    </TruncatedText>
                   </div>
                 ) : (
                   <div className="flex-1"></div>
                 )}
 
                 {/* Budget - Right */}
-                <div className="flex items-start gap-2 flex-shrink-0">
-                  <Banknote size={18} className="text-primary-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-primary-700 font-mono text-base font-bold whitespace-nowrap">{project.budget}</span>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <Banknote size={18} className="text-primary-600 flex-shrink-0" />
+                  <span className="text-primary-700 font-mono text-lg font-bold whitespace-nowrap leading-none">{project.budget}</span>
                 </div>
               </div>
             </div>

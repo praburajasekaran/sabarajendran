@@ -10,10 +10,13 @@ import { Project, ProjectStatus } from '../types';
 import { generateOrganizationSchema, generatePersonSchema } from '../utils/seo';
 
 export const Home: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  
+  // Get language prefix for all links
+  const langPrefix = language === 'ta' ? '/ta' : '';
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -134,14 +137,14 @@ export const Home: React.FC = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <button
-                  onClick={() => navigate('/projects')}
+                  onClick={() => navigate(`${langPrefix}/projects`)}
                   className="px-8 py-4 bg-primary-600 text-white rounded-lg font-bold hover:bg-primary-500 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2"
                 >
                   {t.home.viewProjects}
                   <ArrowRight size={20} />
                 </button>
                 <button
-                  onClick={() => navigate('/about')}
+                  onClick={() => navigate(`${langPrefix}/about`)}
                   className="px-8 py-4 border-2 border-neutral-600 text-neutral-200 rounded-lg font-semibold hover:border-white hover:text-white hover:bg-white/5 transition-all flex items-center justify-center link-expand"
                 >
                   {t.home.contactOffice}
@@ -309,7 +312,7 @@ export const Home: React.FC = () => {
             {blockCounts.map(({ name, count }) => (
               <div
                 key={name}
-                onClick={() => navigate(`/projects?block=${encodeURIComponent(name)}`)}
+                onClick={() => navigate(`${langPrefix}/projects?block=${encodeURIComponent(name)}`)}
                 className="group relative p-8 bg-white border-2 border-accent-200 rounded-2xl hover:border-primary-500 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
               >
                 {/* Subtle gradient overlay */}
@@ -367,7 +370,7 @@ export const Home: React.FC = () => {
                 </p>
               </div>
               <button
-                onClick={() => navigate('/projects')}
+                onClick={() => navigate(`${langPrefix}/projects`)}
                 className="hidden lg:flex items-center gap-2 text-primary-600 font-bold hover:text-primary-700 transition-colors group link-expand relative pb-1"
               >
                 {t.home.viewAll}
@@ -404,7 +407,7 @@ export const Home: React.FC = () => {
           {/* View All Link - Mobile */}
           <div className="mt-12 text-center lg:hidden">
             <button
-              onClick={() => navigate('/projects')}
+              onClick={() => navigate(`${langPrefix}/projects`)}
               className="inline-flex items-center gap-2 text-primary-600 font-bold hover:text-primary-700 transition-colors link-expand relative pb-1"
             >
               {t.home.viewAll}

@@ -17,7 +17,7 @@ define('WPCACHEHOME', '/Applications/MAMP/htdocs/sabarajendran/wp-content/plugin
 define('DB_NAME', 'sabarajendran');
 define('DB_USER', 'root');
 define('DB_PASSWORD', 'root');
-define('DB_HOST', 'localhost:8118');
+define('DB_HOST', 'localhost:8889');
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 
@@ -80,6 +80,9 @@ define('WP_MAX_MEMORY_LIMIT', '1024M');
 
 // Disable Plugin and Theme Update/Installation
 // define( 'DISALLOW_FILE_MODS', true ); // Uncomment after all plugins installed
+
+define('OPENROUTER_API_KEY', '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');
+
 
 // Security Headers (additional layer)
 header('X-Frame-Options: SAMEORIGIN');

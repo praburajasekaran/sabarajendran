@@ -39,20 +39,34 @@ export const SEO: React.FC<SEOProps> = ({
     const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     const metaDescription = description || defaultDescription;
     const siteUrl = 'https://sabarajendran.com'; // Replace with actual domain
-    const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
+    
+    // Determine current path and generate language alternates
+    const currentPath = url || window.location.pathname;
+    const isOnTamilPage = currentPath.startsWith('/ta');
+    
+    // Generate URLs for both languages
+    const enPath = isOnTamilPage ? currentPath.replace(/^\/ta/, '') || '/' : currentPath;
+    const taPath = isOnTamilPage ? currentPath : `/ta${currentPath}`;
+    
+    const fullUrl = `${siteUrl}${currentPath}`;
+    const enUrl = `${siteUrl}${enPath}`;
+    const taUrl = `${siteUrl}${taPath}`;
     const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
     return (
         <Helmet>
+            {/* HTML lang attribute */}
+            <html lang={language} />
+            
             {/* Standard Metadata */}
             <title>{fullTitle}</title>
             <meta name="description" content={metaDescription} />
             <link rel="canonical" href={fullUrl} />
 
             {/* Language Alternates */}
-            <link rel="alternate" hrefLang="en" href={fullUrl} />
-            <link rel="alternate" hrefLang="ta" href={fullUrl} />
-            <link rel="alternate" hrefLang="x-default" href={fullUrl} />
+            <link rel="alternate" hrefLang="en" href={enUrl} />
+            <link rel="alternate" hrefLang="ta" href={taUrl} />
+            <link rel="alternate" hrefLang="x-default" href={enUrl} />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={type} />
@@ -60,6 +74,7 @@ export const SEO: React.FC<SEOProps> = ({
             <meta property="og:title" content={fullTitle} />
             <meta property="og:description" content={metaDescription} />
             <meta property="og:image" content={fullImage} />
+            <meta property="og:locale" content={language === 'ta' ? 'ta_IN' : 'en_IN'} />
 
             {/* Twitter */}
             <meta property="twitter:card" content="summary_large_image" />
@@ -91,21 +106,36 @@ export const ProjectsSEO: React.FC<ProjectsSEOProps> = ({ filters, resultCount }
     const canonicalUrl = generateCanonicalUrl(filters);
     const shouldIndex = shouldIndexFilteredPage(filters);
 
+    // Determine if we're on a Tamil page and generate language alternates
+    const currentPath = window.location.pathname;
+    const isOnTamilPage = currentPath.startsWith('/ta');
+    
+    // Generate URLs for both languages
+    const enPath = isOnTamilPage ? currentPath.replace(/^\/ta/, '') || '/' : currentPath;
+    const taPath = isOnTamilPage ? currentPath : `/ta${currentPath}`;
+    
+    const siteUrl = 'https://sabarajendran.com';
+    const enUrl = `${siteUrl}${enPath}${window.location.search}`;
+    const taUrl = `${siteUrl}${taPath}${window.location.search}`;
+
     // Generate structured data
     const projectData = generateProjectStructuredData(filters, resultCount);
     const breadcrumbData = generateBreadcrumbStructuredData(filters);
 
     return (
         <Helmet>
+            {/* HTML lang attribute */}
+            <html lang={language} />
+            
             {/* Standard Metadata */}
             <title>{title}</title>
             <meta name="description" content={description} />
             <link rel="canonical" href={canonicalUrl} />
 
             {/* Language Alternates */}
-            <link rel="alternate" hrefLang="en" href={canonicalUrl} />
-            <link rel="alternate" hrefLang="ta" href={canonicalUrl} />
-            <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+            <link rel="alternate" hrefLang="en" href={enUrl} />
+            <link rel="alternate" hrefLang="ta" href={taUrl} />
+            <link rel="alternate" hrefLang="x-default" href={enUrl} />
 
             {/* Robots Meta - Strategic Indexing */}
             {!shouldIndex && <meta name="robots" content="noindex, follow" />}
