@@ -14,7 +14,7 @@ export const Home: React.FC = () => {
   const navigate = useNavigate();
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   // Get language prefix for all links
   const langPrefix = language === 'ta' ? '/ta' : '';
 
@@ -116,13 +116,13 @@ export const Home: React.FC = () => {
               <div className="flex items-center gap-3">
                 <div className="h-px w-12 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
                 <span className="text-sm font-mono uppercase tracking-wider text-accent-300">
-                  Neyveli Constituency
+                  {t.home.heroSubtitle}
                 </span>
               </div>
 
               {/* Large serif headline */}
               <h1 className="font-serif text-display-lg md:text-display-lg lg:text-[5rem] font-bold leading-[0.95] tracking-tight">
-                Building Neyveli's <span className="gradient-text">Future</span>, One Village at a Time
+                {t.home.heroPrefix} <span className="gradient-text">{t.home.heroHighlight}</span>{t.home.heroSuffix}
               </h1>
 
               <p className="text-body-lg text-neutral-300 max-w-2xl leading-relaxed">
