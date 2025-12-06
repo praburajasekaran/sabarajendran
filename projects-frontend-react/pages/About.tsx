@@ -67,23 +67,23 @@ export const About: React.FC = () => {
                                 <div className="flex items-start gap-3">
                                     <div className="p-2 bg-accent-100 rounded-lg text-primary-600 flex-shrink-0"><Flag size={20} /></div>
                                     <div>
-                                        <p className="text-xs text-neutral-500 uppercase font-mono font-bold tracking-wider mb-1">Party</p>
-                                        <p className="font-semibold text-neutral-900 leading-tight">Dravida Munnetra Kazhagam (DMK)</p>
+                                        <p className="text-xs text-neutral-500 uppercase font-mono font-bold tracking-wider mb-1">{t.about.mlaCard.party}</p>
+                                        <p className="font-semibold text-neutral-900 leading-tight">{t.about.mlaCard.partyName}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <div className="p-2 bg-accent-100 rounded-lg text-primary-600 flex-shrink-0"><Briefcase size={20} /></div>
                                     <div>
-                                        <p className="text-xs text-neutral-500 uppercase font-mono font-bold tracking-wider mb-1">Constituency</p>
-                                        <p className="font-semibold text-neutral-900">Neyveli (153)</p>
+                                        <p className="text-xs text-neutral-500 uppercase font-mono font-bold tracking-wider mb-1">{t.about.mlaCard.constituency}</p>
+                                        <p className="font-semibold text-neutral-900">{t.about.mlaCard.constituencyName}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <div className="p-2 bg-accent-100 rounded-lg text-primary-600 flex-shrink-0"><Award size={20} /></div>
                                     <div>
-                                        <p className="text-xs text-neutral-500 uppercase font-mono font-bold tracking-wider mb-1">Terms</p>
+                                        <p className="text-xs text-neutral-500 uppercase font-mono font-bold tracking-wider mb-1">{t.about.mlaCard.terms}</p>
                                         <p className="font-semibold text-neutral-900">2016 - 2021</p>
-                                        <p className="font-semibold text-neutral-900">2021 - Present</p>
+                                        <p className="font-semibold text-neutral-900">2021 - {t.about.mlaCard.present}</p>
                                     </div>
                                 </div>
                             </div>

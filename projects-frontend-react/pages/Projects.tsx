@@ -1,4 +1,11 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import { getVillageName } from '../utils/villageTranslations';
+
+// ... (imports are at the top, I will insert the import at the top and then replace the title line)
+
+// Wait, replace_file_content replaces a contiguous block. I need to add the import AND change the line 312.
+// They are far apart. I should use multi_replace_file_content.
+
 import { Filter, Search, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, CheckCircle2, Clock, AlertCircle, LayoutGrid, XCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Sidebar } from '../components/Sidebar';
@@ -206,10 +213,10 @@ export const ProjectsPage: React.FC = () => {
     if ((filters.block !== 'All' || filters.panchayat !== 'All') && filters.village !== null) {
       // Check if the current village belongs to the selected block/panchayat
       const villageProject = projects.find(p => p.village === filters.village);
-      const villageMatchesHierarchy = villageProject && 
+      const villageMatchesHierarchy = villageProject &&
         (filters.block === 'All' || villageProject.block === filters.block) &&
         (filters.panchayat === 'All' || villageProject.panchayat === filters.panchayat);
-      
+
       // Only clear village if it doesn't match the new hierarchy
       if (!villageMatchesHierarchy) {
         updateFilters({ village: null }, { replace: true });
@@ -292,333 +299,332 @@ export const ProjectsPage: React.FC = () => {
         {/* Main Content Area - Editorial Style */}
         <div className="flex-1 flex flex-col bg-accent-50 w-full relative pb-0">
 
-        {/* Toolbar / Filter Bar */}
-        <div className="bg-white border-b border-accent-200 z-20 shadow-sm flex-shrink-0">
-          <div className="p-4 sm:p-6 flex flex-col gap-3 sm:gap-6">
+          {/* Toolbar / Filter Bar */}
+          <div className="bg-white border-b border-accent-200 z-20 shadow-sm flex-shrink-0">
+            <div className="p-4 sm:p-6 flex flex-col gap-3 sm:gap-6">
 
-            {/* Party Banner integrated here */}
-            <div className="hidden md:block">
+              {/* Party Banner integrated here */}
+              <div className="hidden md:block">
+                <PartyBanner />
+              </div>
+
+              {/* Top Row: Title & Mobile Toggle Layout */}
+              <div className="flex flex-col gap-3 sm:gap-4 lg:flex-row lg:items-center lg:justify-between">
+
+                {/* Title Section - Editorial Style */}
+                <div>
+                  <h1 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 flex items-center gap-2 sm:gap-3">
+                    {filters.village ? (
+                      <>
+                        {getVillageName(filters.village, language)}
+                        <button
+                          onClick={() => updateFilters({ village: null, block: 'All', panchayat: 'All' })}
+                          className="text-neutral-400 hover:text-primary-600 transition-colors"
+                          title="Clear village filter"
+                        >
+                          <XCircle size={20} className="sm:w-[22px] sm:h-[22px]" />
+                        </button>
+                      </>
+                    ) : t.projects.allProjects}
+                  </h1>
+                  <p className="text-xs sm:text-sm text-neutral-600 mt-0.5 sm:mt-1 font-medium">
+                    {t.projects.showing} {filteredProjects.length} {t.projects.results}
+                  </p>
+                </div>
+
+                {/* Controls Section: Stacked on Mobile, Inline on Desktop */}
+                <div className="flex gap-2 sm:gap-3 w-full lg:w-auto">
+                  {/* Prominent Village Filter Button for Mobile */}
+                  <button
+                    className="lg:hidden flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-5 sm:py-2.5 bg-primary-500 text-white rounded-xl text-xs sm:text-sm font-medium shadow-sm active:bg-primary-600 transition-all shrink-0 hover:shadow-md"
+                    onClick={() => setIsMobileSidebarOpen(true)}
+                  >
+                    <Filter size={14} className="sm:w-4 sm:h-4" />
+                    {t.projects.filterVillages}
+                  </button>
+
+                  {/* Search Bar - Editorial Style */}
+                  <div className="relative flex-grow lg:w-80">
+                    <Search className="absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 text-accent-500" size={14} />
+                    <input
+                      type="text"
+                      placeholder={t.projects.searchPlaceholder}
+                      className="w-full pl-8 sm:pl-10 pr-3 sm:pr-4 py-2 sm:py-2.5 bg-white border-2 border-accent-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 transition-all placeholder:text-accent-400"
+                      value={filters.search}
+                      onChange={(e) => updateFilters({ search: e.target.value })}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Middle Row: Visual Status Tabs - Editorial Style */}
+              <div className="flex overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+                <div className="flex p-1 sm:p-1.5 bg-accent-100 rounded-xl whitespace-nowrap">
+                  <button
+                    onClick={() => updateFilters({ status: 'All' })}
+                    className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === 'All'
+                      ? 'bg-white text-primary-600 shadow-sm'
+                      : 'text-neutral-600 hover:text-neutral-900'
+                      }`}
+                  >
+                    <LayoutGrid size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterAll}
+                  </button>
+                  <button
+                    onClick={() => updateFilters({ status: ProjectStatus.COMPLETED })}
+                    className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === ProjectStatus.COMPLETED
+                      ? 'bg-white text-secondary-600 shadow-sm'
+                      : 'text-neutral-600 hover:text-secondary-600'
+                      }`}
+                  >
+                    <CheckCircle2 size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterCompleted}
+                  </button>
+                  <button
+                    onClick={() => updateFilters({ status: ProjectStatus.ONGOING })}
+                    className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === ProjectStatus.ONGOING
+                      ? 'bg-white text-primary-600 shadow-sm'
+                      : 'text-neutral-600 hover:text-primary-600'
+                      }`}
+                  >
+                    <Clock size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterOngoing}
+                  </button>
+                </div>
+              </div>
+
+              {/* Bottom Row: Pill Filters for Block, Panchayat, Type & Year - Editorial Style */}
+              <div className="flex flex-wrap items-end gap-2 sm:gap-4 overflow-x-auto">
+                {/* Block Filter */}
+                <div className="flex flex-col gap-0.5 sm:gap-1">
+                  <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
+                    {t.projects.labelBlock} / பிரிவு
+                  </label>
+                  <select
+                    value={filters.block}
+                    onChange={(e) => updateFilters({ block: e.target.value })}
+                    className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.block !== 'All'
+                      ? 'bg-secondary-50 border-secondary-400 text-secondary-700'
+                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
+                      }`}
+                  >
+                    <option value="All">All Blocks</option>
+                    {blocks.map(block => (
+                      <option key={block} value={block}>{block}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Panchayat Filter */}
+                <div className="flex flex-col gap-0.5 sm:gap-1">
+                  <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
+                    {t.projects.labelPanchayat} / பஞ்சாயத்து
+                  </label>
+                  <select
+                    value={filters.panchayat}
+                    onChange={(e) => updateFilters({ panchayat: e.target.value })}
+                    className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.panchayat !== 'All'
+                      ? 'bg-accent-100 border-accent-400 text-accent-700'
+                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
+                      }`}
+                    disabled={filters.block === 'All'}
+                  >
+                    <option value="All">
+                      {filters.block === 'All' ? 'Select Block First' : 'All Panchayats'}
+                    </option>
+                    {panchayats.map(panchayat => (
+                      <option key={panchayat} value={panchayat}>{panchayat}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Type Filter */}
+                <div className="flex flex-col gap-0.5 sm:gap-1">
+                  <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
+                    {t.projects.labelSector} / துறை
+                  </label>
+                  <select
+                    value={filters.type}
+                    onChange={(e) => updateFilters({ type: e.target.value })}
+                    className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.type !== 'All'
+                      ? 'bg-primary-50 border-primary-400 text-primary-700'
+                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
+                      }`}
+                  >
+                    <option value="All">{t.projects.allSectors}</option>
+                    {Object.values(ProjectType).map(type => (
+                      <option key={type} value={type}>{t.types[type] || type}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Year Filter */}
+                <div className="flex flex-col gap-0.5 sm:gap-1">
+                  <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
+                    {t.projects.labelYear} / ஆண்டு
+                  </label>
+                  <select
+                    value={filters.year}
+                    onChange={(e) => updateFilters({ year: e.target.value })}
+                    className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.year !== 'All'
+                      ? 'bg-primary-50 border-primary-400 text-primary-700'
+                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
+                      }`}
+                  >
+                    <option value="All">{t.projects.allYears}</option>
+                    {years.map(year => (
+                      <option key={year} value={year}>{year}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Scheme Filter */}
+                <div className="flex flex-col gap-0.5 sm:gap-1">
+                  <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
+                    {t.projects.labelScheme} / திட்டம்
+                  </label>
+                  <select
+                    value={filters.scheme}
+                    onChange={(e) => updateFilters({ scheme: e.target.value })}
+                    className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.scheme !== 'All'
+                      ? 'bg-primary-50 border-primary-400 text-primary-700'
+                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
+                      }`}
+                  >
+                    <option value="All">{t.projects.allSchemes}</option>
+                    {schemes.map(scheme => (
+                      <option key={scheme} value={scheme}>{scheme}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Reset Button - Editorial Style */}
+                {(filters.block !== 'All' || filters.panchayat !== 'All' || filters.year !== 'All' || filters.type !== 'All' || filters.scheme !== 'All') && (
+                  <div className="flex flex-col gap-0.5 sm:gap-1">
+                    <div className="h-[14px] sm:h-[20px]"></div>
+                    <button
+                      onClick={() => updateFilters({
+                        block: 'All',
+                        panchayat: 'All',
+                        year: 'All',
+                        type: 'All',
+                        scheme: 'All'
+                      })}
+                      className="text-[10px] sm:text-xs text-primary-600 hover:text-primary-700 font-semibold underline px-2 py-1.5 sm:px-3 sm:py-2 transition-colors whitespace-nowrap"
+                    >
+                      {t.projects.reset}
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Scrollable Project Grid */}
+          <div id="projects-grid-top" className="flex-1 p-4 md:p-6 scroll-smooth">
+            {/* Mobile Party Banner */}
+            <div className="block md:hidden mb-6">
               <PartyBanner />
             </div>
 
-            {/* Top Row: Title & Mobile Toggle Layout */}
-            <div className="flex flex-col gap-3 sm:gap-4 lg:flex-row lg:items-center lg:justify-between">
-
-              {/* Title Section - Editorial Style */}
-              <div>
-                <h1 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 flex items-center gap-2 sm:gap-3">
-                  {filters.village ? (
-                    <>
-                      {filters.village}
-                      <button
-                        onClick={() => updateFilters({ village: null, block: 'All', panchayat: 'All' })}
-                        className="text-neutral-400 hover:text-primary-600 transition-colors"
-                        title="Clear village filter"
-                      >
-                        <XCircle size={20} className="sm:w-[22px] sm:h-[22px]" />
-                      </button>
-                    </>
-                  ) : t.projects.allProjects}
-                </h1>
-                <p className="text-xs sm:text-sm text-neutral-600 mt-0.5 sm:mt-1 font-medium">
-                  {t.projects.showing} {filteredProjects.length} {t.projects.results}
-                </p>
-              </div>
-
-              {/* Controls Section: Stacked on Mobile, Inline on Desktop */}
-              <div className="flex gap-2 sm:gap-3 w-full lg:w-auto">
-                {/* Prominent Village Filter Button for Mobile */}
-                <button
-                  className="lg:hidden flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-5 sm:py-2.5 bg-primary-500 text-white rounded-xl text-xs sm:text-sm font-medium shadow-sm active:bg-primary-600 transition-all shrink-0 hover:shadow-md"
-                  onClick={() => setIsMobileSidebarOpen(true)}
-                >
-                  <Filter size={14} className="sm:w-4 sm:h-4" />
-                  {t.projects.filterVillages}
-                </button>
-
-                {/* Search Bar - Editorial Style */}
-                <div className="relative flex-grow lg:w-80">
-                  <Search className="absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 text-accent-500" size={14} />
-                  <input
-                    type="text"
-                    placeholder={t.projects.searchPlaceholder}
-                    className="w-full pl-8 sm:pl-10 pr-3 sm:pr-4 py-2 sm:py-2.5 bg-white border-2 border-accent-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 transition-all placeholder:text-accent-400"
-                    value={filters.search}
-                    onChange={(e) => updateFilters({ search: e.target.value })}
-                  />
+            {filteredProjects.length > 0 ? (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+                  {paginatedProjects.map(project => (
+                    <ProjectCard key={project.id} project={project} />
+                  ))}
                 </div>
-              </div>
-            </div>
 
-            {/* Middle Row: Visual Status Tabs - Editorial Style */}
-            <div className="flex overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-              <div className="flex p-1 sm:p-1.5 bg-accent-100 rounded-xl whitespace-nowrap">
-                <button
-                  onClick={() => updateFilters({ status: 'All' })}
-                  className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === 'All'
-                    ? 'bg-white text-primary-600 shadow-sm'
-                    : 'text-neutral-600 hover:text-neutral-900'
-                    }`}
-                >
-                  <LayoutGrid size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterAll}
-                </button>
-                <button
-                  onClick={() => updateFilters({ status: ProjectStatus.COMPLETED })}
-                  className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === ProjectStatus.COMPLETED
-                    ? 'bg-white text-secondary-600 shadow-sm'
-                    : 'text-neutral-600 hover:text-secondary-600'
-                    }`}
-                >
-                  <CheckCircle2 size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterCompleted}
-                </button>
-                <button
-                  onClick={() => updateFilters({ status: ProjectStatus.ONGOING })}
-                  className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === ProjectStatus.ONGOING
-                    ? 'bg-white text-primary-600 shadow-sm'
-                    : 'text-neutral-600 hover:text-primary-600'
-                    }`}
-                >
-                  <Clock size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterOngoing}
-                </button>
-              </div>
-            </div>
+                {/* Pagination Controls */}
+                {totalPages > 1 && (
+                  <div className="flex justify-center items-center space-x-2 pb-8">
+                    <button
+                      onClick={() => handlePageChange(1)}
+                      disabled={filters.page === 1}
+                      className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
+                    >
+                      <ChevronsLeft size={18} />
+                    </button>
+                    <button
+                      onClick={() => handlePageChange(filters.page - 1)}
+                      disabled={filters.page === 1}
+                      className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
+                    >
+                      <ChevronLeft size={18} />
+                    </button>
 
-            {/* Bottom Row: Pill Filters for Block, Panchayat, Type & Year - Editorial Style */}
-            <div className="flex flex-wrap items-end gap-2 sm:gap-4 overflow-x-auto">
-              {/* Block Filter */}
-              <div className="flex flex-col gap-0.5 sm:gap-1">
-                <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
-                  {t.projects.labelBlock} / பிரிவு
-                </label>
-                <select
-                  value={filters.block}
-                  onChange={(e) => updateFilters({ block: e.target.value })}
-                  className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.block !== 'All'
-                    ? 'bg-secondary-50 border-secondary-400 text-secondary-700'
-                    : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                    }`}
-                >
-                  <option value="All">All Blocks</option>
-                  {blocks.map(block => (
-                    <option key={block} value={block}>{block}</option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Panchayat Filter */}
-              <div className="flex flex-col gap-0.5 sm:gap-1">
-                <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
-                  {t.projects.labelPanchayat} / பஞ்சாயத்து
-                </label>
-                <select
-                  value={filters.panchayat}
-                  onChange={(e) => updateFilters({ panchayat: e.target.value })}
-                  className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.panchayat !== 'All'
-                    ? 'bg-accent-100 border-accent-400 text-accent-700'
-                    : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                    }`}
-                  disabled={filters.block === 'All'}
-                >
-                  <option value="All">
-                    {filters.block === 'All' ? 'Select Block First' : 'All Panchayats'}
-                  </option>
-                  {panchayats.map(panchayat => (
-                    <option key={panchayat} value={panchayat}>{panchayat}</option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Type Filter */}
-              <div className="flex flex-col gap-0.5 sm:gap-1">
-                <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
-                  {t.projects.labelSector} / துறை
-                </label>
-                <select
-                  value={filters.type}
-                  onChange={(e) => updateFilters({ type: e.target.value })}
-                  className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.type !== 'All'
-                    ? 'bg-primary-50 border-primary-400 text-primary-700'
-                    : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                    }`}
-                >
-                  <option value="All">{t.projects.allSectors}</option>
-                  {Object.values(ProjectType).map(type => (
-                    <option key={type} value={type}>{t.types[type] || type}</option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Year Filter */}
-              <div className="flex flex-col gap-0.5 sm:gap-1">
-                <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
-                  {t.projects.labelYear} / ஆண்டு
-                </label>
-                <select
-                  value={filters.year}
-                  onChange={(e) => updateFilters({ year: e.target.value })}
-                  className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.year !== 'All'
-                    ? 'bg-primary-50 border-primary-400 text-primary-700'
-                    : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                    }`}
-                >
-                  <option value="All">{t.projects.allYears}</option>
-                  {years.map(year => (
-                    <option key={year} value={year}>{year}</option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Scheme Filter */}
-              <div className="flex flex-col gap-0.5 sm:gap-1">
-                <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
-                  {t.projects.labelScheme} / திட்டம்
-                </label>
-                <select
-                  value={filters.scheme}
-                  onChange={(e) => updateFilters({ scheme: e.target.value })}
-                  className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${
-                    filters.scheme !== 'All'
-                      ? 'bg-primary-50 border-primary-400 text-primary-700'
-                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                  }`}
-                >
-                  <option value="All">{t.projects.allSchemes}</option>
-                  {schemes.map(scheme => (
-                    <option key={scheme} value={scheme}>{scheme}</option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Reset Button - Editorial Style */}
-              {(filters.block !== 'All' || filters.panchayat !== 'All' || filters.year !== 'All' || filters.type !== 'All' || filters.scheme !== 'All') && (
-                <div className="flex flex-col gap-0.5 sm:gap-1">
-                  <div className="h-[14px] sm:h-[20px]"></div>
-                  <button
-                    onClick={() => updateFilters({
-                      block: 'All',
-                      panchayat: 'All',
-                      year: 'All',
-                      type: 'All',
-                      scheme: 'All'
-                    })}
-                    className="text-[10px] sm:text-xs text-primary-600 hover:text-primary-700 font-semibold underline px-2 py-1.5 sm:px-3 sm:py-2 transition-colors whitespace-nowrap"
-                  >
-                    {t.projects.reset}
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Scrollable Project Grid */}
-        <div id="projects-grid-top" className="flex-1 p-4 md:p-6 scroll-smooth">
-          {/* Mobile Party Banner */}
-          <div className="block md:hidden mb-6">
-            <PartyBanner />
-          </div>
-
-          {filteredProjects.length > 0 ? (
-            <>
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
-                {paginatedProjects.map(project => (
-                  <ProjectCard key={project.id} project={project} />
-                ))}
-              </div>
-
-              {/* Pagination Controls */}
-              {totalPages > 1 && (
-                <div className="flex justify-center items-center space-x-2 pb-8">
-                  <button
-                    onClick={() => handlePageChange(1)}
-                    disabled={filters.page === 1}
-                    className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
-                  >
-                    <ChevronsLeft size={18} />
-                  </button>
-                  <button
-                    onClick={() => handlePageChange(filters.page - 1)}
-                    disabled={filters.page === 1}
-                    className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
-                  >
-                    <ChevronLeft size={18} />
-                  </button>
-
-                  <div className="flex space-x-1 items-center bg-white rounded-lg border border-slate-200 p-1">
-                    {getPageNumbers().map((page, index) => (
-                      <React.Fragment key={index}>
-                        {page === '...' ? (
-                          <span className="px-3 py-1 text-slate-400 text-xs">...</span>
-                        ) : (
-                          <button
-                            onClick={() => handlePageChange(page as number)}
-                            className={`w-8 h-8 rounded-md text-sm font-semibold transition-all ${filters.page === page
-                              ? 'bg-primary-600 text-white shadow-sm'
-                              : 'text-slate-600 hover:bg-slate-50'
-                              }`}
-                          >
-                            {page}
-                          </button>
-                        )}
-                      </React.Fragment>
-                    ))}
-                  </div>
-
-                  <button
-                    onClick={() => handlePageChange(filters.page + 1)}
-                    disabled={filters.page === totalPages}
-                    className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
-                  >
-                    <ChevronRight size={18} />
-                  </button>
-                  <button
-                    onClick={() => handlePageChange(totalPages)}
-                    disabled={filters.page === totalPages}
-                    className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
-                  >
-                    <ChevronsRight size={18} />
-                  </button>
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="flex flex-col items-center justify-center h-[60vh]">
-              {filteredProjects.length === 0 && filters.village && filters.status === ProjectStatus.ONGOING && projects.some(p => p.village === filters.village && p.status === ProjectStatus.COMPLETED) ? (
-                <>
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-emerald-200 rounded-full opacity-20 blur-xl"></div>
-                    <div className="bg-white p-6 rounded-full shadow-lg relative z-10">
-                      <CheckCircle2 size={48} className="text-emerald-500" />
+                    <div className="flex space-x-1 items-center bg-white rounded-lg border border-slate-200 p-1">
+                      {getPageNumbers().map((page, index) => (
+                        <React.Fragment key={index}>
+                          {page === '...' ? (
+                            <span className="px-3 py-1 text-slate-400 text-xs">...</span>
+                          ) : (
+                            <button
+                              onClick={() => handlePageChange(page as number)}
+                              className={`w-8 h-8 rounded-md text-sm font-semibold transition-all ${filters.page === page
+                                ? 'bg-primary-600 text-white shadow-sm'
+                                : 'text-slate-600 hover:bg-slate-50'
+                                }`}
+                            >
+                              {page}
+                            </button>
+                          )}
+                        </React.Fragment>
+                      ))}
                     </div>
+
+                    <button
+                      onClick={() => handlePageChange(filters.page + 1)}
+                      disabled={filters.page === totalPages}
+                      className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
+                    >
+                      <ChevronRight size={18} />
+                    </button>
+                    <button
+                      onClick={() => handlePageChange(totalPages)}
+                      disabled={filters.page === totalPages}
+                      className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
+                    >
+                      <ChevronsRight size={18} />
+                    </button>
                   </div>
-                  <h3 className="mt-6 text-xl font-bold text-slate-700">Great News!</h3>
-                  <p className="text-slate-500 mt-2 max-w-md text-center">
-                    All planned projects in <span className="font-semibold text-slate-900">{filters.village}</span> are successfully completed!
-                  </p>
-                </>
-              ) : (
-                <>
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-primary-200 rounded-full opacity-20 blur-xl"></div>
-                    <div className="bg-white p-6 rounded-full shadow-lg relative z-10">
-                      <Search size={48} className="text-primary-300" />
+                )}
+              </>
+            ) : (
+              <div className="flex flex-col items-center justify-center h-[60vh]">
+                {filteredProjects.length === 0 && filters.village && filters.status === ProjectStatus.ONGOING && projects.some(p => p.village === filters.village && p.status === ProjectStatus.COMPLETED) ? (
+                  <>
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-emerald-200 rounded-full opacity-20 blur-xl"></div>
+                      <div className="bg-white p-6 rounded-full shadow-lg relative z-10">
+                        <CheckCircle2 size={48} className="text-emerald-500" />
+                      </div>
                     </div>
-                  </div>
-                  <h3 className="mt-6 text-xl font-bold text-slate-700">{t.projects.noResults}</h3>
-                  <p className="text-slate-500 mt-2 max-w-xs text-center">
-                    {t.projects.noResultsDesc}
-                  </p>
-                </>
-              )}
-              <button
-                onClick={resetFilters}
-                className="mt-6 px-6 py-2 bg-white border border-slate-300 text-slate-700 font-medium rounded-full hover:bg-slate-50 hover:border-slate-400 transition-colors"
-              >
-                {t.projects.clearFilters}
-              </button>
-            </div>
-          )}
-        </div>
+                    <h3 className="mt-6 text-xl font-bold text-slate-700">Great News!</h3>
+                    <p className="text-slate-500 mt-2 max-w-md text-center">
+                      All planned projects in <span className="font-semibold text-slate-900">{filters.village}</span> are successfully completed!
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-primary-200 rounded-full opacity-20 blur-xl"></div>
+                      <div className="bg-white p-6 rounded-full shadow-lg relative z-10">
+                        <Search size={48} className="text-primary-300" />
+                      </div>
+                    </div>
+                    <h3 className="mt-6 text-xl font-bold text-slate-700">{t.projects.noResults}</h3>
+                    <p className="text-slate-500 mt-2 max-w-xs text-center">
+                      {t.projects.noResultsDesc}
+                    </p>
+                  </>
+                )}
+                <button
+                  onClick={resetFilters}
+                  className="mt-6 px-6 py-2 bg-white border border-slate-300 text-slate-700 font-medium rounded-full hover:bg-slate-50 hover:border-slate-400 transition-colors"
+                >
+                  {t.projects.clearFilters}
+                </button>
+              </div>
+            )}
+          </div>
 
         </div>
       </div>

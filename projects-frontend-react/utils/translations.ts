@@ -46,7 +46,15 @@ export const TRANSLATIONS = {
         'Infrastructure: Ensuring 100% connectivity for all villages.',
         'Health: Improving public health centers and sanitation.',
         'Water: Sustainable water management for agriculture and drinking.'
-      ]
+      ],
+      mlaCard: {
+        party: 'Party',
+        partyName: 'Dravida Munnetra Kazhagam (DMK)',
+        constituency: 'Constituency',
+        constituencyName: 'Neyveli (153)',
+        terms: 'Terms',
+        present: 'Present',
+      }
     },
     projects: {
       allProjects: 'All Projects',
@@ -85,6 +93,8 @@ export const TRANSLATIONS = {
       contactTitle: 'Contact Us',
       copyright: 'Neyveli Constituency Office. All rights reserved.',
       quote: '"Serving the people is serving God."',
+      office1: 'MLA Office, Main Road, Neyveli Township, Tamil Nadu - 607801',
+      office2: 'Camp Office, Vadalur, Cuddalore District',
     },
     chat: {
       button: 'Ask AI Assistant',
@@ -157,7 +167,15 @@ export const TRANSLATIONS = {
         'உள்கட்டமைப்பு: அனைத்து கிராமங்களுக்கும் 100% சாலை வசதி.',
         'சுகாதாரம்: ஆரம்ப சுகாதார நிலையங்கள் மற்றும் சுகாதாரத்தை மேம்படுத்துதல்.',
         'நீர்: விவசாயம் மற்றும் குடிநீருக்கான நிலையான நீர் மேலாண்மை.'
-      ]
+      ],
+      mlaCard: {
+        party: 'கட்சி',
+        partyName: 'திராவிட முன்னேற்றக் கழகம் (திமுக)',
+        constituency: 'தொகுதி',
+        constituencyName: 'நெய்வேலி (153)',
+        terms: 'பதவிக்காலம்',
+        present: 'தற்போது வரை',
+      }
     },
     projects: {
       allProjects: 'அனைத்து திட்டங்கள்',
@@ -196,6 +214,8 @@ export const TRANSLATIONS = {
       contactTitle: 'தொடர்புக்கு',
       copyright: 'நெய்வேலி தொகுதி அலுவலகம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
       quote: '"மக்களுக்குச் செய்யும் பணியே மகேசனுக்குச் செய்யும் பணி."',
+      office1: 'எம்.எல்.ஏ அலுவலகம், மெயின் ரோடு, நெய்வேலி டவுன்ஷிப், தமிழ்நாடு - 607801',
+      office2: 'முகாம் அலுவலகம், வடலூர், கடலூர் மாவட்டம்',
     },
     chat: {
       button: 'உதவியாளரிடம் கேளுங்கள்',
