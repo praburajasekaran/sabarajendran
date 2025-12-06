@@ -77,6 +77,9 @@ export const TRANSLATIONS = {
       labelSector: 'Sector',
       labelYear: 'Year',
       labelScheme: 'Scheme',
+      allBlocks: 'All Blocks',
+      selectBlockFirst: 'Select Block First',
+      allPanchayats: 'All Panchayats',
     },
     sidebar: {
       title: 'Village List',
@@ -198,6 +201,9 @@ export const TRANSLATIONS = {
       labelSector: 'துறை',
       labelYear: 'ஆண்டு',
       labelScheme: 'திட்டம்',
+      allBlocks: 'அனைத்து பிரிவுகள்',
+      selectBlockFirst: 'முதலில் பிரிவை தேர்ந்தெடுக்கவும்',
+      allPanchayats: 'அனைத்து பஞ்சாயத்துகள்',
     },
     sidebar: {
       title: 'கிராமங்கள் பட்டியல்',

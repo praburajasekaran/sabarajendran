@@ -405,7 +405,7 @@ export const ProjectsPage: React.FC = () => {
                       : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
                       }`}
                   >
-                    <option value="All">All Blocks</option>
+                    <option value="All">{t.projects.allBlocks}</option>
                     {blocks.map(block => (
                       <option key={block} value={block}>{block}</option>
                     ))}
@@ -427,7 +427,7 @@ export const ProjectsPage: React.FC = () => {
                     disabled={filters.block === 'All'}
                   >
                     <option value="All">
-                      {filters.block === 'All' ? 'Select Block First' : 'All Panchayats'}
+                      {filters.block === 'All' ? t.projects.selectBlockFirst : t.projects.allPanchayats}
                     </option>
                     {panchayats.map(panchayat => (
                       <option key={panchayat} value={panchayat}>{panchayat}</option>
