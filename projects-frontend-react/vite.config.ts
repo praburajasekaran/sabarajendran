@@ -25,6 +25,14 @@ export default defineConfig(({ mode }) => {
     build: {
       commonjsOptions: {
         include: [/html2canvas/, /node_modules/]
+      },
+      rollupOptions: {
+        external: [],
+        output: {
+          manualChunks: {
+            'html2canvas': ['html2canvas']
+          }
+        }
       }
     }
   };
