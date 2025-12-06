@@ -18,6 +18,7 @@ import { Banknote } from 'lucide-react';
 import { Project } from '../types';
 import { FilterState } from '../utils/urlBuilder';
 import { generateHeroTitle, generateSubtitle, calculateGraphicHeight, getStatusColor } from '../utils/graphicHelpers';
+import { getVillageName } from '../utils/villageTranslations';
 
 interface ProjectGraphicProps {
   /** Projects to display (sorted by budget) */
@@ -226,7 +227,7 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
                     color: '#78716c',
                     fontWeight: '500'
                   }}>
-                    <div>📍 {project.village}</div>
+                    <div>📍 {getVillageName(project.village, lang as 'en' | 'ta')}</div>
                     {project.scheme && <div>📋 {project.scheme}</div>}
                     {!project.scheme && project.type && <div>🏗️ {project.type}</div>}
                   </div>
@@ -316,7 +317,7 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
                     textOverflow: 'ellipsis'
                   }}
                 >
-                  {project.village}
+                  {getVillageName(project.village, lang as 'en' | 'ta')}
                 </p>
               </div>
             ))}

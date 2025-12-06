@@ -61,13 +61,13 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-3 group">
                 <MapPin size={18} className="mt-0.5 text-accent-500 flex-shrink-0 group-hover:text-primary-500 transition-colors" />
                 <span className="text-neutral-400 group-hover:text-neutral-300 transition-colors">
-                  MLA Office, Main Road, Neyveli Township, Tamil Nadu - 607801
+                  {t.footer.office1}
                 </span>
               </li>
               <li className="flex items-start gap-3 group">
                 <MapPin size={18} className="mt-0.5 text-accent-500 flex-shrink-0 group-hover:text-primary-500 transition-colors" />
                 <span className="text-neutral-400 group-hover:text-neutral-300 transition-colors">
-                  Camp Office, Vadalur, Cuddalore District
+                  {t.footer.office2}
                 </span>
               </li>
             </ul>

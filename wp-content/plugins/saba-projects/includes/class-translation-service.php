@@ -24,7 +24,8 @@ class Saba_Translation_Service
 	/**
 	 * Get API key from options
 	 */
-	private function get_api_key() {
+	private function get_api_key()
+	{
 		return get_option('saba_projects_openrouter_key', '');
 	}
 
@@ -124,7 +125,7 @@ class Saba_Translation_Service
 				update_post_meta($project_id, '_project_title_tamil', $result['translation']);
 				$translated[] = 'title';
 				$this->log("SUCCESS: Translated title (" . mb_strlen($result['translation']) . " chars)");
-				
+
 				// Trigger action for Netlify deployment
 				do_action('saba_translation_completed', $project_id, 'project_title');
 			} else {
@@ -145,7 +146,7 @@ class Saba_Translation_Service
 				update_post_meta($project_id, '_project_description_tamil', $result['translation']);
 				$translated[] = 'description';
 				$this->log("SUCCESS: Translated description (" . mb_strlen($result['translation']) . " chars)");
-				
+
 				// Trigger action for Netlify deployment
 				do_action('saba_translation_completed', $project_id, 'project_description');
 			} else {
@@ -236,7 +237,7 @@ class Saba_Translation_Service
 
 Guidelines:
 - Use formal, government-appropriate Tamil
-- Preserve location names in their Tamil forms (e.g., Panruti → பானருட்டி, Neyveli → நெய்வேலி)
+- Preserve location names in their Tamil forms (e.g., Panruti → பண்ருட்டி, Neyveli → நெய்வேலி)
 - Keep technical terms accurate
 - Maintain the original meaning precisely
 - Use Tamil numerals where appropriate

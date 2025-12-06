@@ -36,3 +36,6 @@ import-*.php
 flush-*.php
 translate-*.php
 *-backup.php
+
+# Local Netlify folder
+.netlify
