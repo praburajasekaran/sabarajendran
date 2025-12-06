@@ -3,8 +3,30 @@ import { get, set } from 'idb-keyval';
 import { Project, ProjectStatus, ProjectType } from '../types';
 
 // WordPress API Endpoint
-const WP_API_URL = import.meta.env.VITE_WP_API_URL || 'http://localhost:8888/sabarajendran/wp-json/wp/v2';
+const WP_API_URL = import.meta.env.VITE_WP_API_URL || 'http://localhost:8118/sabarajendran/index.php?rest_route=/wp/v2';
 console.log('[wpService] Using WP API URL:', WP_API_URL);
+
+// Helper to build API URLs correctly
+const buildApiUrl = (endpoint: string, params: Record<string, any> = {}) => {
+    const isIndexPhpRoute = WP_API_URL.includes('index.php?rest_route=');
+
+    if (isIndexPhpRoute) {
+        // Extract base URL and rest_route
+        const [baseUrl, restRoute] = WP_API_URL.split('?rest_route=');
+        const fullRoute = `${restRoute}${endpoint}`;
+
+        // Build query params
+        const queryParams = new URLSearchParams(params);
+        const queryString = queryParams.toString();
+
+        return `${baseUrl}?rest_route=${fullRoute}${queryString ? '&' + queryString : ''}`;
+    } else {
+        // Standard pretty permalink format
+        const queryParams = new URLSearchParams(params);
+        const queryString = queryParams.toString();
+        return `${WP_API_URL}${endpoint}${queryString ? '?' + queryString : ''}`;
+    }
+};
 
 // Cache configuration
 const CACHE_KEY = 'wp_projects_cache_v5';
@@ -12,7 +34,19 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 let memoryCache: Project[] | null = null;
 let lastFetchTime = 0;
 
+// Callback for background updates
+type UpdateCallback = (projects: Project[]) => void;
+let updateCallbacks: UpdateCallback[] = [];
+
 export const wpService = {
+    // Subscribe to background updates
+    onUpdate: (callback: UpdateCallback) => {
+        updateCallbacks.push(callback);
+        return () => {
+            updateCallbacks = updateCallbacks.filter(cb => cb !== callback);
+        };
+    },
+
     getAllProjects: async (): Promise<Project[]> => {
         const startTime = performance.now();
         console.log('[wpService] Fetching projects...');
@@ -55,8 +89,10 @@ export const wpService = {
             memoryCache = cachedData;
 
             // Fetch fresh data in background (non-blocking)
-            wpService.fetchFreshProjects().then(() => {
-                console.log('[wpService] Background refresh completed');
+            wpService.fetchFreshProjects().then((freshData) => {
+                console.log('[wpService] Background refresh completed, notifying subscribers');
+                // Notify all subscribers about the update
+                updateCallbacks.forEach(cb => cb(freshData));
             }).catch(err => {
                 console.warn('[wpService] Background refresh failed', err);
             });
@@ -67,7 +103,8 @@ export const wpService = {
         try {
             console.log('[wpService] Fetching from API...');
             // Initial fetch to get the first page and total pages
-            const response = await axios.get(`${WP_API_URL}/project?per_page=100&_embed`);
+            const firstPageUrl = buildApiUrl('/project', { per_page: '100', _embed: 'true' });
+            const response = await axios.get(firstPageUrl);
             let allProjects = response.data;
 
             const totalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
@@ -77,9 +114,8 @@ export const wpService = {
                 // Create an array of promises for the remaining pages
                 const pagePromises = [];
                 for (let i = 2; i <= totalPages; i++) {
-                    pagePromises.push(
-                        axios.get(`${WP_API_URL}/project?per_page=100&_embed&page=${i}`)
-                    );
+                    const pageUrl = buildApiUrl('/project', { per_page: '100', _embed: 'true', page: i.toString() });
+                    pagePromises.push(axios.get(pageUrl));
                 }
 
                 // Fetch all remaining pages in parallel
@@ -120,11 +156,12 @@ export const wpService = {
     },
 
     // Helper method to fetch fresh projects in the background
-    fetchFreshProjects: async (): Promise<void> => {
+    fetchFreshProjects: async (): Promise<Project[]> => {
         try {
             console.log('[wpService] Background fetch started...');
             // Initial fetch to get the first page and total pages
-            const response = await axios.get(`${WP_API_URL}/project?per_page=100&_embed`);
+            const firstPageUrl = buildApiUrl('/project', { per_page: '100', _embed: 'true' });
+            const response = await axios.get(firstPageUrl);
             let allProjects = response.data;
 
             const totalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
@@ -132,9 +169,8 @@ export const wpService = {
             if (totalPages > 1) {
                 const pagePromises = [];
                 for (let i = 2; i <= totalPages; i++) {
-                    pagePromises.push(
-                        axios.get(`${WP_API_URL}/project?per_page=100&_embed&page=${i}`)
-                    );
+                    const pageUrl = buildApiUrl('/project', { per_page: '100', _embed: 'true', page: i.toString() });
+                    pagePromises.push(axios.get(pageUrl));
                 }
                 const responses = await Promise.all(pagePromises);
                 responses.forEach(res => {
@@ -155,6 +191,7 @@ export const wpService = {
             });
 
             console.log('[wpService] Background fetch completed successfully');
+            return mappedProjects;
         } catch (error) {
             console.error('[wpService] Background fetch failed:', error);
             throw error;

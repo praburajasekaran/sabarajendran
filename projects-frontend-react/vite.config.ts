@@ -18,6 +18,14 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, '.'),
       }
+    },
+    optimizeDeps: {
+      include: ['html2canvas']
+    },
+    build: {
+      commonjsOptions: {
+        include: [/html2canvas/, /node_modules/]
+      }
     }
   };
 });
