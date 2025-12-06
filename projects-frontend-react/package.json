@@ -12,6 +12,7 @@
     "@fontsource/inter": "^5.2.8",
     "@google/genai": "^1.30.0",
     "axios": "^1.13.2",
+    "html2canvas": "^1.4.1",
     "idb-keyval": "^6.2.2",
     "lucide-react": "^0.555.0",
     "react": "^18.3.1",
