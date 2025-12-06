@@ -16,7 +16,9 @@
   <link rel="dns-prefetch" href="https://aistudiocdn.com">
 
   <!-- Google Fonts: Lora (serif) and IBM Plex Mono -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Anek+Tamil:wght@100..800&family=Anek+Latin:wght@100..800&family=Baloo+Thambi+2:wght@400..800&display=swap"
+    rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -25,9 +27,9 @@
         extend: {
           fontFamily: {
             // Headlines: Elegant serif
-            serif: ['Lora', 'Georgia', 'serif'],
+            serif: ['Baloo Thambi 2', 'Anek Tamil', 'Georgia', 'serif'],
             // Body: Clean sans-serif
-            sans: ['Inter', 'system-ui', 'sans-serif'],
+            sans: ['Anek Latin', 'Anek Tamil', 'system-ui', 'sans-serif'],
             // Data/Numbers: Mono for alignment
             mono: ['IBM Plex Mono', 'Courier New', 'monospace'],
           },
@@ -127,14 +129,38 @@
 <body class="bg-stone-50 text-stone-900 antialiased">
   <div id="root">
     <!-- Initial loading state - shows while React loads -->
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(to bottom right, #1c1917, #292524, #1c1917);">
+    <div
+      style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(to bottom right, #1c1917, #292524, #1c1917);">
       <style>
-        @keyframes spin { to { transform: rotate(360deg); } }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-        .loader-spin { animation: spin 1s linear infinite; }
-        .loader-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes pulse {
+
+          0%,
+          100% {
+            opacity: 1;
+          }
+
+          50% {
+            opacity: 0.5;
+          }
+        }
+
+        .loader-spin {
+          animation: spin 1s linear infinite;
+        }
+
+        .loader-pulse {
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
       </style>
-      <div class="loader-spin" style="width: 48px; height: 48px; border: 4px solid rgba(220, 38, 38, 0.2); border-top-color: #dc2626; border-radius: 50%; margin-bottom: 16px;"></div>
+      <div class="loader-spin"
+        style="width: 48px; height: 48px; border: 4px solid rgba(220, 38, 38, 0.2); border-top-color: #dc2626; border-radius: 50%; margin-bottom: 16px;">
+      </div>
       <div class="loader-pulse" style="color: white; font-size: 18px; font-weight: 600;">Loading MLA Portal...</div>
     </div>
   </div>

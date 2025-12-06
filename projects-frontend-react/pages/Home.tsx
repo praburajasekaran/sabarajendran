@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { ArrowRight, Users, CheckCircle, Clock, PieChart, ChevronRight, Building2 } from 'lucide-react';
+import { ArrowRight, Users, CheckCircle, Clock, PieChart, ChevronRight, Building2, Play } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ProjectCard } from '../components/ProjectCard';
@@ -90,34 +90,23 @@ export const Home: React.FC = () => {
       {/* Hero Section - Editorial Split-Screen */}
       <section className="relative bg-neutral-900 text-white overflow-hidden min-h-[700px] flex items-stretch">
         {/* Full-width Hero Image Background */}
-        <div className="absolute inset-0">
-          <img
-            src="/assets/images/hero-tamil-nadu-village.webp"
-            alt="Tamil Nadu Village Development"
-            className="w-full h-full object-cover opacity-50"
-            fetchPriority="high"
-            onError={(e) => {
-              // Fallback to MLA photo if hero image not available
-              e.currentTarget.src = "/assets/images/saba_rajendran.webp";
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/95 via-neutral-900/80 to-neutral-900/60"></div>
-        </div>
+
 
         {/* Subtle texture overlay */}
         <div className="absolute inset-0 bg-[url('/assets/pattern.svg')] opacity-5 kolam-texture"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10 w-full">
-          <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-16">
+          <div className="flex flex-col items-center text-center gap-12 lg:gap-16">
 
-            {/* Left Content - Editorial Headline */}
-            <div className="flex-1 flex flex-col justify-center space-y-8">
+            {/* Top Content - Editorial Headline */}
+            <div className="w-full max-w-4xl flex flex-col items-center justify-center space-y-8">
               {/* Small eyebrow text */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center gap-3">
                 <div className="h-px w-12 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
                 <span className="text-sm font-mono uppercase tracking-wider text-accent-300">
                   {t.home.heroSubtitle}
                 </span>
+                <div className="h-px w-12 bg-gradient-to-r from-secondary-500 to-primary-500"></div>
               </div>
 
               {/* Large serif headline */}
@@ -145,10 +134,10 @@ export const Home: React.FC = () => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
                 <button
                   onClick={() => navigate(`${langPrefix}/projects`)}
-                  className="px-8 py-4 bg-primary-600 text-white rounded-lg font-bold hover:bg-primary-500 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-primary-600 text-white rounded-lg font-bold hover:bg-primary-500 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2 animate-gentle-pulse"
                 >
                   {t.home.viewProjects}
                   <ArrowRight size={20} />
@@ -162,42 +151,39 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Sidebar - Mini Stats Preview */}
-            <div className="lg:w-80 flex flex-col justify-center space-y-6 bg-neutral-800/60 backdrop-blur-md rounded-2xl p-8 border border-neutral-700/50">
-              <h3 className="font-serif text-h3 font-bold mb-4">{t.home.impactAtAGlance}</h3>
+            {/* Bottom Content - Video Placeholder */}
+            <div className="w-full max-w-5xl relative group cursor-pointer mt-8">
+              <div className="relative w-full aspect-video bg-neutral-800 rounded-2xl overflow-hidden shadow-2xl border border-neutral-700/50 group-hover:border-primary-500/50 transition-all duration-500">
+                {/* Background Gradient/Pattern */}
+                <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 via-neutral-900 to-black"></div>
+                <div className="absolute inset-0 opacity-20 bg-[url('/assets/pattern.svg')] bg-repeat opacity-10"></div>
 
-              {isLoading ? (
-                <div className="space-y-4">
-                  {Array(4).fill(0).map((_, i) => (
-                    <div key={i} className="animate-pulse">
-                      <div className="h-12 bg-neutral-700 rounded w-20 mb-2"></div>
-                      <div className="h-4 bg-neutral-700 rounded w-32"></div>
+                {/* Play Button Container */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative">
+                    {/* Pulse Effect */}
+                    <div className="absolute inset-0 bg-primary-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+
+                    {/* Button */}
+                    <div className="relative w-20 h-20 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center shadow-lg group-hover:bg-primary-500 transition-colors">
+                        <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
+                      </div>
                     </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="space-y-6">
-                  <div>
-                    <div className="font-mono text-4xl font-bold text-secondary-400 mb-1">{completedCount}</div>
-                    <div className="text-sm text-neutral-400 uppercase tracking-wide">{t.home.completedProjects}</div>
-                  </div>
-                  <div className="h-px bg-neutral-700"></div>
-                  <div>
-                    <div className="font-mono text-4xl font-bold text-primary-400 mb-1">{ongoingCount}</div>
-                    <div className="text-sm text-neutral-400 uppercase tracking-wide">{t.home.ongoingWorks}</div>
-                  </div>
-                  <div className="h-px bg-neutral-700"></div>
-                  <div>
-                    <div className="font-mono text-4xl font-bold text-accent-400 mb-1">{uniqueVillages}+</div>
-                    <div className="text-sm text-neutral-400 uppercase tracking-wide">{t.home.villagesCovered}</div>
-                  </div>
-                  <div className="h-px bg-neutral-700"></div>
-                  <div>
-                    <div className="font-mono text-3xl font-bold text-neutral-200 mb-1">{totalBudget}</div>
-                    <div className="text-sm text-neutral-400 uppercase tracking-wide">{t.home.fundsUtilized}</div>
                   </div>
                 </div>
-              )}
+
+                {/* Label */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 text-xs font-medium text-white/80">
+                    <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                    Watch Highlights
+                  </div>
+                </div>
+              </div>
+
+              {/* Decorative Elements behind */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 rounded-[2rem] blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>
           </div>
         </div>
