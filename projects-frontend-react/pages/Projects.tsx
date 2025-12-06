@@ -12,6 +12,12 @@ import { validateFilters } from '../utils/urlValidation';
 import { wpService } from '../services/wpService';
 import { Project } from '../types';
 
+// WhatsApp Shareable Graphic Components
+import { ShareableGraphicButton } from '../components/ShareableGraphicButton';
+import { GraphicPreviewModal } from '../components/GraphicPreviewModal';
+import { ProjectGraphic } from '../components/ProjectGraphic';
+import { useGraphicGenerator } from '../hooks/useGraphicGenerator';
+
 const ITEMS_PER_PAGE = 12;
 
 import { SEO, ProjectsSEO } from '../components/SEO';
@@ -22,12 +28,16 @@ export const ProjectsPage: React.FC = () => {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const { t, language } = useLanguage();
   const navigate = useNavigate();
-  
+
   // Get language prefix for all links
   const langPrefix = language === 'ta' ? '/ta' : '';
 
   // URL-based filter management
   const { filters, updateFilters, resetFilters } = useUrlFilters({ projects });
+
+  // WhatsApp Shareable Graphic State
+  const [isGraphicModalOpen, setIsGraphicModalOpen] = useState(false);
+  const { state: generatorState, generateImage, shareImage, downloadImage, clearImage } = useGraphicGenerator();
 
   // Fetch Projects from WP
   useEffect(() => {
@@ -153,6 +163,28 @@ export const ProjectsPage: React.FC = () => {
       return matchBlock && matchPanchayat && matchVillage && matchYear && matchStatus && matchType && matchScheme && matchSearch;
     });
   }, [projects, filters]);
+
+  // Top 8 projects by budget for shareable graphic
+  const top8Projects = useMemo(() => {
+    return [...filteredProjects]
+      .sort((a, b) => (b.rawBudget || 0) - (a.rawBudget || 0))
+      .slice(0, 8);
+  }, [filteredProjects]);
+
+  // Handler to open graphic modal and generate image
+  const handleOpenGraphicModal = useCallback(async () => {
+    setIsGraphicModalOpen(true);
+    // Generate image immediately when modal opens
+    setTimeout(() => {
+      generateImage();
+    }, 100); // Small delay to ensure DOM is rendered
+  }, [generateImage]);
+
+  // Handler to close modal and cleanup
+  const handleCloseGraphicModal = useCallback(() => {
+    setIsGraphicModalOpen(false);
+    clearImage();
+  }, [clearImage]);
 
   // Reset to page 1 when filters change (except page itself)
   useEffect(() => {
@@ -590,6 +622,29 @@ export const ProjectsPage: React.FC = () => {
 
         </div>
       </div>
+
+      {/* Hidden Shareable Graphic Component (off-screen) */}
+      <div style={{ position: 'absolute', left: '-9999px', top: 0 }}>
+        <ProjectGraphic
+          projects={top8Projects}
+          filters={filters}
+          lang={language}
+        />
+      </div>
+
+      {/* Shareable Graphic Button (FAB) - Only show when there are projects */}
+      {filteredProjects.length > 0 && (
+        <ShareableGraphicButton onClick={handleOpenGraphicModal} />
+      )}
+
+      {/* Graphic Preview Modal */}
+      <GraphicPreviewModal
+        isOpen={isGraphicModalOpen}
+        onClose={handleCloseGraphicModal}
+        generatorState={generatorState}
+        onShare={shareImage}
+        onDownload={downloadImage}
+      />
     </>
   );
 };
