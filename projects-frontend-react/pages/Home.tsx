@@ -26,6 +26,16 @@ export const Home: React.FC = () => {
       setIsLoading(false);
     };
     fetchProjects();
+
+    // Subscribe to background updates
+    const unsubscribe = wpService.onUpdate((freshData) => {
+      console.log('[Home] Received fresh data from background fetch');
+      setProjects(freshData);
+    });
+
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   const completedCount = projects.filter(p => p.status === ProjectStatus.COMPLETED).length;
@@ -112,7 +122,7 @@ export const Home: React.FC = () => {
 
               {/* Large serif headline */}
               <h1 className="font-serif text-display-lg md:text-display-lg lg:text-[5rem] font-bold leading-[0.95] tracking-tight">
-                Building Tamil Nadu's <span className="gradient-text">Future</span>, One Village at a Time
+                Building Neyveli's <span className="gradient-text">Future</span>, One Village at a Time
               </h1>
 
               <p className="text-body-lg text-neutral-300 max-w-2xl leading-relaxed">
