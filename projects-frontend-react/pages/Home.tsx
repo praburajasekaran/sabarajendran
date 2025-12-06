@@ -120,13 +120,23 @@ export const Home: React.FC = () => {
 
               {/* MLA Photo - Circular, smaller */}
               <div className="flex items-center gap-4 pt-4">
-                <div className="relative w-20 h-20 rounded-full overflow-hidden border-3 border-accent-500 shadow-lg">
+                <button
+                  onClick={() => {/* TODO: Open video modal */ }}
+                  className="relative w-20 h-20 rounded-full overflow-hidden border-3 border-accent-500 shadow-lg group cursor-pointer"
+                  title="Watch Welcome Video"
+                >
                   <img
                     src="/assets/images/saba_rajendran.webp"
                     alt="Saba Rajendran"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                </div>
+                  {/* Play Overlay */}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                    <div className="w-8 h-8 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 shadow-sm group-hover:scale-110 transition-transform">
+                      <Play size={14} className="text-white ml-0.5" fill="currentColor" />
+                    </div>
+                  </div>
+                </button>
                 <div>
                   <p className="font-bold text-lg">{t.home.mlaName}</p>
                   <p className="text-neutral-400 text-sm">{t.home.mlaRole}</p>
@@ -134,7 +144,7 @@ export const Home: React.FC = () => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
                 <button
                   onClick={() => navigate(`${langPrefix}/projects`)}
                   className="px-8 py-4 bg-primary-600 text-white rounded-lg font-bold hover:bg-primary-500 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2 animate-gentle-pulse"
@@ -151,40 +161,7 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Bottom Content - Video Placeholder */}
-            <div className="w-full max-w-5xl relative group cursor-pointer mt-8">
-              <div className="relative w-full aspect-video bg-neutral-800 rounded-2xl overflow-hidden shadow-2xl border border-neutral-700/50 group-hover:border-primary-500/50 transition-all duration-500">
-                {/* Background Gradient/Pattern */}
-                <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 via-neutral-900 to-black"></div>
-                <div className="absolute inset-0 opacity-20 bg-[url('/assets/pattern.svg')] bg-repeat opacity-10"></div>
 
-                {/* Play Button Container */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative">
-                    {/* Pulse Effect */}
-                    <div className="absolute inset-0 bg-primary-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
-
-                    {/* Button */}
-                    <div className="relative w-20 h-20 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center shadow-lg group-hover:bg-primary-500 transition-colors">
-                        <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Label */}
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 text-xs font-medium text-white/80">
-                    <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                    Watch Highlights
-                  </div>
-                </div>
-              </div>
-
-              {/* Decorative Elements behind */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 rounded-[2rem] blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            </div>
           </div>
         </div>
 

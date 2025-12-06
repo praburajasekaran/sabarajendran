@@ -17,8 +17,25 @@
 
   <!-- Google Fonts: Lora (serif) and IBM Plex Mono -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Anek+Tamil:wght@100..800&family=Anek+Latin:wght@100..800&family=Baloo+Thambi+2:wght@400..800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Anek+Tamil:wght@100..800&family=Anek+Latin:wght@100..800&family=Baloo+2:wght@400..800&family=Baloo+Thambi+2:wght@400..800&display=swap&v=1"
     rel="stylesheet">
+  <style>
+    /* Force font families to ensure they are applied */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .font-serif {
+      font-family: 'Baloo 2', 'Baloo Thambi 2', 'Georgia', serif !important;
+    }
+
+    body,
+    .font-sans {
+      font-family: 'Anek Latin', 'Anek Tamil', system-ui, sans-serif !important;
+    }
+  </style>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -27,7 +44,7 @@
         extend: {
           fontFamily: {
             // Headlines: Elegant serif
-            serif: ['Baloo Thambi 2', 'Anek Tamil', 'Georgia', 'serif'],
+            serif: ['Baloo 2', 'Baloo Thambi 2', 'Georgia', 'serif'],
             // Body: Clean sans-serif
             sans: ['Anek Latin', 'Anek Tamil', 'system-ui', 'sans-serif'],
             // Data/Numbers: Mono for alignment

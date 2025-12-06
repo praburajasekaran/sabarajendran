@@ -357,38 +357,7 @@ export const ProjectsPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Middle Row: Visual Status Tabs - Editorial Style */}
-              <div className="flex overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-                <div className="flex p-1 sm:p-1.5 bg-accent-100 rounded-xl whitespace-nowrap">
-                  <button
-                    onClick={() => updateFilters({ status: 'All' })}
-                    className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === 'All'
-                      ? 'bg-white text-primary-600 shadow-sm'
-                      : 'text-neutral-600 hover:text-neutral-900'
-                      }`}
-                  >
-                    <LayoutGrid size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterAll}
-                  </button>
-                  <button
-                    onClick={() => updateFilters({ status: ProjectStatus.COMPLETED })}
-                    className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === ProjectStatus.COMPLETED
-                      ? 'bg-white text-secondary-600 shadow-sm'
-                      : 'text-neutral-600 hover:text-secondary-600'
-                      }`}
-                  >
-                    <CheckCircle2 size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterCompleted}
-                  </button>
-                  <button
-                    onClick={() => updateFilters({ status: ProjectStatus.ONGOING })}
-                    className={`px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 sm:gap-2 ${filters.status === ProjectStatus.ONGOING
-                      ? 'bg-white text-primary-600 shadow-sm'
-                      : 'text-neutral-600 hover:text-primary-600'
-                      }`}
-                  >
-                    <Clock size={14} className="sm:w-4 sm:h-4" /> {t.projects.filterOngoing}
-                  </button>
-                </div>
-              </div>
+
 
               {/* Bottom Row: Pill Filters for Block, Panchayat, Type & Year - Editorial Style */}
               <div className="flex flex-wrap items-end gap-2 sm:gap-4 overflow-x-auto">
@@ -435,45 +404,9 @@ export const ProjectsPage: React.FC = () => {
                   </select>
                 </div>
 
-                {/* Type Filter */}
-                <div className="flex flex-col gap-0.5 sm:gap-1">
-                  <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
-                    {t.projects.labelSector} / துறை
-                  </label>
-                  <select
-                    value={filters.type}
-                    onChange={(e) => updateFilters({ type: e.target.value })}
-                    className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.type !== 'All'
-                      ? 'bg-primary-50 border-primary-400 text-primary-700'
-                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                      }`}
-                  >
-                    <option value="All">{t.projects.allSectors}</option>
-                    {Object.values(ProjectType).map(type => (
-                      <option key={type} value={type}>{t.types[type] || type}</option>
-                    ))}
-                  </select>
-                </div>
 
-                {/* Year Filter */}
-                <div className="flex flex-col gap-0.5 sm:gap-1">
-                  <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
-                    {t.projects.labelYear} / ஆண்டு
-                  </label>
-                  <select
-                    value={filters.year}
-                    onChange={(e) => updateFilters({ year: e.target.value })}
-                    className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.year !== 'All'
-                      ? 'bg-primary-50 border-primary-400 text-primary-700'
-                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                      }`}
-                  >
-                    <option value="All">{t.projects.allYears}</option>
-                    {years.map(year => (
-                      <option key={year} value={year}>{year}</option>
-                    ))}
-                  </select>
-                </div>
+
+
 
                 {/* Scheme Filter */}
                 <div className="flex flex-col gap-0.5 sm:gap-1">
