@@ -8,6 +8,7 @@ import { Project, ProjectStatus, ProjectType } from '../types';
 import { Lightbox } from './Lightbox';
 import { useLanguage } from '../contexts/LanguageContext';
 import { TruncatedText } from './TruncatedText';
+import { getVillageName } from '../utils/villageTranslations';
 
 interface ProjectCardProps {
   project: Project;
@@ -163,7 +164,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 <div className="flex items-center gap-2 flex-1 min-w-0">
                   <MapPin size={16} className="text-primary-600 flex-shrink-0" />
                   <TruncatedText className="text-neutral-700 text-xs font-medium">
-                    {project.village}
+                    {getVillageName(project.village, language)}
                   </TruncatedText>
                 </div>
 
