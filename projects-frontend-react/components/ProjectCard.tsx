@@ -63,11 +63,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
         {/* Content Overlay Card (Bottom) */}
         <div className="relative mx-4 my-4 bg-white rounded-xl shadow-sm p-6 flex flex-col flex-1 border border-neutral-100">
+          {/* Status Indicator */}
+          <div className="flex items-center gap-2 mb-3">
+            <span className={getStatusDot(project.status)}></span>
+            <span className={`font-medium text-neutral-500 uppercase tracking-wider ${language === 'en' ? 'text-sm' : 'text-xs'}`}>
+              {t.status[project.status] || project.status}
+            </span>
+          </div>
+
           {/* Title */}
           <TruncatedText
             as="h3"
             maxLines={2}
-            className="font-serif text-xl font-bold text-neutral-900 mb-2 leading-tight"
+            className={`font-serif font-bold text-neutral-900 mb-2 leading-tight ${language === 'en' ? 'text-2xl' : 'text-xl'}`}
           >
             {(() => {
               // Always try to split if @ is present
@@ -89,7 +97,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 <TruncatedText
                   as="p"
                   maxLines={2}
-                  className="text-neutral-600 text-sm mb-4 flex-1"
+                  className={`text-neutral-600 mb-4 flex-1 ${language === 'en' ? 'text-base' : 'text-sm'}`}
                 >
                   {displayTitle.substring(splitIndex + 1)}
                 </TruncatedText>
@@ -106,7 +114,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               <TruncatedText
                 as="p"
                 maxLines={2}
-                className="text-neutral-600 text-sm mb-4 flex-1"
+                className={`text-neutral-600 mb-4 flex-1 ${language === 'en' ? 'text-base' : 'text-sm'}`}
               >
                 {displayDescription}
               </TruncatedText>
@@ -121,7 +129,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 {/* Village - Left */}
                 <div className="flex items-center gap-2 flex-1 min-w-0">
                   <MapPin size={16} className="text-primary-600 flex-shrink-0" />
-                  <TruncatedText className="text-neutral-700 text-xs font-medium">
+                  <TruncatedText className={`text-neutral-700 font-medium ${language === 'en' ? 'text-sm' : 'text-xs'}`}>
                     {getVillageName(project.village, language)}
                   </TruncatedText>
                 </div>
@@ -129,7 +137,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 {/* Year - Right */}
                 <div className="flex items-center gap-2 flex-shrink-0">
                   <Calendar size={16} className="text-secondary-600 flex-shrink-0" />
-                  <span className="text-neutral-700 text-xs font-medium whitespace-nowrap">{project.year}</span>
+                  <span className={`text-neutral-700 font-medium whitespace-nowrap ${language === 'en' ? 'text-sm' : 'text-xs'}`}>{project.year}</span>
                 </div>
               </div>
 
@@ -139,7 +147,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 {project.scheme ? (
                   <div className="flex items-center gap-2 flex-1 min-w-0">
                     <FileText size={16} className="text-primary-600 flex-shrink-0" />
-                    <TruncatedText className="text-neutral-700 text-xs font-medium">
+                    <TruncatedText className={`text-neutral-700 font-medium ${language === 'en' ? 'text-sm' : 'text-xs'}`}>
                       {project.scheme}
                     </TruncatedText>
                   </div>

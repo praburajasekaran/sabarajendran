@@ -467,7 +467,7 @@ export const ProjectsPage: React.FC = () => {
 
                 {/* Pagination Controls */}
                 {totalPages > 1 && (
-                  <div className="flex justify-center items-center space-x-2 pb-8">
+                  <div className="flex justify-center items-center space-x-2">
                     <button
                       onClick={() => handlePageChange(1)}
                       disabled={filters.page === 1}
@@ -563,7 +563,7 @@ export const ProjectsPage: React.FC = () => {
       </div>
 
       {/* Hidden Shareable Graphic Component (off-screen) */}
-      <div style={{ position: 'absolute', left: '-9999px', top: 0 }}>
+      <div style={{ position: 'fixed', left: '-9999px', top: 0 }}>
         <ProjectGraphic
           projects={top8Projects}
           filters={filters}
