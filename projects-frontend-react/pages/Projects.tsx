@@ -407,7 +407,7 @@ export const ProjectsPage: React.FC = () => {
                   >
                     <option value="All">{t.projects.allBlocks}</option>
                     {blocks.map(block => (
-                      <option key={block} value={block}>{block}</option>
+                      <option key={block} value={block}>{getVillageName(block, language)}</option>
                     ))}
                   </select>
                 </div>
@@ -430,7 +430,7 @@ export const ProjectsPage: React.FC = () => {
                       {filters.block === 'All' ? t.projects.selectBlockFirst : t.projects.allPanchayats}
                     </option>
                     {panchayats.map(panchayat => (
-                      <option key={panchayat} value={panchayat}>{panchayat}</option>
+                      <option key={panchayat} value={panchayat}>{getVillageName(panchayat, language)}</option>
                     ))}
                   </select>
                 </div>

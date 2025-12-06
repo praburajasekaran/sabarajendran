@@ -116,7 +116,10 @@ export const VILLAGE_TRANSLATIONS: Record<string, string> = {
     'Veerasingankuppam colony': 'வீரசிங்கன்குப்பம் காலனி',
     'Vegakollai': 'வேகக்கொள்ளை',
     'Vellai pulli colony': 'வெள்ளைப்புள்ளி காலனி',
-    'Visoor colony': 'விசூர் காலனி'
+    'Visoor colony': 'விசூர் காலனி',
+    'Kaatupalayam': 'காட்டுப்பாளையம்',
+    'Elanthampattu': 'எலந்தம்பட்டு',
+    'Marungur': 'மருங்கூர்'
 };
 
 export const getVillageName = (name: string, language: 'en' | 'ta'): string => {
