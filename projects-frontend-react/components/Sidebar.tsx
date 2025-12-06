@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Village } from '../types';
 import { MapPin, Search, X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { getVillageName } from '../utils/villageTranslations';
 
 interface SidebarProps {
   villages: Village[];
@@ -20,7 +21,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   closeMobile,
   villageCounts
 }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
 
   // Calculate total projects for the "All Villages" badge
@@ -29,9 +30,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
   // Filter villages based on search term
   const filteredVillages = useMemo(() => {
     if (!searchTerm.trim()) return villages;
-    return villages.filter(v =>
-      v.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const term = searchTerm.toLowerCase();
+    return villages.filter(v => {
+      const englishName = v.name.toLowerCase();
+      const tamilName = getVillageName(v.name, 'ta');
+      return englishName.includes(term) || tamilName.includes(term);
+    });
   }, [villages, searchTerm]);
 
   return (
@@ -86,11 +90,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onSelectVillage(null);
                 closeMobile();
               }}
-              className={`w-full text-left px-4 py-3.5 rounded-xl text-sm transition-all duration-200 flex items-center justify-between group ${
-                selectedVillage === null
+              className={`w-full text-left px-4 py-3.5 rounded-xl text-sm transition-all duration-200 flex items-center justify-between group ${selectedVillage === null
                   ? 'bg-primary-600 text-white shadow-lg'
                   : 'bg-white text-neutral-700 hover:bg-accent-100 border border-accent-200'
-              }`}
+                }`}
             >
               <div className="flex items-center gap-3">
                 {selectedVillage === null && (
@@ -98,11 +101,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 )}
                 <span className="font-medium">{t.sidebar.allVillages}</span>
               </div>
-              <span className={`font-mono text-xs px-2.5 py-1 rounded-full font-bold ${
-                selectedVillage === null
+              <span className={`font-mono text-xs px-2.5 py-1 rounded-full font-bold ${selectedVillage === null
                   ? 'bg-white/20 text-white'
                   : 'bg-accent-100 text-accent-700'
-              }`}>
+                }`}>
                 {totalProjects}
               </span>
             </button>
@@ -121,11 +123,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     onSelectVillage(village.name);
                     closeMobile();
                   }}
-                  className={`w-full text-left px-4 py-3.5 rounded-xl text-sm transition-all duration-200 flex items-center justify-between group ${
-                    isSelected
+                  className={`w-full text-left px-4 py-3.5 rounded-xl text-sm transition-all duration-200 flex items-center justify-between group ${isSelected
                       ? 'bg-accent-200 text-accent-900 border border-accent-300 shadow-sm'
                       : 'bg-white text-neutral-700 hover:bg-accent-100 border border-accent-200 hover:border-accent-300'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3 overflow-hidden flex-1">
                     {isSelected ? (
@@ -134,14 +135,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       <MapPin size={16} className="text-accent-500 flex-shrink-0" />
                     )}
                     <span className={`font-medium truncate ${isSelected ? 'text-accent-900' : 'text-neutral-700'}`}>
-                      {village.name}
+                      {getVillageName(village.name, language)}
                     </span>
                   </div>
-                  <span className={`font-mono text-xs px-2.5 py-1 rounded-full font-bold ml-2 flex-shrink-0 transition-colors ${
-                    isSelected
+                  <span className={`font-mono text-xs px-2.5 py-1 rounded-full font-bold ml-2 flex-shrink-0 transition-colors ${isSelected
                       ? 'bg-white text-accent-700'
                       : 'bg-accent-100 text-accent-600 group-hover:bg-accent-200'
-                  }`}>
+                    }`}>
                     {count}
                   </span>
                 </button>
@@ -153,7 +153,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
           )}
         </div>
-        
+
       </div>
     </>
   );
