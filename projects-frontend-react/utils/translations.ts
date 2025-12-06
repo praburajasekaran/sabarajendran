@@ -31,6 +31,14 @@ export const TRANSLATIONS = {
       blockSectionDesc: 'Explore development projects across administrative blocks',
       viewBlockProjects: 'View Projects',
       projectsCount: 'Projects',
+      impactAtAGlance: 'Impact at a Glance',
+      completionRate: 'Project Completion Rate',
+      mlaName: 'Saba Rajendran',
+      mlaRole: 'MLA, Neyveli Constituency',
+      currency: {
+        cr: 'Cr+',
+        l: 'L+',
+      }
     },
     about: {
       title: 'About Saba Rajendran',
@@ -157,6 +165,14 @@ export const TRANSLATIONS = {
       blockSectionDesc: 'நிர்வாக வட்டங்களில் மேம்பாட்டு திட்டங்களை ஆராயுங்கள்',
       viewBlockProjects: 'திட்டங்களைக் காண்க',
       projectsCount: 'திட்டங்கள்',
+      impactAtAGlance: 'தாக்கத்தின் சுருக்கம்',
+      completionRate: 'திட்ட நிறைவு விகிதம்',
+      mlaName: 'சபா ராஜேந்திரன்',
+      mlaRole: 'சட்டமன்ற உறுப்பினர், நெய்வேலி தொகுதி',
+      currency: {
+        cr: 'கோடி+',
+        l: 'லட்சம்+',
+      }
     },
     about: {
       title: 'திரு. சபா ராஜேந்திரன்',
