@@ -25,7 +25,7 @@ import { GraphicPreviewModal } from '../components/GraphicPreviewModal';
 import { ProjectGraphic } from '../components/ProjectGraphic';
 import { useGraphicGenerator } from '../hooks/useGraphicGenerator';
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 15;
 
 import { SEO, ProjectsSEO } from '../components/SEO';
 
