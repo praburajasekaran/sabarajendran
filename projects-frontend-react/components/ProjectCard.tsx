@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import {
   MapPin, Calendar, Banknote,
   School, Droplets, Zap, HeartPulse, Users, Sprout, HardHat,
-  ZoomIn, FileText
+  FileText
 } from 'lucide-react';
 import { Project, ProjectStatus, ProjectType } from '../types';
-import { Lightbox } from './Lightbox';
 import { useLanguage } from '../contexts/LanguageContext';
 import { TruncatedText } from './TruncatedText';
 import { getVillageName } from '../utils/villageTranslations';
@@ -15,7 +14,6 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const { t, language } = useLanguage();
 
   const displayTitle = (language === 'ta' && project.title_ta) ? project.title_ta : project.title;
@@ -63,48 +61,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       {/* Magazine-Style Editorial Card */}
       <div className="group relative bg-white rounded-2xl overflow-hidden shadow-md flex flex-col h-full">
 
-        {/* Full-Bleed Image */}
-        <div className="relative h-64 overflow-hidden">
-          <img
-            src={project.imageUrl || typeConfig.image}
-            alt={displayTitle}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              // Fallback to placeholder if image fails
-              e.currentTarget.src = typeConfig.image;
-            }}
-          />
-
-          {/* Gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-
-          {/* Type Icon Badge (top-right) */}
-          <div className={`absolute top-4 right-4 p-2 rounded-full bg-white/90 backdrop-blur-sm ${typeConfig.color} shadow-lg`}>
-            <TypeIcon size={20} />
-          </div>
-
-          {/* Status Dot (top-left) */}
-          <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm">
-            <span className={getStatusDot(project.status)}></span>
-            <span className="text-xs font-medium text-neutral-800">
-              {t.status[project.status] || project.status}
-            </span>
-          </div>
-
-          {/* Zoom Button (bottom-right, shows on hover) */}
-          {project.imageUrl && (
-            <button
-              onClick={() => setIsLightboxOpen(true)}
-              className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white shadow-lg"
-              title={t.card.viewPhoto}
-            >
-              <ZoomIn size={18} className="text-neutral-800" />
-            </button>
-          )}
-        </div>
-
         {/* Content Overlay Card (Bottom) */}
-        <div className="relative -mt-12 mx-4 mb-4 bg-white rounded-xl shadow-lg p-6 flex flex-col flex-1">
+        <div className="relative mx-4 my-4 bg-white rounded-xl shadow-sm p-6 flex flex-col flex-1 border border-neutral-100">
           {/* Title */}
           <TruncatedText
             as="h3"
@@ -200,14 +158,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
       </div>
 
-      {/* Lightbox for Full Image */}
-      {isLightboxOpen && project.imageUrl && (
-        <Lightbox
-          imageUrl={project.imageUrl}
-          altText={displayTitle}
-          onClose={() => setIsLightboxOpen(false)}
-        />
-      )}
+
     </>
   );
 };
