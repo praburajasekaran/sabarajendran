@@ -3,7 +3,7 @@ import { get, set } from 'idb-keyval';
 import { Project, ProjectStatus, ProjectType } from '../types';
 
 // WordPress API Endpoint
-const WP_API_URL = import.meta.env.VITE_WP_API_URL || 'http://localhost:8118/sabarajendran/index.php?rest_route=/wp/v2';
+const WP_API_URL = import.meta.env.VITE_WP_API_URL || 'http://localhost:8000/index.php?rest_route=/wp/v2';
 console.log('[wpService] Using WP API URL:', WP_API_URL);
 
 // Helper to build API URLs correctly
@@ -30,15 +30,31 @@ const buildApiUrl = (endpoint: string, params: Record<string, any> = {}) => {
 
 // Cache configuration
 const CACHE_KEY = 'wp_projects_cache_v5';
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+// Development: 10 seconds, Production: 5 minutes
+const CACHE_DURATION = import.meta.env.DEV ? 10 * 1000 : 5 * 60 * 1000;
 let memoryCache: Project[] | null = null;
 let lastFetchTime = 0;
+
+console.log(`[wpService] Cache duration: ${CACHE_DURATION / 1000}s (${import.meta.env.DEV ? 'DEV' : 'PROD'} mode)`);
 
 // Callback for background updates
 type UpdateCallback = (projects: Project[]) => void;
 let updateCallbacks: UpdateCallback[] = [];
 
 export const wpService = {
+    // Force refresh cache - useful for development
+    forceRefresh: async (): Promise<Project[]> => {
+        console.log('[wpService] 🔄 Force refreshing cache...');
+        memoryCache = null;
+        lastFetchTime = 0;
+        try {
+            await set(CACHE_KEY, null);
+        } catch (e) { /* ignore */ }
+        const projects = await wpService.getAllProjects();
+        console.log('[wpService] ✅ Cache refreshed!');
+        return projects;
+    },
+
     // Subscribe to background updates
     onUpdate: (callback: UpdateCallback) => {
         updateCallbacks.push(callback);
@@ -306,7 +322,7 @@ const getTaxonomyName = (wpItem: any, taxonomy: string): string | undefined => {
 
     // Easier way: The REST API usually returns taxonomy IDs in a field named after the taxonomy (e.g. wpItem.project_village = [12, 14])
     // And _embedded['wp:term'] contains arrays of term objects.
-    // We need to flatten _embedded['wp:term'] and search by ID? 
+    // We need to flatten _embedded['wp:term'] and search by ID?
     // actually _embedded['wp:term'] is an array of arrays. Each inner array corresponds to a taxonomy associated with the post.
 
     const terms = wpItem._embedded?.['wp:term'];
@@ -323,3 +339,10 @@ const getTaxonomyName = (wpItem: any, taxonomy: string): string | undefined => {
     }
     return undefined;
 };
+
+// Expose wpService to window for development debugging
+if (import.meta.env.DEV) {
+    (window as any).wpService = wpService;
+    console.log('[wpService] 🛠️ Development mode: wpService available in console');
+    console.log('[wpService] 💡 Try: wpService.forceRefresh() to refresh data instantly');
+}

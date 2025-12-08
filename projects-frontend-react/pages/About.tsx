@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Award, Briefcase, Flag, Target } from 'lucide-react';
+import { Award, Briefcase, Flag, Target, MapPin, CheckCircle2 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { SEO } from '../components/SEO';
 import { generatePersonSchema } from '../utils/seo';
@@ -9,7 +9,7 @@ export const About: React.FC = () => {
     const { t } = useLanguage();
 
     return (
-        <div className="min-h-screen bg-accent-50 pb-20">
+        <div className="min-h-screen bg-white pb-20 font-sans">
             <SEO
                 title="About"
                 description="Learn more about Saba Rajendran, MLA of Neyveli Constituency, his vision, and his journey in public service."
@@ -21,140 +21,171 @@ export const About: React.FC = () => {
                     {JSON.stringify(generatePersonSchema())}
                 </script>
             </Helmet>
-            {/* Header Banner - Editorial Style */}
-            <div className="bg-neutral-900 text-white py-20 relative overflow-hidden">
-                {/* Subtle Kolam Texture Overlay */}
-                <div className="absolute inset-0 kolam-texture opacity-[0.03] pointer-events-none"></div>
 
-                {/* Gradient overlay for depth */}
-                <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/95 via-neutral-900 to-neutral-900/90"></div>
+            {/* Header Banner - Political Mass Appeal style */}
+            <div className="bg-gradient-to-r from-secondary-900 via-secondary-900 to-secondary-800 text-white py-24 relative overflow-hidden border-b-8 border-primary-600">
+                {/* Sun Rays Texture Overlay */}
+                <div className="absolute inset-0 sun-rays-texture opacity-20 pointer-events-none"></div>
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                    {/* Editorial Label */}
-                    <div className="flex items-center justify-center gap-3 mb-6">
-                        <div className="h-px w-12 bg-gradient-to-r from-transparent via-primary-500 to-transparent"></div>
-                        <span className="text-sm font-mono uppercase tracking-wider text-accent-400">
-                            Public Representative
-                        </span>
-                        <div className="h-px w-12 bg-gradient-to-r from-transparent via-primary-500 to-transparent"></div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="flex flex-col items-center text-center">
+                        {/* Party Label */}
+                        <div className="inline-flex items-center gap-2 bg-primary-600 text-white px-4 py-1 mb-6 transform -skew-x-12 shadow-[4px_4px_0_0_#fbbf24]">
+                            <span className="text-sm font-black uppercase tracking-widest transform skew-x-12">
+                                Public Representative
+                            </span>
+                        </div>
+
+                        {/* Bold Headline */}
+                        <h1 className="font-display text-5xl md:text-7xl font-black mb-6 uppercase tracking-tight drop-shadow-lg">
+                            {t.about.title}
+                        </h1>
+                        <p className="text-xl md:text-2xl text-accent-400 font-bold tracking-wide max-w-2xl border-t-4 border-accent-500 pt-6">
+                            {t.about.subtitle}
+                        </p>
                     </div>
-
-                    {/* Serif Headline */}
-                    <h1 className="font-serif text-4xl md:text-6xl font-bold mb-6 tracking-tight">{t.about.title}</h1>
-                    <p className="text-xl text-primary-400 font-medium tracking-wide">{t.about.subtitle}</p>
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
 
-                    {/* Sidebar Profile Card - Editorial Style */}
-                    <div className="md:col-span-1">
-                        <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-accent-500">
-                            <div className="h-80 bg-neutral-200 relative overflow-hidden group">
+                    {/* Sidebar Profile Card - Political Leader Style */}
+                    <div className="md:col-span-4">
+                        <div className="bg-white border-2 border-black card-sharp p-2">
+                            <div className="bg-secondary-100 border border-black relative overflow-hidden group">
                                 <img
                                     src="/assets/images/saba_rajendran.webp"
                                     alt="MLA Saba Rajendran"
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="w-full h-auto object-cover grayscale-0 group-hover:grayscale transition-all duration-500"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/30 to-transparent"></div>
-                                <div className="absolute bottom-4 left-4 text-white">
-                                    <p className="text-xs font-mono font-bold bg-primary-500 px-3 py-1 rounded-full inline-block mb-2 uppercase tracking-wider">MLA</p>
-                                    <h3 className="font-serif text-2xl font-bold">Saba Rajendran</h3>
+                                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 pt-20">
+                                    <div className="inline-block bg-primary-600 text-white text-xs font-black px-3 py-1 mb-2 uppercase tracking-widest">
+                                        Neyveli MLA
+                                    </div>
+                                    <h3 className="font-display text-3xl text-white font-black uppercase leading-none">
+                                        Saba Rajendran
+                                    </h3>
                                 </div>
                             </div>
-                            <div className="p-6 space-y-5">
-                                <div className="flex items-start gap-3">
-                                    <div className="p-2 bg-accent-100 rounded-lg text-primary-600 flex-shrink-0"><Flag size={20} /></div>
+
+                            <div className="p-6 space-y-6 bg-white">
+                                <div className="flex items-start gap-4 pb-4 border-b-2 border-neutral-100">
+                                    <div className="p-3 bg-black text-accent-400 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
+                                        <Flag size={24} strokeWidth={3} />
+                                    </div>
                                     <div>
-                                        <p className="text-xs text-neutral-500 uppercase font-mono font-bold tracking-wider mb-1">{t.about.mlaCard.party}</p>
-                                        <p className="font-semibold text-neutral-900 leading-tight">{t.about.mlaCard.partyName}</p>
+                                        <p className="text-xs text-neutral-500 uppercase font-black tracking-widest mb-1">{t.about.mlaCard.party}</p>
+                                        <p className="font-bold text-xl text-black leading-tight">{t.about.mlaCard.partyName}</p>
                                     </div>
                                 </div>
-                                <div className="flex items-start gap-3">
-                                    <div className="p-2 bg-accent-100 rounded-lg text-primary-600 flex-shrink-0"><Briefcase size={20} /></div>
+
+                                <div className="flex items-start gap-4 pb-4 border-b-2 border-neutral-100">
+                                    <div className="p-3 bg-black text-accent-400 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
+                                        <MapPin size={24} strokeWidth={3} />
+                                    </div>
                                     <div>
-                                        <p className="text-xs text-neutral-500 uppercase font-mono font-bold tracking-wider mb-1">{t.about.mlaCard.constituency}</p>
-                                        <p className="font-semibold text-neutral-900">{t.about.mlaCard.constituencyName}</p>
+                                        <p className="text-xs text-neutral-500 uppercase font-black tracking-widest mb-1">{t.about.mlaCard.constituency}</p>
+                                        <p className="font-bold text-xl text-black">{t.about.mlaCard.constituencyName}</p>
                                     </div>
                                 </div>
-                                <div className="flex items-start gap-3">
-                                    <div className="p-2 bg-accent-100 rounded-lg text-primary-600 flex-shrink-0"><Award size={20} /></div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="p-3 bg-black text-accent-400 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
+                                        <Award size={24} strokeWidth={3} />
+                                    </div>
                                     <div>
-                                        <p className="text-xs text-neutral-500 uppercase font-mono font-bold tracking-wider mb-1">{t.about.mlaCard.terms}</p>
-                                        <p className="font-semibold text-neutral-900">2016 - 2021</p>
-                                        <p className="font-semibold text-neutral-900">2021 - {t.about.mlaCard.present}</p>
+                                        <p className="text-xs text-neutral-500 uppercase font-black tracking-widest mb-1">{t.about.mlaCard.terms}</p>
+                                        <p className="font-bold text-lg text-black">2016 - 2021</p>
+                                        <p className="font-bold text-lg text-primary-600">2021 - {t.about.mlaCard.present}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Main Content - Editorial Style */}
-                    <div className="md:col-span-2 space-y-8">
+                    {/* Main Content - Political Manifesto Style */}
+                    <div className="md:col-span-8 space-y-12 pt-8 md:pt-16">
 
                         {/* Intro */}
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-accent-200">
-                            <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">{t.about.title}</h2>
-                            <p className="text-neutral-700 leading-relaxed text-lg">
+                        <div>
+                            <h2 className="font-display text-4xl font-black text-black mb-6 uppercase flex items-center gap-3">
+                                <span className="w-12 h-2 bg-primary-600 inline-block"></span>
+                                {t.about.title}
+                            </h2>
+                            <p className="text-neutral-800 leading-relaxed text-xl font-medium border-l-4 border-black pl-6">
                                 {t.about.intro}
                             </p>
                         </div>
 
-                        {/* Early Life */}
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-accent-200 relative overflow-hidden">
-                            <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-secondary-500 to-secondary-600 rounded-l-2xl"></div>
-                            <h3 className="font-serif text-2xl font-bold text-neutral-900 mb-4 ml-6">{t.about.earlyLifeTitle}</h3>
-                            <p className="text-neutral-700 leading-relaxed ml-6">
+                        {/* Early Life - Solid Block */}
+                        <div className="bg-neutral-50 p-8 border-l-8 border-primary-600 shadow-sm">
+                            <h3 className="font-display text-2xl font-black text-black mb-4 uppercase tracking-tight">
+                                {t.about.earlyLifeTitle}
+                            </h3>
+                            <p className="text-neutral-700 leading-relaxed text-lg font-medium">
                                 {t.about.earlyLifeDesc}
                             </p>
                         </div>
 
-                        {/* Political Career Timeline */}
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-accent-200">
-                            <h3 className="font-serif text-2xl font-bold text-neutral-900 mb-8 flex items-center gap-3">
-                                <Flag className="text-primary-500" size={24} />
+                        {/* Political Career Timeline - High Contrast */}
+                        <div className="bg-white">
+                            <h3 className="font-display text-3xl font-black text-black mb-10 flex items-center gap-4">
+                                <div className="p-2 bg-primary-600 text-white rounded-none transform -rotate-3">
+                                    <Briefcase size={28} strokeWidth={3} />
+                                </div>
                                 {t.about.politicalJourneyTitle}
                             </h3>
-                            <div className="relative border-l-2 border-accent-200 ml-3 space-y-10 pl-8 py-2">
+
+                            <div className="relative border-l-4 border-black ml-4 space-y-12 pl-10 py-2">
                                 {/* Term 1 */}
-                                <div className="relative">
-                                    <span className="absolute -left-[41px] top-1 w-5 h-5 bg-primary-500 rounded-full border-4 border-white shadow-md"></span>
-                                    <h4 className="font-mono text-lg font-bold text-primary-600 mb-2">2016</h4>
-                                    <p className="text-neutral-700 leading-relaxed">
+                                <div className="relative group">
+                                    <span className="absolute -left-[54px] top-1 w-6 h-6 bg-white border-4 border-black group-hover:bg-primary-600 transition-colors"></span>
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <h4 className="font-display text-3xl font-black text-neutral-400">2016</h4>
+                                        <div className="h-1 flex-1 bg-neutral-200"></div>
+                                    </div>
+                                    <p className="text-black text-lg font-bold leading-relaxed">
                                         {t.about.term1}
                                     </p>
                                 </div>
                                 {/* Term 2 */}
-                                <div className="relative">
-                                    <span className="absolute -left-[41px] top-1 w-5 h-5 bg-secondary-500 rounded-full border-4 border-white shadow-md"></span>
-                                    <h4 className="font-mono text-lg font-bold text-secondary-600 mb-2">2021</h4>
-                                    <p className="text-neutral-700 leading-relaxed">
+                                <div className="relative group">
+                                    <span className="absolute -left-[54px] top-1 w-6 h-6 bg-primary-600 border-4 border-black shadow-[2px_2px_0_0_#fbbf24]"></span>
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <h4 className="font-display text-3xl font-black text-black">2021</h4>
+                                        <div className="h-1 flex-1 bg-black"></div>
+                                    </div>
+                                    <p className="text-black text-lg font-bold leading-relaxed">
                                         {t.about.term2}
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Vision - Editorial Card */}
-                        <div className="bg-neutral-900 text-white p-10 rounded-2xl shadow-lg relative overflow-hidden">
-                            {/* Subtle Kolam Texture */}
-                            <div className="absolute inset-0 kolam-texture opacity-[0.03] pointer-events-none"></div>
+                        {/* Vision - Bold Manifesto Card */}
+                        <div className="bg-secondary-900 text-white p-10 border-4 border-black shadow-[12px_12px_0_0_#dc2626] relative overflow-hidden">
+                            {/* Sun Rays Texture */}
+                            <div className="absolute inset-0 sun-rays-texture opacity-10 pointer-events-none"></div>
 
-                            {/* Subtle decorative element */}
-                            <div className="absolute -right-10 -bottom-10 opacity-5">
-                                <Target size={200} />
+                            <div className="absolute top-0 right-0 p-6 opacity-20">
+                                <Target size={180} />
                             </div>
 
-                            <h3 className="font-serif text-2xl font-bold mb-6 flex items-center gap-3 text-secondary-400 relative z-10">
-                                <Target size={28} />
+                            <h3 className="font-display text-4xl font-black mb-8 flex items-center gap-4 text-accent-400 relative z-10 uppercase">
+                                <Target size={40} strokeWidth={3} />
                                 {t.about.visionTitle}
                             </h3>
-                            <p className="text-neutral-300 leading-relaxed text-lg mb-8 relative z-10">{t.about.visionDesc}</p>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
+
+                            <p className="text-white leading-relaxed text-xl font-bold mb-10 relative z-10 max-w-2xl">
+                                {t.about.visionDesc}
+                            </p>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
                                 {t.about.focusAreas.map((area, idx) => (
-                                    <div key={idx} className="bg-white/5 p-5 rounded-xl backdrop-blur-sm border border-accent-500/20 hover:bg-white/10 hover:border-accent-500/40 transition-all duration-300">
-                                        <p className="text-sm font-medium text-neutral-100">{area}</p>
+                                    <div key={idx} className="bg-black/40 p-4 border-l-4 border-accent-500 flex items-center gap-3 hover:bg-black/60 transition-colors">
+                                        <CheckCircle2 className="text-accent-500 flex-shrink-0" size={20} />
+                                        <p className="text-base font-bold text-white uppercase tracking-wide">{area}</p>
                                     </div>
                                 ))}
                             </div>

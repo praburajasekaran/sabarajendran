@@ -19,15 +19,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const displayTitle = (language === 'ta' && project.title_ta) ? project.title_ta : project.title;
   const displayDescription = (language === 'ta' && project.description_ta) ? project.description_ta : project.description;
 
-  // Status dot styles
-  const getStatusDot = (status: ProjectStatus) => {
+  // Status indicator styles - High Contrast
+  const getStatusStyle = (status: ProjectStatus) => {
     switch (status) {
       case ProjectStatus.COMPLETED:
-        return 'status-dot completed';
+        return 'bg-secondary-900 text-white border-2 border-black';
       case ProjectStatus.ONGOING:
-        return 'status-dot ongoing';
+        return 'bg-primary-500 text-white border-2 border-black animate-pulse';
       default:
-        return 'status-dot planned';
+        return 'bg-neutral-200 text-neutral-800 border-2 border-black';
     }
   };
 
@@ -35,21 +35,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const getTypeConfig = (type: ProjectType) => {
     switch (type) {
       case ProjectType.INFRASTRUCTURE:
-        return { icon: HardHat, image: '/assets/placeholders/infrastructure.png', color: 'text-neutral-700' };
+        return { icon: HardHat, color: 'text-neutral-900' };
       case ProjectType.WATER:
-        return { icon: Droplets, image: '/assets/placeholders/water.png', color: 'text-cyan-600' };
+        return { icon: Droplets, color: 'text-neutral-900' };
       case ProjectType.EDUCATION:
-        return { icon: School, image: '/assets/placeholders/education.png', color: 'text-primary-600' };
+        return { icon: School, color: 'text-neutral-900' };
       case ProjectType.HEALTH:
-        return { icon: HeartPulse, image: '/assets/placeholders/health.png', color: 'text-rose-600' };
+        return { icon: HeartPulse, color: 'text-neutral-900' };
       case ProjectType.ELECTRICITY:
-        return { icon: Zap, image: '/assets/placeholders/electricity.png', color: 'text-secondary-600' };
+        return { icon: Zap, color: 'text-neutral-900' };
       case ProjectType.COMMUNITY:
-        return { icon: Users, image: '/assets/placeholders/community.png', color: 'text-orange-600' };
+        return { icon: Users, color: 'text-neutral-900' };
       case ProjectType.AGRICULTURE:
-        return { icon: Sprout, image: '/assets/placeholders/agriculture.png', color: 'text-emerald-600' };
+        return { icon: Sprout, color: 'text-neutral-900' };
       default:
-        return { icon: HardHat, image: '/assets/placeholders/infrastructure.png', color: 'text-neutral-700' };
+        return { icon: HardHat, color: 'text-neutral-900' };
     }
   };
 
@@ -58,24 +58,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <>
-      {/* Magazine-Style Editorial Card */}
-      <div className="group relative bg-white rounded-2xl overflow-hidden shadow-md flex flex-col h-full">
+      {/* Political Manifesto Card */}
+      <div className="group relative bg-white border-2 border-black card-sharp h-full flex flex-col p-0">
 
-        {/* Content Overlay Card (Bottom) */}
-        <div className="relative mx-4 my-4 bg-white rounded-xl shadow-sm p-6 flex flex-col flex-1 border border-neutral-100">
-          {/* Status Indicator */}
-          <div className="flex items-center gap-2 mb-3">
-            <span className={getStatusDot(project.status)}></span>
-            <span className={`font-medium text-neutral-500 uppercase tracking-wider ${language === 'en' ? 'text-sm' : 'text-xs'}`}>
-              {t.status[project.status] || project.status}
-            </span>
+        {/* Header Strip */}
+        <div className="flex justify-between items-stretch border-b-2 border-black bg-neutral-100 h-10">
+          <div className={`px-4 flex items-center justify-center font-bold uppercase tracking-wider text-[10px] ${getStatusStyle(project.status)}`}>
+            {t.status[project.status] || project.status}
           </div>
+          <div className="flex-1 flex items-center justify-end px-4 gap-2">
+            <Calendar size={14} className="text-neutral-600" />
+            <span className="font-mono text-xs font-bold">{project.year}</span>
+          </div>
+        </div>
 
-          {/* Title */}
+        <div className="p-5 flex flex-col flex-1">
+          {/* Title - Bold & Uppercase */}
           <TruncatedText
             as="h3"
             maxLines={2}
-            className={`font-serif font-bold text-neutral-900 mb-2 leading-tight ${language === 'en' ? 'text-2xl' : 'text-xl'}`}
+            className={`font-display font-black text-black mb-3 leading-tight uppercase tracking-tight ${language === 'en' ? 'text-xl' : 'text-lg'}`}
           >
             {(() => {
               // Always try to split if @ is present
@@ -96,8 +98,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               return (
                 <TruncatedText
                   as="p"
-                  maxLines={2}
-                  className={`text-neutral-600 mb-4 flex-1 ${language === 'en' ? 'text-base' : 'text-sm'}`}
+                  maxLines={3}
+                  className={`text-neutral-700 mb-6 flex-1 font-medium leading-relaxed border-l-4 border-primary-500 pl-3 ${language === 'en' ? 'text-sm' : 'text-xs'}`}
                 >
                   {displayTitle.substring(splitIndex + 1)}
                 </TruncatedText>
@@ -106,67 +108,44 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
             // Case 2: No split, check if description is repetitive (case-insensitive)
             if (displayTitle.toLowerCase() === displayDescription.toLowerCase()) {
-              return null; // Hide if identical
+              return <div className="flex-1 min-h-[1rem]"></div>; // Spacer
             }
 
             // Case 3: Different content - show description
             return (
               <TruncatedText
                 as="p"
-                maxLines={2}
-                className={`text-neutral-600 mb-4 flex-1 ${language === 'en' ? 'text-base' : 'text-sm'}`}
+                maxLines={3}
+                className={`text-neutral-700 mb-6 flex-1 font-medium leading-relaxed border-l-4 border-primary-500 pl-3 ${language === 'en' ? 'text-sm' : 'text-xs'}`}
               >
                 {displayDescription}
               </TruncatedText>
             );
           })()}
 
-          {/* Metadata - Flex Layout with Right-Aligned Numbers */}
-          <div className="mt-auto pt-4 border-t border-accent-100">
-            <div className="flex flex-col gap-3 text-sm">
-              {/* Top Row: Village (left) + Year (right) */}
-              <div className="flex items-center justify-between gap-4">
-                {/* Village - Left */}
-                <div className="flex items-center gap-2 flex-1 min-w-0">
-                  <MapPin size={16} className="text-primary-600 flex-shrink-0" />
-                  <TruncatedText className={`text-neutral-700 font-medium ${language === 'en' ? 'text-sm' : 'text-xs'}`}>
-                    {getVillageName(project.village, language)}
-                  </TruncatedText>
-                </div>
-
-                {/* Year - Right */}
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <Calendar size={16} className="text-secondary-600 flex-shrink-0" />
-                  <span className={`text-neutral-700 font-medium whitespace-nowrap ${language === 'en' ? 'text-sm' : 'text-xs'}`}>{project.year}</span>
-                </div>
+          {/* Metadata Grid - Rugged */}
+          <div className="mt-auto grid grid-cols-2 gap-4 border-t-2 border-black pt-3 bg-neutral-50 -mx-5 -mb-5 p-4">
+            {/* Village */}
+            <div className="flex flex-col">
+              <span className="text-[10px] uppercase font-bold text-neutral-500 mb-1">Location</span>
+              <div className="flex items-center gap-1.5 font-bold text-xs text-black">
+                <MapPin size={12} className="text-primary-600" />
+                <TruncatedText>
+                  {getVillageName(project.village, language)}
+                </TruncatedText>
               </div>
+            </div>
 
-              {/* Bottom Row: Scheme (left) + Budget (right) */}
-              <div className="flex items-end justify-between gap-4">
-                {/* Scheme - Left */}
-                {project.scheme ? (
-                  <div className="flex items-center gap-2 flex-1 min-w-0">
-                    <FileText size={16} className="text-primary-600 flex-shrink-0" />
-                    <TruncatedText className={`text-neutral-700 font-medium ${language === 'en' ? 'text-sm' : 'text-xs'}`}>
-                      {project.scheme}
-                    </TruncatedText>
-                  </div>
-                ) : (
-                  <div className="flex-1"></div>
-                )}
-
-                {/* Budget - Right */}
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <Banknote size={18} className="text-primary-600 flex-shrink-0" />
-                  <span className="text-primary-700 font-mono text-lg font-bold whitespace-nowrap leading-none">{project.budget}</span>
-                </div>
+            {/* Budget */}
+            <div className="flex flex-col items-end">
+              <span className="text-[10px] uppercase font-bold text-neutral-500 mb-1">Budget</span>
+              <div className="flex items-center gap-1.5 font-mono font-black text-base text-black bg-accent-400 px-2 py-0.5 border border-black transform -rotate-1 shadow-sm">
+                {project.budget}
               </div>
             </div>
           </div>
         </div>
       </div>
-
-
     </>
   );
 };

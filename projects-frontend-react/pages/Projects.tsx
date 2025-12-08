@@ -1,12 +1,6 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { getVillageName } from '../utils/villageTranslations';
-
-// ... (imports are at the top, I will insert the import at the top and then replace the title line)
-
-// Wait, replace_file_content replaces a contiguous block. I need to add the import AND change the line 312.
-// They are far apart. I should use multi_replace_file_content.
-
-import { Filter, Search, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, CheckCircle2, Clock, AlertCircle, LayoutGrid, XCircle } from 'lucide-react';
+import { Filter, Search, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, CheckCircle2, Clock, AlertCircle, LayoutGrid, XCircle, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Sidebar } from '../components/Sidebar';
 import { ProjectCard } from '../components/ProjectCard';
@@ -206,18 +200,14 @@ export const ProjectsPage: React.FC = () => {
     }
   }, [filters.block]);
 
-  // Clear village selection only when block or panchayat is manually changed (not when set via village selection)
-  // This allows the hierarchy to coexist when a village is selected from the sidebar
+  // Clear village selection only when block or panchayat is manually changed
   useEffect(() => {
-    // Only clear village if block/panchayat changed AND village doesn't match the new hierarchy
     if ((filters.block !== 'All' || filters.panchayat !== 'All') && filters.village !== null) {
-      // Check if the current village belongs to the selected block/panchayat
       const villageProject = projects.find(p => p.village === filters.village);
       const villageMatchesHierarchy = villageProject &&
         (filters.block === 'All' || villageProject.block === filters.block) &&
         (filters.panchayat === 'All' || villageProject.panchayat === filters.panchayat);
 
-      // Only clear village if it doesn't match the new hierarchy
       if (!villageMatchesHierarchy) {
         updateFilters({ village: null }, { replace: true });
       }
@@ -232,7 +222,7 @@ export const ProjectsPage: React.FC = () => {
   }, [filteredProjects, filters.page]);
 
   const handlePageChange = (page: number) => {
-    updateFilters({ page }, { replace: false }); // Allow back navigation for pagination
+    updateFilters({ page }, { replace: false });
     const gridElement = document.getElementById('projects-grid-top');
     if (gridElement) {
       gridElement.scrollIntoView({ behavior: 'smooth' });
@@ -267,15 +257,14 @@ export const ProjectsPage: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="flex h-[calc(100vh-64px)] items-center justify-center bg-slate-50">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+      <div className="flex h-[calc(100vh-64px)] items-center justify-center bg-white">
+        <div className="animate-spin h-12 w-12 border-4 border-primary-600 border-t-transparent rounded-full"></div>
       </div>
     );
   }
 
   return (
     <>
-      {/* SEO Meta Tags */}
       <ProjectsSEO filters={filters} resultCount={filteredProjects.length} />
 
       <div className="flex min-h-[calc(100vh-64px)]">
@@ -296,60 +285,64 @@ export const ProjectsPage: React.FC = () => {
           villageCounts={villageCounts}
         />
 
-        {/* Main Content Area - Editorial Style */}
-        <div className="flex-1 flex flex-col bg-accent-50 w-full relative pb-0">
+        {/* Main Content Area - Solid & Bold */}
+        <div className="flex-1 flex flex-col bg-white w-full relative pb-0">
 
-          {/* Toolbar / Filter Bar */}
-          <div className="bg-white border-b border-accent-200 z-20 shadow-sm flex-shrink-0">
-            <div className="p-4 sm:p-6 flex flex-col gap-3 sm:gap-6">
+          {/* Toolbar / Filter Bar - Heavy Grid */}
+          <div className="bg-neutral-100 border-b-4 border-black z-20 flex-shrink-0">
+            <div className="p-4 sm:p-6 flex flex-col gap-4 sm:gap-6">
 
               {/* Party Banner integrated here */}
               <div className="hidden md:block">
                 <PartyBanner />
               </div>
 
-              {/* Top Row: Title & Mobile Toggle Layout */}
-              <div className="flex flex-col gap-3 sm:gap-4 lg:flex-row lg:items-center lg:justify-between">
+              {/* Top Row: Title & Mobile Toggle */}
+              <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
 
-                {/* Title Section - Editorial Style */}
+                {/* Title Section - Manifesto Style */}
                 <div>
-                  <h1 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900 flex items-center gap-2 sm:gap-3">
+                  <h1 className="font-display text-2xl sm:text-4xl font-black text-black uppercase tracking-tight flex items-center gap-3">
                     {filters.village ? (
                       <>
-                        {getVillageName(filters.village, language)}
+                        <span className="bg-primary-600 text-white px-2 leading-none py-1 transform -skew-x-12 inline-block">
+                          {getVillageName(filters.village, language)}
+                        </span>
                         <button
                           onClick={() => updateFilters({ village: null, block: 'All', panchayat: 'All' })}
-                          className="text-neutral-400 hover:text-primary-600 transition-colors"
+                          className="text-neutral-400 hover:text-red-600 transition-colors"
                           title="Clear village filter"
                         >
-                          <XCircle size={20} className="sm:w-[22px] sm:h-[22px]" />
+                          <XCircle size={28} />
                         </button>
                       </>
-                    ) : t.projects.allProjects}
+                    ) : (
+                      <span>{t.projects.allProjects}</span>
+                    )}
                   </h1>
-                  <p className="text-xs sm:text-sm text-neutral-600 mt-0.5 sm:mt-1 font-medium">
-                    {t.projects.showing} {filteredProjects.length} {t.projects.results}
+                  <p className="text-sm font-bold text-neutral-600 mt-2 uppercase tracking-wide border-l-4 border-accent-400 pl-2">
+                    {t.projects.showing} <span className="text-black">{filteredProjects.length}</span> {t.projects.results}
                   </p>
                 </div>
 
-                {/* Controls Section: Stacked on Mobile, Inline on Desktop */}
+                {/* Controls */}
                 <div className="flex gap-2 sm:gap-3 w-full lg:w-auto">
-                  {/* Prominent Village Filter Button for Mobile */}
+                  {/* Mobile Sidebar Button */}
                   <button
-                    className="lg:hidden flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-5 sm:py-2.5 bg-primary-500 text-white rounded-xl text-xs sm:text-sm font-medium shadow-sm active:bg-primary-600 transition-all shrink-0 hover:shadow-md"
+                    className="lg:hidden flex items-center gap-2 px-4 py-3 bg-black text-white font-bold uppercase tracking-wider text-xs shadow-[3px_3px_0_0_#fbbf24] active:translate-y-0.5 active:shadow-none transition-all"
                     onClick={() => setIsMobileSidebarOpen(true)}
                   >
-                    <Filter size={14} className="sm:w-4 sm:h-4" />
+                    <Filter size={16} />
                     {t.projects.filterVillages}
                   </button>
 
-                  {/* Search Bar - Editorial Style */}
+                  {/* Search Bar - Blocky */}
                   <div className="relative flex-grow lg:w-80">
-                    <Search className="absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 text-accent-500" size={14} />
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-black" size={18} strokeWidth={3} />
                     <input
                       type="text"
                       placeholder={t.projects.searchPlaceholder}
-                      className="w-full pl-8 sm:pl-10 pr-3 sm:pr-4 py-2 sm:py-2.5 bg-white border-2 border-accent-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-accent-500/20 focus:border-accent-500 transition-all placeholder:text-accent-400"
+                      className="w-full pl-10 pr-4 py-3 bg-white border-2 border-black rounded-none font-bold placeholder:text-neutral-400 focus:outline-none focus:ring-0 focus:shadow-[4px_4px_0_0_#000] transition-all uppercase text-sm"
                       value={filters.search}
                       onChange={(e) => updateFilters({ search: e.target.value })}
                     />
@@ -357,81 +350,48 @@ export const ProjectsPage: React.FC = () => {
                 </div>
               </div>
 
+              {/* Filter Row - Solid Blocks */}
+              <div className="flex flex-wrap items-end gap-3 sm:gap-4 p-4 bg-white border-2 border-black shadow-[4px_4px_0_0_#e5e7eb]">
 
+                {/* Filter Item Builder */}
+                {[
+                  { label: t.projects.labelBlock, value: filters.block, options: blocks, key: 'block', display: (v: string) => getVillageName(v, language) },
+                  { label: t.projects.labelPanchayat, value: filters.panchayat, options: panchayats, key: 'panchayat', disabled: filters.block === 'All', display: (v: string) => getVillageName(v, language) },
+                  { label: t.projects.labelScheme, value: filters.scheme, options: schemes, key: 'scheme', display: (v: string) => v }
+                ].map((filter, idx) => (
+                  <div key={idx} className="flex flex-col gap-1 min-w-[140px]">
+                    <label className="text-[10px] uppercase font-black text-neutral-500 tracking-wider">
+                      {filter.label}
+                    </label>
+                    <div className="relative">
+                      <select
+                        value={filter.value}
+                        onChange={(e) => updateFilters({ [filter.key]: e.target.value })}
+                        disabled={filter.disabled}
+                        className={`appearance-none w-full px-4 py-2 border-2 text-sm font-bold uppercase cursor-pointer rounded-none focus:outline-none focus:shadow-[2px_2px_0_0_#000] transition-all
+                                ${filter.value !== 'All'
+                            ? 'bg-accent-100 border-black text-black'
+                            : 'bg-white border-neutral-300 text-neutral-500 hover:border-black'
+                          }
+                                ${filter.disabled ? 'opacity-50 cursor-not-allowed bg-neutral-100' : ''}
+                            `}
+                      >
+                        <option value="All">All</option>
+                        {filter.options.map(opt => (
+                          <option key={opt} value={opt}>{filter.display(opt)}</option>
+                        ))}
+                      </select>
+                      {/* Custom Arrow */}
+                      <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                        <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-black"></div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
 
-              {/* Bottom Row: Pill Filters for Block, Panchayat, Type & Year - Editorial Style */}
-              <div className="flex flex-wrap items-end gap-2 sm:gap-4 overflow-x-auto">
-                {/* Block Filter */}
-                <div className="flex flex-col gap-0.5 sm:gap-1">
-                  <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
-                    {t.projects.labelBlock} / பிரிவு
-                  </label>
-                  <select
-                    value={filters.block}
-                    onChange={(e) => updateFilters({ block: e.target.value })}
-                    className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.block !== 'All'
-                      ? 'bg-secondary-50 border-secondary-400 text-secondary-700'
-                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                      }`}
-                  >
-                    <option value="All">{t.projects.allBlocks}</option>
-                    {blocks.map(block => (
-                      <option key={block} value={block}>{getVillageName(block, language)}</option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Panchayat Filter */}
-                <div className="flex flex-col gap-0.5 sm:gap-1">
-                  <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
-                    {t.projects.labelPanchayat} / பஞ்சாயத்து
-                  </label>
-                  <select
-                    value={filters.panchayat}
-                    onChange={(e) => updateFilters({ panchayat: e.target.value })}
-                    className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.panchayat !== 'All'
-                      ? 'bg-accent-100 border-accent-400 text-accent-700'
-                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                      }`}
-                    disabled={filters.block === 'All'}
-                  >
-                    <option value="All">
-                      {filters.block === 'All' ? t.projects.selectBlockFirst : t.projects.allPanchayats}
-                    </option>
-                    {panchayats.map(panchayat => (
-                      <option key={panchayat} value={panchayat}>{getVillageName(panchayat, language)}</option>
-                    ))}
-                  </select>
-                </div>
-
-
-
-
-
-                {/* Scheme Filter */}
-                <div className="flex flex-col gap-0.5 sm:gap-1">
-                  <label className="text-[10px] sm:text-xs font-medium text-neutral-600 px-1">
-                    {t.projects.labelScheme} / திட்டம்
-                  </label>
-                  <select
-                    value={filters.scheme}
-                    onChange={(e) => updateFilters({ scheme: e.target.value })}
-                    className={`appearance-none px-3 py-1.5 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm border-2 font-medium cursor-pointer transition-all ${filters.scheme !== 'All'
-                      ? 'bg-primary-50 border-primary-400 text-primary-700'
-                      : 'bg-white border-accent-300 text-neutral-700 hover:border-accent-400'
-                      }`}
-                  >
-                    <option value="All">{t.projects.allSchemes}</option>
-                    {schemes.map(scheme => (
-                      <option key={scheme} value={scheme}>{scheme}</option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Reset Button - Editorial Style */}
-                {(filters.block !== 'All' || filters.panchayat !== 'All' || filters.year !== 'All' || filters.type !== 'All' || filters.scheme !== 'All') && (
-                  <div className="flex flex-col gap-0.5 sm:gap-1">
-                    <div className="h-[14px] sm:h-[20px]"></div>
+                {/* Reset Button */}
+                {(filters.block !== 'All' || filters.panchayat !== 'All' || filters.scheme !== 'All') && (
+                  <div className="flex items-end">
                     <button
                       onClick={() => updateFilters({
                         block: 'All',
@@ -440,8 +400,9 @@ export const ProjectsPage: React.FC = () => {
                         type: 'All',
                         scheme: 'All'
                       })}
-                      className="text-[10px] sm:text-xs text-primary-600 hover:text-primary-700 font-semibold underline px-2 py-1.5 sm:px-3 sm:py-2 transition-colors whitespace-nowrap"
+                      className="px-4 py-2 text-xs font-black uppercase text-red-600 border-2 border-transparent hover:border-red-600 hover:bg-red-50 transition-all flex items-center gap-1"
                     >
+                      <X size={14} strokeWidth={4} />
                       {t.projects.reset}
                     </button>
                   </div>
@@ -451,7 +412,7 @@ export const ProjectsPage: React.FC = () => {
           </div>
 
           {/* Scrollable Project Grid */}
-          <div id="projects-grid-top" className="flex-1 p-4 md:p-6 scroll-smooth">
+          <div id="projects-grid-top" className="flex-1 p-4 md:p-8 scroll-smooth bg-neutral-50">
             {/* Mobile Party Banner */}
             <div className="block md:hidden mb-6">
               <PartyBanner />
@@ -459,41 +420,41 @@ export const ProjectsPage: React.FC = () => {
 
             {filteredProjects.length > 0 ? (
               <>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
                   {paginatedProjects.map(project => (
                     <ProjectCard key={project.id} project={project} />
                   ))}
                 </div>
 
-                {/* Pagination Controls */}
+                {/* Pagination Controls - Solid Squares */}
                 {totalPages > 1 && (
-                  <div className="flex justify-center items-center space-x-2">
+                  <div className="flex justify-center items-center gap-2">
                     <button
                       onClick={() => handlePageChange(1)}
                       disabled={filters.page === 1}
-                      className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
+                      className="w-10 h-10 flex items-center justify-center bg-white border-2 border-black font-bold disabled:opacity-30 disabled:border-neutral-300 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0_0_#000] active:translate-y-0.5 active:shadow-none"
                     >
-                      <ChevronsLeft size={18} />
+                      <ChevronsLeft size={20} />
                     </button>
                     <button
                       onClick={() => handlePageChange(filters.page - 1)}
                       disabled={filters.page === 1}
-                      className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
+                      className="w-10 h-10 flex items-center justify-center bg-white border-2 border-black font-bold disabled:opacity-30 disabled:border-neutral-300 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0_0_#000] active:translate-y-0.5 active:shadow-none"
                     >
-                      <ChevronLeft size={18} />
+                      <ChevronLeft size={20} />
                     </button>
 
-                    <div className="flex space-x-1 items-center bg-white rounded-lg border border-slate-200 p-1">
+                    <div className="flex gap-2">
                       {getPageNumbers().map((page, index) => (
                         <React.Fragment key={index}>
                           {page === '...' ? (
-                            <span className="px-3 py-1 text-slate-400 text-xs">...</span>
+                            <span className="flex items-end px-2 font-black text-black">...</span>
                           ) : (
                             <button
                               onClick={() => handlePageChange(page as number)}
-                              className={`w-8 h-8 rounded-md text-sm font-semibold transition-all ${filters.page === page
-                                ? 'bg-primary-600 text-white shadow-sm'
-                                : 'text-slate-600 hover:bg-slate-50'
+                              className={`w-10 h-10 flex items-center justify-center border-2 border-black font-black transition-all shadow-[2px_2px_0_0_#000] active:translate-y-0.5 active:shadow-none ${filters.page === page
+                                ? 'bg-primary-600 text-white'
+                                : 'bg-white text-black hover:bg-accent-300'
                                 }`}
                             >
                               {page}
@@ -506,63 +467,40 @@ export const ProjectsPage: React.FC = () => {
                     <button
                       onClick={() => handlePageChange(filters.page + 1)}
                       disabled={filters.page === totalPages}
-                      className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
+                      className="w-10 h-10 flex items-center justify-center bg-white border-2 border-black font-bold disabled:opacity-30 disabled:border-neutral-300 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0_0_#000] active:translate-y-0.5 active:shadow-none"
                     >
-                      <ChevronRight size={18} />
+                      <ChevronRight size={20} />
                     </button>
                     <button
                       onClick={() => handlePageChange(totalPages)}
                       disabled={filters.page === totalPages}
-                      className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 transition-all"
+                      className="w-10 h-10 flex items-center justify-center bg-white border-2 border-black font-bold disabled:opacity-30 disabled:border-neutral-300 hover:bg-black hover:text-white transition-all shadow-[2px_2px_0_0_#000] active:translate-y-0.5 active:shadow-none"
                     >
-                      <ChevronsRight size={18} />
+                      <ChevronsRight size={20} />
                     </button>
                   </div>
                 )}
               </>
             ) : (
-              <div className="flex flex-col items-center justify-center h-[60vh]">
-                {filteredProjects.length === 0 && filters.village && filters.status === ProjectStatus.ONGOING && projects.some(p => p.village === filters.village && p.status === ProjectStatus.COMPLETED) ? (
-                  <>
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-emerald-200 rounded-full opacity-20 blur-xl"></div>
-                      <div className="bg-white p-6 rounded-full shadow-lg relative z-10">
-                        <CheckCircle2 size={48} className="text-emerald-500" />
-                      </div>
-                    </div>
-                    <h3 className="mt-6 text-xl font-bold text-slate-700">Great News!</h3>
-                    <p className="text-slate-500 mt-2 max-w-md text-center">
-                      All planned projects in <span className="font-semibold text-slate-900">{filters.village}</span> are successfully completed!
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-primary-200 rounded-full opacity-20 blur-xl"></div>
-                      <div className="bg-white p-6 rounded-full shadow-lg relative z-10">
-                        <Search size={48} className="text-primary-300" />
-                      </div>
-                    </div>
-                    <h3 className="mt-6 text-xl font-bold text-slate-700">{t.projects.noResults}</h3>
-                    <p className="text-slate-500 mt-2 max-w-xs text-center">
-                      {t.projects.noResultsDesc}
-                    </p>
-                  </>
-                )}
+              <div className="flex flex-col items-center justify-center h-[50vh] border-4 border-dashed border-neutral-300 bg-white/50">
+                <div className="bg-neutral-200 p-6 rounded-full mb-4">
+                  <Search size={48} className="text-neutral-500" />
+                </div>
+                <h3 className="text-2xl font-black text-black uppercase">{t.projects.noResults}</h3>
+                <p className="text-neutral-500 font-medium mt-2">{t.projects.noResultsDesc}</p>
                 <button
                   onClick={resetFilters}
-                  className="mt-6 px-6 py-2 bg-white border border-slate-300 text-slate-700 font-medium rounded-full hover:bg-slate-50 hover:border-slate-400 transition-colors"
+                  className="mt-6 px-8 py-3 bg-black text-white font-bold uppercase tracking-wider hover:bg-primary-600 transition-colors shadow-lg"
                 >
                   {t.projects.clearFilters}
                 </button>
               </div>
             )}
           </div>
-
         </div>
       </div>
 
-      {/* Hidden Shareable Graphic Component (off-screen) */}
+      {/* Hidden layout elements for graphics */}
       <div style={{ position: 'fixed', left: '-9999px', top: 0 }}>
         <ProjectGraphic
           projects={top8Projects}
@@ -571,12 +509,10 @@ export const ProjectsPage: React.FC = () => {
         />
       </div>
 
-      {/* Shareable Graphic Button (FAB) - Only show when there are projects */}
       {filteredProjects.length > 0 && (
         <ShareableGraphicButton onClick={handleOpenGraphicModal} />
       )}
 
-      {/* Graphic Preview Modal */}
       <GraphicPreviewModal
         isOpen={isGraphicModalOpen}
         onClose={handleCloseGraphicModal}

@@ -1,264 +1,144 @@
 /* Tailwind loaded via CDN */
 
 /* ==========================================================================
-   Premium Editorial Design System - Custom Animations & Utilities
+   Political Mass Appeal Design System - DMK Style
    ========================================================================== */
 
-/* Parallax scroll effect */
-.parallax-slow {
-  transform: translateY(calc(var(--scroll) * -0.5px));
-  transition: transform 0.1s ease-out;
-}
-
-/* Image zoom on hover */
-.image-zoom {
-  transition: transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
-
-.image-zoom img {
-  transition: transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.image-zoom:hover img {
-  transform: scale(1.08);
-}
-
-/* Link underline expand animation */
-.link-expand {
-  position: relative;
-}
-
-.link-expand::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: currentColor;
-  transition: width 300ms ease-out;
-}
-
-.link-expand:hover::after {
-  width: 100%;
-}
-
-/* Stagger animation for lists/grids */
-.stagger-item {
-  opacity: 0;
-  animation: fadeInUp 600ms ease-out forwards;
-}
-
-.stagger-item:nth-child(1) {
-  animation-delay: 0ms;
-}
-
-.stagger-item:nth-child(2) {
-  animation-delay: 100ms;
-}
-
-.stagger-item:nth-child(3) {
-  animation-delay: 200ms;
-}
-
-.stagger-item:nth-child(4) {
-  animation-delay: 300ms;
-}
-
-.stagger-item:nth-child(5) {
-  animation-delay: 400ms;
-}
-
-.stagger-item:nth-child(6) {
-  animation-delay: 500ms;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Number count-up animation */
-@keyframes countUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.count-up {
-  animation: countUp 800ms ease-out forwards;
-}
-
-/* Kolam pattern background texture */
-.kolam-texture {
-  background-image: url('/assets/patterns/kolam.svg');
-  background-size: 400px;
-  background-repeat: repeat;
-  opacity: 0.05;
+/* Sun Rays Background Pattern (Rising Sun) */
+.sun-rays-texture {
+  background: 
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(220, 38, 38, 0.03) 0deg 10deg,
+      transparent 10deg 20deg
+    );
+  opacity: 1;
   pointer-events: none;
 }
 
-/* Organic curved divider */
-.curved-divider {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
+/* Bold Typography Utilities */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
 }
 
-.curved-divider svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 60px;
+.text-stroke-white {
+  -webkit-text-stroke: 1px white;
 }
 
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
+/* Sharp Card Hover Effect */
+.card-sharp {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Editorial content spacing */
-.editorial-spacing>*+* {
-  margin-top: 1.75rem;
+.card-sharp:hover {
+  transform: translateY(-4px);
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1); /* Hard shadow */
+  border: 1px solid black;
 }
 
-/* Status dot indicator */
+/* Dynamic Entrance Animation */
+@keyframes zipIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-zip-in {
+  animation: zipIn 0.4s ease-out forwards;
+}
+
+/* High Contrast Status Dots */
 .status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; /* Keep round or make square for more rigidity? Round is standard. */
   display: inline-block;
   margin-right: 0.5rem;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px black;
 }
 
 .status-dot.completed {
-  background-color: #528f4e;
-  box-shadow: 0 0 0 2px rgba(82, 143, 78, 0.2);
+  background-color: #16a34a; /* Bright Green */
 }
 
 .status-dot.ongoing {
-  background-color: #e96e37;
-  box-shadow: 0 0 0 2px rgba(233, 110, 55, 0.2);
-  animation: pulse-dot 2s ease-in-out infinite;
+  background-color: #fbbf24; /* Bright Yellow */
+  animation: flash 1s infinite alternate;
 }
 
 .status-dot.planned {
-  background-color: #a8a29e;
-  box-shadow: 0 0 0 2px rgba(168, 162, 158, 0.2);
+  background-color: #525252; /* Dark Gray */
 }
 
-@keyframes pulse-dot {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.6;
-  }
+@keyframes flash {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
 }
 
-@keyframes gentle-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
-    transform: scale(1);
-  }
-
-  15% {
-    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
-    transform: scale(0.95);
-  }
-
-  40% {
-    box-shadow: 0 0 0 20px rgba(220, 38, 38, 0);
-    transform: scale(1.1);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
-    transform: scale(1);
-  }
-}
-
-.animate-gentle-pulse {
-  animation: gentle-pulse 2s infinite;
-}
-
-/* Gradient text effect */
+/* Gradient Text - Fire Colors */
 .gradient-text {
-  background: linear-gradient(135deg, #e96e37 0%, #528f4e 100%);
+  background: linear-gradient(135deg, #dc2626 0%, #000000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 800;
 }
 
-/* Card hover lift effect */
-.card-lift {
-  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+/* Buttons - Mass Appeal */
+.btn-political {
+  background: #000000;
+  color: #fbbf24; /* Yellow text on Black */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid #000000;
+  transition: all 0.2s;
+  box-shadow: 4px 4px 0 rgba(220, 38, 38, 1); /* Red Shadow */
 }
 
-.card-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.btn-political:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(220, 38, 38, 1);
 }
 
-/* Progress bar animation */
+.btn-political:active {
+  transform: translate(0, 0);
+  box-shadow: 0 0 0 rgba(220, 38, 38, 1);
+}
+
+/* Progress Bar - Strong */
 .progress-bar {
-  position: relative;
-  height: 4px;
-  background: #e7e5e4;
-  border-radius: 2px;
-  overflow: hidden;
+  height: 12px;
+  background: #e5e5e5;
+  border: 1px solid black;
+  border-radius: 0; /* Square edges */
 }
 
 .progress-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #e96e37 0%, #528f4e 100%);
-  border-radius: 2px;
-  transition: width 1s ease-out;
+  background: repeating-linear-gradient(
+    45deg,
+    #dc2626,
+    #dc2626 10px,
+    #b91c1c 10px,
+    #b91c1c 20px
+  );
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
 }
 
-/* Backdrop blur utility */
-.backdrop-blur-sm {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
 }
 
-.backdrop-blur-md {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-/* Responsive text utilities */
-@media (max-width: 640px) {
-  .text-display-lg {
-    font-size: 2.5rem;
-  }
-
-  .text-display-md {
-    font-size: 2rem;
-  }
-}
-
-/* Print styles */
+/* Print Styles */
 @media print {
   .no-print {
     display: none !important;

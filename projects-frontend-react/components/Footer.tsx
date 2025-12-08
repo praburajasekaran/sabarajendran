@@ -6,67 +6,71 @@ export const Footer: React.FC = () => {
   const { t, language } = useLanguage();
 
   return (
-    <footer className="bg-neutral-900 text-neutral-300 py-16 border-t-2 border-accent-500 relative overflow-hidden">
-      {/* Subtle Kolam Texture Overlay */}
-      <div className="absolute inset-0 kolam-texture opacity-[0.03] pointer-events-none"></div>
+    <footer className="bg-secondary-900 text-white pt-20 pb-8 border-t-8 border-accent-400 relative overflow-hidden">
+      {/* Sun Rays Texture (Political) */}
+      <div className="absolute inset-0 sun-rays-texture opacity-30 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Column 1: About */}
           <div>
-            <h3 className="font-serif text-h3 font-bold text-white mb-4 pb-2 border-b border-accent-600/30">
+            <h3 className="font-display text-2xl font-extrabold text-accent-400 mb-6 uppercase tracking-wider border-l-4 border-primary-600 pl-3">
               {t.footer.aboutTitle}
             </h3>
-            <p className="text-neutral-400 text-sm leading-relaxed mb-6">
+            <p className="text-neutral-300 text-lg leading-relaxed mb-8 font-medium">
               {t.footer.aboutDesc}
             </p>
-            {/* Social Links */}
+            {/* Social Links - Big & Bold */}
             <div className="flex gap-4">
               <a
                 href="https://www.facebook.com/SabaMlaDMK"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all"
+                className="p-3 bg-primary-600 text-white hover:bg-white hover:text-primary-600 transition-all transform hover:-translate-y-1 shadow-[4px_4px_0_0_#000]"
                 aria-label="Facebook"
               >
-                <Facebook size={20} />
+                <Facebook size={24} strokeWidth={2.5} />
               </a>
               <a
                 href="https://x.com/rajendran_saba"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all"
+                className="p-3 bg-black text-white hover:bg-white hover:text-black transition-all transform hover:-translate-y-1 shadow-[4px_4px_0_0_#dc2626]"
                 aria-label="Twitter"
               >
-                <Twitter size={20} />
+                <Twitter size={24} strokeWidth={2.5} />
               </a>
               <a
                 href="https://www.instagram.com/saba_rajendran_mla"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-neutral-800 text-neutral-400 hover:bg-primary-600 hover:text-white transition-all"
+                className="p-3 bg-gradient-to-tr from-purple-600 to-pink-600 text-white hover:from-white hover:to-white hover:text-pink-600 transition-all transform hover:-translate-y-1 shadow-[4px_4px_0_0_#000]"
                 aria-label="Instagram"
               >
-                <Instagram size={20} />
+                <Instagram size={24} strokeWidth={2.5} />
               </a>
             </div>
           </div>
 
           {/* Column 2: Office Locations */}
           <div>
-            <h3 className="font-serif text-h3 font-bold text-white mb-4 pb-2 border-b border-accent-600/30">
+            <h3 className="font-display text-2xl font-extrabold text-accent-400 mb-6 uppercase tracking-wider border-l-4 border-primary-600 pl-3">
               {t.footer.officeTitle}
             </h3>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start gap-3 group">
-                <MapPin size={18} className="mt-0.5 text-accent-500 flex-shrink-0 group-hover:text-primary-500 transition-colors" />
-                <span className="text-neutral-400 group-hover:text-neutral-300 transition-colors">
+            <ul className="space-y-6">
+              <li className="flex items-start gap-4 group">
+                <div className="p-2 bg-neutral-800 rounded text-accent-400 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                  <MapPin size={24} />
+                </div>
+                <span className="text-lg text-neutral-200 group-hover:text-white font-bold transition-colors uppercase">
                   {t.footer.office1}
                 </span>
               </li>
-              <li className="flex items-start gap-3 group">
-                <MapPin size={18} className="mt-0.5 text-accent-500 flex-shrink-0 group-hover:text-primary-500 transition-colors" />
-                <span className="text-neutral-400 group-hover:text-neutral-300 transition-colors">
+              <li className="flex items-start gap-4 group">
+                <div className="p-2 bg-neutral-800 rounded text-accent-400 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                  <MapPin size={24} />
+                </div>
+                <span className="text-lg text-neutral-200 group-hover:text-white font-bold transition-colors uppercase">
                   {t.footer.office2}
                 </span>
               </li>
@@ -75,29 +79,33 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Contact */}
           <div>
-            <h3 className="font-serif text-h3 font-bold text-white mb-4 pb-2 border-b border-accent-600/30">
+            <h3 className="font-display text-2xl font-extrabold text-accent-400 mb-6 uppercase tracking-wider border-l-4 border-primary-600 pl-3">
               {t.footer.contactTitle}
             </h3>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-center gap-3 group">
-                <Phone size={18} className="text-accent-500 flex-shrink-0 group-hover:text-primary-500 transition-colors" />
-                <span className="text-neutral-400 group-hover:text-neutral-300 transition-colors">
+            <ul className="space-y-6">
+              <li className="flex items-center gap-4 group">
+                <div className="p-2 bg-neutral-800 rounded text-accent-400 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                  <Phone size={24} />
+                </div>
+                <span className="text-2xl text-white font-bold tracking-tight">
                   +91 4142 222 333
                 </span>
               </li>
-              <li className="flex items-center gap-3 group">
-                <Mail size={18} className="text-accent-500 flex-shrink-0 group-hover:text-primary-500 transition-colors" />
-                <span className="text-neutral-400 group-hover:text-neutral-300 transition-colors">
+              <li className="flex items-center gap-4 group">
+                <div className="p-2 bg-neutral-800 rounded text-accent-400 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                  <Mail size={24} />
+                </div>
+                <span className="text-lg text-neutral-200 font-bold group-hover:text-white transition-colors">
                   contact@neyvelimla.in
                 </span>
               </li>
             </ul>
 
-            {/* Quote Card - Editorial Style */}
-            <div className="mt-6 p-4 bg-neutral-800/60 backdrop-blur-sm rounded-xl border border-accent-600/20 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 to-transparent"></div>
-              <p className="text-xs text-accent-300 italic font-medium relative z-10 leading-relaxed">
-                "{t.footer.quote}"
+            {/* Quote Card - Bold Political Statement */}
+            <div className="mt-8 p-6 bg-primary-600 text-white relative shadow-lg border-2 border-black transform rotate-1 hover:rotate-0 transition-transform">
+              <div className="absolute -top-3 -left-3 text-4xl text-black font-serif">"</div>
+              <p className="text-xl font-bold italic leading-tight text-center">
+                {t.footer.quote}
               </p>
             </div>
           </div>
@@ -105,14 +113,14 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-neutral-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-3">
-              <div className="h-px w-8 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
-              <p className="text-xs text-neutral-500 font-mono uppercase tracking-wider">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-4 bg-neutral-800 px-6 py-3 rounded-full border border-neutral-700">
+              <div className="h-3 w-3 rounded-full bg-primary-500 animate-pulse"></div>
+              <p className="text-sm text-accent-400 font-bold uppercase tracking-widest">
                 {language === 'ta' ? 'திராவிட மாடல் ஆட்சி' : 'Dravidian Model Governance'}
               </p>
             </div>
-            <p className="text-xs text-neutral-600">
+            <p className="text-sm text-neutral-500 font-mono">
               &copy; {new Date().getFullYear()} {t.footer.copyright}
             </p>
           </div>
