@@ -57,6 +57,7 @@ export const VILLAGE_TRANSLATIONS: Record<string, string> = {
     'Kurinjipadi': 'குறிஞ்சிப்பாடி',
     'Vadalur': 'வடலூர்',
     'Neyveli': 'நெய்வேலி',
+    'NLC': 'நெய்வேலி',
     'Panruti': 'பண்ருட்டி',
     'Reddypalayam': 'ரெட்டிபாளையம்',
     'Unknown Village': 'தெரியாத கிராமம்',

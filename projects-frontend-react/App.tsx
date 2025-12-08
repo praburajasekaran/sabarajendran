@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { ProjectsPage } from './pages/Projects';
+import { GrievancePage } from './pages/Grievance';
 
 import { LanguageProvider, LanguageSync } from './contexts/LanguageContext';
 import { HelmetProvider } from 'react-helmet-async';
@@ -22,6 +23,7 @@ const AppContent: React.FC = () => {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/grievance" element={<GrievancePage />} />
               <Route path="/projects/:blockSlug" element={<ProjectsPage />} />
               <Route path="/projects/:blockSlug/:panchayatSlug" element={<ProjectsPage />} />
               <Route path="/projects/:blockSlug/:panchayatSlug/:villageSlug" element={<ProjectsPage />} />
@@ -30,6 +32,7 @@ const AppContent: React.FC = () => {
               <Route path="/ta" element={<Home />} />
               <Route path="/ta/about" element={<About />} />
               <Route path="/ta/projects" element={<ProjectsPage />} />
+              <Route path="/ta/grievance" element={<GrievancePage />} />
               <Route path="/ta/projects/:blockSlug" element={<ProjectsPage />} />
               <Route path="/ta/projects/:blockSlug/:panchayatSlug" element={<ProjectsPage />} />
               <Route path="/ta/projects/:blockSlug/:panchayatSlug/:villageSlug" element={<ProjectsPage />} />

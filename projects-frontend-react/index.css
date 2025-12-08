@@ -6,14 +6,65 @@
 
 /* Sun Rays Background Pattern (Rising Sun) */
 .sun-rays-texture {
-  background: 
-    repeating-conic-gradient(
-      from 0deg,
+  background:
+    repeating-conic-gradient(from 0deg,
       rgba(220, 38, 38, 0.03) 0deg 10deg,
-      transparent 10deg 20deg
-    );
+      transparent 10deg 20deg);
   opacity: 1;
   pointer-events: none;
+}
+
+/* Primary Action Button (Red) */
+.btn-political-primary {
+  background: #dc2626;
+  /* CTA Red */
+  color: #ffffff;
+  /* White Text */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid #000000;
+  /* Black Border */
+  transition: all 0.2s;
+  box-shadow: 4px 4px 0 #000000;
+  /* Black Shadow for contrast */
+}
+
+.btn-political-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000000;
+}
+
+.btn-political-primary:active {
+  transform: translate(0, 0);
+  box-shadow: 0 0 0 #000000;
+}
+
+/* Strong Heartbeat Animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  14% {
+    transform: scale(1.1);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.1);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
 }
 
 /* Bold Typography Utilities */
@@ -33,7 +84,8 @@
 
 .card-sharp:hover {
   transform: translateY(-4px);
-  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1); /* Hard shadow */
+  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  /* Hard shadow */
   border: 1px solid black;
 }
 
@@ -43,6 +95,7 @@
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -57,7 +110,8 @@
 .status-dot {
   width: 12px;
   height: 12px;
-  border-radius: 50%; /* Keep round or make square for more rigidity? Round is standard. */
+  border-radius: 50%;
+  /* Keep round or make square for more rigidity? Round is standard. */
   display: inline-block;
   margin-right: 0.5rem;
   border: 2px solid white;
@@ -65,21 +119,29 @@
 }
 
 .status-dot.completed {
-  background-color: #16a34a; /* Bright Green */
+  background-color: #16a34a;
+  /* Bright Green */
 }
 
 .status-dot.ongoing {
-  background-color: #fbbf24; /* Bright Yellow */
+  background-color: #fbbf24;
+  /* Bright Yellow */
   animation: flash 1s infinite alternate;
 }
 
 .status-dot.planned {
-  background-color: #525252; /* Dark Gray */
+  background-color: #525252;
+  /* Dark Gray */
 }
 
 @keyframes flash {
-  from { opacity: 1; }
-  to { opacity: 0.5; }
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.5;
+  }
 }
 
 /* Gradient Text - Fire Colors */
@@ -94,13 +156,15 @@
 /* Buttons - Mass Appeal */
 .btn-political {
   background: #000000;
-  color: #fbbf24; /* Yellow text on Black */
+  color: #fbbf24;
+  /* Yellow text on Black */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border: 2px solid #000000;
   transition: all 0.2s;
-  box-shadow: 4px 4px 0 rgba(220, 38, 38, 1); /* Red Shadow */
+  box-shadow: 4px 4px 0 rgba(220, 38, 38, 1);
+  /* Red Shadow */
 }
 
 .btn-political:hover {
@@ -118,19 +182,18 @@
   height: 12px;
   background: #e5e5e5;
   border: 1px solid black;
-  border-radius: 0; /* Square edges */
+  border-radius: 0;
+  /* Square edges */
 }
 
 .progress-bar-fill {
   height: 100%;
-  background: repeating-linear-gradient(
-    45deg,
-    #dc2626,
-    #dc2626 10px,
-    #b91c1c 10px,
-    #b91c1c 20px
-  );
-  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+  background: repeating-linear-gradient(45deg,
+      #dc2626,
+      #dc2626 10px,
+      #b91c1c 10px,
+      #b91c1c 20px);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Smooth Scroll */
@@ -143,4 +206,39 @@ html {
   .no-print {
     display: none !important;
   }
+}
+
+/* Attention Animations */
+@keyframes attention-arrow {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+.animate-attention-arrow {
+  animation: attention-arrow 1.2s ease-in-out infinite;
+}
+
+@keyframes gentle-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 4px 4px 0 rgba(220, 38, 38, 1);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 6px 6px 0 rgba(220, 38, 38, 1);
+  }
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 2s ease-in-out infinite;
 }

@@ -282,6 +282,7 @@ export const ProjectsPage: React.FC = () => {
           }}
           isOpenMobile={isMobileSidebarOpen}
           closeMobile={() => setIsMobileSidebarOpen(false)}
+          onToggleMobile={() => setIsMobileSidebarOpen(prev => !prev)}
           villageCounts={villageCounts}
         />
 
@@ -328,13 +329,7 @@ export const ProjectsPage: React.FC = () => {
                 {/* Controls */}
                 <div className="flex gap-2 sm:gap-3 w-full lg:w-auto">
                   {/* Mobile Sidebar Button */}
-                  <button
-                    className="lg:hidden flex items-center gap-2 px-4 py-3 bg-black text-white font-bold uppercase tracking-wider text-xs shadow-[3px_3px_0_0_#fbbf24] active:translate-y-0.5 active:shadow-none transition-all"
-                    onClick={() => setIsMobileSidebarOpen(true)}
-                  >
-                    <Filter size={16} />
-                    {t.projects.filterVillages}
-                  </button>
+                  {/* Mobile Sidebar Button Removed (Moved to Sidebar Handle) */}
 
                   {/* Search Bar - Blocky */}
                   <div className="relative flex-grow lg:w-80">

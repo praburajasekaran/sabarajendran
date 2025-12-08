@@ -8,6 +8,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { wpService } from '../services/wpService';
 import { Project, ProjectStatus } from '../types';
 import { generateOrganizationSchema, generatePersonSchema } from '../utils/seo';
+import { VILLAGE_TRANSLATIONS } from '../utils/villageTranslations';
 
 export const Home: React.FC = () => {
   const { t, language } = useLanguage();
@@ -121,10 +122,10 @@ export const Home: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
                 <button
                   onClick={() => navigate(`${langPrefix}/projects`)}
-                  className="btn-political px-8 py-4 text-xl flex items-center justify-center gap-3 min-w-[200px]"
+                  className="btn-political-primary animate-heartbeat px-8 py-4 text-xl flex items-center justify-center gap-3 min-w-[200px]"
                 >
                   {t.home.viewProjects}
-                  <ArrowRight size={24} strokeWidth={3} />
+                  <ArrowRight size={24} strokeWidth={3} className="animate-attention-arrow" />
                 </button>
                 <button
                   onClick={() => navigate(`${langPrefix}/about`)}
@@ -262,7 +263,10 @@ export const Home: React.FC = () => {
                   <div>
                     <div className="flex items-center justify-between mb-8">
                       <h3 className="font-display text-3xl font-extrabold text-black uppercase tracking-tight group-hover:text-primary-600 transition-colors">
-                        {name === 'NLC' ? 'Neyveli' : name}
+                        {(() => {
+                          const displayName = name === 'NLC' ? 'Neyveli' : name;
+                          return language === 'ta' ? (VILLAGE_TRANSLATIONS[displayName] || displayName) : displayName;
+                        })()}
                       </h3>
                       <div className="p-3 bg-white border-2 border-black text-black group-hover:bg-primary-600 group-hover:text-white transition-colors shadow-[4px_4px_0_0_#000]">
                         <Building2 size={24} />

@@ -96,6 +96,7 @@ export const About: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-xs text-neutral-500 uppercase font-black tracking-widest mb-1">{t.about.mlaCard.terms}</p>
+                                        <p className="font-bold text-lg text-black">2006 - 2011</p>
                                         <p className="font-bold text-lg text-black">2016 - 2021</p>
                                         <p className="font-bold text-lg text-primary-600">2021 - {t.about.mlaCard.present}</p>
                                     </div>
@@ -138,6 +139,17 @@ export const About: React.FC = () => {
                             </h3>
 
                             <div className="relative border-l-4 border-black ml-4 space-y-12 pl-10 py-2">
+                                {/* Term 2006 */}
+                                <div className="relative group">
+                                    <span className="absolute -left-[54px] top-1 w-6 h-6 bg-white border-4 border-black group-hover:bg-primary-600 transition-colors"></span>
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <h4 className="font-display text-3xl font-black text-neutral-400">2006</h4>
+                                        <div className="h-1 flex-1 bg-neutral-200"></div>
+                                    </div>
+                                    <p className="text-black text-lg font-bold leading-relaxed">
+                                        {t.about.term2006}
+                                    </p>
+                                </div>
                                 {/* Term 1 */}
                                 <div className="relative group">
                                     <span className="absolute -left-[54px] top-1 w-6 h-6 bg-white border-4 border-black group-hover:bg-primary-600 transition-colors"></span>
@@ -188,6 +200,64 @@ export const About: React.FC = () => {
                                         <p className="text-base font-bold text-white uppercase tracking-wide">{area}</p>
                                     </div>
                                 ))}
+                            </div>
+                        </div>
+
+                        {/* Key Initiatives Section */}
+                        <div className="space-y-8">
+                            <h3 className="font-display text-3xl font-black text-black mb-6 uppercase flex items-center gap-3">
+                                <span className="w-12 h-2 bg-primary-600 inline-block"></span>
+                                {t.about.initiatives.title}
+                            </h3>
+
+                            {/* Agriculture */}
+                            <div className="bg-white border-l-8 border-primary-600 p-6 shadow-sm">
+                                <h4 className="font-display text-xl font-black text-black mb-3 uppercase">
+                                    {t.about.initiatives.agriculture.title}
+                                </h4>
+                                <p className="text-neutral-700 leading-relaxed font-medium">
+                                    {t.about.initiatives.agriculture.desc}
+                                </p>
+                            </div>
+
+                            {/* Entrepreneurship & Education */}
+                            <div className="bg-neutral-50 border-l-8 border-black p-6 shadow-sm">
+                                <h4 className="font-display text-xl font-black text-black mb-3 uppercase">
+                                    {t.about.initiatives.education.title}
+                                </h4>
+                                <p className="text-neutral-700 leading-relaxed font-medium">
+                                    {t.about.initiatives.education.desc}
+                                </p>
+                            </div>
+
+                            {/* Healthcare */}
+                            <div className="bg-white border-l-8 border-primary-600 p-6 shadow-sm">
+                                <h4 className="font-display text-xl font-black text-black mb-3 uppercase">
+                                    {t.about.initiatives.healthcare.title}
+                                </h4>
+                                <p className="text-neutral-700 leading-relaxed font-medium">
+                                    {t.about.initiatives.healthcare.desc}
+                                </p>
+                            </div>
+
+                            {/* Labour Welfare */}
+                            <div className="bg-neutral-50 border-l-8 border-black p-6 shadow-sm">
+                                <h4 className="font-display text-xl font-black text-black mb-3 uppercase">
+                                    {t.about.initiatives.labour.title}
+                                </h4>
+                                <p className="text-neutral-700 leading-relaxed font-medium">
+                                    {t.about.initiatives.labour.desc}
+                                </p>
+                            </div>
+
+                            {/* COVID-19 */}
+                            <div className="bg-white border-l-8 border-primary-600 p-6 shadow-sm">
+                                <h4 className="font-display text-xl font-black text-black mb-3 uppercase">
+                                    {t.about.initiatives.covid.title}
+                                </h4>
+                                <p className="text-neutral-700 leading-relaxed font-medium">
+                                    {t.about.initiatives.covid.desc}
+                                </p>
                             </div>
                         </div>
 

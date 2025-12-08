@@ -4,6 +4,7 @@ export const TRANSLATIONS = {
       home: 'Home',
       about: 'About MLA',
       projects: 'Projects',
+      grievance: 'Grievance Redressal',
       title: 'MLA Saba Rajendran',
       subtitle: 'Neyveli Constituency',
     },
@@ -45,10 +46,11 @@ export const TRANSLATIONS = {
       subtitle: 'A Legacy of Service',
       intro: 'Saba Rajendran is an Indian politician and a dedicated member of the Dravida Munnetra Kazhagam (DMK). He currently serves as the Member of Legislative Assembly (MLA) for the Neyveli constituency.',
       earlyLifeTitle: 'Early Life & Background',
-      earlyLifeDesc: 'Born into a family with deep political roots, Saba Rajendran is the son of V. Saba @ S. Sivasubramanian, a former DMK MLA who served the Neyveli constituency with distinction. Growing up witnessing public service firsthand, he was inspired to dedicate his life to the welfare of the people.',
+      earlyLifeDesc: 'Born into a family with deep political roots, Saba Rajendran is the son of C. Sabapathy, a former DMK MLA who served three times. Growing up witnessing public service firsthand, he was inspired to dedicate his life to the welfare of the people.',
       politicalJourneyTitle: 'Political Journey',
-      term1: 'Elected to the Tamil Nadu Legislative Assembly from Neyveli constituency in the 2016 elections.',
-      term2: 'Re-elected in the 2021 elections with a significant mandate, continuing his service for a second consecutive term.',
+      term2006: 'Elected to the Tamil Nadu Legislative Assembly from Nellikkuppam constituency in the 2006 elections (Won by 46.16%).',
+      term1: 'Elected to the Tamil Nadu Legislative Assembly from Neyveli constituency in the 2016 elections (Won by 34.10%).',
+      term2: 'Re-elected in the 2021 elections from Neyveli constituency (Won by 45.80%), continuing his service for a second consecutive term.',
       visionTitle: 'Vision for Neyveli',
       visionDesc: 'To create a self-sufficient, developed, and prosperous Neyveli by focusing on:',
       focusAreas: [
@@ -64,6 +66,29 @@ export const TRANSLATIONS = {
         constituencyName: 'Neyveli (153)',
         terms: 'Terms',
         present: 'Present',
+      },
+      initiatives: {
+        title: 'Key Initiatives & Impact',
+        agriculture: {
+          title: 'Agricultural Revitalization',
+          desc: 'Championing the backbone of our economy, Saba Rajendran has spearheaded the restoration of major irrigation lakes and the construction of new borewells, securing water access for 41 village panchayats. His focus extends to modernizing infrastructure with new silos and cold-storage facilities, ensuring farmers receive fair compensation through strengthened cooperative societies.'
+        },
+        education: {
+          title: 'Empowering Youth & Education',
+          desc: 'Believing in the power of education, he has upgraded school infrastructure, including the new Kattupalayam school building and extensive renovations across the constituency. To foster a spirit of self-reliance, he launched a highly successful entrepreneurship camp in 2018, equipping the youth with skills to build their own future.'
+        },
+        healthcare: {
+          title: 'Healthcare Accessibility',
+          desc: 'Committed to "Health for All," he has expanded the network of primary health centers and hospitals in Nellikuppam and Neyveli. Through over 30 mega heath camps, he brought quality medical care to the doorstep of underserved communities, ensuring that every citizen has access to essential health services.'
+        },
+        labour: {
+          title: 'Champion of Labour Welfare',
+          desc: 'A steadfast advocate for worker rights, he successfully negotiated a historic increase in accident compensation from ₹1 Lakh to ₹25 Lakhs and secured vital salary hikes. His intervention prevented a major strike involving 12,000 workers, fostering industrial harmony. Additionally, he oversaw the construction of 840 new housing units, significantly improving living standards for labour families.'
+        },
+        covid: {
+          title: 'Crisis Management & Relief',
+          desc: 'During the unprecedented COVID-19 crisis, he launched the "Ondrinaivom Vaa" campaign, a lifeline that delivered food, protective equipment, and essentials to over 15,000 struggling families. His leadership was instrumental in coordinating swift relief operations during the Nivar cyclone, ensuring no family was left behind during natural calamities.'
+        }
       }
     },
     projects: {
@@ -131,13 +156,44 @@ export const TRANSLATIONS = {
       Ongoing: 'Ongoing',
       Planned: 'Planned',
       Halted: 'Halted',
+    },
+    grievance: {
+      title: 'Makkal Kural',
+      subtitle: 'Voice of the People - Grievance Redressal',
+      desc: 'Submit your requests, complaints, or suggestions directly to the MLA office. We are here to serve you.',
+      formType: 'Type of Submission',
+      typeRequest: 'New Project Request',
+      typeComplaint: 'Complaint/Grievance',
+      descriptionLabel: 'Description',
+      descriptionPlaceholder: 'Please describe your request or complaint in detail...',
+      uploadLabel: 'Upload Photo/Video',
+      uploadButton: 'Choose File',
+      noFileChosen: 'No file chosen',
+      personalDetails: 'Personal Details',
+      nameLabel: 'Full Name',
+      namePlaceholder: 'Enter your full name',
+      phoneLabel: 'Phone Number',
+      phonePlaceholder: 'Enter your phone number',
+      addressLabel: 'Address',
+      addressPlaceholder: 'Enter your village and street address',
+      selectBlock: 'Select Block',
+      selectPanchayat: 'Select Panchayat',
+      selectVillage: 'Select Village',
+      submitButton: 'Submit Grievance',
+      submitting: 'Submitting...',
+      successTitle: 'Submission Successful!',
+      successMessage: 'Your grievance has been recorded. Our team will contact you shortly.',
+      errorTitle: 'Submission Failed',
+      errorMessage: 'Please try again later.',
+      ipDisclaimer: 'Your IP address will be recorded for security purposes.',
     }
   },
   ta: {
     nav: {
       home: 'முகப்பு',
-      about: 'சுயவிவரம்',
+      about: 'எம். எல். ஏ பற்றி',
       projects: 'திட்டங்கள்',
+      grievance: 'மக்கள் குரல்',
       title: 'சபா ராஜேந்திரன் எம்.எல்.ஏ',
       subtitle: 'நெய்வேலி தொகுதி',
     },
@@ -179,7 +235,7 @@ export const TRANSLATIONS = {
       subtitle: 'சேவையின் மரபு',
       intro: 'சபா ராஜேந்திரன் ஒரு இந்திய அரசியல்வாதி மற்றும் திராவிட முன்னேற்றக் கழகத்தின் (திமுக) அர்ப்பணிப்புள்ள உறுப்பினர். அவர் தற்போது நெய்வேலி தொகுதியின் சட்டமன்ற உறுப்பினராக (எம்.எல்.ஏ) பணியாற்றி வருகிறார்.',
       earlyLifeTitle: 'ஆரம்ப வாழ்க்கை & பின்னணி',
-      earlyLifeDesc: 'ஆழமான அரசியல் வேர்களைக் கொண்ட குடும்பத்தில் பிறந்த சபா ராஜேந்திரன், நெய்வேலி தொகுதியில் சிறப்பாகப் பணியாற்றிய முன்னாள் திமுக எம்.எல்.ஏ திரு. வி. சபா @ எஸ். சிவசுப்பிரமணியன் அவர்களின் மகனாவார். சிறுவயது முதலே மக்கள் சேவையை கண்டு வளர்ந்த இவர், தனது வாழ்க்கையை மக்கள் நலனுக்காக அர்ப்பணிக்க முடிவு செய்தார்.',
+      earlyLifeDesc: 'ஆழமான அரசியல் வேர்களைக் கொண்ட குடும்பத்தில் பிறந்த சபா ராஜேந்திரன், மூன்று முறை சட்டமன்ற உறுப்பினராகப் பணியாற்றிய சி. சபாபதி அவர்களின் மகனாவார். சிறுவயது முதலே மக்கள் சேவையை கண்டு வளர்ந்த இவர், தனது வாழ்க்கையை மக்கள் நலனுக்காக அர்ப்பணிக்க முடிவு செய்தார்.',
       politicalJourneyTitle: 'அரசியல் பயணம்',
       term1: '2016 தேர்தலில் நெய்வேலி தொகுதியில் போட்டியிட்டு முதல் முறையாக சட்டமன்ற உறுப்பினராகத் தேர்ந்தெடுக்கப்பட்டார்.',
       term2: '2021 தேர்தலில் மீண்டும் பெருவாரியான வாக்குகள் வித்தியாசத்தில் வெற்றி பெற்று, தொடர்ந்து இரண்டாவது முறையாக மக்கள் பணியாற்றுகிறார்.',
@@ -198,6 +254,29 @@ export const TRANSLATIONS = {
         constituencyName: 'நெய்வேலி (153)',
         terms: 'பதவிக்காலம்',
         present: 'தற்போது வரை',
+      },
+      initiatives: {
+        title: 'சமூக ஆர்வங்கள் மற்றும் முயற்சிகள்',
+        agriculture: {
+          title: 'விவசாயம்',
+          desc: 'அரசியல் விளைவுகளுக்கு அப்பால், சபா ராஜேந்திரன் மாநிலத்தின் விவசாய நலன்களில் ஒட்டுமொத்த வளர்ச்சிக்காகப் பணியாற்றுகிறார். கூட்டுறவு சங்கங்கள் மூலம் விவசாயிகளுக்கு உரிய இழப்பீடு கிடைப்பதை உறுதி செய்தல், சேமிப்பு கிடங்குகள் மற்றும் குளிர்பதன வசதிகளை மேம்படுத்துதல் போன்ற திட்டங்களைச் செயல்படுத்தியுள்ளார். நீர்ப்பாசன ஆதாரங்களை மேம்படுத்த, ஏரிகள் சீரமைக்கப்பட்டு ஒரு முக்கிய நீர் ஆதாரம் உறுதிப்படுத்தப்பட்டது. ஆழ்துளை கிணறுகள் புதுப்பிக்கப்பட்டு புதியவை அமைக்கப்பட்டன. இவரது பணிக்காலத்தில், 41 கிராம ஊராட்சிகள் விவசாயத்தில் நல்ல முன்னேற்றத்தைக் கண்டுள்ளன.'
+        },
+        education: {
+          title: 'தொழில்முனைவு மற்றும் கல்வி',
+          desc: 'முறையான கல்வி கிடைப்பதை அதிகரிப்பதற்கும், தொழில்முனைவு மனப்பான்மையை வளர்ப்பதற்கும் அவர் பாடுபட்டுள்ளார். 2018 ஆம் ஆண்டில், இளைஞர்களுக்கான தொழில்முனைவு முகாமை நடத்தினார். காட்டுப்பாளையம் பள்ளிப் பாட்டிடத்தை கட்டுவதற்கும், சுற்றியுள்ள பிற பள்ளிகளைப் புனரமைப்பதற்கும் முன்மொழிந்தார். பள்ளிகள் புதுப்பிக்கப்பட்டதோடு, சுற்றுச்சுவர் மற்றும் கழிப்பறை போன்ற முக்கிய வசதிகள் செய்யப்பட்டன.'
+        },
+        healthcare: {
+          title: 'சுகாதாரம்',
+          desc: '30 க்கும் மேற்பட்ட இலவச மருத்துவ முகாம்கள் மூலம், வழக்கமான மருத்துவ வசதிகள் கிடைக்காத மக்களுக்கு முழு உடல் பரிசோதனை வழங்கப்பட்டது. நெல்லிக்குப்பம் மற்றும் நெய்வேலியில் ஆரம்ப சுகாதார நிலையங்கள் மற்றும் மருத்துவமனைகளின் எண்ணிக்கையை அதிகரிப்பதன் மூலம், தரமான சுகாதாரத்தின் முக்கியத்துவத்தை அவர் தொடர்ந்து வலியுறுத்துகிறார். பேருந்து நிழற்குடைகள், ஓய்வு அறைகள் மற்றும் சமையல் கூடங்கள் போன்ற பிற வசதிகளும் இவரது வழிகாட்டுதலின் கீழ் கட்டப்பட்டுள்ளன.'
+        },
+        labour: {
+          title: 'தொழிலாளர் நலம்',
+          desc: 'பல்வேறு திட்டங்கள் மூலம், சமூகத்தின் பல்வேறு பிரிவினர் பயனடைந்துள்ளனர். என்எல்சி (NLC) தொழிலாளர் தொடர்பான பிரச்சினைகளைப் புரிந்துகொண்டு, பணிச்சூழலை மேம்படுத்தவும், விபத்துக்கள் நிகழாமல் தடுக்கவும் நடவடிக்கைகளை எடுத்துள்ளார். 12000 க்கும் மேற்பட்ட தொழிலாளர்கள் மற்றும் ஒப்பந்த ஊழியர்களின் வேலைநிறுத்தத்தைத் தவிர்க்க வெற்றிகரமான அமைதிப் பேச்சுவார்த்தைகளை நடத்தி, ஊதிய உயர்வு மற்றும் விபத்து இழப்பீட்டுத் தொகையை ₹1 லட்சத்திலிருந்து ₹25 லட்சமாக உயர்த்தினார். வீட்டு வசதி வாரியத்தை சீரமைத்து, நெய்வேலி மற்றும் அதைச் சுற்றியுள்ள பகுதிகளில் 840 வீடுகள் கட்டப்பட்டன. சாலை வசதிகள் மேம்படுத்தப்பட்டன. தெருவிளக்குகள் மற்றும் சோலார் விளக்குகள் அமைப்பதன் மூலம் பாதுகாப்புப் பிரச்சனைகள் குறைக்கப்பட்டன.'
+        },
+        covid: {
+          title: 'கோவிட்-19 நிவாரணப் பணிகள்',
+          desc: 'கோவிட்-19 பெருந்தொற்றின் போது, உள்ளூர் பொருளாதார நெருக்கடியைச் சமாளிக்க மக்களுக்கு அத்தியாவசியப் பொருட்கள் மற்றும் பொருட்களை வழங்குவதை நோக்கமாகக் கொண்டு “ஒன்றிணைவோம் வா” பிரச்சாரத்தைத் தொடங்கினார். கபசுர குடிநீர், பாதுகாப்பு உபகரணங்கள் மற்றும் உணவுப் பொருட்கள் போன்றவற்றைத் திரட்டி விநியோகித்ததன் மூலம், இந்த பிரச்சாரம் 15000 க்கும் மேற்பட்ட குடும்பங்களுக்கு உதவியது. நிவர் புயல் நெய்வேலி தொகுதி மற்றும் சுற்றியுள்ள கிராமங்களைத் தாக்கிய பிறகும் நிவாரண நடவடிக்கைகள் திறம்பட செயல்படுத்தப்பட்டன. 2020 இந்திய விவசாயிகள் போராட்டத்தின் போது விவசாயிகளுக்கு ஆதரவாக குரல் கொடுத்தார் மற்றும் கடலூர் மாவட்டத்தில் நடைபெற்ற போராட்டங்களில் பங்கேற்றார்.'
+        }
       }
     },
     projects: {
@@ -265,6 +344,36 @@ export const TRANSLATIONS = {
       Ongoing: 'நடைபெறுகிறது',
       Planned: 'திட்டமிடப்பட்டது',
       Halted: 'நிறுத்தப்பட்டது',
+    },
+    grievance: {
+      title: 'மக்கள் குரல்',
+      subtitle: 'மக்களின் குரல் - குறை தீர்க்கும் மையம்',
+      desc: 'உங்கள் கோரிக்கைகள், புகார்கள் அல்லது ஆலோசனைகளை நேரடியாக எம்.எல்.ஏ அலுவலகத்திற்கு அனுப்புங்கள். நாங்கள் உங்களுக்கு சேவை செய்ய காத்திருக்கிறோம்.',
+      formType: 'விண்ணப்ப வகை',
+      typeRequest: 'புதிய திட்டக் கோரிக்கை',
+      typeComplaint: 'புகார் / குறை',
+      descriptionLabel: 'விவரம்',
+      descriptionPlaceholder: 'உங்கள் கோரிக்கை அல்லது புகாரை விரிவாக விவரிக்கவும்...',
+      uploadLabel: 'புகைப்படம்/வீடியோ பதிவேற்றவும்',
+      uploadButton: 'கோப்பைத் தேர்ந்தெடுக்கவும்',
+      noFileChosen: 'கோப்பு தேர்ந்தெடுக்கப்படவில்லை',
+      personalDetails: 'தனிப்பட்ட விவரங்கள்',
+      nameLabel: 'முழு பெயர்',
+      namePlaceholder: 'உங்கள் முழு பெயரை உள்ளிடவும்',
+      phoneLabel: 'தொலைபேசி எண்',
+      phonePlaceholder: 'உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்',
+      addressLabel: 'முகவரி',
+      addressPlaceholder: 'உங்கள் கிராமம் மற்றும் தெரு முகவரி',
+      selectBlock: 'பிரிவை தேர்ந்தெடுக்கவும்',
+      selectPanchayat: 'ஊராட்சியை தேர்ந்தெடுக்கவும்',
+      selectVillage: 'கிராமத்தை தேர்ந்தெடுக்கவும்',
+      submitButton: 'சமர்ப்பிக்கவும்',
+      submitting: 'சமர்ப்பிக்கப்படுகிறது...',
+      successTitle: 'வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது!',
+      successMessage: 'உங்கள் குறை பதிவு செய்யப்பட்டுள்ளது. எங்கள் குழு விரைவில் உங்களை தொடர்பு கொள்ளும்.',
+      errorTitle: 'சமர்ப்பிப்பு தோல்வியடைந்தது',
+      errorMessage: 'சிறிது நேரம் கழித்து மீண்டும் முயற்சிக்கவும்.',
+      ipDisclaimer: 'பாதுகாப்பு நோக்கங்களுக்காக உங்கள் ஐபி முகவரி பதிவு செய்யப்படும்.',
     }
   }
 };
