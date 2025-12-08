@@ -5,7 +5,7 @@ This integration enables the Next.js frontend to seamlessly fetch and display co
 </objective>
 
 <context>
-WordPress REST API endpoints available at http://localhost:8118/sabarajendran/wp-json/wp/v2/:
+WordPress REST API endpoints available at http://localhost:8888/sabarajendran/wp-json/wp/v2/:
 - `/project` - Projects custom post type
 - `/project_category` - Project categories taxonomy
 - `/project_village` - Villages taxonomy

@@ -559,7 +559,7 @@ VITE_SITE_URL=https://yourdomain.com
 2. Check todo list
 3. Work on current sprint features
 4. Test locally (http://localhost:5173)
-5. Test with WordPress API (localhost:8118)
+5. Test with WordPress API (localhost:8888)
 6. Commit with descriptive messages
 7. Push to git (triggers Netlify build)
 

@@ -214,7 +214,7 @@ Character Set: utf8mb4 (full Unicode support)
 **Action:** Run initial security scan now
 
 **Steps:**
-1. Go to: http://localhost:8118/sabarajendran/wp-admin/admin.php?page=Wordfence
+1. Go to: http://localhost:8888/sabarajendran/wp-admin/admin.php?page=Wordfence
 2. Click "Scan" tab
 3. Click "Start New Scan"
 4. Wait 5-15 minutes for completion
@@ -280,8 +280,8 @@ Port: 8118 (non-standard)
 PHP Version: [Check via WordPress Site Health]
 MySQL Port: 8118
 WordPress Version: [Latest]
-Site URL: http://localhost:8118/sabarajendran/
-Admin URL: http://localhost:8118/sabarajendran/wp-admin/
+Site URL: http://localhost:8888/sabarajendran/
+Admin URL: http://localhost:8888/sabarajendran/wp-admin/
 ```
 
 ---

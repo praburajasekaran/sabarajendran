@@ -5,7 +5,7 @@ This is the foundation for a professional political portfolio site that will sho
 </objective>
 
 <context>
-The existing WordPress installation at http://localhost:8118/sabarajendran/ has:
+The existing WordPress installation at http://localhost:8888/sabarajendran/ has:
 - Saba Projects custom post type with taxonomies (categories, villages, years, status, schemes)
 - WordPress REST API available at /wp-json/wp/v2/
 - Project data that needs to be fetched and displayed in a spectacular Next.js frontend

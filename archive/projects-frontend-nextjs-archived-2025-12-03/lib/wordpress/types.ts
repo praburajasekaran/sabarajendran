@@ -4,7 +4,7 @@
  * Complete TypeScript interfaces for WordPress REST API responses
  * from the Saba Projects headless CMS backend.
  *
- * @see http://localhost:8118/sabarajendran/wp-json/wp/v2/
+ * @see http://localhost:8888/sabarajendran/wp-json/wp/v2/
  */
 
 // ============================================================================

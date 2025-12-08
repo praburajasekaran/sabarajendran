@@ -1,10 +1,5 @@
 <?php
 
-// BEGIN iThemes Security - Do not modify or remove this line
-// iThemes Security Config Details: 2
-define( 'DISALLOW_FILE_EDIT', true ); // Disable File Editor - Security > Settings > WordPress Tweaks > File Editor
-// END iThemes Security - Do not modify or remove this line
-
 define('ITSEC_ENCRYPTION_KEY', 'JEZOdW1Ue0ZdUWhQcXtAelF1I1B0PXpnYmFYKkBEQVpxVmVXYk14X0ojQGdPZzBJfSUyTCsoSXIxfmRQcTQtWA==');
 
 /**
@@ -12,12 +7,11 @@ define('ITSEC_ENCRYPTION_KEY', 'JEZOdW1Ue0ZdUWhQcXtAelF1I1B0PXpnYmFYKkBEQVpxVmVX
  */
 
 // ** Database settings - MAMP ** //
-define('WP_CACHE', true);
-define('WPCACHEHOME', '/Applications/MAMP/htdocs/sabarajendran/wp-content/plugins/wp-super-cache/');
+// define('WPCACHEHOME', '/Applications/MAMP/htdocs/sabarajendran/wp-content/plugins/wp-super-cache/');
 define('DB_NAME', 'sabarajendran');
 define('DB_USER', 'root');
 define('DB_PASSWORD', 'root');
-define('DB_HOST', 'localhost:8889');
+define('DB_HOST', '127.0.0.1:8889');
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 
@@ -47,6 +41,13 @@ define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', false);
 
+// Suppress deprecation notices to prevent JSON response corruption
+@ini_set('display_errors', 0);
+// Only log critical errors, warnings, and notices (exclude deprecation notices)
+if (WP_DEBUG) {
+    error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+}
+
 /* Add any custom values between this line and the "stop editing" line. */
 
 // ===================================================================
@@ -74,9 +75,9 @@ define('AUTOSAVE_INTERVAL', 160);
 define('WP_MEMORY_LIMIT', '512M');
 define('WP_MAX_MEMORY_LIMIT', '1024M');
 
-// Block External HTTP Requests (uncomment when ready)
-// define( 'WP_HTTP_BLOCK_EXTERNAL', true );
-// define( 'WP_ACCESSIBLE_HOSTS', 'api.wordpress.org,*.github.com' );
+// Block External HTTP Requests (disabled for local development)
+define('WP_HTTP_BLOCK_EXTERNAL', false);
+define('WP_ACCESSIBLE_HOSTS', 'api.wordpress.org,*.github.com,tan-emu-358425.hostingersite.com,sabarajendran.com');
 
 // Disable Plugin and Theme Update/Installation
 // define( 'DISALLOW_FILE_MODS', true ); // Uncomment after all plugins installed

@@ -163,7 +163,7 @@ projects-frontend/
 
    Update `.env.local` with your WordPress API URL:
    ```env
-   NEXT_PUBLIC_WORDPRESS_API_URL=http://localhost:8118/sabarajendran/wp-json/wp/v2
+   NEXT_PUBLIC_WORDPRESS_API_URL=http://localhost:8888/sabarajendran/wp-json/wp/v2
    ```
 
 4. **Start the development server:**

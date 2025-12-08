@@ -70,9 +70,9 @@ $project_count = wp_count_posts('project');
 echo "\n📊 Current project count: " . ($project_count->publish ?? 0) . " published\n";
 
 echo "\n🎉 Setup complete! You can now access:\n";
-echo "   - Projects archive: http://localhost:8118/sabarajendran/project/\n";
-echo "   - WordPress admin: http://localhost:8118/sabarajendran/wp-admin/\n";
-echo "   - Add new project: http://localhost:8118/sabarajendran/wp-admin/post-new.php?post_type=project\n";
+echo "   - Projects archive: http://localhost:8888/sabarajendran/project/\n";
+echo "   - WordPress admin: http://localhost:8888/sabarajendran/wp-admin/\n";
+echo "   - Add new project: http://localhost:8888/sabarajendran/wp-admin/post-new.php?post_type=project\n";
 
 if (!$is_cli) {
     echo "</pre>";

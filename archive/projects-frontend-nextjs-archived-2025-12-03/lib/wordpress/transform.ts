@@ -289,7 +289,7 @@ export function transformProjects(wpProjects: WPProject[]): Project[] {
  * @returns Slug (last path segment)
  *
  * @example
- * extractSlugFromLink('http://localhost:8118/sabarajendran/project/my-project/')
+ * extractSlugFromLink('http://localhost:8888/sabarajendran/project/my-project/')
  * // Returns: 'my-project'
  */
 export function extractSlugFromLink(link: string): string {
@@ -305,7 +305,7 @@ export function extractSlugFromLink(link: string): string {
  * @returns Next.js route path
  *
  * @example
- * convertToNextRoute('http://localhost:8118/sabarajendran/project/my-project/')
+ * convertToNextRoute('http://localhost:8888/sabarajendran/project/my-project/')
  * // Returns: '/projects/my-project'
  */
 export function convertToNextRoute(wpLink: string): string {
@@ -337,13 +337,13 @@ export function generateProjectMetadata(project: Project) {
       modifiedTime: project.modified,
       images: project.featuredImage
         ? [
-            {
-              url: project.featuredImage.url,
-              width: project.featuredImage.width,
-              height: project.featuredImage.height,
-              alt: project.featuredImage.alt,
-            },
-          ]
+          {
+            url: project.featuredImage.url,
+            width: project.featuredImage.width,
+            height: project.featuredImage.height,
+            alt: project.featuredImage.alt,
+          },
+        ]
         : undefined,
     },
   };

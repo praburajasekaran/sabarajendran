@@ -6,7 +6,7 @@
 
 ## STEP 1: Activate All Security Plugins
 
-### In WordPress Admin (http://localhost:8118/sabarajendran/wp-admin/plugins.php):
+### In WordPress Admin (http://localhost:8888/sabarajendran/wp-admin/plugins.php):
 
 1. Find and click **"Activate"** under each of these plugins:
    - ✅ Wordfence Security
@@ -100,7 +100,7 @@
 1. Go to **Security → Settings → Hide Login Area**
 2. **Custom Login Slug:** Enter something unique (e.g., `saba-admin-2025`)
 3. **Remember:** Your new login URL will be:
-   `http://localhost:8118/sabarajendran/saba-admin-2025`
+   `http://localhost:8888/sabarajendran/saba-admin-2025`
 4. ⚠️ **WRITE THIS DOWN!** You'll need this to login from now on
 5. Save
 
@@ -163,8 +163,8 @@
 ### A. Test Login Protection:
 
 1. **Open an incognito/private browser window**
-2. Go to your site: `http://localhost:8118/sabarajendran/`
-3. Try to access: `http://localhost:8118/sabarajendran/wp-admin`
+2. Go to your site: `http://localhost:8888/sabarajendran/`
+3. Try to access: `http://localhost:8888/sabarajendran/wp-admin`
 4. **If you set up Hide Login Area:**
    - The wp-admin URL should redirect you away
    - Access via your custom URL instead
@@ -208,7 +208,7 @@
 ### ⚠️ CRITICAL - Write These Down:
 
 1. **New Login URL (if you set custom slug):**
-   - Example: `http://localhost:8118/sabarajendran/saba-admin-2025`
+   - Example: `http://localhost:8888/sabarajendran/saba-admin-2025`
    - **Old wp-admin URL will NOT work**
 
 2. **Admin Email for Alerts:**

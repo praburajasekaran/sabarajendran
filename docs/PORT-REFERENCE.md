@@ -5,23 +5,23 @@
 ## Correct URLs:
 
 ### Frontend:
-- Homepage: `http://localhost:8118/sabarajendran/`
+- Homepage: `http://localhost:8888/sabarajendran/`
 
 ### Backend:
-- WordPress Admin: `http://localhost:8118/sabarajendran/wp-admin/`
-- Plugins: `http://localhost:8118/sabarajendran/wp-admin/plugins.php`
-- Themes: `http://localhost:8118/sabarajendran/wp-admin/themes.php`
+- WordPress Admin: `http://localhost:8888/sabarajendran/wp-admin/`
+- Plugins: `http://localhost:8888/sabarajendran/wp-admin/plugins.php`
+- Themes: `http://localhost:8888/sabarajendran/wp-admin/themes.php`
 
 ### Database:
 - Database Port: `8118`
 - Database Name: `sabarajendran`
 - Database User: `root`
 - Database Password: `root`
-- Database Host: `localhost:8118`
+- Database Host: `localhost:8888`
 
 ## wp-config.php Configuration:
 ```php
-define( 'DB_HOST', 'localhost:8118' );
+define( 'DB_HOST', 'localhost:8888' );
 ```
 
 ## Always Use Port 8118!

@@ -4,7 +4,7 @@
  */
 
 // Fetch one project from the API
-$response = file_get_contents('http://localhost:8118/sabarajendran/wp-json/wp/v2/project?per_page=1&_embed');
+$response = file_get_contents('http://localhost:8888/sabarajendran/wp-json/wp/v2/project?per_page=1&_embed');
 $data = json_decode($response, true);
 
 if (empty($data)) {

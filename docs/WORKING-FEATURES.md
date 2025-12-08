@@ -10,17 +10,17 @@
 
 ### Main Projects Page:
 ```
-http://localhost:8118/sabarajendran/?post_type=project
+http://localhost:8888/sabarajendran/?post_type=project
 ```
 
 ### WordPress Admin:
 ```
-http://localhost:8118/sabarajendran/wp-admin/
+http://localhost:8888/sabarajendran/wp-admin/
 ```
 
 ### Homepage:
 ```
-http://localhost:8118/sabarajendran/
+http://localhost:8888/sabarajendran/
 ```
 
 ---
@@ -28,7 +28,7 @@ http://localhost:8118/sabarajendran/
 ## ✅ **Confirmed Working Features**
 
 ### 1. Project Archive Page ✅
-- **URL**: `http://localhost:8118/sabarajendran/?post_type=project`
+- **URL**: `http://localhost:8888/sabarajendran/?post_type=project`
 - **Status**: Fully functional
 - **Features**:
   - Displays all 826 projects

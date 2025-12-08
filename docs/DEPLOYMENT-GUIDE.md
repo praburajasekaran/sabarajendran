@@ -173,7 +173,7 @@ header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 
 ## Quick Reference
 
-**Local WordPress:** `http://localhost:8118/sabarajendran`
+**Local WordPress:** `http://localhost:8888/sabarajendran`
 **Production WordPress:** `https://tan-emu-358425.hostingersite.com`
 **Netlify Site:** Your deployment URL
 **Plugin Location:** `/wp-content/plugins/saba-projects/`

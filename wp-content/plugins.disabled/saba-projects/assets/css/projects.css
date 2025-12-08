@@ -1,0 +1,172 @@
+/**
+ * Saba Projects Grid Styles
+ */
+
+.saba-projects-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.project-card {
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	border-radius: 8px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.project-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-card-image {
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: 16 / 9;
+	background: #f5f5f5;
+}
+
+.project-card-image a {
+	display: block;
+	height: 100%;
+}
+
+.project-card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-card-image img {
+	transform: scale(1.05);
+}
+
+.project-card-content {
+	padding: 20px;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.project-card-title {
+	margin: 0 0 12px;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.project-card-title a {
+	color: #1a1a1a;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.project-card-title a:hover {
+	color: #0066cc;
+}
+
+.project-card-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0 0 12px;
+}
+
+.project-card-meta span {
+	display: inline-block;
+	padding: 4px 12px;
+	font-size: 12px;
+	border-radius: 20px;
+	background: #f0f0f0;
+	color: #666;
+	font-weight: 500;
+}
+
+.project-card-meta .project-village {
+	background: #e3f2fd;
+	color: #1976d2;
+}
+
+.project-card-meta .project-year {
+	background: #f3e5f5;
+	color: #7b1fa2;
+}
+
+.project-card-meta .project-status {
+	font-weight: 600;
+}
+
+.project-card-meta .project-status.completed {
+	background: #e8f5e9;
+	color: #2e7d32;
+}
+
+.project-card-meta .project-status.ongoing,
+.project-card-meta .project-status.in-progress {
+	background: #fff3e0;
+	color: #ef6c00;
+}
+
+.project-card-meta .project-status.planned {
+	background: #fce4ec;
+	color: #c2185b;
+}
+
+.project-card-excerpt {
+	margin: 0 0 15px;
+	color: #666;
+	font-size: 14px;
+	line-height: 1.6;
+	flex-grow: 1;
+}
+
+.project-card-link {
+	display: inline-block;
+	padding: 10px 20px;
+	background: #0066cc;
+	color: #fff !important;
+	text-decoration: none;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 600;
+	transition: background 0.3s ease;
+	align-self: flex-start;
+	margin-top: auto;
+}
+
+.project-card-link:hover {
+	background: #0052a3;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+	.saba-projects-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.saba-projects-grid {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.project-card-title {
+		font-size: 18px;
+	}
+}
+
+/* Elementor Editor Styles */
+.elementor-editor-active .saba-projects-grid {
+	min-height: 200px;
+}

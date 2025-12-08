@@ -309,7 +309,7 @@ Error details are logged to console for debugging but never exposed to users.
 Set in `.env.local`:
 
 ```env
-NEXT_PUBLIC_WORDPRESS_API_URL=http://localhost:8118/sabarajendran/wp-json/wp/v2
+NEXT_PUBLIC_WORDPRESS_API_URL=http://localhost:8888/sabarajendran/wp-json/wp/v2
 ```
 
 The integration automatically handles WordPress permalink formats:
@@ -389,7 +389,7 @@ curl http://localhost:3000/projects/your-project-slug
 
 ```bash
 # Direct WordPress API test
-curl "http://localhost:8118/sabarajendran/?rest_route=/wp/v2/project&per_page=1"
+curl "http://localhost:8888/sabarajendran/?rest_route=/wp/v2/project&per_page=1"
 ```
 
 ## Troubleshooting

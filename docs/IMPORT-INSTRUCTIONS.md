@@ -217,7 +217,7 @@ curl "https://tan-emu-358425.hostingersite.com/wp-json/wp/v2/project_panchayat"
 ./create-plugin-zip.sh
 
 # Test local WordPress
-curl "http://localhost:8118/sabarajendran/wp-json/wp/v2/project_block"
+curl "http://localhost:8888/sabarajendran/wp-json/wp/v2/project_block"
 
 # Test production WordPress
 curl "https://tan-emu-358425.hostingersite.com/wp-json/wp/v2/project_block"

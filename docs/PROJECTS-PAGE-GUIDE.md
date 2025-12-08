@@ -11,7 +11,7 @@ This guide explains how to use the newly created Projects page with Elementor.
 
 ### 2. Projects Page
 - **Page ID**: 851
-- **URL**: http://localhost:8118/sabarajendran/projects/
+- **URL**: http://localhost:8888/sabarajendran/projects/
 - **Status**: Published and ready to edit
 
 ### 3. Elementor Widget
@@ -22,13 +22,13 @@ This guide explains how to use the newly created Projects page with Elementor.
 ## How to Design with Elementor
 
 ### Step 1: Open the Page in Elementor
-1. Go to WordPress Admin: http://localhost:8118/sabarajendran/wp-admin/
+1. Go to WordPress Admin: http://localhost:8888/sabarajendran/wp-admin/
 2. Navigate to Pages → All Pages
 3. Find "Projects" page
 4. Click "Edit with Elementor"
 
 **Or use this direct link:**
-http://localhost:8118/sabarajendran/wp-admin/post.php?post=851&action=elementor
+http://localhost:8888/sabarajendran/wp-admin/post.php?post=851&action=elementor
 
 ### Step 2: Add the Projects Grid Widget
 1. In Elementor editor, click the "+" icon to add a new section
@@ -174,4 +174,4 @@ For questions or customization requests, refer to:
 ---
 
 **Created**: November 29, 2025
-**WordPress Installation**: http://localhost:8118/sabarajendran/
+**WordPress Installation**: http://localhost:8888/sabarajendran/

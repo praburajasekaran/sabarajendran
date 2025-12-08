@@ -7,7 +7,7 @@
  * WHY: Political sites need reliability - API failures shouldn't crash the page.
  * All functions return fallback data on error and log issues for monitoring.
  *
- * @see http://localhost:8118/sabarajendran/wp-json/wp/v2/
+ * @see http://localhost:8888/sabarajendran/wp-json/wp/v2/
  */
 
 import type {
@@ -31,7 +31,7 @@ import type {
  */
 const WP_BASE_URL =
   process.env.NEXT_PUBLIC_WORDPRESS_API_URL?.replace("/wp-json/wp/v2", "") ||
-  "http://localhost:8118/sabarajendran";
+  "http://localhost:8888/sabarajendran";
 
 /**
  * Build REST API URL using the alternative format that works with MAMP
