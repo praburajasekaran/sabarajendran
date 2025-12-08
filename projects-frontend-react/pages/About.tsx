@@ -109,11 +109,7 @@ export const About: React.FC = () => {
                     <div className="md:col-span-8 space-y-12 pt-8 md:pt-16">
 
                         {/* Intro */}
-                        <div>
-                            <h2 className="font-display text-4xl font-black text-black mb-6 uppercase flex items-center gap-3">
-                                <span className="w-12 h-2 bg-primary-600 inline-block"></span>
-                                {t.about.title}
-                            </h2>
+                        <div className="pt-8">
                             <p className="text-neutral-800 leading-relaxed text-xl font-medium border-l-4 border-black pl-6">
                                 {t.about.intro}
                             </p>

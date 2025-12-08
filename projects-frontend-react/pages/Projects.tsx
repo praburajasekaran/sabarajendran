@@ -138,15 +138,7 @@ export const ProjectsPage: React.FC = () => {
     return Array.from(uniquePanchayats).sort();
   }, [projects, filters.block]);
 
-  // Helper function to find village's parent block and panchayat
-  const getVillageHierarchy = useCallback((villageName: string) => {
-    const project = projects.find(p => p.village === villageName);
-    return project ? {
-      block: project.block || 'All',
-      panchayat: project.panchayat || 'All',
-      village: villageName
-    } : { block: 'All', panchayat: 'All', village: villageName };
-  }, [projects]);
+
 
   // Filtering Logic (3-level hierarchy: Block → Panchayat → Village)
   const filteredProjects = useMemo(() => {
@@ -276,8 +268,12 @@ export const ProjectsPage: React.FC = () => {
             if (village === null) {
               updateFilters({ village: null, block: 'All', panchayat: 'All' });
             } else {
-              const hierarchy = getVillageHierarchy(village);
-              updateFilters(hierarchy);
+              // Reset block/panchayat to 'All' to ensure all projects for this village are shown
+              updateFilters({
+                village,
+                block: 'All',
+                panchayat: 'All'
+              });
             }
           }}
           isOpenMobile={isMobileSidebarOpen}

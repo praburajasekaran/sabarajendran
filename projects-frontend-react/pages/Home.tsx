@@ -9,12 +9,15 @@ import { wpService } from '../services/wpService';
 import { Project, ProjectStatus } from '../types';
 import { generateOrganizationSchema, generatePersonSchema } from '../utils/seo';
 import { VILLAGE_TRANSLATIONS } from '../utils/villageTranslations';
+import { VideoModal } from '../components/VideoModal';
+import { SocialFeeds } from '../components/SocialFeeds';
 
 export const Home: React.FC = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showWelcomeVideo, setShowWelcomeVideo] = useState(false);
 
   // Get language prefix for all links
   const langPrefix = language === 'ta' ? '/ta' : '';
@@ -137,7 +140,7 @@ export const Home: React.FC = () => {
             </div>
 
             {/* Hero Image - Side Profile (Cutout style typically popular in political banners) */}
-            <div className="hidden md:block w-96 h-96 relative">
+            <div className="hidden md:block w-96 h-96 relative group">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary-600 to-accent-500 rounded-full blur-[100px] opacity-40"></div>
               <img
                 src="/assets/images/saba_rajendran.webp"
@@ -145,6 +148,16 @@ export const Home: React.FC = () => {
                 className="w-full h-full object-cover rounded-full border-8 border-white/10 shadow-2xl relative z-10"
                 style={{ maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)' }}
               />
+
+              {/* Play Button Overlay */}
+              <button
+                onClick={() => setShowWelcomeVideo(true)}
+                className="absolute bottom-10 right-0 z-20 flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full text-white shadow-lg hover:bg-primary-500 hover:scale-110 transition-all duration-300 group-hover:animate-bounce"
+                aria-label="Play Welcome Video"
+              >
+                <div className="absolute inset-0 rounded-full bg-primary-600 animate-ping opacity-20"></div>
+                <Play size={32} fill="currentColor" className="ml-1" />
+              </button>
             </div>
 
           </div>
@@ -352,6 +365,9 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Social Media Feeds */}
+      <SocialFeeds />
+
       {/* Quote/Vision Section - Political Vision */}
       <section className="py-24 bg-secondary-900 text-white relative overflow-hidden text-center border-t-8 border-accent-500">
         {/* Sun Rays Texture */}
@@ -373,6 +389,15 @@ export const Home: React.FC = () => {
           </cite>
         </div>
       </section>
+
+      {/* Video Modal - Placeholder content for now */}
+      <VideoModal
+        isOpen={showWelcomeVideo}
+        onClose={() => setShowWelcomeVideo(false)}
+        type="html5" // Defaulting to HTML5 for premium feel, can be switched to 'youtube'
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" // Placeholder video
+        poster="/assets/images/saba_rajendran.webp" // Reusing hero image as placeholder poster
+      />
     </div>
   );
 };
