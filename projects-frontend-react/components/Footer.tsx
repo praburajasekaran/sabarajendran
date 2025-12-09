@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const Footer: React.FC = () => {
@@ -23,6 +23,15 @@ export const Footer: React.FC = () => {
             {/* Social Links - Big & Bold */}
             <div className="flex gap-4">
               <a
+                href="https://www.instagram.com/saba_rajendran_mla"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gradient-to-tr from-purple-600 to-pink-600 text-white hover:from-white hover:to-white hover:text-pink-600 transition-all transform hover:-translate-y-1 shadow-[4px_4px_0_0_#000]"
+                aria-label="Instagram"
+              >
+                <Instagram size={24} strokeWidth={2.5} />
+              </a>
+              <a
                 href="https://www.facebook.com/SabaMlaDMK"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -35,19 +44,18 @@ export const Footer: React.FC = () => {
                 href="https://x.com/rajendran_saba"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-black text-white hover:bg-white hover:text-black transition-all transform hover:-translate-y-1 shadow-[4px_4px_0_0_#dc2626]"
-                aria-label="Twitter"
+                className="p-3 bg-black text-white hover:bg-white hover:text-black transition-all transform hover:-translate-y-1 shadow-[4px_4px_0_0_#000]"
+                aria-label="X (Twitter)"
               >
-                <Twitter size={24} strokeWidth={2.5} />
-              </a>
-              <a
-                href="https://www.instagram.com/saba_rajendran_mla"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gradient-to-tr from-purple-600 to-pink-600 text-white hover:from-white hover:to-white hover:text-pink-600 transition-all transform hover:-translate-y-1 shadow-[4px_4px_0_0_#000]"
-                aria-label="Instagram"
-              >
-                <Instagram size={24} strokeWidth={2.5} />
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="24"
+                  height="24"
+                  className="stroke-current stroke-0"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
             </div>
           </div>

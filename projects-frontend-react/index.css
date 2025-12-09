@@ -79,14 +79,12 @@
 /* Sharp Card Hover Effect */
 .card-sharp {
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .card-sharp:hover {
   transform: translateY(-4px);
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
   /* Hard shadow */
-  border: 1px solid black;
 }
 
 /* Dynamic Entrance Animation */
