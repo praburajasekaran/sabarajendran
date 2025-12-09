@@ -2,12 +2,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../contexts/LanguageContext';
 import {
-  generateFilteredTitle,
-  generateFilteredDescription,
-  shouldIndexFilteredPage,
-  generateCanonicalUrl,
-  generateProjectStructuredData,
-  generateBreadcrumbStructuredData
+    generateFilteredTitle,
+    generateFilteredDescription,
+    shouldIndexFilteredPage,
+    generateCanonicalUrl,
+    generateProjectStructuredData,
+    generateBreadcrumbStructuredData
 } from '../utils/seo';
 import type { FilterState } from '../utils/urlBuilder';
 
@@ -29,7 +29,7 @@ export const SEO: React.FC<SEOProps> = ({
     const { language } = useLanguage();
 
     const siteTitle = language === 'ta'
-        ? 'சபா ராஜேந்திரன் | நெய்வேலி சட்டமன்ற உறுப்பினர்'
+        ? 'சபா இராசேந்திரன் | நெய்வேலி சட்டமன்ற உறுப்பினர்'
         : 'Saba Rajendran | Neyveli MLA';
 
     const defaultDescription = language === 'ta'
@@ -39,15 +39,15 @@ export const SEO: React.FC<SEOProps> = ({
     const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     const metaDescription = description || defaultDescription;
     const siteUrl = 'https://sabarajendran.com'; // Replace with actual domain
-    
+
     // Determine current path and generate language alternates
     const currentPath = url || window.location.pathname;
     const isOnTamilPage = currentPath.startsWith('/ta');
-    
+
     // Generate URLs for both languages
     const enPath = isOnTamilPage ? currentPath.replace(/^\/ta/, '') || '/' : currentPath;
     const taPath = isOnTamilPage ? currentPath : `/ta${currentPath}`;
-    
+
     const fullUrl = `${siteUrl}${currentPath}`;
     const enUrl = `${siteUrl}${enPath}`;
     const taUrl = `${siteUrl}${taPath}`;
@@ -57,7 +57,7 @@ export const SEO: React.FC<SEOProps> = ({
         <Helmet>
             {/* HTML lang attribute */}
             <html lang={language} />
-            
+
             {/* Standard Metadata */}
             <title>{fullTitle}</title>
             <meta name="description" content={metaDescription} />
@@ -109,11 +109,11 @@ export const ProjectsSEO: React.FC<ProjectsSEOProps> = ({ filters, resultCount }
     // Determine if we're on a Tamil page and generate language alternates
     const currentPath = window.location.pathname;
     const isOnTamilPage = currentPath.startsWith('/ta');
-    
+
     // Generate URLs for both languages
     const enPath = isOnTamilPage ? currentPath.replace(/^\/ta/, '') || '/' : currentPath;
     const taPath = isOnTamilPage ? currentPath : `/ta${currentPath}`;
-    
+
     const siteUrl = 'https://sabarajendran.com';
     const enUrl = `${siteUrl}${enPath}${window.location.search}`;
     const taUrl = `${siteUrl}${taPath}${window.location.search}`;
@@ -126,7 +126,7 @@ export const ProjectsSEO: React.FC<ProjectsSEOProps> = ({ filters, resultCount }
         <Helmet>
             {/* HTML lang attribute */}
             <html lang={language} />
-            
+
             {/* Standard Metadata */}
             <title>{title}</title>
             <meta name="description" content={description} />

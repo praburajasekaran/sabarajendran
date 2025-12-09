@@ -154,7 +154,7 @@ export const ProjectsPage: React.FC = () => {
         project.description.toLowerCase().includes(filters.search.toLowerCase());
 
       return matchBlock && matchPanchayat && matchVillage && matchYear && matchStatus && matchType && matchScheme && matchSearch;
-    });
+    }).sort((a, b) => (b.rawBudget || 0) - (a.rawBudget || 0));
   }, [projects, filters]);
 
   // Top 8 projects by budget for shareable graphic
@@ -275,6 +275,8 @@ export const ProjectsPage: React.FC = () => {
                 panchayat: 'All'
               });
             }
+            // Scroll to top when village is selected (especially for mobile)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           isOpenMobile={isMobileSidebarOpen}
           closeMobile={() => setIsMobileSidebarOpen(false)}

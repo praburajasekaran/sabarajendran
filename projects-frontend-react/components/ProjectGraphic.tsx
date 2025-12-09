@@ -17,7 +17,7 @@ import { getVillageName } from '../utils/villageTranslations';
 interface ProjectGraphicProps {
   projects: Project[];
   filters: FilterState;
-  lang?: string;
+  lang?: 'ta' | 'en';
 }
 
 export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
@@ -30,8 +30,14 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
   const displayProjects = projects.slice(0, 5);
 
   const villageName = filters.village
-    ? getVillageName(filters.village, 'ta')
-    : 'நெய்வேலி தொகுதி';
+    ? getVillageName(filters.village, lang)
+    : (lang === 'ta' ? 'நெய்வேலி தொகுதி' : 'Neyveli Constituency');
+
+  // Translation helpers
+  const t = {
+    lakhs: lang === 'ta' ? 'லட்சம்' : 'Lakhs',
+    crore: lang === 'ta' ? 'கோடி' : 'Crore'
+  };
 
   return (
     <div
@@ -42,7 +48,7 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
         backgroundImage: 'url(/assets/images/share_template.png)',
         backgroundSize: '100% 100%', // Stretch to fit exactly
         backgroundRepeat: 'no-repeat',
-        fontFamily: 'Inter, sans-serif',
+        fontFamily: '"Anek Tamil", sans-serif',
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
@@ -61,18 +67,19 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
         backgroundColor: '#fef9c3', // Yellow-100
         padding: '12px 32px',
         borderRadius: '50px',
-        border: '2px solid #fde047',
-        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        border: '3px solid #fde047',
+        boxShadow: '0 6px 12px -2px rgba(0, 0, 0, 0.15)',
         zIndex: 10
       }}>
-        <MapPin size={32} color="#dc2626" fill="#dc2626" style={{ marginRight: '16px' }} />
+        <MapPin size={36} color="#dc2626" fill="#dc2626" style={{ marginRight: '16px' }} />
         <span style={{
-          fontSize: '32px',
+          fontSize: '36px',
           fontWeight: '800',
           color: '#422006', // Brown
+          marginTop: '-4px' // Optical adjustment for font
         }}>
           {villageName}
-          {filters.block && filters.block !== 'All' ? `, ${getVillageName(filters.block, 'ta')}` : ''}
+          {filters.block && filters.block !== 'All' ? `, ${getVillageName(filters.block, lang)}` : ''}
         </span>
       </div>
 
@@ -80,19 +87,21 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
       {/* ================= PROJECT LIST ================= */}
       {/* Container positioned in the "Body" safe zone of the template */}
       <div style={{
-        marginTop: '600px', // Push down past header + badge
-        marginBottom: '450px', // Reserve space for footer
+        marginTop: '550px', // Reduced top margin for better balance
+        marginBottom: '400px', // Adjusted bottom
         padding: '0 80px', // Horizontal margins
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
-        gap: '24px',
-        // overflow: 'hidden' // Prevent spillover
+        gap: '28px', // Increased gap slightly
+        justifyContent: 'flex-start' // Ensure list starts from top
       }}>
         {displayProjects.map((project) => {
           // Format based on mockup: Description - Cost
           // Cost is highlighted in red.
-          const description = project.description_ta || project.description;
+          const description = lang === 'ta'
+            ? (project.description_ta || project.description)
+            : project.description;
 
           return (
             <div
@@ -100,29 +109,34 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
               style={{
                 backgroundColor: 'white',
                 border: '3px solid #60a5fa', // Blue-400 border matches mockup
-                borderRadius: '20px',
-                padding: '24px 32px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                borderRadius: '24px', // Softer corners
+                padding: '28px 36px', // More breathing room
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)', // Deeper shadow
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center'
               }}
             >
               <p style={{
-                fontSize: '28px', // Slightly larger for readability on stories
-                lineHeight: '1.4',
+                fontSize: '30px', // Larger text
+                lineHeight: '1.5',
                 color: '#111827', // Gray-900
                 fontWeight: '600',
                 margin: 0
               }}>
                 {description}
-                <span style={{ margin: '0 8px' }}>-</span>
+                <span style={{ margin: '0 12px' }}>-</span>
                 <span style={{
                   color: '#dc2626', // Red-600
                   fontWeight: '800',
                   whiteSpace: 'nowrap'
                 }}>
-                  ₹ {project.rawBudget} {project.budget.includes('L') ? 'லட்சம்' : 'கோடி'}.
+                  {project.rawBudget >= 10000000
+                    ? `₹ ${(project.rawBudget / 10000000).toFixed(2)} ${t.crore}.`
+                    : project.rawBudget >= 100000
+                      ? `₹ ${(project.rawBudget / 100000).toFixed(2)} ${t.lakhs}.`
+                      : `₹ ${project.rawBudget}.`
+                  }
                 </span>
               </p>
             </div>

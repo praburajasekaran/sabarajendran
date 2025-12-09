@@ -39,3 +39,4 @@ translate-*.php
 
 # Local Netlify folder
 .netlify
+!sync-from-live.sh

@@ -140,7 +140,7 @@ export const Home: React.FC = () => {
             </div>
 
             {/* Hero Image - Side Profile (Cutout style typically popular in political banners) */}
-            <div className="hidden md:block w-96 h-96 relative group">
+            <div className="block w-72 h-72 md:w-96 md:h-96 relative group mt-8 md:mt-0 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary-600 to-accent-500 rounded-full blur-[100px] opacity-40"></div>
               <img
                 src="/assets/images/saba_rajendran.webp"
@@ -152,7 +152,7 @@ export const Home: React.FC = () => {
               {/* Play Button Overlay */}
               <button
                 onClick={() => setShowWelcomeVideo(true)}
-                className="absolute bottom-10 right-0 z-20 flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full text-white shadow-lg hover:bg-primary-500 hover:scale-110 transition-all duration-300 group-hover:animate-bounce"
+                className="absolute bottom-10 right-0 z-20 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-primary-600 rounded-full text-white shadow-lg hover:bg-primary-500 hover:scale-110 transition-all duration-300 group-hover:animate-bounce"
                 aria-label="Play Welcome Video"
               >
                 <div className="absolute inset-0 rounded-full bg-primary-600 animate-ping opacity-20"></div>
