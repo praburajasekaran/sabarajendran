@@ -45,16 +45,17 @@ export const Navbar: React.FC = () => {
               className="flex-shrink-0 flex flex-col cursor-pointer group"
               aria-label={t.nav.title}
             >
-              <div className="flex items-baseline gap-2">
-                <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center border-2 border-accent-400 shadow-md transform group-hover:scale-110 transition-transform">
-                  {/* Rising Sun Icon Representation */}
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-accent-500 to-accent-300"></div>
-                </div>
-                <div>
-                  <h1 className="font-display text-3xl md:text-3xl font-extrabold text-white leading-none tracking-tight uppercase" style={{ textShadow: '2px 2px 0 #000' }}>
+              <div className="flex items-center gap-3">
+                <img
+                  src="/assets/images/nav_logo.png"
+                  alt="Saba Rajendran Logo"
+                  className="w-14 h-14 rounded-lg border-2 border-accent-400 shadow-md transform group-hover:scale-105 transition-transform object-cover"
+                />
+                <div className="flex flex-col justify-center">
+                  <h1 className="font-display text-2xl md:text-3xl font-extrabold text-white leading-none tracking-tight uppercase" style={{ textShadow: '2px 2px 0 #000' }}>
                     {t.nav.title}
                   </h1>
-                  <p className="text-sm text-accent-400 font-bold uppercase tracking-widest mt-1">
+                  <p className="text-xs md:text-sm text-accent-400 font-bold uppercase tracking-wide leading-none mt-1">
                     {t.nav.subtitle}
                   </p>
                 </div>

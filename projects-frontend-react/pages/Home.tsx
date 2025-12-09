@@ -92,18 +92,18 @@ export const Home: React.FC = () => {
       </Helmet>
 
       {/* Hero Section - Political Mass Appeal */}
-      <section className="relative bg-secondary-900 text-white overflow-hidden min-h-[700px] flex items-center border-b-8 border-primary-600">
+      <section className="relative bg-secondary-900 text-white overflow-hidden min-h-[550px] flex items-center border-b-8 border-primary-600">
         {/* Sun Rays Background Pattern */}
         <div className="absolute inset-0 sun-rays-texture opacity-20"></div>
 
         {/* Dynamic Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent z-0"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10 w-full">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10 w-full">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-12">
 
             {/* Content Left */}
-            <div className="w-full max-w-2xl flex flex-col items-start space-y-8 animate-zip-in">
+            <div className="w-full max-w-2xl flex flex-col items-start space-y-6 animate-zip-in">
               {/* Party Strip */}
               <div className="flex items-center gap-3 bg-neutral-900 p-2 pr-6 rounded-r-full border-l-4 border-primary-500 shadow-lg">
                 <div className="h-3 w-3 rounded-full bg-primary-500 animate-pulse"></div>
@@ -113,11 +113,11 @@ export const Home: React.FC = () => {
               </div>
 
               {/* Massive Headline */}
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-none tracking-tight text-white drop-shadow-lg">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-none tracking-tight text-white drop-shadow-lg">
                 {t.home.heroPrefix} <span className="text-primary-500 text-stroke-white">{t.home.heroHighlight}</span>{t.home.heroSuffix}
               </h1>
 
-              <p className="text-xl md:text-2xl font-medium text-neutral-200 max-w-xl leading-relaxed border-l-4 border-accent-500 pl-6">
+              <p className="text-lg md:text-xl font-medium text-neutral-200 max-w-xl leading-relaxed border-l-4 border-accent-500 pl-6">
                 {t.home.heroDesc}
               </p>
 
@@ -125,14 +125,14 @@ export const Home: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
                 <button
                   onClick={() => navigate(`${langPrefix}/projects`)}
-                  className="btn-political-primary animate-heartbeat px-8 py-4 text-xl flex items-center justify-center gap-3 min-w-[200px]"
+                  className="btn-political-primary animate-heartbeat px-6 py-3 text-lg flex items-center justify-center gap-3 min-w-[200px]"
                 >
                   {t.home.viewProjects}
-                  <ArrowRight size={24} strokeWidth={3} className="animate-attention-arrow" />
+                  <ArrowRight size={20} strokeWidth={3} className="animate-attention-arrow" />
                 </button>
                 <button
                   onClick={() => navigate(`${langPrefix}/about`)}
-                  className="px-8 py-4 border-2 border-white text-white rounded-none font-bold text-lg hover:bg-white hover:text-black transition-all flex items-center justify-center uppercase tracking-wide min-w-[200px]"
+                  className="px-6 py-3 border-2 border-white text-white rounded-none font-bold text-base hover:bg-white hover:text-black transition-all flex items-center justify-center uppercase tracking-wide min-w-[200px]"
                 >
                   {t.home.contactOffice}
                 </button>
@@ -257,7 +257,7 @@ export const Home: React.FC = () => {
           {/* Header */}
           <div className="mb-16 text-center">
             <span className="bg-accent-400 text-black font-bold uppercase tracking-widest px-4 py-1 mb-4 inline-block transform -skew-x-12">
-              Constituency Coverage
+              {t.home.constituencyCoverage}
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-extrabold text-black mt-4 uppercase">
               {t.home.blockSectionTitle}
