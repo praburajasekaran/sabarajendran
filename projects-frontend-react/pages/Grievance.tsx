@@ -10,6 +10,7 @@ type FormType = 'request' | 'complaint';
 
 interface FormData {
     type: FormType;
+    requestType: string;
     description: string;
     name: string;
     phone: string;
@@ -24,6 +25,7 @@ export const GrievancePage: React.FC = () => {
     const { t, language } = useLanguage();
     const [formData, setFormData] = useState<FormData>({
         type: 'request',
+        requestType: '',
         description: '',
         name: '',
         phone: '',
@@ -129,6 +131,7 @@ export const GrievancePage: React.FC = () => {
             // Reset form
             setFormData({
                 type: 'request',
+                requestType: '',
                 description: '',
                 name: '',
                 phone: '',
@@ -212,6 +215,30 @@ export const GrievancePage: React.FC = () => {
                                             />
                                             <span className="font-bold text-lg text-secondary-800">{t.grievance.typeComplaint}</span>
                                         </label>
+                                    </div>
+                                </div>
+
+                                {/* Request Type Selection */}
+                                <div>
+                                    <label className="block text-lg font-bold text-secondary-900 mb-2 uppercase tracking-wide">
+                                        {t.grievance.requestTypeLabel} <span className="text-red-500">*</span>
+                                    </label>
+                                    <div className="relative">
+                                        <select
+                                            name="requestType"
+                                            value={formData.requestType}
+                                            onChange={handleInputChange}
+                                            required
+                                            className="w-full border-2 border-gray-300 p-4 text-lg focus:border-black focus:ring-0 font-medium appearance-none bg-white"
+                                        >
+                                            <option value="">{t.grievance.selectRequestType}</option>
+                                            {Object.entries(t.types).map(([key, label]) => (
+                                                <option key={key} value={key}>{label}</option>
+                                            ))}
+                                        </select>
+                                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                                            <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-black"></div>
+                                        </div>
                                     </div>
                                 </div>
 

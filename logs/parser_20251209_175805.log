@@ -1,0 +1,49 @@
+2025-12-09 17:58:05,214 - INFO - Logging to file: logs/parser_20251209_175805.log
+2025-12-09 17:58:05,215 - INFO - ============================================================
+2025-12-09 17:58:05,215 - INFO - Tamil Project PDF Parser - Google Gemini Vision API
+2025-12-09 17:58:05,215 - INFO - ============================================================
+2025-12-09 17:58:05,215 - INFO - Gemini Model: gemini-1.5-flash
+2025-12-09 17:58:05,215 - INFO - PDF Directory: docs/kurinjipadi-block-projects
+2025-12-09 17:58:05,215 - INFO - Output CSV: projects_kurinjipadi_gemini.csv
+2025-12-09 17:58:05,215 - INFO - PDF DPI: 300
+2025-12-09 17:58:05,215 - INFO - Max Retries: 3
+2025-12-09 17:58:05,215 - INFO - ============================================================
+2025-12-09 17:58:05,215 - INFO - Processing: கீழூர்.pdf
+2025-12-09 17:58:05,215 - INFO - Panchayat: கீழூர்
+2025-12-09 17:58:05,233 - ERROR - Error converting PDF: Unable to get page count. Is poppler installed and in PATH?
+Traceback (most recent call last):
+  File "/Users/praburajasekaran/Library/Python/3.10/lib/python/site-packages/pdf2image/pdf2image.py", line 581, in pdfinfo_from_path
+    proc = Popen(command, env=env, stdout=PIPE, stderr=PIPE)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 1847, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'pdfinfo'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Applications/MAMP/htdocs/sabarajendran/parse_tamil_projects_gemini.py", line 324, in convert_pdf_to_images
+    images = convert_from_path(self.pdf_path, dpi=PDF_DPI)
+  File "/Users/praburajasekaran/Library/Python/3.10/lib/python/site-packages/pdf2image/pdf2image.py", line 127, in convert_from_path
+    page_count = pdfinfo_from_path(
+  File "/Users/praburajasekaran/Library/Python/3.10/lib/python/site-packages/pdf2image/pdf2image.py", line 607, in pdfinfo_from_path
+    raise PDFInfoNotInstalledError(
+pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is poppler installed and in PATH?
+2025-12-09 17:58:05,239 - ERROR - Failed to convert PDF to images
+2025-12-09 17:58:05,239 - WARNING - No projects to write to CSV
+2025-12-09 17:58:05,239 - INFO - 
+============================================================
+2025-12-09 17:58:05,239 - INFO - PROCESSING SUMMARY
+2025-12-09 17:58:05,239 - INFO - ============================================================
+2025-12-09 17:58:05,240 - INFO - Elapsed time: 0.02 seconds
+2025-12-09 17:58:05,240 - INFO - Total PDFs processed: 1
+2025-12-09 17:58:05,240 - INFO -   - Successful: 1
+2025-12-09 17:58:05,240 - INFO -   - Failed: 0
+2025-12-09 17:58:05,240 - INFO - Total projects extracted: 0
+2025-12-09 17:58:05,240 - INFO - Total API calls made: 0
+2025-12-09 17:58:05,240 - INFO - Validation warnings: 0
+2025-12-09 17:58:05,241 - INFO - 
+Projects per PDF:
+2025-12-09 17:58:05,241 - INFO -   கீழூர்.pdf: 0 projects
+2025-12-09 17:58:05,241 - INFO - ============================================================

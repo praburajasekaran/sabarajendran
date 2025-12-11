@@ -18,6 +18,7 @@ import { ShareableGraphicButton } from '../components/ShareableGraphicButton';
 import { GraphicPreviewModal } from '../components/GraphicPreviewModal';
 import { ProjectGraphic } from '../components/ProjectGraphic';
 import { useGraphicGenerator } from '../hooks/useGraphicGenerator';
+import { ShareBanner } from '../components/ShareBanner';
 
 const ITEMS_PER_PAGE = 15;
 
@@ -312,9 +313,13 @@ export const ProjectsPage: React.FC = () => {
           <div className="bg-neutral-100 border-b-4 border-black z-20 flex-shrink-0">
             <div className="p-4 sm:p-6 flex flex-col gap-4 sm:gap-6">
 
-              {/* Party Banner integrated here */}
+              {/* Party Banner / Share Banner integrated here */}
               <div className="hidden md:block">
-                <PartyBanner />
+                {language === 'en' ? (
+                  <ShareBanner onClick={handleOpenGraphicModal} />
+                ) : (
+                  <PartyBanner />
+                )}
               </div>
 
               {/* Top Row: Title & Mobile Toggle */}
@@ -427,9 +432,13 @@ export const ProjectsPage: React.FC = () => {
 
           {/* Scrollable Project Grid */}
           <div id="projects-grid-top" className="flex-1 p-4 md:p-8 scroll-smooth bg-neutral-50">
-            {/* Mobile Party Banner */}
+            {/* Mobile Party Banner / Share Banner */}
             <div className="block md:hidden mb-6">
-              <PartyBanner />
+              {language === 'en' ? (
+                <ShareBanner onClick={handleOpenGraphicModal} />
+              ) : (
+                <PartyBanner />
+              )}
             </div>
 
             {filteredProjects.length > 0 ? (

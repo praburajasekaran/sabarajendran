@@ -5,6 +5,7 @@ export const VILLAGE_TRANSLATIONS: Record<string, string> = {
     'Annakarankuppam': 'அண்ணாகாரன்குப்பம்',
     'Annanagar': 'அண்ணா நகர்',
     'Annankarakuppam': 'அண்ணங்காரகுப்பம்',
+    'Annadanampettai': 'அன்னதானம்பேட்டை',
     'Arasadikuppam': 'அரசடிகுப்பம்',
     'Arunthathiyar Nagar': 'அருந்ததியர் நகர்',
     'Athirikuppam': 'அதிரிக்குப்பம்',
@@ -14,6 +15,7 @@ export const VILLAGE_TRANSLATIONS: Record<string, string> = {
     'Ealanthampattu': 'எலந்தம்பட்டு',
     'Ealanthampattu Colony': 'எலந்தம்பட்டு காலனி',
     'Gandhi nagar colony': 'காந்தி நகர் காலனி',
+    'Indira Nagar': 'இந்திரா நகர்',
     'Kadampuliyur': 'காடாம்புலியூர்',
     'Karukkai': 'கருக்கை',
     'Karukkai colony': 'கருக்கை காலனி',
@@ -25,7 +27,9 @@ export const VILLAGE_TRANSLATIONS: Record<string, string> = {
     'Keeliruppu': 'கீழிருப்பு',
     'Keelkankeyankuppam': 'கீழ்காங்கேயன்குப்பம்',
     'Keelmampattu': 'கீழ்மாம்பட்டு',
+    'Keezhur': 'கீழூர்',
     'Konjikuppam': 'கொஞ்சிக்குப்பம்',
+    'Koranapattu': 'கோரணப்பட்டு',
     'Meliruppu': 'மேலிருப்பு',
     'Melkankeyankuppam': 'மேல்காங்கேயன்குப்பம்',
     'Melmampattu': 'மேல்மாம்பட்டு',
@@ -67,6 +71,7 @@ export const VILLAGE_TRANSLATIONS: Record<string, string> = {
     'Keelkollai': 'கீழ்கொள்ளை',
     'Keelmettukuppam': 'கீழ்மேட்டுக்குப்பம்',
     'Kudiruppu': 'குடியிருப்பு',
+    'Madanagopalapuram': 'மதனகோபாலபுரம்',
     'Maligampattu': 'மாளிகைப்பட்டு',
     'Maligampattu colony': 'மாளிகைப்பட்டு காலனி',
     'Manadikuppam': 'மனாடிக்குப்பம்',
@@ -91,11 +96,13 @@ export const VILLAGE_TRANSLATIONS: Record<string, string> = {
     'Pappankollai': 'பாப்பான்கொள்ளை',
     'Pattikuppam': 'பட்டிகுப்பம்',
     'Periyakattupalayam': 'பெரியகாட்டுப்பாளையம்',
+    'Perumathur': 'பெருமாத்தூர்',
     'Pudupalayam': 'புதுப்பாளையம்',
     'Pulavankuppam': 'புலவன்குப்பம்',
     'Purangani': 'புரங்கனி',
     'S. pudukuppam': 'எஸ்.புதுக்குப்பம்',
     'Samathuvapuram': 'சமத்துவபுரம்',
+    'Samattikuppam': 'சமட்டிக்குப்பம்',
     'Satha mampattu r c colony': 'சாத்தமாம்பட்டு ஆர்.சி காலனி',
     'Sathamampattu': 'சாத்தமாம்பட்டு',
     'Semmankuppam': 'செம்மங்குப்பம்',
@@ -111,11 +118,15 @@ export const VILLAGE_TRANSLATIONS: Record<string, string> = {
     'Thalampattu colony': 'தாழம்பட்டு காலனி',
     'Thoppukollai': 'தோப்புக்கொள்ளை',
     'Thotty colony': 'தொட்டி காலனி',
+    'Vadakuthu': 'வடக்குத்து',
+    'Vadakkumelur': 'வடக்குமேலூர்',
     'Vallam': 'வல்லம்',
     'Vallam colony': 'வல்லம் காலனி',
     'Varisankuppam': 'வரிசங்குப்பம்',
+    'Vanathirayapuram': 'வானாதிராயபுரம்',
     'Veerasingankuppam colony': 'வீரசிங்கன்குப்பம் காலனி',
     'Vegakollai': 'வேகக்கொள்ளை',
+    'Vengadampettai': 'வெங்கடாம்பேட்டை',
     'Vellai pulli colony': 'வெள்ளைப்புள்ளி காலனி',
     'Visoor colony': 'விசூர் காலனி',
     'Kaatupalayam': 'காட்டுப்பாளையம்',
@@ -153,6 +164,12 @@ export const getVillageName = (name: string, language: 'en' | 'ta'): string => {
             if (translatedBase !== baseName) {
                 return `${translatedBase} நகர்`;
             }
+        }
+    } else if (language === 'en') {
+        // Reverse lookup: Check if the name is a Tamil value and return the English key
+        const entry = Object.entries(VILLAGE_TRANSLATIONS).find(([key, value]) => value === name);
+        if (entry) {
+            return entry[0];
         }
     }
     return name;

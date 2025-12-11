@@ -280,3 +280,9 @@ If you run into issues:
 5. Then test WordPress auto-deploy
 
 **Most common issue:** Forgot to set environment variables → Add them and redeploy!
+
+
+
+
+
+

@@ -4,11 +4,26 @@
  * Run with: wp eval-file import_projects.php
  */
 
+define('WP_USE_THEMES', false);
+
 require_once('wp-load.php');
 
 // Enable error reporting
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
+// Disable Netlify Hooks during bulk import
+remove_action('save_post', 'saba_netlify_on_post_save', 10);
+remove_action('transition_post_status', 'saba_netlify_on_post_status_change', 10);
+remove_action('created_term', 'saba_netlify_on_term_change', 10);
+remove_action('edited_term', 'saba_netlify_on_term_change', 10);
+remove_action('updated_post_meta', 'saba_netlify_on_meta_update', 10);
+remove_action('added_post_meta', 'saba_netlify_on_meta_update', 10);
+
+ini_set('memory_limit', '2048M');
+wp_defer_term_counting(true);
+wp_set_current_user(1);
+
 
 echo "=== Starting Project Import ===\n";
 
@@ -29,7 +44,7 @@ if (!$block_term) {
 $block_id = is_array($block_term) ? $block_term['term_id'] : $block_term;
 
 // Open CSV
-$csv_file = 'projects_kurinjipadi_clean.csv';  // Updated to use new cleaned CSV
+$csv_file = 'projects_kurinjipadi_gemini.csv';  // Updated to use new cleaned CSV
 if (!file_exists($csv_file)) {
     die("Error: $csv_file not found.\n");
 }
@@ -114,16 +129,36 @@ while (($data = fgetcsv($handle)) !== FALSE) {
     if (empty($title))
         $title = "Project $sno - $village_name";
 
+    $user_id = get_current_user_id();
+    // Validate encoding
+    if (!mb_check_encoding($title, 'UTF-8'))
+        $title = utf8_encode($title);
+    if (!mb_check_encoding($description, 'UTF-8'))
+        $description = utf8_encode($description);
+
     $post_data = array(
         'post_title' => $title,
         'post_content' => $description . "\n\n" . $raw_text,
         'post_status' => 'publish',
         'post_type' => 'project',
+        'post_author' => $user_id,
     );
 
-    $post_id = wp_insert_post($post_data);
+    // DEBUG
+    echo "Inserting Row $count:\n";
+    // var_dump($post_data); 
 
-    if ($post_id) {
+    // Check CPT
+    global $wp_post_types;
+    if (!post_type_exists('project')) {
+        echo "ERROR: Post Type 'project' does not exist! Registered types: " . implode(', ', array_keys($wp_post_types)) . "\n";
+        die();
+    }
+
+    $post_id = wp_insert_post($post_data, true); // Pass true to get WP_Error object
+
+    if (!is_wp_error($post_id) && $post_id > 0) {
+        // ... success ...
         // Set Terms
         wp_set_object_terms($post_id, (int) $block_id, 'project_block');
         if ($panchayat_id)
@@ -152,7 +187,7 @@ while (($data = fgetcsv($handle)) !== FALSE) {
             }
             if ($year_term && !is_wp_error($year_term)) {
                 $yid = is_array($year_term) ? $year_term['term_id'] : $year_term;
-                wp_set_object_terms($post_id, (int)$yid, 'project_year');
+                wp_set_object_terms($post_id, (int) $yid, 'project_year');
             }
         }
 
@@ -164,7 +199,7 @@ while (($data = fgetcsv($handle)) !== FALSE) {
             }
             if ($scheme_term && !is_wp_error($scheme_term)) {
                 $sid = is_array($scheme_term) ? $scheme_term['term_id'] : $scheme_term;
-                wp_set_object_terms($post_id, (int)$sid, 'project_scheme');
+                wp_set_object_terms($post_id, (int) $sid, 'project_scheme');
             }
         }
 
@@ -188,6 +223,9 @@ while (($data = fgetcsv($handle)) !== FALSE) {
     } else {
         $failed++;
         echo "Failed to create post for row $count\n";
+        if (is_wp_error($post_id)) {
+            echo "Error: " . $post_id->get_error_message() . "\n";
+        }
     }
 
     $count++;

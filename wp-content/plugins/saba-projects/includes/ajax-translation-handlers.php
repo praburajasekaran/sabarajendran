@@ -116,3 +116,9 @@ function saba_ajax_translate_village_name() {
 	));
 }
 add_action('wp_ajax_saba_translate_village_name', 'saba_ajax_translate_village_name');
+
+
+
+
+
+

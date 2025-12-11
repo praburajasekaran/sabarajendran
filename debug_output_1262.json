@@ -1,0 +1,401 @@
+{
+    "id": 1262,
+    "date": "2025-12-11T05:18:10",
+    "date_gmt": "2025-12-11T05:18:10",
+    "guid": {
+        "rendered": "http:\/\/localhost:8888\/sabarajendran\/project\/%e0%ae%ae%e0%af%87%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%af%81%e0%ae%a4%e0%af%8d%e0%ae%a4%e0%af%86%e0%ae%b0%e0%af%81%e0%ae%b5%e0%ae%bf%e0%ae%b2%e0%af%8d-%e0%ae%b5%e0%ae%9f%e0%ae%bf%e0%ae%95%e0%ae%be%e0%ae%b2\/"
+    },
+    "modified": "2025-12-11T05:18:10",
+    "modified_gmt": "2025-12-11T05:18:10",
+    "slug": "%e0%ae%ae%e0%af%87%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%af%81%e0%ae%a4%e0%af%8d%e0%ae%a4%e0%af%86%e0%ae%b0%e0%af%81%e0%ae%b5%e0%ae%bf%e0%ae%b2%e0%af%8d-%e0%ae%b5%e0%ae%9f%e0%ae%bf%e0%ae%95%e0%ae%be%e0%ae%b2",
+    "status": "publish",
+    "type": "project",
+    "link": "http:\/\/localhost:8888\/sabarajendran\/project\/%e0%ae%ae%e0%af%87%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%af%81%e0%ae%a4%e0%af%8d%e0%ae%a4%e0%af%86%e0%ae%b0%e0%af%81%e0%ae%b5%e0%ae%bf%e0%ae%b2%e0%af%8d-%e0%ae%b5%e0%ae%9f%e0%ae%bf%e0%ae%95%e0%ae%be%e0%ae%b2\/",
+    "title": {
+        "rendered": "\u0bae\u0bc7\u0b9f\u0bcd\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc6\u0bb0\u0bc1\u0bb5\u0bbf\u0bb2\u0bcd \u0bb5\u0b9f\u0bbf\u0b95\u0bbe\u0bb2\u0bcd \u0bb5\u0bbe\u0baf\u0bcd\u0b95\u0bcd\u0b95\u0bbe\u0bb2\u0bcd \u0b85\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd"
+    },
+    "content": {
+        "rendered": "<p>\u0bae\u0bc7\u0b9f\u0bcd\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc6\u0bb0\u0bc1\u0bb5\u0bbf\u0bb2\u0bcd \u0bb5\u0b9f\u0bbf\u0b95\u0bbe\u0bb2\u0bcd \u0bb5\u0bbe\u0baf\u0bcd\u0b95\u0bcd\u0b95\u0bbe\u0bb2\u0bcd \u0b85\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd<\/p>\n",
+        "protected": false
+    },
+    "excerpt": {
+        "rendered": "<p>\u0bae\u0bc7\u0b9f\u0bcd\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc6\u0bb0\u0bc1\u0bb5\u0bbf\u0bb2\u0bcd \u0bb5\u0b9f\u0bbf\u0b95\u0bbe\u0bb2\u0bcd \u0bb5\u0bbe\u0baf\u0bcd\u0b95\u0bcd\u0b95\u0bbe\u0bb2\u0bcd \u0b85\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd<\/p>\n",
+        "protected": false
+    },
+    "featured_media": 0,
+    "template": "",
+    "project_category": [],
+    "project_village": [
+        427
+    ],
+    "project_year": [
+        22
+    ],
+    "project_status": [
+        191
+    ],
+    "project_scheme": [
+        309
+    ],
+    "project_panchayat": [
+        422
+    ],
+    "project_block": [
+        266
+    ],
+    "class_list": [
+        "post-1262",
+        "project",
+        "type-project",
+        "status-publish",
+        "hentry",
+        "project_village-427",
+        "project_year-2023-2024",
+        "project_status-in-progress",
+        "project_scheme-15----",
+        "project_panchayat-422",
+        "project_block-kurinjipadi"
+    ],
+    "_project_budget": "250000",
+    "_project_title_tamil": "\u0bb5\u0bc6\u0bb3\u0bcd\u0bb3\u0bbf\u0b95\u0b9f\u0bc1\u0bae\u0bcd\u0baa\u0bc7\u0b9f\u0bcd \u0b8a\u0bb0\u0bbe\u0b9f\u0bcd\u0b9a\u0bbf \u0bae\u0bc7\u0b9f\u0bcd\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc6\u0bb0\u0bc1\u0bb5\u0bbf\u0bb2\u0bcd \u0bb5\u0b9f\u0bbf\u0b95\u0bbe\u0bb2\u0bcd \u0bb5\u0bbe\u0baf\u0bcd\u0b95\u0bcd\u0b95\u0bbe\u0bb2\u0bcd \u0b85\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
+    "_project_title_english": "\u0bb5\u0bc6\u0bb3\u0bcd\u0bb3\u0bbf\u0b95\u0b9f\u0bc1\u0bae\u0bcd\u0baa\u0bc7\u0b9f\u0bcd \u0b8a\u0bb0\u0bbe\u0b9f\u0bcd\u0b9a\u0bbf \u0bae\u0bc7\u0b9f\u0bcd\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc6\u0bb0\u0bc1\u0bb5\u0bbf\u0bb2\u0bcd \u0bb5\u0b9f\u0bbf\u0b95\u0bbe\u0bb2\u0bcd \u0bb5\u0bbe\u0baf\u0bcd\u0b95\u0bcd\u0b95\u0bbe\u0bb2\u0bcd \u0b85\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
+    "_project_description_tamil": "\u0bae\u0bc7\u0b9f\u0bcd\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc6\u0bb0\u0bc1\u0bb5\u0bbf\u0bb2\u0bcd \u0bb5\u0b9f\u0bbf\u0b95\u0bbe\u0bb2\u0bcd \u0bb5\u0bbe\u0baf\u0bcd\u0b95\u0bcd\u0b95\u0bbe\u0bb2\u0bcd \u0b85\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd",
+    "_project_description_english": "",
+    "_links": {
+        "self": [
+            {
+                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project\/1262",
+                "targetHints": {
+                    "allow": [
+                        "GET"
+                    ]
+                }
+            }
+        ],
+        "collection": [
+            {
+                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project"
+            }
+        ],
+        "about": [
+            {
+                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/types\/project"
+            }
+        ],
+        "wp:attachment": [
+            {
+                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fmedia&parent=1262"
+            }
+        ],
+        "wp:term": [
+            {
+                "taxonomy": "project_category",
+                "embeddable": true,
+                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject_category&post=1262"
+            },
+            {
+                "taxonomy": "project_village",
+                "embeddable": true,
+                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject_village&post=1262"
+            },
+            {
+                "taxonomy": "project_year",
+                "embeddable": true,
+                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject_year&post=1262"
+            },
+            {
+                "taxonomy": "project_status",
+                "embeddable": true,
+                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject_status&post=1262"
+            },
+            {
+                "taxonomy": "project_scheme",
+                "embeddable": true,
+                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject_scheme&post=1262"
+            },
+            {
+                "taxonomy": "project_panchayat",
+                "embeddable": true,
+                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject_panchayat&post=1262"
+            },
+            {
+                "taxonomy": "project_block",
+                "embeddable": true,
+                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject_block&post=1262"
+            }
+        ],
+        "curies": [
+            {
+                "name": "wp",
+                "href": "https:\/\/api.w.org\/{rel}",
+                "templated": true
+            }
+        ]
+    },
+    "_embedded": {
+        "wp:term": [
+            [],
+            [
+                {
+                    "id": 427,
+                    "link": "http:\/\/localhost:8888\/sabarajendran\/village\/%e0%ae%b5%e0%af%86%e0%ae%b3%e0%af%8d%e0%ae%b3%e0%ae%bf%e0%ae%95%e0%ae%9f%e0%af%81%e0%ae%ae%e0%af%8d%e0%ae%aa%e0%af%87%e0%ae%9f%e0%af%8d\/",
+                    "name": "\u0bb5\u0bc6\u0bb3\u0bcd\u0bb3\u0bbf\u0b95\u0b9f\u0bc1\u0bae\u0bcd\u0baa\u0bc7\u0b9f\u0bcd",
+                    "slug": "%e0%ae%b5%e0%af%86%e0%ae%b3%e0%af%8d%e0%ae%b3%e0%ae%bf%e0%ae%95%e0%ae%9f%e0%af%81%e0%ae%ae%e0%af%8d%e0%ae%aa%e0%af%87%e0%ae%9f%e0%af%8d",
+                    "taxonomy": "project_village",
+                    "name_tamil": "\u0bb5\u0bc6\u0bb3\u0bcd\u0bb3\u0bbf\u0b95\u0b9f\u0bc1\u0bae\u0bcd\u0baa\u0bc7\u0b9f\u0bcd",
+                    "name_english": "",
+                    "name_translated": "\u0bb5\u0bc6\u0bb3\u0bcd\u0bb3\u0bbf\u0b95\u0b9f\u0bc1\u0bae\u0bcd\u0baa\u0bc7\u0b9f\u0bcd",
+                    "_links": {
+                        "self": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_village\/427",
+                                "targetHints": {
+                                    "allow": [
+                                        "GET"
+                                    ]
+                                }
+                            }
+                        ],
+                        "collection": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_village"
+                            }
+                        ],
+                        "about": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/taxonomies\/project_village"
+                            }
+                        ],
+                        "wp:post_type": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject&project_village=427"
+                            }
+                        ],
+                        "curies": [
+                            {
+                                "name": "wp",
+                                "href": "https:\/\/api.w.org\/{rel}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                }
+            ],
+            [
+                {
+                    "id": 22,
+                    "link": "http:\/\/localhost:8888\/sabarajendran\/year\/2023-2024\/",
+                    "name": "2023-2024",
+                    "slug": "2023-2024",
+                    "taxonomy": "project_year",
+                    "_links": {
+                        "self": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_year\/22",
+                                "targetHints": {
+                                    "allow": [
+                                        "GET"
+                                    ]
+                                }
+                            }
+                        ],
+                        "collection": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_year"
+                            }
+                        ],
+                        "about": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/taxonomies\/project_year"
+                            }
+                        ],
+                        "wp:post_type": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject&project_year=22"
+                            }
+                        ],
+                        "curies": [
+                            {
+                                "name": "wp",
+                                "href": "https:\/\/api.w.org\/{rel}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                }
+            ],
+            [
+                {
+                    "id": 191,
+                    "link": "http:\/\/localhost:8888\/sabarajendran\/status\/in-progress\/",
+                    "name": "In progress",
+                    "slug": "in-progress",
+                    "taxonomy": "project_status",
+                    "_links": {
+                        "self": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_status\/191",
+                                "targetHints": {
+                                    "allow": [
+                                        "GET"
+                                    ]
+                                }
+                            }
+                        ],
+                        "collection": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_status"
+                            }
+                        ],
+                        "about": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/taxonomies\/project_status"
+                            }
+                        ],
+                        "wp:post_type": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject&project_status=191"
+                            }
+                        ],
+                        "curies": [
+                            {
+                                "name": "wp",
+                                "href": "https:\/\/api.w.org\/{rel}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                }
+            ],
+            [
+                {
+                    "id": 309,
+                    "link": "http:\/\/localhost:8888\/sabarajendran\/scheme\/15-%e0%ae%b5%e0%ae%a4%e0%af%81-%e0%ae%a8%e0%ae%bf%e0%ae%a4%e0%ae%bf%e0%ae%95%e0%af%8d%e0%ae%95%e0%af%81%e0%ae%b4%e0%af%81-%e0%ae%ae%e0%ae%be%e0%ae%a9%e0%ae%bf%e0%ae%af-%e0%ae%a4%e0%ae%bf%e0%ae%9f\/",
+                    "name": "15-\u0bb5\u0ba4\u0bc1 \u0ba8\u0bbf\u0ba4\u0bbf\u0b95\u0bcd\u0b95\u0bc1\u0bb4\u0bc1 \u0bae\u0bbe\u0ba9\u0bbf\u0baf \u0ba4\u0bbf\u0b9f\u0bcd\u0b9f\u0bae\u0bcd (\u0bb5\u0b9f\u0bcd\u0b9f\u0bbe\u0bb0 \u0bb5\u0bb3\u0bb0\u0bcd\u0b9a\u0bcd\u0b9a\u0bbf)",
+                    "slug": "15-%e0%ae%b5%e0%ae%a4%e0%af%81-%e0%ae%a8%e0%ae%bf%e0%ae%a4%e0%ae%bf%e0%ae%95%e0%af%8d%e0%ae%95%e0%af%81%e0%ae%b4%e0%af%81-%e0%ae%ae%e0%ae%be%e0%ae%a9%e0%ae%bf%e0%ae%af-%e0%ae%a4%e0%ae%bf%e0%ae%9f",
+                    "taxonomy": "project_scheme",
+                    "_links": {
+                        "self": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_scheme\/309",
+                                "targetHints": {
+                                    "allow": [
+                                        "GET"
+                                    ]
+                                }
+                            }
+                        ],
+                        "collection": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_scheme"
+                            }
+                        ],
+                        "about": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/taxonomies\/project_scheme"
+                            }
+                        ],
+                        "wp:post_type": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject&project_scheme=309"
+                            }
+                        ],
+                        "curies": [
+                            {
+                                "name": "wp",
+                                "href": "https:\/\/api.w.org\/{rel}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                }
+            ],
+            [
+                {
+                    "id": 422,
+                    "link": "http:\/\/localhost:8888\/sabarajendran\/panchayat\/%e0%ae%b5%e0%af%86%e0%ae%99%e0%af%8d%e0%ae%95%e0%ae%9f%e0%ae%be%e0%ae%ae%e0%af%8d%e0%ae%aa%e0%af%87%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%af%88\/",
+                    "name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0b9f\u0bbe\u0bae\u0bcd\u0baa\u0bc7\u0b9f\u0bcd\u0b9f\u0bc8",
+                    "slug": "%e0%ae%b5%e0%af%86%e0%ae%99%e0%af%8d%e0%ae%95%e0%ae%9f%e0%ae%be%e0%ae%ae%e0%af%8d%e0%ae%aa%e0%af%87%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%af%88",
+                    "taxonomy": "project_panchayat",
+                    "_links": {
+                        "self": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_panchayat\/422",
+                                "targetHints": {
+                                    "allow": [
+                                        "GET"
+                                    ]
+                                }
+                            }
+                        ],
+                        "collection": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_panchayat"
+                            }
+                        ],
+                        "about": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/taxonomies\/project_panchayat"
+                            }
+                        ],
+                        "wp:post_type": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject&project_panchayat=422"
+                            }
+                        ],
+                        "curies": [
+                            {
+                                "name": "wp",
+                                "href": "https:\/\/api.w.org\/{rel}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                }
+            ],
+            [
+                {
+                    "id": 266,
+                    "link": "http:\/\/localhost:8888\/sabarajendran\/block\/kurinjipadi\/",
+                    "name": "Kurinjipadi",
+                    "slug": "kurinjipadi",
+                    "taxonomy": "project_block",
+                    "_links": {
+                        "self": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_block\/266",
+                                "targetHints": {
+                                    "allow": [
+                                        "GET"
+                                    ]
+                                }
+                            }
+                        ],
+                        "collection": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/project_block"
+                            }
+                        ],
+                        "about": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=\/wp\/v2\/taxonomies\/project_block"
+                            }
+                        ],
+                        "wp:post_type": [
+                            {
+                                "href": "http:\/\/localhost:8888\/sabarajendran\/index.php?rest_route=%2Fwp%2Fv2%2Fproject&project_block=266"
+                            }
+                        ],
+                        "curies": [
+                            {
+                                "name": "wp",
+                                "href": "https:\/\/api.w.org\/{rel}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                }
+            ]
+        ]
+    }
+}

@@ -54,6 +54,11 @@ add_action('init', 'saba_netlify_init_hooks');
  */
 function saba_netlify_on_post_save($post_id, $post, $update)
 {
+	// Skip if import is running
+	if (defined('SABA_IMPORT_RUNNING') && SABA_IMPORT_RUNNING) {
+		return;
+	}
+
 	// Skip autosaves and revisions
 	if (wp_is_post_autosave($post_id) || wp_is_post_revision($post_id)) {
 		return;
@@ -84,6 +89,11 @@ function saba_netlify_on_post_save($post_id, $post, $update)
  */
 function saba_netlify_on_post_status_change($new_status, $old_status, $post)
 {
+	// Skip if import is running
+	if (defined('SABA_IMPORT_RUNNING') && SABA_IMPORT_RUNNING) {
+		return;
+	}
+
 	// Skip autosaves and revisions
 	if (wp_is_post_autosave($post->ID) || wp_is_post_revision($post->ID)) {
 		return;
@@ -118,6 +128,11 @@ function saba_netlify_on_post_status_change($new_status, $old_status, $post)
  */
 function saba_netlify_on_post_delete($post_id)
 {
+	// Skip if import is running
+	if (defined('SABA_IMPORT_RUNNING') && SABA_IMPORT_RUNNING) {
+		return;
+	}
+
 	$post = get_post($post_id);
 	
 	if (!$post || $post->post_status !== 'publish') {
@@ -143,6 +158,11 @@ function saba_netlify_on_post_delete($post_id)
  */
 function saba_netlify_on_meta_update($meta_id, $object_id, $meta_key, $meta_value)
 {
+	// Skip if import is running
+	if (defined('SABA_IMPORT_RUNNING') && SABA_IMPORT_RUNNING) {
+		return;
+	}
+
 	// Only trigger for published posts
 	$post = get_post($object_id);
 	if (!$post || $post->post_status !== 'publish') {
@@ -185,6 +205,11 @@ function saba_netlify_on_meta_update($meta_id, $object_id, $meta_key, $meta_valu
  */
 function saba_netlify_on_meta_delete($meta_ids, $object_id, $meta_key, $meta_value)
 {
+	// Skip if import is running
+	if (defined('SABA_IMPORT_RUNNING') && SABA_IMPORT_RUNNING) {
+		return;
+	}
+
 	// Only trigger for published posts
 	$post = get_post($object_id);
 	if (!$post || $post->post_status !== 'publish') {
@@ -219,6 +244,11 @@ function saba_netlify_on_meta_delete($meta_ids, $object_id, $meta_key, $meta_val
  */
 function saba_netlify_on_term_change($term_id, $tt_id, $taxonomy)
 {
+	// Skip if import is running
+	if (defined('SABA_IMPORT_RUNNING') && SABA_IMPORT_RUNNING) {
+		return;
+	}
+
 	// Only trigger for project-related taxonomies
 	$relevant_taxonomies = array(
 		'project_type',
@@ -256,6 +286,11 @@ function saba_netlify_on_term_change($term_id, $tt_id, $taxonomy)
  */
 function saba_netlify_on_term_meta_update($meta_id, $object_id, $meta_key, $meta_value)
 {
+	// Skip if import is running
+	if (defined('SABA_IMPORT_RUNNING') && SABA_IMPORT_RUNNING) {
+		return;
+	}
+
 	// Only trigger for village name translations
 	$relevant_keys = array(
 		'_village_name_tamil',
@@ -290,6 +325,11 @@ function saba_netlify_on_term_meta_update($meta_id, $object_id, $meta_key, $meta
  */
 function saba_netlify_on_term_meta_delete($meta_ids, $object_id, $meta_key, $meta_value)
 {
+	// Skip if import is running
+	if (defined('SABA_IMPORT_RUNNING') && SABA_IMPORT_RUNNING) {
+		return;
+	}
+
 	// Only trigger for village name translations
 	$relevant_keys = array(
 		'_village_name_tamil',
@@ -333,3 +373,9 @@ function saba_netlify_on_bulk_translation_complete($stats = array())
 	$webhook = Saba_Netlify_Webhook::get_instance();
 	$webhook->schedule_deployment($reason);
 }
+
+
+
+
+
+

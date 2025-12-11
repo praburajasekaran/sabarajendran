@@ -288,3 +288,8 @@ function saba_rajendran_get_category_color($category_slug = '')
 
 	return isset($colors[$category_slug]) ? $colors[$category_slug] : $colors['default'];
 }
+
+/**
+ * Load Grievance Handler
+ */
+require get_template_directory() . '/inc/grievance-handler.php';

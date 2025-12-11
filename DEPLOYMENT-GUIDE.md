@@ -152,3 +152,9 @@ If you encounter issues:
 1. Check WordPress debug log: `wp-content/debug.log`
 2. Check browser console for JavaScript errors
 3. Verify API endpoint: `https://tan-emu-358425.hostingersite.com/wp-json/wp/v2/project`
+
+
+
+
+
+

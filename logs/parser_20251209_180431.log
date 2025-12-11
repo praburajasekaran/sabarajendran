@@ -1,0 +1,31 @@
+2025-12-09 18:04:31,776 - INFO - Logging to file: logs/parser_20251209_180431.log
+2025-12-09 18:04:31,776 - INFO - ============================================================
+2025-12-09 18:04:31,776 - INFO - Tamil Project PDF Parser - Google Gemini Vision API
+2025-12-09 18:04:31,777 - INFO - ============================================================
+2025-12-09 18:04:31,777 - INFO - Gemini Model: models/gemini-2.5-flash
+2025-12-09 18:04:31,777 - INFO - PDF Directory: docs/kurinjipadi-block-projects
+2025-12-09 18:04:31,777 - INFO - Output CSV: projects_kurinjipadi_gemini.csv
+2025-12-09 18:04:31,777 - INFO - PDF DPI: 300
+2025-12-09 18:04:31,777 - INFO - Max Retries: 3
+2025-12-09 18:04:31,777 - INFO - ============================================================
+2025-12-09 18:04:31,777 - INFO - Processing: கீழூர்.pdf
+2025-12-09 18:04:31,777 - INFO - Panchayat: கீழூர்
+2025-12-09 18:04:32,398 - INFO - Converted 3 pages
+2025-12-09 18:05:36,165 - INFO - Extracted 39 projects from கீழூர்
+2025-12-09 18:05:36,238 - INFO - CSV written to: projects_kurinjipadi_gemini.csv
+2025-12-09 18:05:36,254 - INFO - Total projects: 39
+2025-12-09 18:05:36,254 - INFO - 
+============================================================
+2025-12-09 18:05:36,254 - INFO - PROCESSING SUMMARY
+2025-12-09 18:05:36,255 - INFO - ============================================================
+2025-12-09 18:05:36,255 - INFO - Elapsed time: 64.48 seconds
+2025-12-09 18:05:36,255 - INFO - Total PDFs processed: 1
+2025-12-09 18:05:36,255 - INFO -   - Successful: 1
+2025-12-09 18:05:36,255 - INFO -   - Failed: 0
+2025-12-09 18:05:36,255 - INFO - Total projects extracted: 39
+2025-12-09 18:05:36,255 - INFO - Total API calls made: 3
+2025-12-09 18:05:36,255 - INFO - Validation warnings: 0
+2025-12-09 18:05:36,255 - INFO - 
+Projects per PDF:
+2025-12-09 18:05:36,255 - INFO -   கீழூர்.pdf: 39 projects
+2025-12-09 18:05:36,255 - INFO - ============================================================

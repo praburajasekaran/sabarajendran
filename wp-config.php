@@ -82,7 +82,7 @@ define('WP_ACCESSIBLE_HOSTS', 'api.wordpress.org,*.github.com,tan-emu-358425.hos
 // Disable Plugin and Theme Update/Installation
 // define( 'DISALLOW_FILE_MODS', true ); // Uncomment after all plugins installed
 
-define('OPENROUTER_API_KEY', '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');
+define('OPENROUTER_API_KEY', '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');
 
 
 // Security Headers (additional layer)
@@ -97,7 +97,7 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
 
 /** Absolute path to the WordPress directory. */
 if (!defined('ABSPATH')) {
-	define('ABSPATH', __DIR__ . '/');
+    define('ABSPATH', __DIR__ . '/');
 }
 
 /** Sets up WordPress vars and included files. */

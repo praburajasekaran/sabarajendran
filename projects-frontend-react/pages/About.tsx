@@ -30,7 +30,7 @@ export const About: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="flex flex-col items-center text-center">
                         {/* Party Label */}
-                        <div className="inline-flex items-center gap-2 bg-primary-600 text-white px-4 py-1 mb-6 transform -skew-x-12 shadow-[4px_4px_0_0_#3e2723]">
+                        <div className="inline-flex items-center gap-2 bg-primary-600 text-white px-4 py-1 mb-6 transform -skew-x-12 shadow-[4px_4px_0_0_#8B6F47]">
                             <span className="text-sm font-black uppercase tracking-widest transform skew-x-12">
                                 Public Representative
                             </span>
@@ -40,7 +40,7 @@ export const About: React.FC = () => {
                         <h1 className="font-display text-5xl md:text-7xl font-black mb-6 uppercase tracking-tight drop-shadow-lg">
                             {t.about.title}
                         </h1>
-                        <p className="text-xl md:text-2xl text-accent-400 font-bold tracking-wide max-w-2xl border-t-4 border-accent-500 pt-6">
+                        <p className="text-xl md:text-2xl text-accent-200 font-bold tracking-wide max-w-2xl border-t-4 border-accent-400 pt-6">
                             {t.about.subtitle}
                         </p>
                     </div>
@@ -71,7 +71,7 @@ export const About: React.FC = () => {
 
                             <div className="p-6 space-y-6 bg-white">
                                 <div className="flex items-start gap-4 pb-4 border-b-2 border-neutral-100">
-                                    <div className="p-3 bg-black text-accent-400 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
+                                    <div className="p-3 bg-black text-accent-200 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
                                         <Flag size={24} strokeWidth={3} />
                                     </div>
                                     <div>
@@ -81,7 +81,7 @@ export const About: React.FC = () => {
                                 </div>
 
                                 <div className="flex items-start gap-4 pb-4 border-b-2 border-neutral-100">
-                                    <div className="p-3 bg-black text-accent-400 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
+                                    <div className="p-3 bg-black text-accent-200 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
                                         <MapPin size={24} strokeWidth={3} />
                                     </div>
                                     <div>
@@ -91,14 +91,14 @@ export const About: React.FC = () => {
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-black text-accent-400 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
+                                    <div className="p-3 bg-black text-accent-200 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
                                         <Award size={24} strokeWidth={3} />
                                     </div>
                                     <div>
                                         <p className="text-xs text-neutral-500 uppercase font-black tracking-widest mb-1">{t.about.mlaCard.terms}</p>
-                                        <p className="font-bold text-lg text-black">2006 - 2011</p>
-                                        <p className="font-bold text-lg text-black">2016 - 2021</p>
-                                        <p className="font-bold text-lg text-primary-600">2021 - {t.about.mlaCard.present}</p>
+                                        <p className="font-bold text-lg text-black">{t.about.mlaCard.term2006Years} ({t.about.mlaCard.nellikuppam})</p>
+                                        <p className="font-bold text-lg text-black">{t.about.mlaCard.term1Years} ({t.about.mlaCard.neyveli})</p>
+                                        <p className="font-bold text-lg text-primary-600">{t.about.mlaCard.term2Years} - {t.about.mlaCard.present}</p>
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@ export const About: React.FC = () => {
                                 </div>
                                 {/* Term 2 */}
                                 <div className="relative group">
-                                    <span className="absolute -left-[54px] top-1 w-6 h-6 bg-primary-600 border-4 border-black shadow-[2px_2px_0_0_#3e2723]"></span>
+                                    <span className="absolute -left-[54px] top-1 w-6 h-6 bg-primary-600 border-4 border-black shadow-[2px_2px_0_0_#8B6F47]"></span>
                                     <div className="flex items-center gap-3 mb-2">
                                         <h4 className="font-display text-3xl font-black text-black">2021</h4>
                                         <div className="h-1 flex-1 bg-black"></div>
@@ -180,7 +180,7 @@ export const About: React.FC = () => {
                                 <Target size={180} />
                             </div>
 
-                            <h3 className="font-display text-4xl font-black mb-8 flex items-center gap-4 text-accent-400 relative z-10 uppercase">
+                            <h3 className="font-display text-4xl font-black mb-8 flex items-center gap-4 text-accent-200 relative z-10 uppercase">
                                 <Target size={40} strokeWidth={3} />
                                 {t.about.visionTitle}
                             </h3>
@@ -192,7 +192,7 @@ export const About: React.FC = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
                                 {t.about.focusAreas.map((area, idx) => (
                                     <div key={idx} className="bg-black/40 p-4 border-l-4 border-accent-500 flex items-center gap-3 hover:bg-black/60 transition-colors">
-                                        <CheckCircle2 className="text-accent-500 flex-shrink-0" size={20} />
+                                        <CheckCircle2 className="text-accent-200 flex-shrink-0" size={20} />
                                         <p className="text-base font-bold text-white uppercase tracking-wide">{area}</p>
                                     </div>
                                 ))}

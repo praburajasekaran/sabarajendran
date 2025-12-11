@@ -40,3 +40,4 @@ translate-*.php
 # Local Netlify folder
 .netlify
 !sync-from-live.sh
+wp-content/debug.log

@@ -1,0 +1,82 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Import Kurinjipadi Projects from Live Site
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 Testing connection to https://tan-emu-358425.hostingersite.com...
+✓ Found Kurinjipadi block (ID: 266, Count: 411 projects)
+✓ Successfully fetched sample project
+✓ Connection test passed!
+
+Starting fresh import
+Using batch size: 20 projects per page
+
+━━━ PAGE 1 ━━━ Fetching 20 projects...
+  [1/20] ⏭  Skipped: already exists or empty
+  [2/20] ⏭  Skipped: already exists or empty
+  [3/20] ⏭  Skipped: already exists or empty
+  [4/20] ⏭  Skipped: already exists or empty
+  [5/20] ⏭  Skipped: already exists or empty
+  [6/20] ⏭  Skipped: already exists or empty
+  [7/20] ⏭  Skipped: already exists or empty
+  [8/20] ⏭  Skipped: already exists or empty
+  [9/20] ⏭  Skipped: already exists or empty
+  [10/20] ⏭  Skipped: already exists or empty
+  [11/20] ⏭  Skipped: already exists or empty
+  [12/20] ⏭  Skipped: already exists or empty
+  [13/20] ⏭  Skipped: already exists or empty
+  [14/20] ⏭  Skipped: already exists or empty
+  [15/20] ⏭  Skipped: already exists or empty
+  [16/20] ⏭  Skipped: already exists or empty
+  [17/20] ⏭  Skipped: already exists or empty
+  [18/20] ⏭  Skipped: already exists or empty
+  [19/20] ⏭  Skipped: already exists or empty
+  [20/20] ⏭  Skipped: already exists or empty
+✓ Page 1 complete: 0 created, 20 skipped. Running total: 20
+━━━ PAGE 2 ━━━ Fetching 20 projects...
+  [1/20] ⏭  Skipped: already exists or empty
+  [2/20] ⏭  Skipped: already exists or empty
+  [3/20] ⏭  Skipped: already exists or empty
+  [4/20] ⏭  Skipped: already exists or empty
+  [5/20] ⏭  Skipped: already exists or empty
+  [6/20] ⏭  Skipped: already exists or empty
+  [7/20] ⏭  Skipped: already exists or empty
+  [8/20] ⏭  Skipped: already exists or empty
+  [9/20] ⏭  Skipped: already exists or empty
+  [10/20] ⏭  Skipped: already exists or empty
+  [11/20] ⏭  Skipped: already exists or empty
+  [12/20] ⏭  Skipped: already exists or empty
+  [13/20] ⏭  Skipped: already exists or empty
+  [14/20] ⏭  Skipped: already exists or empty
+  [15/20] ⏭  Skipped: already exists or empty
+  [16/20] ⏭  Skipped: already exists or empty
+  [17/20] ⏭  Skipped: already exists or empty
+  [18/20] ⏭  Skipped: already exists or empty
+  [19/20] ⏭  Skipped: already exists or empty
+  [20/20] ⏭  Skipped: already exists or empty
+✓ Page 2 complete: 0 created, 20 skipped. Running total: 40
+━━━ PAGE 3 ━━━ Fetching 20 projects...
+  [1/20] ⏭  Skipped: already exists or empty
+  [2/20] ⏭  Skipped: already exists or empty
+  [3/20] ⏭  Skipped: already exists or empty
+  [4/20] ⏭  Skipped: already exists or empty
+  [5/20] ⏭  Skipped: already exists or empty
+  [6/20] ⏭  Skipped: already exists or empty
+  [7/20] ⏭  Skipped: already exists or empty
+  [8/20] ⏭  Skipped: already exists or empty
+  [9/20] ⏭  Skipped: already exists or empty
+  [10/20] ⏭  Skipped: already exists or empty
+  [11/20] ⏭  Skipped: already exists or empty
+  [12/20] ⏭  Skipped: already exists or empty
+  [13/20] ⏭  Skipped: already exists or empty
+  [14/20] ⏭  Skipped: already exists or empty
+  [15/20] ⏭  Skipped: already exists or empty
+  [16/20] ⏭  Skipped: already exists or empty
+  [17/20] ⏭  Skipped: already exists or empty
+  [18/20] ⏭  Skipped: already exists or empty
+  [19/20] ⏭  Skipped: already exists or empty
+  [20/20] ⏭  Skipped: already exists or empty
+✓ Page 3 complete: 0 created, 20 skipped. Running total: 60
+━━━ PAGE 4 ━━━ Fetching 20 projects...
+  [1/20] ⏭  Skipped: already exists or empty
+  [2/20] ⏭  Skipped: already exists or empty
+  [3/20] ⏭  Skipped: already exists or empty

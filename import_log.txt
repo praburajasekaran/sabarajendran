@@ -1,0 +1,27 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Import Kurinjipadi Projects from Live Site
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 Testing connection to https://tan-emu-358425.hostingersite.com...
+✓ Found Kurinjipadi block (ID: 266, Count: 411 projects)
+✓ Successfully fetched sample project
+✓ Connection test passed!
+
+📥 Fetching projects from live site...
+
+Page 1... 100 projects
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Import Kurinjipadi Projects from Live Site
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 Testing connection to https://tan-emu-358425.hostingersite.com...
+✓ Found Kurinjipadi block (ID: 266, Count: 411 projects)
+✓ Successfully fetched sample project
+✓ Connection test passed!
+
+📥 Fetching projects from live site...
+Using batch size: 20 projects per page
+
+
+Page 1... 20 projects fetched
+  [1/20] 

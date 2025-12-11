@@ -55,7 +55,7 @@ export const Navbar: React.FC = () => {
                   <h1 className="font-display text-2xl md:text-3xl font-extrabold text-white leading-none tracking-tight uppercase" style={{ textShadow: '2px 2px 0 #000' }}>
                     {t.nav.title}
                   </h1>
-                  <p className="text-xs md:text-sm text-accent-400 font-bold uppercase tracking-wide leading-none mt-1">
+                  <p className="text-xs md:text-sm text-accent-200 font-bold uppercase tracking-wide leading-none mt-1">
                     {t.nav.subtitle}
                   </p>
                 </div>
@@ -72,7 +72,7 @@ export const Navbar: React.FC = () => {
                 end={item.path === `${langPrefix}/`}
                 className={({ isActive }) =>
                   `px-4 py-2 rounded font-bold text-lg uppercase tracking-wide transition-all transform hover:-translate-y-0.5 ${isActive
-                    ? 'bg-primary-600 text-white shadow-[4px_4px_0_0_#3e2723]'
+                    ? 'bg-primary-600 text-white shadow-[4px_4px_0_0_#8B6F47]'
                     : 'text-neutral-300 hover:text-white hover:bg-white/10'
                   }`
                 }

@@ -212,6 +212,47 @@ export const wpService = {
             console.error('[wpService] Background fetch failed:', error);
             throw error;
         }
+    },
+
+    // Submit Grievance
+    submitGrievance: async (formData: FormData): Promise<any> => {
+        try {
+            console.log('[wpService] Submitting grievance...');
+
+            // Build the URL for the custom endpoint
+            // Custom endpoint: /sabarajendran/v1/grievance
+
+            let url = '';
+            // Check if we are using index.php route or pretty permalinks
+            // logic copied and adapted from buildApiUrl idea but simplified for this specific endpoint
+            if (WP_API_URL.includes('index.php?rest_route=')) {
+                const baseUrl = WP_API_URL.split('?rest_route=')[0];
+                url = `${baseUrl}?rest_route=/sabarajendran/v1/grievance`;
+            } else {
+                // assume WP_API_URL ends with /wp/v2 or similar, we need to go up two levels?
+                // Or just replace /wp/v2
+                if (WP_API_URL.includes('/wp/v2')) {
+                    url = WP_API_URL.replace('/wp/v2', '/sabarajendran/v1/grievance');
+                } else {
+                    // Fallback usage
+                    url = `${WP_API_URL}/sabarajendran/v1/grievance`;
+                }
+            }
+
+            console.log('[wpService] Endpoint URL:', url);
+
+            const response = await axios.post(url, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+
+            console.log('[wpService] Grievance submitted successfully:', response.data);
+            return response.data;
+        } catch (error) {
+            console.error('[wpService] Error submitting grievance:', error);
+            throw error;
+        }
     }
 };
 

@@ -17,7 +17,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { t, language } = useLanguage();
 
   const displayTitle = (language === 'ta' && project.title_ta) ? project.title_ta : project.title;
-  const displayDescription = (language === 'ta' && project.description_ta) ? project.description_ta : project.description;
+  // Fix: Do not fallback to English description if Tamil is selected but empty
+  const displayDescription = (language === 'ta') ? (project.description_ta || '') : project.description;
 
   // Status indicator styles - High Contrast
   const getStatusStyle = (status: ProjectStatus) => {
@@ -77,7 +78,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <TruncatedText
             as="h3"
             maxLines={2}
-            className={`font-display font-black text-black mb-3 leading-tight uppercase tracking-tight ${language === 'en' ? 'text-xl' : 'text-lg'}`}
+            className={`font-display font-black text-black mb-3 leading-tight tracking-tight ${language === 'en' ? 'text-xl' : 'text-lg'}`}
           >
             {(() => {
               // Always try to split if @ is present
@@ -106,8 +107,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               );
             }
 
-            // Case 2: No split, check if description is repetitive (case-insensitive)
-            if (displayTitle.toLowerCase() === displayDescription.toLowerCase()) {
+            // Case 2: No split, check if description is repetitive (case-insensitive) OR empty
+            if (displayTitle.toLowerCase() === displayDescription.toLowerCase() || !displayDescription.trim()) {
               return <div className="flex-1 min-h-[1rem]"></div>; // Spacer
             }
 
@@ -127,9 +128,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <div className="mt-auto grid grid-cols-2 gap-4 border-t-2 border-black pt-3 bg-neutral-50 -mx-5 -mb-5 p-4">
             {/* Village */}
             <div className="flex flex-col">
-              <span className="text-[10px] uppercase font-bold text-neutral-500 mb-1">Location</span>
-              <div className="flex items-center gap-1.5 font-bold text-xs text-black">
-                <MapPin size={12} className="text-primary-600" />
+              <span className="text-[10px] uppercase font-bold text-neutral-500 mb-1">{t.graphic.location}</span>
+              <div className="flex items-center gap-1.5 font-bold text-sm text-black">
+                <MapPin size={14} className="text-primary-600" />
                 <TruncatedText>
                   {getVillageName(project.village, language)}
                 </TruncatedText>
@@ -138,8 +139,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
             {/* Budget */}
             <div className="flex flex-col items-end">
-              <span className="text-[10px] uppercase font-bold text-neutral-500 mb-1">Budget</span>
-              <div className="flex items-center gap-1.5 font-mono font-black text-base text-black bg-accent-400 px-2 py-0.5 border border-black transform -rotate-1 shadow-sm">
+              <span className="text-[10px] uppercase font-bold text-neutral-500 mb-1">{t.graphic.budget}</span>
+              <div className="flex items-center gap-1.5 font-mono font-black text-lg text-white bg-primary-600 px-3 py-1 border-2 border-black transform -rotate-1 shadow-md">
                 {project.budget}
               </div>
             </div>

@@ -13,6 +13,7 @@ import { MapPin } from 'lucide-react';
 import { Project } from '../types';
 import { FilterState } from '../utils/urlBuilder';
 import { getVillageName } from '../utils/villageTranslations';
+import { TRANSLATIONS } from '../utils/translations';
 
 interface ProjectGraphicProps {
   projects: Project[];
@@ -29,14 +30,18 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
   // Reduced to 5 to avoid overcrowding vertically
   const displayProjects = projects.slice(0, 5);
 
-  const villageName = filters.village
-    ? getVillageName(filters.village, lang)
-    : (lang === 'ta' ? 'நெய்வேலி தொகுதி' : 'Neyveli Constituency');
-
   // Translation helpers
+  const currentLang: 'ta' | 'en' = (lang === 'ta' || lang === 'en') ? lang : 'ta';
+
+  const villageName = filters.village
+    ? getVillageName(filters.village, currentLang)
+    : (currentLang === 'ta' ? 'நெய்வேலி தொகுதி' : 'Neyveli Constituency');
+
   const t = {
-    lakhs: lang === 'ta' ? 'லட்சம்' : 'Lakhs',
-    crore: lang === 'ta' ? 'கோடி' : 'Crore'
+    lakhs: currentLang === 'ta' ? 'லட்சம்' : 'Lakhs',
+    crore: currentLang === 'ta' ? 'கோடி' : 'Crore',
+    location: TRANSLATIONS[currentLang].graphic.location,
+    budget: TRANSLATIONS[currentLang].graphic.budget
   };
 
   return (
@@ -57,10 +62,23 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
     >
       {/* ================= DYNAMIC OVERLAYS ================= */}
 
+      {/* Location Label */}
+      <div style={{
+        position: 'absolute',
+        top: '430px',
+        left: '80px',
+        fontSize: '20px',
+        fontWeight: '700',
+        color: '#6b7280',
+        letterSpacing: '0.5px'
+      }}>
+        {t.location}
+      </div>
+
       {/* Location Badge - Positioned below the Header Text area */}
       <div style={{
         position: 'absolute',
-        top: '480px', // Adjusted based on visual estimation of header height
+        top: '460px', // Adjusted based on visual estimation of header height
         left: '80px',
         display: 'flex',
         alignItems: 'center',
@@ -72,14 +90,14 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
         zIndex: 10
       }}>
         <MapPin size={36} color="#dc2626" fill="#dc2626" style={{ marginRight: '16px' }} />
-        <span style={{
+        <span translate="no" style={{
           fontSize: '36px',
           fontWeight: '800',
-          color: '#422006', // Brown
+          color: '#8B6F47', // Lighter Brown
           marginTop: '-4px' // Optical adjustment for font
         }}>
           {villageName}
-          {filters.block && filters.block !== 'All' ? `, ${getVillageName(filters.block, lang)}` : ''}
+          {filters.block && filters.block !== 'All' ? `, ${getVillageName(filters.block, currentLang)}` : ''}
         </span>
       </div>
 
@@ -87,7 +105,7 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
       {/* ================= PROJECT LIST ================= */}
       {/* Container positioned in the "Body" safe zone of the template */}
       <div style={{
-        marginTop: '550px', // Reduced top margin for better balance
+        marginTop: '570px', // Adjusted for location label
         marginBottom: '400px', // Adjusted bottom
         padding: '0 80px', // Horizontal margins
         flex: 1,
@@ -96,11 +114,11 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
         gap: '28px', // Increased gap slightly
         justifyContent: 'flex-start' // Ensure list starts from top
       }}>
-        {displayProjects.map((project) => {
+        {displayProjects.map((project, index) => {
           // Format based on mockup: Description - Cost
           // Cost is highlighted in red.
-          const description = lang === 'ta'
-            ? (project.description_ta || project.description)
+          const description = currentLang === 'ta'
+            ? (project.description_ta || project.title_ta || project.title)
             : project.description;
 
           return (
@@ -110,32 +128,51 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
                 backgroundColor: 'white',
                 border: '3px solid #60a5fa', // Blue-400 border matches mockup
                 borderRadius: '24px', // Softer corners
-                padding: '28px 36px', // More breathing room
+                padding: '24px 36px', // More breathing room
                 boxShadow: '0 8px 24px rgba(0,0,0,0.12)', // Deeper shadow
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                position: 'relative'
               }}
             >
-              <p style={{
+              {/* Budget Label - Only show on first project */}
+              {index === 0 && (
+                <div style={{
+                  position: 'absolute',
+                  top: '-32px',
+                  right: '36px',
+                  fontSize: '20px',
+                  fontWeight: '700',
+                  color: '#6b7280',
+                  letterSpacing: '0.5px'
+                }}>
+                  {t.budget}
+                </div>
+              )}
+              <p translate="no" style={{
                 fontSize: '30px', // Larger text
                 lineHeight: '1.5',
                 color: '#111827', // Gray-900
                 fontWeight: '600',
-                margin: 0
+                margin: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between'
               }}>
-                {description}
-                <span style={{ margin: '0 12px' }}>-</span>
+                <span style={{ flex: 1 }}>{description}</span>
+                <span style={{ margin: '0 16px', color: '#9ca3af' }}>-</span>
                 <span style={{
-                  color: '#dc2626', // Red-600
+                  color: '#b91c1c', // Darker red for better contrast
                   fontWeight: '800',
+                  fontSize: '42px', // Larger budget text
                   whiteSpace: 'nowrap'
                 }}>
                   {project.rawBudget >= 10000000
-                    ? `₹ ${(project.rawBudget / 10000000).toFixed(2)} ${t.crore}.`
+                    ? `₹${(project.rawBudget / 10000000).toFixed(2)} ${t.crore}.`
                     : project.rawBudget >= 100000
-                      ? `₹ ${(project.rawBudget / 100000).toFixed(2)} ${t.lakhs}.`
-                      : `₹ ${project.rawBudget}.`
+                      ? `₹${(project.rawBudget / 100000).toFixed(2)} ${t.lakhs}.`
+                      : `₹${project.rawBudget}.`
                   }
                 </span>
               </p>

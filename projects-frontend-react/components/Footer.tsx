@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Column 1: About */}
           <div>
-            <h3 className="font-display text-2xl font-extrabold text-accent-400 mb-6 uppercase tracking-wider border-l-4 border-primary-600 pl-3">
+            <h3 className="font-display text-2xl font-extrabold text-accent-200 mb-6 uppercase tracking-wider border-l-4 border-primary-600 pl-3">
               {t.footer.aboutTitle}
             </h3>
             <p className="text-neutral-300 text-lg leading-relaxed mb-8 font-medium">
@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Office Locations */}
           <div>
-            <h3 className="font-display text-2xl font-extrabold text-accent-400 mb-6 uppercase tracking-wider border-l-4 border-primary-600 pl-3">
+            <h3 className="font-display text-2xl font-extrabold text-accent-200 mb-6 uppercase tracking-wider border-l-4 border-primary-600 pl-3">
               {t.footer.officeTitle}
             </h3>
             <ul className="space-y-6">
@@ -87,7 +87,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Contact */}
           <div>
-            <h3 className="font-display text-2xl font-extrabold text-accent-400 mb-6 uppercase tracking-wider border-l-4 border-primary-600 pl-3">
+            <h3 className="font-display text-2xl font-extrabold text-accent-200 mb-6 uppercase tracking-wider border-l-4 border-primary-600 pl-3">
               {t.footer.contactTitle}
             </h3>
             <ul className="space-y-6">

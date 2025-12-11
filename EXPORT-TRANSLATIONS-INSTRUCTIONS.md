@@ -103,3 +103,9 @@ wp db query "SELECT post_id, meta_key, meta_value FROM wp123_postmeta WHERE ..."
 - Ensure CSV files are in WordPress root directory
 - Check file permissions (should be readable)
 - Verify WordPress is loaded correctly (check wp-load.php path)
+
+
+
+
+
+

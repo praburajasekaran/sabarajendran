@@ -1,0 +1,26 @@
+[2025-12-11 10:12:39] [INFO] [+0s] Starting fresh import
+[2025-12-11 10:12:39] [INFO] [+0s] Using batch size: 20 projects per page
+
+[2025-12-11 10:12:39] [INFO] [+0.25s] ━━━ PAGE 1 ━━━ Fetching 20 projects...
+[2025-12-11 10:12:40] [INFO] [+1.89s]   [1/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:41] [INFO] [+2.66s]   [2/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:42] [INFO] [+3.43s]   [3/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:43] [INFO] [+4.34s]   [4/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:44] [INFO] [+5.11s]   [5/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:45] [INFO] [+6.01s]   [6/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:45] [INFO] [+6.79s]   [7/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:46] [INFO] [+7.55s]   [8/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:47] [INFO] [+8.33s]   [9/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:48] [INFO] [+9.14s]   [10/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:49] [INFO] [+10.12s]   [11/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:49] [INFO] [+10.88s]   [12/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:50] [INFO] [+11.76s]   [13/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:51] [INFO] [+12.54s]   [14/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:52] [INFO] [+13.53s]   [15/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:53] [INFO] [+14.38s]   [16/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:54] [INFO] [+15.22s]   [17/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:55] [INFO] [+16.13s]   [18/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:55] [INFO] [+16.98s]   [19/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:57] [INFO] [+18.01s]   [20/20] ⏭  Skipped: already exists or empty
+[2025-12-11 10:12:57] [INFO] [+18.12s] ✓ Page 1 complete: 0 created, 20 skipped. Running total: 20
+[2025-12-11 10:12:57] [INFO] [+18.39s] ━━━ PAGE 2 ━━━ Fetching 20 projects...

@@ -179,3 +179,9 @@ If you hit rate limits:
 - Existing translations are not overwritten
 - Both Tamil and English are stored for each village
 - Language detection is based on Unicode character ranges
+
+
+
+
+
+
