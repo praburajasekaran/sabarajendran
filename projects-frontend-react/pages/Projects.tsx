@@ -85,23 +85,48 @@ export const ProjectsPage: React.FC = () => {
     }
   }, [projects.length, isLoading]);
 
-  // Calculate counts per village for the sidebar
-  const villageCounts = useMemo(() => {
+  // Calculate total projects count for sidebar (based on selected block)
+  const totalProjectsForSidebar = useMemo(() => {
+    if (filters.block !== 'All') {
+      return projects.filter(p => p.block === filters.block).length;
+    }
+    return projects.length;
+  }, [projects, filters.block]);
+
+  // Calculate counts per panchayat for the sidebar
+  const panchayatCounts = useMemo(() => {
     const counts: Record<string, number> = {};
-    projects.forEach(p => {
-      counts[p.village] = (counts[p.village] || 0) + 1;
+    // Filter by selected block if any
+    const relevantProjects = filters.block !== 'All'
+      ? projects.filter(p => p.block === filters.block)
+      : projects;
+
+    relevantProjects.forEach(p => {
+      if (p.panchayat) {
+        counts[p.panchayat] = (counts[p.panchayat] || 0) + 1;
+      }
     });
     return counts;
-  }, [projects]);
+  }, [projects, filters.block]);
 
-  // Derive unique villages from projects
-  const dynamicVillages = useMemo(() => {
-    const uniqueVillages = Array.from(new Set(projects.map(p => p.village)));
-    return uniqueVillages.sort().map((name, index) => ({
-      id: `v-${index}`,
+  // Derive unique panchayats from projects
+  const dynamicPanchayats = useMemo(() => {
+    // Filter by selected block if any
+    const relevantProjects = filters.block !== 'All'
+      ? projects.filter(p => p.block === filters.block)
+      : projects;
+
+    const uniquePanchayats = Array.from(new Set(
+      relevantProjects
+        .map(p => p.panchayat)
+        .filter(Boolean) as string[]
+    ));
+
+    return uniquePanchayats.sort().map((name, index) => ({
+      id: `p-${index}`,
       name
     }));
-  }, [projects]);
+  }, [projects, filters.block]);
 
   // Extract unique years from projects for filter dropdown
   const years = useMemo(() => {
@@ -262,26 +287,22 @@ export const ProjectsPage: React.FC = () => {
       <div className="flex min-h-[calc(100vh-64px)]">
         {/* Sidebar (Desktop & Mobile) */}
         <Sidebar
-          villages={dynamicVillages}
-          selectedVillage={filters.village}
-          onSelectVillage={(village) => {
-            if (village === null) {
-              updateFilters({ village: null, block: 'All', panchayat: 'All' });
+          panchayats={dynamicPanchayats}
+          selectedPanchayat={filters.panchayat !== 'All' ? filters.panchayat : null}
+          onSelectPanchayat={(panchayat) => {
+            if (panchayat === null) {
+              updateFilters({ panchayat: 'All' });
             } else {
-              // Reset block/panchayat to 'All' to ensure all projects for this village are shown
-              updateFilters({
-                village,
-                block: 'All',
-                panchayat: 'All'
-              });
+              updateFilters({ panchayat });
             }
-            // Scroll to top when village is selected (especially for mobile)
+            // Scroll to top when panchayat is selected (especially for mobile)
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           isOpenMobile={isMobileSidebarOpen}
           closeMobile={() => setIsMobileSidebarOpen(false)}
           onToggleMobile={() => setIsMobileSidebarOpen(prev => !prev)}
-          villageCounts={villageCounts}
+          panchayatCounts={panchayatCounts}
+          totalProjectsCount={totalProjectsForSidebar}
         />
 
         {/* Main Content Area - Solid & Bold */}
@@ -302,15 +323,15 @@ export const ProjectsPage: React.FC = () => {
                 {/* Title Section - Manifesto Style */}
                 <div>
                   <h1 className="font-display text-2xl sm:text-4xl font-black text-black uppercase tracking-tight flex items-center gap-3">
-                    {filters.village ? (
+                    {filters.panchayat !== 'All' ? (
                       <>
                         <span className="bg-primary-600 text-white px-2 leading-none py-1 transform -skew-x-12 inline-block">
-                          {getVillageName(filters.village, language)}
+                          {getVillageName(filters.panchayat, language)}
                         </span>
                         <button
-                          onClick={() => updateFilters({ village: null, block: 'All', panchayat: 'All' })}
+                          onClick={() => updateFilters({ panchayat: 'All' })}
                           className="text-neutral-400 hover:text-red-600 transition-colors"
-                          title="Clear village filter"
+                          title="Clear panchayat filter"
                         >
                           <XCircle size={28} />
                         </button>

@@ -120,9 +120,9 @@ export const TRANSLATIONS = {
       allPanchayats: 'All Panchayats',
     },
     sidebar: {
-      title: 'Village List',
-      allVillages: 'All Villages',
-      searchPlaceholder: 'Search villages...',
+      title: 'Panchayat List',
+      allPanchayats: 'All Panchayats',
+      searchPlaceholder: 'Search panchayats...',
     },
     card: {
       viewPhoto: 'View Project Photo',
@@ -311,9 +311,9 @@ export const TRANSLATIONS = {
       allPanchayats: 'அனைத்து பஞ்சாயத்துகள்',
     },
     sidebar: {
-      title: 'கிராமங்கள் பட்டியல்',
-      allVillages: 'அனைத்து கிராமங்கள்',
-      searchPlaceholder: 'கிராமங்களைத் தேடுக...',
+      title: 'பஞ்சாயத்து பட்டியல்',
+      allPanchayats: 'அனைத்து பஞ்சாயத்துகள்',
+      searchPlaceholder: 'பஞ்சாயத்துகளைத் தேடுக...',
     },
     card: {
       viewPhoto: 'புகைப்படத்தைப் பார்',

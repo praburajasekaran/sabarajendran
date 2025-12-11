@@ -1,44 +1,43 @@
 import React, { useState, useMemo } from 'react';
-import { Village } from '../types';
+import { Panchayat } from '../types';
 import { MapPin, Search, X, Check, Filter } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getVillageName } from '../utils/villageTranslations';
 
 interface SidebarProps {
-  villages: Village[];
-  selectedVillage: string | null;
-  onSelectVillage: (villageName: string | null) => void;
+  panchayats: Panchayat[];
+  selectedPanchayat: string | null;
+  onSelectPanchayat: (panchayatName: string | null) => void;
   isOpenMobile: boolean;
   closeMobile: () => void;
   onToggleMobile: () => void;
-  villageCounts: Record<string, number>;
+  panchayatCounts: Record<string, number>;
+  totalProjectsCount: number;
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
-  villages,
-  selectedVillage,
-  onSelectVillage,
+  panchayats,
+  selectedPanchayat,
+  onSelectPanchayat,
   isOpenMobile,
   closeMobile,
   onToggleMobile,
-  villageCounts
+  panchayatCounts,
+  totalProjectsCount
 }) => {
   const { t, language } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Calculate total projects for the "All Villages" badge
-  const totalProjects = Object.values(villageCounts).reduce((a: number, b: number) => a + b, 0);
-
-  // Filter villages based on search term
-  const filteredVillages = useMemo(() => {
-    if (!searchTerm.trim()) return villages;
+  // Filter panchayats based on search term
+  const filteredPanchayats = useMemo(() => {
+    if (!searchTerm.trim()) return panchayats;
     const term = searchTerm.toLowerCase();
-    return villages.filter(v => {
-      const englishName = v.name.toLowerCase();
-      const tamilName = getVillageName(v.name, 'ta');
+    return panchayats.filter(p => {
+      const englishName = p.name.toLowerCase();
+      const tamilName = getVillageName(p.name, 'ta');
       return englishName.includes(term) || tamilName.includes(term);
     });
-  }, [villages, searchTerm]);
+  }, [panchayats, searchTerm]);
 
   return (
     <>
@@ -108,47 +107,47 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
           {/* Scrollable List */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0 bg-neutral-100">
-            {/* All Villages Option */}
+            {/* All Panchayats Option */}
             {!searchTerm && (
               <button
                 onClick={() => {
-                  onSelectVillage(null);
+                  onSelectPanchayat(null);
                   closeMobile();
                 }}
                 className={`w-full text-left px-4 py-4 border-2 transition-all duration-200 flex items-center justify-between group rounded-none font-bold uppercase tracking-wide
-                ${selectedVillage === null
+                ${selectedPanchayat === null
                     ? 'bg-primary-600 text-white border-black shadow-[4px_4px_0_0_#000] transform -translate-y-1'
                     : 'bg-white text-neutral-800 border-neutral-300 hover:border-black hover:shadow-[4px_4px_0_0_#9ca3af]'
                   }`}
               >
                 <div className="flex items-center gap-3">
-                  {selectedVillage === null ? (
+                  {selectedPanchayat === null ? (
                     <div className="bg-white text-primary-600 p-0.5 rounded-sm border border-black"><Check size={14} strokeWidth={4} /></div>
                   ) : (
                     <div className="w-5 h-5 border-2 border-neutral-400 rounded-sm"></div>
                   )}
-                  <span>{t.sidebar.allVillages}</span>
+                  <span>{t.sidebar.allPanchayats}</span>
                 </div>
-                <span className={`font-mono text-sm px-2 py-0.5 border-2 transition-colors ${selectedVillage === null
+                <span className={`font-mono text-sm px-2 py-0.5 border-2 transition-colors ${selectedPanchayat === null
                   ? 'bg-white text-primary-600 border-black'
                   : 'bg-neutral-200 text-neutral-600 border-neutral-300 group-hover:border-black'
                   }`}>
-                  {totalProjects}
+                  {totalProjectsCount}
                 </span>
               </button>
             )}
 
-            {/* Village List */}
-            {filteredVillages.length > 0 ? (
-              filteredVillages.map((village) => {
-                const count = villageCounts[village.name] || 0;
-                const isSelected = selectedVillage === village.name;
+            {/* Panchayat List */}
+            {filteredPanchayats.length > 0 ? (
+              filteredPanchayats.map((panchayat) => {
+                const count = panchayatCounts[panchayat.name] || 0;
+                const isSelected = selectedPanchayat === panchayat.name;
 
                 return (
                   <button
-                    key={village.id}
+                    key={panchayat.id}
                     onClick={() => {
-                      onSelectVillage(village.name);
+                      onSelectPanchayat(panchayat.name);
                       closeMobile();
                     }}
                     className={`w-full text-left px-4 py-3 border-2 transition-all duration-200 flex items-center justify-between group rounded-none font-bold text-sm uppercase
@@ -159,7 +158,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   >
                     <div className="flex items-center gap-3 overflow-hidden flex-1">
                       <span className={`truncate ${isSelected ? 'text-black' : 'text-neutral-600 group-hover:text-black'}`}>
-                        {getVillageName(village.name, language)}
+                        {getVillageName(panchayat.name, language)}
                       </span>
                     </div>
                     <span className={`font-mono text-xs font-bold ${isSelected
@@ -173,7 +172,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               })
             ) : (
               <div className="text-center py-12 text-neutral-500 font-bold uppercase tracking-widest text-sm border-2 border-dashed border-neutral-300">
-                <p>No villages found</p>
+                <p>No panchayats found</p>
               </div>
             )}
           </div>

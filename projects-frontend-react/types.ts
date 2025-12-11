@@ -39,3 +39,8 @@ export interface Village {
   name: string;
   population?: number;
 }
+
+export interface Panchayat {
+  id: string;
+  name: string;
+}
