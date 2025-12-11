@@ -238,7 +238,7 @@ When opposition says "nothing is happening":
 |-------|-------|----------|
 | **DMK Red** | Primary buttons, highlights | #dc2626 |
 | **Black** | Text, accents | #000000 |
-| **Rising Sun Yellow** | Secondary accent | #f59e0b |
+| **Neyveli Lignite Brown** | Secondary accent (local significance) | #3e2723 |
 | **Emerald Green** | Completed status | #10b981 |
 
 ### Design Principles:
@@ -453,5 +453,6 @@ For technical issues, contact the web development team.
 
 *Document prepared for MLA Saba Rajendran Election Campaign 2026*
 *Last Updated: December 2025*
+
 
 

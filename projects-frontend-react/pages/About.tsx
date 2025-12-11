@@ -30,7 +30,7 @@ export const About: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="flex flex-col items-center text-center">
                         {/* Party Label */}
-                        <div className="inline-flex items-center gap-2 bg-primary-600 text-white px-4 py-1 mb-6 transform -skew-x-12 shadow-[4px_4px_0_0_#fbbf24]">
+                        <div className="inline-flex items-center gap-2 bg-primary-600 text-white px-4 py-1 mb-6 transform -skew-x-12 shadow-[4px_4px_0_0_#3e2723]">
                             <span className="text-sm font-black uppercase tracking-widest transform skew-x-12">
                                 Public Representative
                             </span>
@@ -159,7 +159,7 @@ export const About: React.FC = () => {
                                 </div>
                                 {/* Term 2 */}
                                 <div className="relative group">
-                                    <span className="absolute -left-[54px] top-1 w-6 h-6 bg-primary-600 border-4 border-black shadow-[2px_2px_0_0_#fbbf24]"></span>
+                                    <span className="absolute -left-[54px] top-1 w-6 h-6 bg-primary-600 border-4 border-black shadow-[2px_2px_0_0_#3e2723]"></span>
                                     <div className="flex items-center gap-3 mb-2">
                                         <h4 className="font-display text-3xl font-black text-black">2021</h4>
                                         <div className="h-1 flex-1 bg-black"></div>

@@ -72,7 +72,7 @@ export const Navbar: React.FC = () => {
                 end={item.path === `${langPrefix}/`}
                 className={({ isActive }) =>
                   `px-4 py-2 rounded font-bold text-lg uppercase tracking-wide transition-all transform hover:-translate-y-0.5 ${isActive
-                    ? 'bg-primary-600 text-white shadow-[4px_4px_0_0_#fbbf24]'
+                    ? 'bg-primary-600 text-white shadow-[4px_4px_0_0_#3e2723]'
                     : 'text-neutral-300 hover:text-white hover:bg-white/10'
                   }`
                 }

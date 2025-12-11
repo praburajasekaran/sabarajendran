@@ -143,7 +143,7 @@ docs/
 |---------|-------|-----|
 | Primary | Red | `#dc2626` |
 | Secondary | Black | `#0a0a0a` |
-| Accent | Yellow | `#f59e0b` |
+| Accent | Lignite Brown | `#3e2723` |
 | Success | Green | `#10b981` |
 
 **Font:** Inter (body), Playfair Display (headlines)
@@ -173,5 +173,6 @@ For technical support or content updates, contact the web development team.
 ---
 
 *Campaign Materials for MLA Saba Rajendran | Neyveli Constituency | DMK*
+
 
 

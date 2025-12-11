@@ -24,7 +24,7 @@
 **Primary Colors (DMK Party):**
 - **DMK Red:** `#dc2626` / `rgb(220, 38, 38)` - Main brand color
 - **DMK Black:** `#000000` - Party accent color
-- **Rising Sun Yellow/Orange:** `#f59e0b` - Secondary accent
+- **Neyveli Lignite Brown:** `#3e2723` - Secondary accent (represents local coal mining heritage)
 
 **Supporting Colors:**
 - **Neutrals:** Warm stone grays (stone-50 through stone-900)

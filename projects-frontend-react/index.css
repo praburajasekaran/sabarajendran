@@ -122,8 +122,8 @@
 }
 
 .status-dot.ongoing {
-  background-color: #fbbf24;
-  /* Bright Yellow */
+  background-color: #3e2723;
+  /* Lignite Brown */
   animation: flash 1s infinite alternate;
 }
 
@@ -154,8 +154,8 @@
 /* Buttons - Mass Appeal */
 .btn-political {
   background: #000000;
-  color: #fbbf24;
-  /* Yellow text on Black */
+  color: #d7ccc8;
+  /* Light Lignite Brown text on Black */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;

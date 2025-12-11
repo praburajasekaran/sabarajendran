@@ -11,7 +11,7 @@
 |-------|------|----------|-----|-------|
 | 🔴 | **DMK Red** | `#dc2626` | `rgb(220, 38, 38)` | Primary buttons, highlights, accents |
 | ⬛ | **DMK Black** | `#0a0a0a` | `rgb(10, 10, 10)` | Text, headers, backgrounds |
-| 🟡 | **Rising Sun Yellow** | `#f59e0b` | `rgb(245, 158, 11)` | Secondary accent, icons |
+| 🟤 | **Neyveli Lignite Brown** | `#3e2723` | `rgb(62, 39, 35)` | Secondary accent, represents local coal heritage |
 
 ### Supporting Colors
 
@@ -80,12 +80,12 @@
 4. Do not distort, rotate, or add effects
 
 **Simplified Rising Sun Symbol:**
-For compact spaces, use the simplified rising sun:
+For compact spaces, use the simplified party logo:
 ```css
 .sun {
     width: 40px;
     height: 40px;
-    background: #f59e0b; /* Yellow */
+    background: #3e2723; /* Lignite Brown */
     border-radius: 50%;
     position: relative;
 }
@@ -158,7 +158,7 @@ Every slide includes a DMK-branded header:
 }
 
 .quote-box .author {
-    color: #f59e0b; /* Rising Sun Yellow */
+    color: #3e2723; /* Lignite Brown */
 }
 ```
 
@@ -188,9 +188,9 @@ Every slide includes a DMK-branded header:
     color: white;
 }
 
-.badge.yellow {
-    background: #f59e0b;
-    color: #171717;
+.badge.brown {
+    background: #3e2723;
+    color: white;
 }
 ```
 
@@ -317,7 +317,7 @@ table tr:nth-child(even) {
 
 .slide.title-slide .tamil {
     font-size: 32px;
-    color: #f59e0b; /* Rising Sun Yellow */
+    color: #bcaaa4; /* Light Lignite Brown for dark backgrounds */
 }
 
 .slide.title-slide .website {
@@ -381,5 +381,6 @@ table tr:nth-child(even) {
 
 *Branding guide for Neyveli Constituency Campaign Materials*
 *MLA Saba Rajendran | DMK | December 2025*
+
 
 

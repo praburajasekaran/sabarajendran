@@ -39,10 +39,10 @@ Use it to make something cool, have fun, and share what you've learned.
 	--infrastructure: #3B82F6;
 	--education: #8B5CF6;
 	--healthcare: #10B981;
-	--agriculture: #F59E0B;
+	--agriculture: #3E2723;
 	--water: #06B6D4;
 	--roads: #6B7280;
-	--electricity: #FBBF24;
+	--electricity: #3E2723;
 	--social: #EC4899;
 
 	/* Neutrals */
@@ -349,8 +349,8 @@ body.tamil {
 }
 
 .project-badge.status-progress {
-	background-color: #FFC107;
-	color: var(--dmk-black);
+	background-color: #3E2723;
+	color: var(--dmk-white);
 }
 
 .project-excerpt {
