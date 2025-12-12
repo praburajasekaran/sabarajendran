@@ -123,6 +123,8 @@ export const TRANSLATIONS = {
       allBlocks: 'All Blocks',
       selectBlockFirst: 'Select Block First',
       allPanchayats: 'All Panchayats',
+      totalProjects: 'Total Projects',
+      totalBudget: 'Total Budget',
     },
     graphic: {
       location: 'LOCATION',
@@ -327,6 +329,8 @@ export const TRANSLATIONS = {
       allBlocks: 'அனைத்து பிரிவுகள்',
       selectBlockFirst: 'முதலில் பிரிவை தேர்ந்தெடுக்கவும்',
       allPanchayats: 'அனைத்து பஞ்சாயத்துகள்',
+      totalProjects: 'மொத்த திட்டங்கள்',
+      totalBudget: 'மொத்த செலவு',
     },
     graphic: {
       location: 'இடம்',

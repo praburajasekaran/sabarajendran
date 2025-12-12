@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { getVillageName } from '../utils/villageTranslations';
-import { Filter, Search, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, CheckCircle2, Clock, AlertCircle, LayoutGrid, XCircle, X } from 'lucide-react';
+import { Filter, Search, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, CheckCircle2, Clock, AlertCircle, LayoutGrid, XCircle, X, Banknote } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Sidebar } from '../components/Sidebar';
 import { ProjectCard } from '../components/ProjectCard';
@@ -12,6 +12,7 @@ import { validateFilters } from '../utils/urlValidation';
 
 import { wpService } from '../services/wpService';
 import { Project } from '../types';
+import { formatBudgetTotal } from '../utils/formatBudget';
 
 // WhatsApp Shareable Graphic Components
 import { ShareableGraphicButton } from '../components/ShareableGraphicButton';
@@ -190,6 +191,11 @@ export const ProjectsPage: React.FC = () => {
       .slice(0, 8);
   }, [filteredProjects]);
 
+  // Calculate total budget for filtered projects
+  const totalBudget = useMemo(() => {
+    return filteredProjects.reduce((sum, project) => sum + (project.rawBudget || 0), 0);
+  }, [filteredProjects]);
+
   // Handler to open graphic modal and generate image
   const handleOpenGraphicModal = useCallback(async () => {
     setIsGraphicModalOpen(true);
@@ -348,6 +354,41 @@ export const ProjectsPage: React.FC = () => {
                   <p className="text-sm font-bold text-neutral-600 mt-2 uppercase tracking-wide border-l-4 border-accent-400 pl-2">
                     {t.projects.showing} <span className="text-black">{filteredProjects.length}</span> {t.projects.results}
                   </p>
+
+                  {/* Stats Cards - Show when block or panchayat filter is active */}
+                  {(filters.block !== 'All' || filters.panchayat !== 'All') && (
+                    <div className="flex flex-wrap gap-3 mt-4">
+                      {/* Total Projects Card */}
+                      <div className="bg-white border-2 border-black shadow-[4px_4px_0_0_#000] px-4 py-2 flex items-center gap-3">
+                        <div className="bg-primary-600 p-2 border-2 border-black">
+                          <LayoutGrid size={20} className="text-white" strokeWidth={3} />
+                        </div>
+                        <div>
+                          <div className="text-[10px] uppercase font-black text-neutral-500 tracking-wider">
+                            {t.projects.totalProjects}
+                          </div>
+                          <div className="text-2xl font-black text-black font-mono">
+                            {filteredProjects.length}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Total Budget Card */}
+                      <div className="bg-white border-2 border-black shadow-[4px_4px_0_0_#000] px-4 py-2 flex items-center gap-3">
+                        <div className="bg-accent-400 p-2 border-2 border-black">
+                          <Banknote size={20} className="text-black" strokeWidth={3} />
+                        </div>
+                        <div>
+                          <div className="text-[10px] uppercase font-black text-neutral-500 tracking-wider">
+                            {t.projects.totalBudget}
+                          </div>
+                          <div className="text-2xl font-black text-black font-mono">
+                            {formatBudgetTotal(totalBudget, language)}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Controls */}

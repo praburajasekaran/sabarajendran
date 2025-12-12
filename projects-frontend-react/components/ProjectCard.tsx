@@ -77,7 +77,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {/* Title - Bold & Uppercase */}
           <TruncatedText
             as="h3"
-            maxLines={2}
+            maxLines={language === 'ta' ? 3 : 2}
             className={`font-display font-black text-black mb-3 leading-tight tracking-tight ${language === 'en' ? 'text-xl' : 'text-lg'}`}
           >
             {(() => {
@@ -90,8 +90,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             })()}
           </TruncatedText>
 
-          {/* Description */}
-          {(() => {
+          {/* Description - Hidden for now (data still in database) */}
+          {/* {(() => {
             const splitIndex = displayTitle.indexOf(' @ ');
 
             // Case 1: Split found - show the second part as description
@@ -122,7 +122,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 {displayDescription}
               </TruncatedText>
             );
-          })()}
+          })()} */}
+          <div className="flex-1 min-h-[1rem]"></div>
 
           {/* Metadata Grid - Rugged */}
           <div className="mt-auto grid grid-cols-2 gap-4 border-t-2 border-black pt-3 bg-neutral-50 -mx-5 -mb-5 p-4">
