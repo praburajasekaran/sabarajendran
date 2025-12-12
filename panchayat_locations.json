@@ -1,0 +1,227 @@
+{
+    "metadata": {
+        "total_panchayats": 43,
+        "already_translated": 43,
+        "needs_translation": 0,
+        "export_date": "2025-12-12 04:25:59",
+        "source": "WordPress project_panchayat taxonomy"
+    },
+    "needs_translation": [],
+    "already_translated": [
+        {
+            "english": "Alagappasamuthiram",
+            "tamil": "அழகப்பசமுத்திரம்",
+            "count": 7
+        },
+        {
+            "english": "Annadhaanampettai",
+            "tamil": "அன்னதானம்பேட்டை",
+            "count": 33
+        },
+        {
+            "english": "Arasadikuppam",
+            "tamil": "அரசடிகுப்பம்",
+            "count": 21
+        },
+        {
+            "english": "Elanthampattu",
+            "tamil": "எலந்தம்பட்டு",
+            "count": 18
+        },
+        {
+            "english": "Indira Nagar",
+            "tamil": "இந்திரா நகர்",
+            "count": 39
+        },
+        {
+            "english": "Kaatupalayam",
+            "tamil": "காட்டுப்பாளையம்",
+            "count": 1
+        },
+        {
+            "english": "Kadampuliyur",
+            "tamil": "காடாம்புலியூர்",
+            "count": 62
+        },
+        {
+            "english": "Karukkai",
+            "tamil": "கருக்கை",
+            "count": 15
+        },
+        {
+            "english": "Kattandikuppam",
+            "tamil": "காட்டாண்டிகுப்பம்",
+            "count": 5
+        },
+        {
+            "english": "Kattukudalore",
+            "tamil": "காட்டுகூடலூர்",
+            "count": 36
+        },
+        {
+            "english": "Keelakuppam",
+            "tamil": "கீழகுப்பம்",
+            "count": 15
+        },
+        {
+            "english": "Keeliruppu",
+            "tamil": "கீழிருப்பு",
+            "count": 7
+        },
+        {
+            "english": "Keelkankeyankuppam",
+            "tamil": "கீழ்காங்கேயன்குப்பம்",
+            "count": 14
+        },
+        {
+            "english": "Keelmampattu",
+            "tamil": "கீழ்மாம்பட்டு",
+            "count": 31
+        },
+        {
+            "english": "Keelur",
+            "tamil": "கீழூர்",
+            "count": 39
+        },
+        {
+            "english": "Koranappatu",
+            "tamil": "கோரணப்பட்டு",
+            "count": 42
+        },
+        {
+            "english": "Madhanagopalpuram",
+            "tamil": "மதனகோபாலபுரம்",
+            "count": 24
+        },
+        {
+            "english": "Maligampattu",
+            "tamil": "மாளிகைப்பட்டு",
+            "count": 25
+        },
+        {
+            "english": "Marungur",
+            "tamil": "மருங்கூர்",
+            "count": 31
+        },
+        {
+            "english": "Meliruppu",
+            "tamil": "மேலிருப்பு",
+            "count": 14
+        },
+        {
+            "english": "Melkankeyankuppam",
+            "tamil": "மேல்காங்கேயன்குப்பம்",
+            "count": 2
+        },
+        {
+            "english": "Melmampattu",
+            "tamil": "மேல்மாம்பட்டு",
+            "count": 19
+        },
+        {
+            "english": "Nadukuppam",
+            "tamil": "நடுக்குப்பம்",
+            "count": 30
+        },
+        {
+            "english": "Panikkankuppam",
+            "tamil": "பணிக்கன்குப்பம்",
+            "count": 1
+        },
+        {
+            "english": "Periyakattupalayam",
+            "tamil": "பெரியகாட்டுப்பாளையம்",
+            "count": 19
+        },
+        {
+            "english": "Perperiyankuppam",
+            "tamil": "பேர்பெரியான்குப்பம்",
+            "count": 38
+        },
+        {
+            "english": "Perumathur",
+            "tamil": "பெருமாத்தூர்",
+            "count": 24
+        },
+        {
+            "english": "Purangani",
+            "tamil": "புரங்கனி",
+            "count": 14
+        },
+        {
+            "english": "Samattikkuppam",
+            "tamil": "சமட்டிக்குப்பம்",
+            "count": 27
+        },
+        {
+            "english": "Semmedu",
+            "tamil": "செம்மேடு",
+            "count": 8
+        },
+        {
+            "english": "Silambinathanpettai",
+            "tamil": "சிலம்பிநாதன்பேட்டை",
+            "count": 32
+        },
+        {
+            "english": "Siruvathur",
+            "tamil": "சிறுவத்தூர்",
+            "count": 23
+        },
+        {
+            "english": "Sorathur",
+            "tamil": "சொரத்தூர்",
+            "count": 30
+        },
+        {
+            "english": "Thalampattu",
+            "tamil": "தாழம்பட்டு",
+            "count": 11
+        },
+        {
+            "english": "Thiruvamoor",
+            "tamil": "திருவாமூர்",
+            "count": 41
+        },
+        {
+            "english": "Vaanadiraayapuram",
+            "tamil": "வானாதிராயபுரம்",
+            "count": 24
+        },
+        {
+            "english": "Vadakumeelur",
+            "tamil": "வடக்குமேலூர்",
+            "count": 34
+        },
+        {
+            "english": "Vadakuthu",
+            "tamil": "வடக்குத்து",
+            "count": 96
+        },
+        {
+            "english": "Vallam",
+            "tamil": "வல்லம்",
+            "count": 14
+        },
+        {
+            "english": "Veerasingankuppam",
+            "tamil": "வீரசிங்கன்குப்பம்",
+            "count": 23
+        },
+        {
+            "english": "Vegakollai",
+            "tamil": "வேகக்கொள்ளை",
+            "count": 26
+        },
+        {
+            "english": "Vengadampettai",
+            "tamil": "வெங்கடாம்பேட்டை",
+            "count": 29
+        },
+        {
+            "english": "Visoor",
+            "tamil": "விசூர்",
+            "count": 26
+        }
+    ]
+}

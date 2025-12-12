@@ -50,7 +50,7 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
       style={{
         width: '1080px',
         height: '1920px', // Fixed height for template
-        backgroundImage: 'url(/assets/images/share_template.png)',
+        backgroundImage: `url(/assets/images/${currentLang === 'en' ? 'share_graphic_bg_en.png' : 'share_template.png'})`,
         backgroundSize: '100% 100%', // Stretch to fit exactly
         backgroundRepeat: 'no-repeat',
         fontFamily: '"Anek Tamil", sans-serif',

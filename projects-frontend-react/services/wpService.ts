@@ -295,7 +295,11 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
 
     const block = getTaxonomyName(wpItem, 'project_block');
     const panchayat = toSmartTitleCase(getTaxonomyName(wpItem, 'project_panchayat') || '');
-    const village = toSmartTitleCase(getTaxonomyName(wpItem, 'project_village') || 'Unknown Village');
+
+    // Get village name - prefer English translation from database
+    const villageRaw = getTaxonomyName(wpItem, 'project_village', true) || 'Unknown Village';
+    const village = toSmartTitleCase(villageRaw);
+
     const year = getTaxonomyName(wpItem, 'project_year') || '2024';
     const statusRaw = getTaxonomyName(wpItem, 'project_status');
     const typeRaw = getTaxonomyName(wpItem, 'project_category'); // Plugin said project_category maps to type/sector
@@ -356,7 +360,7 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
     return project;
 };
 
-const getTaxonomyName = (wpItem: any, taxonomy: string): string | undefined => {
+const getTaxonomyName = (wpItem: any, taxonomy: string, preferEnglish: boolean = true): string | undefined => {
     // _embed adds 'wp:term'. We need to find the right term list.
     // The structure is usually wpItem._embedded['wp:term'][index] where index corresponds to the taxonomy registration order?
     // Or we can look at the 'taxonomy' field in the item itself which contains IDs, then look up in _embedded.
@@ -374,7 +378,20 @@ const getTaxonomyName = (wpItem: any, taxonomy: string): string | undefined => {
         if (Array.isArray(termList) && termList.length > 0) {
             // Check the taxonomy of the first item
             if (termList[0].taxonomy === taxonomy) {
-                return termList[0].name; // Return the first term name found
+                const term = termList[0];
+
+                // For project_village, use translation fields if available
+                if (taxonomy === 'project_village') {
+                    // Check if REST API fields are available
+                    if (preferEnglish && term.village_name_english) {
+                        return term.village_name_english;
+                    } else if (!preferEnglish && term.village_name_tamil) {
+                        return term.village_name_tamil;
+                    }
+                }
+
+                // Fallback to term name
+                return term.name;
             }
         }
     }

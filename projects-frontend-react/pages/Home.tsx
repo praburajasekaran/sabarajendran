@@ -100,7 +100,7 @@ export const Home: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent z-0"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10 w-full">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-12">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 lg:gap-12">
 
             {/* Content Left */}
             <div className="w-full max-w-2xl flex flex-col items-start space-y-6 animate-zip-in">
@@ -140,7 +140,7 @@ export const Home: React.FC = () => {
             </div>
 
             {/* Hero Image - Side Profile (Cutout style typically popular in political banners) */}
-            <div className="block w-72 h-72 md:w-96 md:h-96 relative group mt-8 md:mt-0 mx-auto">
+            <div className="block w-72 h-72 md:w-96 md:h-96 relative group mx-auto">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary-600 to-accent-500 rounded-full blur-[100px] opacity-40"></div>
               <img
                 src="/assets/images/saba_rajendran.webp"

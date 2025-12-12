@@ -91,6 +91,12 @@ header('X-Content-Type-Options: nosniff');
 header('X-XSS-Protection: 1; mode=block');
 header('Referrer-Policy: strict-origin-when-cross-origin');
 
+// CORS Headers for React Frontend
+header('Access-Control-Allow-Origin: http://localhost:3004');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+header('Access-Control-Allow-Credentials: true');
+
 // ===================================================================
 
 /* That's all, stop editing! Happy publishing. */

@@ -6,38 +6,39 @@
  */
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
 /**
  * Register all project taxonomies
  */
-function saba_projects_register_taxonomies() {
+function saba_projects_register_taxonomies()
+{
 	// Register Project Category
 	register_taxonomy(
 		'project_category',
 		'project',
 		array(
-			'labels'            => array(
-				'name'              => _x( 'Project Categories', 'taxonomy general name', 'saba-projects' ),
-				'singular_name'     => _x( 'Project Category', 'taxonomy singular name', 'saba-projects' ),
-				'search_items'      => __( 'Search Categories', 'saba-projects' ),
-				'all_items'         => __( 'All Categories', 'saba-projects' ),
-				'parent_item'       => __( 'Parent Category', 'saba-projects' ),
-				'parent_item_colon' => __( 'Parent Category:', 'saba-projects' ),
-				'edit_item'         => __( 'Edit Category', 'saba-projects' ),
-				'update_item'       => __( 'Update Category', 'saba-projects' ),
-				'add_new_item'      => __( 'Add New Category', 'saba-projects' ),
-				'new_item_name'     => __( 'New Category Name', 'saba-projects' ),
-				'menu_name'         => __( 'Categories', 'saba-projects' ),
+			'labels' => array(
+				'name' => _x('Project Categories', 'taxonomy general name', 'saba-projects'),
+				'singular_name' => _x('Project Category', 'taxonomy singular name', 'saba-projects'),
+				'search_items' => __('Search Categories', 'saba-projects'),
+				'all_items' => __('All Categories', 'saba-projects'),
+				'parent_item' => __('Parent Category', 'saba-projects'),
+				'parent_item_colon' => __('Parent Category:', 'saba-projects'),
+				'edit_item' => __('Edit Category', 'saba-projects'),
+				'update_item' => __('Update Category', 'saba-projects'),
+				'add_new_item' => __('Add New Category', 'saba-projects'),
+				'new_item_name' => __('New Category Name', 'saba-projects'),
+				'menu_name' => __('Categories', 'saba-projects'),
 			),
-			'hierarchical'      => true,
-			'show_ui'           => true,
+			'hierarchical' => true,
+			'show_ui' => true,
 			'show_admin_column' => true,
-			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'project-category' ),
-			'show_in_rest'      => true,
+			'query_var' => true,
+			'rewrite' => array('slug' => 'project-category'),
+			'show_in_rest' => true,
 		)
 	);
 
@@ -46,23 +47,23 @@ function saba_projects_register_taxonomies() {
 		'project_village',
 		'project',
 		array(
-			'labels'            => array(
-				'name'              => _x( 'Villages', 'taxonomy general name', 'saba-projects' ),
-				'singular_name'     => _x( 'Village', 'taxonomy singular name', 'saba-projects' ),
-				'search_items'      => __( 'Search Villages', 'saba-projects' ),
-				'all_items'         => __( 'All Villages', 'saba-projects' ),
-				'edit_item'         => __( 'Edit Village', 'saba-projects' ),
-				'update_item'       => __( 'Update Village', 'saba-projects' ),
-				'add_new_item'      => __( 'Add New Village', 'saba-projects' ),
-				'new_item_name'     => __( 'New Village Name', 'saba-projects' ),
-				'menu_name'         => __( 'Villages', 'saba-projects' ),
+			'labels' => array(
+				'name' => _x('Villages', 'taxonomy general name', 'saba-projects'),
+				'singular_name' => _x('Village', 'taxonomy singular name', 'saba-projects'),
+				'search_items' => __('Search Villages', 'saba-projects'),
+				'all_items' => __('All Villages', 'saba-projects'),
+				'edit_item' => __('Edit Village', 'saba-projects'),
+				'update_item' => __('Update Village', 'saba-projects'),
+				'add_new_item' => __('Add New Village', 'saba-projects'),
+				'new_item_name' => __('New Village Name', 'saba-projects'),
+				'menu_name' => __('Villages', 'saba-projects'),
 			),
-			'hierarchical'      => true,
-			'show_ui'           => true,
+			'hierarchical' => true,
+			'show_ui' => true,
 			'show_admin_column' => true,
-			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'village' ),
-			'show_in_rest'      => true,
+			'query_var' => true,
+			'rewrite' => array('slug' => 'village'),
+			'show_in_rest' => true,
 		)
 	);
 
@@ -71,23 +72,23 @@ function saba_projects_register_taxonomies() {
 		'project_year',
 		'project',
 		array(
-			'labels'            => array(
-				'name'              => _x( 'Years', 'taxonomy general name', 'saba-projects' ),
-				'singular_name'     => _x( 'Year', 'taxonomy singular name', 'saba-projects' ),
-				'search_items'      => __( 'Search Years', 'saba-projects' ),
-				'all_items'         => __( 'All Years', 'saba-projects' ),
-				'edit_item'         => __( 'Edit Year', 'saba-projects' ),
-				'update_item'       => __( 'Update Year', 'saba-projects' ),
-				'add_new_item'      => __( 'Add New Year', 'saba-projects' ),
-				'new_item_name'     => __( 'New Year', 'saba-projects' ),
-				'menu_name'         => __( 'Years', 'saba-projects' ),
+			'labels' => array(
+				'name' => _x('Years', 'taxonomy general name', 'saba-projects'),
+				'singular_name' => _x('Year', 'taxonomy singular name', 'saba-projects'),
+				'search_items' => __('Search Years', 'saba-projects'),
+				'all_items' => __('All Years', 'saba-projects'),
+				'edit_item' => __('Edit Year', 'saba-projects'),
+				'update_item' => __('Update Year', 'saba-projects'),
+				'add_new_item' => __('Add New Year', 'saba-projects'),
+				'new_item_name' => __('New Year', 'saba-projects'),
+				'menu_name' => __('Years', 'saba-projects'),
 			),
-			'hierarchical'      => false,
-			'show_ui'           => true,
+			'hierarchical' => false,
+			'show_ui' => true,
 			'show_admin_column' => true,
-			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'year' ),
-			'show_in_rest'      => true,
+			'query_var' => true,
+			'rewrite' => array('slug' => 'year'),
+			'show_in_rest' => true,
 		)
 	);
 
@@ -96,23 +97,23 @@ function saba_projects_register_taxonomies() {
 		'project_status',
 		'project',
 		array(
-			'labels'            => array(
-				'name'              => _x( 'Status', 'taxonomy general name', 'saba-projects' ),
-				'singular_name'     => _x( 'Status', 'taxonomy singular name', 'saba-projects' ),
-				'search_items'      => __( 'Search Status', 'saba-projects' ),
-				'all_items'         => __( 'All Status', 'saba-projects' ),
-				'edit_item'         => __( 'Edit Status', 'saba-projects' ),
-				'update_item'       => __( 'Update Status', 'saba-projects' ),
-				'add_new_item'      => __( 'Add New Status', 'saba-projects' ),
-				'new_item_name'     => __( 'New Status', 'saba-projects' ),
-				'menu_name'         => __( 'Status', 'saba-projects' ),
+			'labels' => array(
+				'name' => _x('Status', 'taxonomy general name', 'saba-projects'),
+				'singular_name' => _x('Status', 'taxonomy singular name', 'saba-projects'),
+				'search_items' => __('Search Status', 'saba-projects'),
+				'all_items' => __('All Status', 'saba-projects'),
+				'edit_item' => __('Edit Status', 'saba-projects'),
+				'update_item' => __('Update Status', 'saba-projects'),
+				'add_new_item' => __('Add New Status', 'saba-projects'),
+				'new_item_name' => __('New Status', 'saba-projects'),
+				'menu_name' => __('Status', 'saba-projects'),
 			),
-			'hierarchical'      => false,
-			'show_ui'           => true,
+			'hierarchical' => false,
+			'show_ui' => true,
 			'show_admin_column' => true,
-			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'status' ),
-			'show_in_rest'      => true,
+			'query_var' => true,
+			'rewrite' => array('slug' => 'status'),
+			'show_in_rest' => true,
 		)
 	);
 
@@ -121,23 +122,23 @@ function saba_projects_register_taxonomies() {
 		'project_scheme',
 		'project',
 		array(
-			'labels'            => array(
-				'name'              => _x( 'Schemes', 'taxonomy general name', 'saba-projects' ),
-				'singular_name'     => _x( 'Scheme', 'taxonomy singular name', 'saba-projects' ),
-				'search_items'      => __( 'Search Schemes', 'saba-projects' ),
-				'all_items'         => __( 'All Schemes', 'saba-projects' ),
-				'edit_item'         => __( 'Edit Scheme', 'saba-projects' ),
-				'update_item'       => __( 'Update Scheme', 'saba-projects' ),
-				'add_new_item'      => __( 'Add New Scheme', 'saba-projects' ),
-				'new_item_name'     => __( 'New Scheme Name', 'saba-projects' ),
-				'menu_name'         => __( 'Schemes', 'saba-projects' ),
+			'labels' => array(
+				'name' => _x('Schemes', 'taxonomy general name', 'saba-projects'),
+				'singular_name' => _x('Scheme', 'taxonomy singular name', 'saba-projects'),
+				'search_items' => __('Search Schemes', 'saba-projects'),
+				'all_items' => __('All Schemes', 'saba-projects'),
+				'edit_item' => __('Edit Scheme', 'saba-projects'),
+				'update_item' => __('Update Scheme', 'saba-projects'),
+				'add_new_item' => __('Add New Scheme', 'saba-projects'),
+				'new_item_name' => __('New Scheme Name', 'saba-projects'),
+				'menu_name' => __('Schemes', 'saba-projects'),
 			),
-			'hierarchical'      => false,
-			'show_ui'           => true,
+			'hierarchical' => false,
+			'show_ui' => true,
 			'show_admin_column' => false,
-			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'scheme' ),
-			'show_in_rest'      => true,
+			'query_var' => true,
+			'rewrite' => array('slug' => 'scheme'),
+			'show_in_rest' => true,
 		)
 	);
 
@@ -146,23 +147,23 @@ function saba_projects_register_taxonomies() {
 		'project_panchayat',
 		'project',
 		array(
-			'labels'            => array(
-				'name'              => _x( 'Panchayats', 'taxonomy general name', 'saba-projects' ),
-				'singular_name'     => _x( 'Panchayat', 'taxonomy singular name', 'saba-projects' ),
-				'search_items'      => __( 'Search Panchayats', 'saba-projects' ),
-				'all_items'         => __( 'All Panchayats', 'saba-projects' ),
-				'edit_item'         => __( 'Edit Panchayat', 'saba-projects' ),
-				'update_item'       => __( 'Update Panchayat', 'saba-projects' ),
-				'add_new_item'      => __( 'Add New Panchayat', 'saba-projects' ),
-				'new_item_name'     => __( 'New Panchayat Name', 'saba-projects' ),
-				'menu_name'         => __( 'Panchayats', 'saba-projects' ),
+			'labels' => array(
+				'name' => _x('Panchayats', 'taxonomy general name', 'saba-projects'),
+				'singular_name' => _x('Panchayat', 'taxonomy singular name', 'saba-projects'),
+				'search_items' => __('Search Panchayats', 'saba-projects'),
+				'all_items' => __('All Panchayats', 'saba-projects'),
+				'edit_item' => __('Edit Panchayat', 'saba-projects'),
+				'update_item' => __('Update Panchayat', 'saba-projects'),
+				'add_new_item' => __('Add New Panchayat', 'saba-projects'),
+				'new_item_name' => __('New Panchayat Name', 'saba-projects'),
+				'menu_name' => __('Panchayats', 'saba-projects'),
 			),
-			'hierarchical'      => true,
-			'show_ui'           => true,
+			'hierarchical' => true,
+			'show_ui' => true,
 			'show_admin_column' => true,
-			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'panchayat' ),
-			'show_in_rest'      => true,
+			'query_var' => true,
+			'rewrite' => array('slug' => 'panchayat'),
+			'show_in_rest' => true,
 		)
 	);
 
@@ -171,106 +172,154 @@ function saba_projects_register_taxonomies() {
 		'project_block',
 		'project',
 		array(
-			'labels'            => array(
-				'name'              => _x( 'Blocks', 'taxonomy general name', 'saba-projects' ),
-				'singular_name'     => _x( 'Block', 'taxonomy singular name', 'saba-projects' ),
-				'search_items'      => __( 'Search Blocks', 'saba-projects' ),
-				'all_items'         => __( 'All Blocks', 'saba-projects' ),
-				'edit_item'         => __( 'Edit Block', 'saba-projects' ),
-				'update_item'       => __( 'Update Block', 'saba-projects' ),
-				'add_new_item'      => __( 'Add New Block', 'saba-projects' ),
-				'new_item_name'     => __( 'New Block Name', 'saba-projects' ),
-				'menu_name'         => __( 'Blocks', 'saba-projects' ),
+			'labels' => array(
+				'name' => _x('Blocks', 'taxonomy general name', 'saba-projects'),
+				'singular_name' => _x('Block', 'taxonomy singular name', 'saba-projects'),
+				'search_items' => __('Search Blocks', 'saba-projects'),
+				'all_items' => __('All Blocks', 'saba-projects'),
+				'edit_item' => __('Edit Block', 'saba-projects'),
+				'update_item' => __('Update Block', 'saba-projects'),
+				'add_new_item' => __('Add New Block', 'saba-projects'),
+				'new_item_name' => __('New Block Name', 'saba-projects'),
+				'menu_name' => __('Blocks', 'saba-projects'),
 			),
-			'hierarchical'      => true,
-			'show_ui'           => true,
+			'hierarchical' => true,
+			'show_ui' => true,
 			'show_admin_column' => true,
-			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'block' ),
-			'show_in_rest'      => true,
+			'query_var' => true,
+			'rewrite' => array('slug' => 'block'),
+			'show_in_rest' => true,
 		)
 	);
 }
-add_action( 'init', 'saba_projects_register_taxonomies' );
+add_action('init', 'saba_projects_register_taxonomies');
 
 /**
  * Add custom fields to village taxonomy edit form
  */
-function saba_projects_village_edit_form_fields( $term ) {
-	$tamil_name = get_term_meta( $term->term_id, '_village_name_tamil', true );
-	$english_name = get_term_meta( $term->term_id, '_village_name_english', true );
+function saba_projects_village_edit_form_fields($term)
+{
+	$tamil_name = get_term_meta($term->term_id, '_village_name_tamil', true);
+	$english_name = get_term_meta($term->term_id, '_village_name_english', true);
 	?>
 	<tr class="form-field">
 		<th scope="row">
-			<label for="village_name_english"><?php _e( 'Village Name (English)', 'saba-projects' ); ?></label>
+			<label for="village_name_english"><?php _e('Village Name (English)', 'saba-projects'); ?></label>
 		</th>
 		<td>
 			<div style="display: flex; gap: 10px; align-items: center;">
-				<input type="text" id="village_name_english" name="village_name_english" value="<?php echo esc_attr( $english_name ); ?>" class="regular-text" style="flex: 1;">
-				<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_english" data-target-field="village_name_tamil" data-term-id="<?php echo esc_attr( $term->term_id ); ?>" style="white-space: nowrap;">
+				<input type="text" id="village_name_english" name="village_name_english"
+					value="<?php echo esc_attr($english_name); ?>" class="regular-text" style="flex: 1;">
+				<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_english"
+					data-target-field="village_name_tamil" data-term-id="<?php echo esc_attr($term->term_id); ?>"
+					style="white-space: nowrap;">
 					<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
-					<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+					<span class="saba-translate-label"><?php _e('Translate', 'saba-projects'); ?></span>
 				</button>
 			</div>
 		</td>
 	</tr>
 	<tr class="form-field">
 		<th scope="row">
-			<label for="village_name_tamil"><?php _e( 'Village Name (Tamil)', 'saba-projects' ); ?></label>
+			<label for="village_name_tamil"><?php _e('Village Name (Tamil)', 'saba-projects'); ?></label>
 		</th>
 		<td>
 			<div style="display: flex; gap: 10px; align-items: center;">
-				<input type="text" id="village_name_tamil" name="village_name_tamil" value="<?php echo esc_attr( $tamil_name ); ?>" class="regular-text" style="flex: 1;">
-				<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_tamil" data-target-field="village_name_english" data-term-id="<?php echo esc_attr( $term->term_id ); ?>" style="white-space: nowrap;">
+				<input type="text" id="village_name_tamil" name="village_name_tamil"
+					value="<?php echo esc_attr($tamil_name); ?>" class="regular-text" style="flex: 1;">
+				<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_tamil"
+					data-target-field="village_name_english" data-term-id="<?php echo esc_attr($term->term_id); ?>"
+					style="white-space: nowrap;">
 					<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
-					<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+					<span class="saba-translate-label"><?php _e('Translate', 'saba-projects'); ?></span>
 				</button>
 			</div>
 		</td>
 	</tr>
 	<?php
 }
-add_action( 'project_village_edit_form_fields', 'saba_projects_village_edit_form_fields' );
+add_action('project_village_edit_form_fields', 'saba_projects_village_edit_form_fields');
 
 /**
  * Add custom fields to village taxonomy add form
  */
-function saba_projects_village_add_form_fields() {
+function saba_projects_village_add_form_fields()
+{
 	?>
 	<div class="form-field">
-		<label for="village_name_english"><?php _e( 'Village Name (English)', 'saba-projects' ); ?></label>
+		<label for="village_name_english"><?php _e('Village Name (English)', 'saba-projects'); ?></label>
 		<div style="display: flex; gap: 10px; align-items: center; margin-top: 5px;">
-			<input type="text" id="village_name_english" name="village_name_english" value="" class="regular-text" style="flex: 1;">
-			<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_english" data-target-field="village_name_tamil" data-term-id="0" style="white-space: nowrap;">
+			<input type="text" id="village_name_english" name="village_name_english" value="" class="regular-text"
+				style="flex: 1;">
+			<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_english"
+				data-target-field="village_name_tamil" data-term-id="0" style="white-space: nowrap;">
 				<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
-				<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+				<span class="saba-translate-label"><?php _e('Translate', 'saba-projects'); ?></span>
 			</button>
 		</div>
 	</div>
 	<div class="form-field">
-		<label for="village_name_tamil"><?php _e( 'Village Name (Tamil)', 'saba-projects' ); ?></label>
+		<label for="village_name_tamil"><?php _e('Village Name (Tamil)', 'saba-projects'); ?></label>
 		<div style="display: flex; gap: 10px; align-items: center; margin-top: 5px;">
-			<input type="text" id="village_name_tamil" name="village_name_tamil" value="" class="regular-text" style="flex: 1;">
-			<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_tamil" data-target-field="village_name_english" data-term-id="0" style="white-space: nowrap;">
+			<input type="text" id="village_name_tamil" name="village_name_tamil" value="" class="regular-text"
+				style="flex: 1;">
+			<button type="button" class="button saba-translate-village-btn" data-source-field="village_name_tamil"
+				data-target-field="village_name_english" data-term-id="0" style="white-space: nowrap;">
 				<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
-				<span class="saba-translate-label"><?php _e( 'Translate', 'saba-projects' ); ?></span>
+				<span class="saba-translate-label"><?php _e('Translate', 'saba-projects'); ?></span>
 			</button>
 		</div>
 	</div>
 	<?php
 }
-add_action( 'project_village_add_form_fields', 'saba_projects_village_add_form_fields' );
+add_action('project_village_add_form_fields', 'saba_projects_village_add_form_fields');
 
 /**
  * Save village translation fields
  */
-function saba_projects_save_village_translation_fields( $term_id ) {
-	if ( isset( $_POST['village_name_english'] ) ) {
-		update_term_meta( $term_id, '_village_name_english', sanitize_text_field( $_POST['village_name_english'] ) );
+function saba_projects_save_village_translation_fields($term_id)
+{
+	if (isset($_POST['village_name_english'])) {
+		update_term_meta($term_id, '_village_name_english', sanitize_text_field($_POST['village_name_english']));
 	}
-	if ( isset( $_POST['village_name_tamil'] ) ) {
-		update_term_meta( $term_id, '_village_name_tamil', sanitize_text_field( $_POST['village_name_tamil'] ) );
+	if (isset($_POST['village_name_tamil'])) {
+		update_term_meta($term_id, '_village_name_tamil', sanitize_text_field($_POST['village_name_tamil']));
 	}
 }
-add_action( 'created_project_village', 'saba_projects_save_village_translation_fields', 10, 1 );
-add_action( 'edited_project_village', 'saba_projects_save_village_translation_fields', 10, 1 );
+add_action('created_project_village', 'saba_projects_save_village_translation_fields', 10, 1);
+add_action('edited_project_village', 'saba_projects_save_village_translation_fields', 10, 1);
+
+/**
+ * Expose village translation fields in REST API
+ */
+function saba_projects_register_village_rest_fields()
+{
+	register_rest_field(
+		'project_village',
+		'village_name_english',
+		array(
+			'get_callback' => function ($term_array) {
+				return get_term_meta($term_array['id'], '_village_name_english', true);
+			},
+			'schema' => array(
+				'description' => __('Village name in English', 'saba-projects'),
+				'type' => 'string',
+			),
+		)
+	);
+
+	register_rest_field(
+		'project_village',
+		'village_name_tamil',
+		array(
+			'get_callback' => function ($term_array) {
+				return get_term_meta($term_array['id'], '_village_name_tamil', true);
+			},
+			'schema' => array(
+				'description' => __('Village name in Tamil', 'saba-projects'),
+				'type' => 'string',
+			),
+		)
+	);
+}
+add_action('rest_api_init', 'saba_projects_register_village_rest_fields');

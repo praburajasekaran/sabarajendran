@@ -1,0 +1,227 @@
+{
+    "metadata": {
+        "total_panchayats": 43,
+        "tamil_named": 11,
+        "english_named": 32,
+        "export_date": "2025-12-11 14:11:08"
+    },
+    "tamil_panchayats": [
+        {
+            "tamil": "வடக்குத்து",
+            "slug": "%e0%ae%b5%e0%ae%9f%e0%ae%95%e0%af%8d%e0%ae%95%e0%af%81%e0%ae%a4%e0%af%8d%e0%ae%a4%e0%af%81",
+            "count": 96
+        },
+        {
+            "tamil": "கோரணப்பட்டு",
+            "slug": "%e0%ae%95%e0%af%8b%e0%ae%b0%e0%ae%a3%e0%ae%aa%e0%af%8d%e0%ae%aa%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%af%81",
+            "count": 42
+        },
+        {
+            "tamil": "இந்திரா நகர்",
+            "slug": "%e0%ae%87%e0%ae%a8%e0%af%8d%e0%ae%a4%e0%ae%bf%e0%ae%b0%e0%ae%be-%e0%ae%a8%e0%ae%95%e0%ae%b0%e0%af%8d",
+            "count": 39
+        },
+        {
+            "tamil": "கீழூர்",
+            "slug": "%e0%ae%95%e0%af%80%e0%ae%b4%e0%af%82%e0%ae%b0%e0%af%8d",
+            "count": 39
+        },
+        {
+            "tamil": "வடக்குமேலூர்",
+            "slug": "%e0%ae%b5%e0%ae%9f%e0%ae%95%e0%af%8d%e0%ae%95%e0%af%81%e0%ae%ae%e0%af%87%e0%ae%b2%e0%af%82%e0%ae%b0%e0%af%8d",
+            "count": 34
+        },
+        {
+            "tamil": "அன்னதானம்பேட்டை",
+            "slug": "%e0%ae%85%e0%ae%a9%e0%af%8d%e0%ae%a9%e0%ae%a4%e0%ae%be%e0%ae%a9%e0%ae%ae%e0%af%8d%e0%ae%aa%e0%af%87%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%af%88",
+            "count": 33
+        },
+        {
+            "tamil": "வெங்கடாம்பேட்டை",
+            "slug": "%e0%ae%b5%e0%af%86%e0%ae%99%e0%af%8d%e0%ae%95%e0%ae%9f%e0%ae%be%e0%ae%ae%e0%af%8d%e0%ae%aa%e0%af%87%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%af%88",
+            "count": 29
+        },
+        {
+            "tamil": "சமட்டிக்குப்பம்",
+            "slug": "%e0%ae%9a%e0%ae%ae%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%ae%bf%e0%ae%95%e0%af%8d%e0%ae%95%e0%af%81%e0%ae%aa%e0%af%8d%e0%ae%aa%e0%ae%ae%e0%af%8d",
+            "count": 27
+        },
+        {
+            "tamil": "பெருமாத்தூர்",
+            "slug": "%e0%ae%aa%e0%af%86%e0%ae%b0%e0%af%81%e0%ae%ae%e0%ae%be%e0%ae%a4%e0%af%8d%e0%ae%a4%e0%af%82%e0%ae%b0%e0%af%8d",
+            "count": 24
+        },
+        {
+            "tamil": "மதனகோபாலபுரம்",
+            "slug": "%e0%ae%ae%e0%ae%a4%e0%ae%a9%e0%ae%95%e0%af%8b%e0%ae%aa%e0%ae%be%e0%ae%b2%e0%ae%aa%e0%af%81%e0%ae%b0%e0%ae%ae%e0%af%8d",
+            "count": 24
+        },
+        {
+            "tamil": "வானாதிராயபுரம்",
+            "slug": "%e0%ae%b5%e0%ae%be%e0%ae%a9%e0%ae%be%e0%ae%a4%e0%ae%bf%e0%ae%b0%e0%ae%be%e0%ae%af%e0%ae%aa%e0%af%81%e0%ae%b0%e0%ae%ae%e0%af%8d",
+            "count": 24
+        }
+    ],
+    "english_panchayats": [
+        {
+            "english": "Alagappasamuthiram",
+            "slug": "alagappasamuthiram",
+            "count": 7
+        },
+        {
+            "english": "Arasadikuppam",
+            "slug": "arasadikuppam",
+            "count": 21
+        },
+        {
+            "english": "Elanthampattu",
+            "slug": "elanthampattu",
+            "count": 18
+        },
+        {
+            "english": "Kaatupalayam",
+            "slug": "kaatupalayam",
+            "count": 1
+        },
+        {
+            "english": "Kadampuliyur",
+            "slug": "kadampuliyur",
+            "count": 62
+        },
+        {
+            "english": "Karukkai",
+            "slug": "karukkai",
+            "count": 15
+        },
+        {
+            "english": "Kattandikuppam",
+            "slug": "kattandikuppam",
+            "count": 5
+        },
+        {
+            "english": "Kattukudalore",
+            "slug": "kattukudalore",
+            "count": 36
+        },
+        {
+            "english": "Keelakuppam",
+            "slug": "keelakuppam",
+            "count": 15
+        },
+        {
+            "english": "Keeliruppu",
+            "slug": "keeliruppu",
+            "count": 7
+        },
+        {
+            "english": "Keelkankeyankuppam",
+            "slug": "keelkankeyankuppam",
+            "count": 14
+        },
+        {
+            "english": "Keelmampattu",
+            "slug": "keelmampattu",
+            "count": 31
+        },
+        {
+            "english": "Maligampattu",
+            "slug": "maligampattu",
+            "count": 25
+        },
+        {
+            "english": "Marungur",
+            "slug": "marungur",
+            "count": 31
+        },
+        {
+            "english": "Meliruppu",
+            "slug": "meliruppu",
+            "count": 14
+        },
+        {
+            "english": "Melkankeyankuppam",
+            "slug": "melkankeyankuppam",
+            "count": 2
+        },
+        {
+            "english": "Melmampattu",
+            "slug": "melmampattu",
+            "count": 19
+        },
+        {
+            "english": "Nadukuppam",
+            "slug": "nadukuppam",
+            "count": 30
+        },
+        {
+            "english": "Panikkankuppam",
+            "slug": "panikkankuppam",
+            "count": 1
+        },
+        {
+            "english": "Periyakattupalayam",
+            "slug": "periyakattupalayam",
+            "count": 19
+        },
+        {
+            "english": "Perperiyankuppam",
+            "slug": "perperiyankuppam",
+            "count": 38
+        },
+        {
+            "english": "Purangani",
+            "slug": "purangani",
+            "count": 14
+        },
+        {
+            "english": "Semmedu",
+            "slug": "semmedu",
+            "count": 8
+        },
+        {
+            "english": "Silambinathanpettai",
+            "slug": "silambinathanpettai",
+            "count": 32
+        },
+        {
+            "english": "Siruvathur",
+            "slug": "siruvathur",
+            "count": 23
+        },
+        {
+            "english": "Sorathur",
+            "slug": "sorathur",
+            "count": 30
+        },
+        {
+            "english": "Thalampattu",
+            "slug": "thalampattu",
+            "count": 11
+        },
+        {
+            "english": "Thiruvamoor",
+            "slug": "thiruvamoor",
+            "count": 41
+        },
+        {
+            "english": "Vallam",
+            "slug": "vallam",
+            "count": 14
+        },
+        {
+            "english": "Veerasingankuppam",
+            "slug": "veerasingankuppam",
+            "count": 23
+        },
+        {
+            "english": "Vegakollai",
+            "slug": "vegakollai",
+            "count": 26
+        },
+        {
+            "english": "Visoor",
+            "slug": "visoor",
+            "count": 26
+        }
+    ]
+}

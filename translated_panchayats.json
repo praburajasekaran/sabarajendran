@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "translated_count": 11,
+    "model_used": "anthropic/claude-3-haiku",
+    "translation_date": "2025-12-11 19:44:57"
+  },
+  "translations": [
+    {
+      "tamil": "வடக்குத்து",
+      "english": "Vadakuthu",
+      "count": 96,
+      "slug": "%e0%ae%b5%e0%ae%9f%e0%ae%95%e0%af%8d%e0%ae%95%e0%af%81%e0%ae%a4%e0%af%8d%e0%ae%a4%e0%af%81"
+    },
+    {
+      "tamil": "கோரணப்பட்டு",
+      "english": "Koranappatu",
+      "count": 42,
+      "slug": "%e0%ae%95%e0%af%8b%e0%ae%b0%e0%ae%a3%e0%ae%aa%e0%af%8d%e0%ae%aa%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%af%81"
+    },
+    {
+      "tamil": "இந்திரா நகர்",
+      "english": "Indira Nagar",
+      "count": 39,
+      "slug": "%e0%ae%87%e0%ae%a8%e0%af%8d%e0%ae%a4%e0%ae%bf%e0%ae%b0%e0%ae%be-%e0%ae%a8%e0%ae%95%e0%ae%b0%e0%af%8d"
+    },
+    {
+      "tamil": "கீழூர்",
+      "english": "Keelur",
+      "count": 39,
+      "slug": "%e0%ae%95%e0%af%80%e0%ae%b4%e0%af%82%e0%ae%b0%e0%af%8d"
+    },
+    {
+      "tamil": "வடக்குமேலூர்",
+      "english": "Vadakumeelur",
+      "count": 34,
+      "slug": "%e0%ae%b5%e0%ae%9f%e0%ae%95%e0%af%8d%e0%ae%95%e0%af%81%e0%ae%ae%e0%af%87%e0%ae%b2%e0%af%82%e0%ae%b0%e0%af%8d"
+    },
+    {
+      "tamil": "அன்னதானம்பேட்டை",
+      "english": "Annadhaanampettai",
+      "count": 33,
+      "slug": "%e0%ae%85%e0%ae%a9%e0%af%8d%e0%ae%a9%e0%ae%a4%e0%ae%be%e0%ae%a9%e0%ae%ae%e0%af%8d%e0%ae%aa%e0%af%87%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%af%88"
+    },
+    {
+      "tamil": "வெங்கடாம்பேட்டை",
+      "english": "Vengadampettai",
+      "count": 29,
+      "slug": "%e0%ae%b5%e0%af%86%e0%ae%99%e0%af%8d%e0%ae%95%e0%ae%9f%e0%ae%be%e0%ae%ae%e0%af%8d%e0%ae%aa%e0%af%87%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%af%88"
+    },
+    {
+      "tamil": "சமட்டிக்குப்பம்",
+      "english": "Samattikkuppam",
+      "count": 27,
+      "slug": "%e0%ae%9a%e0%ae%ae%e0%ae%9f%e0%af%8d%e0%ae%9f%e0%ae%bf%e0%ae%95%e0%af%8d%e0%ae%95%e0%af%81%e0%ae%aa%e0%af%8d%e0%ae%aa%e0%ae%ae%e0%af%8d"
+    },
+    {
+      "tamil": "பெருமாத்தூர்",
+      "english": "Perumathur",
+      "count": 24,
+      "slug": "%e0%ae%aa%e0%af%86%e0%ae%b0%e0%af%81%e0%ae%ae%e0%ae%be%e0%ae%a4%e0%af%8d%e0%ae%a4%e0%af%82%e0%ae%b0%e0%af%8d"
+    },
+    {
+      "tamil": "மதனகோபாலபுரம்",
+      "english": "Madhanagopalpuram",
+      "count": 24,
+      "slug": "%e0%ae%ae%e0%ae%a4%e0%ae%a9%e0%ae%95%e0%af%8b%e0%ae%aa%e0%ae%be%e0%ae%b2%e0%ae%aa%e0%af%81%e0%ae%b0%e0%ae%ae%e0%af%8d"
+    },
+    {
+      "tamil": "வானாதிராயபுரம்",
+      "english": "Vaanadiraayapuram",
+      "count": 24,
+      "slug": "%e0%ae%b5%e0%ae%be%e0%ae%a9%e0%ae%be%e0%ae%a4%e0%ae%bf%e0%ae%b0%e0%ae%be%e0%ae%af%e0%ae%aa%e0%af%81%e0%ae%b0%e0%ae%ae%e0%af%8d"
+    }
+  ]
+}

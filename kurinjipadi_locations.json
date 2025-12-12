@@ -1,0 +1,91 @@
+{
+    "metadata": {
+        "total_locations": 17,
+        "already_translated": 16,
+        "needs_translation": 0,
+        "export_date": "2025-12-11 14:03:08"
+    },
+    "needs_translation": [],
+    "already_translated": [
+        {
+            "english": "Alagappasamuthiram",
+            "tamil": "அழகப்பசமுத்திரம்",
+            "count": 11
+        },
+        {
+            "english": "Arasadikuppam",
+            "tamil": "அரசடிகுப்பம்",
+            "count": 9
+        },
+        {
+            "english": "Siruthondamadevi",
+            "tamil": "சிறுத்தொண்டமாதேவி",
+            "count": 10
+        },
+        {
+            "english": "A.puthur",
+            "tamil": "ஏ.புதூர்",
+            "count": 3
+        },
+        {
+            "english": "Pavaikulam",
+            "tamil": "பாவைக்குளம்",
+            "count": 10
+        },
+        {
+            "english": "Ealanthampattu",
+            "tamil": "எலந்தம்பட்டு",
+            "count": 12
+        },
+        {
+            "english": "Chinna ealanthampattu",
+            "tamil": "சின்ன எலந்தம்பட்டு",
+            "count": 2
+        },
+        {
+            "english": "Ealanthampattu Colony",
+            "tamil": "எலந்தம்பட்டு காலனி",
+            "count": 6
+        },
+        {
+            "english": "Konjikuppam",
+            "tamil": "கொஞ்சிக்குப்பம்",
+            "count": 7
+        },
+        {
+            "english": "Kadampuliyur",
+            "tamil": "காடாம்புலியூர்",
+            "count": 38
+        },
+        {
+            "english": "Gandhi nagar colony",
+            "tamil": "காந்தி நகர் காலனி",
+            "count": 9
+        },
+        {
+            "english": "Velankuppam",
+            "tamil": "வேலன்குப்பம்",
+            "count": 2
+        },
+        {
+            "english": "Kattandikuppam",
+            "tamil": "காட்டாண்டிகுப்பம்",
+            "count": 8
+        },
+        {
+            "english": "Pillayarkuppam",
+            "tamil": "பிள்ளையார்குப்பம்",
+            "count": 1
+        },
+        {
+            "english": "Karukkai colony",
+            "tamil": "கருக்கை காலனி",
+            "count": 2
+        },
+        {
+            "english": "Karukkai",
+            "tamil": "கருக்கை",
+            "count": 18
+        }
+    ]
+}

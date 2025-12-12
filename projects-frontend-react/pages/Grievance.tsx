@@ -14,7 +14,9 @@ interface FormData {
     description: string;
     name: string;
     phone: string;
-    address: string;
+    street: string;
+    city: string;
+    pincode: string;
     block: string;
     panchayat: string;
     village: string;
@@ -29,7 +31,9 @@ export const GrievancePage: React.FC = () => {
         description: '',
         name: '',
         phone: '',
-        address: '',
+        street: '',
+        city: '',
+        pincode: '',
         block: '',
         panchayat: '',
         village: '',
@@ -103,6 +107,10 @@ export const GrievancePage: React.FC = () => {
             setFormData(prev => ({ ...prev, block: value, panchayat: '', village: '' }));
         } else if (name === 'panchayat') {
             setFormData(prev => ({ ...prev, panchayat: value, village: '' }));
+        } else if (name === 'pincode') {
+            // Numeric only validation
+            const numericValue = value.replace(/\D/g, '').slice(0, 6);
+            setFormData(prev => ({ ...prev, [name]: numericValue }));
         } else {
             setFormData(prev => ({ ...prev, [name]: value }));
         }
@@ -117,17 +125,51 @@ export const GrievancePage: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitStatus('idle');
 
-        // Simulate API call
-        setTimeout(() => {
-            console.log('Form Submitted:', {
-                ...formData,
-                ipAddress,
-                timestamp: new Date().toISOString(),
-                language
+        try {
+            // Create FormData object for multipart/form-data submission
+            const submitData = new FormData();
+            submitData.append('type', formData.type);
+            submitData.append('name', formData.name);
+            submitData.append('phone', formData.phone);
+            submitData.append('phone', formData.phone);
+
+            // Concatenate address components for backend compatibility
+            const fullAddress = `${formData.street}, ${formData.city} - ${formData.pincode}`;
+            submitData.append('address', fullAddress);
+
+            submitData.append('block', formData.block);
+            submitData.append('panchayat', formData.panchayat);
+            submitData.append('village', formData.village);
+            if (formData.street) submitData.append('street', formData.street);
+            if (formData.city) submitData.append('city', formData.city);
+            if (formData.pincode) submitData.append('pincode', formData.pincode);
+            submitData.append('address', fullAddress); // Backward compatibility
+            submitData.append('description', formData.description);
+            submitData.append('ipAddress', ipAddress);
+
+            // Add image if present
+            if (formData.image) {
+                submitData.append('image', formData.image);
+            }
+
+            console.log('Submitting grievance to WordPress...', {
+                type: formData.type,
+                name: formData.name,
+                phone: formData.phone,
+                block: formData.block,
+                panchayat: formData.panchayat,
+                village: formData.village,
+                hasImage: !!formData.image
             });
-            setIsSubmitting(false);
+
+            // Submit to WordPress API
+            const response = await wpService.submitGrievance(submitData);
+
+            console.log('Grievance submitted successfully:', response);
             setSubmitStatus('success');
+
             // Reset form
             setFormData({
                 type: 'request',
@@ -135,14 +177,21 @@ export const GrievancePage: React.FC = () => {
                 description: '',
                 name: '',
                 phone: '',
-                address: '',
+                street: '',
+                city: '',
+                pincode: '',
                 block: '',
                 panchayat: '',
                 village: '',
                 image: null
             });
             if (fileInputRef.current) fileInputRef.current.value = '';
-        }, 1500);
+        } catch (error) {
+            console.error('Error submitting grievance:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -160,7 +209,7 @@ export const GrievancePage: React.FC = () => {
 
                     {/* Header */}
                     <div className="text-center mb-10 animate-zip-in">
-                        <h1 className="font-display text-4xl md:text-5xl font-black text-secondary-900 uppercase tracking-tight mb-3">
+                        <h1 className="font-display text-4xl md:text-5xl font-black text-secondary-900 tracking-tight mb-3">
                             <span className="gradient-text">{t.grievance.title}</span>
                         </h1>
                         <p className="text-xl text-secondary-600 max-w-2xl mx-auto font-medium">
@@ -168,7 +217,7 @@ export const GrievancePage: React.FC = () => {
                         </p>
                     </div>
 
-                    <div className="bg-white rounded-none card-sharp p-6 md:p-10 shadow-xl border-t-4 border-primary-600 relative">
+                    <div className="bg-white rounded-none p-6 md:p-10 shadow-xl border-t-4 border-primary-600 relative">
 
                         {submitStatus === 'success' ? (
                             <div className="text-center py-16 animate-gentle-pulse">
@@ -184,75 +233,67 @@ export const GrievancePage: React.FC = () => {
                                     {t.grievance.submitButton} Another
                                 </button>
                             </div>
+                        ) : submitStatus === 'error' ? (
+                            <div className="text-center py-16 animate-gentle-pulse">
+                                <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <AlertCircle className="text-red-600 w-10 h-10" />
+                                </div>
+                                <h2 className="text-3xl font-bold text-secondary-900 mb-4">Submission Failed</h2>
+                                <p className="text-lg text-secondary-600 mb-8">There was an error submitting your grievance. Please try again.</p>
+                                <button
+                                    onClick={() => setSubmitStatus('idle')}
+                                    className="btn-political px-8 py-3 text-lg"
+                                >
+                                    Try Again
+                                </button>
+                            </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-8">
 
                                 {/* Type Selection */}
                                 <div>
-                                    <label className="block text-lg font-bold text-secondary-900 mb-4 uppercase tracking-wide">
+                                    <label className="block text-lg font-bold text-secondary-900 mb-2 tracking-wide">
                                         {t.grievance.formType}
                                     </label>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <label className={`cursor-pointer border-2 p-4 flex items-center gap-3 transition-all ${formData.type === 'request' ? 'border-primary-600 bg-primary-50 shadow-md' : 'border-gray-200 hover:border-gray-300'}`}>
+                                    <div className="grid grid-cols-2 gap-3 h-[52px]">
+                                        <label className={`cursor-pointer border-2 rounded-lg flex items-center justify-center gap-2 transition-all h-full ${formData.type === 'request' ? 'border-primary-600 bg-primary-50 text-primary-900' : 'border-gray-200 hover:border-gray-300 text-gray-500'}`}>
                                             <input
                                                 type="radio"
                                                 name="type"
                                                 value="request"
                                                 checked={formData.type === 'request'}
                                                 onChange={() => setFormData(prev => ({ ...prev, type: 'request' }))}
-                                                className="w-5 h-5 text-primary-600 focus:ring-primary-500"
+                                                className="hidden"
                                             />
-                                            <span className="font-bold text-lg text-secondary-800">{t.grievance.typeRequest}</span>
+                                            <span className="font-bold">{t.grievance.typeRequest}</span>
                                         </label>
-                                        <label className={`cursor-pointer border-2 p-4 flex items-center gap-3 transition-all ${formData.type === 'complaint' ? 'border-accent-500 bg-accent-50 shadow-md' : 'border-gray-200 hover:border-gray-300'}`}>
+                                        <label className={`cursor-pointer border-2 rounded-lg flex items-center justify-center gap-2 transition-all h-full ${formData.type === 'complaint' ? 'border-primary-600 bg-primary-50 text-primary-900' : 'border-gray-200 hover:border-gray-300 text-gray-500'}`}>
                                             <input
                                                 type="radio"
                                                 name="type"
                                                 value="complaint"
                                                 checked={formData.type === 'complaint'}
                                                 onChange={() => setFormData(prev => ({ ...prev, type: 'complaint' }))}
-                                                className="w-5 h-5 text-accent-600 focus:ring-accent-500"
+                                                className="hidden"
                                             />
-                                            <span className="font-bold text-lg text-secondary-800">{t.grievance.typeComplaint}</span>
+                                            <span className="font-bold">{t.grievance.typeComplaint}</span>
                                         </label>
                                     </div>
                                 </div>
 
-                                {/* Request Type Selection */}
+                                {/* Location Details - 3 Columns */}
                                 <div>
-                                    <label className="block text-lg font-bold text-secondary-900 mb-2 uppercase tracking-wide">
-                                        {t.grievance.requestTypeLabel} <span className="text-red-500">*</span>
+                                    <label className="block text-lg font-bold text-secondary-900 mb-2 tracking-wide">
+                                        Location Details
                                     </label>
-                                    <div className="relative">
-                                        <select
-                                            name="requestType"
-                                            value={formData.requestType}
-                                            onChange={handleInputChange}
-                                            required
-                                            className="w-full border-2 border-gray-300 p-4 text-lg focus:border-black focus:ring-0 font-medium appearance-none bg-white"
-                                        >
-                                            <option value="">{t.grievance.selectRequestType}</option>
-                                            {Object.entries(t.types).map(([key, label]) => (
-                                                <option key={key} value={key}>{label}</option>
-                                            ))}
-                                        </select>
-                                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                                            <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-black"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Location Selectors */}
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                    {/* Block Select */}
-                                    <div>
-                                        <label className="block font-bold text-secondary-700 mb-1">{t.grievance.selectBlock}</label>
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                        {/* Block */}
                                         <div className="relative">
                                             <select
                                                 name="block"
                                                 value={formData.block}
                                                 onChange={handleInputChange}
-                                                className="w-full border-2 border-gray-300 p-3 pr-8 appearance-none focus:border-black focus:ring-0 font-bold uppercase text-sm"
+                                                className="w-full border-2 border-gray-200 rounded-md px-3 h-[52px] appearance-none focus:border-black focus:ring-0 font-medium text-sm"
                                             >
                                                 <option value="">{t.grievance.selectBlock}</option>
                                                 {blocks.map(b => (
@@ -263,18 +304,15 @@ export const GrievancePage: React.FC = () => {
                                                 <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-black"></div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    {/* Panchayat Select */}
-                                    <div>
-                                        <label className={`block font-bold text-secondary-700 mb-1 ${!formData.block ? 'opacity-50' : ''}`}>{t.grievance.selectPanchayat}</label>
+                                        {/* Panchayat */}
                                         <div className="relative">
                                             <select
                                                 name="panchayat"
                                                 value={formData.panchayat}
                                                 onChange={handleInputChange}
                                                 disabled={!formData.block}
-                                                className="w-full border-2 border-gray-300 p-3 pr-8 appearance-none focus:border-black focus:ring-0 font-bold uppercase text-sm disabled:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                className="w-full border-2 border-gray-200 rounded-md px-3 h-[52px] appearance-none focus:border-black focus:ring-0 font-medium text-sm disabled:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
                                             >
                                                 <option value="">{t.grievance.selectPanchayat}</option>
                                                 {panchayats.map(p => (
@@ -285,18 +323,15 @@ export const GrievancePage: React.FC = () => {
                                                 <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-black"></div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    {/* Village Select */}
-                                    <div>
-                                        <label className={`block font-bold text-secondary-700 mb-1 ${!formData.panchayat ? 'opacity-50' : ''}`}>{t.grievance.selectVillage}</label>
+                                        {/* Village */}
                                         <div className="relative">
                                             <select
                                                 name="village"
                                                 value={formData.village}
                                                 onChange={handleInputChange}
                                                 disabled={!formData.panchayat}
-                                                className="w-full border-2 border-gray-300 p-3 pr-8 appearance-none focus:border-black focus:ring-0 font-bold uppercase text-sm disabled:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                className="w-full border-2 border-gray-200 rounded-md px-3 h-[52px] appearance-none focus:border-black focus:ring-0 font-medium text-sm disabled:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
                                             >
                                                 <option value="">{t.grievance.selectVillage}</option>
                                                 {villages.map(v => (
@@ -310,9 +345,33 @@ export const GrievancePage: React.FC = () => {
                                     </div>
                                 </div>
 
+                                {/* Request Category */}
+                                <div>
+                                    <label className="block text-lg font-bold text-secondary-900 mb-2 tracking-wide">
+                                        {t.grievance.requestTypeLabel} <span className="text-red-500">*</span>
+                                    </label>
+                                    <div className="relative">
+                                        <select
+                                            name="requestType"
+                                            value={formData.requestType}
+                                            onChange={handleInputChange}
+                                            required
+                                            className="w-full border-2 border-gray-200 rounded-md px-4 h-[52px] text-lg focus:border-black focus:ring-0 font-medium appearance-none bg-white"
+                                        >
+                                            <option value="">{t.grievance.selectRequestType}</option>
+                                            {Object.entries(t.types).map(([key, label]) => (
+                                                <option key={key} value={key}>{label}</option>
+                                            ))}
+                                        </select>
+                                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                                            <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-black"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 {/* Description */}
                                 <div>
-                                    <label className="block text-lg font-bold text-secondary-900 mb-2 uppercase tracking-wide">
+                                    <label className="block text-lg font-bold text-secondary-900 mb-2 tracking-wide">
                                         {t.grievance.descriptionLabel} <span className="text-red-500">*</span>
                                     </label>
                                     <textarea
@@ -322,18 +381,18 @@ export const GrievancePage: React.FC = () => {
                                         onChange={handleInputChange}
                                         placeholder={t.grievance.descriptionPlaceholder}
                                         rows={5}
-                                        className="w-full border-2 border-gray-300 p-4 text-lg focus:border-black focus:ring-0 transition-colors bg-gray-50 placeholder-gray-400 font-medium"
+                                        className="w-full border-2 border-gray-200 rounded-md p-4 text-lg focus:border-black focus:ring-0 transition-colors bg-gray-50 placeholder-gray-400 font-medium"
                                     />
                                 </div>
 
                                 {/* Image Upload - CONDITIONAL: Only for Complaints */}
                                 {formData.type === 'complaint' && (
                                     <div className="animate-zip-in">
-                                        <label className="block text-lg font-bold text-secondary-900 mb-2 uppercase tracking-wide">
+                                        <label className="block text-lg font-bold text-secondary-900 mb-2 tracking-wide">
                                             {t.grievance.uploadLabel} <span className="text-red-500">*</span>
                                         </label>
                                         <div className="flex items-center justify-center w-full">
-                                            <label className={`flex flex-col items-center justify-center w-full h-32 border-2 border-dashed cursor-pointer transition-colors group ${!formData.image && isSubmitting ? 'border-red-500 bg-red-50' : 'border-gray-300 bg-gray-50 hover:bg-gray-100'}`}>
+                                            <label className={`flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer transition-colors group ${!formData.image && isSubmitting ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-gray-50 hover:bg-gray-100'}`}>
                                                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
                                                     {formData.image ? (
                                                         <div className="flex items-center gap-2 text-green-600 font-bold">
@@ -362,51 +421,84 @@ export const GrievancePage: React.FC = () => {
 
                                 {/* Personal Details Section */}
                                 <div className="pt-6 border-t-2 border-gray-100">
-                                    <h3 className="text-xl font-black text-secondary-900 mb-6 uppercase flex items-center gap-2">
+                                    <h3 className="text-xl font-black text-secondary-900 mb-6 flex items-center gap-2">
                                         <User className="w-6 h-6" /> {t.grievance.personalDetails}
                                     </h3>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div>
-                                            <label className="block font-bold text-secondary-700 mb-1">{t.grievance.nameLabel} <span className="text-red-500">*</span></label>
-                                            <input
-                                                type="text"
-                                                name="name"
-                                                required
-                                                value={formData.name}
-                                                onChange={handleInputChange}
-                                                placeholder={t.grievance.namePlaceholder}
-                                                className="w-full border-2 border-gray-300 p-3 focus:border-black focus:ring-0 font-medium"
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className="block font-bold text-secondary-700 mb-1">{t.grievance.phoneLabel} <span className="text-red-500">*</span></label>
-                                            <div className="relative">
-                                                <Phone className="absolute left-3 top-3.5 text-gray-400 w-5 h-5" />
-                                                <input
-                                                    type="tel"
-                                                    name="phone"
-                                                    required
-                                                    value={formData.phone}
-                                                    onChange={handleInputChange}
-                                                    placeholder={t.grievance.phonePlaceholder}
-                                                    className="w-full border-2 border-gray-300 p-3 pl-10 focus:border-black focus:ring-0 font-medium"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="md:col-span-2">
-                                            <label className="block font-bold text-secondary-700 mb-1">{t.grievance.addressLabel} <span className="text-red-500">*</span></label>
-                                            <div className="relative">
-                                                <MapPin className="absolute left-3 top-3.5 text-gray-400 w-5 h-5" />
+                                    <div className="space-y-6">
+                                        {/* Name & Phone */}
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <label className="block font-bold text-secondary-700 mb-1">{t.grievance.nameLabel} <span className="text-red-500">*</span></label>
                                                 <input
                                                     type="text"
-                                                    name="address"
+                                                    name="name"
                                                     required
-                                                    value={formData.address}
+                                                    value={formData.name}
                                                     onChange={handleInputChange}
-                                                    placeholder={t.grievance.addressPlaceholder}
-                                                    className="w-full border-2 border-gray-300 p-3 pl-10 focus:border-black focus:ring-0 font-medium"
+                                                    placeholder={t.grievance.namePlaceholder}
+                                                    className="w-full border-2 border-gray-200 rounded-md px-3 h-[52px] focus:border-black focus:ring-0 font-medium"
                                                 />
+                                            </div>
+                                            <div>
+                                                <label className="block font-bold text-secondary-700 mb-1">{t.grievance.phoneLabel} <span className="text-red-500">*</span></label>
+                                                <div className="relative">
+                                                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                                                    <input
+                                                        type="tel"
+                                                        name="phone"
+                                                        required
+                                                        value={formData.phone}
+                                                        onChange={handleInputChange}
+                                                        placeholder={t.grievance.phonePlaceholder}
+                                                        className="w-full border-2 border-gray-200 rounded-md px-3 pl-10 h-[52px] focus:border-black focus:ring-0 font-medium"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Address Fields */}
+                                        <div>
+                                            <label className="block font-bold text-secondary-700 mb-2">{t.grievance.addressLabel} <span className="text-red-500">*</span></label>
+                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                                <div>
+                                                    <label className="block text-sm font-semibold text-gray-600 mb-1">{t.grievance.streetLabel}</label>
+                                                    <input
+                                                        type="text"
+                                                        name="street"
+                                                        required
+                                                        value={formData.street}
+                                                        onChange={handleInputChange}
+                                                        placeholder={t.grievance.streetPlaceholder}
+                                                        className="w-full border-2 border-gray-200 rounded-md px-3 h-[52px] focus:border-black focus:ring-0 font-medium"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-sm font-semibold text-gray-600 mb-1">{t.grievance.cityLabel}</label>
+                                                    <input
+                                                        type="text"
+                                                        name="city"
+                                                        required
+                                                        value={formData.city}
+                                                        onChange={handleInputChange}
+                                                        placeholder={t.grievance.cityPlaceholder}
+                                                        className="w-full border-2 border-gray-200 rounded-md px-3 h-[52px] focus:border-black focus:ring-0 font-medium"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-sm font-semibold text-gray-600 mb-1">{t.grievance.pincodeLabel}</label>
+                                                    <input
+                                                        type="text"
+                                                        name="pincode"
+                                                        required
+                                                        pattern="[0-9]{6}"
+                                                        maxLength={6}
+                                                        value={formData.pincode}
+                                                        onChange={handleInputChange}
+                                                        placeholder={t.grievance.pincodePlaceholder}
+                                                        className="w-full border-2 border-gray-200 rounded-md px-3 h-[52px] focus:border-black focus:ring-0 font-medium"
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -417,7 +509,7 @@ export const GrievancePage: React.FC = () => {
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="w-full md:w-auto btn-political px-12 py-4 text-xl flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                                        className="w-full md:w-auto btn-political rounded-md px-12 py-4 text-xl flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                                     >
                                         {isSubmitting ? (
                                             <span className="animate-pulse">{t.grievance.submitting}</span>
@@ -436,7 +528,7 @@ export const GrievancePage: React.FC = () => {
                         )}
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 };

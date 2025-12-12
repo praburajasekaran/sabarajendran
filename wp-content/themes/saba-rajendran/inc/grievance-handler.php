@@ -53,7 +53,7 @@ add_action('init', 'saba_rajendran_register_grievance_cpt');
 function saba_rajendran_register_grievance_api()
 {
     register_rest_route('sabarajendran/v1', '/grievance', array(
-        'methods' => 'POST',
+        'methods' => array('POST', 'OPTIONS'),
         'callback' => 'saba_rajendran_handle_grievance_submission',
         'permission_callback' => '__return_true', // Public form
     ));
@@ -65,6 +65,11 @@ add_action('rest_api_init', 'saba_rajendran_register_grievance_api');
  */
 function saba_rajendran_handle_grievance_submission($request)
 {
+    // Handle OPTIONS preflight request
+    if ($request->get_method() === 'OPTIONS') {
+        return new WP_REST_Response(null, 200);
+    }
+
     // 1. Sanitize Fields
     $type = sanitize_text_field($request->get_param('type'));
     $name = sanitize_text_field($request->get_param('name'));
@@ -75,6 +80,19 @@ function saba_rajendran_handle_grievance_submission($request)
     $village = sanitize_text_field($request->get_param('village'));
     $description = sanitize_textarea_field($request->get_param('description'));
     $ip_address = sanitize_text_field($request->get_param('ipAddress'));
+
+    // New Address Fields
+    $street = sanitize_text_field($request->get_param('street'));
+    $city = sanitize_text_field($request->get_param('city'));
+    $pincode = sanitize_text_field($request->get_param('pincode'));
+
+    // Backward compatibility: If specific fields exist, construct full address, else use provided single address
+    if (!empty($street) || !empty($city) || !empty($pincode)) {
+        $address_parts = array_filter([$street, $city, $pincode]);
+        $address = implode(', ', $address_parts);
+    } else {
+        $address = sanitize_textarea_field($request->get_param('address'));
+    }
 
     if (empty($name) || empty($phone) || empty($description)) {
         return new WP_Error('missing_fields', 'Required fields are missing', array('status' => 400));
@@ -103,7 +121,16 @@ function saba_rajendran_handle_grievance_submission($request)
     update_post_meta($post_id, 'location_block', $block);
     update_post_meta($post_id, 'location_panchayat', $panchayat);
     update_post_meta($post_id, 'location_village', $village);
+    update_post_meta($post_id, 'location_village', $village);
     update_post_meta($post_id, 'submitter_ip', $ip_address);
+
+    // Save Granular Address
+    if (!empty($street))
+        update_post_meta($post_id, 'address_street', $street);
+    if (!empty($city))
+        update_post_meta($post_id, 'address_city', $city);
+    if (!empty($pincode))
+        update_post_meta($post_id, 'address_pincode', $pincode);
 
     // 4. Handle File Upload (if exists)
     $files = $request->get_file_params();
