@@ -1,9 +1,9 @@
 /**
- * Saba Rajendran Theme Scripts
+ * Saba. Rajendran Theme Scripts
  * Enhanced with search, reset, and better UX
  */
 
-(function($) {
+(function ($) {
 	'use strict';
 
 	/**
@@ -28,7 +28,7 @@
 				statuses: []
 			};
 
-			$pillButtons.filter('.active').not('[data-filter="all"]').each(function() {
+			$pillButtons.filter('.active').not('[data-filter="all"]').each(function () {
 				const taxonomy = $(this).data('taxonomy');
 				const value = $(this).data('value');
 
@@ -63,7 +63,7 @@
 				url: sabaRajendran.ajaxUrl,
 				type: 'POST',
 				data: ajaxData,
-				success: function(response) {
+				success: function (response) {
 					if (response.success) {
 						$projectsGrid.html(response.data.html);
 
@@ -98,7 +98,7 @@
 					$loadingIndicator.fadeOut(200);
 					$projectsGrid.css('opacity', '1');
 				},
-				error: function() {
+				error: function () {
 					alert('Error loading projects. Please try again.');
 					$loadingIndicator.fadeOut(200);
 					$projectsGrid.css('opacity', '1');
@@ -107,7 +107,7 @@
 		}
 
 		// Pill click handling
-		$pillButtons.on('click', function(e) {
+		$pillButtons.on('click', function (e) {
 			e.preventDefault();
 			const $pill = $(this);
 
@@ -141,7 +141,7 @@
 	 * Smooth scroll for anchor links
 	 */
 	function initSmoothScroll() {
-		$('a[href*="#"]').not('[href="#"]').not('[href="#0"]').on('click', function(e) {
+		$('a[href*="#"]').not('[href="#"]').not('[href="#0"]').on('click', function (e) {
 			if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
 				&& location.hostname === this.hostname) {
 
@@ -162,11 +162,11 @@
 	 * Social Share Tracking
 	 */
 	function initSocialShare() {
-		$('.share-button').on('click', function() {
+		$('.share-button').on('click', function () {
 			const platform = $(this).hasClass('whatsapp') ? 'WhatsApp'
 				: $(this).hasClass('facebook') ? 'Facebook'
-				: $(this).hasClass('twitter') ? 'Twitter'
-				: 'Unknown';
+					: $(this).hasClass('twitter') ? 'Twitter'
+						: 'Unknown';
 
 			// Track share event if analytics is available
 			if (typeof gtag !== 'undefined') {
@@ -184,7 +184,7 @@
 	/**
 	 * Initialize on document ready
 	 */
-	$(document).ready(function() {
+	$(document).ready(function () {
 		initProjectFilters();
 		initSmoothScroll();
 
@@ -192,7 +192,7 @@
 			initSocialShare();
 		}
 
-		console.log('Saba Rajendran Theme: Scripts loaded');
+		console.log('Saba. Rajendran Theme: Scripts loaded');
 	});
 
 })(jQuery);

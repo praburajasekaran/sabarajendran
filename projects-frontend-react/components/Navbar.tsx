@@ -48,7 +48,7 @@ export const Navbar: React.FC = () => {
               <div className="flex items-center gap-3">
                 <img
                   src="/assets/images/nav_logo.png"
-                  alt="Saba Rajendran Logo"
+                  alt="Saba. Rajendran Logo"
                   className="w-14 h-14 rounded-lg border-2 border-accent-400 shadow-md transform group-hover:scale-105 transition-transform object-cover"
                 />
                 <div className="flex flex-col justify-center">

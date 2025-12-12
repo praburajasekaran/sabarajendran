@@ -30,11 +30,11 @@ export const SEO: React.FC<SEOProps> = ({
 
     const siteTitle = language === 'ta'
         ? 'சபா இராசேந்திரன் | நெய்வேலி சட்டமன்ற உறுப்பினர்'
-        : 'Saba Rajendran | Neyveli MLA';
+        : 'Saba. Rajendran | Neyveli MLA';
 
     const defaultDescription = language === 'ta'
         ? 'நெய்வேலி தொகுதியின் வளர்ச்சிப் பணிகள் மற்றும் திட்டங்கள்.'
-        : 'Official website of Saba Rajendran, MLA of Neyveli Constituency. Track development projects and updates.';
+        : 'Official website of Saba. Rajendran, MLA of Neyveli Constituency. Track development projects and updates.';
 
     const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     const metaDescription = description || defaultDescription;
@@ -145,7 +145,7 @@ export const ProjectsSEO: React.FC<ProjectsSEOProps> = ({ filters, resultCount }
             <meta property="og:url" content={canonicalUrl} />
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
-            <meta property="og:site_name" content="Saba Rajendran MLA" />
+            <meta property="og:site_name" content="Saba. Rajendran MLA" />
             <meta property="og:locale" content={language === 'ta' ? 'ta_IN' : 'en_IN'} />
 
             {/* Twitter Card */}

@@ -12,7 +12,7 @@ export const About: React.FC = () => {
         <div className="min-h-screen bg-white pb-20 font-sans">
             <SEO
                 title="About"
-                description="Learn more about Saba Rajendran, MLA of Neyveli Constituency, his vision, and his journey in public service."
+                description="Learn more about Saba. Rajendran, MLA of Neyveli Constituency, his vision, and his journey in public service."
                 url="/about"
             />
             <Helmet>
@@ -56,7 +56,7 @@ export const About: React.FC = () => {
                             <div className="bg-secondary-100 border border-black relative overflow-hidden group">
                                 <img
                                     src="/assets/images/saba_rajendran.webp"
-                                    alt="MLA Saba Rajendran"
+                                    alt="MLA Saba. Rajendran"
                                     className="w-full h-auto object-cover grayscale-0 group-hover:grayscale transition-all duration-500"
                                 />
                                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 pt-20">
@@ -64,7 +64,7 @@ export const About: React.FC = () => {
                                         Neyveli MLA
                                     </div>
                                     <h3 className="font-display text-3xl text-white font-black uppercase leading-none">
-                                        Saba Rajendran
+                                        Saba. Rajendran
                                     </h3>
                                 </div>
                             </div>

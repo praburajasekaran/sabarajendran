@@ -1,6 +1,6 @@
 <?php
 /**
- * Saba Rajendran Theme Functions
+ * Saba. Rajendran Theme Functions
  *
  * @package Saba_Rajendran
  */

@@ -5,7 +5,7 @@ export const TRANSLATIONS = {
       about: 'About MLA',
       projects: 'Projects',
       grievance: 'Grievance Redressal',
-      title: 'Saba Rajendran',
+      title: 'Saba. Rajendran',
       subtitle: 'MLA, Neyveli, Tamil Nadu',
     },
     home: {
@@ -13,7 +13,7 @@ export const TRANSLATIONS = {
       heroHighlight: ' Growth Track',
       heroSuffix: '',
       heroSubtitle: 'Neyveli Constituency',
-      heroDesc: 'Transparent governance and sustainable development under the visionary leadership of MLA Mr. Saba Rajendran.',
+      heroDesc: 'Transparent governance and sustainable development under the visionary leadership of MLA Mr. Saba. Rajendran.',
       viewProjects: 'View Projects',
       contactOffice: 'Contact Office',
       completedProjects: 'Completed Projects',
@@ -37,7 +37,7 @@ export const TRANSLATIONS = {
       completionRate: 'Project Completion Rate',
       socialMediaTitle: 'Join Our Community',
       socialMediaDesc: 'Follow us on social media for real-time updates and interactions.',
-      mlaName: 'Saba Rajendran',
+      mlaName: 'Saba. Rajendran',
       mlaRole: 'MLA, Neyveli Constituency',
       currency: {
         cr: 'Cr+',
@@ -45,11 +45,11 @@ export const TRANSLATIONS = {
       }
     },
     about: {
-      title: 'About Saba Rajendran',
+      title: 'About Saba. Rajendran',
       subtitle: 'A Legacy of Service',
-      intro: 'Saba Rajendran is an Indian politician and a dedicated member of the Dravida Munnetra Kazhagam (DMK). He currently serves as the Member of Legislative Assembly (MLA) for the Neyveli constituency.',
+      intro: 'Saba. Rajendran is an Indian politician and a dedicated member of the Dravida Munnetra Kazhagam (DMK). He currently serves as the Member of Legislative Assembly (MLA) for the Neyveli constituency.',
       earlyLifeTitle: 'Early Life & Background',
-      earlyLifeDesc: 'Hailing from Sorathur village in Cuddalore, Saba Rajendran was raised in an environment deeply rooted in public service. His father, a respected Panchayat leader, and his mother, a dedicated supporter of agrarian communities, instilled in him a commitment to social welfare from a young age. With a strong agricultural background, he has been a vocal advocate for sustainable farming and water conservation. Long before his formal entry into politics, he championed the rights of farmers, launching numerous initiatives to address their challenges and improve their livelihoods.',
+      earlyLifeDesc: 'Hailing from Sorathur village in Cuddalore, Saba. Rajendran was raised in an environment deeply rooted in public service. His father, a respected Panchayat leader, and his mother, a dedicated supporter of agrarian communities, instilled in him a commitment to social welfare from a young age. With a strong agricultural background, he has been a vocal advocate for sustainable farming and water conservation. Long before his formal entry into politics, he championed the rights of farmers, launching numerous initiatives to address their challenges and improve their livelihoods.',
       politicalJourneyTitle: 'Political Journey',
       term2006: 'Elected to the Tamil Nadu Legislative Assembly from Nellikkuppam constituency in the 2006 elections.',
       term1: 'Elected to the Tamil Nadu Legislative Assembly from Neyveli constituency in the 2016 elections.',
@@ -79,7 +79,7 @@ export const TRANSLATIONS = {
         title: 'Key Initiatives & Impact',
         agriculture: {
           title: 'Agricultural Revitalization',
-          desc: 'Championing the backbone of our economy, Saba Rajendran has spearheaded the restoration of major irrigation lakes and the construction of new borewells, securing water access for 41 village panchayats. His focus extends to modernizing infrastructure with new silos and cold-storage facilities, ensuring farmers receive fair compensation through strengthened cooperative societies.'
+          desc: 'Championing the backbone of our economy, Saba. Rajendran has spearheaded the restoration of major irrigation lakes and the construction of new borewells, securing water access for 41 village panchayats. His focus extends to modernizing infrastructure with new silos and cold-storage facilities, ensuring farmers receive fair compensation through strengthened cooperative societies.'
         },
         education: {
           title: 'Empowering Youth & Education',
@@ -154,7 +154,7 @@ export const TRANSLATIONS = {
       subtitle: 'Powered by Gemini AI',
       placeholder: 'Ask about projects...',
       thinking: 'Thinking...',
-      initialMessage: 'Hello! I am the digital assistant for MLA Saba Rajendran. Ask me anything about the constituency projects in English or Tamil!',
+      initialMessage: 'Hello! I am the digital assistant for MLA Saba. Rajendran. Ask me anything about the constituency projects in English or Tamil!',
     },
     types: {
       Infrastructure: 'Infrastructure',
@@ -217,7 +217,7 @@ export const TRANSLATIONS = {
       about: 'எம். எல். ஏ பற்றி',
       projects: 'திட்டங்கள்',
       grievance: 'மக்கள் குரல்',
-      title: 'சபா இராசேந்திரன்',
+      title: 'சபா. இராசேந்திரன்',
       subtitle: 'சட்டமன்ற உறுப்பினர், நெய்வேலி',
     },
     home: {
@@ -225,7 +225,7 @@ export const TRANSLATIONS = {
       heroHighlight: ' முன்னேற்றப் பாதையில்',
       heroSuffix: ' நெய்வேலி',
       heroSubtitle: 'நெய்வேலி தொகுதி',
-      heroDesc: 'சட்டமன்ற உறுப்பினர் திரு. சபா இராசேந்திரன் அவர்களின் தொலைநோக்குத் தலைமையின் கீழ் வெளிப்படையான நிர்வாகம் மற்றும் நிலையான வளர்ச்சி.',
+      heroDesc: 'சட்டமன்ற உறுப்பினர் திரு. சபா. இராசேந்திரன் அவர்களின் தொலைநோக்குத் தலைமையின் கீழ் வெளிப்படையான நிர்வாகம் மற்றும் நிலையான வளர்ச்சி.',
       viewProjects: 'திட்டங்கள்',
       contactOffice: 'அலுவலகத் தொடர்புக்கு',
       completedProjects: 'நிறைவுற்ற திட்டங்கள்',
@@ -249,7 +249,7 @@ export const TRANSLATIONS = {
       completionRate: 'திட்ட நிறைவு விகிதம்',
       socialMediaTitle: 'சமூக ஊடகங்களில் இணைந்திருங்கள்',
       socialMediaDesc: 'உடனடி அறிவிப்புகள் மற்றும் தொடர்புகளுக்கு சமூக வலைதளங்களில் எங்களைப் பின்தொடரவும்.',
-      mlaName: 'சபா இராசேந்திரன்',
+      mlaName: 'சபா. இராசேந்திரன்',
       mlaRole: 'சட்டமன்ற உறுப்பினர், நெய்வேலி தொகுதி',
       currency: {
         cr: 'கோடி+',
@@ -257,11 +257,11 @@ export const TRANSLATIONS = {
       }
     },
     about: {
-      title: 'திரு. சபா இராசேந்திரன்',
+      title: 'திரு. சபா. இராசேந்திரன்',
       subtitle: 'சேவையின் மரபு',
-      intro: 'சபா இராசேந்திரன் ஒரு இந்திய அரசியல்வாதி மற்றும் திராவிட முன்னேற்றக் கழகத்தின் (திமுக) அர்ப்பணிப்புள்ள உறுப்பினர். அவர் தற்போது நெய்வேலி தொகுதியின் சட்டமன்ற உறுப்பினராக (எம்.எல்.ஏ) பணியாற்றி வருகிறார்.',
+      intro: 'சபா. இராசேந்திரன் ஒரு இந்திய அரசியல்வாதி மற்றும் திராவிட முன்னேற்றக் கழகத்தின் (திமுக) அர்ப்பணிப்புள்ள உறுப்பினர். அவர் தற்போது நெய்வேலி தொகுதியின் சட்டமன்ற உறுப்பினராக (எம்.எல்.ஏ) பணியாற்றி வருகிறார்.',
       earlyLifeTitle: 'ஆரம்ப வாழ்க்கை & பின்னணி',
-      earlyLifeDesc: 'கடலூர் மாவட்டம், சொரத்தூர் கிராமத்தைச் சேர்ந்த சபா இராசேந்திரன், சமூக சேவையில் ஈடுபாடு கொண்ட குடும்பத்தில் பிறந்து வளர்ந்தவர். ஊராட்சி மன்றத் தலைவராக இருந்த தனது தந்தை மற்றும் விவசாயத்திற்குத் துணைநின்ற தனது தாயார் ஆகியோரிடமிருந்து மக்கள் பணியின் முக்கியத்துவத்தை அவர் கற்றுக்கொண்டார். விவசாயக் குடும்பத்தில் பிறந்தவர் என்பதால், இயற்கை விவசாயம் மற்றும் நிலத்தடி நீர் பாதுகாப்பின் அவசியத்தை தொடர்ந்து வலியுறுத்தி வருகிறார். அரசியலில் நுழைவதற்கு முன்பே, விவசாயிகளின் உரிமைகளுக்காகக் குரல் கொடுத்து, அவர்களின் வாழ்வாதாரத்தை மேம்படுத்த பல முன்னெடுப்புகளை மேற்கொண்டவர்.',
+      earlyLifeDesc: 'கடலூர் மாவட்டம், சொரத்தூர் கிராமத்தைச் சேர்ந்த சபா. இராசேந்திரன், சமூக சேவையில் ஈடுபாடு கொண்ட குடும்பத்தில் பிறந்து வளர்ந்தவர். ஊராட்சி மன்றத் தலைவராக இருந்த தனது தந்தை மற்றும் விவசாயத்திற்குத் துணைநின்ற தனது தாயார் ஆகியோரிடமிருந்து மக்கள் பணியின் முக்கியத்துவத்தை அவர் கற்றுக்கொண்டார். விவசாயக் குடும்பத்தில் பிறந்தவர் என்பதால், இயற்கை விவசாயம் மற்றும் நிலத்தடி நீர் பாதுகாப்பின் அவசியத்தை தொடர்ந்து வலியுறுத்தி வருகிறார். அரசியலில் நுழைவதற்கு முன்பே, விவசாயிகளின் உரிமைகளுக்காகக் குரல் கொடுத்து, அவர்களின் வாழ்வாதாரத்தை மேம்படுத்த பல முன்னெடுப்புகளை மேற்கொண்டவர்.',
       politicalJourneyTitle: 'அரசியல் பயணம்',
       term2006: '2006 ஆம் ஆண்டு தேர்தலில் நெல்லிக்குப்பம் தொகுதியில் போட்டியிட்டு முதல் முறையாக தமிழ்நாடு சட்டமன்ற உறுப்பினராகத் தேர்ந்தெடுக்கப்பட்டார்.',
       term1: '2016 தேர்தலில் நெய்வேலி தொகுதியில் போட்டியிட்டு சட்டமன்ற உறுப்பினராகத் தேர்ந்தெடுக்கப்பட்டார்.',
@@ -291,7 +291,7 @@ export const TRANSLATIONS = {
         title: 'சமூக ஆர்வங்கள் மற்றும் முயற்சிகள்',
         agriculture: {
           title: 'விவசாயம்',
-          desc: 'அரசியல் விளைவுகளுக்கு அப்பால், சபா இராசேந்திரன் மாநிலத்தின் விவசாய நலன்களில் ஒட்டுமொத்த வளர்ச்சிக்காகப் பணியாற்றுகிறார். கூட்டுறவு சங்கங்கள் மூலம் விவசாயிகளுக்கு உரிய இழப்பீடு கிடைப்பதை உறுதி செய்தல், சேமிப்பு கிடங்குகள் மற்றும் குளிர்பதன வசதிகளை மேம்படுத்துதல் போன்ற திட்டங்களைச் செயல்படுத்தியுள்ளார். நீர்ப்பாசன ஆதாரங்களை மேம்படுத்த, ஏரிகள் சீரமைக்கப்பட்டு ஒரு முக்கிய நீர் ஆதாரம் உறுதிப்படுத்தப்பட்டது. ஆழ்துளை கிணறுகள் புதுப்பிக்கப்பட்டு புதியவை அமைக்கப்பட்டன. இவரது பணிக்காலத்தில், 41 கிராம ஊராட்சிகள் விவசாயத்தில் நல்ல முன்னேற்றத்தைக் கண்டுள்ளன.'
+          desc: 'அரசியல் விளைவுகளுக்கு அப்பால், சபா. இராசேந்திரன் மாநிலத்தின் விவசாய நலன்களில் ஒட்டுமொத்த வளர்ச்சிக்காகப் பணியாற்றுகிறார். கூட்டுறவு சங்கங்கள் மூலம் விவசாயிகளுக்கு உரிய இழப்பீடு கிடைப்பதை உறுதி செய்தல், சேமிப்பு கிடங்குகள் மற்றும் குளிர்பதன வசதிகளை மேம்படுத்துதல் போன்ற திட்டங்களைச் செயல்படுத்தியுள்ளார். நீர்ப்பாசன ஆதாரங்களை மேம்படுத்த, ஏரிகள் சீரமைக்கப்பட்டு ஒரு முக்கிய நீர் ஆதாரம் உறுதிப்படுத்தப்பட்டது. ஆழ்துளை கிணறுகள் புதுப்பிக்கப்பட்டு புதியவை அமைக்கப்பட்டன. இவரது பணிக்காலத்தில், 41 கிராம ஊராட்சிகள் விவசாயத்தில் நல்ல முன்னேற்றத்தைக் கண்டுள்ளன.'
         },
         education: {
           title: 'தொழில்முனைவு மற்றும் கல்வி',
@@ -366,7 +366,7 @@ export const TRANSLATIONS = {
       subtitle: 'Gemini AI மூலம் இயங்குகிறது',
       placeholder: 'திட்டங்களைப் பற்றி கேளுங்கள்...',
       thinking: 'சிந்திக்கிறது...',
-      initialMessage: 'வணக்கம்! நான் எம்.எல்.ஏ சபா இராசேந்திரன் அவர்களின் டிஜிட்டல் உதவியாளர். தொகுதி திட்டங்கள் பற்றி என்னிடம் எதையும் கேளுங்கள்!',
+      initialMessage: 'வணக்கம்! நான் எம்.எல்.ஏ சபா. இராசேந்திரன் அவர்களின் டிஜிட்டல் உதவியாளர். தொகுதி திட்டங்கள் பற்றி என்னிடம் எதையும் கேளுங்கள்!',
     },
     types: {
       Infrastructure: 'உள்கட்டமைப்பு',

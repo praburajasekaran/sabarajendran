@@ -78,7 +78,7 @@ export const Home: React.FC = () => {
     <div className="flex flex-col min-h-screen font-sans">
       <SEO
         title="Home"
-        description="Official website of Saba Rajendran, MLA of Neyveli Constituency. Explore development projects, news, and updates."
+        description="Official website of Saba. Rajendran, MLA of Neyveli Constituency. Explore development projects, news, and updates."
       />
       <Helmet>
         {/* Organization Structured Data */}
@@ -144,7 +144,7 @@ export const Home: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary-600 to-accent-500 rounded-full blur-[100px] opacity-40"></div>
               <img
                 src="/assets/images/saba_rajendran.webp"
-                alt="Saba Rajendran"
+                alt="Saba. Rajendran"
                 className="w-full h-full object-cover rounded-full border-8 border-white/10 shadow-2xl relative z-10"
                 style={{ maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)' }}
               />
