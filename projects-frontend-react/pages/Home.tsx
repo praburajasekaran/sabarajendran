@@ -11,6 +11,7 @@ import { generateOrganizationSchema, generatePersonSchema } from '../utils/seo';
 import { VILLAGE_TRANSLATIONS } from '../utils/villageTranslations';
 import { VideoModal } from '../components/VideoModal';
 import { SocialFeeds } from '../components/SocialFeeds';
+import { KeyProjectsCarousel } from '../components/KeyProjectsCarousel';
 
 export const Home: React.FC = () => {
   const { t, language } = useLanguage();
@@ -92,18 +93,31 @@ export const Home: React.FC = () => {
       </Helmet>
 
       {/* Hero Section - Political Mass Appeal */}
-      <section className="relative bg-secondary-900 text-white overflow-hidden min-h-[550px] flex items-center border-b-8 border-primary-600">
-        {/* Sun Rays Background Pattern */}
-        <div className="absolute inset-0 sun-rays-texture opacity-20"></div>
+      <section className="relative bg-secondary-900 text-white overflow-hidden min-h-[800px] md:min-h-[700px] flex items-center border-b-8 border-primary-600">
+        {/* Background Image - Responsive */}
+        <div className="absolute inset-0 z-0">
+          {/* Mobile Background */}
+          <img
+            src="/assets/images/hero-background-mobile.jpg"
+            alt="Hero Background Mobile"
+            className="md:hidden w-full h-full object-cover object-top"
+          />
+          {/* Desktop Background */}
+          <img
+            src="/assets/images/hero-background.jpg"
+            alt="Hero Background Desktop"
+            className="hidden md:block w-full h-full object-cover object-top"
+          />
+        </div>
 
         {/* Dynamic Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent z-0"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10 w-full">
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 lg:gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 relative z-10 w-full">
+          <div className="flex flex-col-reverse md:flex-row items-start md:items-center justify-start gap-8 lg:gap-12">
 
             {/* Content Left */}
-            <div className="w-full max-w-2xl flex flex-col items-start space-y-6 animate-zip-in">
+            <div className="w-full max-w-2xl flex flex-col items-start space-y-4 md:space-y-6 animate-zip-in">
               {/* Party Strip */}
               <div className="flex items-center gap-3 bg-neutral-900 p-2 pr-6 rounded-r-full border-l-4 border-primary-500 shadow-lg">
                 <div className="h-3 w-3 rounded-full bg-primary-500 animate-pulse"></div>
@@ -137,26 +151,18 @@ export const Home: React.FC = () => {
                   {t.home.contactOffice}
                 </button>
               </div>
-            </div>
 
-            {/* Hero Image - Side Profile (Cutout style typically popular in political banners) */}
-            <div className="block w-72 h-72 md:w-96 md:h-96 relative group mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary-600 to-accent-500 rounded-full blur-[100px] opacity-40"></div>
-              <img
-                src="/assets/images/saba_rajendran.webp"
-                alt="Saba. Rajendran"
-                className="w-full h-full object-cover rounded-full border-8 border-white/10 shadow-2xl relative z-10"
-                style={{ maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)' }}
-              />
-
-              {/* Play Button Overlay */}
+              {/* Play Button - Watch Welcome Video */}
               <button
                 onClick={() => setShowWelcomeVideo(true)}
-                className="absolute bottom-10 right-0 z-20 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-primary-600 rounded-full text-white shadow-lg hover:bg-primary-500 hover:scale-110 transition-all duration-300 group-hover:animate-bounce"
+                className="flex items-center gap-3 px-4 py-3 bg-transparent border-2 border-accent-400 text-accent-400 hover:bg-accent-400 hover:text-black transition-all font-bold uppercase tracking-wide group"
                 aria-label="Play Welcome Video"
               >
-                <div className="absolute inset-0 rounded-full bg-primary-600 animate-ping opacity-20"></div>
-                <Play size={32} fill="currentColor" className="ml-1" />
+                <div className="relative flex items-center justify-center w-10 h-10 bg-accent-400 rounded-full text-black group-hover:bg-black group-hover:text-accent-400 transition-all">
+                  <div className="absolute inset-0 rounded-full bg-accent-400 animate-ping opacity-20"></div>
+                  <Play size={20} fill="currentColor" className="ml-0.5 relative z-10" />
+                </div>
+                <span className="text-sm">Watch Video</span>
               </button>
             </div>
 
@@ -250,6 +256,9 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Key Projects Carousel - Major Constituency-Wide Projects */}
+      <KeyProjectsCarousel />
 
       {/* Block Cards Section - Political Grid */}
       <section className="py-24 bg-white">
