@@ -293,3 +293,9 @@ function saba_rajendran_get_category_color($category_slug = '')
  * Load Grievance Handler
  */
 require get_template_directory() . '/inc/grievance-handler.php';
+
+/**
+ * Load OTP Handler
+ */
+require get_template_directory() . '/inc/otp-handler.php';
+

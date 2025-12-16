@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { wpService } from '../services/wpService';
 import { Project } from '../types';
 import { getVillageName } from '../utils/villageTranslations';
+import { OTPVerification } from '../components/OTPVerification';
 
 type FormType = 'request' | 'complaint';
 
@@ -44,6 +45,11 @@ export const GrievancePage: React.FC = () => {
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [projects, setProjects] = useState<Project[]>([]);
     const fileInputRef = useRef<HTMLInputElement>(null);
+
+    // OTP Verification State
+    const [showOTPModal, setShowOTPModal] = useState(false);
+    const [verificationToken, setVerificationToken] = useState<string | null>(null);
+    const [pendingSubmission, setPendingSubmission] = useState<FormData | null>(null);
 
     // Fetch Projects for Dropdowns
     useEffect(() => {
@@ -128,40 +134,81 @@ export const GrievancePage: React.FC = () => {
         setSubmitStatus('idle');
 
         try {
+            // Validate phone number format (Indian: 10 digits, starts with 6-9)
+            if (!/^[6-9]\d{9}$/.test(formData.phone)) {
+                alert('Please enter a valid 10-digit Indian phone number starting with 6-9');
+                setIsSubmitting(false);
+                return;
+            }
+
+            // Send OTP
+            console.log('Sending OTP to:', formData.phone);
+            const otpResponse = await wpService.sendOTP(formData.phone);
+
+            if (otpResponse.success) {
+                // Store form data for later submission
+                setPendingSubmission(formData);
+                // Show OTP modal
+                setShowOTPModal(true);
+                setIsSubmitting(false);
+            }
+        } catch (error: any) {
+            console.error('Error sending OTP:', error);
+            setIsSubmitting(false);
+
+            // Handle rate limit error
+            if (error.code === 'rate_limit_exceeded') {
+                alert(t.grievance.otp.rateLimitError);
+            } else {
+                alert(error.message || t.grievance.otp.networkError);
+            }
+        }
+    };
+
+    const handleOTPVerificationSuccess = async (token: string) => {
+        setVerificationToken(token);
+        setShowOTPModal(false);
+        setIsSubmitting(true);
+
+        try {
+            if (!pendingSubmission) {
+                throw new Error('No pending submission found');
+            }
+
             // Create FormData object for multipart/form-data submission
             const submitData = new FormData();
-            submitData.append('type', formData.type);
-            submitData.append('name', formData.name);
-            submitData.append('phone', formData.phone);
-            submitData.append('phone', formData.phone);
+            submitData.append('type', pendingSubmission.type);
+            submitData.append('name', pendingSubmission.name);
+            submitData.append('phone', pendingSubmission.phone);
+            submitData.append('verification_token', token);
 
             // Concatenate address components for backend compatibility
-            const fullAddress = `${formData.street}, ${formData.city} - ${formData.pincode}`;
+            const fullAddress = `${pendingSubmission.street}, ${pendingSubmission.city} - ${pendingSubmission.pincode}`;
             submitData.append('address', fullAddress);
 
-            submitData.append('block', formData.block);
-            submitData.append('panchayat', formData.panchayat);
-            submitData.append('village', formData.village);
-            if (formData.street) submitData.append('street', formData.street);
-            if (formData.city) submitData.append('city', formData.city);
-            if (formData.pincode) submitData.append('pincode', formData.pincode);
-            submitData.append('address', fullAddress); // Backward compatibility
-            submitData.append('description', formData.description);
+            submitData.append('block', pendingSubmission.block);
+            submitData.append('panchayat', pendingSubmission.panchayat);
+            submitData.append('village', pendingSubmission.village);
+            if (pendingSubmission.street) submitData.append('street', pendingSubmission.street);
+            if (pendingSubmission.city) submitData.append('city', pendingSubmission.city);
+            if (pendingSubmission.pincode) submitData.append('pincode', pendingSubmission.pincode);
+            submitData.append('description', pendingSubmission.description);
             submitData.append('ipAddress', ipAddress);
 
             // Add image if present
-            if (formData.image) {
-                submitData.append('image', formData.image);
+            if (pendingSubmission.image) {
+                submitData.append('image', pendingSubmission.image);
             }
 
             console.log('Submitting grievance to WordPress...', {
-                type: formData.type,
-                name: formData.name,
-                phone: formData.phone,
-                block: formData.block,
-                panchayat: formData.panchayat,
-                village: formData.village,
-                hasImage: !!formData.image
+                type: pendingSubmission.type,
+                name: pendingSubmission.name,
+                phone: pendingSubmission.phone,
+                block: pendingSubmission.block,
+                panchayat: pendingSubmission.panchayat,
+                village: pendingSubmission.village,
+                hasImage: !!pendingSubmission.image,
+                hasVerificationToken: !!token
             });
 
             // Submit to WordPress API
@@ -185,6 +232,8 @@ export const GrievancePage: React.FC = () => {
                 village: '',
                 image: null
             });
+            setPendingSubmission(null);
+            setVerificationToken(null);
             if (fileInputRef.current) fileInputRef.current.value = '';
         } catch (error) {
             console.error('Error submitting grievance:', error);
@@ -192,6 +241,12 @@ export const GrievancePage: React.FC = () => {
         } finally {
             setIsSubmitting(false);
         }
+    };
+
+    const handleOTPCancel = () => {
+        setShowOTPModal(false);
+        setPendingSubmission(null);
+        setIsSubmitting(false);
     };
 
     return (
@@ -529,6 +584,16 @@ export const GrievancePage: React.FC = () => {
                     </div>
                 </div>
             </div >
+
+            {/* OTP Verification Modal */}
+            {showOTPModal && (
+                <OTPVerification
+                    phoneNumber={formData.phone}
+                    onVerificationSuccess={handleOTPVerificationSuccess}
+                    onCancel={handleOTPCancel}
+                    language={language}
+                />
+            )}
         </>
     );
 };

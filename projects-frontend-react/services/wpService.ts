@@ -253,6 +253,93 @@ export const wpService = {
             console.error('[wpService] Error submitting grievance:', error);
             throw error;
         }
+    },
+
+    // Send OTP
+    sendOTP: async (phoneNumber: string): Promise<{ success: boolean; session_id: string; expires_at: number; resend_count: number }> => {
+        try {
+            console.log('[wpService] Sending OTP to:', phoneNumber);
+
+            let url = '';
+            if (WP_API_URL.includes('index.php?rest_route=')) {
+                const baseUrl = WP_API_URL.split('?rest_route=')[0];
+                url = `${baseUrl}?rest_route=/sabarajendran/v1/send-otp`;
+            } else {
+                if (WP_API_URL.includes('/wp/v2')) {
+                    url = WP_API_URL.replace('/wp/v2', '/sabarajendran/v1/send-otp');
+                } else {
+                    url = `${WP_API_URL}/sabarajendran/v1/send-otp`;
+                }
+            }
+
+            const response = await axios.post(url, { phone: phoneNumber }, {
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            console.log('[wpService] OTP sent successfully:', response.data);
+            return response.data;
+        } catch (error: any) {
+            console.error('[wpService] Error sending OTP:', error);
+            throw error.response?.data || error;
+        }
+    },
+
+    // Verify OTP
+    verifyOTP: async (phoneNumber: string, otp: string): Promise<{ success: boolean; verification_token: string }> => {
+        try {
+            console.log('[wpService] Verifying OTP for:', phoneNumber);
+
+            let url = '';
+            if (WP_API_URL.includes('index.php?rest_route=')) {
+                const baseUrl = WP_API_URL.split('?rest_route=')[0];
+                url = `${baseUrl}?rest_route=/sabarajendran/v1/verify-otp`;
+            } else {
+                if (WP_API_URL.includes('/wp/v2')) {
+                    url = WP_API_URL.replace('/wp/v2', '/sabarajendran/v1/verify-otp');
+                } else {
+                    url = `${WP_API_URL}/sabarajendran/v1/verify-otp`;
+                }
+            }
+
+            const response = await axios.post(url, { phone: phoneNumber, otp }, {
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            console.log('[wpService] OTP verified successfully:', response.data);
+            return response.data;
+        } catch (error: any) {
+            console.error('[wpService] Error verifying OTP:', error);
+            throw error.response?.data || error;
+        }
+    },
+
+    // Resend OTP
+    resendOTP: async (phoneNumber: string): Promise<{ success: boolean; expires_at: number; resend_count: number }> => {
+        try {
+            console.log('[wpService] Resending OTP to:', phoneNumber);
+
+            let url = '';
+            if (WP_API_URL.includes('index.php?rest_route=')) {
+                const baseUrl = WP_API_URL.split('?rest_route=')[0];
+                url = `${baseUrl}?rest_route=/sabarajendran/v1/resend-otp`;
+            } else {
+                if (WP_API_URL.includes('/wp/v2')) {
+                    url = WP_API_URL.replace('/wp/v2', '/sabarajendran/v1/resend-otp');
+                } else {
+                    url = `${WP_API_URL}/sabarajendran/v1/resend-otp`;
+                }
+            }
+
+            const response = await axios.post(url, { phone: phoneNumber }, {
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            console.log('[wpService] OTP resent successfully:', response.data);
+            return response.data;
+        } catch (error: any) {
+            console.error('[wpService] Error resending OTP:', error);
+            throw error.response?.data || error;
+        }
     }
 };
 

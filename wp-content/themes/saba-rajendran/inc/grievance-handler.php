@@ -85,6 +85,7 @@ function saba_rajendran_handle_grievance_submission($request)
     $street = sanitize_text_field($request->get_param('street'));
     $city = sanitize_text_field($request->get_param('city'));
     $pincode = sanitize_text_field($request->get_param('pincode'));
+    $verification_token = sanitize_text_field($request->get_param('verification_token'));
 
     // Backward compatibility: If specific fields exist, construct full address, else use provided single address
     if (!empty($street) || !empty($city) || !empty($pincode)) {
@@ -96,6 +97,11 @@ function saba_rajendran_handle_grievance_submission($request)
 
     if (empty($name) || empty($phone) || empty($description)) {
         return new WP_Error('missing_fields', 'Required fields are missing', array('status' => 400));
+    }
+
+    // Validate phone verification
+    if (empty($verification_token) || !validate_verification_token($phone, $verification_token)) {
+        return new WP_Error('verification_required', 'Phone number must be verified before submission', array('status' => 403));
     }
 
     // 2. Insert Post
@@ -131,6 +137,13 @@ function saba_rajendran_handle_grievance_submission($request)
         update_post_meta($post_id, 'address_city', $city);
     if (!empty($pincode))
         update_post_meta($post_id, 'address_pincode', $pincode);
+
+    // Save phone verification status
+    update_post_meta($post_id, 'phone_verified', true);
+    update_post_meta($post_id, 'verification_timestamp', current_time('mysql'));
+
+    // Increment submission count for rate limiting
+    increment_submission_count($phone);
 
     // 4. Handle File Upload (if exists)
     $files = $request->get_file_params();

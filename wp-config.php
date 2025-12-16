@@ -77,7 +77,7 @@ define('WP_MAX_MEMORY_LIMIT', '1024M');
 
 // Block External HTTP Requests (disabled for local development)
 define('WP_HTTP_BLOCK_EXTERNAL', false);
-define('WP_ACCESSIBLE_HOSTS', 'api.wordpress.org,*.github.com,tan-emu-358425.hostingersite.com,sabarajendran.com');
+define('WP_ACCESSIBLE_HOSTS', 'api.wordpress.org,*.github.com,tan-emu-358425.hostingersite.com,sabarajendran.com,control.msg91.com,*.msg91.com');
 
 // Disable Plugin and Theme Update/Installation
 // define( 'DISALLOW_FILE_MODS', true ); // Uncomment after all plugins installed

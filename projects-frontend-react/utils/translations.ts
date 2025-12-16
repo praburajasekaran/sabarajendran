@@ -209,6 +209,23 @@ export const TRANSLATIONS = {
       errorTitle: 'Submission Failed',
       errorMessage: 'Please try again later.',
       ipDisclaimer: 'Your IP address will be recorded for security purposes.',
+      otp: {
+        title: 'Verify Your Phone Number',
+        subtitle: 'Enter the OTP sent to',
+        enterOTP: 'Enter OTP',
+        verify: 'Verify',
+        resend: 'Resend OTP',
+        resendIn: 'Resend in {seconds}s',
+        timeRemaining: 'Time remaining: {minutes}:{seconds}',
+        invalidOTP: 'Invalid OTP. Please try again.',
+        expiredOTP: 'OTP expired. Please request a new one.',
+        rateLimitError: 'You have reached the maximum submissions (3) for today.',
+        maxResendError: 'Maximum resend attempts (5) reached. Please try again later.',
+        networkError: 'Network error. Please try again.',
+        verifying: 'Verifying...',
+        sending: 'Sending OTP...',
+        cancel: 'Cancel'
+      },
     }
   },
   ta: {
@@ -421,6 +438,23 @@ export const TRANSLATIONS = {
       errorTitle: 'சமர்ப்பிப்பு தோல்வியடைந்தது',
       errorMessage: 'சிறிது நேரம் கழித்து மீண்டும் முயற்சிக்கவும்.',
       ipDisclaimer: 'பாதுகாப்பு நோக்கங்களுக்காக உங்கள் ஐபி முகவரி பதிவு செய்யப்படும்.',
+      otp: {
+        title: 'உங்கள் தொலைபேசி எண்ணை சரிபார்க்கவும்',
+        subtitle: 'அனுப்பப்பட்ட OTP ஐ உள்ளிடவும்',
+        enterOTP: 'OTP ஐ உள்ளிடவும்',
+        verify: 'சரிபார்க்கவும்',
+        resend: 'OTP ஐ மீண்டும் அனுப்பவும்',
+        resendIn: '{seconds} வினாடிகளில் மீண்டும் அனுப்பவும்',
+        timeRemaining: 'மீதமுள்ள நேரம்: {minutes}:{seconds}',
+        invalidOTP: 'தவறான OTP. மீண்டும் முயற்சிக்கவும்.',
+        expiredOTP: 'OTP காலாவதியானது. புதிய OTP ஐ கோரவும்.',
+        rateLimitError: 'இன்றைய அதிகபட்ச சமர்ப்பிப்புகளை (3) அடைந்துவிட்டீர்கள்.',
+        maxResendError: 'அதிகபட்ச மீண்டும் அனுப்பும் முயற்சிகள் (5) அடைந்தது. பின்னர் முயற்சிக்கவும்.',
+        networkError: 'நெட்வொர்க் பிழை. மீண்டும் முயற்சிக்கவும்.',
+        verifying: 'சரிபார்க்கிறது...',
+        sending: 'OTP அனுப்புகிறது...',
+        cancel: 'ரத்து செய்'
+      },
     }
   }
 };
