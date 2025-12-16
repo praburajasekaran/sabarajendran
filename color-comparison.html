@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Comparison - Navbar & Hero Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            color: #0a0a0a;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .comparison-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .color-section {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .color-label {
+            background: #f9f9f9;
+            padding: 20px;
+            border-bottom: 3px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .color-label h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0a0a0a;
+            margin-bottom: 5px;
+        }
+
+        .color-label code {
+            font-family: 'Courier New', monospace;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(to right, #1a1a1a, #262626);
+            border-bottom: 4px solid #dc2626;
+            padding: 0 20px;
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 96px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-logo-img {
+            width: 56px;
+            height: 56px;
+            background: #dc2626;
+            border-radius: 8px;
+            border: 2px solid var(--accent-color);
+        }
+
+        .navbar-text h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0 #000;
+            line-height: 1;
+        }
+
+        .navbar-text p {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #d4d4d4;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-link.active {
+            background: #dc2626;
+            color: white;
+            box-shadow: 4px 4px 0 0 var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: #1a1a1a;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            border-bottom: 8px solid #dc2626;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.7), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-left {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .party-strip {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #0a0a0a;
+            padding: 8px 24px 8px 8px;
+            border-radius: 0 50px 50px 0;
+            border-left: 4px solid #dc2626;
+            margin-bottom: 24px;
+        }
+
+        .party-strip-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #dc2626;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .party-strip-text {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color-light, var(--accent-color));
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 56px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-title .highlight {
+            color: #dc2626;
+        }
+
+        .hero-desc {
+            font-size: 20px;
+            font-weight: 500;
+            color: #d4d4d4;
+            line-height: 1.6;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 24px;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            background: #dc2626;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 0;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 4px 4px 0 0 var(--accent-color);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 14px 28px;
+            border: 2px solid white;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .hero-right {
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 8px solid rgba(255,255,255,0.1);
+            background: linear-gradient(135deg, #dc2626, var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: white;
+        }
+
+        /* Stats Section Preview */
+        .stats-preview {
+            background: #fafafa;
+            padding: 40px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #0a0a0a;
+            box-shadow: 8px 8px 0 0 #0a0a0a;
+            padding: 40px;
+            display: flex;
+            gap: 40px;
+            justify-content: space-around;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 56px;
+            font-weight: 900;
+            color: #1a1a1a;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-number.accent {
+            color: #dc2626;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: #dc2626;
+            color: white;
+            padding: 4px 8px;
+            display: inline-block;
+        }
+
+        .stat-label.accent-bg {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-left {
+                max-width: 100%;
+            }
+
+            .hero-desc {
+                border-left: none;
+                border-top: 4px solid var(--accent-color);
+                padding-left: 0;
+                padding-top: 16px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .navbar-nav {
+                display: none;
+            }
+
+            .stats-grid {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <h1>Choose Your Neutral Accent Color</h1>
+        <p>See how each color looks in your actual navbar and hero section</p>
+    </div>
+
+    <div class="comparison-container">
+
+        <!-- Option 1: Slate Gray -->
+        <div class="color-section" style="--accent-color: #64748b;">
+            <div class="color-label">
+                <h2>Option 1: Slate Gray</h2>
+                <code>#64748b (slate-500)</code>
+            </div>
+
+            <!-- Navbar -->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="navbar-logo">
+                        <div class="navbar-logo-img"></div>
+                        <div class="navbar-text">
+                            <h1>Saba Rajendran</h1>
+                            <p>MLA, Neyveli</p>
+                        </div>
+                    </div>
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-link active">Home</a>
+                        <a href="#" class="nav-link">Projects</a>
+                        <a href="#" class="nav-link">About</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero -->
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <div class="hero-left">
+                            <div class="party-strip">
+                                <div class="party-strip-dot"></div>
+                                <div class="party-strip-text">DMK Party MLA</div>
+                            </div>
+                            <h1 class="hero-title">
+                                Delivering <span class="highlight">Progress</span>,<br>One Village at a Time
+                            </h1>
+                            <p class="hero-desc">
+                                826+ development projects across Neyveli constituency, bringing real change to every village.
+                            </p>
+                            <div class="hero-buttons">
+                                <button class="btn-primary">View Projects</button>
+                                <button class="btn-secondary">Contact Office</button>
+                            </div>
+                        </div>
+                        <div class="hero-right">
+                            <div class="hero-image">SR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Preview -->
+            <div class="stats-preview">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">247</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number accent">579</div>
+                        <div class="stat-label accent-bg">In Progress</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">₹25.4 Cr</div>
+                        <div class="stat-label">Total Budget</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option 2: Charcoal Gray -->
+        <div class="color-section" style="--accent-color: #374151;">
+            <div class="color-label">
+                <h2>Option 2: Charcoal Gray</h2>
+                <code>#374151 (gray-700)</code>
+            </div>
+
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="navbar-logo">
+                        <div class="navbar-logo-img"></div>
+                        <div class="navbar-text">
+                            <h1>Saba Rajendran</h1>
+                            <p>MLA, Neyveli</p>
+                        </div>
+                    </div>
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-link active">Home</a>
+                        <a href="#" class="nav-link">Projects</a>
+                        <a href="#" class="nav-link">About</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <div class="hero-left">
+                            <div class="party-strip">
+                                <div class="party-strip-dot"></div>
+                                <div class="party-strip-text">DMK Party MLA</div>
+                            </div>
+                            <h1 class="hero-title">
+                                Delivering <span class="highlight">Progress</span>,<br>One Village at a Time
+                            </h1>
+                            <p class="hero-desc">
+                                826+ development projects across Neyveli constituency, bringing real change to every village.
+                            </p>
+                            <div class="hero-buttons">
+                                <button class="btn-primary">View Projects</button>
+                                <button class="btn-secondary">Contact Office</button>
+                            </div>
+                        </div>
+                        <div class="hero-right">
+                            <div class="hero-image">SR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-preview">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">247</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number accent">579</div>
+                        <div class="stat-label accent-bg">In Progress</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">₹25.4 Cr</div>
+                        <div class="stat-label">Total Budget</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option 3: Cool Gray -->
+        <div class="color-section" style="--accent-color: #6b7280;">
+            <div class="color-label">
+                <h2>Option 3: Cool Gray</h2>
+                <code>#6b7280 (gray-500)</code>
+            </div>
+
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="navbar-logo">
+                        <div class="navbar-logo-img"></div>
+                        <div class="navbar-text">
+                            <h1>Saba Rajendran</h1>
+                            <p>MLA, Neyveli</p>
+                        </div>
+                    </div>
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-link active">Home</a>
+                        <a href="#" class="nav-link">Projects</a>
+                        <a href="#" class="nav-link">About</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <div class="hero-left">
+                            <div class="party-strip">
+                                <div class="party-strip-dot"></div>
+                                <div class="party-strip-text">DMK Party MLA</div>
+                            </div>
+                            <h1 class="hero-title">
+                                Delivering <span class="highlight">Progress</span>,<br>One Village at a Time
+                            </h1>
+                            <p class="hero-desc">
+                                826+ development projects across Neyveli constituency, bringing real change to every village.
+                            </p>
+                            <div class="hero-buttons">
+                                <button class="btn-primary">View Projects</button>
+                                <button class="btn-secondary">Contact Office</button>
+                            </div>
+                        </div>
+                        <div class="hero-right">
+                            <div class="hero-image">SR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-preview">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">247</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number accent">579</div>
+                        <div class="stat-label accent-bg">In Progress</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">₹25.4 Cr</div>
+                        <div class="stat-label">Total Budget</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option 4: Steel Blue-Gray -->
+        <div class="color-section" style="--accent-color: #475569;">
+            <div class="color-label">
+                <h2>Option 4: Steel Blue-Gray</h2>
+                <code>#475569 (slate-600)</code>
+            </div>
+
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="navbar-logo">
+                        <div class="navbar-logo-img"></div>
+                        <div class="navbar-text">
+                            <h1>Saba Rajendran</h1>
+                            <p>MLA, Neyveli</p>
+                        </div>
+                    </div>
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-link active">Home</a>
+                        <a href="#" class="nav-link">Projects</a>
+                        <a href="#" class="nav-link">About</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <div class="hero-left">
+                            <div class="party-strip">
+                                <div class="party-strip-dot"></div>
+                                <div class="party-strip-text">DMK Party MLA</div>
+                            </div>
+                            <h1 class="hero-title">
+                                Delivering <span class="highlight">Progress</span>,<br>One Village at a Time
+                            </h1>
+                            <p class="hero-desc">
+                                826+ development projects across Neyveli constituency, bringing real change to every village.
+                            </p>
+                            <div class="hero-buttons">
+                                <button class="btn-primary">View Projects</button>
+                                <button class="btn-secondary">Contact Office</button>
+                            </div>
+                        </div>
+                        <div class="hero-right">
+                            <div class="hero-image">SR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-preview">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">247</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number accent">579</div>
+                        <div class="stat-label accent-bg">In Progress</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">₹25.4 Cr</div>
+                        <div class="stat-label">Total Budget</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option 5: Muted Gold/Bronze -->
+        <div class="color-section" style="--accent-color: #92400e;">
+            <div class="color-label">
+                <h2>Option 5: Muted Gold/Bronze</h2>
+                <code>#92400e (amber-800)</code>
+            </div>
+
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="navbar-logo">
+                        <div class="navbar-logo-img"></div>
+                        <div class="navbar-text">
+                            <h1>Saba Rajendran</h1>
+                            <p>MLA, Neyveli</p>
+                        </div>
+                    </div>
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-link active">Home</a>
+                        <a href="#" class="nav-link">Projects</a>
+                        <a href="#" class="nav-link">About</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <div class="hero-left">
+                            <div class="party-strip">
+                                <div class="party-strip-dot"></div>
+                                <div class="party-strip-text">DMK Party MLA</div>
+                            </div>
+                            <h1 class="hero-title">
+                                Delivering <span class="highlight">Progress</span>,<br>One Village at a Time
+                            </h1>
+                            <p class="hero-desc">
+                                826+ development projects across Neyveli constituency, bringing real change to every village.
+                            </p>
+                            <div class="hero-buttons">
+                                <button class="btn-primary">View Projects</button>
+                                <button class="btn-secondary">Contact Office</button>
+                            </div>
+                        </div>
+                        <div class="hero-right">
+                            <div class="hero-image">SR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-preview">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">247</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number accent">579</div>
+                        <div class="stat-label accent-bg">In Progress</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">₹25.4 Cr</div>
+                        <div class="stat-label">Total Budget</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- Option 6: Lignite Brown (Dark) -->
+        <div class="color-section" style="--accent-color: #3E2723; --accent-color-light: #d7ccc8;">
+            <div class="color-label">
+                <h2>Option 6: Lignite Brown (Dark) ⭐ LOCAL SIGNIFICANCE</h2>
+                <code>#3E2723 (brown-900) - Color of Neyveli Lignite</code>
+            </div>
+
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="navbar-logo">
+                        <div class="navbar-logo-img"></div>
+                        <div class="navbar-text">
+                            <h1>Saba Rajendran</h1>
+                            <p>MLA, Neyveli</p>
+                        </div>
+                    </div>
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-link active">Home</a>
+                        <a href="#" class="nav-link">Projects</a>
+                        <a href="#" class="nav-link">About</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <div class="hero-left">
+                            <div class="party-strip">
+                                <div class="party-strip-dot"></div>
+                                <div class="party-strip-text">DMK Party MLA</div>
+                            </div>
+                            <h1 class="hero-title">
+                                Delivering <span class="highlight">Progress</span>,<br>One Village at a Time
+                            </h1>
+                            <p class="hero-desc">
+                                826+ development projects across Neyveli constituency, bringing real change to every village.
+                            </p>
+                            <div class="hero-buttons">
+                                <button class="btn-primary">View Projects</button>
+                                <button class="btn-secondary">Contact Office</button>
+                            </div>
+                        </div>
+                        <div class="hero-right">
+                            <div class="hero-image">SR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-preview">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">247</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number accent">579</div>
+                        <div class="stat-label accent-bg">In Progress</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">₹25.4 Cr</div>
+                        <div class="stat-label">Total Budget</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option 7: Lignite Brown (Medium) -->
+        <div class="color-section" style="--accent-color: #5D4037;">
+            <div class="color-label">
+                <h2>Option 7: Lignite Brown (Medium) ⭐ LOCAL SIGNIFICANCE</h2>
+                <code>#5D4037 (brown-700) - Lighter shade of Neyveli Lignite</code>
+            </div>
+
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="navbar-logo">
+                        <div class="navbar-logo-img"></div>
+                        <div class="navbar-text">
+                            <h1>Saba Rajendran</h1>
+                            <p>MLA, Neyveli</p>
+                        </div>
+                    </div>
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-link active">Home</a>
+                        <a href="#" class="nav-link">Projects</a>
+                        <a href="#" class="nav-link">About</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <div class="hero-left">
+                            <div class="party-strip">
+                                <div class="party-strip-dot"></div>
+                                <div class="party-strip-text">DMK Party MLA</div>
+                            </div>
+                            <h1 class="hero-title">
+                                Delivering <span class="highlight">Progress</span>,<br>One Village at a Time
+                            </h1>
+                            <p class="hero-desc">
+                                826+ development projects across Neyveli constituency, bringing real change to every village.
+                            </p>
+                            <div class="hero-buttons">
+                                <button class="btn-primary">View Projects</button>
+                                <button class="btn-secondary">Contact Office</button>
+                            </div>
+                        </div>
+                        <div class="hero-right">
+                            <div class="hero-image">SR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-preview">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">247</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number accent">579</div>
+                        <div class="stat-label accent-bg">In Progress</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">₹25.4 Cr</div>
+                        <div class="stat-label">Total Budget</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option 8: Lignite Brown (Earth) -->
+        <div class="color-section" style="--accent-color: #654321;">
+            <div class="color-label">
+                <h2>Option 8: Lignite Brown (Earth) ⭐ LOCAL SIGNIFICANCE</h2>
+                <code>#654321 - Classic earthy brown, Neyveli soil color</code>
+            </div>
+
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="navbar-logo">
+                        <div class="navbar-logo-img"></div>
+                        <div class="navbar-text">
+                            <h1>Saba Rajendran</h1>
+                            <p>MLA, Neyveli</p>
+                        </div>
+                    </div>
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-link active">Home</a>
+                        <a href="#" class="nav-link">Projects</a>
+                        <a href="#" class="nav-link">About</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <div class="hero-left">
+                            <div class="party-strip">
+                                <div class="party-strip-dot"></div>
+                                <div class="party-strip-text">DMK Party MLA</div>
+                            </div>
+                            <h1 class="hero-title">
+                                Delivering <span class="highlight">Progress</span>,<br>One Village at a Time
+                            </h1>
+                            <p class="hero-desc">
+                                826+ development projects across Neyveli constituency, bringing real change to every village.
+                            </p>
+                            <div class="hero-buttons">
+                                <button class="btn-primary">View Projects</button>
+                                <button class="btn-secondary">Contact Office</button>
+                            </div>
+                        </div>
+                        <div class="hero-right">
+                            <div class="hero-image">SR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-preview">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">247</div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number accent">579</div>
+                        <div class="stat-label accent-bg">In Progress</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">₹25.4 Cr</div>
+                        <div class="stat-label">Total Budget</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="text-align: center; padding: 40px; color: #666;">
+        <p><strong>NEW:</strong> Lignite Brown options added! Scroll to the bottom to see the brown shades representing Neyveli's lignite coal.</p>
+        <p>These colors have local significance and are politically neutral.</p>
+    </div>
+
+</body>
+</html>

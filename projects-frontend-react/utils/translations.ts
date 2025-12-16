@@ -44,6 +44,15 @@ export const TRANSLATIONS = {
         l: 'L+',
       }
     },
+    keyProjects: {
+      sectionTitle: 'Major Constituency Projects',
+      sectionSubtitle: 'Transforming Lives Across Neyveli',
+      sectionDesc: 'Key development initiatives that touch the lives of all citizens in the constituency',
+      viewDetails: 'View Details',
+      previous: 'Previous',
+      next: 'Next',
+      impact: 'Impact',
+    },
     about: {
       title: 'About Saba. Rajendran',
       subtitle: 'A Legacy of Service',
@@ -272,6 +281,15 @@ export const TRANSLATIONS = {
         cr: 'கோடி+',
         l: 'லட்சம்+',
       }
+    },
+    keyProjects: {
+      sectionTitle: 'முக்கிய தொகுதி திட்டங்கள்',
+      sectionSubtitle: 'நெய்வேலி முழுவதும் வாழ்க்கையை மாற்றுதல்',
+      sectionDesc: 'தொகுதியின் அனைத்து குடிமக்களின் வாழ்க்கையைத் தொடும் முக்கிய வளர்ச்சி முயற்சிகள்',
+      viewDetails: 'விவரங்களைக் காண்க',
+      previous: 'முந்தைய',
+      next: 'அடுத்து',
+      impact: 'தாக்கம்',
     },
     about: {
       title: 'திரு. சபா. இராசேந்திரன்',

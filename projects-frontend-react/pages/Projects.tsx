@@ -359,27 +359,27 @@ export const ProjectsPage: React.FC = () => {
                   {(filters.block !== 'All' || filters.panchayat !== 'All') && (
                     <div className="flex flex-wrap gap-3 mt-4">
                       {/* Total Projects Card */}
-                      <div className="bg-white border-2 border-black shadow-[4px_4px_0_0_#000] px-4 py-2 flex items-center gap-3">
-                        <div className="bg-primary-600 p-2 border-2 border-black">
-                          <LayoutGrid size={20} className="text-white" strokeWidth={3} />
+                      <div className="bg-gradient-to-br from-red-500 to-pink-600 border-2 border-black shadow-[4px_4px_0_0_#000] px-4 py-2 flex items-center gap-3">
+                        <div className="bg-white p-2 border-2 border-black">
+                          <LayoutGrid size={20} className="text-red-600" strokeWidth={3} />
                         </div>
                         <div>
-                          <div className="text-[10px] uppercase font-black text-neutral-500 tracking-wider">
+                          <div className="text-[10px] uppercase font-black text-white tracking-wider">
                             {t.projects.totalProjects}
                           </div>
-                          <div className="text-2xl font-black text-black font-mono">
+                          <div className="text-2xl font-black text-white font-mono">
                             {filteredProjects.length}
                           </div>
                         </div>
                       </div>
 
                       {/* Total Budget Card */}
-                      <div className="bg-white border-2 border-black shadow-[4px_4px_0_0_#000] px-4 py-2 flex items-center gap-3">
-                        <div className="bg-accent-400 p-2 border-2 border-black">
-                          <Banknote size={20} className="text-black" strokeWidth={3} />
+                      <div className="bg-gradient-to-br from-yellow-400 to-orange-500 border-2 border-black shadow-[4px_4px_0_0_#000] px-4 py-2 flex items-center gap-3">
+                        <div className="bg-white p-2 border-2 border-black">
+                          <Banknote size={20} className="text-orange-600" strokeWidth={3} />
                         </div>
                         <div>
-                          <div className="text-[10px] uppercase font-black text-neutral-500 tracking-wider">
+                          <div className="text-[10px] uppercase font-black text-black tracking-wider">
                             {t.projects.totalBudget}
                           </div>
                           <div className="text-2xl font-black text-black font-mono">
