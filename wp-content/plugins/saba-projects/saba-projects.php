@@ -38,6 +38,7 @@ require_once SABA_PROJECTS_DIR . 'includes/admin-unified-translation.php';
 require_once SABA_PROJECTS_DIR . 'includes/class-netlify-webhook.php';
 require_once SABA_PROJECTS_DIR . 'includes/netlify-hooks.php';
 require_once SABA_PROJECTS_DIR . 'includes/admin-netlify-settings.php';
+require_once SABA_PROJECTS_DIR . 'includes/admin-filters.php';
 
 // Include Elementor widget if Elementor is active
 if (did_action('elementor/loaded')) {
@@ -84,15 +85,18 @@ add_action('wp_enqueue_scripts', 'saba_projects_enqueue_styles');
 /**
  * Enqueue admin assets for inline translation
  */
-function saba_projects_enqueue_admin_assets($hook) {
+function saba_projects_enqueue_admin_assets($hook)
+{
 	// Only load on project edit and taxonomy screens
 	if (in_array($hook, array('post.php', 'post-new.php', 'term.php', 'edit-tags.php'))) {
 		// Check if we're on project post type or project_village taxonomy
 		$screen = get_current_screen();
-		if ($screen && (
-			$screen->post_type === 'project' || 
-			($screen->taxonomy === 'project_village')
-		)) {
+		if (
+			$screen && (
+				$screen->post_type === 'project' ||
+				($screen->taxonomy === 'project_village')
+			)
+		) {
 			wp_enqueue_script(
 				'saba-inline-translation',
 				SABA_PROJECTS_URL . 'assets/js/inline-translation.js',
@@ -100,7 +104,7 @@ function saba_projects_enqueue_admin_assets($hook) {
 				SABA_PROJECTS_VERSION,
 				true
 			);
-			
+
 			wp_localize_script('saba-inline-translation', 'sabaTranslation', array(
 				'ajaxurl' => admin_url('admin-ajax.php'),
 				'nonce' => wp_create_nonce('saba_inline_translation'),
@@ -114,7 +118,7 @@ function saba_projects_enqueue_admin_assets($hook) {
 					'emptyField' => __('Please enter text to translate.', 'saba-projects'),
 				)
 			));
-			
+
 			wp_enqueue_style(
 				'saba-admin-translation',
 				SABA_PROJECTS_URL . 'assets/css/admin-translation.css',
@@ -181,7 +185,7 @@ function saba_projects_register_rest_fields()
 		},
 		'schema' => null,
 	));
-	
+
 	// Register Village Translations for taxonomy terms
 	// For taxonomy terms, the object passed is an array with 'id' key
 	register_rest_field('project_village', 'name_tamil', array(
@@ -191,7 +195,7 @@ function saba_projects_register_rest_fields()
 		},
 		'schema' => null,
 	));
-	
+
 	register_rest_field('project_village', 'name_english', array(
 		'get_callback' => function ($object) {
 			$term_id = isset($object['id']) ? $object['id'] : 0;
@@ -199,7 +203,7 @@ function saba_projects_register_rest_fields()
 		},
 		'schema' => null,
 	));
-	
+
 	register_rest_field('project_village', 'name_translated', array(
 		'get_callback' => function ($object, $field_name, $request) {
 			$term_id = isset($object['id']) ? $object['id'] : 0;
