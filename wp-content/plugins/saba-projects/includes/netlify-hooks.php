@@ -54,6 +54,11 @@ add_action('init', 'saba_netlify_init_hooks');
  */
 function saba_netlify_on_post_save($post_id, $post, $update)
 {
+	// Skip if post is null
+	if (!$post) {
+		return;
+	}
+
 	// Skip if import is running
 	if (defined('SABA_IMPORT_RUNNING') && SABA_IMPORT_RUNNING) {
 		return;
@@ -89,6 +94,11 @@ function saba_netlify_on_post_save($post_id, $post, $update)
  */
 function saba_netlify_on_post_status_change($new_status, $old_status, $post)
 {
+	// Skip if post is null
+	if (!$post) {
+		return;
+	}
+
 	// Skip if import is running
 	if (defined('SABA_IMPORT_RUNNING') && SABA_IMPORT_RUNNING) {
 		return;
@@ -109,10 +119,11 @@ function saba_netlify_on_post_status_change($new_status, $old_status, $post)
 		$post_type_object = get_post_type_object($post->post_type);
 		$post_type_label = $post_type_object ? $post_type_object->labels->singular_name : $post->post_type;
 
-		$reason = sprintf('%s status changed: %s (from %s to %s)', 
-			$post_type_label, 
-			$post->post_title, 
-			$old_status, 
+		$reason = sprintf(
+			'%s status changed: %s (from %s to %s)',
+			$post_type_label,
+			$post->post_title,
+			$old_status,
 			$new_status
 		);
 
@@ -134,7 +145,7 @@ function saba_netlify_on_post_delete($post_id)
 	}
 
 	$post = get_post($post_id);
-	
+
 	if (!$post || $post->post_status !== 'publish') {
 		return;
 	}
@@ -185,8 +196,9 @@ function saba_netlify_on_meta_update($meta_id, $object_id, $meta_key, $meta_valu
 	$post_type_object = get_post_type_object($post->post_type);
 	$post_type_label = $post_type_object ? $post_type_object->labels->singular_name : $post->post_type;
 
-	$reason = sprintf('%s field updated: %s (%s)', 
-		$post_type_label, 
+	$reason = sprintf(
+		'%s field updated: %s (%s)',
+		$post_type_label,
 		$post->post_title,
 		str_replace('_project_', '', $meta_key)
 	);
@@ -306,7 +318,8 @@ function saba_netlify_on_term_meta_update($meta_id, $object_id, $meta_key, $meta
 		return;
 	}
 
-	$reason = sprintf('Village translation updated: %s (%s)', 
+	$reason = sprintf(
+		'Village translation updated: %s (%s)',
 		$term->name,
 		str_replace('_village_name_', '', $meta_key)
 	);
