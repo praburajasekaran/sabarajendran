@@ -41,6 +41,12 @@ define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', false);
 
+// Handle PHP built-in server URL
+if (php_sapi_name() === 'cli-server') {
+    define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);
+    define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
+}
+
 // Suppress deprecation notices to prevent JSON response corruption
 @ini_set('display_errors', 0);
 // Only log critical errors, warnings, and notices (exclude deprecation notices)
