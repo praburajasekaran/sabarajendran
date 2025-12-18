@@ -54,11 +54,15 @@ export const ProjectsPage: React.FC = () => {
 
         if (initialProjects.length > 0) {
           setProjects(initialProjects);
-          setIsLoading(false); // Unblock the UI immediately
         }
+        // ALWAYS unblock UI after first attempt, even if empty (shows "No Results" state)
+        // This prevents infinite loading spinner if API returns empty array
+        setIsLoading(false);
+
       } catch (error) {
         console.error('Error fetching initial projects:', error);
-        // Don't set isLoading false here, wait for backup fetch
+        // If generic error, we stop loading to show "No Results" or error state
+        setIsLoading(false);
       }
 
       // 2. Full Load: Fetch all remaining projects in background

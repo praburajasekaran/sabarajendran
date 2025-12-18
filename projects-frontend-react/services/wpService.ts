@@ -70,20 +70,25 @@ export const wpService = {
         const startTime = performance.now();
         console.log(`[wpService] Fetching projects page ${page}...`);
 
-        // Check in-memory cache for this specific page
-        // Note: Simple page caching strategy. 
-        // For more complex querying (filtering), we should bypass cache or implement a complex cache key.
-        // For now, we'll cache by page key.
-        const pageKey = `${CACHE_KEY}_p${page}_${perPage}`;
+        // OPTIMIZATION: Check if we already have the FULL dataset in memory
+        // If Home page has already fetched everything, we can just slice it!
+        if (memoryCache && memoryCache.length > 0) {
+            const total = memoryCache.length;
+            const totalPages = Math.ceil(total / perPage);
+            const startIndex = (page - 1) * perPage;
+            const endIndex = startIndex + perPage;
+            const slicedProjects = memoryCache.slice(startIndex, endIndex);
 
-        // Try memory cache
-        // We need a separate memory cache structure for pages or just rely on the main cache? 
-        // The current memoryCache is Project[] | null which implies "ALL" projects.
-        // We'll switch to a more robust approach:
-        // Always fetch fresh for paginated requests to ensure accuracy, OR cache short term.
-        // Let's rely on browser caching (HTTP) and potentially a simple stale-while-revalidate for lists if needed.
-        // For this specific performance issue, the priority is NOT fetching 100 pages at once.
-        // So fetching 1 page fresh is infinitely faster than fetching 100 pages cached-then-revalidated if the revalidation is massive.
+            console.log(`[wpService] Serving Page ${page} from FULL memory cache`);
+            return {
+                projects: slicedProjects,
+                totalPages,
+                total
+            };
+        }
+
+        // Check in-memory cache for this specific page key (if needed)
+        // const pageKey = `${CACHE_KEY}_p${page}_${perPage}`;
 
         try {
             const params = {
@@ -109,6 +114,8 @@ export const wpService = {
             };
         } catch (error) {
             console.error('[wpService] Error fetching projects page:', error);
+            // If page 1 fails, maybe return cached data if accessible via IDB?
+            // For now, return empty to prevent infinite loops.
             return { projects: [], totalPages: 0, total: 0 };
         }
     },
