@@ -42,15 +42,48 @@ export const ProjectsPage: React.FC = () => {
   const [isGraphicModalOpen, setIsGraphicModalOpen] = useState(false);
   const { state: generatorState, generateImage, shareImage, downloadImage, clearImage } = useGraphicGenerator();
 
-  // Fetch Projects from WP
+  // Fetch Projects from WP - Hybrid Strategy (Fast First Paint + Full Data)
   useEffect(() => {
     const fetchProjects = async () => {
       setIsLoading(true);
-      const data = await wpService.getAllProjects();
-      setProjects(data);
-      setIsLoading(false);
+
+      try {
+        // 1. Instant Load: Fetch only the first page
+        // This allows the user to see content immediately (within ~500ms)
+        const { projects: initialProjects } = await wpService.getProjects(1, ITEMS_PER_PAGE);
+
+        if (initialProjects.length > 0) {
+          setProjects(initialProjects);
+          setIsLoading(false); // Unblock the UI immediately
+        }
+      } catch (error) {
+        console.error('Error fetching initial projects:', error);
+        // Don't set isLoading false here, wait for backup fetch
+      }
+
+      // 2. Full Load: Fetch all remaining projects in background
+      // This ensures filters, stats, and search work across the entire dataset
+      try {
+        const fullData = await wpService.getAllProjects();
+        setProjects(fullData);
+      } catch (error) {
+        console.error('Error fetching full projects:', error);
+      } finally {
+        setIsLoading(false); // Ensure loading is off
+      }
     };
+
     fetchProjects();
+
+    // Subscribe to background updates from stale-while-revalidate strategy
+    const unsubscribe = wpService.onUpdate((freshData) => {
+      console.log('[ProjectsPage] Received fresh data update');
+      setProjects(freshData);
+    });
+
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   // Validate URL parameters after projects are loaded

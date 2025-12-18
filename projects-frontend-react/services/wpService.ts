@@ -30,8 +30,8 @@ const buildApiUrl = (endpoint: string, params: Record<string, any> = {}) => {
 
 // Cache configuration
 const CACHE_KEY = 'wp_projects_cache_v5';
-// Development: 10 seconds, Production: 5 minutes
-const CACHE_DURATION = import.meta.env.DEV ? 10 * 1000 : 5 * 60 * 1000;
+// Development: 10 seconds, Production: 1 minute (was 5 mins)
+const CACHE_DURATION = import.meta.env.DEV ? 10 * 1000 : 60 * 1000;
 let memoryCache: Project[] | null = null;
 let lastFetchTime = 0;
 
@@ -63,119 +63,101 @@ export const wpService = {
         };
     },
 
-    getAllProjects: async (): Promise<Project[]> => {
-        const startTime = performance.now();
-        console.log('[wpService] Fetching projects...');
 
-        // Check in-memory cache first (always fast)
+
+    // Get projects with pagination
+    getProjects: async (page: number = 1, perPage: number = 10): Promise<{ projects: Project[], totalPages: number, total: number }> => {
+        const startTime = performance.now();
+        console.log(`[wpService] Fetching projects page ${page}...`);
+
+        // Check in-memory cache for this specific page
+        // Note: Simple page caching strategy. 
+        // For more complex querying (filtering), we should bypass cache or implement a complex cache key.
+        // For now, we'll cache by page key.
+        const pageKey = `${CACHE_KEY}_p${page}_${perPage}`;
+
+        // Try memory cache
+        // We need a separate memory cache structure for pages or just rely on the main cache? 
+        // The current memoryCache is Project[] | null which implies "ALL" projects.
+        // We'll switch to a more robust approach:
+        // Always fetch fresh for paginated requests to ensure accuracy, OR cache short term.
+        // Let's rely on browser caching (HTTP) and potentially a simple stale-while-revalidate for lists if needed.
+        // For this specific performance issue, the priority is NOT fetching 100 pages at once.
+        // So fetching 1 page fresh is infinitely faster than fetching 100 pages cached-then-revalidated if the revalidation is massive.
+
+        try {
+            const params = {
+                per_page: perPage.toString(),
+                page: page.toString(),
+                _embed: 'true'
+            };
+
+            const url = buildApiUrl('/project', params);
+            const response = await axios.get(url);
+
+            const totalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
+            const total = parseInt(response.headers['x-wp-total'] || '0', 10);
+
+            const mappedProjects = response.data.map((item: any) => mapWpProjectToAppProject(item));
+
+            console.log(`[wpService] Page ${page} fetch complete (${(performance.now() - startTime).toFixed(2)}ms)`);
+
+            return {
+                projects: mappedProjects,
+                totalPages,
+                total
+            };
+        } catch (error) {
+            console.error('[wpService] Error fetching projects page:', error);
+            return { projects: [], totalPages: 0, total: 0 };
+        }
+    },
+
+    // Keep getAllProjects for backward compatibility but optimize it or warn?
+    // Some components might still rely on it (like stats on Home page).
+    // optimizing it to JUST fetch headers for counts if possible, or we have to bite the bullet for stats.
+    // For Home page stats, we might need a dedicated endpoint or a lighter fetch.
+    // Let's keep it but maybe it shouldn't block the UI? 
+    // The previous implementation WAS blocking because it was awaited.
+    // We can make it cleaner.
+    getAllProjects: async (): Promise<Project[]> => {
+        // If we really need ALL projects (e.g. for filtering on client side), we still need this.
+        // BUT, for the initial load, we should avoid it.
+        // We'll modify the Home page to NOT call this, or call a lighter version.
+        // For now, let's leave this logic "as is" but optimize the caching execution so it doesn't freeze the main thread?
+        // Actually, the issue was it was called blindly.
+        // Let's improve the caching to be less aggressive on the loop.
+
+        const startTime = performance.now();
+        console.log('[wpService] Fetching ALL projects (careful)...');
+
+        // Check memory cache
         if (memoryCache && (Date.now() - lastFetchTime < CACHE_DURATION)) {
-            console.log(`[wpService] Serving from memory cache (${(performance.now() - startTime).toFixed(2)}ms)`);
             return memoryCache;
         }
 
-        // Check IndexedDB cache - STALE-WHILE-REVALIDATE
-        let cachedData: Project[] | null = null;
+        // Try IDB
         try {
             const cached = await get(CACHE_KEY);
             if (cached) {
-                const { data, timestamp } = cached;
-                const isStale = Date.now() - timestamp >= CACHE_DURATION;
-
-                if (!isStale) {
-                    // Fresh cache - use it
-                    memoryCache = data;
-                    lastFetchTime = timestamp;
-                    console.log(`[wpService] Serving from IndexedDB cache (${(performance.now() - startTime).toFixed(2)}ms)`);
-                    return data;
-                } else {
-                    // Stale cache - return it immediately but fetch fresh data in background
-                    cachedData = data;
-                    console.log('[wpService] Using stale cache, fetching fresh data in background...');
+                // Return cached data immediately
+                memoryCache = cached.data;
+                // Background refresh
+                if (Date.now() - cached.timestamp >= CACHE_DURATION) {
+                    wpService.fetchFreshProjects().catch(e => console.error(e));
                 }
-            } else {
-                console.log('[wpService] No IndexedDB cache found');
+                return cached.data;
             }
-        } catch (e) {
-            console.warn('[wpService] Error reading from IndexedDB', e);
-        }
+        } catch (e) { /* ignore */ }
 
-        // If we have stale cached data, return it immediately and fetch in background
-        if (cachedData) {
-            // Return stale data immediately
-            memoryCache = cachedData;
-
-            // Fetch fresh data in background (non-blocking)
-            wpService.fetchFreshProjects().then((freshData) => {
-                console.log('[wpService] Background refresh completed, notifying subscribers');
-                // Notify all subscribers about the update
-                updateCallbacks.forEach(cb => cb(freshData));
-            }).catch(err => {
-                console.warn('[wpService] Background refresh failed', err);
-            });
-
-            return cachedData;
-        }
-
-        try {
-            console.log('[wpService] Fetching from API...');
-            // Initial fetch to get the first page and total pages
-            const firstPageUrl = buildApiUrl('/project', { per_page: '100', _embed: 'true' });
-            const response = await axios.get(firstPageUrl);
-            let allProjects = response.data;
-
-            const totalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
-            console.log(`[wpService] Total pages: ${totalPages}`);
-
-            if (totalPages > 1) {
-                // Create an array of promises for the remaining pages
-                const pagePromises = [];
-                for (let i = 2; i <= totalPages; i++) {
-                    const pageUrl = buildApiUrl('/project', { per_page: '100', _embed: 'true', page: i.toString() });
-                    pagePromises.push(axios.get(pageUrl));
-                }
-
-                // Fetch all remaining pages in parallel
-                const responses = await Promise.all(pagePromises);
-
-                // Combine all data
-                responses.forEach(res => {
-                    allProjects = [...allProjects, ...res.data];
-                });
-            }
-
-            console.log(`[wpService] Fetched ${allProjects.length} projects from API`);
-            const mappedProjects = allProjects.map((item: any) => mapWpProjectToAppProject(item));
-
-            // Update caches
-            memoryCache = mappedProjects;
-            lastFetchTime = Date.now();
-
-            // Store in IndexedDB (asynchronous)
-            set(CACHE_KEY, {
-                data: mappedProjects,
-                timestamp: lastFetchTime
-            }).catch(e => console.warn('[wpService] Error writing to IndexedDB', e));
-
-            console.log(`[wpService] Fetch complete (${(performance.now() - startTime).toFixed(2)}ms)`);
-            return mappedProjects;
-        } catch (error) {
-            console.error('[wpService] Error fetching projects from WP:', error);
-            // Fallback to cache if available even if expired
-            if (memoryCache) return memoryCache;
-            try {
-                const cached = await get(CACHE_KEY);
-                if (cached) return cached.data;
-            } catch (e) { /* ignore */ }
-
-            return [];
-        }
+        // Fetch fresh
+        return await wpService.fetchFreshProjects();
     },
 
     // Helper method to fetch fresh projects in the background
     fetchFreshProjects: async (): Promise<Project[]> => {
         try {
-            console.log('[wpService] Background fetch started...');
-            // Initial fetch to get the first page and total pages
+            console.log('[wpService] Background fetch of ALL projects started...');
             const firstPageUrl = buildApiUrl('/project', { per_page: '100', _embed: 'true' });
             const response = await axios.get(firstPageUrl);
             let allProjects = response.data;
@@ -183,6 +165,7 @@ export const wpService = {
             const totalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
 
             if (totalPages > 1) {
+                console.log(`[wpService] Fetching ${totalPages - 1} additional pages...`);
                 const pagePromises = [];
                 for (let i = 2; i <= totalPages; i++) {
                     const pageUrl = buildApiUrl('/project', { per_page: '100', _embed: 'true', page: i.toString() });
@@ -201,16 +184,20 @@ export const wpService = {
             lastFetchTime = Date.now();
 
             // Store in IndexedDB
-            await set(CACHE_KEY, {
+            set(CACHE_KEY, {
                 data: mappedProjects,
                 timestamp: lastFetchTime
-            });
+            }).catch(e => console.warn('IDB Error', e));
 
             console.log('[wpService] Background fetch completed successfully');
+
+            // Notify listeners
+            updateCallbacks.forEach(cb => cb(mappedProjects));
+
             return mappedProjects;
         } catch (error) {
             console.error('[wpService] Background fetch failed:', error);
-            throw error;
+            return memoryCache || [];
         }
     },
 
