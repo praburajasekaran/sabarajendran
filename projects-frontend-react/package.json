@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "generate-projects": "tsx scripts/generate-projects.ts",
-    "build": "npm run generate-projects && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
