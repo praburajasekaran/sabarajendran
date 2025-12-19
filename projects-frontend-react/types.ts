@@ -44,3 +44,15 @@ export interface Panchayat {
   id: string;
   name: string;
 }
+
+export interface StaticProjectsData {
+  projects: Project[];
+  meta: {
+    total: number;
+    generatedAt: string;
+    version: string;
+    blocks: string[];
+    panchayats: string[];
+    years: string[];
+  };
+}

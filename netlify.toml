@@ -13,14 +13,16 @@
   to = "/index.html"
   status = 200
 
+# Cache for static projects data (1 hour)
+[[headers]]
+  for = "/data/projects.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
 # Cache busting for API responses
 [[headers]]
   for = "/api/*"
   [headers.values]
     Cache-Control = "public, max-age=300"
-
-
-
-
 
 

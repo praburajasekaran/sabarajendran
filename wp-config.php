@@ -45,6 +45,10 @@ define('WP_DEBUG_DISPLAY', false);
 if (php_sapi_name() === 'cli-server') {
     define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);
     define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
+} else {
+    // For MAMP/Apache
+    define('WP_SITEURL', 'http://localhost:8118/sabarajendran');
+    define('WP_HOME', 'http://localhost:8118/sabarajendran');
 }
 
 // Suppress deprecation notices to prevent JSON response corruption
@@ -98,7 +102,7 @@ header('X-XSS-Protection: 1; mode=block');
 header('Referrer-Policy: strict-origin-when-cross-origin');
 
 // CORS Headers for React Frontend
-header('Access-Control-Allow-Origin: http://localhost:3004');
+header('Access-Control-Allow-Origin: http://localhost:3003');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 header('Access-Control-Allow-Credentials: true');

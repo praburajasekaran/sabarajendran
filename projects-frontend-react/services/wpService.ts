@@ -120,46 +120,90 @@ export const wpService = {
         }
     },
 
-    // Keep getAllProjects for backward compatibility but optimize it or warn?
-    // Some components might still rely on it (like stats on Home page).
-    // optimizing it to JUST fetch headers for counts if possible, or we have to bite the bullet for stats.
-    // For Home page stats, we might need a dedicated endpoint or a lighter fetch.
-    // Let's keep it but maybe it shouldn't block the UI? 
-    // The previous implementation WAS blocking because it was awaited.
-    // We can make it cleaner.
+    // Load projects from static JSON (generated at build time)
+    // This is the fastest path - no API calls needed
+    loadStaticProjects: async (): Promise<Project[] | null> => {
+        try {
+            console.log('[wpService] ⚡ Loading from static JSON...');
+            const startTime = performance.now();
+
+            const response = await fetch('/data/projects.json');
+            if (!response.ok) {
+                console.log('[wpService] Static JSON not found, will use API');
+                return null;
+            }
+
+            const data = await response.json();
+            const projects = data.projects as Project[];
+
+            console.log(`[wpService] ⚡ Static load complete: ${projects.length} projects in ${(performance.now() - startTime).toFixed(0)}ms`);
+            console.log(`[wpService] 📊 Data generated at: ${data.meta?.generatedAt || 'unknown'}`);
+
+            // Update caches with static data
+            memoryCache = projects;
+            lastFetchTime = Date.now();
+
+            // Also update IndexedDB for consistency
+            set(CACHE_KEY, {
+                data: projects,
+                timestamp: lastFetchTime,
+                source: 'static'
+            }).catch(e => console.warn('IDB Error', e));
+
+            return projects;
+        } catch (error) {
+            console.log('[wpService] Static JSON load failed, falling back to API');
+            return null;
+        }
+    },
+
+    // Main method to get all projects - optimized loading order:
+    // 1. Memory cache (instant)
+    // 2. Static JSON file (very fast, ~50-100ms)
+    // 3. IndexedDB cache (fast, ~100-200ms)
+    // 4. WordPress API (slow, 2-5s)
     getAllProjects: async (): Promise<Project[]> => {
-        // If we really need ALL projects (e.g. for filtering on client side), we still need this.
-        // BUT, for the initial load, we should avoid it.
-        // We'll modify the Home page to NOT call this, or call a lighter version.
-        // For now, let's leave this logic "as is" but optimize the caching execution so it doesn't freeze the main thread?
-        // Actually, the issue was it was called blindly.
-        // Let's improve the caching to be less aggressive on the loop.
-
         const startTime = performance.now();
-        console.log('[wpService] Fetching ALL projects (careful)...');
+        console.log('[wpService] Fetching ALL projects...');
 
-        // Check memory cache
+        // 1. Check memory cache first (instant)
         if (memoryCache && (Date.now() - lastFetchTime < CACHE_DURATION)) {
+            console.log('[wpService] ✅ Served from memory cache');
             return memoryCache;
         }
 
-        // Try IDB
+        // 2. Try static JSON file (very fast - bundled with app)
+        const staticProjects = await wpService.loadStaticProjects();
+        if (staticProjects && staticProjects.length > 0) {
+            // Background refresh from API for latest data (non-blocking)
+            setTimeout(() => {
+                wpService.fetchFreshProjects().catch(e => console.error('[wpService] Background refresh failed:', e));
+            }, 5000); // Wait 5s before background refresh
+
+            return staticProjects;
+        }
+
+        // 3. Try IndexedDB cache
         try {
             const cached = await get(CACHE_KEY);
-            if (cached) {
-                // Return cached data immediately
+            if (cached && cached.data) {
+                console.log('[wpService] ✅ Served from IndexedDB cache');
                 memoryCache = cached.data;
-                // Background refresh
-                if (Date.now() - cached.timestamp >= CACHE_DURATION) {
+                lastFetchTime = cached.timestamp || Date.now();
+
+                // Background refresh if stale
+                if (Date.now() - (cached.timestamp || 0) >= CACHE_DURATION) {
                     wpService.fetchFreshProjects().catch(e => console.error(e));
                 }
                 return cached.data;
             }
         } catch (e) { /* ignore */ }
 
-        // Fetch fresh
+        // 4. Fetch from WordPress API (slowest, last resort)
+        console.log('[wpService] No cache available, fetching from API...');
         return await wpService.fetchFreshProjects();
     },
+
 
     // Helper method to fetch fresh projects in the background
     fetchFreshProjects: async (): Promise<Project[]> => {

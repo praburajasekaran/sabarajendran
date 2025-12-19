@@ -17,6 +17,13 @@ if (!defined('ABSPATH')) {
  */
 function saba_netlify_init_hooks()
 {
+	// FIX: Prevent re-registering hooks on every page load
+	static $hooks_registered = false;
+	if ($hooks_registered) {
+		return;
+	}
+	$hooks_registered = true;
+
 	$webhook = Saba_Netlify_Webhook::get_instance();
 
 	// Post/Project save hooks

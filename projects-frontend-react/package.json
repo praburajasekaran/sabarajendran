@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "generate-projects": "tsx scripts/generate-projects.ts",
+    "build": "npm run generate-projects && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -27,6 +28,7 @@
     "postcss": "^8.5.6",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.17",
+    "tsx": "^4.19.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }

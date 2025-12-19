@@ -92,6 +92,12 @@ class Saba_Netlify_Webhook
 			return;
 		}
 
+		// FIX: Rate limit - prevent rescheduling too often (30 second cooldown)
+		if (get_transient('saba_netlify_last_schedule')) {
+			return;
+		}
+		set_transient('saba_netlify_last_schedule', 1, 30);
+
 		// If already queued, clear the existing scheduled event
 		$this->clear_scheduled_deployment();
 
@@ -150,7 +156,7 @@ class Saba_Netlify_Webhook
 
 		// Make HTTP POST request to Netlify Build API
 		$api_url = 'https://api.netlify.com/api/v1/sites/' . $site_id . '/builds';
-		
+
 		$response = wp_remote_post($api_url, array(
 			'method' => 'POST',
 			'timeout' => 15,
@@ -332,7 +338,7 @@ class Saba_Netlify_Webhook
 	public function get_statistics()
 	{
 		$log = get_option(self::LOG_OPTION, array());
-		
+
 		$stats = array(
 			'total_deployments' => 0,
 			'successful_deployments' => 0,

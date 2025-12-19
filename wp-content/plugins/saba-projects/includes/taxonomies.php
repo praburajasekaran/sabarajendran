@@ -58,7 +58,7 @@ function saba_projects_register_taxonomies()
 				'new_item_name' => __('New Village Name', 'saba-projects'),
 				'menu_name' => __('Villages', 'saba-projects'),
 			),
-			'hierarchical' => true,
+			'hierarchical' => false,
 			'show_ui' => true,
 			'show_admin_column' => true,
 			'query_var' => true,
@@ -234,6 +234,30 @@ function saba_projects_village_edit_form_fields($term)
 					<span class="saba-translate-label"><?php _e('Translate', 'saba-projects'); ?></span>
 				</button>
 			</div>
+			</div>
+		</td>
+	</tr>
+	<tr class="form-field">
+		<th scope="row">
+			<label for="village_panchayat"><?php _e('Panchayat', 'saba-projects'); ?></label>
+		</th>
+		<td>
+			<?php
+			$selected_panchayat = get_term_meta($term->term_id, '_village_panchayat', true);
+			$panchayats = get_terms(array(
+				'taxonomy' => 'project_panchayat',
+				'hide_empty' => false,
+			));
+			?>
+			<select name="village_panchayat" id="village_panchayat">
+				<option value=""><?php _e('Select Panchayat', 'saba-projects'); ?></option>
+				<?php foreach ($panchayats as $panchayat): ?>
+					<option value="<?php echo esc_attr($panchayat->term_id); ?>" <?php selected($selected_panchayat, $panchayat->term_id); ?>>
+						<?php echo esc_html($panchayat->name); ?>
+					</option>
+				<?php endforeach; ?>
+			</select>
+			<p class="description"><?php _e('Select the Panchayat this village belongs to.', 'saba-projects'); ?></p>
 		</td>
 	</tr>
 	<?php
@@ -270,6 +294,24 @@ function saba_projects_village_add_form_fields()
 			</button>
 		</div>
 	</div>
+	<div class="form-field">
+		<label for="village_panchayat"><?php _e('Panchayat', 'saba-projects'); ?></label>
+		<?php
+		$panchayats = get_terms(array(
+			'taxonomy' => 'project_panchayat',
+			'hide_empty' => false,
+		));
+		?>
+		<select name="village_panchayat" id="village_panchayat" style="margin-top: 5px; width: 95%;">
+			<option value=""><?php _e('Select Panchayat', 'saba-projects'); ?></option>
+			<?php foreach ($panchayats as $panchayat): ?>
+				<option value="<?php echo esc_attr($panchayat->term_id); ?>">
+					<?php echo esc_html($panchayat->name); ?>
+				</option>
+			<?php endforeach; ?>
+		</select>
+		<p><?php _e('Select the Panchayat this village belongs to.', 'saba-projects'); ?></p>
+	</div>
 	<?php
 }
 add_action('project_village_add_form_fields', 'saba_projects_village_add_form_fields');
@@ -284,6 +326,9 @@ function saba_projects_save_village_translation_fields($term_id)
 	}
 	if (isset($_POST['village_name_tamil'])) {
 		update_term_meta($term_id, '_village_name_tamil', sanitize_text_field($_POST['village_name_tamil']));
+	}
+	if (isset($_POST['village_panchayat'])) {
+		update_term_meta($term_id, '_village_panchayat', sanitize_text_field($_POST['village_panchayat']));
 	}
 }
 add_action('created_project_village', 'saba_projects_save_village_translation_fields', 10, 1);

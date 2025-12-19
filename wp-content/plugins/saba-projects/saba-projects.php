@@ -135,9 +135,19 @@ add_action('admin_enqueue_scripts', 'saba_projects_enqueue_admin_assets');
  */
 function saba_projects_allow_cors()
 {
-	header("Access-Control-Allow-Origin: *");
+	// Set specific origin to allow credentials
+	$allowed_origins = array('http://localhost:3003', 'http://localhost:3004');
+	$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
+
+	if (in_array($origin, $allowed_origins)) {
+		header("Access-Control-Allow-Origin: $origin");
+	} else {
+		header("Access-Control-Allow-Origin: http://localhost:3003");
+	}
+
 	header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 	header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+	header("Access-Control-Allow-Credentials: true");
 }
 add_action('init', 'saba_projects_allow_cors');
 
