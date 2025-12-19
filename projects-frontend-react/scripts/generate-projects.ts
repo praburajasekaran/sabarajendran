@@ -50,6 +50,7 @@ interface Project {
     description_ta?: string;
     block?: string;
     panchayat?: string;
+    panchayat_ta?: string;
     village?: string;
     year: string;
     status: ProjectStatus;
@@ -113,7 +114,8 @@ const getTaxonomyName = (wpItem: any, taxonomy: string, preferEnglish: boolean =
 
 const mapWpProjectToAppProject = (wpItem: any): Project => {
     const block = getTaxonomyName(wpItem, 'project_block');
-    const panchayat = toSmartTitleCase(getTaxonomyName(wpItem, 'project_panchayat') || '');
+    const panchayat = toSmartTitleCase(getTaxonomyName(wpItem, 'project_panchayat', true) || '');
+    const panchayat_ta = getTaxonomyName(wpItem, 'project_panchayat', false); // Tamil panchayat name
     const villageRaw = getTaxonomyName(wpItem, 'project_village', true) || 'Unknown Village';
     const village = toSmartTitleCase(villageRaw);
     const year = getTaxonomyName(wpItem, 'project_year') || '2024';
@@ -156,6 +158,7 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
         description_ta: wpItem._project_description_tamil,
         block,
         panchayat,
+        panchayat_ta,
         village,
         year,
         status,

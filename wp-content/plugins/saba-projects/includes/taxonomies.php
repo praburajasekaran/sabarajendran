@@ -368,3 +368,133 @@ function saba_projects_register_village_rest_fields()
 	);
 }
 add_action('rest_api_init', 'saba_projects_register_village_rest_fields');
+
+/**
+ * Add custom fields to panchayat taxonomy edit form
+ */
+function saba_projects_panchayat_edit_form_fields($term)
+{
+	$tamil_name = get_term_meta($term->term_id, '_panchayat_name_tamil', true);
+	$english_name = get_term_meta($term->term_id, '_panchayat_name_english', true);
+	?>
+	<tr class="form-field">
+		<th scope="row">
+			<label for="panchayat_name_english"><?php _e('Panchayat Name (English)', 'saba-projects'); ?></label>
+		</th>
+		<td>
+			<div style="display: flex; gap: 10px; align-items: center;">
+				<input type="text" id="panchayat_name_english" name="panchayat_name_english"
+					value="<?php echo esc_attr($english_name); ?>" class="regular-text" style="flex: 1;">
+				<button type="button" class="button saba-translate-village-btn" data-source-field="panchayat_name_english"
+					data-target-field="panchayat_name_tamil" data-term-id="<?php echo esc_attr($term->term_id); ?>"
+					style="white-space: nowrap;">
+					<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+					<span class="saba-translate-label"><?php _e('Translate', 'saba-projects'); ?></span>
+				</button>
+			</div>
+		</td>
+	</tr>
+	<tr class="form-field">
+		<th scope="row">
+			<label for="panchayat_name_tamil"><?php _e('Panchayat Name (Tamil)', 'saba-projects'); ?></label>
+		</th>
+		<td>
+			<div style="display: flex; gap: 10px; align-items: center;">
+				<input type="text" id="panchayat_name_tamil" name="panchayat_name_tamil"
+					value="<?php echo esc_attr($tamil_name); ?>" class="regular-text" style="flex: 1;">
+				<button type="button" class="button saba-translate-village-btn" data-source-field="panchayat_name_tamil"
+					data-target-field="panchayat_name_english" data-term-id="<?php echo esc_attr($term->term_id); ?>"
+					style="white-space: nowrap;">
+					<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+					<span class="saba-translate-label"><?php _e('Translate', 'saba-projects'); ?></span>
+				</button>
+			</div>
+		</td>
+	</tr>
+	<?php
+}
+add_action('project_panchayat_edit_form_fields', 'saba_projects_panchayat_edit_form_fields');
+
+/**
+ * Add custom fields to panchayat taxonomy add form
+ */
+function saba_projects_panchayat_add_form_fields()
+{
+	?>
+	<div class="form-field">
+		<label for="panchayat_name_english"><?php _e('Panchayat Name (English)', 'saba-projects'); ?></label>
+		<div style="display: flex; gap: 10px; align-items: center; margin-top: 5px;">
+			<input type="text" id="panchayat_name_english" name="panchayat_name_english" value="" class="regular-text"
+				style="flex: 1;">
+			<button type="button" class="button saba-translate-village-btn" data-source-field="panchayat_name_english"
+				data-target-field="panchayat_name_tamil" data-term-id="0" style="white-space: nowrap;">
+				<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+				<span class="saba-translate-label"><?php _e('Translate', 'saba-projects'); ?></span>
+			</button>
+		</div>
+	</div>
+	<div class="form-field">
+		<label for="panchayat_name_tamil"><?php _e('Panchayat Name (Tamil)', 'saba-projects'); ?></label>
+		<div style="display: flex; gap: 10px; align-items: center; margin-top: 5px;">
+			<input type="text" id="panchayat_name_tamil" name="panchayat_name_tamil" value="" class="regular-text"
+				style="flex: 1;">
+			<button type="button" class="button saba-translate-village-btn" data-source-field="panchayat_name_tamil"
+				data-target-field="panchayat_name_english" data-term-id="0" style="white-space: nowrap;">
+				<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
+				<span class="saba-translate-label"><?php _e('Translate', 'saba-projects'); ?></span>
+			</button>
+		</div>
+	</div>
+	<?php
+}
+add_action('project_panchayat_add_form_fields', 'saba_projects_panchayat_add_form_fields');
+
+/**
+ * Save panchayat translation fields
+ */
+function saba_projects_save_panchayat_translation_fields($term_id)
+{
+	if (isset($_POST['panchayat_name_english'])) {
+		update_term_meta($term_id, '_panchayat_name_english', sanitize_text_field($_POST['panchayat_name_english']));
+	}
+	if (isset($_POST['panchayat_name_tamil'])) {
+		update_term_meta($term_id, '_panchayat_name_tamil', sanitize_text_field($_POST['panchayat_name_tamil']));
+	}
+}
+add_action('created_project_panchayat', 'saba_projects_save_panchayat_translation_fields', 10, 1);
+add_action('edited_project_panchayat', 'saba_projects_save_panchayat_translation_fields', 10, 1);
+
+/**
+ * Expose panchayat translation fields in REST API
+ */
+function saba_projects_register_panchayat_rest_fields()
+{
+	register_rest_field(
+		'project_panchayat',
+		'panchayat_name_english',
+		array(
+			'get_callback' => function ($term_array) {
+				return get_term_meta($term_array['id'], '_panchayat_name_english', true);
+			},
+			'schema' => array(
+				'description' => __('Panchayat name in English', 'saba-projects'),
+				'type' => 'string',
+			),
+		)
+	);
+
+	register_rest_field(
+		'project_panchayat',
+		'panchayat_name_tamil',
+		array(
+			'get_callback' => function ($term_array) {
+				return get_term_meta($term_array['id'], '_panchayat_name_tamil', true);
+			},
+			'schema' => array(
+				'description' => __('Panchayat name in Tamil', 'saba-projects'),
+				'type' => 'string',
+			),
+		)
+	);
+}
+add_action('rest_api_init', 'saba_projects_register_panchayat_rest_fields');

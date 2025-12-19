@@ -23,6 +23,7 @@ export interface Project {
   description_ta?: string; // Tamil Description
   block?: string; // Block (NLC, Panruti, Kurinjipadi)
   panchayat?: string; // Panchayat name
+  panchayat_ta?: string; // Tamil Panchayat name
   village: string;
   year: string; // Changed to string to support "2020-2021" format
   status: ProjectStatus;

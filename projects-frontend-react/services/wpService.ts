@@ -419,7 +419,8 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
     };
 
     const block = getTaxonomyName(wpItem, 'project_block');
-    const panchayat = toSmartTitleCase(getTaxonomyName(wpItem, 'project_panchayat') || '');
+    const panchayat = toSmartTitleCase(getTaxonomyName(wpItem, 'project_panchayat', true) || '');
+    const panchayat_ta = getTaxonomyName(wpItem, 'project_panchayat', false); // Tamil panchayat name
 
     // Get village name - prefer English translation from database
     const villageRaw = getTaxonomyName(wpItem, 'project_village', true) || 'Unknown Village';
@@ -467,6 +468,7 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
         description_ta: wpItem._project_description_tamil,
         block,
         panchayat,
+        panchayat_ta,
         village,
         year,
         status,
@@ -504,6 +506,15 @@ const getTaxonomyName = (wpItem: any, taxonomy: string, preferEnglish: boolean =
             // Check the taxonomy of the first item
             if (termList[0].taxonomy === taxonomy) {
                 const term = termList[0];
+
+                // For project_panchayat, use translation fields if available
+                if (taxonomy === 'project_panchayat') {
+                    if (preferEnglish && term.panchayat_name_english) {
+                        return term.panchayat_name_english;
+                    } else if (!preferEnglish && term.panchayat_name_tamil) {
+                        return term.panchayat_name_tamil;
+                    }
+                }
 
                 // For project_village, use translation fields if available
                 if (taxonomy === 'project_village') {
