@@ -52,6 +52,7 @@ interface Project {
     panchayat?: string;
     panchayat_ta?: string;
     village?: string;
+    village_ta?: string;
     year: string;
     status: ProjectStatus;
     type: ProjectType;
@@ -70,6 +71,9 @@ interface StaticProjectsData {
         blocks: string[];
         panchayats: string[];
         years: string[];
+        translations: {
+            panchayats: Record<string, string>; // English -> Tamil
+        };
     };
 }
 
@@ -118,6 +122,7 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
     const panchayat_ta = getTaxonomyName(wpItem, 'project_panchayat', false); // Tamil panchayat name
     const villageRaw = getTaxonomyName(wpItem, 'project_village', true) || 'Unknown Village';
     const village = toSmartTitleCase(villageRaw);
+    const village_ta = getTaxonomyName(wpItem, 'project_village', false); // Tamil village name
     const year = getTaxonomyName(wpItem, 'project_year') || '2024';
     const statusRaw = getTaxonomyName(wpItem, 'project_status');
     const typeRaw = getTaxonomyName(wpItem, 'project_category');
@@ -160,6 +165,7 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
         panchayat,
         panchayat_ta,
         village,
+        village_ta,
         year,
         status,
         type,
@@ -231,6 +237,14 @@ async function generateStaticData(): Promise<void> {
     const panchayats = [...new Set(projects.map(p => p.panchayat).filter(Boolean))] as string[];
     const years = [...new Set(projects.map(p => p.year).filter(Boolean))] as string[];
 
+    // Build translation maps from project data
+    const panchayatTranslations: Record<string, string> = {};
+    projects.forEach(p => {
+        if (p.panchayat && p.panchayat_ta) {
+            panchayatTranslations[p.panchayat] = p.panchayat_ta;
+        }
+    });
+
     // Create static data structure
     const staticData: StaticProjectsData = {
         projects,
@@ -240,7 +254,10 @@ async function generateStaticData(): Promise<void> {
             version: '1.0.0',
             blocks: blocks.sort(),
             panchayats: panchayats.sort(),
-            years: years.sort().reverse()
+            years: years.sort().reverse(),
+            translations: {
+                panchayats: panchayatTranslations
+            }
         }
     };
 

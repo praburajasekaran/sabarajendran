@@ -7,7 +7,6 @@ import {
 import { Project, ProjectStatus, ProjectType } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 import { TruncatedText } from './TruncatedText';
-import { getVillageName } from '../utils/villageTranslations';
 
 interface ProjectCardProps {
   project: Project;
@@ -133,7 +132,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               <div className="flex items-center gap-1.5 font-bold text-sm text-black">
                 <MapPin size={14} className="text-primary-600" />
                 <TruncatedText>
-                  {getVillageName(project.village, language)}
+                  {(language === 'ta' && project.village_ta) ? project.village_ta : project.village}
                 </TruncatedText>
               </div>
             </div>

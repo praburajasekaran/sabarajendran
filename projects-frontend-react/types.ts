@@ -25,6 +25,7 @@ export interface Project {
   panchayat?: string; // Panchayat name
   panchayat_ta?: string; // Tamil Panchayat name
   village: string;
+  village_ta?: string; // Tamil Village name
   year: string; // Changed to string to support "2020-2021" format
   status: ProjectStatus;
   type: ProjectType;
@@ -55,5 +56,8 @@ export interface StaticProjectsData {
     blocks: string[];
     panchayats: string[];
     years: string[];
+    translations: {
+      panchayats: Record<string, string>; // English -> Tamil
+    };
   };
 }
