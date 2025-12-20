@@ -16,7 +16,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
-const WP_API_URL = process.env.VITE_WP_API_URL || 'https://tan-emu-358425.hostingersite.com/wp-json/wp/v2';
+const WP_API_URL = process.env.VITE_WP_API_URL || 'https://projects.sabarajendran.com/wp-json/wp/v2';
 const OUTPUT_DIR = path.join(__dirname, '../dist/data');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'projects.json');
 

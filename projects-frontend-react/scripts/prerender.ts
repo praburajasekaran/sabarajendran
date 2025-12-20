@@ -340,7 +340,7 @@ async function prerender() {
 
   try {
     // Configuration
-    const wpApiUrl = process.env.VITE_WP_API_URL || 'https://tan-emu-358425.hostingersite.com/wp-json/wp/v2';
+    const wpApiUrl = process.env.VITE_WP_API_URL || 'https://projects.sabarajendran.com/wp-json/wp/v2';
 
     // 1. Get routes to prerender
     const routes = await getRoutesToPrerender(wpApiUrl);

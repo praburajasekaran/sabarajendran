@@ -293,7 +293,7 @@ async function generateSitemap() {
     // Configuration
     const siteUrl = process.env.VITE_SITE_URL || 'https://sabarajendran.com';
     // Use production WordPress API by default for builds
-    const wpApiUrl = process.env.VITE_WP_API_URL || 'https://tan-emu-358425.hostingersite.com/wp-json/wp/v2';
+    const wpApiUrl = process.env.VITE_WP_API_URL || 'https://projects.sabarajendran.com/wp-json/wp/v2';
 
     console.log(`   Site URL: ${siteUrl}`);
     console.log(`   WP API URL: ${wpApiUrl}\n`);
