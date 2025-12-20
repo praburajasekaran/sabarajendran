@@ -16,8 +16,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { t, language } = useLanguage();
 
   const displayTitle = (language === 'ta' && project.title_ta) ? project.title_ta : project.title;
-  // Fix: Do not fallback to English description if Tamil is selected but empty
-  const displayDescription = (language === 'ta') ? (project.description_ta || '') : project.description;
+
+
 
   // Status indicator styles - High Contrast
   const getStatusStyle = (status: ProjectStatus) => {
@@ -89,39 +89,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             })()}
           </TruncatedText>
 
-          {/* Description - Hidden for now (data still in database) */}
-          {/* {(() => {
-            const splitIndex = displayTitle.indexOf(' @ ');
 
-            // Case 1: Split found - show the second part as description
-            if (splitIndex !== -1) {
-              return (
-                <TruncatedText
-                  as="p"
-                  maxLines={3}
-                  className={`text-neutral-700 mb-6 flex-1 font-medium leading-relaxed border-l-4 border-primary-500 pl-3 ${language === 'en' ? 'text-sm' : 'text-xs'}`}
-                >
-                  {displayTitle.substring(splitIndex + 1)}
-                </TruncatedText>
-              );
-            }
-
-            // Case 2: No split, check if description is repetitive (case-insensitive) OR empty
-            if (displayTitle.toLowerCase() === displayDescription.toLowerCase() || !displayDescription.trim()) {
-              return <div className="flex-1 min-h-[1rem]"></div>; // Spacer
-            }
-
-            // Case 3: Different content - show description
-            return (
-              <TruncatedText
-                as="p"
-                maxLines={3}
-                className={`text-neutral-700 mb-6 flex-1 font-medium leading-relaxed border-l-4 border-primary-500 pl-3 ${language === 'en' ? 'text-sm' : 'text-xs'}`}
-              >
-                {displayDescription}
-              </TruncatedText>
-            );
-          })()} */}
           <div className="flex-1 min-h-[1rem]"></div>
 
           {/* Metadata Grid - Rugged */}

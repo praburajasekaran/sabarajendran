@@ -118,8 +118,8 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
           // Format based on mockup: Description - Cost
           // Cost is highlighted in red.
           const description = currentLang === 'ta'
-            ? (project.description_ta || project.title_ta || project.title)
-            : project.description;
+            ? (project.title_ta || project.title)
+            : project.title;
 
           return (
             <div

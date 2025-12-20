@@ -47,8 +47,6 @@ interface Project {
     id: string;
     title: string;
     title_ta?: string;
-    description: string;
-    description_ta?: string;
     block?: string;
     panchayat?: string;
     panchayat_ta?: string;
@@ -110,6 +108,14 @@ const getTaxonomyName = (wpItem: any, taxonomy: string, preferEnglish: boolean =
                         return term.village_name_tamil;
                     }
                 }
+
+                if (taxonomy === 'project_panchayat') {
+                    if (preferEnglish && term.panchayat_name_english) {
+                        return term.panchayat_name_english;
+                    } else if (!preferEnglish && term.panchayat_name_tamil) {
+                        return term.panchayat_name_tamil;
+                    }
+                }
                 return term.name;
             }
         }
@@ -160,8 +166,6 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
         id: wpItem.id?.toString() || 'unknown',
         title: toSmartTitleCase(wpItem._project_title_english || wpItem.title?.rendered || 'Untitled Project'),
         title_ta: wpItem._project_title_tamil,
-        description: wpItem._project_description_english || (wpItem.content?.rendered || '').replace(/<[^>]+>/g, ''),
-        description_ta: wpItem._project_description_tamil,
         block,
         panchayat,
         panchayat_ta,

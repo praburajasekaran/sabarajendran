@@ -59,8 +59,6 @@ function saba_projects_render_meta_box($post)
 
 	$title_tamil = get_post_meta($post->ID, '_project_title_tamil', true);
 	$title_english = get_post_meta($post->ID, '_project_title_english', true);
-	$description_tamil = get_post_meta($post->ID, '_project_description_tamil', true);
-	$description_english = get_post_meta($post->ID, '_project_description_english', true);
 
 	$villages = saba_projects_get_terms('project_village');
 	$panchayats = saba_projects_get_terms('project_panchayat');
@@ -153,44 +151,7 @@ function saba_projects_render_meta_box($post)
 			</p>
 		</div>
 
-		<!-- Description fields disabled as requested -->
-		<!--
-		<div class="saba-translation-field-group">
-			<p>
-				<label for="project_description_english">
-					<strong><?php _e('Description (English)', 'saba-projects'); ?></strong>
-				</label><br>
-			<div style="display: flex; gap: 10px; align-items: flex-start;">
-				<textarea id="project_description_english" name="project_description_english" rows="5" class="large-text"
-					style="flex: 1;"><?php echo esc_textarea($description_english); ?></textarea>
-				<button type="button" class="button saba-translate-btn" data-field-type="description"
-					data-source-field="project_description_english" data-target-field="project_description_tamil"
-					data-project-id="<?php echo esc_attr($post->ID); ?>"
-					style="white-space: nowrap; align-self: flex-start;">
-					<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
-					<span class="saba-translate-label"><?php _e('Translate', 'saba-projects'); ?></span>
-				</button>
-			</div>
-			</p>
-
-			<p>
-				<label for="project_description_tamil">
-					<strong><?php _e('Description (Tamil)', 'saba-projects'); ?></strong>
-				</label><br>
-			<div style="display: flex; gap: 10px; align-items: flex-start;">
-				<textarea id="project_description_tamil" name="project_description_tamil" rows="5" class="large-text"
-					style="flex: 1;"><?php echo esc_textarea($description_tamil); ?></textarea>
-				<button type="button" class="button saba-translate-btn" data-field-type="description"
-					data-source-field="project_description_tamil" data-target-field="project_description_english"
-					data-project-id="<?php echo esc_attr($post->ID); ?>"
-					style="white-space: nowrap; align-self: flex-start;">
-					<span class="dashicons dashicons-translation" style="vertical-align: middle;"></span>
-					<span class="saba-translate-label"><?php _e('Translate', 'saba-projects'); ?></span>
-				</button>
-			</div>
-			</p>
-		</div>
-		-->
+		<!-- Description fields disabled and removed from codebase -->
 	</div>
 
 	<style>
@@ -325,23 +286,7 @@ function saba_projects_save_meta_box($post_id)
 		);
 	}
 
-	// Save Tamil description
-	if (isset($_POST['project_description_tamil'])) {
-		update_post_meta(
-			$post_id,
-			'_project_description_tamil',
-			wp_kses_post($_POST['project_description_tamil'])
-		);
-	}
 
-	// Save English description
-	if (isset($_POST['project_description_english'])) {
-		update_post_meta(
-			$post_id,
-			'_project_description_english',
-			wp_kses_post($_POST['project_description_english'])
-		);
-	}
 }
 add_action('save_post_project', 'saba_projects_save_meta_box');
 

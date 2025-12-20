@@ -19,8 +19,6 @@ export interface Project {
   id: string;
   title: string;
   title_ta?: string; // Tamil Title
-  description: string;
-  description_ta?: string; // Tamil Description
   block?: string; // Block (NLC, Panruti, Kurinjipadi)
   panchayat?: string; // Panchayat name
   panchayat_ta?: string; // Tamil Panchayat name
