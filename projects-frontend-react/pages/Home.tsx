@@ -8,7 +8,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { wpService } from '../services/wpService';
 import { Project, ProjectStatus } from '../types';
 import { generateOrganizationSchema, generatePersonSchema } from '../utils/seo';
-import { VILLAGE_TRANSLATIONS } from '../utils/villageTranslations';
 import { VideoModal } from '../components/VideoModal';
 import { SocialFeeds } from '../components/SocialFeeds';
 import { KeyProjectsCarousel } from '../components/KeyProjectsCarousel';
@@ -287,7 +286,13 @@ export const Home: React.FC = () => {
                       <h3 className="font-display text-3xl font-extrabold text-black uppercase tracking-tight group-hover:text-primary-600 transition-colors">
                         {(() => {
                           const displayName = name === 'NLC' ? 'Neyveli' : name;
-                          return language === 'ta' ? (VILLAGE_TRANSLATIONS[displayName] || displayName) : displayName;
+                          // Simple block name translations
+                          const blockTranslations: Record<string, string> = {
+                            'Neyveli': 'நெய்வேலி',
+                            'Panruti': 'பண்ருட்டி',
+                            'Kurinjipadi': 'குறிஞ்சிப்பாடி'
+                          };
+                          return language === 'ta' ? (blockTranslations[displayName] || displayName) : displayName;
                         })()}
                       </h3>
                       <div className="p-3 bg-white border-2 border-black text-black group-hover:bg-primary-600 group-hover:text-white transition-colors shadow-[4px_4px_0_0_#000]">
