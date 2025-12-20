@@ -161,10 +161,16 @@ export const ProjectsPage: React.FC = () => {
         .filter(Boolean) as string[]
     ));
 
-    return uniquePanchayats.sort().map((name, index) => ({
-      id: `p-${index}`,
-      name
-    }));
+    return uniquePanchayats.sort().map((name, index) => {
+      // Find a project with this panchayat name to get its Tamil translation
+      // Since panchayat names are standardized, any project with this panchayat should have the same translation
+      const projectWithPanchayat = projects.find(p => p.panchayat === name);
+      return {
+        id: `p-${index}`,
+        name,
+        name_ta: projectWithPanchayat?.panchayat_ta
+      };
+    });
   }, [projects, filters.block]);
 
   // Extract unique years from projects for filter dropdown

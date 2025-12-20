@@ -43,6 +43,7 @@ export interface Village {
 export interface Panchayat {
   id: string;
   name: string;
+  name_ta?: string;
 }
 
 export interface StaticProjectsData {

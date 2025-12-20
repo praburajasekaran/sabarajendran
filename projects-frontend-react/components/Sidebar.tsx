@@ -34,8 +34,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
     const term = searchTerm.toLowerCase();
     return panchayats.filter(p => {
       const englishName = p.name.toLowerCase();
-      const tamilName = getVillageName(p.name, 'ta');
-      return englishName.includes(term) || tamilName.includes(term);
+      const tamilName = (p.name_ta || getVillageName(p.name, 'ta')).toLowerCase();
+
+      // Also check standard translation for good measure
+      const standardTamilName = getVillageName(p.name, 'ta').toLowerCase();
+
+      return englishName.includes(term) || tamilName.includes(term) || standardTamilName.includes(term);
     });
   }, [panchayats, searchTerm]);
 
@@ -51,7 +55,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Sidebar Container - Political Style */}
       <div className={`
-        fixed lg:sticky lg:top-0 inset-y-0 left-0 z-40 w-80 transform transition-transform duration-300 ease-in-out lg:transform-none select-none
+        fixed lg:sticky lg:top-0 inset-y-0 left-0 z-[60] lg:z-40 w-80 transform transition-transform duration-300 ease-in-out lg:transform-none select-none
         ${isOpenMobile ? 'translate-x-0' : '-translate-x-full'}
         h-full lg:h-[calc(100vh-80px)] flex flex-col
       `}>
@@ -158,7 +162,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   >
                     <div className="flex items-center gap-3 overflow-hidden flex-1">
                       <span className={`truncate ${isSelected ? 'text-black' : 'text-neutral-600 group-hover:text-black'}`}>
-                        {getVillageName(panchayat.name, language)}
+                        {language === 'ta' ? (panchayat.name_ta || getVillageName(panchayat.name, 'ta')) : panchayat.name}
                       </span>
                     </div>
                     <span className={`font-mono text-xs font-bold ${isSelected
