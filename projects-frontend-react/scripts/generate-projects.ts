@@ -11,6 +11,7 @@ import axios from 'axios';
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
+import 'dotenv/config';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -193,22 +194,64 @@ async function fetchAllProjects(): Promise<any[]> {
     console.log('📡 Fetching projects from WordPress...');
     console.log(`   API URL: ${WP_API_URL}`);
 
-    try {
-        const response = await fetchWithRetry(`${WP_API_URL}/project?per_page=100&_embed`);
-        let allProjects = response.data;
+    // Helper to construct URL with params
+    const buildUrl = (baseUrl: string, endpoint: string, params: Record<string, string | number>) => {
+        const hasQuery = baseUrl.includes('?');
+        const separator = hasQuery ? '&' : '?';
+        const queryString = Object.entries(params)
+            .map(([k, v]) => `${k}=${v}`)
+            .join('&');
 
+        // Handle "rest_route" case: if base has rest_route, just append param
+        // But we need to append the endpoint path. 
+        // If WP_API_URL includes rest_route=/wp/v2, we must append /project to it?
+        // No, rest_route in WP takes the full path. e.g. rest_route=/wp/v2/project
+        // So we might need to parse the base URL more intelligently.
+
+        const url = new URL(baseUrl);
+        const searchParams = url.searchParams;
+
+        // Check if we are using rest_route param (common in plain permalinks)
+        if (searchParams.has('rest_route')) {
+            const currentRoute = searchParams.get('rest_route') || '';
+            // If currentRoute ends with /wp/v2 and endpoint starts with /, join them
+            let newRoute = currentRoute;
+            if (currentRoute.endsWith('/wp/v2') && endpoint.startsWith('/')) {
+                newRoute = currentRoute + endpoint; // e.g. /wp/v2/project
+            } else if (!currentRoute.includes(endpoint)) {
+                // Fallback: just append if it looks safe, or warn
+                newRoute = currentRoute.replace(/\/$/, '') + '/' + endpoint.replace(/^\//, '');
+            }
+            searchParams.set('rest_route', newRoute);
+        } else {
+            // Standard permalinks: append endpoint to pathname
+            url.pathname = url.pathname.replace(/\/$/, '') + '/' + endpoint.replace(/^\//, '');
+        }
+
+        // Add other params
+        Object.entries(params).forEach(([k, v]) => {
+            searchParams.set(k, String(v));
+        });
+
+        return url.toString();
+    };
+
+    try {
+        const initialUrl = buildUrl(WP_API_URL, 'project', { per_page: 100, _embed: '' });
+        const response = await fetchWithRetry(initialUrl);
+
+        let allProjects = response.data;
         const totalPages = parseInt(response.headers['x-wp-totalpages'] || '1', 10);
         const total = parseInt(response.headers['x-wp-total'] || '0', 10);
 
         console.log(`   Found ${total} projects across ${totalPages} page(s)`);
 
-        // Fetch remaining pages sequentially to avoid overwhelming the API
         if (totalPages > 1) {
             for (let i = 2; i <= totalPages; i++) {
                 console.log(`   Fetching page ${i}/${totalPages}...`);
-                const pageResponse = await fetchWithRetry(`${WP_API_URL}/project?per_page=100&_embed&page=${i}`);
+                const pageUrl = buildUrl(WP_API_URL, 'project', { per_page: 100, _embed: '', page: i });
+                const pageResponse = await fetchWithRetry(pageUrl);
                 allProjects = [...allProjects, ...pageResponse.data];
-                // Small delay between requests to be gentle on the API
                 await new Promise(resolve => setTimeout(resolve, 500));
             }
         }
