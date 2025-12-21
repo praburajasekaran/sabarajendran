@@ -57,6 +57,7 @@ export interface StaticProjectsData {
     years: string[];
     translations: {
       panchayats: Record<string, string>; // English -> Tamil
+      villages: Record<string, string>; // English -> Tamil
     };
   };
 }

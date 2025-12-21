@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
-import { getVillageName } from '../utils/villageTranslations';
+import { getVillageName, translateBlock, translatePanchayat, translateVillage } from '../utils/villageTranslations';
 import { Filter, Search, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, CheckCircle2, Clock, AlertCircle, LayoutGrid, XCircle, X, Banknote } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Sidebar } from '../components/Sidebar';
@@ -208,6 +208,20 @@ export const ProjectsPage: React.FC = () => {
     return Array.from(uniquePanchayats).sort();
   }, [projects, filters.block]);
 
+  // Extract unique villages from projects (filtered by selected block/panchayat)
+  const villages = useMemo(() => {
+    const uniqueVillages = new Set<string>();
+    projects.forEach(p => {
+      // If a block is selected, only show villages from that block
+      if (filters.block !== 'All' && p.block !== filters.block) return;
+      // If a panchayat is selected, only show villages from that panchayat
+      if (filters.panchayat !== 'All' && p.panchayat !== filters.panchayat) return;
+
+      if (p.village) uniqueVillages.add(p.village);
+    });
+    return Array.from(uniqueVillages).sort();
+  }, [projects, filters.block, filters.panchayat]);
+
 
 
   // Filtering Logic (3-level hierarchy: Block → Panchayat → Village)
@@ -380,7 +394,7 @@ export const ProjectsPage: React.FC = () => {
                     {filters.panchayat !== 'All' ? (
                       <>
                         <span className="bg-primary-600 text-white px-2 leading-none py-1 transform -skew-x-12 inline-block">
-                          {getVillageName(filters.panchayat, language)}
+                          {translatePanchayat(filters.panchayat, language)}
                         </span>
                         <button
                           onClick={() => updateFilters({ panchayat: 'All' })}
@@ -458,8 +472,9 @@ export const ProjectsPage: React.FC = () => {
 
                 {/* Filter Item Builder */}
                 {[
-                  { label: t.projects.labelBlock, value: filters.block, options: blocks, key: 'block', display: (v: string) => getVillageName(v, language) },
-                  { label: t.projects.labelPanchayat, value: filters.panchayat, options: panchayats, key: 'panchayat', disabled: filters.block === 'All', display: (v: string) => getVillageName(v, language) },
+                  { label: t.projects.labelBlock, value: filters.block, options: blocks, key: 'block', display: (v: string) => translateBlock(v, language) },
+                  { label: t.projects.labelPanchayat, value: filters.panchayat, options: panchayats, key: 'panchayat', disabled: filters.block === 'All', display: (v: string) => translatePanchayat(v, language) },
+                  { label: t.projects.labelVillage, value: filters.village || 'All', options: villages, key: 'village', disabled: filters.panchayat === 'All', display: (v: string) => translateVillage(v, language) },
                   { label: t.projects.labelScheme, value: filters.scheme, options: schemes, key: 'scheme', display: (v: string) => v }
                 ].map((filter, idx) => (
                   <div key={idx} className="flex flex-col gap-1 min-w-[140px]">
@@ -469,7 +484,7 @@ export const ProjectsPage: React.FC = () => {
                     <div className="relative">
                       <select
                         value={filter.value}
-                        onChange={(e) => updateFilters({ [filter.key]: e.target.value })}
+                        onChange={(e) => updateFilters({ [filter.key]: e.target.value === 'All' ? (filter.key === 'village' ? null : 'All') : e.target.value })}
                         disabled={filter.disabled}
                         className={`appearance-none w-full px-4 py-2 border-2 text-sm font-bold uppercase cursor-pointer rounded-none focus:outline-none focus:shadow-[2px_2px_0_0_#000] transition-all
                                 ${filter.value !== 'All'
@@ -499,6 +514,7 @@ export const ProjectsPage: React.FC = () => {
                       onClick={() => updateFilters({
                         block: 'All',
                         panchayat: 'All',
+                        village: null,
                         year: 'All',
                         type: 'All',
                         scheme: 'All'

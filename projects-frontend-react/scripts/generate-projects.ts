@@ -72,6 +72,7 @@ interface StaticProjectsData {
         years: string[];
         translations: {
             panchayats: Record<string, string>; // English -> Tamil
+            villages: Record<string, string>; // English -> Tamil
         };
     };
 }
@@ -292,6 +293,13 @@ async function generateStaticData(): Promise<void> {
         }
     });
 
+    const villageTranslations: Record<string, string> = {};
+    projects.forEach(p => {
+        if (p.village && p.village_ta) {
+            villageTranslations[p.village] = p.village_ta;
+        }
+    });
+
     // Create static data structure
     const staticData: StaticProjectsData = {
         projects,
@@ -303,7 +311,8 @@ async function generateStaticData(): Promise<void> {
             panchayats: panchayats.sort(),
             years: years.sort().reverse(),
             translations: {
-                panchayats: panchayatTranslations
+                panchayats: panchayatTranslations,
+                villages: villageTranslations
             }
         }
     };
