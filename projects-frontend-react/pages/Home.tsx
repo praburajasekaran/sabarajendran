@@ -11,6 +11,8 @@ import { generateOrganizationSchema, generatePersonSchema } from '../utils/seo';
 import { VideoModal } from '../components/VideoModal';
 import { SocialFeeds } from '../components/SocialFeeds';
 import { KeyProjectsCarousel } from '../components/KeyProjectsCarousel';
+import { WelfareSchemes } from '../components/WelfareSchemes';
+
 
 export const Home: React.FC = () => {
   const { t, language } = useLanguage();
@@ -258,6 +260,10 @@ export const Home: React.FC = () => {
 
       {/* Key Projects Carousel - Major Constituency-Wide Projects */}
       <KeyProjectsCarousel />
+
+      {/* Welfare Schemes Section - High Impact Stats */}
+      <WelfareSchemes />
+
 
       {/* Block Cards Section - Political Grid */}
       <section className="py-24 bg-white">
