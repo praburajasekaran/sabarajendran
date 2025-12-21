@@ -234,8 +234,10 @@ export const ProjectsPage: React.FC = () => {
       const matchStatus = filters.status !== 'All' ? project.status === filters.status : true;
       const matchType = filters.type !== 'All' ? project.type === filters.type : true;
       const matchScheme = filters.scheme !== 'All' ? project.scheme === filters.scheme : true;
-      const matchSearch = project.title.toLowerCase().includes(filters.search.toLowerCase()) ||
-        project.description.toLowerCase().includes(filters.search.toLowerCase());
+      const matchSearch = String(project.title || '').toLowerCase().includes(filters.search.toLowerCase()) ||
+        String(project.description || '').toLowerCase().includes(filters.search.toLowerCase()) ||
+        String(project.title_ta || '').toLowerCase().includes(filters.search.toLowerCase()) ||
+        String(project.description_ta || '').toLowerCase().includes(filters.search.toLowerCase());
 
       return matchBlock && matchPanchayat && matchVillage && matchYear && matchStatus && matchType && matchScheme && matchSearch;
     }).sort((a, b) => (b.rawBudget || 0) - (a.rawBudget || 0));

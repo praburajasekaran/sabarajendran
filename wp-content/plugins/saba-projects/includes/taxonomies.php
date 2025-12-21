@@ -244,6 +244,8 @@ function saba_projects_village_edit_form_fields($term)
 		<td>
 			<?php
 			$selected_panchayat = get_term_meta($term->term_id, '_village_panchayat', true);
+			error_log('DEBUG: Rendering Panchayat field for term ' . $term->term_id . '. Saved value: ' . print_r($selected_panchayat, true));
+
 			$panchayats = get_terms(array(
 				'taxonomy' => 'project_panchayat',
 				'hide_empty' => false,
@@ -321,6 +323,9 @@ add_action('project_village_add_form_fields', 'saba_projects_village_add_form_fi
  */
 function saba_projects_save_village_translation_fields($term_id)
 {
+	error_log('DEBUG: saba_projects_save_village_translation_fields triggered for term ' . $term_id);
+	error_log('DEBUG: $_POST state: ' . print_r($_POST, true));
+
 	if (isset($_POST['village_name_english'])) {
 		update_term_meta($term_id, '_village_name_english', sanitize_text_field($_POST['village_name_english']));
 	}
@@ -328,7 +333,11 @@ function saba_projects_save_village_translation_fields($term_id)
 		update_term_meta($term_id, '_village_name_tamil', sanitize_text_field($_POST['village_name_tamil']));
 	}
 	if (isset($_POST['village_panchayat'])) {
-		update_term_meta($term_id, '_village_panchayat', sanitize_text_field($_POST['village_panchayat']));
+		$panchayat_id = sanitize_text_field($_POST['village_panchayat']);
+		error_log('DEBUG: Saving village_panchayat for term ' . $term_id . ': ' . $panchayat_id);
+		update_term_meta($term_id, '_village_panchayat', $panchayat_id);
+	} else {
+		error_log('DEBUG: village_panchayat not set in POST for term ' . $term_id);
 	}
 }
 add_action('created_project_village', 'saba_projects_save_village_translation_fields', 10, 1);

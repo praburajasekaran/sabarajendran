@@ -63,7 +63,7 @@ export const Home: React.FC = () => {
   const blockCounts = useMemo(() => {
     const counts: Record<string, number> = {
       'Panruti': 0,
-      'NLC': 0,
+      'Neyveli': 0,
       'Kurinjipadi': 0
     };
     projects.forEach(p => {
@@ -291,7 +291,7 @@ export const Home: React.FC = () => {
                     <div className="flex items-center justify-between mb-8">
                       <h3 className="font-display text-3xl font-extrabold text-black uppercase tracking-tight group-hover:text-primary-600 transition-colors">
                         {(() => {
-                          const displayName = name === 'NLC' ? 'Neyveli' : name;
+                          const displayName = name;
                           // Simple block name translations
                           const blockTranslations: Record<string, string> = {
                             'Neyveli': 'நெய்வேலி',
