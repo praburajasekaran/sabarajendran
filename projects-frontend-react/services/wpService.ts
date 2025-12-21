@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { get, set } from 'idb-keyval';
-import { Project, ProjectStatus, ProjectType } from '../types';
+import { Project, ProjectStatus, ProjectType, StaticProjectsData } from '../types';
+import { initializeTranslations } from '../utils/villageTranslations';
 
 // WordPress API Endpoint
 const WP_API_URL = import.meta.env.VITE_WP_API_URL || 'http://localhost:8000/index.php?rest_route=/wp/v2';
@@ -135,6 +136,12 @@ export const wpService = {
 
             const data = await response.json();
             const projects = data.projects as Project[];
+
+            // Initialize translations from metadata
+            if (data.meta) {
+                initializeTranslations(data as StaticProjectsData);
+                console.log('[wpService] 🌍 Translations initialized from static data');
+            }
 
             console.log(`[wpService] ⚡ Static load complete: ${projects.length} projects in ${(performance.now() - startTime).toFixed(0)}ms`);
             console.log(`[wpService] 📊 Data generated at: ${data.meta?.generatedAt || 'unknown'}`);
