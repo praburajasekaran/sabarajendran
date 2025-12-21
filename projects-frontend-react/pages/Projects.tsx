@@ -406,6 +406,19 @@ export const ProjectsPage: React.FC = () => {
                           <XCircle size={28} />
                         </button>
                       </>
+                    ) : filters.block !== 'All' ? (
+                      <>
+                        <span className="bg-black text-white px-2 leading-none py-1 transform -skew-x-12 inline-block">
+                          {translateBlock(filters.block, language)}
+                        </span>
+                        <button
+                          onClick={() => updateFilters({ block: 'All' })}
+                          className="text-neutral-400 hover:text-red-600 transition-colors"
+                          title="Clear block filter"
+                        >
+                          <XCircle size={28} />
+                        </button>
+                      </>
                     ) : (
                       <span>{t.projects.allProjects}</span>
                     )}

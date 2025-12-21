@@ -13,9 +13,12 @@ const GrievancePage = lazy(() => import('./pages/Grievance').then(module => ({ d
 import { LanguageProvider, LanguageSync } from './contexts/LanguageContext';
 import { HelmetProvider } from 'react-helmet-async';
 
+import { ScrollToTop } from './components/ScrollToTop';
+
 const AppContent: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <LanguageSync>
         <div className="min-h-screen bg-secondary-50 font-sans flex flex-col">
           <Navbar />

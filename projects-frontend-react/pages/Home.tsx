@@ -8,6 +8,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { wpService } from '../services/wpService';
 import { Project, ProjectStatus } from '../types';
 import { generateOrganizationSchema, generatePersonSchema } from '../utils/seo';
+import { slugify } from '../utils/urlBuilder';
 import { VideoModal } from '../components/VideoModal';
 import { SocialFeeds } from '../components/SocialFeeds';
 import { KeyProjectsCarousel } from '../components/KeyProjectsCarousel';
@@ -283,7 +284,7 @@ export const Home: React.FC = () => {
             {blockCounts.map(({ name, count }) => (
               <div
                 key={name}
-                onClick={() => navigate(`${langPrefix}/projects?block=${encodeURIComponent(name)}`)}
+                onClick={() => navigate(`${langPrefix}/projects/${slugify(name)}`)}
                 className="group relative p-8 bg-neutral-50 border-2 border-neutral-200 hover:border-black hover:bg-white transition-all duration-300 cursor-pointer card-sharp"
               >
                 <div className="flex flex-col h-full justify-between">
@@ -321,6 +322,16 @@ export const Home: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => navigate(`${langPrefix}/projects`)}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-black font-bold uppercase hover:bg-black hover:text-white transition-all shadow-[4px_4px_0_0_#000]"
+            >
+              {t.home.viewAll}
+              <ArrowRight size={20} strokeWidth={3} />
+            </button>
           </div>
         </div>
       </section>
