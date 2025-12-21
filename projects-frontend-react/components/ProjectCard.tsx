@@ -74,20 +74,31 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
         <div className="p-5 flex flex-col flex-1">
           {/* Title - Bold & Uppercase */}
-          <TruncatedText
-            as="h3"
-            maxLines={language === 'ta' ? 3 : 2}
-            className={`font-display font-black text-black mb-3 leading-tight tracking-tight ${language === 'en' ? 'text-xl' : 'text-lg'}`}
-          >
-            {(() => {
-              // Always try to split if @ is present
-              const splitIndex = displayTitle.indexOf(' @ ');
-              if (splitIndex !== -1) {
-                return displayTitle.substring(0, splitIndex);
-              }
-              return displayTitle;
-            })()}
-          </TruncatedText>
+
+          {/* Mobile: Full Title (Current Language) */}
+          <div className="block md:hidden mb-3">
+            <h3 className="font-display font-black text-black text-xl leading-tight tracking-tight">
+              {displayTitle.split(' @ ')[0]}
+            </h3>
+          </div>
+
+          {/* Desktop: Truncated Title (Context Language) */}
+          <div className="hidden md:block">
+            <TruncatedText
+              as="h3"
+              maxLines={language === 'ta' ? 3 : 2}
+              className={`font-display font-black text-black mb-3 leading-tight tracking-tight ${language === 'en' ? 'text-xl' : 'text-lg'}`}
+            >
+              {(() => {
+                // Always try to split if @ is present
+                const splitIndex = displayTitle.indexOf(' @ ');
+                if (splitIndex !== -1) {
+                  return displayTitle.substring(0, splitIndex);
+                }
+                return displayTitle;
+              })()}
+            </TruncatedText>
+          </div>
 
 
           <div className="flex-1 min-h-[1rem]"></div>
@@ -97,7 +108,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {/* Village */}
             <div className="flex flex-col">
               <span className="text-[10px] uppercase font-bold text-neutral-500 mb-1">{t.graphic.location}</span>
-              <div className="flex items-center gap-1.5 font-bold text-sm text-black">
+              <div className="flex items-center gap-1.5 font-bold text-black text-lg">
                 <MapPin size={14} className="text-primary-600" />
                 <TruncatedText>
                   {(language === 'ta' && project.village_ta) ? project.village_ta : project.village}
