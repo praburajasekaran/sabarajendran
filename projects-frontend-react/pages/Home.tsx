@@ -336,65 +336,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured Projects - Bold Layout */}
-      <section className="py-24 bg-neutral-100 border-t border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
-            <div>
-              <span className="bg-black text-white font-bold uppercase tracking-widest px-4 py-1 mb-4 inline-block transform -skew-x-12">
-                Recent Development
-              </span>
-              <h2 className="font-display text-4xl md:text-5xl font-extrabold text-black mt-4 uppercase max-w-2xl">
-                {t.home.recentDev}
-              </h2>
-            </div>
 
-            <button
-              onClick={() => navigate(`${langPrefix}/projects`)}
-              className="hidden lg:flex items-center gap-2 px-6 py-3 bg-white border-2 border-black font-bold uppercase hover:bg-black hover:text-white transition-all shadow-[4px_4px_0_0_#000]"
-            >
-              {t.home.viewAll}
-              <ArrowRight size={20} strokeWidth={3} />
-            </button>
-          </div>
-
-          {/* Grid Layout */}
-          {recentProjects.length > 0 ? (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Featured Project - Large (2/3 width) */}
-              {recentProjects[0] && (
-                <div className="lg:col-span-2 stagger-item">
-                  <ProjectCard project={recentProjects[0]} />
-                </div>
-              )}
-
-              {/* Secondary Projects - Right Column */}
-              <div className="lg:col-span-1 flex flex-col gap-8">
-                {recentProjects.slice(1, 3).map((project, index) => (
-                  <div key={project.id} className="stagger-item">
-                    <ProjectCard project={project} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : (
-            <div className="text-center py-12 border-2 border-dashed border-neutral-300">
-              <p className="text-neutral-500 font-bold">No projects available yet.</p>
-            </div>
-          )}
-
-          {/* View All Link - Mobile */}
-          <div className="mt-12 text-center lg:hidden">
-            <button
-              onClick={() => navigate(`${langPrefix}/projects`)}
-              className="px-6 py-3 bg-white border-2 border-black font-bold uppercase hover:bg-black hover:text-white transition-all shadow-[4px_4px_0_0_#000]"
-            >
-              {t.home.viewAll}
-            </button>
-          </div>
-
-        </div>
-      </section>
 
       {/* Social Media Feeds */}
       <SocialFeeds />
