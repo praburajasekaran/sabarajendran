@@ -1,0 +1,58 @@
+{
+    "name": "Saba Rajendran MLA - Neyveli Constituency",
+    "short_name": "Neyveli MLA",
+    "description": "Official website of Saba. Rajendran, MLA of Neyveli Constituency. Track development projects and constituency updates. நெய்வேலி தொகுதியின் அதிகாரப்பூர்வ இணையதளம்.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#dc2626",
+    "background_color": "#000000",
+    "lang": "en-IN",
+    "dir": "ltr",
+    "categories": [
+        "government",
+        "politics",
+        "news",
+        "local"
+    ],
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "any",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [],
+    "related_applications": [],
+    "prefer_related_applications": false
+}

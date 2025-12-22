@@ -1,0 +1,26 @@
+/* TEAM */
+
+Developer: Saba Rajendran Constituency Development Team
+Site: https://sabarajendran.com
+Location: Neyveli, Tamil Nadu, India
+
+/* THANKS */
+
+DMK Party Leadership
+Neyveli Constituency Residents
+Development Partners
+
+/* SITE */
+
+Last update: 2025/12/22
+Standards: HTML5, CSS3, React 18, TypeScript
+Components: React, Vite, TailwindCSS, React Router
+Software: VS Code, Git, Node.js
+Hosting: Netlify
+Backend: WordPress REST API
+
+/* MISSION */
+
+Connecting constituents with their representative
+Transparent governance and development tracking
+Empowering communities through technology
