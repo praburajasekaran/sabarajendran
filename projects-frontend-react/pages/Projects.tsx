@@ -4,7 +4,6 @@ import { Filter, Search, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight,
 import { useNavigate } from 'react-router-dom';
 import { Sidebar } from '../components/Sidebar';
 import { ProjectCard } from '../components/ProjectCard';
-import { PartyBanner } from '../components/PartyBanner';
 import { ProjectStatus, ProjectType } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useUrlFilters } from '../hooks/useUrlFilters';
@@ -380,11 +379,11 @@ export const ProjectsPage: React.FC = () => {
 
               {/* Party Banner / Share Banner integrated here */}
               <div className="hidden md:block">
-                {language === 'en' ? (
-                  <ShareBanner onClick={handleOpenGraphicModal} />
-                ) : (
-                  <PartyBanner />
-                )}
+                <ShareBanner
+                  onClick={handleOpenGraphicModal}
+                  imageSrc={language === 'ta' ? "/assets/images/share_banner_ta.png" : undefined}
+                  altText={language === 'ta' ? "நெய்வேலியில் வளர்ச்சி திட்டங்கள் - பகிர கிளிக் செய்யவும்" : undefined}
+                />
               </div>
 
               {/* Top Row: Title & Mobile Toggle */}
@@ -549,11 +548,11 @@ export const ProjectsPage: React.FC = () => {
           <div id="projects-grid-top" className="flex-1 p-4 md:p-8 scroll-smooth bg-neutral-50">
             {/* Mobile Party Banner / Share Banner */}
             <div className="block md:hidden mb-6">
-              {language === 'en' ? (
-                <ShareBanner onClick={handleOpenGraphicModal} />
-              ) : (
-                <PartyBanner />
-              )}
+              <ShareBanner
+                onClick={handleOpenGraphicModal}
+                imageSrc={language === 'ta' ? "/assets/images/share_banner_ta.png" : undefined}
+                altText={language === 'ta' ? "நெய்வேலியில் வளர்ச்சி திட்டங்கள் - பகிர கிளிக் செய்யவும்" : undefined}
+              />
             </div>
 
             {filteredProjects.length > 0 ? (
