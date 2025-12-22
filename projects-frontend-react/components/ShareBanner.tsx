@@ -9,9 +9,15 @@ import React from 'react';
 
 interface ShareBannerProps {
     onClick: () => void;
+    imageSrc?: string;
+    altText?: string;
 }
 
-export const ShareBanner: React.FC<ShareBannerProps> = ({ onClick }) => {
+export const ShareBanner: React.FC<ShareBannerProps> = ({
+    onClick,
+    imageSrc = "/assets/images/share_banner_en.png",
+    altText = "Neyveli on the rise - Dravidian Model Government Development Projects - Click to Share"
+}) => {
     return (
         <button
             onClick={onClick}
@@ -20,8 +26,8 @@ export const ShareBanner: React.FC<ShareBannerProps> = ({ onClick }) => {
             title="Create shareable graphic"
         >
             <img
-                src="/assets/images/share_banner_en.png"
-                alt="Neyveli on the rise - Dravidian Model Government Development Projects - Click to Share"
+                src={imageSrc}
+                alt={altText}
                 className="w-full h-auto"
             />
         </button>
