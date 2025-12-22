@@ -1,9 +1,18 @@
-# Allow all crawlers
-User-agent: *
+# Sitemap.xml User Agent: *
 Allow: /
 
 # Sitemap location
 Sitemap: https://sabarajendran.com/sitemap.xml
 
-# Optional: Disallow search result pages
-Disallow: /projects?search=
+# Block common bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

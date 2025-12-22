@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage - English -->
+  <url>
+    <loc>https://sabarajendran.com/</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://sabarajendran.com/ta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sabarajendran.com/" />
+  </url>
+
+  <!-- Homepage - Tamil -->
+  <url>
+    <loc>https://sabarajendran.com/ta</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://sabarajendran.com/ta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sabarajendran.com/" />
+  </url>
+
+  <!-- about - English -->
+  <url>
+    <loc>https://sabarajendran.com/about</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://sabarajendran.com/ta/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sabarajendran.com/about" />
+  </url>
+
+  <!-- about - Tamil -->
+  <url>
+    <loc>https://sabarajendran.com/ta/about</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://sabarajendran.com/ta/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sabarajendran.com/about" />
+  </url>
+
+  <!-- projects - English -->
+  <url>
+    <loc>https://sabarajendran.com/projects</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://sabarajendran.com/ta/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sabarajendran.com/projects" />
+  </url>
+
+  <!-- projects - Tamil -->
+  <url>
+    <loc>https://sabarajendran.com/ta/projects</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://sabarajendran.com/ta/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sabarajendran.com/projects" />
+  </url>
+
+  <!-- grievance - English -->
+  <url>
+    <loc>https://sabarajendran.com/grievance</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://sabarajendran.com/ta/grievance" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sabarajendran.com/grievance" />
+  </url>
+
+  <!-- grievance - Tamil -->
+  <url>
+    <loc>https://sabarajendran.com/ta/grievance</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://sabarajendran.com/ta/grievance" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sabarajendran.com/grievance" />
+  </url>
+
+</urlset>

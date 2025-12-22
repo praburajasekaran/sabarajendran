@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "generate-projects": "tsx scripts/generate-projects.ts",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
     "build": "vite build",
     "preview": "vite preview"
   },
