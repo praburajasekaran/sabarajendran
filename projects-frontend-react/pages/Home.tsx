@@ -112,8 +112,8 @@ export const Home: React.FC = () => {
           />
         </div>
 
-        {/* Dynamic Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent z-0"></div>
+        {/* Dynamic Gradient Overlay - Desktop Only */}
+        <div className="absolute inset-0 md:bg-gradient-to-r md:from-black/50 md:via-black/0 md:to-transparent z-0"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 relative z-10 w-full">
           <div className="flex flex-col-reverse md:flex-row items-start md:items-center justify-start gap-8 lg:gap-12">
@@ -121,19 +121,19 @@ export const Home: React.FC = () => {
             {/* Content Left */}
             <div className="w-full max-w-2xl flex flex-col items-start space-y-4 md:space-y-6 animate-zip-in">
               {/* Party Strip */}
-              <div className="flex items-center gap-3 bg-neutral-900 p-2 pr-6 rounded-r-full border-l-4 border-primary-500 shadow-lg">
-                <div className="h-3 w-3 rounded-full bg-primary-500 animate-pulse"></div>
-                <span className="text-sm font-bold uppercase tracking-widest text-accent-400">
+              <div className="flex items-center gap-3 bg-white p-2 pr-6 rounded-r-full border-l-4 border-primary-600 shadow-lg">
+                <div className="h-3 w-3 rounded-full bg-primary-600 animate-pulse"></div>
+                <span className="text-sm font-bold uppercase tracking-widest text-primary-600">
                   {t.home.heroSubtitle}
                 </span>
               </div>
 
               {/* Massive Headline */}
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-none tracking-tight text-white drop-shadow-lg">
-                {t.home.heroPrefix} <span className="text-primary-500 text-stroke-white">{t.home.heroHighlight}</span>{t.home.heroSuffix}
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-none tracking-tight text-black md:text-white drop-shadow-lg">
+                {t.home.heroPrefix} <span className="text-primary-600 md:text-primary-500 text-stroke-white">{t.home.heroHighlight}</span>{t.home.heroSuffix}
               </h1>
 
-              <p className="text-lg md:text-xl font-medium text-neutral-200 max-w-xl leading-relaxed border-l-4 border-accent-500 pl-6">
+              <p className="text-lg md:text-xl font-medium text-black md:text-neutral-200 max-w-xl leading-relaxed border-l-4 border-primary-600 md:border-accent-500 pl-6">
                 {t.home.heroDesc}
               </p>
 
@@ -148,7 +148,7 @@ export const Home: React.FC = () => {
                 </button>
                 <button
                   onClick={() => navigate(`${langPrefix}/about`)}
-                  className="px-6 py-3 border-2 border-white text-white rounded-none font-bold text-base hover:bg-white hover:text-black transition-all flex items-center justify-center uppercase tracking-wide min-w-[200px]"
+                  className="px-6 py-3 border-2 border-primary-600 bg-white text-primary-600 md:bg-transparent md:text-white md:border-white rounded-none font-bold text-base hover:bg-primary-600 hover:text-white hover:border-primary-600 transition-all flex items-center justify-center uppercase tracking-wide min-w-[200px]"
                 >
                   {t.home.contactOffice}
                 </button>
@@ -157,11 +157,11 @@ export const Home: React.FC = () => {
               {/* Play Button - Watch Welcome Video */}
               <button
                 onClick={() => setShowWelcomeVideo(true)}
-                className="flex items-center gap-3 px-4 py-3 bg-transparent border-2 border-accent-400 text-accent-400 hover:bg-accent-400 hover:text-black transition-all font-bold uppercase tracking-wide group"
+                className="flex items-center gap-3 px-4 py-3 bg-transparent border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white transition-all font-bold uppercase tracking-wide group"
                 aria-label="Play Welcome Video"
               >
-                <div className="relative flex items-center justify-center w-10 h-10 bg-accent-400 rounded-full text-black group-hover:bg-black group-hover:text-accent-400 transition-all">
-                  <div className="absolute inset-0 rounded-full bg-accent-400 animate-ping opacity-20"></div>
+                <div className="relative flex items-center justify-center w-10 h-10 bg-primary-600 rounded-full text-white group-hover:bg-white group-hover:text-primary-600 transition-all">
+                  <div className="absolute inset-0 rounded-full bg-primary-600 animate-ping opacity-20"></div>
                   <Play size={20} fill="currentColor" className="ml-0.5 relative z-10" />
                 </div>
                 <span className="text-sm">Watch Video</span>
