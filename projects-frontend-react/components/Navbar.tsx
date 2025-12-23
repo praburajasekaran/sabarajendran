@@ -9,8 +9,8 @@ export const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get language prefix for all links
-  const langPrefix = language === 'en' ? '/en' : '';
+  // Get language prefix for all links - derive from current URL to ensure accuracy
+  const langPrefix = location.pathname.startsWith('/en') ? '/en' : '';
 
   const navItems = [
     { name: t.nav.home, path: `${langPrefix}/` },

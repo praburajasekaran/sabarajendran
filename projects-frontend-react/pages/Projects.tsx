@@ -32,7 +32,7 @@ export const ProjectsPage: React.FC = () => {
   const navigate = useNavigate();
 
   // Get language prefix for all links
-  const langPrefix = language === 'ta' ? '/ta' : '';
+  const langPrefix = language === 'en' ? '/en' : '';
 
   // URL-based filter management
   const { filters, updateFilters, resetFilters } = useUrlFilters({ projects });
