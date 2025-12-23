@@ -65,14 +65,14 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Navigation - Bold Blocks */}
-          <div className="hidden md:flex md:items-center md:gap-2">
+          <div className="hidden md:flex md:items-center md:gap-1.5">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
                 end={item.path === `${langPrefix}/`}
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded font-bold text-lg uppercase tracking-wide transition-all transform hover:-translate-y-0.5 ${isActive
+                  `px-3 py-2 rounded font-bold text-base uppercase tracking-wide transition-all transform hover:-translate-y-0.5 ${isActive
                     ? 'bg-primary-600 text-white shadow-[4px_4px_0_0_#8B6F47]'
                     : 'text-neutral-300 hover:text-white hover:bg-white/10'
                   }`

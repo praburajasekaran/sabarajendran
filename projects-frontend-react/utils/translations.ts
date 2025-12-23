@@ -258,10 +258,10 @@ export const TRANSLATIONS = {
   ta: {
     nav: {
       home: 'முகப்பு',
-      about: 'எம். எல். ஏ பற்றி',
+      about: 'எம்.எல்.ஏ பற்றி',
       projects: 'திட்டங்கள்',
       grievance: 'மக்கள் குரல்',
-      gallery: 'புகைப்படத் தொகுப்பு',
+      gallery: 'புகைப்படங்கள்',
       title: 'சபா. இராசேந்திரன்',
       subtitle: 'சட்டமன்ற உறுப்பினர், நெய்வேலி',
     },
