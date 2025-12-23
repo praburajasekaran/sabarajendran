@@ -19,7 +19,7 @@
     "icons": [
         {
             "src": "/favicon.png",
-            "sizes": "32x32",
+            "sizes": "any",
             "type": "image/png",
             "purpose": "any maskable"
         },

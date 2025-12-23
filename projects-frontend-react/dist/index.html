@@ -5,7 +5,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MLA Saba. Rajendran | Neyveli Constituency Projects</title>
-  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Primary SEO Meta Tags -->
+  <meta name="description"
+    content="Official website of Saba. Rajendran, MLA of Neyveli Constituency. Track development projects, view constituency updates, and connect with your representative. நெய்வேலி தொகுதியின் அதிகாரப்பூர்வ இணையதளம்." />
+  <meta name="keywords"
+    content="Saba Rajendran, Neyveli MLA, Tamil Nadu, Neyveli Constituency, Development Projects, DMK, சபா இராசேந்திரன், நெய்வேலி, Cuddalore, Panruti, Kurinjipadi" />
+  <meta name="author" content="Saba Rajendran - Neyveli Constituency Office" />
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="IN-TN" />
+  <meta name="geo.placename" content="Neyveli, Tamil Nadu" />
+  <meta name="geo.position" content="11.6124;79.4865" />
+  <meta name="ICBM" content="11.6124, 79.4865" />
+
+  <!-- Theme Color for Mobile Browsers -->
+  <meta name="theme-color" content="#dc2626" />
+  <meta name="msapplication-TileColor" content="#dc2626" />
+  <meta name="msapplication-navbutton-color" content="#dc2626" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <!-- Open Graph / Facebook (Default - Will be overridden by React Helmet) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sabarajendran.com/" />
+  <meta property="og:title" content="MLA Saba. Rajendran | Neyveli Constituency" />
+  <meta property="og:description"
+    content="Official website of Saba. Rajendran, MLA of Neyveli Constituency. Track development projects and constituency updates." />
+  <meta property="og:image" content="https://sabarajendran.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Saba Rajendran - MLA Neyveli Constituency" />
+  <meta property="og:site_name" content="Saba Rajendran MLA" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:locale:alternate" content="ta_IN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://sabarajendran.com/" />
+  <meta name="twitter:title" content="MLA Saba. Rajendran | Neyveli Constituency" />
+  <meta name="twitter:description"
+    content="Official website of Saba. Rajendran, MLA of Neyveli Constituency. Track development projects and constituency updates." />
+  <meta name="twitter:image" content="https://sabarajendran.com/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Saba Rajendran - MLA Neyveli Constituency" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z91YTN93SQ"></script>
@@ -18,14 +61,25 @@
   </script>
 
   <!-- Resource hints for faster loading -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
   <link rel="preconnect" href="https://aistudiocdn.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
   <link rel="dns-prefetch" href="https://aistudiocdn.com">
-  <link rel="icon" type="image/png" href="/favicon.png?v=2">
-  <link rel="shortcut icon" href="/favicon.png?v=2">
+  <link rel="dns-prefetch" href="https://tan-emu-358425.hostingersite.com">
+  <link rel="preload" as="image" href="/og-image.jpg" type="image/jpeg">
+  <!-- Favicons and Icons -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+  <link rel="shortcut icon" href="/favicon.png?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json" />
 
   <!-- Google Fonts: Lora (serif) and IBM Plex Mono -->
   <link
@@ -49,94 +103,8 @@
     }
   </style>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            // Headlines: Bold, Impactful
-            sans: ['Anek Tamil', 'sans-serif'],
-            display: ['Anek Tamil', 'sans-serif'],
-            serif: ['Anek Tamil', 'sans-serif'], // Force serif to sans for political consistency
-            // Data/Numbers: Mono for alignment
-            mono: ['IBM Plex Mono', 'Courier New', 'monospace'],
-          },
-          fontSize: {
-            // Display (Hero headlines)
-            'display-lg': ['4.5rem', { lineHeight: '0.9', letterSpacing: '-0.02em', fontWeight: '800' }],
-            'display-md': ['3.5rem', { lineHeight: '1', letterSpacing: '-0.02em', fontWeight: '800' }],
-            // Headings
-            'h1': ['3rem', { lineHeight: '1.1', letterSpacing: '-0.01em', fontWeight: '700' }],
-            'h2': ['2.25rem', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
-            'h3': ['1.75rem', { lineHeight: '1.25', letterSpacing: '0', fontWeight: '600' }],
-            // Body
-            'body-lg': ['1.25rem', { lineHeight: '1.6', fontWeight: '500' }],
-            'body': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }],
-            'body-sm': ['1rem', { lineHeight: '1.5' }],
-            // Data (mono)
-            'data-lg': ['2.5rem', { lineHeight: '1', fontWeight: '700' }],
-            'data': ['1.5rem', { lineHeight: '1.2' }],
-          },
-          colors: {
-            // Primary: DMK Red (Energetic, Powerful)
-            primary: {
-              50: '#fef2f2',
-              100: '#fee2e2',
-              200: '#fecaca',
-              300: '#fca5a5',
-              400: '#f87171',
-              500: '#dc2626', // Base Red
-              600: '#b91c1c',
-              700: '#991b1b', // Darker Red for text/contrast
-              800: '#7f1d1d',
-              900: '#450a0a',
-            },
-            // Secondary: Black (Solid, Grounding)
-            secondary: {
-              50: '#f6f6f6',
-              100: '#e7e7e7',
-              200: '#d1d1d1',
-              300: '#b0b0b0',
-              400: '#888888',
-              500: '#6d6d6d',
-              600: '#5d5d5d',
-              700: '#4f4f4f',
-              800: '#262626', // Off Black
-              900: '#000000', // Pure Black
-            },
-            // Accent: Lignite Brown (Neyveli's natural resource - represents local coal mining heritage)
-            // Updated to lighter shades for better contrast on dark backgrounds
-            accent: {
-              50: '#efebe9',
-              100: '#E8D5C4', // Lighter beige-brown - excellent on dark backgrounds
-              200: '#D4A574', // Light golden brown - great on dark backgrounds
-              300: '#C0956A',
-              400: '#B4915D', // Lighter medium brown - good visibility on dark BG
-              500: '#8B6F47', // Lighter brown - replaces old dark brown
-              600: '#6d4c41', // Medium brown
-              700: '#3e2723', // Original dark brown - use on light backgrounds only
-              800: '#2b1a15',
-              900: '#1b0000',
-            },
-            // Neutral: Cool Grays to support the warm palette
-            neutral: {
-              50: '#f9fafb',
-              100: '#f3f4f6',
-              200: '#e5e7eb',
-              300: '#d1d5db',
-              400: '#9ca3af',
-              500: '#6b7280',
-              600: '#4b5563',
-              700: '#374151',
-              800: '#1f2937',
-              900: '#111827',
-            }
-          }
-        },
-      },
-    }
-  </script>
+
+
 
   <script type="importmap">
 {
@@ -149,8 +117,8 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/assets/index-DDzeNs62.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-5IgFMasy.css">
+  <script type="module" crossorigin src="/assets/index-ByoIwb9e.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BGGePB3b.css">
 </head>
 
 <body class="bg-stone-50 text-stone-900 antialiased">
