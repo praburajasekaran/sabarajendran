@@ -13,6 +13,7 @@ import { VideoModal } from '../components/VideoModal';
 import { SocialFeeds } from '../components/SocialFeeds';
 import { KeyProjectsCarousel } from '../components/KeyProjectsCarousel';
 import { WelfareSchemes } from '../components/WelfareSchemes';
+import { StickyProjectBar } from '../components/StickyProjectBar';
 
 
 export const Home: React.FC = () => {
@@ -138,11 +139,7 @@ export const Home: React.FC = () => {
               </p>
 
               {/* CTA Buttons - Solid & Blocky */}
-              <div className="relative flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
-                {/* Visual Cue - Hand drawn arrow */}
-                <div className="absolute -left-28 -bottom-10 hidden lg:block transform -rotate-12 animate-pulse">
-                  <HandDrawnArrow className="w-28 h-28 text-[#8b5cf6]" />
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
                 <button
                   onClick={() => navigate(`${langPrefix}/projects`)}
                   className="btn-political-primary animate-heartbeat px-6 py-3 text-lg flex items-center justify-center gap-3 min-w-[200px]"
@@ -380,6 +377,9 @@ export const Home: React.FC = () => {
         src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" // Placeholder video
         poster="/assets/images/saba_rajendran.webp" // Reusing hero image as placeholder poster
       />
+
+      {/* Sticky Bottom CTA */}
+      <StickyProjectBar />
     </div>
   );
 };

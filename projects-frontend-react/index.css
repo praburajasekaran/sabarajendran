@@ -1,4 +1,8 @@
-/* Tailwind loaded via CDN */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles below */
 
 /* ==========================================================================
    Political Mass Appeal Design System - DMK Style
