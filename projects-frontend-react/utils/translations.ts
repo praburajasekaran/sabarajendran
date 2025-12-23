@@ -4,13 +4,22 @@ export const TRANSLATIONS = {
       home: 'Home',
       about: 'About MLA',
       projects: 'Projects',
-      grievance: 'Grievance Redressal',
+      grievance: 'Grievances',
+      gallery: 'Gallery',
       title: 'Saba. Rajendran',
       subtitle: 'MLA, Neyveli, Tamil Nadu',
     },
+    gallery: {
+      title: 'Photo Gallery',
+      subtitle: 'Moments from the field - Development work across Neyveli constituency',
+      pageTitle: 'Photo Gallery',
+      pageDescription: 'View photos of development projects and community initiatives across Neyveli constituency',
+      viewImage: 'View Image',
+      imageAlt: 'Gallery image',
+      totalImages: 'Total {count} images',
+    },
     home: {
-      heroPrefix: "Since 2016, Neyveli On A",
-      heroHighlight: ' Growth Track',
+      heroPrefix: "Since 2016, Neyveli On A Growth Track",
       heroSuffix: '',
       heroSubtitle: 'Neyveli Constituency',
       heroDesc: 'Transparent governance and sustainable development under the visionary leadership of MLA Mr. Saba. Rajendran.',
@@ -23,6 +32,8 @@ export const TRANSLATIONS = {
       recentDev: 'Recent Developments',
       recentDevDesc: 'Highlights of the latest infrastructure work in the constituency.',
       viewAll: 'View All Projects',
+      currentTerm: 'Current Term',
+      termPeriod: '2021-2026',
       quote: '"Our goal is to transform Neyveli into a model constituency where every village has access to clean water, good roads, health care, and quality education."',
       role: 'Member of Legislative Assembly, Neyveli',
       meetMlaTitle: 'Meet Your MLA',
@@ -42,6 +53,10 @@ export const TRANSLATIONS = {
       currency: {
         cr: 'Cr+',
         l: 'L+',
+      },
+      stickyBar: {
+        label: 'Explore Development Projects',
+        button: 'View Projects',
       }
     },
     keyProjects: {
@@ -110,6 +125,7 @@ export const TRANSLATIONS = {
     },
     projects: {
       allProjects: 'All Projects',
+      allProjectsWithPeriod: 'All Projects (2021-2026)',
       showing: 'Showing',
       results: 'results',
       searchPlaceholder: 'Search projects...',
@@ -245,17 +261,26 @@ export const TRANSLATIONS = {
       about: 'எம். எல். ஏ பற்றி',
       projects: 'திட்டங்கள்',
       grievance: 'மக்கள் குரல்',
+      gallery: 'புகைப்படத் தொகுப்பு',
       title: 'சபா. இராசேந்திரன்',
       subtitle: 'சட்டமன்ற உறுப்பினர், நெய்வேலி',
     },
+    gallery: {
+      title: 'புகைப்படத் தொகுப்பு',
+      subtitle: 'களப்பணியின் தருணங்கள் - நெய்வேலி தொகுதி முழுவதும் மேம்பாட்டுப் பணிகள்',
+      pageTitle: 'புகைப்படத் தொகுப்பு',
+      pageDescription: 'நெய்வேலி தொகுதி முழுவதும் மேம்பாட்டுத் திட்டங்கள் மற்றும் சமூக முயற்சிகளின் புகைப்படங்களைக் காணுங்கள்',
+      viewImage: 'படத்தைப் பார்க்க',
+      imageAlt: 'தொகுப்பு படம்',
+      totalImages: 'மொத்தம் {count} படங்கள்',
+    },
     home: {
-      heroPrefix: '2016 முதல்',
-      heroHighlight: ' முன்னேற்றப் பாதையில்',
+      heroPrefix: '2016 முதல் முன்னேற்றப் பாதையில்',
       heroSuffix: ' நெய்வேலி',
       heroSubtitle: 'நெய்வேலி தொகுதி',
       heroDesc: 'சட்டமன்ற உறுப்பினர் திரு. சபா. இராசேந்திரன் அவர்களின் தொலைநோக்குத் தலைமையின் கீழ் வெளிப்படையான நிர்வாகம் மற்றும் நிலையான வளர்ச்சி.',
       viewProjects: 'திட்டங்கள்',
-      contactOffice: 'அலுவலகத் தொடர்புக்கு',
+
       completedProjects: 'நிறைவுற்ற திட்டங்கள்',
       ongoingWorks: 'நடைபெறும் பணிகள்',
       villagesCovered: 'கிராமங்கள்',
@@ -263,6 +288,8 @@ export const TRANSLATIONS = {
       recentDev: 'சமீபத்திய வளர்ச்சிகள்',
       recentDevDesc: 'தொகுதியின் மிகச்சிறந்த உள்கட்டமைப்பு பணிகளின் சிறப்பம்சங்கள்.',
       viewAll: 'அனைத்து திட்டங்கள்',
+      currentTerm: 'தற்போதைய பதவிக்காலம்',
+      termPeriod: '2021-2026',
       quote: '"ஒவ்வொரு கிராமத்திற்கும் குடிநீர், நல்ல சாலைகள், சுகாதாரம் மற்றும் தரமான கல்வி கிடைப்பதை உறுதி செய்து, நெய்வேலியை ஒரு முன்மாதிரி தொகுதியாக மாற்றுவதே எங்கள் குறிக்கோள்."',
       role: 'சட்டமன்ற உறுப்பினர், நெய்வேலி',
       meetMlaTitle: 'உங்கள் எம்.எல்.ஏ பற்றி',
@@ -282,6 +309,10 @@ export const TRANSLATIONS = {
       currency: {
         cr: 'கோடி+',
         l: 'லட்சம்+',
+      },
+      stickyBar: {
+        label: 'வளர்ச்சித் திட்டங்களை ஆராயுங்கள்',
+        button: 'திட்டங்களைக் காண்க',
       }
     },
     keyProjects: {
@@ -350,6 +381,7 @@ export const TRANSLATIONS = {
     },
     projects: {
       allProjects: 'அனைத்து திட்டங்கள்',
+      allProjectsWithPeriod: 'அனைத்து திட்டங்கள் (2021-2026)',
       showing: 'காண்பிக்கப்படுவது',
       results: 'முடிவுகள்',
       searchPlaceholder: 'திட்டங்களைத் தேடுக...',

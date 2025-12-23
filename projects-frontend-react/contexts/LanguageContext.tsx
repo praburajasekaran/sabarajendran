@@ -10,7 +10,7 @@ interface LanguageContextType {
 
 // Detect language from URL path
 const detectLanguageFromUrl = (pathname: string): Language => {
-  return pathname.startsWith('/ta') ? 'ta' : 'en';
+  return pathname.startsWith('/en') ? 'en' : 'ta';
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -20,7 +20,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageSync: React.FC<{ children: ReactNode }> = ({ children }) => {
   const location = useLocation();
   const context = useContext(LanguageContext);
-  
+
   if (!context) {
     throw new Error('LanguageSync must be used within LanguageProvider');
   }
@@ -38,7 +38,7 @@ export const LanguageSync: React.FC<{ children: ReactNode }> = ({ children }) =>
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   // Initialize with current pathname (works even outside Router)
-  const [language, setLanguage] = useState<Language>(() => 
+  const [language, setLanguage] = useState<Language>(() =>
     detectLanguageFromUrl(window.location.pathname)
   );
 

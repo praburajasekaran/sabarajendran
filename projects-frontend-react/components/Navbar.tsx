@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Languages } from 'lucide-react';
+import { Menu, X, Languages, Facebook, Instagram } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 
@@ -10,26 +10,27 @@ export const Navbar: React.FC = () => {
   const location = useLocation();
 
   // Get language prefix for all links
-  const langPrefix = language === 'ta' ? '/ta' : '';
+  const langPrefix = language === 'en' ? '/en' : '';
 
   const navItems = [
     { name: t.nav.home, path: `${langPrefix}/` },
     { name: t.nav.about, path: `${langPrefix}/about` },
     { name: t.nav.projects, path: `${langPrefix}/projects` },
-    { name: t.nav.grievance, path: `${langPrefix}/grievance` },
+    { name: t.nav.gallery, path: `${langPrefix}/gallery` },
+    // { name: t.nav.grievance, path: `${langPrefix}/grievance` },
   ];
 
   const toggleLanguage = () => {
     const currentPath = location.pathname;
     const searchParams = location.search; // Preserve query parameters
 
-    if (language === 'en') {
-      // Switch to Tamil: /projects → /ta/projects
-      const newPath = '/ta' + currentPath;
+    if (language === 'ta') {
+      // Switch to English: /projects → /en/projects
+      const newPath = '/en' + currentPath;
       navigate(newPath + searchParams);
     } else {
-      // Switch to English: /ta/projects → /projects
-      const newPath = currentPath.replace(/^\/ta/, '') || '/';
+      // Switch to Tamil: /en/projects → /projects
+      const newPath = currentPath.replace(/^\/en/, '') || '/';
       navigate(newPath + searchParams);
     }
   };
@@ -45,17 +46,17 @@ export const Navbar: React.FC = () => {
               className="flex-shrink-0 flex flex-col cursor-pointer group"
               aria-label={t.nav.title}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 md:gap-3">
                 <img
                   src="/assets/images/nav_logo.png"
                   alt="Saba. Rajendran Logo"
-                  className="w-14 h-14 rounded-lg border-2 border-accent-400 shadow-md transform group-hover:scale-105 transition-transform object-cover"
+                  className="w-10 h-10 md:w-14 md:h-14 rounded-lg border-2 border-accent-400 shadow-md transform group-hover:scale-105 transition-transform object-cover"
                 />
                 <div className="flex flex-col justify-center">
-                  <h1 className="font-display text-2xl md:text-3xl font-extrabold text-white leading-none tracking-tight uppercase" style={{ textShadow: '2px 2px 0 #000' }}>
+                  <h1 className="font-display text-xl md:text-3xl font-extrabold text-white leading-none tracking-tight uppercase" style={{ textShadow: '2px 2px 0 #000' }}>
                     {t.nav.title}
                   </h1>
-                  <p className="text-xs md:text-sm text-accent-200 font-bold uppercase tracking-wide leading-none mt-1">
+                  <p className="text-[10px] md:text-sm text-accent-200 font-bold uppercase tracking-wide leading-none mt-1">
                     {t.nav.subtitle}
                   </p>
                 </div>
@@ -97,6 +98,45 @@ export const Navbar: React.FC = () => {
                 EN
               </span>
             </button>
+
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-2 ml-2">
+              <a
+                href="https://www.instagram.com/saba_rajendran_mla"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded bg-gradient-to-tr from-purple-600 to-pink-600 text-white hover:scale-110 transition-transform"
+                aria-label="Instagram"
+              >
+                <Instagram size={18} strokeWidth={2.5} />
+              </a>
+              <a
+                href="https://www.facebook.com/SabaMlaDMK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded bg-primary-600 text-white hover:scale-110 transition-transform"
+                aria-label="Facebook"
+              >
+                <Facebook size={18} strokeWidth={2.5} />
+              </a>
+              <a
+                href="https://x.com/rajendran_saba"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded bg-black text-white hover:scale-110 transition-transform"
+                aria-label="X (Twitter)"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="18"
+                  height="18"
+                  className="stroke-current stroke-0"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button - High Contrast */}
@@ -139,6 +179,50 @@ export const Navbar: React.FC = () => {
                 {item.name}
               </NavLink>
             ))}
+
+            {/* Social Media Section in Mobile Menu */}
+            <div className="pt-4 mt-4 border-t border-neutral-800">
+              <p className="text-accent-400 font-bold text-sm uppercase tracking-wider px-4 mb-3">
+                {language === 'ta' ? 'சமூக ஊடகங்கள்' : 'Follow Us'}
+              </p>
+              <div className="flex gap-3 px-4">
+                <a
+                  href="https://www.instagram.com/saba_rajendran_mla"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 p-3 bg-gradient-to-tr from-purple-600 to-pink-600 text-white rounded text-center hover:scale-105 transition-transform shadow-md"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={24} strokeWidth={2.5} className="mx-auto" />
+                </a>
+                <a
+                  href="https://www.facebook.com/SabaMlaDMK"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 p-3 bg-primary-600 text-white rounded text-center hover:scale-105 transition-transform shadow-md"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={24} strokeWidth={2.5} className="mx-auto" />
+                </a>
+                <a
+                  href="https://x.com/rajendran_saba"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 p-3 bg-black text-white rounded text-center hover:scale-105 transition-transform shadow-md"
+                  aria-label="X (Twitter)"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="24"
+                    height="24"
+                    className="mx-auto stroke-current stroke-0"
+                  >
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       )}

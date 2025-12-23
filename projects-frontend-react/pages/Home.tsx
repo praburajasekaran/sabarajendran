@@ -133,12 +133,16 @@ export const Home: React.FC = () => {
                 {t.home.heroPrefix} <span className="text-primary-600 md:text-primary-500 text-stroke-white">{t.home.heroHighlight}</span>{t.home.heroSuffix}
               </h1>
 
-              <p className="text-lg md:text-xl font-medium text-black md:text-neutral-200 max-w-xl leading-relaxed border-l-4 border-primary-600 md:border-accent-500 pl-6">
+              <p className="text-lg md:text-xl font-semibold text-black md:text-black max-w-xl leading-relaxed border-l-4 border-primary-600 md:border-accent-500 pl-6">
                 {t.home.heroDesc}
               </p>
 
               {/* CTA Buttons - Solid & Blocky */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
+              <div className="relative flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
+                {/* Visual Cue - Hand drawn arrow */}
+                <div className="absolute -left-28 -bottom-10 hidden lg:block transform -rotate-12 animate-pulse">
+                  <HandDrawnArrow className="w-28 h-28 text-[#8b5cf6]" />
+                </div>
                 <button
                   onClick={() => navigate(`${langPrefix}/projects`)}
                   className="btn-political-primary animate-heartbeat px-6 py-3 text-lg flex items-center justify-center gap-3 min-w-[200px]"
@@ -146,12 +150,7 @@ export const Home: React.FC = () => {
                   {t.home.viewProjects}
                   <ArrowRight size={20} strokeWidth={3} className="animate-attention-arrow" />
                 </button>
-                <button
-                  onClick={() => navigate(`${langPrefix}/about`)}
-                  className="px-6 py-3 border-2 border-primary-600 bg-white text-primary-600 md:bg-transparent md:text-white md:border-white rounded-none font-bold text-base hover:bg-primary-600 hover:text-white hover:border-primary-600 transition-all flex items-center justify-center uppercase tracking-wide min-w-[200px]"
-                >
-                  {t.home.contactOffice}
-                </button>
+
               </div>
 
               {/* Play Button - Watch Welcome Video */}
@@ -175,6 +174,16 @@ export const Home: React.FC = () => {
       {/* Stats Section - Blocky Data Grid */}
       <section className="py-20 bg-secondary-50 relative border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Term Period Badge */}
+          <div className="flex justify-center mb-6">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-accent-500 text-white px-6 py-2 border-2 border-black shadow-[4px_4px_0_0_#000]">
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              <span className="text-xm font-black uppercase tracking-widest">
+                {t.home.currentTerm}: {t.home.termPeriod}
+              </span>
+            </div>
+          </div>
+
           {/* Hard Shadow Card */}
           <div className="bg-white border-2 border-black shadow-[8px_8px_0_0_#000] p-10 md:p-14">
             {isLoading ? (

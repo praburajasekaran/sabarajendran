@@ -419,7 +419,7 @@ export const ProjectsPage: React.FC = () => {
                         </button>
                       </>
                     ) : (
-                      <span>{t.projects.allProjects}</span>
+                      <span>{t.projects.allProjectsWithPeriod}</span>
                     )}
                   </h1>
                   <p className="text-sm font-bold text-neutral-600 mt-2 uppercase tracking-wide border-l-4 border-accent-400 pl-2">
@@ -488,8 +488,7 @@ export const ProjectsPage: React.FC = () => {
                 {[
                   { label: t.projects.labelBlock, value: filters.block, options: blocks, key: 'block', display: (v: string) => translateBlock(v, language) },
                   { label: t.projects.labelPanchayat, value: filters.panchayat, options: panchayats, key: 'panchayat', disabled: filters.block === 'All', display: (v: string) => translatePanchayat(v, language) },
-                  { label: t.projects.labelVillage, value: filters.village || 'All', options: villages, key: 'village', disabled: filters.panchayat === 'All', display: (v: string) => translateVillage(v, language) },
-                  { label: t.projects.labelScheme, value: filters.scheme, options: schemes, key: 'scheme', display: (v: string) => v }
+                  { label: t.projects.labelVillage, value: filters.village || 'All', options: villages, key: 'village', disabled: filters.panchayat === 'All', display: (v: string) => translateVillage(v, language) }
                 ].map((filter, idx) => (
                   <div key={idx} className="flex flex-col gap-1 min-w-[140px]">
                     <label className="text-[10px] uppercase font-black text-neutral-500 tracking-wider">
