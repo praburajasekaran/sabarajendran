@@ -104,10 +104,11 @@ const getTaxonomyName = (wpItem: any, taxonomy: string, preferEnglish: boolean =
                 const term = termList[0];
 
                 if (taxonomy === 'project_village') {
-                    if (preferEnglish && term.village_name_english) {
-                        return term.village_name_english;
-                    } else if (!preferEnglish && term.village_name_tamil) {
-                        return term.village_name_tamil;
+                    // API returns 'name_english' and 'name_tamil' for villages (see saba-projects.php)
+                    if (preferEnglish && (term.name_english || term.village_name_english)) {
+                        return term.name_english || term.village_name_english;
+                    } else if (!preferEnglish && (term.name_tamil || term.village_name_tamil)) {
+                        return term.name_tamil || term.village_name_tamil;
                     }
                 }
 
