@@ -3,84 +3,88 @@
  * 
  * HOW TO USE:
  * -----------
- * 1. Find a spelling error on your website
+ * 1. Find a spelling error on your website (in village, panchayat, or project title)
  * 2. Copy the WRONG spelling from the website
- * 3. Add it to the appropriate section below with the CORRECT spelling
- * 4. Run: npm run generate-projects
- * 5. The corrected spelling will appear on your site
+ * 3. Add it below with the CORRECT spelling
+ * 4. Run the PHP script to apply to database: /Applications/MAMP/bin/php/php8.1.31/bin/php /tmp/apply-corrections.php
+ * 5. Run: npm run generate-projects
  * 
- * LATER: Transfer these corrections to WordPress database and remove them from here
+ * NOTE: These corrections apply to ALL fields (villages, panchayats, and project titles)
  * 
  * FORMAT:
  * -------
  * 'wrong_spelling': 'correct_spelling',
- * 
- * EXAMPLE:
- * --------
- * 'முதற்குறிச்சிகுப்பம்': 'முத்துகிருஷ்ணாபுரம்',
  */
 
 // ============================================
-// VILLAGE NAME CORRECTIONS
+// UNIFIED TAMIL SPELLING CORRECTIONS
+// Applied to: Villages, Panchayats, AND Project Titles
 // ============================================
-export const villageNameCorrections: Record<string, string> = {
+export const tamilSpellingCorrections: Record<string, string> = {
+    // Common spelling errors
     'முதற்குறிச்சிகுப்பம்': 'முத்துகிருஷ்ணாபுரம்',
     'செம்மான்குப்பம்': 'செம்மங்குப்பம்',
     'செம்மன்குப்பம்': 'செம்மங்குப்பம்',
     'பன்னிகன்குப்பம்': 'பணிக்கன்குப்பம்',
+    'பாணிக்கன்குப்பம்': 'பணிக்கன்குப்பம்',
     'வேகாகொள்ளை': 'வேகக்கொல்லை',
+    'வேகாகொள்ளை': 'வேகாக்கொல்லை',
+    'வேகக்கொல்லை': 'வேகாக்கொல்லை',
+    'வேகக்கோளை': 'வேகாக்கொல்லை',
     'ஏலாந்தம்பட்டு': 'எலந்தம்பட்டு',
     'மலிகாம்பட்டு': 'மாளிகம்பட்டு',
+    'தலம்பட்டு': 'தாழம்பட்டு',
+    'அன்னதானம்பேட்டை': 'அன்னதானப்பேட்டை',
     'எரிபாளையம்': 'ஏரிபாளையம்',
     'பெருமாந்தூர்': 'பெருமாத்தூர்',
-    // Add more village corrections below (one per line):
-    // 'wrong_village_name': 'correct_village_name',
-};
-
-// ============================================
-// PANCHAYAT NAME CORRECTIONS
-// ============================================
-export const panchayatNameCorrections: Record<string, string> = {
+    'கீழாகுப்பம்': 'கீழக்குப்பம்',
+    'கட்டடம்': 'கட்டிடம்',
+    'வேலங்குப்பம்': 'வேலாங்குப்பம்',
+    'வள்ளம்': 'வல்லம்',
+    'நடுகுப்பம்': 'நடுக்குப்பம்',
+    'நாடுகுப்பம்': 'நடுகுப்பம்',
+    'கொள்ளுகரங்குட்டை': 'கொள்ளுகாரங்குட்டை',
+    'பதிரகோட்டை': 'பத்திரகோட்டை',
+    'பதிரக்கோட்டை': 'பத்ரக்கோட்டை',
+    'வீரசிகம்குப்பம்': 'வீரசிங்கன்குப்பம்',
+    'சோமாசிபாளையம்': 'சோமாசிப்பாளையம்',
+    'கடம்புளியூர்': 'காடாம்புலியூர்',
+    'தீதீர்குப்பம்': 'திடீர்க்குப்பம்',
+    'வாணவராயபுரம்': 'வானதிராயபுரம்',
+    'அரசாடிக்குப்பம்': 'அரசடிக்குப்பம்',
     'சோறத்தூர்': 'சொரத்தூர்',
     'சோரத்தூர்': 'சொரத்தூர்',
     'கட்டுக்கூடலூர்': 'காட்டுக்கூடலூர்',
-    'நாடுகுப்பம்': 'நடுகுப்பம்',
-    'பதிரக்கோட்டை': 'பத்ரக்கோட்டை',
     'நந்துகுழி': 'நண்டுகுழி',
     'முத்தண்டிக்குப்பம்': 'முத்தாண்டிக்குப்பம்',
-    // Add panchayat corrections below (one per line):
-    // 'wrong_panchayat_name': 'correct_panchayat_name',
+    'வடகவேலூர்': 'வடக்குமேலூர்',
+    'வாண்ணாரயபுரம்': 'வானதிராயபுரம்',
+    'எலவதடி': 'எலவத்தடி',
+    'கோரணைப்பட்டு': 'கோரணப்பட்டு',
+    'பாணிக்கன்குப்பம்': 'பணிக்கன்குப்பம்',
+    'சிவந்தபுரம்': 'சிவந்திபுரம்'
+
+
+    // Add more corrections below (one per line):
+    // 'wrong_spelling': 'correct_spelling',
 };
 
 // ============================================
-// PROJECT TITLE CORRECTIONS
+// BACKWARD COMPATIBILITY (deprecated)
 // ============================================
-export const projectTitleCorrections: Record<string, string> = {
-    // Add project title corrections below (one per line):
-    // 'project title with wrong spelling': 'project title with correct spelling',
-};
+/** @deprecated Use tamilSpellingCorrections instead */
+export const villageNameCorrections = tamilSpellingCorrections;
+/** @deprecated Use tamilSpellingCorrections instead */
+export const panchayatNameCorrections = tamilSpellingCorrections;
+/** @deprecated Use tamilSpellingCorrections instead */
+export const projectTitleCorrections = tamilSpellingCorrections;
 
 // ============================================
-// DO NOT EDIT BELOW THIS LINE
+// CORRECTION FUNCTION
 // ============================================
-export function correctTamilSpelling(text: string | undefined, type: 'village' | 'panchayat' | 'title'): string | undefined {
+export function correctTamilSpelling(text: string | undefined, type?: 'village' | 'panchayat' | 'title'): string | undefined {
     if (!text) return text;
 
-    let corrections: Record<string, string>;
-
-    switch (type) {
-        case 'village':
-            corrections = villageNameCorrections;
-            break;
-        case 'panchayat':
-            corrections = panchayatNameCorrections;
-            break;
-        case 'title':
-            corrections = projectTitleCorrections;
-            break;
-        default:
-            return text;
-    }
-
-    return corrections[text] || text;
+    // Use the unified corrections for all types
+    return tamilSpellingCorrections[text] || text;
 }
