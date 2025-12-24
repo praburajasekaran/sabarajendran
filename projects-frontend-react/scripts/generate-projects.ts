@@ -12,6 +12,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import 'dotenv/config';
+import { correctTamilSpelling } from './tamil-spelling-corrections.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -127,10 +128,10 @@ const getTaxonomyName = (wpItem: any, taxonomy: string, preferEnglish: boolean =
 const mapWpProjectToAppProject = (wpItem: any): Project => {
     const block = getTaxonomyName(wpItem, 'project_block');
     const panchayat = toSmartTitleCase(getTaxonomyName(wpItem, 'project_panchayat', true) || '');
-    const panchayat_ta = getTaxonomyName(wpItem, 'project_panchayat', false); // Tamil panchayat name
+    const panchayat_ta = correctTamilSpelling(getTaxonomyName(wpItem, 'project_panchayat', false), 'panchayat');
     const villageRaw = getTaxonomyName(wpItem, 'project_village', true) || 'Unknown Village';
     const village = toSmartTitleCase(villageRaw);
-    const village_ta = getTaxonomyName(wpItem, 'project_village', false); // Tamil village name
+    const village_ta = correctTamilSpelling(getTaxonomyName(wpItem, 'project_village', false), 'village');
     const year = getTaxonomyName(wpItem, 'project_year') || '2024';
     const statusRaw = getTaxonomyName(wpItem, 'project_status');
     const typeRaw = getTaxonomyName(wpItem, 'project_category');
@@ -166,7 +167,7 @@ const mapWpProjectToAppProject = (wpItem: any): Project => {
     return {
         id: wpItem.id?.toString() || 'unknown',
         title: toSmartTitleCase(wpItem._project_title_english || wpItem.title?.rendered || 'Untitled Project'),
-        title_ta: wpItem._project_title_tamil,
+        title_ta: correctTamilSpelling(wpItem._project_title_tamil, 'title'),
         block,
         panchayat,
         panchayat_ta,
