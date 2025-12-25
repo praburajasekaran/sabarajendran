@@ -223,5 +223,22 @@ function saba_projects_register_rest_fields()
 		},
 		'schema' => null,
 	));
+
+	// Register Panchayat Translations for taxonomy terms
+	register_rest_field('project_panchayat', 'panchayat_name_tamil', array(
+		'get_callback' => function ($object) {
+			$term_id = isset($object['id']) ? $object['id'] : 0;
+			return get_term_meta($term_id, 'panchayat_name_tamil', true);
+		},
+		'schema' => null,
+	));
+
+	register_rest_field('project_panchayat', 'panchayat_name_english', array(
+		'get_callback' => function ($object) {
+			$term_id = isset($object['id']) ? $object['id'] : 0;
+			return get_term_meta($term_id, 'panchayat_name_english', true);
+		},
+		'schema' => null,
+	));
 }
 add_action('rest_api_init', 'saba_projects_register_rest_fields');

@@ -103,7 +103,6 @@ export const ProjectsPage: React.FC = () => {
           const hasAnyValidFilters =
             validation.correctedFilters.block !== 'All' ||
             validation.correctedFilters.panchayat !== 'All' ||
-            validation.correctedFilters.village !== null ||
             validation.correctedFilters.type !== 'All' ||
             validation.correctedFilters.status !== 'All' ||
             validation.correctedFilters.year !== 'All';
@@ -207,19 +206,7 @@ export const ProjectsPage: React.FC = () => {
     return Array.from(uniquePanchayats).sort();
   }, [projects, filters.block]);
 
-  // Extract unique villages from projects (filtered by selected block/panchayat)
-  const villages = useMemo(() => {
-    const uniqueVillages = new Set<string>();
-    projects.forEach(p => {
-      // If a block is selected, only show villages from that block
-      if (filters.block !== 'All' && p.block !== filters.block) return;
-      // If a panchayat is selected, only show villages from that panchayat
-      if (filters.panchayat !== 'All' && p.panchayat !== filters.panchayat) return;
 
-      if (p.village) uniqueVillages.add(p.village);
-    });
-    return Array.from(uniqueVillages).sort();
-  }, [projects, filters.block, filters.panchayat]);
 
 
 
@@ -228,7 +215,6 @@ export const ProjectsPage: React.FC = () => {
     return projects.filter(project => {
       const matchBlock = filters.block !== 'All' ? project.block === filters.block : true;
       const matchPanchayat = filters.panchayat !== 'All' ? project.panchayat === filters.panchayat : true;
-      const matchVillage = filters.village ? project.village === filters.village : true;
       const matchYear = filters.year !== 'All' ? project.year === filters.year : true;
       const matchStatus = filters.status !== 'All' ? project.status === filters.status : true;
       const matchType = filters.type !== 'All' ? project.type === filters.type : true;
@@ -238,7 +224,7 @@ export const ProjectsPage: React.FC = () => {
         String(project.title_ta || '').toLowerCase().includes(filters.search.toLowerCase()) ||
         String(project.description_ta || '').toLowerCase().includes(filters.search.toLowerCase());
 
-      return matchBlock && matchPanchayat && matchVillage && matchYear && matchStatus && matchType && matchScheme && matchSearch;
+      return matchBlock && matchPanchayat && matchYear && matchStatus && matchType && matchScheme && matchSearch;
     }).sort((a, b) => (b.rawBudget || 0) - (a.rawBudget || 0));
   }, [projects, filters]);
 
@@ -273,7 +259,7 @@ export const ProjectsPage: React.FC = () => {
   useEffect(() => {
     const { page, ...otherFilters } = filters;
     updateFilters({ page: 1 }, { replace: true });
-  }, [filters.block, filters.panchayat, filters.village, filters.year, filters.status, filters.type, filters.scheme, filters.search]);
+  }, [filters.block, filters.panchayat, filters.year, filters.status, filters.type, filters.scheme, filters.search]);
 
   // Reset panchayat filter when block changes
   useEffect(() => {
@@ -282,19 +268,7 @@ export const ProjectsPage: React.FC = () => {
     }
   }, [filters.block]);
 
-  // Clear village selection only when block or panchayat is manually changed
-  useEffect(() => {
-    if ((filters.block !== 'All' || filters.panchayat !== 'All') && filters.village !== null) {
-      const villageProject = projects.find(p => p.village === filters.village);
-      const villageMatchesHierarchy = villageProject &&
-        (filters.block === 'All' || villageProject.block === filters.block) &&
-        (filters.panchayat === 'All' || villageProject.panchayat === filters.panchayat);
 
-      if (!villageMatchesHierarchy) {
-        updateFilters({ village: null }, { replace: true });
-      }
-    }
-  }, [filters.block, filters.panchayat, filters.village, projects]);
 
   // Pagination Logic
   const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
@@ -487,8 +461,7 @@ export const ProjectsPage: React.FC = () => {
                 {/* Filter Item Builder */}
                 {[
                   { label: t.projects.labelBlock, value: filters.block, options: blocks, key: 'block', display: (v: string) => translateBlock(v, language) },
-                  { label: t.projects.labelPanchayat, value: filters.panchayat, options: panchayats, key: 'panchayat', disabled: filters.block === 'All', display: (v: string) => translatePanchayat(v, language) },
-                  { label: t.projects.labelVillage, value: filters.village || 'All', options: villages, key: 'village', disabled: filters.panchayat === 'All', display: (v: string) => translateVillage(v, language) }
+                  { label: t.projects.labelPanchayat, value: filters.panchayat, options: panchayats, key: 'panchayat', disabled: filters.block === 'All', display: (v: string) => translatePanchayat(v, language) }
                 ].map((filter, idx) => (
                   <div key={idx} className="flex flex-col gap-1 min-w-[140px]">
                     <label className="text-[10px] uppercase font-black text-neutral-500 tracking-wider">
@@ -527,7 +500,6 @@ export const ProjectsPage: React.FC = () => {
                       onClick={() => updateFilters({
                         block: 'All',
                         panchayat: 'All',
-                        village: null,
                         year: 'All',
                         type: 'All',
                         scheme: 'All'
