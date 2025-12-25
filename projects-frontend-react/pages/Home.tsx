@@ -24,7 +24,7 @@ export const Home: React.FC = () => {
   const [showWelcomeVideo, setShowWelcomeVideo] = useState(false);
 
   // Get language prefix for all links
-  const langPrefix = language === 'ta' ? '/ta' : '';
+  const langPrefix = language === 'en' ? '/en' : '';
 
   useEffect(() => {
     const fetchProjects = async () => {
