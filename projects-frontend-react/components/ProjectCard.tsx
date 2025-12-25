@@ -108,7 +108,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {/* Village */}
             <div className="flex flex-col">
               <span className="text-[10px] uppercase font-bold text-neutral-500 mb-1">{t.graphic.location}</span>
-              <div className="flex items-center gap-1.5 font-bold text-black text-lg">
+              <div className="flex items-center gap-1.5 font-semibold text-black text-base">
                 <MapPin size={14} className="text-primary-600" />
                 <TruncatedText>
                   {(language === 'ta' && project.village_ta) ? project.village_ta : project.village}
