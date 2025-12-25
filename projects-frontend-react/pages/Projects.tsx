@@ -255,11 +255,7 @@ export const ProjectsPage: React.FC = () => {
     clearImage();
   }, [clearImage]);
 
-  // Reset to page 1 when filters change (except page itself)
-  useEffect(() => {
-    const { page, ...otherFilters } = filters;
-    updateFilters({ page: 1 }, { replace: true });
-  }, [filters.block, filters.panchayat, filters.year, filters.status, filters.type, filters.scheme, filters.search]);
+
 
   // Reset panchayat filter when block changes
   useEffect(() => {
@@ -330,9 +326,9 @@ export const ProjectsPage: React.FC = () => {
           selectedPanchayat={filters.panchayat !== 'All' ? filters.panchayat : null}
           onSelectPanchayat={(panchayat) => {
             if (panchayat === null) {
-              updateFilters({ panchayat: 'All' });
+              updateFilters({ panchayat: 'All', page: 1 });
             } else {
-              updateFilters({ panchayat });
+              updateFilters({ panchayat, page: 1 });
             }
             // Scroll to top when panchayat is selected (especially for mobile)
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -372,7 +368,7 @@ export const ProjectsPage: React.FC = () => {
                           {translatePanchayat(filters.panchayat, language)}
                         </span>
                         <button
-                          onClick={() => updateFilters({ panchayat: 'All' })}
+                          onClick={() => updateFilters({ panchayat: 'All', page: 1 })}
                           className="text-neutral-400 hover:text-red-600 transition-colors"
                           title="Clear panchayat filter"
                         >
@@ -385,7 +381,7 @@ export const ProjectsPage: React.FC = () => {
                           {translateBlock(filters.block, language)}
                         </span>
                         <button
-                          onClick={() => updateFilters({ block: 'All' })}
+                          onClick={() => updateFilters({ block: 'All', page: 1 })}
                           className="text-neutral-400 hover:text-red-600 transition-colors"
                           title="Clear block filter"
                         >
@@ -449,7 +445,7 @@ export const ProjectsPage: React.FC = () => {
                       placeholder={t.projects.searchPlaceholder}
                       className="w-full pl-10 pr-4 py-3 bg-white border-2 border-black rounded-none font-bold placeholder:text-neutral-400 focus:outline-none focus:ring-0 focus:shadow-[4px_4px_0_0_#000] transition-all uppercase text-sm"
                       value={filters.search}
-                      onChange={(e) => updateFilters({ search: e.target.value })}
+                      onChange={(e) => updateFilters({ search: e.target.value, page: 1 })}
                     />
                   </div>
                 </div>
@@ -470,7 +466,7 @@ export const ProjectsPage: React.FC = () => {
                     <div className="relative">
                       <select
                         value={filter.value}
-                        onChange={(e) => updateFilters({ [filter.key]: e.target.value === 'All' ? (filter.key === 'village' ? null : 'All') : e.target.value })}
+                        onChange={(e) => updateFilters({ [filter.key]: e.target.value === 'All' ? (filter.key === 'village' ? null : 'All') : e.target.value, page: 1 })}
                         disabled={filter.disabled}
                         className={`appearance-none w-full px-4 py-2 border-2 text-sm font-bold uppercase cursor-pointer rounded-none focus:outline-none focus:shadow-[2px_2px_0_0_#000] transition-all
                                 ${filter.value !== 'All'
@@ -502,7 +498,8 @@ export const ProjectsPage: React.FC = () => {
                         panchayat: 'All',
                         year: 'All',
                         type: 'All',
-                        scheme: 'All'
+                        scheme: 'All',
+                        page: 1
                       })}
                       className="px-4 py-2 text-xs font-black uppercase text-red-600 border-2 border-transparent hover:border-red-600 hover:bg-red-50 transition-all flex items-center gap-1"
                     >

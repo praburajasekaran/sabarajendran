@@ -173,6 +173,10 @@ export const wpService = {
         const startTime = performance.now();
         console.log('[wpService] Fetching ALL projects...');
 
+        // Ensure translations are loaded (attempt to load static JSON for meta)
+        // We do this concurrently to not block main thread too much, but ideally we want it before rendering
+        wpService.loadStaticProjectsForTranslations().catch(e => console.warn('[wpService] Failed to load translations:', e));
+
         // 1. Check memory cache first (instant)
         if (memoryCache && (Date.now() - lastFetchTime < CACHE_DURATION)) {
             console.log('[wpService] ✅ Served from memory cache');
@@ -209,6 +213,22 @@ export const wpService = {
         // 4. Fetch from WordPress API (slowest, last resort)
         console.log('[wpService] No cache available, fetching from API...');
         return await wpService.fetchFreshProjects();
+    },
+
+    // Load only translations from static JSON
+    loadStaticProjectsForTranslations: async (): Promise<void> => {
+        try {
+            const response = await fetch('/data/projects.json');
+            if (response.ok) {
+                const data = await response.json();
+                if (data.meta) {
+                    initializeTranslations(data as StaticProjectsData);
+                    console.log('[wpService] 🌍 Translations initialized from static data (standalone)');
+                }
+            }
+        } catch (e) {
+            console.warn('[wpService] Could not load static translations');
+        }
     },
 
 
@@ -516,20 +536,36 @@ const getTaxonomyName = (wpItem: any, taxonomy: string, preferEnglish: boolean =
 
                 // For project_panchayat, use translation fields if available
                 if (taxonomy === 'project_panchayat') {
-                    if (preferEnglish && term.panchayat_name_english) {
-                        return term.panchayat_name_english;
-                    } else if (!preferEnglish && term.panchayat_name_tamil) {
-                        return term.panchayat_name_tamil;
+                    if (preferEnglish) {
+                        return term.panchayat_name_english ||
+                            term.meta?.panchayat_name_english ||
+                            term.acf?.panchayat_name_english ||
+                            term.name;
+                    } else {
+                        return term.panchayat_name_tamil ||
+                            term.meta?.panchayat_name_tamil ||
+                            term.acf?.panchayat_name_tamil ||
+                            // Fallback to English name if tamil name is missing, but maybe we should return undefined?
+                            // Sidebar logic expects undefined to fallback to getVillageName
+                            undefined;
                     }
                 }
 
                 // For project_village, use translation fields if available
                 if (taxonomy === 'project_village') {
-                    // Check if REST API fields are available
-                    if (preferEnglish && term.village_name_english) {
-                        return term.village_name_english;
-                    } else if (!preferEnglish && term.village_name_tamil) {
-                        return term.village_name_tamil;
+                    if (preferEnglish) {
+                        return term.village_name_english ||
+                            term.meta?.village_name_english ||
+                            term.acf?.village_name_english ||
+                            // Try with underscore if that matches DB column
+                            term.meta?._village_name_english ||
+                            term.name;
+                    } else {
+                        return term.village_name_tamil ||
+                            term.meta?.village_name_tamil ||
+                            term.acf?.village_name_tamil ||
+                            term.meta?._village_name_tamil ||
+                            undefined;
                     }
                 }
 

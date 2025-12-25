@@ -228,7 +228,7 @@ function saba_projects_register_rest_fields()
 	register_rest_field('project_panchayat', 'panchayat_name_tamil', array(
 		'get_callback' => function ($object) {
 			$term_id = isset($object['id']) ? $object['id'] : 0;
-			return get_term_meta($term_id, 'panchayat_name_tamil', true);
+			return get_term_meta($term_id, '_panchayat_name_tamil', true);
 		},
 		'schema' => null,
 	));
@@ -236,7 +236,7 @@ function saba_projects_register_rest_fields()
 	register_rest_field('project_panchayat', 'panchayat_name_english', array(
 		'get_callback' => function ($object) {
 			$term_id = isset($object['id']) ? $object['id'] : 0;
-			return get_term_meta($term_id, 'panchayat_name_english', true);
+			return get_term_meta($term_id, '_panchayat_name_english', true);
 		},
 		'schema' => null,
 	));
