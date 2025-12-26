@@ -281,10 +281,8 @@ export const ProjectsPage: React.FC = () => {
 
   const handlePageChange = (page: number) => {
     updateFilters({ page }, { replace: false });
-    const gridElement = document.getElementById('projects-grid-top');
-    if (gridElement) {
-      gridElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Scroll to top of page when changing pages
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const getPageNumbers = () => {
