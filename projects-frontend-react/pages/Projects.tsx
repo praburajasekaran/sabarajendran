@@ -171,6 +171,12 @@ export const ProjectsPage: React.FC = () => {
     });
   }, [projects, filters.block]);
 
+  // Helper function to find the block for a given panchayat
+  const getBlockForPanchayat = useCallback((panchayatName: string): string | null => {
+    const project = projects.find(p => p.panchayat === panchayatName);
+    return project?.block || null;
+  }, [projects]);
+
   // Extract unique years from projects for filter dropdown
   const years = useMemo(() => {
     const y = new Set(projects.map(p => p.year));
@@ -328,7 +334,13 @@ export const ProjectsPage: React.FC = () => {
             if (panchayat === null) {
               updateFilters({ panchayat: 'All', page: 1 });
             } else {
-              updateFilters({ panchayat, page: 1 });
+              // Automatically set the block when a panchayat is selected
+              const block = getBlockForPanchayat(panchayat);
+              if (block) {
+                updateFilters({ block, panchayat, page: 1 });
+              } else {
+                updateFilters({ panchayat, page: 1 });
+              }
             }
             // Scroll to top when panchayat is selected (especially for mobile)
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -466,7 +478,21 @@ export const ProjectsPage: React.FC = () => {
                     <div className="relative">
                       <select
                         value={filter.value}
-                        onChange={(e) => updateFilters({ [filter.key]: e.target.value === 'All' ? (filter.key === 'village' ? null : 'All') : e.target.value, page: 1 })}
+                        onChange={(e) => {
+                          const newValue = e.target.value === 'All' ? (filter.key === 'village' ? null : 'All') : e.target.value;
+
+                          // Special handling for panchayat selection: automatically set the block
+                          if (filter.key === 'panchayat' && newValue !== 'All') {
+                            const block = getBlockForPanchayat(newValue as string);
+                            if (block) {
+                              updateFilters({ block, panchayat: newValue as string, page: 1 });
+                            } else {
+                              updateFilters({ [filter.key]: newValue, page: 1 });
+                            }
+                          } else {
+                            updateFilters({ [filter.key]: newValue, page: 1 });
+                          }
+                        }}
                         disabled={filter.disabled}
                         className={`appearance-none w-full px-4 py-2 border-2 text-sm font-bold uppercase cursor-pointer rounded-none focus:outline-none focus:shadow-[2px_2px_0_0_#000] transition-all
                                 ${filter.value !== 'All'
