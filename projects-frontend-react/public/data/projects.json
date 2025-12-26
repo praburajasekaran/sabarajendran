@@ -8366,8 +8366,8 @@
     },
     {
       "id": "791",
-      "title": "Repairs to PUMS Building North Facing RCC Building in Vegakollai Pt",
-      "title_ta": "வேகாக்கொல்லை பொ.த. வடக்கு நோக்கிய இ.சி.சி. கட்டிடத்திற்கு பழுதுப்பார்ப்பு பணி",
+      "title": "Repairs to PUMS Building North Facing RCC Building",
+      "title_ta": "ப.ஒ.ந. பள்ளி வடக்கு நோக்கிய இ.சி.சி. கட்டிடத்திற்கு பழுதுப்பார்ப்பு பணி",
       "block": "Panruti",
       "panchayat": "Vegakollai",
       "panchayat_ta": "வேகாக்கொல்லை",
@@ -8734,7 +8734,7 @@
     {
       "id": "814",
       "title": "Extension of Pipeline @ Annakarankuppam in Visoor Panchayat",
-      "title_ta": "விசூர் பஞ்சாயத்தில் அண்ணகரங்குப்பம் @ குழாய் பாதை நீட்டிப்பு",
+      "title_ta": "விசூர் பஞ்சாயத்தில் அன்னகாரங்குப்பம் @ குழாய் பாதை நீட்டிப்பு",
       "block": "Panruti",
       "panchayat": "Visoor",
       "panchayat_ta": "விசூர்",
@@ -20690,7 +20690,7 @@
   ],
   "meta": {
     "total": 1307,
-    "generatedAt": "2025-12-26T07:31:12.849Z",
+    "generatedAt": "2025-12-26T07:45:54.776Z",
     "version": "1.0.0",
     "blocks": [
       "Kurinjipadi",
