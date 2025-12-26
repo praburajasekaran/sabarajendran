@@ -97,55 +97,32 @@ export const Home: React.FC = () => {
 
       {/* Hero Section - Political Mass Appeal */}
       <section className="relative bg-secondary-900 text-white overflow-hidden border-b-8 border-primary-600">
-        {/* Background Image - Responsive */}
+        {/* Hero Images - Language and Device Responsive */}
         <div className="relative w-full">
-          {/* Mobile Background */}
+          {/* Tamil Mobile */}
           <img
-            src="/assets/images/hero-background-mobile.jpeg"
-            alt="Hero Background Mobile"
-            className="md:hidden w-full h-auto"
+            src="/assets/images/hero-tamil-mobile.jpg"
+            alt="Saba Rajendran - நெய்வேலி MLA"
+            className={`${language === 'ta' ? 'md:hidden' : 'hidden'} w-full h-auto`}
           />
-          {/* Desktop Background */}
+          {/* Tamil Desktop */}
           <img
-            src="/assets/images/hero-background.jpeg"
-            alt="Hero Background Desktop"
-            className="hidden md:block w-full h-auto"
+            src="/assets/images/hero-tamil-desktop.jpg"
+            alt="Saba Rajendran - நெய்வேலி MLA"
+            className={`${language === 'ta' ? 'hidden md:block' : 'hidden'} w-full h-auto`}
           />
-        </div>
-
-        {/* Dynamic Gradient Overlay - Desktop Only */}
-        <div className="absolute inset-0 md:bg-gradient-to-r md:from-black/50 md:via-black/0 md:to-transparent z-0"></div>
-
-        {/* Overlay Content - Positioned at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 pb-8 md:pb-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 animate-zip-in">
-              {/* Mobile: Buttons on right side, Desktop: Horizontal */}
-              <div className="flex flex-col md:flex-row gap-4 md:gap-6 md:ml-0 ml-auto w-auto">
-                {/* CTA Button */}
-                <button
-                  onClick={() => navigate(`${langPrefix}/projects`)}
-                  className="btn-political-primary animate-heartbeat px-6 py-3 text-lg flex items-center justify-center gap-3 min-w-[200px]"
-                >
-                  {t.home.viewProjects}
-                  <ArrowRight size={20} strokeWidth={3} className="animate-attention-arrow" />
-                </button>
-
-                {/* Play Button - Watch Welcome Video */}
-                <button
-                  onClick={() => setShowWelcomeVideo(true)}
-                  className="flex items-center gap-3 px-4 py-3 bg-transparent border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white transition-all font-bold uppercase tracking-wide group"
-                  aria-label="Play Welcome Video"
-                >
-                  <div className="relative flex items-center justify-center w-10 h-10 bg-primary-600 rounded-full text-white group-hover:bg-white group-hover:text-primary-600 transition-all">
-                    <div className="absolute inset-0 rounded-full bg-primary-600 animate-ping opacity-20"></div>
-                    <Play size={20} fill="currentColor" className="ml-0.5 relative z-10" />
-                  </div>
-                  <span className="text-sm">Watch Video</span>
-                </button>
-              </div>
-            </div>
-          </div>
+          {/* English Mobile */}
+          <img
+            src="/assets/images/hero-english-mobile.jpg"
+            alt="Saba Rajendran - Neyveli MLA"
+            className={`${language === 'en' ? 'md:hidden' : 'hidden'} w-full h-auto`}
+          />
+          {/* English Desktop */}
+          <img
+            src="/assets/images/hero-english-desktop.jpg"
+            alt="Saba Rajendran - Neyveli MLA"
+            className={`${language === 'en' ? 'hidden md:block' : 'hidden'} w-full h-auto`}
+          />
         </div>
       </section>
 
