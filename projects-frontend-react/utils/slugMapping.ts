@@ -14,12 +14,18 @@ export interface LocationMapping {
   blocks: Map<string, string>;      // slug -> display name
   panchayats: Map<string, string>;
   villages: Map<string, string>;
+  types: Map<string, string>;       // slug -> display name for project types
+  statuses: Map<string, string>;    // slug -> display name for project statuses
+  schemes: Map<string, string>;     // slug -> display name for schemes
 }
 
 export interface LocationReverseMapping {
   blocks: Map<string, string>;      // display name -> slug
   panchayats: Map<string, string>;
   villages: Map<string, string>;
+  types: Map<string, string>;       // display name -> slug for project types
+  statuses: Map<string, string>;    // display name -> slug for project statuses
+  schemes: Map<string, string>;     // display name -> slug for schemes
 }
 
 /**
@@ -39,12 +45,18 @@ export const generateLocationMappings = (projects: Project[]): {
   const forwardBlocks = new Map<string, string>();
   const forwardPanchayats = new Map<string, string>();
   const forwardVillages = new Map<string, string>();
+  const forwardTypes = new Map<string, string>();
+  const forwardStatuses = new Map<string, string>();
+  const forwardSchemes = new Map<string, string>();
 
   const reverseBlocks = new Map<string, string>();
   const reversePanchayats = new Map<string, string>();
   const reverseVillages = new Map<string, string>();
+  const reverseTypes = new Map<string, string>();
+  const reverseStatuses = new Map<string, string>();
+  const reverseSchemes = new Map<string, string>();
 
-  // Extract unique locations from projects
+  // Extract unique locations and filter values from projects
   projects.forEach(project => {
     // Blocks
     if (project.block) {
@@ -66,18 +78,45 @@ export const generateLocationMappings = (projects: Project[]): {
       forwardVillages.set(slug, project.village);
       reverseVillages.set(project.village, slug);
     }
+
+    // Types
+    if (project.type) {
+      const slug = slugify(project.type);
+      forwardTypes.set(slug, project.type);
+      reverseTypes.set(project.type, slug);
+    }
+
+    // Statuses
+    if (project.status) {
+      const slug = slugify(project.status);
+      forwardStatuses.set(slug, project.status);
+      reverseStatuses.set(project.status, slug);
+    }
+
+    // Schemes
+    if (project.scheme) {
+      const slug = slugify(project.scheme);
+      forwardSchemes.set(slug, project.scheme);
+      reverseSchemes.set(project.scheme, slug);
+    }
   });
 
   return {
     forward: {
       blocks: forwardBlocks,
       panchayats: forwardPanchayats,
-      villages: forwardVillages
+      villages: forwardVillages,
+      types: forwardTypes,
+      statuses: forwardStatuses,
+      schemes: forwardSchemes
     },
     reverse: {
       blocks: reverseBlocks,
       panchayats: reversePanchayats,
-      villages: reverseVillages
+      villages: reverseVillages,
+      types: reverseTypes,
+      statuses: reverseStatuses,
+      schemes: reverseSchemes
     }
   };
 };
@@ -104,8 +143,9 @@ export class LocationMapper {
    * @example
    * mapper.getName("kurinjipadi", "block") // "Kurinjipadi"
    * mapper.getName("indira-nagar", "village") // "Indira Nagar"
+   * mapper.getName("water-supply", "type") // "Water Supply"
    */
-  getName(slug: string, type: 'block' | 'panchayat' | 'village'): string | undefined {
+  getName(slug: string, type: 'block' | 'panchayat' | 'village' | 'type' | 'status' | 'scheme'): string | undefined {
     const map = this.forwardMaps[`${type}s` as keyof LocationMapping];
     return map.get(slug);
   }
@@ -116,8 +156,9 @@ export class LocationMapper {
    * @example
    * mapper.getSlug("Kurinjipadi", "block") // "kurinjipadi"
    * mapper.getSlug("Indira Nagar", "village") // "indira-nagar"
+   * mapper.getSlug("Water Supply", "type") // "water-supply"
    */
-  getSlug(name: string, type: 'block' | 'panchayat' | 'village'): string | undefined {
+  getSlug(name: string, type: 'block' | 'panchayat' | 'village' | 'type' | 'status' | 'scheme'): string | undefined {
     const map = this.reverseMaps[`${type}s` as keyof LocationReverseMapping];
     return map.get(name);
   }
@@ -129,7 +170,7 @@ export class LocationMapper {
    * mapper.hasSlug("kurinjipadi", "block") // true
    * mapper.hasSlug("invalid-block", "block") // false
    */
-  hasSlug(slug: string, type: 'block' | 'panchayat' | 'village'): boolean {
+  hasSlug(slug: string, type: 'block' | 'panchayat' | 'village' | 'type' | 'status' | 'scheme'): boolean {
     const map = this.forwardMaps[`${type}s` as keyof LocationMapping];
     return map.has(slug);
   }
@@ -137,7 +178,7 @@ export class LocationMapper {
   /**
    * Check if a display name exists in the mapping
    */
-  hasName(name: string, type: 'block' | 'panchayat' | 'village'): boolean {
+  hasName(name: string, type: 'block' | 'panchayat' | 'village' | 'type' | 'status' | 'scheme'): boolean {
     const map = this.reverseMaps[`${type}s` as keyof LocationReverseMapping];
     return map.has(name);
   }

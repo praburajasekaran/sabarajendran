@@ -84,11 +84,17 @@ export const useUrlFilters = ({ projects }: UseUrlFiltersOptions): UseUrlFilters
           ? (locationMapper.getName(parsedFilters.village, 'village') || parsedFilters.village)
           : null,
         type: parsedFilters.type !== 'All'
-          ? (locationMapper.getName(parsedFilters.type, 'panchayat') || parsedFilters.type) // Will not match, returns slug
+          ? (locationMapper.getName(parsedFilters.type, 'type') || parsedFilters.type)
           : 'All',
         status: parsedFilters.status !== 'All'
-          ? (locationMapper.getName(parsedFilters.status, 'panchayat') || parsedFilters.status) // Will not match, returns slug
-          : 'All'
+          ? (locationMapper.getName(parsedFilters.status, 'status') || parsedFilters.status)
+          : 'All',
+        scheme: parsedFilters.scheme !== 'All'
+          ? (locationMapper.getName(parsedFilters.scheme, 'scheme') || parsedFilters.scheme)
+          : 'All',
+        year: parsedFilters.year,
+        search: parsedFilters.search,
+        page: parsedFilters.page
       };
     }
 
@@ -113,15 +119,15 @@ export const useUrlFilters = ({ projects }: UseUrlFiltersOptions): UseUrlFilters
         village: parsedFilters.village
           ? (locationMapper.getName(parsedFilters.village, 'village') || parsedFilters.village)
           : null,
-        // For type and status, keep as-is since they're from query params
+        // Use LocationMapper for filter values to ensure exact match
         type: parsedFilters.type !== 'All'
-          ? decodeURIComponent(parsedFilters.type.replace(/-/g, ' '))
-              .split(' ')
-              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(' ')
+          ? (locationMapper.getName(parsedFilters.type, 'type') || parsedFilters.type)
           : 'All',
         status: parsedFilters.status !== 'All'
-          ? parsedFilters.status.charAt(0).toUpperCase() + parsedFilters.status.slice(1)
+          ? (locationMapper.getName(parsedFilters.status, 'status') || parsedFilters.status)
+          : 'All',
+        scheme: parsedFilters.scheme !== 'All'
+          ? (locationMapper.getName(parsedFilters.scheme, 'scheme') || parsedFilters.scheme)
           : 'All',
         year: parsedFilters.year,
         search: parsedFilters.search,
@@ -146,8 +152,6 @@ export const useUrlFilters = ({ projects }: UseUrlFiltersOptions): UseUrlFilters
    */
   const updateFilters = useCallback(
     (newFilters: Partial<FilterState>, options: { replace?: boolean } = { replace: true }) => {
-      if (!locationMapper) return;
-
       // Merge with existing filters
       const updatedFilters: FilterState = { ...filters, ...newFilters };
 
@@ -182,7 +186,7 @@ export const useUrlFilters = ({ projects }: UseUrlFiltersOptions): UseUrlFilters
       // Navigate to new URL
       navigate(newUrl, { replace: options.replace });
     },
-    [filters, locationMapper, searchParams, navigate]
+    [filters, searchParams, navigate]
   );
 
   /**
