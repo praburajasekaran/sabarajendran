@@ -781,21 +781,6 @@
       "rawBudget": 658122
     },
     {
-      "id": "2781",
-      "title": "Repair of Kitchen Shed at Peykkanatham Panchayat Union Primary School",
-      "title_ta": "பேய்க்காநத்தம் ஊராட்சி ஒன்றிய துவக்கப்பள்ளி சமையலறை கூடம் பழுது நீக்கம்",
-      "block": "Kurinjipadi",
-      "panchayat": "Koranapattu",
-      "panchayat_ta": "கோரணப்பட்டு",
-      "village": "Peikanatham",
-      "village_ta": "பேய்க்கானத்தம்",
-      "year": "2024",
-      "status": "Ongoing",
-      "type": "Infrastructure",
-      "budget": "₹28000",
-      "rawBudget": 28000
-    },
-    {
       "id": "2780",
       "title": "8 Sets of Benches and Desks for the Panchayat Union Primary School",
       "title_ta": "ஒன்றிய துவக்கப்பள்ளியில் பெஞ்ச் டெஸ்க் 8 செட்",
@@ -5796,7 +5781,7 @@
     {
       "id": "989",
       "title": "Construction of Drainage Channel at Ko. Sathiram Women's Sanitary Complex in Koranappattu Panchayat",
-      "title_ta": "கோரணப்பட்டு ஊராட்சி கோ.சத்திரம் மகளிர் சுகாதார வளாகம் கிராமம் வடிகால் வாய்க்கால் அமைத்தல்",
+      "title_ta": "கோ. சத்திரம் மகளிர் சுகாதார வளாகத்தில் வடிகால் வாய்க்கால் அமைக்கும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Koranapattu",
       "panchayat_ta": "கோரணப்பட்டு",
@@ -20662,8 +20647,8 @@
     }
   ],
   "meta": {
-    "total": 1305,
-    "generatedAt": "2025-12-27T04:56:34.365Z",
+    "total": 1304,
+    "generatedAt": "2025-12-27T05:16:57.785Z",
     "version": "1.0.0",
     "blocks": [
       "Kurinjipadi",
@@ -20798,7 +20783,6 @@
         "Koranapattu": "கோரணப்பட்டு",
         "Samattikuppam": "சமட்டிக்குப்பம்",
         "Appiyampettai": "அப்பியம்பேட்டை",
-        "Peikanatham": "பேய்க்கானத்தம்",
         "Vanathirayapuram": "வானதிராயபுரம்",
         "Thenkuthu": "தென்குத்து",
         "Vengadampettai": "வெங்கடாம்பேட்டை",
@@ -20817,6 +20801,7 @@
         "Ko Chathiram": "கோ சத்திரம்",
         "Ayyampettai": "அய்யம்பேட்டை",
         "Sivananthipuram": "சிவநந்திபுரம்",
+        "Peikanatham": "பேய்க்கானத்தம்",
         "Valluvar Theru": "வள்ளுவர் தெரு",
         "Koranapattu - Adi Dravidar": "கோரணப்பட்டு - ஆதி திராவிடர்",
         "Keezhur": "கீழூர்",
