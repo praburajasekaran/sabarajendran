@@ -29,6 +29,7 @@ interface UseUrlFiltersReturn {
   filters: FilterState;
   updateFilters: (newFilters: Partial<FilterState>, options?: { replace?: boolean }) => void;
   resetFilters: () => void;
+  hasInitialized: boolean;
 }
 
 /**
@@ -61,87 +62,88 @@ export const useUrlFilters = ({ projects }: UseUrlFiltersOptions): UseUrlFilters
     [projects.length] // Only recreate when project count changes
   );
 
-  // Initialize filter state from URL
+  // Initialize filter state with defaults (URL will be processed after projects load)
   const [filters, setFilters] = useState<FilterState>(() => {
     if (typeof window === 'undefined') {
       return getDefaultFilterState();
     }
 
-    // Parse URL slugs into filter state
-    const parsedFilters = parseProjectsUrl(window.location.pathname, searchParams);
-
-    // Convert slugs to display names if mapper is available
-    if (locationMapper) {
-      return {
-        ...parsedFilters,
-        block: parsedFilters.block !== 'All'
-          ? (locationMapper.getName(parsedFilters.block, 'block') || parsedFilters.block)
-          : 'All',
-        panchayat: parsedFilters.panchayat !== 'All'
-          ? (locationMapper.getName(parsedFilters.panchayat, 'panchayat') || parsedFilters.panchayat)
-          : 'All',
-        village: parsedFilters.village
-          ? (locationMapper.getName(parsedFilters.village, 'village') || parsedFilters.village)
-          : null,
-        type: parsedFilters.type !== 'All'
-          ? (locationMapper.getName(parsedFilters.type, 'type') || parsedFilters.type)
-          : 'All',
-        status: parsedFilters.status !== 'All'
-          ? (locationMapper.getName(parsedFilters.status, 'status') || parsedFilters.status)
-          : 'All',
-        scheme: parsedFilters.scheme !== 'All'
-          ? (locationMapper.getName(parsedFilters.scheme, 'scheme') || parsedFilters.scheme)
-          : 'All',
-        year: parsedFilters.year,
-        search: parsedFilters.search,
-        page: parsedFilters.page
-      };
-    }
-
-    return parsedFilters;
+    // Start with default filters - we'll convert URL slugs after projects load
+    return getDefaultFilterState();
   });
 
-  // Sync filter state when URL changes (browser back/forward)
+  // Track if we've done the initial URL->filter conversion
+  const [hasInitialized, setHasInitialized] = useState(false);
+
+  // Initialize filters from URL once projects are loaded, then sync on URL changes
   useEffect(() => {
     const pathname = window.location.pathname;
     const parsedFilters = parseProjectsUrl(pathname, searchParams);
 
-    // Convert slugs to display names
-    if (locationMapper) {
-      const convertedFilters: FilterState = {
-        ...parsedFilters,
-        block: parsedFilters.block !== 'All'
-          ? (locationMapper.getName(parsedFilters.block, 'block') || parsedFilters.block)
-          : 'All',
-        panchayat: parsedFilters.panchayat !== 'All'
-          ? (locationMapper.getName(parsedFilters.panchayat, 'panchayat') || parsedFilters.panchayat)
-          : 'All',
-        village: parsedFilters.village
-          ? (locationMapper.getName(parsedFilters.village, 'village') || parsedFilters.village)
-          : null,
-        // Use LocationMapper for filter values to ensure exact match
-        type: parsedFilters.type !== 'All'
-          ? (locationMapper.getName(parsedFilters.type, 'type') || parsedFilters.type)
-          : 'All',
-        status: parsedFilters.status !== 'All'
-          ? (locationMapper.getName(parsedFilters.status, 'status') || parsedFilters.status)
-          : 'All',
-        scheme: parsedFilters.scheme !== 'All'
-          ? (locationMapper.getName(parsedFilters.scheme, 'scheme') || parsedFilters.scheme)
-          : 'All',
-        year: parsedFilters.year,
-        search: parsedFilters.search,
-        page: parsedFilters.page
-      };
+    // Check if URL has any active filters (not all defaults)
+    const hasUrlFilters =
+      parsedFilters.block !== 'All' ||
+      parsedFilters.panchayat !== 'All' ||
+      parsedFilters.village !== null ||
+      parsedFilters.type !== 'All' ||
+      parsedFilters.status !== 'All' ||
+      parsedFilters.scheme !== 'All' ||
+      parsedFilters.year !== 'All' ||
+      parsedFilters.search !== '';
 
-      setFilters(convertedFilters);
+    // If no URL filters, mark as initialized immediately
+    if (!hasUrlFilters && !hasInitialized) {
+      setFilters(parsedFilters);
+      setHasInitialized(true);
+      return;
+    }
+
+    // For URLs with filters, wait for sufficient project data to ensure slug mappings exist
+    if (!locationMapper || projects.length < 50) {
+      return; // Wait for more projects to load
+    }
+
+    // Convert slugs to display names using the location mapper
+    const convertedFilters: FilterState = {
+      ...parsedFilters,
+      block: parsedFilters.block !== 'All'
+        ? (locationMapper.getName(parsedFilters.block, 'block') || parsedFilters.block)
+        : 'All',
+      panchayat: parsedFilters.panchayat !== 'All'
+        ? (locationMapper.getName(parsedFilters.panchayat, 'panchayat') || parsedFilters.panchayat)
+        : 'All',
+      village: parsedFilters.village
+        ? (locationMapper.getName(parsedFilters.village, 'village') || parsedFilters.village)
+        : null,
+      // Use LocationMapper for filter values to ensure exact match
+      type: parsedFilters.type !== 'All'
+        ? (locationMapper.getName(parsedFilters.type, 'type') || parsedFilters.type)
+        : 'All',
+      status: parsedFilters.status !== 'All'
+        ? (locationMapper.getName(parsedFilters.status, 'status') || parsedFilters.status)
+        : 'All',
+      scheme: parsedFilters.scheme !== 'All'
+        ? (locationMapper.getName(parsedFilters.scheme, 'scheme') || parsedFilters.scheme)
+        : 'All',
+      year: parsedFilters.year,
+      search: parsedFilters.search,
+      page: parsedFilters.page
+    };
+
+    setFilters(convertedFilters);
+
+    // Mark initialization as complete after first conversion
+    if (!hasInitialized) {
+      setHasInitialized(true);
     }
   }, [
     params.blockSlug,
     params.panchayatSlug,
     params.villageSlug,
     searchParams.toString(), // Watch for query param changes
-    locationMapper
+    locationMapper,
+    projects.length, // Re-convert when project count changes significantly
+    hasInitialized
   ]);
 
   /**
@@ -203,6 +205,7 @@ export const useUrlFilters = ({ projects }: UseUrlFiltersOptions): UseUrlFilters
   return {
     filters,
     updateFilters,
-    resetFilters
+    resetFilters,
+    hasInitialized
   };
 };

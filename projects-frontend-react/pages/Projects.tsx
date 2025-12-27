@@ -35,7 +35,7 @@ export const ProjectsPage: React.FC = () => {
   const langPrefix = language === 'en' ? '/en' : '';
 
   // URL-based filter management
-  const { filters, updateFilters, resetFilters } = useUrlFilters({ projects });
+  const { filters, updateFilters, resetFilters, hasInitialized } = useUrlFilters({ projects });
 
   // WhatsApp Shareable Graphic State
   const [isGraphicModalOpen, setIsGraphicModalOpen] = useState(false);
@@ -89,9 +89,10 @@ export const ProjectsPage: React.FC = () => {
     };
   }, []);
 
-  // Validate URL parameters after projects are loaded
+  // Validate URL parameters after projects are loaded AND filters are initialized from URL
   useEffect(() => {
-    if (projects.length > 0 && !isLoading) {
+    // Wait for both projects to load AND URL filters to be initialized
+    if (projects.length > 0 && !isLoading && hasInitialized) {
       const validation = validateFilters(filters, projects);
 
       if (!validation.isValid) {
@@ -120,7 +121,7 @@ export const ProjectsPage: React.FC = () => {
         }
       }
     }
-  }, [projects.length, isLoading]);
+  }, [projects.length, isLoading, hasInitialized, filters]);
 
   // Calculate total projects count for sidebar (based on selected block)
   const totalProjectsForSidebar = useMemo(() => {
