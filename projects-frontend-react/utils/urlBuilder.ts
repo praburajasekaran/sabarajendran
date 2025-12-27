@@ -94,9 +94,10 @@ export const buildProjectsUrl = (params: BuildUrlParams): string => {
     preserveParams
   } = params;
 
-  // Detect if we're on a Tamil page
+  // Detect language from current pathname
+  const isEnglishPage = window.location.pathname.startsWith('/en');
   const isTamilPage = window.location.pathname.startsWith('/ta');
-  const langPrefix = isTamilPage ? '/ta' : '';
+  const langPrefix = isEnglishPage ? '/en' : isTamilPage ? '/ta' : '';
 
   // Build the pathname from location hierarchy
   let pathname = `${langPrefix}/projects`;
@@ -169,12 +170,12 @@ export const parseProjectsUrl = (
 ): FilterState => {
   // Parse pathname segments
   let segments = pathname.split('/').filter(Boolean);
-  
-  // Check if URL starts with 'ta' language prefix and remove it
-  if (segments[0] === 'ta') {
+
+  // Check if URL starts with 'en' or 'ta' language prefix and remove it
+  if (segments[0] === 'en' || segments[0] === 'ta') {
     segments = segments.slice(1);
   }
-  
+
   // segments[0] should now be "projects"
 
   let block = 'All';
