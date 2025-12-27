@@ -90,7 +90,7 @@ export const About: React.FC = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4">
+                                <div className="flex items-start gap-4 pb-4 border-b-2 border-neutral-100">
                                     <div className="p-3 bg-black text-accent-200 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
                                         <Award size={24} strokeWidth={3} />
                                     </div>
@@ -99,6 +99,36 @@ export const About: React.FC = () => {
                                         <p className="font-bold text-lg text-black">{t.about.mlaCard.term2006Years} ({t.about.mlaCard.nellikuppam})</p>
                                         <p className="font-bold text-lg text-black">{t.about.mlaCard.term1Years} ({t.about.mlaCard.neyveli})</p>
                                         <p className="font-bold text-lg text-primary-600">{t.about.mlaCard.term2Years} - {t.about.mlaCard.present}</p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-4 pb-4 border-b-2 border-neutral-100">
+                                    <div className="p-3 bg-black text-accent-200 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
+                                        <Target size={24} strokeWidth={3} />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-neutral-500 uppercase font-black tracking-widest mb-1">{t.about.mlaCard.recentFocus}</p>
+                                        <p className="font-bold text-base text-black leading-snug">{t.about.mlaCard.recentFocusValue}</p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-4 pb-4 border-b-2 border-neutral-100">
+                                    <div className="p-3 bg-black text-accent-200 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
+                                        <Briefcase size={24} strokeWidth={3} />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-neutral-500 uppercase font-black tracking-widest mb-1">{t.about.mlaCard.regionalRole}</p>
+                                        <p className="font-bold text-base text-black leading-snug">{t.about.mlaCard.regionalRoleValue}</p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="p-3 bg-black text-accent-200 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
+                                        <Award size={24} strokeWidth={3} />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-neutral-500 uppercase font-black tracking-widest mb-1">{t.about.mlaCard.legacy}</p>
+                                        <p className="font-bold text-base text-black leading-snug">{t.about.mlaCard.legacyValue}</p>
                                     </div>
                                 </div>
                             </div>
@@ -255,6 +285,79 @@ export const About: React.FC = () => {
                                     {t.about.initiatives.covid.desc}
                                 </p>
                             </div>
+
+                            {/* Political Commitment */}
+                            <div className="bg-neutral-50 border-l-8 border-black p-6 shadow-sm">
+                                <h4 className="font-display text-xl font-black text-black mb-3 uppercase">
+                                    {t.about.initiatives.political.title}
+                                </h4>
+                                <p className="text-neutral-700 leading-relaxed font-medium">
+                                    {t.about.initiatives.political.desc}
+                                </p>
+                            </div>
+
+                            {/* Legislative Work */}
+                            <div className="bg-white border-l-8 border-primary-600 p-6 shadow-sm">
+                                <h4 className="font-display text-xl font-black text-black mb-3 uppercase">
+                                    {t.about.initiatives.legislative.title}
+                                </h4>
+                                <p className="text-neutral-700 leading-relaxed font-medium">
+                                    {t.about.initiatives.legislative.desc}
+                                </p>
+                            </div>
+
+                            {/* Dravidian Model */}
+                            <div className="bg-neutral-50 border-l-8 border-black p-6 shadow-sm">
+                                <h4 className="font-display text-xl font-black text-black mb-3 uppercase">
+                                    {t.about.initiatives.dravidian.title}
+                                </h4>
+                                <p className="text-neutral-700 leading-relaxed font-medium">
+                                    {t.about.initiatives.dravidian.desc}
+                                </p>
+                            </div>
+
+                            {/* Disaster Management */}
+                            <div className="bg-white border-l-8 border-primary-600 p-6 shadow-sm">
+                                <h4 className="font-display text-xl font-black text-black mb-3 uppercase">
+                                    {t.about.initiatives.disaster.title}
+                                </h4>
+                                <p className="text-neutral-700 leading-relaxed font-medium">
+                                    {t.about.initiatives.disaster.desc}
+                                </p>
+                            </div>
+
+                            {/* Sacrifice & Struggle */}
+                            <div className="bg-neutral-50 border-l-8 border-black p-6 shadow-sm">
+                                <h4 className="font-display text-xl font-black text-black mb-3 uppercase">
+                                    {t.about.initiatives.sacrifice.title}
+                                </h4>
+                                <p className="text-neutral-700 leading-relaxed font-medium">
+                                    {t.about.initiatives.sacrifice.desc}
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Evergreen Quote - Bold Statement */}
+                        <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white p-12 border-4 border-black shadow-[16px_16px_0_0_#8B6F47] relative overflow-hidden mt-16">
+                            {/* Decorative Background */}
+                            <div className="absolute inset-0 sun-rays-texture opacity-10 pointer-events-none"></div>
+
+                            {/* Quote Icon */}
+                            <div className="absolute top-8 left-8 text-8xl font-serif text-white/20 leading-none">"</div>
+
+                            <div className="relative z-10 max-w-3xl mx-auto text-center">
+                                <p className="text-2xl md:text-3xl font-bold leading-relaxed italic text-white">
+                                    {t.about.evergreenQuote}
+                                </p>
+                                <div className="mt-8 pt-8 border-t-2 border-white/30">
+                                    <p className="text-lg font-black uppercase tracking-widest text-accent-200">
+                                        — Saba. Rajendran
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Decorative element */}
+                            <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/10 transform rotate-45 translate-x-16 translate-y-16"></div>
                         </div>
 
                     </div>
