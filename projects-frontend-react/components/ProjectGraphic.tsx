@@ -33,9 +33,29 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
   // Translation helpers
   const currentLang: 'ta' | 'en' = (lang === 'ta' || lang === 'en') ? lang : 'ta';
 
-  const villageName = filters.village
-    ? getVillageName(filters.village, currentLang)
-    : (currentLang === 'ta' ? 'நெய்வேலி தொகுதி' : 'Neyveli Constituency');
+  // Determine location display based on filter hierarchy
+  const getLocationDisplay = (): string => {
+    // Priority: village > panchayat > block > default
+    if (filters.village) {
+      return getVillageName(filters.village, currentLang);
+    }
+
+    if (filters.panchayat && filters.panchayat !== 'All') {
+      const panchayatName = getVillageName(filters.panchayat, currentLang);
+      const blockName = filters.block && filters.block !== 'All'
+        ? getVillageName(filters.block, currentLang)
+        : '';
+      return blockName ? `${panchayatName}, ${blockName}` : panchayatName;
+    }
+
+    if (filters.block && filters.block !== 'All') {
+      return getVillageName(filters.block, currentLang);
+    }
+
+    return currentLang === 'ta' ? 'நெய்வேலி தொகுதி' : 'Neyveli Constituency';
+  };
+
+  const villageName = getLocationDisplay();
 
   const t = {
     lakhs: currentLang === 'ta' ? 'லட்சம்' : 'Lakhs',
@@ -97,7 +117,6 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
           marginTop: '-4px' // Optical adjustment for font
         }}>
           {villageName}
-          {filters.block && filters.block !== 'All' ? `, ${getVillageName(filters.block, currentLang)}` : ''}
         </span>
       </div>
 
