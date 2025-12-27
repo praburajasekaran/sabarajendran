@@ -2562,22 +2562,6 @@
       "rawBudget": 1020000
     },
     {
-      "id": "1172",
-      "title": "Renovation of Korakkan Lake",
-      "title_ta": "கோரக்கன் ஏரி புனரமைத்தல்",
-      "block": "Kurinjipadi",
-      "panchayat": "Vadakuthu",
-      "panchayat_ta": "வடக்குத்து",
-      "village": "Vadakuthu",
-      "village_ta": "வடக்குத்து",
-      "year": "2023-2024",
-      "status": "Ongoing",
-      "type": "Infrastructure",
-      "scheme": "மகாத்மாகாந்தி தேசிய ஊரக வேலை உறுதித்திட்டம்",
-      "budget": "₹10.50 L",
-      "rawBudget": 1050000
-    },
-    {
       "id": "1173",
       "title": "Constructing Cement Roads in Thillainagar",
       "title_ta": "தில்லை நகரில் சிமெண்ட் சாலை அமைத்தல்",
@@ -3380,7 +3364,7 @@
     {
       "id": "1110",
       "title": "Construction of Overhead Water Tank (30,000 L)",
-      "title_ta": "மேல்நிலை நீர் தேக்கத்தொட்டி அமைத்தல் ( 30000 லி)",
+      "title_ta": "மேல்நிலை நீர் தேக்கத்தொட்டி அமைத்தல் (30000 லி)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "வடக்குத்து",
@@ -3621,22 +3605,6 @@
       "id": "1125",
       "title": "Construction of Burial Ground Road at Gandhi Nagar",
       "title_ta": "காந்தி நகர் மயான சாலை அமைத்தல்",
-      "block": "Kurinjipadi",
-      "panchayat": "Vadakuthu",
-      "panchayat_ta": "வடக்குத்து",
-      "village": "Vadakuthu",
-      "village_ta": "வடக்குத்து",
-      "year": "2022-2023",
-      "status": "Completed",
-      "type": "Infrastructure",
-      "scheme": "பொது நிதி(வ.ஊ)",
-      "budget": "₹10.00 L",
-      "rawBudget": 1000000
-    },
-    {
-      "id": "1126",
-      "title": "Construction of Burial Ground Road at Gandhi Nagar (2)",
-      "title_ta": "காந்தி நகர் மயான சாலை அமைத்தல் (2)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "வடக்குத்து",
@@ -7145,7 +7113,7 @@
       "panchayat": "Annadanampettai",
       "panchayat_ta": "அன்னதானப்பேட்டை",
       "village": "Ambalavanpettai",
-      "village_ta": "அம்பலவாணன்பேட்டை",
+      "village_ta": "அம்பலவானன்பேட்டை",
       "year": "2022-2023",
       "status": "Completed",
       "type": "Infrastructure",
@@ -20694,8 +20662,8 @@
     }
   ],
   "meta": {
-    "total": 1307,
-    "generatedAt": "2025-12-27T03:01:53.240Z",
+    "total": 1305,
+    "generatedAt": "2025-12-27T04:56:34.365Z",
     "version": "1.0.0",
     "blocks": [
       "Kurinjipadi",
@@ -20856,7 +20824,7 @@
         "Periyakovilkuppam": "பெரியகோவில்குப்பம்",
         "Ayipettai": "ஆயிப்பேட்டை",
         "Annathanampettai": "அன்னதானப்பேட்டை",
-        "Ambalavanpettai": "அம்பலவாணன்பேட்டை",
+        "Ambalavanpettai": "அம்பலவானன்பேட்டை",
         "Muthukrishnapuram": "முத்துகிருஷ்ணாபுரம்",
         "Vallam Colony": "வல்லம் ஆதி திராவிடர் பகுதி",
         "Vallam": "வல்லம்",
