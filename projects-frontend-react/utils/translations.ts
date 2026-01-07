@@ -127,26 +127,6 @@ export const TRANSLATIONS = {
         covid: {
           title: 'Crisis Management & Relief',
           desc: 'During the unprecedented COVID-19 crisis, he launched the "Ondrinaivom Vaa" campaign, a lifeline that delivered food, protective equipment, and essentials to over 15,000 struggling families. His leadership was instrumental in coordinating swift relief operations during the Nivar cyclone, ensuring no family was left behind during natural calamities.'
-        },
-        political: {
-          title: '45 Years of Political Commitment',
-          desc: 'Symbol of Loyalty: Since 1980, spanning 45 years, he has been a disciplined soldier of the Dravida Munnetra Kazhagam, earning the title of "Senior Pioneer of the Party." A trusted lieutenant under Muthamizharignar Kalaignar and Anna Thalapathi, he now serves under the guidance of Youth Wing Secretary Minister Udhayanidhi Stalin, driving progress in the Neyveli constituency.'
-        },
-        legislative: {
-          title: 'Legislative Work: Neyveli Development',
-          desc: 'Victory Journey: Earning overwhelming support from Neyveli constituency voters in the 2021 assembly elections, he continues to work for infrastructure and industrial development. Voice for Farmers\' Rights (NLC Issue): In NLC land acquisition matters, he acts as a bridge between government and people, advocating for fair compensation and employment opportunities. This stands as a key milestone in his political career.'
-        },
-        dravidian: {
-          title: 'Ambassador of Dravidian Model Programs',
-          desc: 'Women\'s Welfare: Ensuring Tamil Nadu government\'s "Kalaignar Magalir Urimai Thogai" (₹1,000 scheme), "Pudhumai Penn" program, and "Vidiyal Payanam" reach all eligible people in Neyveli and Panruti areas. Education Development: Utilizing his Engineering (B.E.) knowledge in administrative work, he has led efforts to modernize government schools under the "Professor Anbazhagan School Development Program."'
-        },
-        disaster: {
-          title: 'Public Service & Disaster Management',
-          desc: 'Always with the People: During heavy rains and floods in Cuddalore district (2021-2024), he worked alongside officials in the field, ensuring relief reached affected people directly. Engineer - People\'s Representative: Utilizing his technical education, he focuses particularly on groundwater management, lake and pond desilting, and irrigation canal restoration works.'
-        },
-        sacrifice: {
-          title: 'Sacrifice & Struggle',
-          desc: 'Prison Sacrifice (Sirai Senra Selvar): His sacrifice of imprisonment in 2001 and 2003 for party principles and people\'s welfare serves as an enduring lesson for young volunteers today.'
         }
       }
     },
@@ -382,13 +362,13 @@ export const TRANSLATIONS = {
         nellikuppam: 'நெல்லிக்குப்பம்',
         neyveli: 'நெய்வேலி',
         recentFocus: 'சமீபத்திய கவனம்',
-        recentFocusValue: 'NLC நில விவகார தீர்வு, 2021-2025 உட்கட்டமைப்பு மேம்பாடு, திராவிட மாடல் திட்டங்கள்',
+        recentFocusValue: 'தொழில்-தொழிலாளர் உறவுகள், நவீன பாசனம் மற்றும் சமூக நல திட்டங்கள்',
         regionalRole: 'பிராந்திய பங்கு',
-        regionalRoleValue: '1980 முதல் 45 ஆண்டுகால கட்சிப் பணி - கழகத்தின் மூத்த போர்வாள்',
+        regionalRoleValue: 'கடலூர் மேற்கு மாவட்டத்தின் மூத்த அரசியல் சிற்பி',
         legacy: 'பாரம்பரியம்',
-        legacyValue: '2001 & 2003 சிறை சென்ற செல்வர் - படித்த பொறியாளர் மற்றும் விளிம்புநிலை மக்களின் தோழன்',
+        legacyValue: '"சிறை சென்ற செல்வர்" என்று அறியப்படுபவர் மற்றும் மக்களுடன் நேரடித் தொடர்பு',
       },
-      evergreenQuote: '"அன்று கலைஞரின் ஆணையை ஏற்றேன், இன்று தளபதியின் வழியில் திராவிட மாடல் ஆட்சியை மக்களின் இல்லங்களுக்குக் கொண்டு சேர்க்கிறேன்!"',
+      evergreenQuote: '"1980களில் கலைஞரின் கீழ் நடந்த போராட்டங்களில் இருந்து 2025 தளபதியின் திராவிட மாடல் வரை, எனது வாழ்க்கை உதய சூரியனுக்கும் கடலூர் மக்களுக்கும் அர்ப்பணிக்கப்பட்டுள்ளது."',
       initiatives: {
         title: 'சமூக ஆர்வங்கள் மற்றும் முயற்சிகள்',
         agriculture: {
@@ -409,27 +389,7 @@ export const TRANSLATIONS = {
         },
         covid: {
           title: 'கோவிட்-19 நிவாரணப் பணிகள்',
-          desc: 'கோவிட்-19 பெருந்தொற்றின் போது, உள்ளூர் பொருளாதார நெருக்கடியைச் சமாளிக்க மக்களுக்கு அத்தியாவசியப் பொருட்கள் மற்றும் பொருட்களை வழங்குவதை நோக்கமாகக் கொண்டு "ஒன்றிணைவோம் வா" பிரச்சாரத்தைத் தொடங்கினார். கபசுர குடிநீர், பாதுகாப்பு உபகரணங்கள் மற்றும் உணவுப் பொருட்கள் போன்றவற்றைத் திரட்டி விநியோகித்ததன் மூலம், இந்த பிரச்சாரம் 15000 க்கும் மேற்பட்ட குடும்பங்களுக்கு உதவியது. நிவர் புயல் நெய்வேலி தொகுதி மற்றும் சுற்றியுள்ள கிராமங்களைத் தாக்கிய பிறகும் நிவாரண நடவடிக்கைகள் திறம்பட செயல்படுத்தப்பட்டன. 2020 இந்திய விவசாயிகள் போராட்டத்தின் போது விவசாயிகளுக்கு ஆதரவாக குரல் கொடுத்தார் மற்றும் கடலூர் மாவட்டத்தில் நடைபெற்ற போராட்டங்களில் பங்கேற்றார்.'
-        },
-        political: {
-          title: '45 ஆண்டுகால அரசியல் உறுதி',
-          desc: 'விசுவாசத்தின் அடையாளம்: 1980-ஆம் ஆண்டு முதல் கடந்த 45 ஆண்டுகளாக திராவிட முன்னேற்றக் கழகத்தின் கட்டுக்கோப்பான தொண்டனாகத் தன் பயணத்தைத் தொடங்கி, இன்று "கழகத்தின் மூத்த முன்னோடி" என்ற நற்பெயரோடு விளங்குகிறார். முத்தமிழறிஞர் கலைஞர் மற்றும் அண்ணன் தளபதி ஆகியோரின் நம்பிக்கைக்குரிய தளபதியாக விளங்கியவர், இன்று இளைஞர் அணிச் செயலாளர் அமைச்சர் உதயநிதி ஸ்டாலின் அவர்களின் வழிகாட்டுதலின் கீழ் நெய்வேலி தொகுதியை முன்னேற்றி வருகிறார்.'
-        },
-        legislative: {
-          title: 'சட்டமன்றப் பணி: நெய்வேலியின் வளர்ச்சி',
-          desc: 'வெற்றிப் பயணம்: 2021 சட்டமன்றத் தேர்தலில் நெய்வேலி தொகுதி மக்களின் பேராதரவைப் பெற்று, தொகுதியின் உட்கட்டமைப்பு மற்றும் தொழில் வளர்ச்சிக்காகத் தொடர்ந்து பணியாற்றி வருகிறார். விவசாயிகளின் உரிமைக்குரல் (NLC விவகாரம்): நெய்வேலி நிலக்கரி நிறுவனம் (NLC) தொடர்பான நில எடுப்பு விவகாரங்களில், விவசாயிகளின் நலன் காக்க அரசுக்கும் மக்களுக்கும் இடையே பாலமாகச் செயல்பட்டு, நியாயமான இழப்பீடு மற்றும் வேலைவாய்ப்பு கிடைக்கத் தொடர்ந்து குரல் கொடுத்து வருகிறார். இது இவரது அரசியல் வாழ்வின் ஒரு முக்கிய மைல்கல்லாகும்.'
-        },
-        dravidian: {
-          title: 'திராவிட மாடல் திட்டங்களின் தூதுவர்',
-          desc: 'மகளிர் நலன்: தமிழக அரசின் "கலைஞர் மகளிர் உரிமைத் தொகை" (ரூ.1,000 திட்டம்), "புதுமைப் பெண்" திட்டம் மற்றும் "விடியல் பயணம்" போன்ற திட்டங்கள் நெய்வேலி மற்றும் பண்ருட்டி பகுதிகளில் தகுதியுள்ள அனைத்து மக்களுக்கும் சென்றடைவதை உறுதி செய்துள்ளார். கல்வி வளர்ச்சி: தனது பொறியியல் (B.E.) அறிவை ஆட்சியியல் பணிகளில் புகுத்தி, தொகுதியில் உள்ள அரசுப் பள்ளிகளை "பேராசிரியர் அன்பழகன் பள்ளி மேம்பாட்டுத் திட்டத்தின்" கீழ் நவீனப்படுத்த முன்னின்று உழைத்துள்ளார்.'
-        },
-        disaster: {
-          title: 'மக்கள் சேவை மற்றும் பேரிடர் மேலாண்மை',
-          desc: 'என்றும் மக்களுடன்: கடலூர் மாவட்டம் எதிர்கொண்ட பெருமழை மற்றும் வெள்ளக் காலங்களில் (2021-2024), அதிகாரிகளுடன் களத்தில் நின்று பணியாற்றியதோடு, பாதிக்கப்பட்ட மக்களுக்கு நிவாரண உதவிகள் நேரடியாகச் சென்றடைவதை உறுதி செய்தவர். பொறியாளர் - மக்கள் பிரதிநிதி: தனது தொழில்நுட்பக் கல்வியைப் பயன்படுத்தி, நிலத்தடி நீர் மேலாண்மை, ஏரி - குளங்கள் தூர்வாரும் பணிகள் மற்றும் பாசனக் கால்வாய் புனரமைப்புப் பணிகளில் தனி கவனம் செலுத்தி வருகிறார்.'
-        },
-        sacrifice: {
-          title: 'தியாகமும் - போராட்ட குணமும்',
-          desc: 'சிறை சென்ற செல்வர்: கழகத்தின் கொள்கைகளுக்காகவும், மக்கள் நலனுக்காகவும் 2001 மற்றும் 2003-ஆம் ஆண்டுகளில் சிறைவாசம் அனுபவித்த இவரது தியாகம், இன்றுள்ள இளம் தொண்டர்களுக்கு என்றும் ஒரு பாடமாகத் திகழ்கிறது.'
+          desc: 'கோவிட்-19 பெருந்தொற்றின் போது, உள்ளூர் பொருளாதார நெருக்கடியைச் சமாளிக்க மக்களுக்கு அத்தியாவசியப் பொருட்கள் மற்றும் பொருட்களை வழங்குவதை நோக்கமாகக் கொண்டு “ஒன்றிணைவோம் வா” பிரச்சாரத்தைத் தொடங்கினார். கபசுர குடிநீர், பாதுகாப்பு உபகரணங்கள் மற்றும் உணவுப் பொருட்கள் போன்றவற்றைத் திரட்டி விநியோகித்ததன் மூலம், இந்த பிரச்சாரம் 15000 க்கும் மேற்பட்ட குடும்பங்களுக்கு உதவியது. நிவர் புயல் நெய்வேலி தொகுதி மற்றும் சுற்றியுள்ள கிராமங்களைத் தாக்கிய பிறகும் நிவாரண நடவடிக்கைகள் திறம்பட செயல்படுத்தப்பட்டன. 2020 இந்திய விவசாயிகள் போராட்டத்தின் போது விவசாயிகளுக்கு ஆதரவாக குரல் கொடுத்தார் மற்றும் கடலூர் மாவட்டத்தில் நடைபெற்ற போராட்டங்களில் பங்கேற்றார்.'
         }
       }
     },

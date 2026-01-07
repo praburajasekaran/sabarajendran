@@ -1,0 +1,288 @@
+Sl. No.,Habitation (EN),Habitation (TA),Scheme (EN),Scheme (TA),Work Type (EN),Work Type (TA),Work Name (EN),Work Name (TA),Amount,Status (EN),Status (TA)
+1,Puliyur kattusagai north,புலியூர் காட்டுசாகை வடக்கு,General Fund - Block Panchayat,பொது நிதி - வட்டார ஊராட்சி,WBM + BT,தார் சாலை,Thandayarmedu northstreet,தண்டையார்மேடு வடக்கு தெரு,500000,Completed,முடிவுற்றது
+2,Puliyur kattusagai,புலியூர் காட்டுசாகை,15th CFC - Block Panchayat,15-வது மத்திய நிதிக்குழு - வட்டார ஊராட்சி,FHTC,வீட்டு குடிநீர் இணைப்பு,PWF and FHTC @ Puliyur Kattusagai,புலியூர் காட்டுசாகையில் குடிநீர் வசதி மற்றும் வீட்டு இணைப்பு,225000,Completed,முடிவுற்றது
+3,Puliyur,புலியூர்,15th CFC - District Panchayat,15-வது மத்திய நிதிக்குழு - மாவட்ட ஊராட்சி,Drains and Sewage system,வடிகால் மற்றும் கழிவுநீர் அமைப்பு,Drainage at Puliyur pt south vasanakuppam,புலியூர் தெற்கு வசனகுப்பத்தில் வடிகால் வசதி,500000,Completed,முடிவுற்றது
+4,Puliyur kattusagai north,புலியூர் காட்டுசாகை வடக்கு,15th CFC - District Panchayat,15-வது மத்திய நிதிக்குழு - மாவட்ட ஊராட்சி,BT Road,தார் சாலை,BT at Puliyur Kattusagai North st,புலியூர் காட்டுசாகை வடக்கு தெரு தார் சாலை,500000,Completed,முடிவுற்றது
+5,Puliyur kattusagai,புலியூர் காட்டுசாகை,15th CFC - District Panchayat,15-வது மத்திய நிதிக்குழு - மாவட்ட ஊராட்சி,Pipeline Extension,குழாய் விரிவாக்கம்,Pipeline extension at Puliyur Kattusagai,புலியூர் காட்டுசாகையில் குடிநீர் குழாய் விரிவாக்கம்,200000,Completed,முடிவுற்றது
+6,North vasanankuppam,வடக்கு வசனங்குப்பம்,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,FHTC,வீட்டு குடிநீர் இணைப்பு,Providing 28 FHTC for Vasanakuppam,வசனகுப்பத்தில் 28 வீட்டு குடிநீர் இணைப்புகள்,716350,Completed,முடிவுற்றது
+7,Puliyur,புலியூர்,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,FHTC,வீட்டு குடிநீர் இணைப்பு,Providing 73 FHTC for Puliyur,புலியூரில் 73 வீட்டு குடிநீர் இணைப்புகள்,1306650,Completed,முடிவுற்றது
+8,Vasanankuppam colony,வசனங்குப்பம் காலனி,ADI DRAVIDAR HABITATION (MGNREGS),ஆதிதிராவிடர் குடியிருப்பு மேம்பாடு (MGNREGS),Culvert,சிறுபாலம்,Construction of Culvert 1.5 Puliyur,புலியூரில் 1.5 மீ சிறுபாலம் கட்டுதல்,497000,Completed,முடிவுற்றது
+9,Vasanankuppam colony,வசனங்குப்பம் காலனி,ADI DRAVIDAR HABITATION (MGNREGS),ஆதிதிராவிடர் குடியிருப்பு மேம்பாடு (MGNREGS),WBM Road,சரளை சாலை,Vasanangkuppam colony road,வசனங்குப்பம் காலனி சாலை அமைத்தல்,487000,Completed,முடிவுற்றது
+10,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி தேசிய ஊரக வேலை உறுதித் திட்டம்,Massive Tree Plantation,பெரும் மரக்கன்றுகள் நடுதல்,Massive Tree Plantation at Puliyur Pt,புலியூர் ஊராட்சியில் மரக்கன்றுகள் நடுதல்,200000,Completed,முடிவுற்றது
+11,Puliyur,புலியூர்,MLACDS-Neyveli,சட்டமன்ற உறுப்பினர் நிதி,Threshing Floor,நெற்களம்,Threshing floor in Therku vanankuppam,தெற்கு வசனகுப்பம் கிராமத்தில் நெற்களம் அமைத்தல்,500000,Completed,முடிவுற்றது
+12,Puliyur kattusagai,புலியூர் காட்டுசாகை,General Fund - Block Panchayat,பொது நிதி - வட்டார ஊராட்சி,Concrete paver block,பேவர் பிளாக் சாலை,Paver Block Road in Puliyur kattusagai,புலியூர் காட்டுசாகை மேற்கு தெரு பேவர் பிளாக் சாலை,500000,Completed,முடிவுற்றது
+13,Puliyur,புலியூர்,General Fund- District Panchayat,பொது நிதி - மாவட்ட ஊராட்சி,Concrete paver block,பேவர் பிளாக் சாலை,Paver block road Puliyur,புலியூர் கிராமத்தில் பேவர் பிளாக் சாலை,200000,Completed,முடிவுற்றது
+14,Puliyur,புலியூர்,General Fund- District Panchayat,பொது நிதி - மாவட்ட ஊராட்சி,WBM + BT,தார் சாலை,Paver Block road in idumban Koil St,இடும்பன் கோயில் தெரு பேவர் பிளாக் சாலை,200000,Completed,முடிவுற்றது
+15,Vasanankuppam colony,வசனங்குப்பம் காலனி,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,New Borewell,புதிய ஆழ்துளை கிணறு,Drilling Boorwell Puliyur Vasanagkuppam,வசனங்குப்பத்தில் ஆழ்துளை கிணறு மற்றும் மோட்டார்,51526,Completed,முடிவுற்றது
+16,Vasanankuppam colony,வசனங்குப்பம் காலனி,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,OHT,மேல்நிலை நீர் தொட்டி,OHT Puliyur Vasanagkuppam,வசனகுப்பத்தில் மேல்நிலை நீர் தேக்கத் தொட்டி,1031474,Completed,முடிவுற்றது
+17,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி தேசிய ஊரக வேலை உறுதித் திட்டம்,Concrete Check Dam,கான்கிரீட் தடுப்பணை,Concrete Check Dam in puliyur Vaikkal,புலியூர் வாய்க்காலில் கான்கிரீட் தடுப்பணை,532000,Completed,முடிவுற்றது
+18,Puliyur,புலியூர்,General Fund - Block Panchayat,பொது நிதி - வட்டார ஊராட்சி,WBM + BT,தார் சாலை,BT to Puliyur South Street,புலியூர் தெற்கு தெருவில் தார் சாலை அமைத்தல்,700000,Completed,முடிவுற்றது
+19,Puliyur,புலியூர்,General Fund- District Panchayat,பொது நிதி - மாவட்ட ஊராட்சி,Street Lights,பள்ளி உபகரணங்கள்,Table and bench 5 set in Puliyur PUES,புலியூர் பள்ளிக்கு 5 செட் மேசை மற்றும் பெஞ்சுகள்,97720,Completed,முடிவுற்றது
+20,Puliyur kattusagai,புலியூர் காட்டுசாகை,General Fund- District Panchayat,பொது நிதி - மாவட்ட ஊராட்சி,Street Lights,பள்ளி உபகரணங்கள்,Table and bench 10 set in Puliyur kattusagai,காட்டுசாகை பள்ளிக்கு 10 செட் மேசை பெஞ்சுகள்,195440,Completed,முடிவுற்றது
+21,North vasanankuppam,வடக்கு வசனங்குப்பம்,General Fund- District Panchayat,பொது நிதி - மாவட்ட ஊராட்சி,Street Lights,பள்ளி உபகரணங்கள்,Table and bench 5 set in Vasanankuppam,வசனகுப்பம் பள்ளிக்கு 5 செட் மேசை பெஞ்சுகள்,97720,Completed,முடிவுற்றது
+22,,வசனங்குப்பம்,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,Concrete paver block,பேவர் பிளாக் சாலை,Paver Block For West Street Vasanankuppam,வசனகுப்பம் மேற்கு தெரு பேவர் பிளாக் சாலை,375000,Completed,முடிவுற்றது
+23,,காட்டுசாகை,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,Concrete paver block,பேவர் பிளாக் சாலை,Paver Block @ Periya Kattu Sagai,பெரிய காட்டுசாகையில் பேவர் பிளாக் சாலை,400000,Completed,முடிவுற்றது
+24,,வசனங்குப்பம்,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,Construction of Drainage,வடிகால் அமைப்பு,Drainage @ Vasanankuppam,வசனகுப்பத்தில் வடிகால் வசதி அமைத்தல்,757000,Completed,முடிவுற்றது
+25,,புலியூர் வசனகுப்பம்,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,New Borewell,புதிய ஆழ்துளை கிணறு,Borewell @ Puliyur Vasanankuppam,புலியூர் வசனகுப்பத்தில் ஆழ்துளை கிணறு அமைத்தல்,741000,Completed,முடிவுற்றது
+26,Puliyur kattusagai,புலியூர் காட்டுசாகை,AGAMT II,அனைத்து கிராம அண்ணா மறுமலர்ச்சி திட்டம் II,Fencing,வேலி அமைத்தல்,Infrastructure for Moringa nursery,முருங்கை நாற்றுப்பண்ணைக்கு வேலி மற்றும் நிழல் வலை,334000,Completed,முடிவுற்றது
+27,Colony,காலனி,AGAMT II,அனைத்து கிராம அண்ணா மறுமலர்ச்சி திட்டம் II,CC Road,சிமெண்ட் சாலை,CC Road Puliyur colony,புலியூர் காலனி கிழக்கு தெரு சிமெண்ட் சாலை,625000,Completed,முடிவுற்றது
+28,Puliyur kattusagai,புலியூர் காட்டுசாகை,AGAMT II,அனைத்து கிராம அண்ணா மறுமலர்ச்சி திட்டம் II,CC Road,சிமெண்ட் சாலை,CC Road Pudhu street Puliyurkattusagai,காட்டுசாகை புது தெரு சிமெண்ட் சாலை,410000,Completed,முடிவுற்றது
+29,Puliyur kattusagai,புலியூர் காட்டுசாகை,AGAMT II,அனைத்து கிராம அண்ணா மறுமலர்ச்சி திட்டம் II,School Toilet (Boys),பள்ளி கழிப்பறை (மாணவர்),Boys Toilet Puliyur kattusagai PUES,காட்டுசாகை பள்ளியில் மாணவர் கழிப்பறை,530000,Completed,முடிவுற்றது
+30,Puliyur,புலியூர்,AGAMT II,அனைத்து கிராம அண்ணா மறுமலர்ச்சி திட்டம் II,School Toilet (Girls),பள்ளி கழிப்பறை (மாணவியர்),Girls Toilet Puliyur PUES,புலியூர் பள்ளியில் மாணவியர் கழிப்பறை,591000,Completed,முடிவுற்றது
+31,Puliyur kattusagai,புலியூர் காட்டுசாகை,AGAMT II,அனைத்து கிராம அண்ணா மறுமலர்ச்சி திட்டம் II,School Toilet (Girls),பள்ளி கழிப்பறை (மாணவியர்),Girls Toilet Puliyur kattusagai PUES,காட்டுசாகை பள்ளியில் மாணவியர் கழிப்பறை,591000,Completed,முடிவுற்றது
+32,Pethanaikkankuppam,பெத்தநாயக்கன்குப்பம்,AGAMT II,அனைத்து கிராம அண்ணா மறுமலர்ச்சி திட்டம் II,Threshing floor,நெற்களம்,Threshing Floor Pethanankuppam,பெத்தநாயக்கன்குப்பத்தில் நெற்களம் அமைத்தல்,810000,Completed,முடிவுற்றது
+33,Puliyur kattusagai,புலியூர் காட்டுசாகை,AGAMT II,அனைத்து கிராம அண்ணா மறுமலர்ச்சி திட்டம் II,Ponds,குளம் சீரமைத்தல்,Rejuvenation of Thandrampettai Pond,தண்டையார்மேட்டை குளம் சீரமைத்தல்,1200000,Completed,முடிவுற்றது
+34,Vasanankuppam colony,வசனங்குப்பம் காலனி,New Classroom Buildings,புதிய பள்ளி வகுப்பறைத் திட்டம்,School Building,பள்ளி வகுப்பறை,New School Building PUPS Vasanankuppam,வசனகுப்பம் பள்ளியில் 2 புதிய வகுப்பறைகள்,3180000,Completed,முடிவுற்றது
+35,Puliyur,புலியூர்,New Classroom Buildings,புதிய பள்ளி வகுப்பறைத் திட்டம்,School Building,பள்ளி வகுப்பறை,New School Building PUPS Puliyur,புலியூர் பள்ளியில் 2 புதிய வகுப்பறைகள்,3180000,Completed,முடிவுற்றது
+36,Puliyur kattusagai,புலியூர் காட்டுசாகை,SIDS,எஸ்.ஐ.டி.எஸ்,School Renovation,பள்ளி சீரமைப்பு,Repairs to PUES building Puliyur kattasagai,புலியூர் காட்டுசாகை பள்ளி கட்டிட சீரமைப்பு,336000,Completed,முடிவுற்றது
+37,Puliyur,புலியூர்,SIDS,எஸ்.ஐ.டி.எஸ்,School Renovation,பள்ளி சீரமைப்பு,Repairs to PUES building Puliyur kattasagai,புலியூர் காட்டுசாகை பள்ளி கட்டிட சீரமைப்பு,333000,Completed,முடிவுற்றது
+38,Thirattikuppam,திரட்டிக்குப்பம்,MLACDS-Neyveli,சட்டமன்ற உறுப்பினர் நிதி,Cremation Shed,மயான கொட்டகை,Cremation shed Thiratikuppam Village,திரட்டிக்குப்பம் கிராமத்தில் மயான கொட்டகை,600000,Completed,முடிவுற்றது
+39,Puliyur,புலியூர்,MGSMT,முதலமைச்சரின் கிராம சாலைகள் மேம்பாட்டுத் திட்டம்,WMM + BC,சாலை மேம்பாடு,Pethangkuppam to Puliyurkattusagai road,பெத்தநாயக்கன்குப்பம் - காட்டுசாகை சாலை,4855000,Completed,முடிவுற்றது
+40,Puliyur,புலியூர்,General Fund - Block Panchayat,பொது நிதி - வட்டார ஊராட்சி,Cremation Shed,மயான கொட்டகை,Waiting Shed at Puliyur Sitheri Kulakarai,புலியூர் சித்தேரி குளக்கரையில் நிழற்குடை,700000,Completed,முடிவுற்றது
+41,Vasanankuppam colony,வசனங்குப்பம் காலனி,General Fund- District Panchayat,பொது நிதி - மாவட்ட ஊராட்சி,Drainage,வடிகால்,Drainage in vasanankuppam village,வசனங்குப்பம் கிராமத்தில் வடிகால் அமைத்தல்,150000,Completed,முடிவுற்றது
+42,North vasanankuppam,வடக்கு வசனங்குப்பம்,15th CFC - Block Panchayat,15-வது மத்திய நிதிக்குழு - வட்டார ஊராட்சி,Kitchen Repairs,சமையல் கூட பழுது,Repairs to Kitchen Shed Vasanankuppam,வசனகுப்பம் பள்ளி சமையல் கூட பழுது,20000,Completed,முடிவுற்றது
+43,Puliyur,புலியூர்,15th CFC - Block Panchayat,15-வது மத்திய நிதிக்குழு - வட்டார ஊராட்சி,Kitchen Repairs,சமையல் கூட பழுது,Repairs to Kitchen Shed Vasanankuppam,தெற்கு வசனகுப்பம் பள்ளி சமையல் கூட பழுது,50000,Completed,முடிவுற்றது
+44,North vasanankuppam,வடக்கு வசனங்குப்பம்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Anganwadi,அங்கன்வாடி,Anganwadi Building South Vasanankuppam,தெற்கு வசனகுப்பத்தில் அங்கன்வாடி கட்டிடம்,1400000,Completed,முடிவுற்றது
+45,Puliyur kattusagai,புலியூர் காட்டுசாகை,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Anganwadi,அங்கன்வாடி,Anganwadi Building Puliyur Kattusagai,புலியூர் காட்டுசாகையில் அங்கன்வாடி கட்டிடம்,1400000,Completed,முடிவுற்றது
+46,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Kitchen Shed,சமையல் கூடம்,AWES Puliyur,புலியூர் அங்கன்வாடி சமையல் கூடம்,743000,Completed,முடிவுற்றது
+47,Puliyur kattusagai,புலியூர் காட்டுசாகை,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Kitchen Shed,சமையல் கூடம்,PUES GHS Puliyurkattusagai,புலியூர் காட்டுசாகை பள்ளி சமையல் கூடம்,743000,Completed,முடிவுற்றது
+48,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Kitchen Shed,சமையல் கூடம்,PUES Puliyur,புலியூர் பள்ளி சமையல் கூடம்,743000,Completed,முடிவுற்றது
+49,Puliyur kattusagai,புலியூர் காட்டுசாகை,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Sports Centre,விளையாட்டு மையம்,Rural Sports Centre Puliyur,புலியூர் விளையாட்டு மையம் அமைத்தல்,145000,Completed,முடிவுற்றது
+50,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Sports Centre,விளையாட்டு மையம்,Rural Sports Centre Puliyur Pt,புலியூர் ஊராட்சியில் விளையாட்டு மையம்,145000,Completed,முடிவுற்றது
+51,Puliyur,புலியூர்,Special Assistance - Libraries,நூலகங்களுக்கான சிறப்பு நிதி,New Building,புதிய கட்டிடம்,Library building in Puliyur Panchayat,புலியூர் ஊராட்சியில் நூலக கட்டிடம்,2200000,Completed,முடிவுற்றது
+52,Puliyur,புலியூர்,SBM(G),தூய்மை பாரத இயக்கம் (G),Mini CSC,சிறிய சேவை மையம்,MCSC at Puliyur West VAO Office,புலியூர் மேற்கு VAO அலுவலகத்தில் MCSC,200000,Completed,முடிவுற்றது
+53,Puliyur,புலியூர்,SBM(G),தூய்மை பாரத இயக்கம் (G),e-Carts,மின்சார வண்டி,E cart for Puliyur pt,புலியூர் ஊராட்சிக்கு மின்சார வண்டி,230000,Completed,முடிவுற்றது
+54,Puliyur,புலியூர்,General Fund - Block Panchayat,பொது நிதி - வட்டார ஊராட்சி,WBM + BT,தார் சாலை,Tar Road Thirattikuppam to Agartamparam,திரட்டிக்குப்பம் - அகரதம்பரம் தார் சாலை,1365000,Physically Completed,பணி முடிந்தது
+55,Puliyur,புலியூர்,General Fund - Block Panchayat,பொது நிதி - வட்டார ஊராட்சி,WBM + BT,தார் சாலை,Tar Road in Siththeri Kulakkarai,சித்தேரி குளக்கரையில் தார் சாலை,960000,Physically Completed,பணி முடிந்தது
+56,Puliyur,புலியூர்,PMAY-G,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SUBRAMANIYAN,சுப்பிரமணியன் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+57,Puliyur,புலியூர்,PMAY-G,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SAKTHIVEL,சக்திவேல் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+58,Puliyur,புலியூர்,PMAY-G,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SUGANTHI,சுகந்தி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+59,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SUMATHI,சுமதி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+60,Puliyur,புலியூர்,PMAY-G,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for kanagarasu,கனகராசு என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+61,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ASODHAI,அசோதை என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+62,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for EZHAMMAL,ஏழம்மாள் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+63,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for PADMAVATHY,பத்மாவதி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+64,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MUTHULAKSHMI,முத்துலட்சுமி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+65,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for THIYAGARAJAN,தியாகராஜன் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+66,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KANNAGI,கண்ணகி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+67,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MAYAVEL,மாயவேல் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+68,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for PARAMASIVAN,பரமசிவன் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+69,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for DHANABAL,தனபால் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+70,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for JOTHI VENKATESAN,ஜோதி வெங்கடேசன் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+71,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VIJAYAKUMARI,விஜயகுமாரி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+72,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for JAYALAKSHMI,ஜெயலட்சுமி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+73,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for JAYANTHI,ஜெயந்தி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+74,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for JAYABAL,ஜெயபால் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+75,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for EZHUMALAI,ஏழுமலை என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+76,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MARUTHACHELAMOORTHI,மருதாசலமூர்த்தி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+77,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VEMBU,வேம்பு என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+78,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KUZHANTHAI VEL,குழந்தைவேல் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+79,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MADHIAZHAGAN,மதியழகன் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+80,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for LATHA,லதா என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+81,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for AZHAGESAN,அழகேசன் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+82,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for GOBALA KRISHNAN,கோபாலகிருஷ்ணன் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+83,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for DHANASEKAR,தனசேகர் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+84,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RASAM,ராசம் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+85,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAMACHANDIRAN,ராமச்சந்திரன் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+86,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MOORTHY,மூர்த்தி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+87,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for NAGAVALLI,நாகவள்ளி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+88,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KUPPUSAMI,குப்புசாமி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+89,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for JAYABAL,ஜெயபால் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+90,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for GOVINDHARAJI,கோவிந்தராஜி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+91,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for CHINNATHAMBI,சின்னதம்பி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+92,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SANKAR,சங்கர் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+93,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ANJALIPULI,அஞ்சாலிபுலி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+94,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ANJAPULI,அஞ்சாபுலி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+95,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SESAPILLAI,சேஷாபிள்ளை என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+96,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for PONNAMMA,பொன்னம்மா என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+97,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ARASAN,அரசன் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+98,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAMU,ராமு என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+99,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for THAMBUSAMI,தம்புசாமி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+100,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RATHINAMBAL,ரத்தினாம்பாள் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+101,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for IYYAPPAN,அய்யப்பன் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+102,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for Jayapal,ஜெயபால் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+103,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SELVI,செல்வி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+104,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SUNDRAMOORTHY,சுந்தரமூர்த்தி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+105,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VIJAYARAGAVAN,விஜயராகவன் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+106,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for CHANDRASEKAR,சந்திரசேகர் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+107,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for Kodiyarasi,கொடியரசி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+108,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ARUMUGAM,ஆறுமுகம் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+109,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for PAZHANI,பழனி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+110,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAJENDIRAN,ராஜேந்திரன் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+111,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for Nadanasabapathy,நடனசபாபதி என்பவருக்கு புதிய வீடு,240000,Lintel laid,லின்டல் மட்டம்
+112,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ARIYAMALA,அரியமாலா என்பவருக்கு புதிய வீடு,240000,Lintal Level,லின்டல் மட்டம்
+113,North vasanankuppam,வடக்கு வசனங்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for Jothi,ஜோதி என்பவருக்கு புதிய வீடு,240000,Lintal Level,லின்டல் மட்டம்
+114,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SEETHARAMAN,சீதாராமன் என்பவருக்கு புதிய வீடு,240000,Lintal Level,லின்டல் மட்டம்
+115,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for Manivel,மணிவேல் என்பவருக்கு புதிய வீடு,240000,Lintal Level,லின்டல் மட்டம்
+116,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SANKAR,சங்கர் என்பவருக்கு புதிய வீடு,240000,Basement Completed,அடித்தளம் முடிந்தது
+117,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAMANUJAM,ராமானுஜம் என்பவருக்கு புதிய வீடு,240000,Basement Completed,அடித்தளம் முடிந்தது
+118,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAJENDIRAN,ராஜேந்திரன் என்பவருக்கு புதிய வீடு,240000,Lintal Level,லின்டல் மட்டம்
+119,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for Arumbu Mani,அரும்பு மணி என்பவருக்கு புதிய வீடு,240000,Lintel laid,லின்டல் மட்டம்
+120,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SIVASANKARI,சிவசங்கரி என்பவருக்கு புதிய வீடு,240000,Basement Completed,அடித்தளம் முடிந்தது
+121,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RANI,ராணி என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+122,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VEERAPPAN,வீரப்பன் என்பவருக்கு புதிய வீடு,240000,Basement Completed,அடித்தளம் முடிந்தது
+123,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for A JAYARAM,ஜெயராம் என்பவருக்கு புதிய வீடு,240000,Roof Laid,மேற்கூரை அமைக்கப்பட்டது
+124,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for DHURAI MURUGAN,துரைமுருகன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+125,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SAVITHIRI,சாவித்திரி என்பவருக்கு புதிய வீடு,240000,Basement Completed,அடித்தளம் முடிந்தது
+126,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for GOGILAM,கோகிலம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+127,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for DHANAM,தனம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+128,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for GOPALA KRISHNAN,கோபாலகிருஷ்ணன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+129,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for JAYAPAL,ஜெயபால் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+130,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for JAYAPAL (T),ஜெயபால் (தி) என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+131,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MUMMOORTHY,மும்மூர்த்தி என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+132,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RATHANAM,ரத்தினம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+133,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RANGANATHAN,ரங்கநாதன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+134,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SIVAKUMAR,சிவகுமார் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+135,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for DHEIVASIKAMNI,தெய்வசிகாமணி என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+136,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for PRABU,பிரபு என்பவருக்கு புதிய வீடு,240000,Roof Laid,மேற்கூரை அமைக்கப்பட்டது
+137,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for DHANDAPANI,தண்டபாணி என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+138,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MADHIYAZHAGAN,மதியழகன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+139,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ANANDHAVEL,ஆனந்தவேல் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+140,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for JAYABAL,ஜெயபால் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+141,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VINOTHINI,வினோதினி என்பவருக்கு புதிய வீடு,240000,Basement Completed,அடித்தளம் முடிந்தது
+142,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ARJUNAN,அர்ஜுனன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+143,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ARUMUGAM,ஆறுமுகம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+144,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for PARAMASIVAM,பரமசிவம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+145,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for EZHUMALAI,ஏழுமலை என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+146,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KRISHNAMOORTHY,கிருஷ்ணமூர்த்தி என்பவருக்கு புதிய வீடு,240000,Basement Completed,அடித்தளம் முடிந்தது
+147,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VAITHIYANATHAN,வைத்தியநாதன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+148,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for GUPUSAMIN,குப்புசாமி என்பவருக்கு புதிய வீடு,240000,Basement Completed,அடித்தளம் முடிந்தது
+149,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for JAYAKUMAR,ஜெயகுமார் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+150,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ARASAN,அரசன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+151,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MUTHUKRISHNAN,முத்துகிருஷ்ணன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+152,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for AZHAKESAN,அழகேசன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+153,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KUMAR,குமார் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+154,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SIVAKOZHUNDHU,சிவக்கொழுந்து என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+155,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ARUMUGAM,ஆறுமுகம் என்பவருக்கு புதிய வீடு,240000,Roof Laid,மேற்கூரை அமைக்கப்பட்டது
+156,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MURUGAN,முருகன் என்பவருக்கு புதிய வீடு,240000,Lintal Level,லின்டல் மட்டம்
+157,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SENDHIL MURUGAN,செந்தில் முருகன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+158,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for PACHIYAMMAL,பச்சையம்மாள் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+159,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KUPPUSAMY,குப்புசாமி என்பவருக்கு புதிய வீடு,240000,Roof Laid,மேற்கூரை அமைக்கப்பட்டது
+160,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for GNANESWARAN,ஞானேஸ்வரன் என்பவருக்கு புதிய வீடு,240000,Basement Completed,அடித்தளம் முடிந்தது
+161,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MANIKKAM,மாணிக்கம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+162,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAJANGAM,ராஜங்கம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+163,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for thaiyalnayagi,தையல்நாயகி என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+164,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for navaneetham,நவனீதம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+165,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RENGANATHAN,ரங்கநாதன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+166,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ARUMUGAM,ஆறுமுகம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+167,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MALARKODI,மலர்க்கொடி என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+168,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for Veerappan,வீரப்பன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+169,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VEERAKANNAU,வீரக்கண்ணு என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+170,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VINAYAGAM,விநாயகாம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+171,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ANCHAYAL,அஞ்சாயல் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+172,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ARUMUGAM,ஆறுமுகம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+173,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for NARAYANASAMI,நாராயணசாமி என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+174,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SUBRAMANIYAN,சுப்பிரமணியன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+175,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SELVARAJ,செல்வராஜ் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+176,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for Kumar,குமார் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+177,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for DHANAM,தனம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+178,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAMACHANDIRAN,ராமச்சந்திரன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+179,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VETRIVEL,வெற்றிவேல் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+180,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ANGABULI,அங்காபுலி என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+181,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SARANGAN,சாரங்கன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+182,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ARUNACHALAM,அருணாச்சலம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+183,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for Dhamayanthi,தமையந்தி என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+184,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KERUSHNAMURTHI,கிருஷ்ணமூர்த்தி என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+185,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SHANMUGAM,சண்முகம் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+186,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for Rathika,ராதிகா என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+187,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for THANDAPANI,தண்டபாணி என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+188,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MANIKANDAN,மணிகண்டன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+189,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for balasubramaniyan,பாலசுப்ரமணியன் என்பவருக்கு புதிய வீடு,240000,Not Started,தொடங்கப்படவில்லை
+190,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SELVI,செல்வி என்பவருக்கு புதிய வீடு,240000,Completed,முடிவுற்றது
+191,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KRISHNAMURTHY,கிருஷ்ணமூர்த்தி என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+192,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MUTHUSAMI,முத்துசாமி என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+193,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SELVI PAZHANIVEL,செல்வி பழனிவேல் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+194,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for santha nayagi,சாந்தநாயகி என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+195,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ANJALAI,அஞ்சலை என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+196,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SELVARAJI,செல்வராஜி என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+197,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ANANDHARAJ,ஆனந்தராஜ் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+198,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for PAZHANI,பழனி என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+199,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KANAGAVALLI,கனகவள்ளி என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+200,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VELMURUGAN,வேல்முருகன் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+201,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for BALAMURUGAN,பாலமுருகன் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+202,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAJAVANNIYAN,ராஜவன்னியன் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+203,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SELVI (A),செல்வி (அ) என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+204,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAJAMANIKAM,ராஜமாணிக்கம் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+205,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SELVARANI,செல்வராணி என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+206,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RANI (S),ராணி (சா) என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+207,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for BALASUBRAMANIYAN,பாலசுப்ரமணியன் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+208,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RADHAKRISHNAN,ராதாகிருஷ்ணன் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+209,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for azhakesan,அழகேசன் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+210,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for JAYA,ஜெயா என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+211,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VEMBU,வேம்பு என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+212,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VIJAYA UTHIRABATHI,விஜயா உத்திராபதி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+213,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RATHA KRISHNAN,ராதகிருஷ்ணன் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+214,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAMASAMI,ராமசாமி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+215,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAVICHANDRAN,ரவிச்சந்திரன் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+216,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for TIRUGNANASAMBDHAM,திருஞானசம்பந்தம் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+217,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for BALAN,பாலன் என்பவருக்கு புதிய வீடு,240000,FC Laid,தரை தளம் முடிந்தது
+218,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for DHARMALINGAM,தர்மலிங்கம் என்பவருக்கு புதிய வீடு,240000,Basement Completed,அடித்தளம் முடிந்தது
+219,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for CHELLAMMAL,செல்லம்மாள் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+220,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for DHANALAKSHMI,தனலட்சுமி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+221,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for CHINNAPULLA,சின்னபுள்ள என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+222,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAMASAMY,ராமசாமி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+223,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAJAVEL,ராஜவேல் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+224,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAJENDIRAN,ராஜேந்திரன் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+225,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KASTHURI,கஸ்தூரி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+226,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KUPPAMMA,குப்பம்மா என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+227,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for DHANALAKSHMI (M),தனலட்சுமி (மா) என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+228,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SAMIDURAI,சாமிதுரை என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+229,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ANNADURAI,அண்ணாதுரை என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+230,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for GNANASUNDARI,ஞானசுந்தரி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+231,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for DHANASEGAR,தனசேகர் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+232,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MAYAVEL,மாயவேல் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+233,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MALARKODI,மலர்க்கொடி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+234,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KRISHNAVENI,கிருஷ்ணவேணி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+235,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for THAMIZHISELVI,தமிழ்ச்செல்வி என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+236,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for murugavel,முருகவேல் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+237,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SEENIVASAN,சீனிவாசன் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+238,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MUTHULAKSHMI,முத்துலட்சுமி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+239,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SARANGAPANI,சாரங்கபாணி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+240,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SELVAKUMAR,செல்வகுமார் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+241,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for BAKKIYASHMI,பாக்கியலட்சுமி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+242,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SETTU,சேட்டு என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+243,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VELMURUGAN,வேல்முருகன் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+244,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for PARAMESWARI,பரமேஸ்வரி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+245,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VEERAMANI,வீரமணி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+246,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for MANAGAIYARKARASI,மங்கையர்க்கரசி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+247,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VIJAYARAGAVAN,விஜயராகவன் என்பவருக்கு புதிய வீடு,240000,Earthwork Completed,மண் வேலை முடிந்தது
+248,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VETRIVEL,வெற்றிவேல் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+249,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for valli,வள்ளி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+250,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for VAITHIYALINGAM,வைத்தியலிங்கம் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+251,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for RAJENTREN,ராஜேந்திரன் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+252,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for ARUMUGAM,ஆறுமுகம் என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+253,Puliyur,புலியூர்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for KALAISELVI,கலைச்செல்வி என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+254,Thirattikuppam,திரட்டிக்குப்பம்,PMAY-G spill over,பிரதமர் குடியிருப்புத் திட்டம்,New House,புதிய வீடு,New House for SAKKARAI,சக்கரை என்பவருக்கு புதிய வீடு,240000,Site Marked,இடம் குறிக்கப்பட்டது
+255,Colony,காலனி,Repairs to Rural House,வீடுகள் பழுது பார்த்தல்,Major Repairs (RRH),பெரிய பழுது (RRH),Major Repairs for Jaya,ஜெயா என்பவருக்கு வீடு பெரிய பழுது நீக்கம்,32000,Completed,முடிவுற்றது
+256,Vasanankuppam colony,வசனங்குப்பம் காலனி,Repairs to Rural House,வீடுகள் பழுது பார்த்தல்,Major Repairs (RRH),பெரிய பழுது (RRH),Major Repairs for Arumaikannu,அருமைக்கண்ணு என்பவருக்கு வீடு பழுது நீக்கம்,150000,Completed,முடிவுற்றது
+257,Vasanankuppam colony,வசனங்குப்பம் காலனி,Repairs to Rural House,வீடுகள் பழுது பார்த்தல்,Minor Repairs (RRH),சிறிய பழுது (RRH),Minor Repairs for Pappathi,பாப்பாத்தி என்பவருக்கு வீடு பழுது நீக்கம்,27000,Completed,முடிவுற்றது
+258,Vasanankuppam colony,வசனங்குப்பம் காலனி,Repairs to Rural House,வீடுகள் பழுது பார்த்தல்,Minor Repairs (RRH),சிறிய பழுது (RRH),Minor Repairs for Balasubramaniyan,பாலசுப்ரமணியன் என்பவருக்கு வீடு பழுது நீக்கம்,27000,Completed,முடிவுற்றது
+259,Vasanankuppam colony,வசனங்குப்பம் காலனி,RRH Phase II,வீடுகள் பழுது பார்த்தல் - பகுதி II,Minor Repairs (RRH),சிறிய பழுது (RRH),Minor Repairs for Jaya,ஜெயா என்பவருக்கு வீடு பழுது நீக்கம்,32000,Completed,முடிவுற்றது
+260,Vasanankuppam colony,வசனங்குப்பம் காலனி,RRH Phase II,வீடுகள் பழுது பார்த்தல் - பகுதி II,Minor Repairs (RRH),சிறிய பழுது (RRH),Minor Repairs for Anjammal,அஞ்சம்மாள் என்பவருக்கு வீடு பழுது நீக்கம்,32000,Completed,முடிவுற்றது
+261,Puliyur kattusagai,புலியூர் காட்டுசாகை,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,Drainage,வடிகால்,Drainage @ Kattusagai Middle St,காட்டுசாகை மத்தி தெரு வடிகால் வசதி,881866,Completed,முடிவுற்றது
+262,Puliyur,புலியூர்,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,OHT,மேல்நிலை நீர் தொட்டி,Construction of OHT (60000 Ltr),புலியூர் காலனியில் 60000 லி மேல்நிலை நீர் தொட்டி,2575600,Completed,முடிவுற்றது
+263,Puliyur,புலியூர்,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,OHT,மேல்நிலை நீர் தொட்டி,Fencing of 30000 L OHT,30000 லி மேல்நிலை நீர் தொட்டிக்கு வேலி அமைத்தல்,37200,Completed,முடிவுற்றது
+264,Puliyur,புலியூர்,15th CFC - Village Panchayat,15-வது மத்திய நிதிக்குழு - கிராம ஊராட்சி,OHT,மேல்நிலை நீர் தொட்டி,Fencing of 60000 L OHT,60000 லி மேல்நிலை நீர் தொட்டிக்கு வேலி அமைத்தல்,37200,Completed,முடிவுற்றது
+265,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Anganwadi,அங்கன்வாடி,Anganwadi Building @ Puliyurkattusalai,காட்டுசாகையில் அங்கன்வாடி கட்டிடம்,1400000,Whitewash Progress,வண்ணப்பூச்சு வேலை நடக்கிறது
+266,Pethanaikkankuppam,பெத்தநாயக்கன்குப்பம்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Anganwadi Toilet,அங்கன்வாடி கழிப்பறை,Anganwadi toilet @ Pethanankuppam,பெத்தநாயக்கன்குப்பம் அங்கன்வாடி கழிப்பறை,36000,Completed,முடிவுற்றது
+267,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Percolation pond,கசிவு நீர் குட்டை,New Pond at Puliyur Kattusagai,காட்டுசாகையில் புதிய குட்டை அமைத்தல்,535000,Underprogress,நடைபெற்று வருகிறது
+268,Colony,காலனி,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Percolation pond,கசிவு நீர் குட்டை,New pond at Puliyur Kattusagai,காட்டுசாகையில் புதிய குட்டை அமைத்தல்,250000,Underprogress,நடைபெற்று வருகிறது
+269,Puliyur kattusagai,புலியூர் காட்டுசாகை,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Percolation pond,கசிவு நீர் குட்டை,New Pond at Puliyur Kattusagai,காட்டுசாகையில் புதிய குட்டை அமைத்தல்,535000,Underprogress,நடைபெற்று வருகிறது
+270,Colony,காலனி,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Recharge Shaft,செறிவூட்டு துளை,Vasanankuppam Colony,வசனங்குப்பம் காலனி செறிவூட்டு துளை,50000,Underprogress,நடைபெற்று வருகிறது
+271,Puliyur,புலியூர்,Rejuvenation of MI Tanks,ஏரி சீரமைப்பு,MI Tank,சிறுபாசன ஏரி,Valiyanatham Eri,வாலியநத்தம் ஏரி சீரமைத்தல்,558000,Jungle Clearance,காடு வெட்டும் பணி முடிந்தது
+272,Puliyur kattusagai,புலியூர் காட்டுசாகை,Rejuvenation of MI Tanks,ஏரி சீரமைப்பு,MI Tank,சிறுபாசன ஏரி,Vengalathu Eri,வெங்களத்து ஏரி சீரமைத்தல்,504000,Jungle Clearance,காடு வெட்டும் பணி முடிந்தது
+273,North vasanankuppam,வடக்கு வசனங்குப்பம்,MLACDS-Neyveli,சட்டமன்ற உறுப்பினர் நிதி,Three Wheeler,மூன்று சக்கர வண்டி,Three Wheeler for Differently Abled,மாற்றுத்திறனாளிக்கு மூன்று சக்கர வண்டி,101800,Completed,முடிவுற்றது
+274,Puliyur,புலியூர்,MLACDS-Neyveli,சட்டமன்ற உறுப்பினர் நிதி,CC Road,சிமெண்ட் சாலை,CC Road @ Puliyur Colony,புலியூர் காலனி சிமெண்ட் சாலை,1000000,Completed,முடிவுற்றது
+275,Puliyur kattusagai,புலியூர் காட்டுசாகை,General Fund-Village Panchayat,பொது நிதி - கிராம ஊராட்சி,Cremation Shed,மயான கொட்டகை,Repair Work of Crematorium Shed,மயான கொட்டகை பழுது பார்த்தல்,133000,Not Started,தொடங்கப்படவில்லை
+276,Puliyur,புலியூர்,General Fund-Village Panchayat,பொது நிதி - கிராம ஊராட்சி,Bathing Ghat,படித்துறை,Bathing Ghat in Siththeri Kulakarai,சித்தேரி குளக்கரையில் படித்துறை,200000,Not Started,தொடங்கப்படவில்லை
+277,Vasanankuppam colony,வசனங்குப்பம் காலனி,General Fund-Village Panchayat,பொது நிதி - கிராம ஊராட்சி,New Borewell,புதிய ஆழ்துளை கிணறு,Borewell new pumpset and accessories,புதிய ஆழ்துளை கிணறு மற்றும் மோட்டார்,331000,Not Started,தொடங்கப்படவில்லை
+278,North vasanankuppam,வடக்கு வசனங்குப்பம்,Kalaignarin Kanavu Illam,கலைஞரின் கனவு இல்லம்,New House,புதிய வீடு,New House for Punitha,புனிதா என்பவருக்கு புதிய வீடு கட்டுதல்,310000,Plastering,பூச்சு வேலை நடக்கிறது
+279,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Riverside Plantation,மரக்கன்றுகள் நடுதல்,Plantation for Munishwaran kovil kuttai,முனீஸ்வரன் கோவில் குட்டை மரக்கன்றுகள் நடுதல்,70000,Not Started,தொடங்கப்படவில்லை
+280,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Riverside Plantation,மரக்கன்றுகள் நடுதல்,Plantation at Iyyanar kovil kulam,அய்யனார் கோவில் குளம் மரக்கன்றுகள் நடுதல்,70000,Not Started,தொடங்கப்படவில்லை
+281,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Anganwadi,அங்கன்வாடி,Anganwadi building in Puliyur,புலியூரில் அங்கன்வாடி கட்டிடம்,1645000,Earthwork Completed,மண் வேலை முடிந்தது
+282,North vasanankuppam,வடக்கு வசனங்குப்பம்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,CC Pavement,சிமெண்ட் சாலை,CC Road at Sudukattu salai,மயான சாலை சிமெண்ட் சாலை அமைத்தல்,350000,Physically Completed,பணி முடிந்தது
+283,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Food grain godown,உணவு தானியக் கிடங்கு,Food Grain Godown Puliyur Kattusagai,காட்டுசாகை உணவு தானிய சேமிப்புக் கிடங்கு,1336000,Basement Completed,அடித்தளம் முடிந்தது
+284,Puliyur,புலியூர்,MGNREGS,மகாத்மா காந்தி ஊரக வேலை உறுதித் திட்டம்,Food grain godown,உணவு தானியக் கிடங்கு,Food Grain Godown Puliyur Colony,புலியூர் காலனி உணவு தானிய சேமிப்புக் கிடங்கு,1336000,Basement Completed,அடித்தளம் முடிந்தது
+285,Puliyur,புலியூர்,MLACDS-Neyveli,சட்டமன்ற உறுப்பினர் நிதி,CC Road,சிமெண்ட் சாலை,CC Road @ South Vasanangkuppam,தெற்கு வசனங்குப்பம் சிமெண்ட் சாலை,700000,Completed,முடிவுற்றது
+286,Puliyur,புலியூர்,MLACDS-Neyveli,சட்டமன்ற உறுப்பினர் நிதி,CC Road,சிமெண்ட் சாலை,CC Road @ Puliyur Kizhaku theru,புலியூர் கிழக்கு தெரு சிமெண்ட் சாலை,700000,Completed,முடிவுற்றது
+287,Puliyur kattusagai,புலியூர் காட்டுசாகை,Namma Ooru Namma Arasu,நம்ம ஊரு நம்ம அரசு,OHT Repairs,மேல்நிலை நீர் தொட்டி பழுது,Repair of OHT Borewell subsidence,OHT ஆழ்துளை கிணறு மண் சரிவு பழுது நீக்கம்,60000,Underprogress,நடைபெற்று வருகிறது
