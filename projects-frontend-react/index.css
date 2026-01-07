@@ -240,3 +240,54 @@ html {
 .animate-gentle-pulse {
   animation: gentle-pulse 2s ease-in-out infinite;
 }
+
+/* Pulse Glow Animation for CTA buttons */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 4px 4px 0 #000000, 0 0 20px rgba(185, 28, 28, 0.4);
+  }
+
+  50% {
+    box-shadow: 4px 4px 0 #000000, 0 0 35px rgba(185, 28, 28, 0.7);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Bounce X Animation for arrows */
+@keyframes bounce-x {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-bounce-x {
+  animation: bounce-x 1s ease-in-out infinite;
+}
+
+/* Brighter Pulse Glow Animation for CTA buttons */
+@keyframes pulse-glow-bright {
+
+  0%,
+  100% {
+    box-shadow: 4px 4px 0 #000000, 0 0 25px rgba(239, 68, 68, 0.6), 0 0 50px rgba(239, 68, 68, 0.3);
+  }
+
+  50% {
+    box-shadow: 4px 4px 0 #000000, 0 0 40px rgba(239, 68, 68, 0.8), 0 0 80px rgba(239, 68, 68, 0.5);
+  }
+}
+
+.animate-pulse-glow-bright {
+  animation: pulse-glow-bright 1.5s ease-in-out infinite;
+}
