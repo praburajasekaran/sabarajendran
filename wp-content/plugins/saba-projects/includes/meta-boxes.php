@@ -323,13 +323,19 @@ function saba_projects_custom_column_content($column, $post_id)
 	} elseif ($column === 'budget') {
 		$budget = get_post_meta($post_id, '_project_budget', true);
 		if ($budget) {
-			// Format currency
-			if ($budget >= 10000000) {
-				echo '₹' . number_format($budget / 10000000, 2) . ' Cr';
-			} elseif ($budget >= 100000) {
-				echo '₹' . number_format($budget / 100000, 2) . ' L';
+			// Check if numeric before math to avoid fatal errors
+			if (is_numeric($budget)) {
+				// Format currency
+				if ($budget >= 10000000) {
+					echo '₹' . number_format($budget / 10000000, 2) . ' Cr';
+				} elseif ($budget >= 100000) {
+					echo '₹' . number_format($budget / 100000, 2) . ' L';
+				} else {
+					echo '₹' . number_format($budget);
+				}
 			} else {
-				echo '₹' . number_format($budget);
+				// Display as-is if not numeric (e.g. already formatted)
+				echo esc_html($budget);
 			}
 		} else {
 			echo '-';

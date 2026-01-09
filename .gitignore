@@ -35,7 +35,17 @@ export-*.php
 import-*.php
 flush-*.php
 translate-*.php
+check_*.php
+export_*.php
+import_*.php
+flush_*.php
+translate_*.php
 *-backup.php
+*.py
+*.json
+!panchayat_locations.json
+!kurinjipadi_locations.json
+!metadata.json
 
 # Local Netlify folder
 .netlify
