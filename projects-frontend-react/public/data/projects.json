@@ -257,18 +257,19 @@
     },
     {
       "id": "2946",
-      "title": "Improvements at Km 3/0 &#8211; 5/0 of the Road From Km.30/8 of Vkt Road to Keeliruppu Road (Via) Panikkankuppam",
+      "title": "Improvements at Km 3/0 - 5/0 of the Road From Km.30/8 of Vkt Road to Keeliruppu Road (Via) Panikkankuppam",
       "title_ta": "வி.கே.டி சாலையின் கி.மீ.30/8 இலிருந்து கீழிருப்பு சாலை (பணிக்கன்குப்பம் வழியாக) வரையிலான சாலையின் கி.மீ 3/0 - 5/0 மேம்படுத்துதல்",
       "block": "Panruti",
-      "panchayat": "Keeliruppu",
-      "panchayat_ta": "கீழிருப்பு",
+      "panchayat": "Panikkankuppam",
+      "panchayat_ta": "பணிக்கன்குப்பம்",
       "village": "Panikkankuppam",
       "village_ta": "பணிக்கன்குப்பம்",
       "year": "2021-2022",
       "status": "Completed",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "scheme": "cridp",
+      "budget": "₹80.00 L",
+      "rawBudget": 8000000
     },
     {
       "id": "2947",
@@ -557,7 +558,7 @@
     },
     {
       "id": "2931",
-      "title": "Construction of Girls&#8217; Toilet Building at Kadampuliyur R.k. Government Higher Secondary School",
+      "title": "Construction of Girls' Toilet Building at Kadampuliyur R.k. Government Higher Secondary School",
       "title_ta": "காடாம்புலியூர் R.K.அரசு மேல்நிலைப்பள்ளியில் பெண்கள் கழிவறைக் கட்டிடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
@@ -572,7 +573,7 @@
     },
     {
       "id": "2932",
-      "title": "Construction of Girls&#8217; Toilet Building at Kattukudalur Government High School",
+      "title": "Construction of Girls' Toilet Building at Kattukudalur Government High School",
       "title_ta": "காட்டுக்கூடலூர் அரசு உயர்நிலைப்பள்ளியில் பெண்கள் கழிவறைக் கட்டிடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
@@ -21008,7 +21009,7 @@
   ],
   "meta": {
     "total": 1328,
-    "generatedAt": "2026-01-08T14:48:34.989Z",
+    "generatedAt": "2026-01-09T03:58:07.039Z",
     "version": "1.0.0",
     "blocks": [
       "Kurinjipadi",
@@ -21090,6 +21091,7 @@
         "Puliyur": "புலியூர்",
         "Silambinathanpettai": "சிலம்பிநாதன்பேட்டை",
         "Vadakkumelur": "வடக்குமேலூர்",
+        "Panikkankuppam": "பணிக்கன்குப்பம்",
         "Alagappasamuthiram": "அழகப்பசமுத்திரம்",
         "Arasadikuppam": "அரசடிக்குப்பம்",
         "Perperiyankuppam": "பேர்பெரியான்குப்பம்",
@@ -21121,8 +21123,7 @@
         "Periyakattupalayam": "பெரியகாட்டுப்பாளையம்",
         "Purangani": "புறங்கணி",
         "Semmedu": "செம்மேடு",
-        "Melkankeyankuppam": "மேல்காங்கேயன்குப்பம்",
-        "Panikkankuppam": "பணிக்கன்குப்பம்"
+        "Melkankeyankuppam": "மேல்காங்கேயன்குப்பம்"
       },
       "villages": {
         "Melmampattu": "மேல்மாம்பட்டு",
