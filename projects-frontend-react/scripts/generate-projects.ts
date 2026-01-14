@@ -258,12 +258,25 @@ async function fetchAllProjects(): Promise<any[]> {
                 console.log(`   Fetching page ${i}/${totalPages}...`);
                 const pageUrl = buildUrl(WP_API_URL, 'project', { per_page: 100, _embed: '', page: i });
                 const pageResponse = await fetchWithRetry(pageUrl);
-                allProjects = [...allProjects, ...pageResponse.data];
+                const newItems = pageResponse.data;
+                console.log(`     -> Received ${newItems.length} items`);
+                allProjects = [...allProjects, ...newItems];
                 await new Promise(resolve => setTimeout(resolve, 500));
             }
         }
 
-        console.log(`✅ Fetched ${allProjects.length} total projects`);
+        console.log(`✅ Fetched ${allProjects.length} total raw items`);
+
+        // Deduplicate by ID
+        const uniqueProjectsMap = new Map();
+        allProjects.forEach(p => {
+            if (!uniqueProjectsMap.has(p.id)) {
+                uniqueProjectsMap.set(p.id, p);
+            }
+        });
+        allProjects = Array.from(uniqueProjectsMap.values());
+        console.log(`✅ After deduplication: ${allProjects.length} unique projects`);
+
         return allProjects;
     } catch (error) {
         console.error('❌ Error fetching projects:', error);

@@ -12,6 +12,8 @@ import { validateFilters } from '../utils/urlValidation';
 import { wpService } from '../services/wpService';
 import { Project } from '../types';
 import { formatBudgetTotal } from '../utils/formatBudget';
+import { NEYVELI_BLOCK_PROJECTS, NeyveliBlockProject } from '../data/neyveliBlockProjects';
+import { NeyveliProjectCard } from '../components/NeyveliProjectCard';
 
 // WhatsApp Shareable Graphic Components
 import { ShareableGraphicButton } from '../components/ShareableGraphicButton';
@@ -214,8 +216,8 @@ export const ProjectsPage: React.FC = () => {
   }, [projects, filters.block]);
 
 
-
-
+  // Check if viewing Neyveli block (to show additional block-specific projects)
+  const isNeyveliBlock = filters.block === 'Neyveli';
 
   // Filtering Logic (3-level hierarchy: Block → Panchayat → Village)
   const filteredProjects = useMemo(() => {
@@ -548,8 +550,40 @@ export const ProjectsPage: React.FC = () => {
               />
             </div>
 
+            {/* Neyveli Block-Specific Projects Section */}
+            {isNeyveliBlock && (
+              <div className="mb-12">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-1 w-8 bg-primary-600"></div>
+                  <h2 className="text-xl font-black uppercase text-black">
+                    {language === 'ta' ? 'வட்டம் 21 & 30 சிறப்பு திட்டங்கள்' : 'Ward 21 & 30 Special Projects'}
+                  </h2>
+                  <span className="bg-primary-600 text-white px-2 py-1 text-xs font-bold">
+                    {NEYVELI_BLOCK_PROJECTS.length}
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                  {NEYVELI_BLOCK_PROJECTS.map(project => (
+                    <NeyveliProjectCard key={project.id} project={project} />
+                  ))}
+                </div>
+              </div>
+            )}
+
             {filteredProjects.length > 0 ? (
               <>
+                {/* Section Header for WP Projects when viewing Neyveli */}
+                {isNeyveliBlock && (
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="h-1 w-8 bg-accent-400"></div>
+                    <h2 className="text-xl font-black uppercase text-black">
+                      {language === 'ta' ? 'நெய்வேலி வலையம் திட்டங்கள்' : 'Neyveli Block Projects'}
+                    </h2>
+                    <span className="bg-black text-white px-2 py-1 text-xs font-bold">
+                      {filteredProjects.length}
+                    </span>
+                  </div>
+                )}
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
                   {paginatedProjects.map(project => (
                     <ProjectCard key={project.id} project={project} />
