@@ -11,10 +11,19 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-    Content-Type = "text/css; charset=utf-8"
     Access-Control-Allow-Origin = "*"
 
 [[headers]]
   for = "/*.css"
   [headers.values]
     Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+  for = "/assets/*.css"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+  for = "/assets/*.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
