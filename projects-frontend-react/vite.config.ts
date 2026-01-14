@@ -19,10 +19,17 @@ export default defineConfig(({ mode }) => {
         '@': path.resolve(__dirname, '.'),
       }
     },
+    css: {
+      // Ensure CSS is properly processed
+      devSourcemap: true,
+    },
     optimizeDeps: {
       include: ['html2canvas']
     },
     build: {
+      cssCodeSplit: true, // Split CSS for better caching
+      minify: 'esbuild',
+      sourcemap: mode === 'development',
       commonjsOptions: {
         include: [/html2canvas/, /node_modules/]
       },
