@@ -50,22 +50,98 @@ export const useGraphicGenerator = (): UseGraphicGeneratorReturn => {
         throw new Error('Graphic element not found');
       }
 
+      // CRITICAL FIX: html2canvas cannot parse oklch colors used by Tailwind CSS v4
+      // We must apply inline RGB styles BEFORE html2canvas processes the element
+      // This is because html2canvas parses styles during cloning, before onclone runs
+
+      type StyleData = {
+        originalStyles: string;
+        color: string;
+        backgroundColor: string;
+        borderColor: string;
+        borderTopColor: string;
+        borderRightColor: string;
+        borderBottomColor: string;
+        borderLeftColor: string;
+        outlineColor: string;
+        textDecorationColor: string;
+        boxShadow: string;
+      };
+      const elementsToRestore: Array<{ el: HTMLElement; originalStyle: string }> = [];
+
+      // Apply inline styles to original DOM (will be restored after)
+      const applyInlineStyles = (el: Element) => {
+        const htmlEl = el as HTMLElement;
+        const computed = window.getComputedStyle(el);
+
+        // Store original inline styles for restoration
+        elementsToRestore.push({ el: htmlEl, originalStyle: htmlEl.getAttribute('style') || '' });
+
+        // Apply computed colors as inline styles (browser resolves oklch to rgb)
+        htmlEl.style.color = computed.color;
+        htmlEl.style.backgroundColor = computed.backgroundColor;
+        htmlEl.style.borderTopColor = computed.borderTopColor;
+        htmlEl.style.borderRightColor = computed.borderRightColor;
+        htmlEl.style.borderBottomColor = computed.borderBottomColor;
+        htmlEl.style.borderLeftColor = computed.borderLeftColor;
+        htmlEl.style.outlineColor = computed.outlineColor;
+        if (computed.boxShadow && computed.boxShadow !== 'none') {
+          htmlEl.style.boxShadow = computed.boxShadow;
+        }
+
+        Array.from(el.children).forEach(applyInlineStyles);
+      };
+
+      // Apply RGB styles to the element tree before html2canvas
+      applyInlineStyles(element);
+
       // Generate canvas with high quality settings
-      // Use dynamic dimensions from element (adaptive height based on project count)
       const canvas = await html2canvas(element, {
         scale: 2, // Retina quality
         useCORS: true, // Allow cross-origin images (DMK logo)
         backgroundColor: '#ffffff',
-        width: element.offsetWidth,   // Dynamic (1200px)
-        height: element.offsetHeight, // Dynamic (calculated based on project count)
+        width: element.offsetWidth,
+        height: element.offsetHeight,
         logging: false,
         imageTimeout: 0,
+        // Ignore all stylesheets during cloning to prevent oklch parsing
+        ignoreElements: (el) => {
+          const tagName = el.tagName?.toLowerCase();
+          if (tagName === 'style') return true;
+          if (tagName === 'link' && (el as HTMLLinkElement).rel === 'stylesheet') {
+            const href = (el as HTMLLinkElement).href || '';
+            // Keep font stylesheets
+            if (href.includes('fontsource') || href.includes('fonts.googleapis')) {
+              return false;
+            }
+            return true;
+          }
+          return false;
+        },
         onclone: (clonedDoc) => {
-          // Ensure fonts are applied in cloned document
+          // Remove any remaining stylesheets in the clone
+          const stylesheets = clonedDoc.querySelectorAll('link[rel="stylesheet"], style');
+          stylesheets.forEach(sheet => {
+            const href = (sheet as HTMLLinkElement).href || '';
+            if (!href.includes('fontsource') && !href.includes('fonts.googleapis')) {
+              sheet.remove();
+            }
+          });
+
+          // Ensure fonts are applied
           const clonedElement = clonedDoc.getElementById('shareable-graphic');
           if (clonedElement) {
-            clonedElement.style.fontFamily = 'Inter, sans-serif';
+            clonedElement.style.fontFamily = '"Anek Tamil", Inter, sans-serif';
           }
+        }
+      });
+
+      // Restore original inline styles
+      elementsToRestore.forEach(({ el, originalStyle }) => {
+        if (originalStyle) {
+          el.setAttribute('style', originalStyle);
+        } else {
+          el.removeAttribute('style');
         }
       });
 

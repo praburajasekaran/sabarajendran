@@ -336,11 +336,20 @@ export const ProjectsPage: React.FC = () => {
               updateFilters({ panchayat: 'All', page: 1 });
             } else {
               // Automatically set the block when a panchayat is selected
+              // Reset all other filters to prevent conflicts with previous filter state
               const block = getBlockForPanchayat(panchayat);
+              const resetFilters = {
+                type: 'All' as const,
+                status: 'All' as const,
+                year: 'All' as const,
+                scheme: 'All' as const,
+                search: '',
+                page: 1
+              };
               if (block) {
-                updateFilters({ block, panchayat, page: 1 });
+                updateFilters({ ...resetFilters, block, panchayat });
               } else {
-                updateFilters({ panchayat, page: 1 });
+                updateFilters({ ...resetFilters, panchayat });
               }
             }
             // Scroll to top when panchayat is selected (especially for mobile)
@@ -482,14 +491,31 @@ export const ProjectsPage: React.FC = () => {
                         onChange={(e) => {
                           const newValue = e.target.value === 'All' ? (filter.key === 'village' ? null : 'All') : e.target.value;
 
-                          // Special handling for panchayat selection: automatically set the block
-                          if (filter.key === 'panchayat' && newValue !== 'All') {
+                          // Common reset filters for block/panchayat changes
+                          const resetFilters = {
+                            type: 'All' as const,
+                            status: 'All' as const,
+                            year: 'All' as const,
+                            scheme: 'All' as const,
+                            search: '',
+                            page: 1
+                          };
+
+                          // Special handling for block selection: reset panchayat and other filters
+                          if (filter.key === 'block') {
+                            updateFilters({ ...resetFilters, block: newValue as string, panchayat: 'All' });
+                          }
+                          // Special handling for panchayat selection: automatically set the block and reset other filters
+                          else if (filter.key === 'panchayat' && newValue !== 'All') {
                             const block = getBlockForPanchayat(newValue as string);
                             if (block) {
-                              updateFilters({ block, panchayat: newValue as string, page: 1 });
+                              updateFilters({ ...resetFilters, block, panchayat: newValue as string });
                             } else {
-                              updateFilters({ [filter.key]: newValue, page: 1 });
+                              updateFilters({ ...resetFilters, panchayat: newValue as string });
                             }
+                          } else if (filter.key === 'panchayat' && newValue === 'All') {
+                            // Just reset panchayat to All, keep the block
+                            updateFilters({ ...resetFilters, panchayat: 'All' });
                           } else {
                             updateFilters({ [filter.key]: newValue, page: 1 });
                           }

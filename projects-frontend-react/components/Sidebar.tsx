@@ -55,7 +55,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Sidebar Container - Political Style */}
       <div className={`
-        fixed lg:sticky lg:top-0 inset-y-0 left-0 z-[60] lg:z-40 w-80 transform transition-transform duration-300 ease-in-out lg:transform-none select-none
+        fixed lg:sticky lg:top-0 inset-y-0 left-0 z-[60] lg:z-40 w-80 transform transition-transform duration-300 ease-in-out lg:translate-x-0 select-none
         ${isOpenMobile ? 'translate-x-0' : '-translate-x-full'}
         h-full lg:h-[calc(100vh-80px)] flex flex-col
       `}>
