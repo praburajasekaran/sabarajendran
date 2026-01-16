@@ -1,50 +1,7 @@
-/* Tailwind CSS v4 */
-@import "tailwindcss";
-
-/* Theme Configuration for Tailwind v4 */
-@theme {
-  /* Primary: DMK Red (Energetic, Powerful) */
-  --color-primary-50: #fef2f2;
-  --color-primary-100: #fee2e2;
-  --color-primary-200: #fecaca;
-  --color-primary-300: #fca5a5;
-  --color-primary-400: #f87171;
-  --color-primary-500: #dc2626;
-  --color-primary-600: #b91c1c;
-  --color-primary-700: #991b1b;
-  --color-primary-800: #7f1d1d;
-  --color-primary-900: #450a0a;
-
-  /* Secondary: Black (Solid, Grounding) */
-  --color-secondary-50: #f6f6f6;
-  --color-secondary-100: #e7e7e7;
-  --color-secondary-200: #d1d1d1;
-  --color-secondary-300: #b0b0b0;
-  --color-secondary-400: #888888;
-  --color-secondary-500: #6d6d6d;
-  --color-secondary-600: #5d5d5d;
-  --color-secondary-700: #4f4f4f;
-  --color-secondary-800: #262626;
-  --color-secondary-900: #000000;
-
-  /* Accent: Lignite Brown (Neyveli's natural resource) */
-  --color-accent-50: #efebe9;
-  --color-accent-100: #E8D5C4;
-  --color-accent-200: #D4A574;
-  --color-accent-300: #C0956A;
-  --color-accent-400: #B4915D;
-  --color-accent-500: #8B6F47;
-  --color-accent-600: #6d4c41;
-  --color-accent-700: #3e2723;
-  --color-accent-800: #2b1a15;
-  --color-accent-900: #1b0000;
-
-  /* Font Families */
-  --font-sans: 'Anek Tamil', sans-serif;
-  --font-display: 'Anek Tamil', sans-serif;
-  --font-serif: 'Anek Tamil', sans-serif;
-  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
-}
+/* Tailwind CSS v3 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* ==========================================================================
    Political Mass Appeal Design System - DMK Style
