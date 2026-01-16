@@ -71,8 +71,13 @@ export const wpService = {
         const startTime = performance.now();
         console.log(`[wpService] Fetching projects page ${page}...`);
 
-        // OPTIMIZATION: Check if we already have the FULL dataset in memory
-        // If Home page has already fetched everything, we can just slice it!
+        // OPTIMIZATION: If memory cache is empty, try to load from static JSON first
+        // This ensures "Instant Load" uses the JSON file instead of hitting API
+        if (!memoryCache || memoryCache.length === 0) {
+            await wpService.loadStaticProjects();
+        }
+
+        // Check if we have the FULL dataset in memory (either from before or just loaded)
         if (memoryCache && memoryCache.length > 0) {
             const total = memoryCache.length;
             const totalPages = Math.ceil(total / perPage);
@@ -80,7 +85,7 @@ export const wpService = {
             const endIndex = startIndex + perPage;
             const slicedProjects = memoryCache.slice(startIndex, endIndex);
 
-            console.log(`[wpService] Serving Page ${page} from FULL memory cache`);
+            console.log(`[wpService] Serving Page ${page} from memory/static cache`);
             return {
                 projects: slicedProjects,
                 totalPages,
@@ -88,9 +93,7 @@ export const wpService = {
             };
         }
 
-        // Check in-memory cache for this specific page key (if needed)
-        // const pageKey = `${CACHE_KEY}_p${page}_${perPage}`;
-
+        // Fallback to API if static load failed
         try {
             const params = {
                 per_page: perPage.toString(),
