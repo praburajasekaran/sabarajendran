@@ -582,7 +582,7 @@ export const ProjectsPage: React.FC = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-1 w-8 bg-primary-600"></div>
                   <h2 className="text-xl font-black uppercase text-black">
-                    {language === 'ta' ? 'வட்டம் 21 & 30 சிறப்பு திட்டங்கள்' : 'Ward 21 & 30 Special Projects'}
+                    {language === 'ta' ? 'வட்டம் 21 & 30 சிறப்புத் திட்டங்கள்' : 'Ward 21 & 30 Special Projects'}
                   </h2>
                   <span className="bg-primary-600 text-white px-2 py-1 text-xs font-bold">
                     {NEYVELI_BLOCK_PROJECTS.length}
