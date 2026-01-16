@@ -26,6 +26,15 @@ const ITEMS_PER_PAGE = 15;
 
 import { SEO, ProjectsSEO } from '../components/SEO';
 
+// Hand-drawn arrow components
+const HandDrawnChevron = ({ className }: { className?: string }) => (
+  <svg className={className} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M6 9l6 6 6-6" />
+  </svg>
+);
+
+
+
 export const ProjectsPage: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -474,14 +483,42 @@ export const ProjectsPage: React.FC = () => {
               </div>
 
               {/* Filter Row - Solid Blocks */}
-              <div className="flex flex-wrap items-end gap-3 sm:gap-4 p-4 bg-white border-2 border-black shadow-[4px_4px_0_0_#e5e7eb]">
+              <div className="flex flex-wrap items-end gap-3 sm:gap-4 p-4 bg-white border-2 border-black shadow-[4px_4px_0_0_#e5e7eb] relative">
+
+                {/* Smart Finger Pointers - Visual guidance for filters */}
+                <div className="absolute z-20 pointer-events-none transform transition-all duration-500
+                  /* Mobile: Hidden as requested */
+                  hidden md:block
+                  
+                  /* Desktop: Near controls pointing Left */
+                  md:rotate-0 md:top-1/2 md:-translate-y-1/2 md:left-[550px] md:right-auto md:w-16 md:h-16
+                ">
+                  <img
+                    src="/assets/images/backhand-index-pointing-left-joypixels.gif"
+                    alt="Look here"
+                    className="w-full h-full object-contain drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+                  />
+                </div>
+
+                {/* Bottom Pointer - Mobile Only, pointing UP */}
+                <div className="absolute z-20 pointer-events-none transform transition-all duration-500
+                  -bottom-6 right-10 w-12 h-12 rotate-90 md:hidden
+                ">
+                  <img
+                    src="/assets/images/backhand-index-pointing-left-joypixels.gif"
+                    alt="Look here"
+                    className="w-full h-full object-contain drop-shadow-[0_-4px_4px_rgba(0,0,0,0.25)]"
+                  />
+                </div>
 
                 {/* Filter Item Builder */}
                 {[
                   { label: t.projects.labelBlock, value: filters.block, options: blocks, key: 'block', display: (v: string) => translateBlock(v, language) },
                   { label: t.projects.labelPanchayat, value: filters.panchayat, options: panchayats, key: 'panchayat', disabled: filters.block === 'All', display: (v: string) => translatePanchayat(v, language) }
                 ].map((filter, idx) => (
-                  <div key={idx} className="flex flex-col gap-1 min-w-[140px]">
+                  <div key={idx} className="flex flex-col gap-1 min-w-[140px] relative">
+
+
                     <label className="text-[10px] uppercase font-black text-neutral-500 tracking-wider">
                       {filter.label}
                     </label>
@@ -523,10 +560,10 @@ export const ProjectsPage: React.FC = () => {
                         disabled={filter.disabled}
                         className={`appearance-none w-full px-4 py-2 border-2 text-sm font-bold uppercase cursor-pointer rounded-none focus:outline-none focus:shadow-[2px_2px_0_0_#000] transition-all
                                 ${filter.value !== 'All'
-                            ? 'bg-accent-100 border-black text-black'
-                            : 'bg-white border-neutral-300 text-neutral-500 hover:border-black'
+                            ? 'bg-accent-200 border-black text-black shadow-[2px_2px_0_0_#000]'
+                            : 'bg-neutral-100 border-neutral-400 text-neutral-700 hover:border-black hover:bg-neutral-200'
                           }
-                                ${filter.disabled ? 'opacity-50 cursor-not-allowed bg-neutral-100' : ''}
+                                ${filter.disabled ? 'opacity-50 cursor-not-allowed !bg-neutral-100 !border-neutral-300' : ''}
                             `}
                       >
                         <option value="All">All</option>
@@ -535,8 +572,8 @@ export const ProjectsPage: React.FC = () => {
                         ))}
                       </select>
                       {/* Custom Arrow */}
-                      <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                        <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-black"></div>
+                      <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-black">
+                        <HandDrawnChevron />
                       </div>
                     </div>
                   </div>

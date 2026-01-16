@@ -348,7 +348,11 @@ export const GrievancePage: React.FC = () => {
                                                 name="block"
                                                 value={formData.block}
                                                 onChange={handleInputChange}
-                                                className="w-full border-2 border-gray-200 rounded-md px-3 h-[52px] appearance-none focus:border-black focus:ring-0 font-medium text-sm"
+                                                className={`w-full border-2 rounded-md px-3 h-[52px] appearance-none focus:outline-none focus:ring-0 font-medium text-sm transition-all
+                                                    ${formData.block
+                                                        ? 'bg-accent-50 border-black text-black shadow-sm'
+                                                        : 'bg-gray-50 border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400'
+                                                    }`}
                                             >
                                                 <option value="">{t.grievance.selectBlock}</option>
                                                 {blocks.map(b => (
@@ -367,7 +371,12 @@ export const GrievancePage: React.FC = () => {
                                                 value={formData.panchayat}
                                                 onChange={handleInputChange}
                                                 disabled={!formData.block}
-                                                className="w-full border-2 border-gray-200 rounded-md px-3 h-[52px] appearance-none focus:border-black focus:ring-0 font-medium text-sm disabled:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                className={`w-full border-2 rounded-md px-3 h-[52px] appearance-none focus:outline-none focus:ring-0 font-medium text-sm transition-all
+                                                    ${formData.panchayat
+                                                        ? 'bg-accent-50 border-black text-black shadow-sm'
+                                                        : 'bg-gray-50 border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400'
+                                                    }
+                                                    disabled:bg-gray-100 disabled:border-gray-200 disabled:text-gray-400 disabled:opacity-70 disabled:cursor-not-allowed`}
                                             >
                                                 <option value="">{t.grievance.selectPanchayat}</option>
                                                 {panchayats.map(p => (
@@ -386,7 +395,12 @@ export const GrievancePage: React.FC = () => {
                                                 value={formData.village}
                                                 onChange={handleInputChange}
                                                 disabled={!formData.panchayat}
-                                                className="w-full border-2 border-gray-200 rounded-md px-3 h-[52px] appearance-none focus:border-black focus:ring-0 font-medium text-sm disabled:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                className={`w-full border-2 rounded-md px-3 h-[52px] appearance-none focus:outline-none focus:ring-0 font-medium text-sm transition-all
+                                                    ${formData.village
+                                                        ? 'bg-accent-50 border-black text-black shadow-sm'
+                                                        : 'bg-gray-50 border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400'
+                                                    }
+                                                    disabled:bg-gray-100 disabled:border-gray-200 disabled:text-gray-400 disabled:opacity-70 disabled:cursor-not-allowed`}
                                             >
                                                 <option value="">{t.grievance.selectVillage}</option>
                                                 {villages.map(v => (
@@ -411,7 +425,11 @@ export const GrievancePage: React.FC = () => {
                                             value={formData.requestType}
                                             onChange={handleInputChange}
                                             required
-                                            className="w-full border-2 border-gray-200 rounded-md px-4 h-[52px] text-lg focus:border-black focus:ring-0 font-medium appearance-none bg-white"
+                                            className={`w-full border-2 rounded-md px-4 h-[52px] text-lg font-medium appearance-none transition-all focus:outline-none focus:ring-0
+                                                ${formData.requestType
+                                                    ? 'bg-accent-50 border-black text-black shadow-sm'
+                                                    : 'bg-gray-50 border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400'
+                                                }`}
                                         >
                                             <option value="">{t.grievance.selectRequestType}</option>
                                             {Object.entries(t.types).map(([key, label]) => (
