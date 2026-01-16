@@ -127,6 +127,26 @@ export const TRANSLATIONS = {
         covid: {
           title: 'Crisis Management & Relief',
           desc: 'During the unprecedented COVID-19 crisis, he launched the "Ondrinaivom Vaa" campaign, a lifeline that delivered food, protective equipment, and essentials to over 15,000 struggling families. His leadership was instrumental in coordinating swift relief operations during the Nivar cyclone, ensuring no family was left behind during natural calamities.'
+        },
+        political: {
+          title: 'Political Commitment',
+          desc: 'Working with dedication for the welfare of the people, he has earned the trust of both the party and the constituents. Transparent governance and a people-first approach are his hallmarks.'
+        },
+        legislative: {
+          title: 'Legislative Work',
+          desc: 'As the voice of the constituency in the Legislative Assembly, he raises various social welfare questions and works tirelessly to implement development projects for the constituency.'
+        },
+        dravidian: {
+          title: 'Dravidian Model Implementation',
+          desc: 'Successfully implementing Dravidian Model programs under the leadership of Chief Minister Thalapathi in the constituency. Notable progress has been made in social justice, education, and healthcare.'
+        },
+        disaster: {
+          title: 'Disaster Management',
+          desc: 'During natural disasters including Cyclone Nivar, he took immediate relief measures and provided necessary assistance to affected families. He stood by the people and helped them recover.'
+        },
+        sacrifice: {
+          title: 'Sacrifice & Struggle',
+          desc: 'Actively participating in the struggles led by Kalaignar in the 1980s, he earned the distinction of "Sirai Senra Selvar" (One who went to prison). A leader ready to make any sacrifice for the welfare of the people.'
         }
       }
     },
