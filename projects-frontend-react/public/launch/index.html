@@ -124,27 +124,6 @@
                 opacity: 0;
             }
         }
-
-        /* 🌹Flower falling animation */
-        .flower {
-            position: fixed;
-            top: -50px;
-            pointer-events: none;
-            animation: fall linear forwards;
-            z-index: 10;
-        }
-
-        @keyframes fall {
-            from {
-                transform: translateY(-50px) rotate(0deg);
-                opacity: 1;
-            }
-
-            to {
-                transform: translateY(110vh) rotate(360deg);
-                opacity: 0.9;
-            }
-        }
     </style>
 </head>
 
@@ -185,29 +164,7 @@
             }, 2500);
         }
 
-        /* 🌹Create lots of falling flowers */
-        function createFlowers() {
-            for (let i = 0; i < 100; i++) { // 🌼 More flowers
-                const flower = document.createElement("div");
-                flower.className = "flower";
-                flower.innerHTML = "🌹";
-
-                flower.style.left = Math.random() * window.innerWidth + "px";
-                flower.style.animationDuration = (4 + Math.random() * 4) + "s";
-                flower.style.fontSize = (22 + Math.random() * 26) + "px";
-
-                document.body.appendChild(flower);
-
-                setTimeout(() => {
-                    flower.remove();
-                }, 9000);
-            }
-        }
-
         function goWebsite() {
-
-            // 🌹 Flower animation
-            createFlowers();
 
             var clap = document.getElementById("clapSound");
             clap.volume = 1;
