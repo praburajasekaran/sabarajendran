@@ -26,9 +26,56 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
   filters,
   lang = 'ta' // Default to Tamil
 }) => {
-  // Use first 5 projects to ensure they fit in the template's safe zone
-  // Reduced to 5 to avoid overcrowding vertically
-  const displayProjects = projects.slice(0, 5);
+  // Dynamic calculation of visible projects to prevent footer overlap
+  // The template has a fixed SAFE ZONE of approx 900px height for the list
+  // Top: 570px, Bottom: 400px, Total: 1920px -> 950px available
+  // We calculate height cost of each card:
+  // - Base (Padding + Border): 60px
+  // - Line Height: ~45px per line
+  // - Gap: 28px
+
+  const getVisibleProjects = () => {
+    const MAX_HEIGHT = 880; // Slightly conservative (950 - buffer)
+    const CARD_BASE_HEIGHT = 60; // Padding (24*2) + Borders
+    const LINE_HEIGHT = 46; // 30px fontSize * 1.5 lineHeight
+    const GAP = 28;
+    const CHARS_PER_LINE = 32; // Conservative estimate for 30px bold font (Tamil/English)
+
+    let currentHeight = 0;
+    const visible: Project[] = [];
+
+    for (const project of projects) {
+      // Get title in current language to estimate length
+      const title = lang === 'ta' ? (project.title_ta || project.title) : project.title;
+
+      // Estimate number of lines (at least 1)
+      // Budget is also inline, but usually short. We treat it as part of the text flow complexity.
+      const effectiveLength = title.length + 15; // +15 chars buffer for Budget display
+      const estimatedLines = Math.max(1, Math.ceil(effectiveLength / CHARS_PER_LINE));
+
+      const cardHeight = CARD_BASE_HEIGHT + (estimatedLines * LINE_HEIGHT);
+
+      // Check if adding this card exceeds max height
+      if (currentHeight + cardHeight > MAX_HEIGHT) {
+        break;
+      }
+
+      visible.push(project);
+      currentHeight += cardHeight + GAP;
+
+      // Hard cap at 5 projects
+      if (visible.length >= 5) break;
+    }
+
+    // Fallback: Always show at least 1 project if available
+    if (visible.length === 0 && projects.length > 0) {
+      return [projects[0]];
+    }
+
+    return visible;
+  };
+
+  const displayProjects = getVisibleProjects();
 
   // Translation helpers
   const currentLang: 'ta' | 'en' = (lang === 'ta' || lang === 'en') ? lang : 'ta';

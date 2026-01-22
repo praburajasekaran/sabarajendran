@@ -640,7 +640,7 @@ export const ProjectsPage: React.FC = () => {
                   <div className="flex items-center gap-3 mb-6">
                     <div className="h-1 w-8 bg-accent-400"></div>
                     <h2 className="text-xl font-black uppercase text-black">
-                      {language === 'ta' ? 'நெய்வேலி வலையம் திட்டங்கள்' : 'Neyveli Block Projects'}
+                      {language === 'ta' ? 'நெய்வேலி நகரம் திட்டங்கள்' : 'Neyveli Town Projects'}
                     </h2>
                     <span className="bg-black text-white px-2 py-1 text-xs font-bold">
                       {filteredProjects.length}

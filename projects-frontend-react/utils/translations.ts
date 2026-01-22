@@ -60,7 +60,7 @@ export const TRANSLATIONS = {
       }
     },
     keyProjects: {
-      sectionTitle: 'Major Constituency Projects',
+      sectionTitle: 'Dravida Model Constituency Projects',
       sectionSubtitle: 'Transforming Lives Across Neyveli',
       sectionDesc: 'Key development initiatives that touch the lives of all citizens in the constituency',
       viewDetails: 'View Details',
@@ -100,10 +100,7 @@ export const TRANSLATIONS = {
         neyveli: 'Neyveli',
         recentFocus: 'Recent Focus',
         recentFocusValue: 'Industrial-Labor relations, Modern Irrigation, and Social Welfare Saturation',
-        regionalRole: 'Regional Role',
-        regionalRoleValue: 'Senior Political Architect of Cuddalore West District',
-        legacy: 'Legacy',
-        legacyValue: 'Known for "Prison Sacrifice" (Sirai Senra Selvar) and grassroots connectivity',
+
       },
       evergreenQuote: '"From the 1980s struggles under Kalaignar to the 2025 vision of the Dravidian Model under Thalapathi, my life remains dedicated to the rising sun and the people of Cuddalore."',
       initiatives: {
@@ -343,7 +340,7 @@ export const TRANSLATIONS = {
       }
     },
     keyProjects: {
-      sectionTitle: 'முக்கிய தொகுதி திட்டங்கள்',
+      sectionTitle: 'திராவிட மாடல் நலத்திட்டங்கள்',
       sectionSubtitle: 'நெய்வேலி முழுவதும் வாழ்க்கையை மாற்றுதல்',
       sectionDesc: 'தொகுதியின் அனைத்து குடிமக்களின் வாழ்க்கையைத் தொடும் முக்கிய வளர்ச்சி முயற்சிகள்',
       viewDetails: 'விவரங்களைக் காண்க',
@@ -383,10 +380,7 @@ export const TRANSLATIONS = {
         neyveli: 'நெய்வேலி',
         recentFocus: 'சமீபத்திய கவனம்',
         recentFocusValue: 'தொழில்-தொழிலாளர் உறவுகள், நவீன பாசனம் மற்றும் சமூக நல திட்டங்கள்',
-        regionalRole: 'பிராந்திய பங்கு',
-        regionalRoleValue: 'கடலூர் மேற்கு மாவட்டத்தின் மூத்த அரசியல் சிற்பி',
-        legacy: 'பாரம்பரியம்',
-        legacyValue: '"சிறை சென்ற செல்வர்" என்று அறியப்படுபவர் மற்றும் மக்களுடன் நேரடித் தொடர்பு',
+
       },
       evergreenQuote: '"1980களில் கலைஞரின் கீழ் நடந்த போராட்டங்களில் இருந்து 2025 தளபதியின் திராவிட மாடல் வரை, எனது வாழ்க்கை உதய சூரியனுக்கும் கடலூர் மக்களுக்கும் அர்ப்பணிக்கப்பட்டுள்ளது."',
       initiatives: {

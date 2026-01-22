@@ -65,7 +65,6 @@ export const Home: React.FC = () => {
   const blockCounts = useMemo(() => {
     const counts: Record<string, number> = {
       'Panruti': 0,
-      'Neyveli': 0,
       'Kurinjipadi': 0
     };
     projects.forEach(p => {
@@ -244,7 +243,7 @@ export const Home: React.FC = () => {
             <div className="w-24 h-2 bg-primary-600 mx-auto mt-6"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {blockCounts.map(({ name, count }) => (
               <div
                 key={name}

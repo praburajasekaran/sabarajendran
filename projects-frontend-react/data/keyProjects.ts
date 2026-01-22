@@ -12,6 +12,15 @@ export interface KeyProject {
 
 export const KEY_PROJECTS: KeyProject[] = [
     {
+        id: 10,
+        titleEn: "Mudalvarin Grama Saalaigal Membattu Thittam",
+        titleTa: "முதல்வரின் கிராம சாலைகள் மேம்பாட்டுத் திட்டம்",
+        descriptionEn: "Under the Mudalvarin Grama Saalaigal Membattu Thittam (MGSMT) and through the State Highways Department, road infrastructure works have been completed at a total project cost of ₹125 crore.",
+        descriptionTa: "முதல்வரின் கிராம சாலைகள் மேம்பாட்டுத் திட்டம் (MGSMT) மற்றும் மாநில நெடுஞ்சாலைத்துறை மூலம், மொத்தம் ரூ.125 கோடி மதிப்பீட்டில் சாலை வசதிகள் உருவாக்கப்பட்டுள்ளன.",
+        image: "/assets/images/key-projects/placeholder-10.jpg",
+        impact: "₹125 crore"
+    },
+    {
         id: 1,
         titleEn: "A 40-Year-Long Dream Fulfilled",
         titleTa: "40 ஆண்டுகால கனவு நிறைவேற்றம்",
@@ -91,14 +100,5 @@ export const KEY_PROJECTS: KeyProject[] = [
         descriptionTa: "ரூ.71 கோடி மதிப்பீட்டில், செம்மேடு, காமாட்சிபேட்டை, திருவாமூர், மேலிருப்பு, கீழிருப்பு, பணிக்கன்குப்பம் மற்றும் மாளிகம்பட்டு பகுதிகளில் மேம்பாலம் மற்றும் கீழ்நிலை பாலங்கள் அமைக்கப்பட்டுள்ளன.",
         image: "/assets/images/key-projects/placeholder-9.jpg",
         impact: "₹71 crore, 7 locations"
-    },
-    {
-        id: 10,
-        titleEn: "Mudalvarin Grama Saalaigal Membattu Thittam",
-        titleTa: "முதல்வரின் கிராம சாலைகள் மேம்பாட்டுத் திட்டம்",
-        descriptionEn: "Under the Mudalvarin Grama Saalaigal Membattu Thittam (MGSMT) and through the State Highways Department, road infrastructure works have been completed at a total project cost of ₹125 crore.",
-        descriptionTa: "முதல்வரின் கிராம சாலைகள் மேம்பாட்டுத் திட்டம் (MGSMT) மற்றும் மாநில நெடுஞ்சாலைத்துறை மூலம், மொத்தம் ரூ.125 கோடி மதிப்பீட்டில் சாலை வசதிகள் உருவாக்கப்பட்டுள்ளன.",
-        image: "/assets/images/key-projects/placeholder-10.jpg",
-        impact: "₹125 crore"
-    },
+    }
 ];

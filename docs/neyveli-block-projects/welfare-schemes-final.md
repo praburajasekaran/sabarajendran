@@ -3,7 +3,7 @@
 ## 1. நேரடி பயன் திட்டங்கள்
 
 ### கலைஞர் மகளிர் உரிமைத் தொகை
-- **பயனாளிகள்**: 28,050 குடும்பத் தலைவிகள்
+- **பயனாளிகள்**: 38,050 குடும்பத் தலைவிகள்
 - **உதவித்தொகை**: மாதந்தோறும் ரூ.1,000
 - **நிலை**: செயல்பாட்டில் உள்ளது
 
@@ -365,7 +365,7 @@
 ## 1. Direct Benefit Schemes
 
 ### Kalaignar Magalir Urimai Thogai (Women's Entitlement Scheme)
-- **Beneficiaries**: 28,050 heads of families
+- **Beneficiaries**: 38,050 heads of families
 - **Allowance**: ₹1,000 per month
 - **Status**: Currently operational
 

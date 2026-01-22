@@ -17,7 +17,7 @@ export const WELFARE_SCHEMES: WelfareScheme[] = [
         id: 'kmut',
         titleEn: "Kalaignar Magalir Urimai Thogai",
         titleTa: "கலைஞர் மகளிர் உரிமைத் தொகை",
-        beneficiaryCount: "28,050",
+        beneficiaryCount: "38,050",
         beneficiaryLabelEn: "Women Heads of Families",
         beneficiaryLabelTa: "குடும்பத் தலைவிகள்",
         descriptionEn: "Monthly entitlement of ₹1,000 provided to women heads of eligible families.",

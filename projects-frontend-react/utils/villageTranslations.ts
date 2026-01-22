@@ -12,7 +12,7 @@ let translationMaps: {
 
 // Static translations for blocks (since there are few and API support might vary)
 const BLOCK_TRANSLATIONS: Record<string, string> = {
-    'Neyveli': 'நெய்வேலி',
+    'Neyveli': 'நெய்வேலி நகரம்',
     'Kurinjipadi': 'குறிஞ்சிப்பாடி',
     'Panruti': 'பண்ருட்டி',
     'Vrudhachalam': 'விருத்தாசலம்',
@@ -47,6 +47,8 @@ export const translateBlock = (name: string, language: 'en' | 'ta'): string => {
         if (BLOCK_TRANSLATIONS[name]) return BLOCK_TRANSLATIONS[name];
         // If we ever add dynamic block translations, check here
         // if (translationMaps?.blocks[name]) return translationMaps.blocks[name];
+    } else if (language === 'en' && name === 'Neyveli') {
+        return 'Neyveli Town';
     }
     return name;
 };

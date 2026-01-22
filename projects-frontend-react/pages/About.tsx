@@ -112,25 +112,7 @@ export const About: React.FC = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4 pb-4 border-b-2 border-neutral-100">
-                                    <div className="p-3 bg-black text-accent-200 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
-                                        <Briefcase size={24} strokeWidth={3} />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-neutral-500 uppercase font-black tracking-widest mb-1">{t.about.mlaCard.regionalRole}</p>
-                                        <p className="font-bold text-base text-black leading-snug">{t.about.mlaCard.regionalRoleValue}</p>
-                                    </div>
-                                </div>
 
-                                <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-black text-accent-200 flex-shrink-0 shadow-[4px_4px_0_0_#991b1b]">
-                                        <Award size={24} strokeWidth={3} />
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-neutral-500 uppercase font-black tracking-widest mb-1">{t.about.mlaCard.legacy}</p>
-                                        <p className="font-bold text-base text-black leading-snug">{t.about.mlaCard.legacyValue}</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
