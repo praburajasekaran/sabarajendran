@@ -3148,7 +3148,7 @@
     {
       "id": "2932",
       "title": "Construction of Girls' Toilet Building at Kattukudalur Government High School",
-      "title_ta": "கட்டுக்குடலூர் அரசு மேல்நிலைப் பள்ளியில் மகளிர் கழிவறை கட்டடம் அமைத்தல்",
+      "title_ta": "காட்டுக்கூடலூர் அரசு மேல்நிலைப் பள்ளியில் மகளிர் கழிவறை கட்டடம் அமைத்தல்",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "காட்டுக்கூடலூர்",
@@ -16356,7 +16356,7 @@
     {
       "id": "406",
       "title": "Threshing Floor @ Meliruppu Panchayat",
-      "title_ta": "மெலிருப்பு பஞ்சாயத்தில் போரடிக்கும் களம்",
+      "title_ta": "மேலிருப்பு பஞ்சாயத்தில் போரடிக்கும் களம்",
       "block": "Panruti",
       "panchayat": "Meliruppu",
       "panchayat_ta": "மேலிருப்பு",
@@ -16483,7 +16483,7 @@
     {
       "id": "414",
       "title": "Providing FHTC Distribution System in Kudieruppu",
-      "title_ta": "குடியெருப்பில் தனிவீட்டு குழாய் இணைப்பு விநியோக அமைப்பு அமைத்தல்",
+      "title_ta": "குடியிருப்பில் தனிவீட்டு குழாய் இணைப்பு விநியோக அமைப்பு அமைத்தல்",
       "block": "Panruti",
       "panchayat": "",
       "village": "Melkangeyankuppam",
@@ -23578,7 +23578,7 @@
   ],
   "meta": {
     "total": 1504,
-    "generatedAt": "2026-01-23T08:18:00.824Z",
+    "generatedAt": "2026-01-23T08:23:01.356Z",
     "version": "1.0.0",
     "blocks": [
       "Kurinjipadi",
