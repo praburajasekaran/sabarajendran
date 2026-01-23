@@ -2937,7 +2937,7 @@
     {
       "id": "2933",
       "title": "Construction of Health and Wellness Centre Building at Vadakkuthu",
-      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
+      "title_ta": "வடக்குத்து கிராமத்தில் சுகாதாரம் மற்றும் நல்வாழ்வு மையக் கட்டிடம் கட்டுதல்",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "வடக்குத்து",
@@ -3103,7 +3103,7 @@
     {
       "id": "2929",
       "title": "Construction of Additional Classroom Building at Indira Nagar Government Higher Secondary School",
-      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
+      "title_ta": "இந்திராநகர் அரசு மேல்நிலைப்பள்ளியில் கூடுதல் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "இந்திரா நகர்",
@@ -3658,7 +3658,7 @@
     {
       "id": "2842",
       "title": "Koranapattu Lake Renovation",
-      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
+      "title_ta": "கோரணப்பட்டு ஏரி சீரமைத்தல்",
       "block": "Kurinjipadi",
       "panchayat": "Koranapattu",
       "panchayat_ta": "கோரணப்பட்டு",
@@ -3907,7 +3907,7 @@
     {
       "id": "2593",
       "title": "Sinking of Borewell",
-      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
+      "title_ta": "ஆழ்துளை கிணறு அமைத்தல்",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "வானதிராயபுரம்",
@@ -23578,7 +23578,7 @@
   ],
   "meta": {
     "total": 1504,
-    "generatedAt": "2026-01-23T07:45:31.938Z",
+    "generatedAt": "2026-01-23T07:54:44.030Z",
     "version": "1.0.0",
     "blocks": [
       "Kurinjipadi",
