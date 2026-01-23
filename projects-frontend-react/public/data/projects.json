@@ -3266,7 +3266,7 @@
     {
       "id": "2911",
       "title": "Construction of Classroom Buildings at Thiruvaamur Government High School",
-      "title_ta": "",
+      "title_ta": "திருவாமூர் அரசு உயர்நிலைப் பள்ளியில் வகுப்பறைக் கட்டிடங்கள் கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Thiruvamoor",
       "panchayat_ta": "திருவாமூர்",
@@ -3385,8 +3385,8 @@
     },
     {
       "id": "2898",
-      "title": "Construction of a Flood Protection Wall and Restoration Work in the Keeliruppu Stream, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title": "Construction of a Flood Protection Wall and Restoration Work in the Keeliruppu Stream, Panruti Taluk, Cuddalore District",
+      "title_ta": "கடலூர் மாவட்டம், பண்ருட்டி வட்டம், கீழிருப்பு ஓடையில் வெள்ளத் தடுப்புச் சுவர் கட்டுதல் மற்றும் சீரமைப்புப் பணிகள்",
       "block": "Panruti",
       "panchayat": "Keeliruppu",
       "panchayat_ta": "கீழிருப்பு",
@@ -3400,8 +3400,8 @@
     },
     {
       "id": "2899",
-      "title": "Construction of a Check Dam Across the Visoor Stream in Visoor Village, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title": "Construction of a Check Dam Across the Visoor Stream",
+      "title_ta": "வீசூர் ஓடையின் குறுக்கே தடுப்பணை கட்டுதல்.",
       "block": "Panruti",
       "panchayat": "Visoor",
       "panchayat_ta": "விசூர்",
@@ -3416,7 +3416,7 @@
     {
       "id": "2900",
       "title": "Flood Protection Work in the Meliruppu Stream, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title_ta": "கடலூர் மாவட்டம், பண்ருட்டி வட்டம், மேலிருப்பு ஓடையில் வெள்ளத் தடுப்புப் பணிகள்",
       "block": "Panruti",
       "panchayat": "Meliruppu",
       "panchayat_ta": "மேலிருப்பு",
@@ -3476,7 +3476,7 @@
     {
       "id": "2870",
       "title": "10-acre Special Cashew Research Centre",
-      "title_ta": "",
+      "title_ta": "10 ஏக்கர் பரப்பளவிலான சிறப்பு முந்திரி ஆராய்ச்சி மையம்",
       "block": "Panruti",
       "panchayat": "Keelakuppam",
       "panchayat_ta": "கீழக்குப்பம்",
@@ -3491,7 +3491,7 @@
     {
       "id": "2871",
       "title": "60 Cashew Nut Shelling Machines",
-      "title_ta": "",
+      "title_ta": "60 முந்திரி ஓடு நீக்கும் இயந்திரங்கள்",
       "block": "Panruti",
       "panchayat": "Keeliruppu",
       "panchayat_ta": "கீழிருப்பு",
@@ -3506,7 +3506,7 @@
     {
       "id": "2872",
       "title": "33-acre Sidco Industrial Estate",
-      "title_ta": "",
+      "title_ta": "33 ஏக்கர் பரப்பளவிலான சிட்கோ (SIDCO) தொழிற்பேட்டை",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "காடாம்புலியூர்",
@@ -3536,7 +3536,7 @@
     {
       "id": "2843",
       "title": "Keeliruppu Canal Flood Restoration",
-      "title_ta": "",
+      "title_ta": "கீழிருப்பு கால்வாய் வெள்ளச் சீரமைப்புப் பணிகள்",
       "block": "Panruti",
       "panchayat": "Keeliruppu",
       "panchayat_ta": "கீழிருப்பு",
@@ -3581,7 +3581,7 @@
     {
       "id": "2832",
       "title": "2 Govt Primary Health Centres",
-      "title_ta": "",
+      "title_ta": "2 அரசு ஆரம்ப சுகாதார நிலையங்கள்",
       "block": "Panruti",
       "panchayat": "Marungur",
       "panchayat_ta": "மருங்கூர்",
@@ -3596,7 +3596,7 @@
     {
       "id": "2838",
       "title": "New Check Dams (2 Locations)",
-      "title_ta": "",
+      "title_ta": "புதிய தடுப்பணைகள் (2 இடங்கள்)",
       "block": "Panruti",
       "panchayat": "Thiruvamoor",
       "panchayat_ta": "திருவாமூர்",
@@ -3611,7 +3611,7 @@
     {
       "id": "2839",
       "title": "Check Dams Construction at Visur",
-      "title_ta": "",
+      "title_ta": "வீசூரில் தடுப்பணைகள் கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Visoor",
       "panchayat_ta": "விசூர்",
@@ -23576,7 +23576,7 @@
   ],
   "meta": {
     "total": 1504,
-    "generatedAt": "2026-01-23T07:25:28.039Z",
+    "generatedAt": "2026-01-23T07:30:42.796Z",
     "version": "1.0.0",
     "blocks": [
       "Kurinjipadi",
