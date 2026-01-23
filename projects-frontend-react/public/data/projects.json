@@ -3430,8 +3430,8 @@
     },
     {
       "id": "2901",
-      "title": "Construction of a Drainage Sluice and Flood Protection Wall to Strengthen the Banks of the Gadilam River in Elanthampattu, Semmedu, and Siruvathur Villages, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title": "Construction of a Drainage Sluice and Flood Protection Wall to Strengthen the Banks of the Gadilam River in Elanthampattu, Semmedu, and Siruvathur Villages",
+      "title_ta": "இலந்தம்பட்டு, செம்மேடு மற்றும் சிறுவத்தூர் கிராமங்களில் கெடிலம் ஆற்றின் கரைகளை வலுப்படுத்த, வடிகால் மதகு மற்றும் வெள்ளத் தடுப்புச் சுவர் கட்டுதல்.",
       "block": "Panruti",
       "panchayat": "Elanthampattu",
       "panchayat_ta": "எலந்தம்பட்டு",
@@ -3446,7 +3446,7 @@
     {
       "id": "2902",
       "title": "Construction of a Check Dam Across the Gadilam River in Kamatchipettai Village, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title_ta": "காமாட்சிப்பேட்டை கிராமத்தில் கெடிலம் ஆற்றின் குறுக்கே தடுப்பணை கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Thiruvamoor",
       "panchayat_ta": "திருவாமூர்",
@@ -3461,7 +3461,7 @@
     {
       "id": "2903",
       "title": "Renovation of the Thiruvaamur Bed Dam and Construction of Flood Protection Walls on the Banks of the South Malattar and the Siruvathur Lake Inflow Channel in Thiruvaamur Village, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title_ta": "திருவாமூர் தரைமட்டத் தடுப்பணையைச் சீரமைத்தல் மற்றும் தெற்கு மலட்டாறு மற்றும் சிறுவத்தூர் ஏரி வரத்துக் கால்வாயின் கரைகளில் வெள்ளத் தடுப்புச் சுவர்கள் கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Thiruvamoor",
       "panchayat_ta": "திருவாமூர்",
@@ -3626,7 +3626,7 @@
     {
       "id": "2840",
       "title": "Retaining Walls in 4 Villages (Keeliruppu, Visoor, Meliruppu, Panikkankuppam)",
-      "title_ta": "",
+      "title_ta": "4 கிராமங்களில் தாங்கு சுவர்கள் (கீழிருப்பு, வீசூர், மேலிருப்பு, பணிக்கன்குப்பம்)",
       "block": "Panruti",
       "panchayat": "Keeliruppu",
       "panchayat_ta": "கீழிருப்பு",
@@ -3641,7 +3641,7 @@
     {
       "id": "2841",
       "title": "Flood Protection Walls (4 Areas - Elanthampattu, Siruvathur, S.eripalayam, Semmedu)",
-      "title_ta": "",
+      "title_ta": "4 பகுதிகளில் வெள்ளத் தடுப்புச் சுவர்கள் கட்டியது",
       "block": "Panruti",
       "panchayat": "Elanthampattu",
       "panchayat_ta": "எலந்தம்பட்டு",
@@ -23576,7 +23576,7 @@
   ],
   "meta": {
     "total": 1504,
-    "generatedAt": "2026-01-23T07:19:43.332Z",
+    "generatedAt": "2026-01-23T07:25:28.039Z",
     "version": "1.0.0",
     "blocks": [
       "Kurinjipadi",
