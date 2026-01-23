@@ -243,8 +243,9 @@ export const Home: React.FC = () => {
             <div className="w-24 h-2 bg-primary-600 mx-auto mt-6"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {blockCounts.map(({ name, count }) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Panruti Block Card */}
+            {blockCounts.filter(b => b.name === 'Panruti').map(({ name, count }) => (
               <div
                 key={name}
                 onClick={() => navigate(`${langPrefix}/projects/${slugify(name)}`)}
@@ -254,16 +255,64 @@ export const Home: React.FC = () => {
                   <div>
                     <div className="flex items-center justify-between mb-8">
                       <h3 className="font-display text-3xl font-extrabold text-black uppercase tracking-tight group-hover:text-primary-600 transition-colors">
-                        {(() => {
-                          const displayName = name;
-                          // Simple block name translations
-                          const blockTranslations: Record<string, string> = {
-                            'Neyveli': 'நெய்வேலி',
-                            'Panruti': 'பண்ருட்டி',
-                            'Kurinjipadi': 'குறிஞ்சிப்பாடி'
-                          };
-                          return language === 'ta' ? (blockTranslations[displayName] || displayName) : displayName;
-                        })()}
+                        {language === 'ta' ? 'பண்ருட்டி' : 'Panruti'}
+                      </h3>
+                      <div className="p-3 bg-white border-2 border-black text-black group-hover:bg-primary-600 group-hover:text-white transition-colors shadow-[4px_4px_0_0_#000]">
+                        <Building2 size={24} />
+                      </div>
+                    </div>
+
+                    <div className="mb-6">
+                      <span className="font-display text-6xl font-black text-secondary-900">{count}</span>
+                      <p className="text-secondary-600 font-bold uppercase text-sm mt-1">{t.home.projectsCount}</p>
+                    </div>
+                  </div>
+
+                  <div className="pt-6 border-t-2 border-neutral-200 group-hover:border-black transition-colors">
+                    <span className="text-base font-bold text-black group-hover:text-primary-600 flex items-center gap-2 uppercase tracking-wide">
+                      {t.home.viewBlockProjects}
+                      <ChevronRight size={20} className="group-hover:translate-x-2 transition-transform stroke-[3]" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Neyveli Town Card - Special Layout */}
+            <div
+              onClick={() => navigate(`${langPrefix}/projects/neyveli`)}
+              className="group relative p-8 bg-neutral-50 border-2 border-neutral-200 hover:border-black hover:bg-white transition-all duration-300 cursor-pointer card-sharp flex flex-col items-center justify-center text-center"
+            >
+              <div className="flex flex-col items-center justify-center h-full">
+                <div className="p-3 bg-white border-2 border-black text-black group-hover:bg-primary-600 group-hover:text-white transition-colors shadow-[4px_4px_0_0_#000] mb-6">
+                  <Building2 size={24} />
+                </div>
+
+                <h3 className="font-display text-4xl md:text-5xl font-extrabold text-black uppercase tracking-tight group-hover:text-primary-600 transition-colors mb-8">
+                  {language === 'ta' ? 'நெய்வேலி நகரம்' : 'Neyveli Town'}
+                </h3>
+
+                <div className="pt-6 border-t-2 border-neutral-200 group-hover:border-black transition-colors w-full">
+                  <span className="text-base font-bold text-black group-hover:text-primary-600 flex items-center justify-center gap-2 uppercase tracking-wide">
+                    {language === 'ta' ? 'திட்டங்களைக் காண்க' : 'View Projects'}
+                    <ChevronRight size={20} className="group-hover:translate-x-2 transition-transform stroke-[3]" />
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Kurinjipadi Block Card */}
+            {blockCounts.filter(b => b.name === 'Kurinjipadi').map(({ name, count }) => (
+              <div
+                key={name}
+                onClick={() => navigate(`${langPrefix}/projects/${slugify(name)}`)}
+                className="group relative p-8 bg-neutral-50 border-2 border-neutral-200 hover:border-black hover:bg-white transition-all duration-300 cursor-pointer card-sharp"
+              >
+                <div className="flex flex-col h-full justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-8">
+                      <h3 className="font-display text-3xl font-extrabold text-black uppercase tracking-tight group-hover:text-primary-600 transition-colors">
+                        {language === 'ta' ? 'குறிஞ்சிப்பாடி' : 'Kurinjipadi'}
                       </h3>
                       <div className="p-3 bg-white border-2 border-black text-black group-hover:bg-primary-600 group-hover:text-white transition-colors shadow-[4px_4px_0_0_#000]">
                         <Building2 size={24} />
