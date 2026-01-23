@@ -3058,7 +3058,7 @@
     {
       "id": "2925",
       "title": "Construction of 4 Classroom Buildings at Kurinjipadi Taluk Indira Nagar Government Higher Secondary School",
-      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
+      "title_ta": "குறிஞ்சிப்பாடி வட்டம், இந்திரா நகர் அரசு மேல்நிலைப் பள்ளியில் 4 வகுப்பறைக் கட்டிடங்கள் கட்டுதல்",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "இந்திரா நகர்",
@@ -3253,7 +3253,7 @@
     {
       "id": "2910",
       "title": "Construction of Classroom Buildings at Indira Nagar Government High School",
-      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
+      "title_ta": "இந்திரா நகர் அரசு உயர்நிலைப் பள்ளியில் வகுப்பறைக் கட்டிடங்கள் கட்டுதல்",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "இந்திரா நகர்",
@@ -3523,7 +3523,7 @@
     {
       "id": "2873",
       "title": "New Govt Transport Bus Depot",
-      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
+      "title_ta": "புதிய அரசு போக்குவரத்து பேருந்து பணிமனை",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "இந்திரா நகர்",
@@ -3568,7 +3568,7 @@
     {
       "id": "2831",
       "title": "Integrated Court & Residential Complex",
-      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
+      "title_ta": "ஒருங்கிணைந்த நீதிமன்றம் மற்றும் குடியிருப்பு வளாகம்",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "இந்திரா நகர்",
@@ -23578,7 +23578,7 @@
   ],
   "meta": {
     "total": 1504,
-    "generatedAt": "2026-01-23T07:34:35.689Z",
+    "generatedAt": "2026-01-23T07:45:31.938Z",
     "version": "1.0.0",
     "blocks": [
       "Kurinjipadi",
