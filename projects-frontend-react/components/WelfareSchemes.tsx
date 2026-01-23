@@ -16,7 +16,7 @@ export const WelfareSchemes: React.FC = () => {
                         {language === 'ta' ? 'சமூக பாதுகாப்பு' : 'Social Impact'}
                     </span>
                     <h2 className="font-display text-3xl md:text-5xl font-extrabold text-black mt-4 uppercase max-w-4xl mx-auto leading-tight">
-                        {language === 'ta' ? 'முக்கிய நலத்திட்டங்கள்' : 'Key Welfare Schemes'}
+                        {language === 'ta' ? 'திராவிட மாடல் நலத்திட்டங்கள்' : 'Dravidian Model  Welfare Schemes'}
                     </h2>
                     <div className="w-24 h-2 bg-primary-600 mx-auto mt-6"></div>
                     <p className="mt-4 text-lg text-neutral-600 max-w-2xl mx-auto font-medium">

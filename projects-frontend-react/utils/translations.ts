@@ -60,7 +60,7 @@ export const TRANSLATIONS = {
       }
     },
     keyProjects: {
-      sectionTitle: 'Dravida Model Constituency Projects',
+      sectionTitle: 'Major Projects in Constituency',
       sectionSubtitle: 'Transforming Lives Across Neyveli',
       sectionDesc: 'Key development initiatives that touch the lives of all citizens in the constituency',
       viewDetails: 'View Details',
@@ -340,9 +340,9 @@ export const TRANSLATIONS = {
       }
     },
     keyProjects: {
-      sectionTitle: 'திராவிட மாடல் நலத்திட்டங்கள்',
+      sectionTitle: 'அனைவருக்குமான வளர்ச்சித் திட்டங்கள்',
       sectionSubtitle: 'நெய்வேலி முழுவதும் வாழ்க்கையை மாற்றுதல்',
-      sectionDesc: 'தொகுதியின் அனைத்து குடிமக்களின் வாழ்க்கையைத் தொடும் முக்கிய வளர்ச்சி முயற்சிகள்',
+      sectionDesc: 'தொகுதியின் அனைத்து குடிமக்களின் வாழ்க்கையைத் தொடும் முக்கிய வளர்ச்சித் திட்டங்கள்.',
       viewDetails: 'விவரங்களைக் காண்க',
       previous: 'முந்தைய',
       next: 'அடுத்து',
