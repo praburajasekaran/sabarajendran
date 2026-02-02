@@ -19,79 +19,79 @@
     {
       "id": "3151",
       "title": "OHT Repairs Kattusagai",
-      "title_ta": "",
+      "title_ta": "OHT ஆழ்துளை கிணறு மண் சரிவு பழுது நீக்கம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹60000",
+      "rawBudget": 60000
     },
     {
       "id": "3150",
       "title": "CC Road Puliyur Kizhaku Theru",
-      "title_ta": "",
+      "title_ta": "புலியூர் கிழக்கு தெரு சிமெண்ட் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.00 L",
+      "rawBudget": 700000
     },
     {
       "id": "3149",
       "title": "CC Road South Vasanangkuppam",
-      "title_ta": "",
+      "title_ta": "தெற்கு வசனங்குப்பம் சிமெண்ட் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.00 L",
+      "rawBudget": 700000
     },
     {
       "id": "3148",
       "title": "Food Grain Godown Puliyur Ad",
-      "title_ta": "",
+      "title_ta": "புலியூர் ஆதி திராவிடர் பகுதி உணவு தானிய சேமிப்புக் கிடங்கு",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹13.36 L",
+      "rawBudget": 1336000
     },
     {
       "id": "3147",
       "title": "Food Grain Godown Puliyur Kattusagai",
-      "title_ta": "",
+      "title_ta": "காட்டுசாகை உணவு தானிய சேமிப்புக் கிடங்கு",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹13.36 L",
+      "rawBudget": 1336000
     },
     {
       "id": "3146",
       "title": "CC Pavement Sudukattu Salai",
-      "title_ta": "",
+      "title_ta": "மயான சாலை சிமெண்ட் சாலை அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹3.50 L",
+      "rawBudget": 350000
     },
     {
       "id": "3145",
       "title": "Anganwadi Building Puliyur",
-      "title_ta": "",
+      "title_ta": "புலியூரில் அங்கன்வாடி கட்டிடம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
@@ -103,67 +103,67 @@
     {
       "id": "3144",
       "title": "Plantation Iyyanar Kovil Kulam",
-      "title_ta": "",
+      "title_ta": "அய்யனார் கோவில் குளம் மரக்கன்றுகள் நடுதல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹70000",
+      "rawBudget": 70000
     },
     {
       "id": "3143",
       "title": "Plantation Munishwaran Kovil Kuttai",
-      "title_ta": "",
+      "title_ta": "முனீஸ்வரன் கோவில் குட்டை மரக்கன்றுகள் நடுதல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹70000",
+      "rawBudget": 70000
     },
     {
       "id": "3142",
-      "title": "Kalaignarin Kanavu Illam &#8211; Punitha",
-      "title_ta": "",
+      "title": "Kalaignarin Kanavu Illam - Punitha",
+      "title_ta": "புனிதா என்பவருக்கு புதிய வீடு கட்டுதல் (கலைஞரின் கனவு இல்லம்)",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹3.10 L",
+      "rawBudget": 310000
     },
     {
       "id": "3141",
       "title": "New Borewell Vasanankuppam Ad",
-      "title_ta": "",
+      "title_ta": "புதிய ஆழ்துளை கிணறு மற்றும் மோட்டார்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.41 L",
+      "rawBudget": 741000
     },
     {
       "id": "3140",
       "title": "Bathing Ghat Siththeri Kulakarai",
-      "title_ta": "",
+      "title_ta": "சித்தேரி குளக்கரையில் படித்துறை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.00 L",
+      "rawBudget": 200000
     },
     {
       "id": "3139",
       "title": "Repair Work of Crematorium Shed",
-      "title_ta": "",
+      "title_ta": "மயான கொட்டகை பழுது பார்த்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
@@ -175,475 +175,475 @@
     {
       "id": "3138",
       "title": "CC Road Puliyur Adhi Dravidar Paguthi",
-      "title_ta": "",
+      "title_ta": "புலியூர் ஆதி திராவிடர் பகுதி சிமெண்ட் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹10.00 L",
+      "rawBudget": 1000000
     },
     {
       "id": "3137",
       "title": "Three Wheeler for Differently Abled",
-      "title_ta": "",
+      "title_ta": "மாற்றுத்திறனாளிக்கு மூன்று சக்கர வண்டி",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.02 L",
+      "rawBudget": 101800
     },
     {
       "id": "3136",
       "title": "Vengalathu Eri Rejuvenation",
-      "title_ta": "",
+      "title_ta": "வெங்களத்து ஏரி சீரமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.04 L",
+      "rawBudget": 504000
     },
     {
       "id": "3135",
       "title": "Valiyanatham Eri Rejuvenation",
-      "title_ta": "",
+      "title_ta": "வாலியநத்தம் ஏரி சீரமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.58 L",
+      "rawBudget": 558000
     },
     {
       "id": "3134",
       "title": "Recharge Shaft Vasanankuppam Ad",
-      "title_ta": "",
+      "title_ta": "வசனங்குப்பம் ஆதி திராவிடர் பகுதி செறிவூட்டு துளை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹50000",
+      "rawBudget": 50000
     },
     {
       "id": "3133",
       "title": "New Pond at Puliyur Kattusagai (3)",
-      "title_ta": "",
+      "title_ta": "காட்டுசாகையில் புதிய குட்டை அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.35 L",
+      "rawBudget": 535000
     },
     {
       "id": "3132",
       "title": "New Pond at Puliyur Kattusagai (Ad)",
-      "title_ta": "",
+      "title_ta": "காட்டுசாகையில் புதிய குட்டை அமைத்தல் (AD)",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.35 L",
+      "rawBudget": 535000
     },
     {
       "id": "3131",
       "title": "New Pond at Puliyur Kattusagai",
-      "title_ta": "",
+      "title_ta": "காட்டுசாகையில் புதிய குட்டை அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.35 L",
+      "rawBudget": 535000
     },
     {
       "id": "3130",
       "title": "Anganwadi Toilet Pethanankuppam",
-      "title_ta": "",
+      "title_ta": "பெத்தநாயக்கன்குப்பம் அங்கன்வாடி கழிப்பறை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹36000",
+      "rawBudget": 36000
     },
     {
       "id": "3129",
       "title": "Anganwadi Building Puliyurkattusagai",
-      "title_ta": "",
+      "title_ta": "காட்டுசாகையில் அங்கன்வாடி கட்டிடம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹14.00 L",
+      "rawBudget": 1400000
     },
     {
       "id": "3128",
       "title": "Fencing of 60000l OHT",
-      "title_ta": "",
+      "title_ta": "60000 லி மேல்நிலை நீர் தொட்டிக்கு வேலி அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹37200",
+      "rawBudget": 37200
     },
     {
       "id": "3127",
       "title": "Fencing of 30000l OHT",
-      "title_ta": "",
+      "title_ta": "30000 லி மேல்நிலை நீர் தொட்டிக்கு வேலி அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹37200",
+      "rawBudget": 37200
     },
     {
       "id": "3126",
       "title": "Construction of OHT (60000 Ltr) Puliyur Ad",
-      "title_ta": "",
+      "title_ta": "புலியூர் ஆதி திராவிடர் பகுதியில் 60000 லி மேல்நிலை நீர் தொட்டி",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹25.76 L",
+      "rawBudget": 2575600
     },
     {
       "id": "3125",
       "title": "Drainage Kattusagai Middle Street",
-      "title_ta": "",
+      "title_ta": "காட்டுசாகை மத்தி தெரு வடிகால் வசதி",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹8.82 L",
+      "rawBudget": 881866
     },
     {
       "id": "3124",
       "title": "Tar Road Siththeri Kulakkarai",
-      "title_ta": "",
+      "title_ta": "சித்தேரி குளக்கரையில் தார் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹9.60 L",
+      "rawBudget": 960000
     },
     {
       "id": "3123",
       "title": "Tar Road Thirattikuppam to Agartamparam",
-      "title_ta": "",
+      "title_ta": "திரட்டிக்குப்பம் - அகரதம்பரம் தார் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹13.65 L",
+      "rawBudget": 1365000
     },
     {
       "id": "3122",
       "title": "E-cart for Puliyur Panchayat",
-      "title_ta": "",
+      "title_ta": "புலியூர் ஊராட்சிக்கு மின்சார வண்டி",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.30 L",
+      "rawBudget": 230000
     },
     {
       "id": "3121",
       "title": "Mini Csc Puliyur West Vao Office",
-      "title_ta": "",
+      "title_ta": "புலியூர் மேற்கு VAO அலுவலகத்தில் MCSC",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.00 L",
+      "rawBudget": 200000
     },
     {
       "id": "3120",
       "title": "Library Building Puliyur",
-      "title_ta": "",
+      "title_ta": "புலியூர் ஊராட்சியில் நூலக கட்டிடம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹22.00 L",
+      "rawBudget": 2200000
     },
     {
       "id": "3119",
       "title": "Minor Repairs for Anjammal",
-      "title_ta": "",
+      "title_ta": "அஞ்சம்மாள் என்பவருக்கு வீடு பழுது நீக்கம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹32000",
+      "rawBudget": 32000
     },
     {
       "id": "3118",
       "title": "Minor Repairs for Jaya Rrh-ii",
-      "title_ta": "",
+      "title_ta": "ஜெயா என்பவருக்கு வீடு பழுது நீக்கம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹32000",
+      "rawBudget": 32000
     },
     {
       "id": "3117",
       "title": "Minor Repairs for Balasubramaniyan",
-      "title_ta": "",
+      "title_ta": "பாலசுப்ரமணியன் என்பவருக்கு வீடு பழுது நீக்கம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹27000",
+      "rawBudget": 27000
     },
     {
       "id": "3116",
       "title": "Minor Repairs for Pappathi",
-      "title_ta": "",
+      "title_ta": "பாப்பாத்தி என்பவருக்கு வீடு பழுது நீக்கம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹27000",
+      "rawBudget": 27000
     },
     {
       "id": "3115",
       "title": "Major Repairs for Arumaikannu",
-      "title_ta": "",
+      "title_ta": "அருமைக்கண்ணு என்பவருக்கு வீடு பழுது நீக்கம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.50 L",
+      "rawBudget": 150000
     },
     {
       "id": "3114",
       "title": "Major Repairs for Jaya",
-      "title_ta": "",
+      "title_ta": "ஜெயா என்பவருக்கு வீடு பெரிய பழுது நீக்கம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹32000",
+      "rawBudget": 32000
     },
     {
       "id": "3113",
       "title": "Rural Sports Centre Puliyur Panchayat",
-      "title_ta": "",
+      "title_ta": "புலியூர் ஊராட்சியில் விளையாட்டு மையம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.45 L",
+      "rawBudget": 145000
     },
     {
       "id": "3112",
       "title": "Rural Sports Centre Puliyur",
-      "title_ta": "",
+      "title_ta": "புலியூர் விளையாட்டு மையம் அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.45 L",
+      "rawBudget": 145000
     },
     {
       "id": "3111",
       "title": "Kitchen Shed Pues Puliyur",
-      "title_ta": "",
+      "title_ta": "புலியூர் பள்ளி சமையல் கூடம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.43 L",
+      "rawBudget": 743000
     },
     {
       "id": "3110",
       "title": "Kitchen Shed Pues Ghs Puliyurkattusagai",
-      "title_ta": "",
+      "title_ta": "புலியூர் காட்டுசாகை பள்ளி சமையல் கூடம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.43 L",
+      "rawBudget": 743000
     },
     {
       "id": "3109",
       "title": "Awes Kitchen Shed Puliyur",
-      "title_ta": "",
+      "title_ta": "புலியூர் அங்கன்வாடி சமையல் கூடம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.43 L",
+      "rawBudget": 743000
     },
     {
       "id": "3108",
       "title": "Anganwadi Building Puliyur Kattusagai",
-      "title_ta": "",
+      "title_ta": "புலியூர் காட்டுசாகையில் அங்கன்வாடி கட்டிடம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹14.00 L",
+      "rawBudget": 1400000
     },
     {
       "id": "3107",
       "title": "Anganwadi Building South Vasanankuppam",
-      "title_ta": "",
+      "title_ta": "தெற்கு வசனகுப்பத்தில் அங்கன்வாடி கட்டிடம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹14.00 L",
+      "rawBudget": 1400000
     },
     {
       "id": "3106",
       "title": "Kitchen Shed Repairs S Vasanankuppam",
-      "title_ta": "",
+      "title_ta": "தெற்கு வசனகுப்பம் பள்ளி சமையல் கூட பழுது",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹20000",
+      "rawBudget": 20000
     },
     {
       "id": "3105",
       "title": "Kitchen Shed Repairs Vasanankuppam",
-      "title_ta": "",
+      "title_ta": "வசனகுப்பம் பள்ளி சமையல் கூட பழுது",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹20000",
+      "rawBudget": 20000
     },
     {
       "id": "3104",
       "title": "Drainage in Vasanankuppam Village",
-      "title_ta": "",
+      "title_ta": "வசனங்குப்பம் கிராமத்தில் வடிகால் அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.57 L",
+      "rawBudget": 757000
     },
     {
       "id": "3103",
       "title": "Waiting Shed Puliyur Sitheri Kulakarai",
-      "title_ta": "",
+      "title_ta": "புலியூர் சித்தேரி குளக்கரையில் நிழற்குடை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.00 L",
+      "rawBudget": 700000
     },
     {
       "id": "3102",
       "title": "Pethangkuppam to Puliyurkattusagai Road",
-      "title_ta": "",
+      "title_ta": "பெத்தநாயக்கன்குப்பம் - காட்டுசாகை சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹48.55 L",
+      "rawBudget": 4855000
     },
     {
       "id": "3101",
       "title": "Cremation Shed Thirattikuppam",
-      "title_ta": "",
+      "title_ta": "திரட்டிக்குப்பம் கிராமத்தில் மயான கொட்டகை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹6.00 L",
+      "rawBudget": 600000
     },
     {
       "id": "3100",
       "title": "School Building Repairs Puliyur Pues",
-      "title_ta": "",
+      "title_ta": "புலியூர் பள்ளி கட்டிட சீரமைப்பு",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹31.80 L",
+      "rawBudget": 3180000
     },
     {
       "id": "3099",
       "title": "School Building Repairs Kattusagai Pues",
-      "title_ta": "",
+      "title_ta": "புலியூர் காட்டுசாகை பள்ளி கட்டிட சீரமைப்பு",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
@@ -655,451 +655,451 @@
     {
       "id": "3098",
       "title": "New School Building PUPS Puliyur",
-      "title_ta": "",
+      "title_ta": "புலியூர் பள்ளியில் 2 புதிய வகுப்பறைகள்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹31.80 L",
+      "rawBudget": 3180000
     },
     {
       "id": "3097",
       "title": "New School Building PUPS Vasanankuppam",
-      "title_ta": "",
+      "title_ta": "வசனகுப்பம் பள்ளியில் 2 புதிய வகுப்பறைகள்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹31.80 L",
+      "rawBudget": 3180000
     },
     {
       "id": "3096",
       "title": "Thandrampettai Pond Rejuvenation",
-      "title_ta": "",
+      "title_ta": "தண்டையார்மேட்டை குளம் சீரமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹12.00 L",
+      "rawBudget": 1200000
     },
     {
       "id": "3095",
       "title": "Threshing Floor Pethanankuppam",
-      "title_ta": "",
+      "title_ta": "பெத்தநாயக்கன்குப்பத்தில் நெற்களம் அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹8.10 L",
+      "rawBudget": 810000
     },
     {
       "id": "3094",
       "title": "Girls Toilet Kattusagai Pues",
-      "title_ta": "",
+      "title_ta": "காட்டுசாகை பள்ளியில் மாணவியர் கழிப்பறை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.91 L",
+      "rawBudget": 591000
     },
     {
       "id": "3093",
       "title": "Girls Toilet Puliyur Pues",
-      "title_ta": "",
+      "title_ta": "புலியூர் பள்ளியில் மாணவியர் கழிப்பறை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.91 L",
+      "rawBudget": 591000
     },
     {
       "id": "3092",
       "title": "Boys Toilet Puliyur Kattusagai Pues",
-      "title_ta": "",
+      "title_ta": "காட்டுசாகை பள்ளியில் மாணவர் கழிப்பறை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.30 L",
+      "rawBudget": 530000
     },
     {
       "id": "3091",
       "title": "CC Road Pudhu Street Puliyurkattusagai",
-      "title_ta": "",
+      "title_ta": "காட்டுசாகை புது தெரு சிமெண்ட் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹4.10 L",
+      "rawBudget": 410000
     },
     {
       "id": "3090",
       "title": "CC Road Puliyur Adhi Dravidar Paguthi East",
-      "title_ta": "",
+      "title_ta": "புலியூர் ஆதி திராவிடர் பகுதி கிழக்கு தெரு சிமெண்ட் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹6.25 L",
+      "rawBudget": 625000
     },
     {
       "id": "3089",
       "title": "Moringa Nursery Infrastructure",
-      "title_ta": "",
+      "title_ta": "முருங்கை நாற்றுப்பண்ணைக்கு வேலி மற்றும் நிழல் வலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹3.34 L",
+      "rawBudget": 334000
     },
     {
       "id": "3088",
       "title": "Borewell Puliyur Vasanankuppam",
-      "title_ta": "",
+      "title_ta": "புலியூர் வசனகுப்பத்தில் ஆழ்துளை கிணறு அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.41 L",
+      "rawBudget": 741000
     },
     {
       "id": "3087",
       "title": "Drainage Vasanankuppam",
-      "title_ta": "",
+      "title_ta": "வசனகுப்பத்தில் வடிகால் வசதி அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.57 L",
+      "rawBudget": 757000
     },
     {
       "id": "3086",
       "title": "Paver Block Periya Kattu Sagai",
-      "title_ta": "",
+      "title_ta": "பெரிய காட்டுசாகையில் பேவர் பிளாக் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹4.00 L",
+      "rawBudget": 400000
     },
     {
       "id": "3085",
       "title": "Paver Block West Street Vasanankuppam",
-      "title_ta": "",
+      "title_ta": "வசனகுப்பம் மேற்கு தெரு பேவர் பிளாக் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹3.75 L",
+      "rawBudget": 375000
     },
     {
       "id": "3084",
       "title": "Table and Bench 5 Set Vasanankuppam",
-      "title_ta": "",
+      "title_ta": "வசனகுப்பம் பள்ளிக்கு 5 செட் மேசை பெஞ்சுகள்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹97720",
+      "rawBudget": 97720
     },
     {
       "id": "3083",
       "title": "Table and Bench 10 Set Kattusagai",
-      "title_ta": "",
+      "title_ta": "காட்டுசாகை பள்ளிக்கு 10 செட் மேசை பெஞ்சுகள்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.95 L",
+      "rawBudget": 195440
     },
     {
       "id": "3082",
       "title": "Table and Bench 5 Set Puliyur Pues",
-      "title_ta": "",
+      "title_ta": "புலியூர் பள்ளிக்கு 5 செட் மேசை மற்றும் பெஞ்சுகள்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹97720",
+      "rawBudget": 97720
     },
     {
       "id": "3081",
       "title": "BT Road Puliyur South Street",
-      "title_ta": "",
+      "title_ta": "புலியூர் தெற்கு தெருவில் தார் சாலை அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.00 L",
+      "rawBudget": 700000
     },
     {
       "id": "3080",
       "title": "Check Dam Puliyur Vaikkal",
-      "title_ta": "",
+      "title_ta": "புலியூர் வாய்க்காலில் கான்கிரீட் தடுப்பணை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.32 L",
+      "rawBudget": 532000
     },
     {
       "id": "3079",
       "title": "OHT Puliyur Vasanagkuppam",
-      "title_ta": "",
+      "title_ta": "வசனகுப்பத்தில் மேல்நிலை நீர் தேக்கத் தொட்டி",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹10.31 L",
+      "rawBudget": 1031474
     },
     {
       "id": "3078",
       "title": "Borewell Puliyur Vasanagkuppam",
-      "title_ta": "",
+      "title_ta": "வசனங்குப்பத்தில் ஆழ்துளை கிணறு மற்றும் மோட்டார்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹51526",
+      "rawBudget": 51526
     },
     {
       "id": "3077",
       "title": "Road at Idumban Koil Street",
-      "title_ta": "",
+      "title_ta": "இடும்பன் கோயில் தெரு பேவர் பிளாக் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.00 L",
+      "rawBudget": 200000
     },
     {
       "id": "3076",
       "title": "Paver Block Road Puliyur",
-      "title_ta": "",
+      "title_ta": "புலியூர் கிராமத்தில் பேவர் பிளாக் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.00 L",
+      "rawBudget": 200000
     },
     {
       "id": "3075",
       "title": "Paver Block Road Puliyur Kattusagai",
-      "title_ta": "",
+      "title_ta": "புலியூர் காட்டுசாகை மேற்கு தெரு பேவர் பிளாக் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.00 L",
+      "rawBudget": 500000
     },
     {
       "id": "3074",
       "title": "Threshing Floor Therku Vanankuppam",
-      "title_ta": "",
+      "title_ta": "தெற்கு வசனகுப்பம் கிராமத்தில் நெற்களம் அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.00 L",
+      "rawBudget": 500000
     },
     {
       "id": "3073",
       "title": "Massive Tree Plantation at Puliyur Pt",
-      "title_ta": "",
+      "title_ta": "புலியூர் ஊராட்சியில் மரக்கன்றுகள் நடுதல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.00 L",
+      "rawBudget": 200000
     },
     {
       "id": "3072",
       "title": "Vasanangkuppam Adhi Dravidar Paguthi Road",
-      "title_ta": "",
+      "title_ta": "வசனங்குப்பம் ஆதி திராவிடர் பகுதி சாலை அமைத்தல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹4.87 L",
+      "rawBudget": 487000
     },
     {
       "id": "3071",
       "title": "Construction of Culvert 1.5m Puliyur",
-      "title_ta": "",
+      "title_ta": "புலியூரில் 1.5 மீ சிறுபாலம் கட்டுதல்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹4.97 L",
+      "rawBudget": 497000
     },
     {
       "id": "3070",
       "title": "Providing 73 FHTC for Puliyur",
-      "title_ta": "",
+      "title_ta": "புலியூரில் 73 வீட்டு குடிநீர் இணைப்புகள்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹13.07 L",
+      "rawBudget": 1306650
     },
     {
       "id": "3069",
       "title": "Providing 28 FHTC for Vasanakuppam",
-      "title_ta": "",
+      "title_ta": "வசனகுப்பத்தில் 28 வீட்டு குடிநீர் இணைப்புகள்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.16 L",
+      "rawBudget": 716350
     },
     {
       "id": "3068",
       "title": "Pipeline Extension Puliyur Kattusagai",
-      "title_ta": "",
+      "title_ta": "புலியூர் காட்டுசாகையில் குடிநீர் குழாய் விரிவாக்கம்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.00 L",
+      "rawBudget": 200000
     },
     {
       "id": "3067",
       "title": "BT Road Puliyur Kattusagai North Street",
-      "title_ta": "",
+      "title_ta": "புலியூர் காட்டுசாகை வடக்கு தெரு தார் சாலை",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.00 L",
+      "rawBudget": 500000
     },
     {
       "id": "3066",
       "title": "Drainage at Puliyur South Vasanakuppam",
-      "title_ta": "",
+      "title_ta": "புலியூர் தெற்கு வசனகுப்பத்தில் வடிகால் வசதி",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.00 L",
+      "rawBudget": 500000
     },
     {
       "id": "3065",
       "title": "Pwf and FHTC Puliyur Kattusagai",
-      "title_ta": "",
+      "title_ta": "புலியூர் காட்டுசாகையில் குடிநீர் வசதி மற்றும் வீட்டு இணைப்பு",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.25 L",
+      "rawBudget": 225000
     },
     {
       "id": "3064",
       "title": "Thandayarmedu Northstreet Road",
-      "title_ta": "",
+      "title_ta": "தண்டையார்மேடு வடக்கு தெரு",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.00 L",
+      "rawBudget": 500000
     },
     {
       "id": "3063",
       "title": "47 Houses Under Pmay-g Scheme in Thirattikuppam",
-      "title_ta": "",
+      "title_ta": "பிரதமர் குடியிருப்புத் திட்டத்தின் கீழ் 47 வீடுகள்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.13 Cr",
+      "rawBudget": 11280000
     },
     {
       "id": "3062",
       "title": "153 Houses Under Pmay-g Scheme in Puliyur",
-      "title_ta": "",
+      "title_ta": "பிரதமர் குடியிருப்புத் திட்டத்தின் கீழ் 153 வீடுகள்",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹3.67 Cr",
+      "rawBudget": 36720000
     },
     {
       "id": "3061",
       "title": "Construction of CC Road at Sandhavelipettai South Street in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் சந்தவெளிப்பேட்டை தெற்கு தெருவில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (262mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1108,13 +1108,13 @@
       "year": "2025-2026",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.00 L",
+      "rawBudget": 700000
     },
     {
       "id": "3060",
       "title": "Construction of Cement Concrete Road at Sandhavelipettai Area in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் சந்தவெளிப்பேட்டை பகுதியில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (190mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1129,7 +1129,7 @@
     {
       "id": "3059",
       "title": "Construction of CC Road at North Street, Kannuththoppu in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள வடக்கு தெரு கண்ணுத்தோப்பில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (145mx3.00cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1144,7 +1144,7 @@
     {
       "id": "3058",
       "title": "Construction of CC Road at 3rd South Street, Kannuththoppu in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள 3 வது தெற்குத் தெரு கண்ணுத்தோப்பில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (39mx3.00cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1153,13 +1153,13 @@
       "year": "2025-2026",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.00 L",
+      "rawBudget": 700000
     },
     {
       "id": "3057",
       "title": "Construction of CC Road at South Street, Kannuththoppu in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள தெற்குத் தெரு கண்ணுத்தோப்பில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (97mx3.00cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1168,13 +1168,13 @@
       "year": "2025-2026",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.00 L",
+      "rawBudget": 700000
     },
     {
       "id": "3056",
       "title": "Construction of CC Road at Road Street, Kannuththoppu in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள ரோட்டுத் தெரு கண்ணுத்தோப்பில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (84mx3.00cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1189,7 +1189,7 @@
     {
       "id": "3055",
       "title": "Construction of CC Road at Mariamman Temple North Street and Lower Vadakkuthu",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள மாரியம்மன் கோவில் வடக்குத்தெரு மற்றும் கீழ் வடக்குத்தில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (328mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1204,7 +1204,7 @@
     {
       "id": "3054",
       "title": "Construction of Cement Concrete Road at Sadamuniswaran Temple Street in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள சடாமுனீஸ்வரன் கோயில் தெருவில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (171mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1219,7 +1219,7 @@
     {
       "id": "3053",
       "title": "Construction of Cement Concrete Road at Sakthi Nagar Ii in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள சக்திநகர் II இல் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (129mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1234,7 +1234,7 @@
     {
       "id": "3052",
       "title": "Construction of Cement Concrete Road at Thangam Street in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் தங்கம்தெருவில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (99mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1249,7 +1249,7 @@
     {
       "id": "3051",
       "title": "Construction of Cement Concrete Road at Panneer Pushpam in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள பன்னீர் புஷ்பத்தில் கான்கிரீட் சிமெண்ட் சாலை அமைத்தல் (322mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1264,7 +1264,7 @@
     {
       "id": "3050",
       "title": "Construction of Cement Concrete Road at College Street in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள கல்லூரி தெருவில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (85mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1279,7 +1279,7 @@
     {
       "id": "3049",
       "title": "Construction of Cement Concrete Road at Ambedkar Street in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள அம்பேத்கர் தெருவில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (137mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1294,7 +1294,7 @@
     {
       "id": "3048",
       "title": "Providing Cement Concrete Road at Thazham Poo Street in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் தாழம் பூ தெருவில் கான்கிரீட் சிமெண்ட் சாலை வழங்குதல் (204mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1309,7 +1309,7 @@
     {
       "id": "3047",
       "title": "Construction of Cement Concrete Road at Sembaruthi Poo Street in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் செம்பாரத்தி பூ தெருவில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (100mx3.00cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1324,7 +1324,7 @@
     {
       "id": "3046",
       "title": "Construction of Cement Concrete Road at Roja Street in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து சாலை ஊராட்சியில் ரோஜா தெருவில் கான்கிரீட் சிமெண்ட் அமைத்தல் (100mx3.00cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1339,7 +1339,7 @@
     {
       "id": "3045",
       "title": "Construction of Cement Concrete Road at Mullai Poo Street in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள முல்லை பூ தெருவில் கான்கிரீட் சிமெண்ட் சாலை அமைத்தல் (100mx3.00cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1354,7 +1354,7 @@
     {
       "id": "3044",
       "title": "Providing Cement Concrete Road at Thillai Nagar in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள தில்லை நகரில் கான்கிரீட் சிமெண்ட் சாலை வழங்குதல் (217mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1369,7 +1369,7 @@
     {
       "id": "3043",
       "title": "Construction of Cement Concrete Road at Pavannambal Nagar in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள பவனாம்பாள் நகரில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (39mx3.00cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1384,7 +1384,7 @@
     {
       "id": "3042",
       "title": "Construction of Cement Concrete Road at Maya Garden 3rd Branch Road in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள மாயா தோட்டத்தில் 3வது கிளை சாலையில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (178mx3.00cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1399,7 +1399,7 @@
     {
       "id": "3041",
       "title": "Construction of Cement Concrete Road at Maya Garden 2nd Branch Road in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள மாயா தோட்டத்தில் 2வது கிளை சாலையில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (207mx3.00cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1414,7 +1414,7 @@
     {
       "id": "3040",
       "title": "Construction of Cement Concrete Road at Sakthi Nagar Branch Road in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள சக்திநகர் கிளை சாலையில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (328mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1429,7 +1429,7 @@
     {
       "id": "3039",
       "title": "Construction of Cement Concrete Road at Ashok Nagar in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் அசோக் நகரில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (161mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1444,7 +1444,7 @@
     {
       "id": "3038",
       "title": "Construction of Cement Concrete Road at Bagavathi Nagar in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள பகவதி நகரில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (146mx3.00cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1459,7 +1459,7 @@
     {
       "id": "3037",
       "title": "Construction of Cement Concrete Road at Maruti Nagar 4th Branch Street in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் மாருதி நகர் 4வது கிளை தெருவில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (74mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1474,7 +1474,7 @@
     {
       "id": "3036",
       "title": "Construction of Cement Concrete Road at Naval Street, Maruti Nagar in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் உள்ள நாவல் தெரு மாருதி நகரில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (74mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1489,7 +1489,7 @@
     {
       "id": "3035",
       "title": "Construction of Cement Concrete Road at Periyar Nagar in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் பெரியார் நகரில் சிமெண்ட் கான்கிரீட் சாலை அமைத்தல் (230mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1504,7 +1504,7 @@
     {
       "id": "3034",
       "title": "Construction of Branch Road at Nr Rajan Nagar in Vadakkuthu Panchayat",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து ஊராட்சியில் NR ராஜன் நகரில் கிளை சாலை அமைத்தல் (151mx3.75cw)",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1518,8 +1518,8 @@
     },
     {
       "id": "3033",
-      "title": "Strengthening of BT Road From Velaudaiyannagar Road Km 0/0 &#8211; 0/810 R &#8211; 949",
-      "title_ta": "",
+      "title": "Strengthening of BT Road From Velaudaiyannagar Road Km 0/0 - 0/810 R - 949",
+      "title_ta": "வேலாயுதையன் நகர் சாலை கி.மீ 0/0 - 0/810 R-949 வரை பி.டி (BT) சாலையை பலப்படுத்தும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -1534,8 +1534,8 @@
     },
     {
       "id": "3032",
-      "title": "Strengthening of BT Road From Keezhvadakuthu Njv Nagar Road Km 0/0 &#8211; 0/620 R-760",
-      "title_ta": "",
+      "title": "Strengthening of BT Road From Keezhvadakuthu Njv Nagar Road Km 0/0 - 0/620 R-760",
+      "title_ta": "கீழ்வடக்குத்து NJV நகர் சாலை கி.மீ 0/0 - 0/620 R-760 வரை பி.டி (BT) சாலையை பலப்படுத்தும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1551,7 +1551,7 @@
     {
       "id": "3031",
       "title": "Construction of Workshop Building and Preliminary Infrastructure for Neyveli Government Industrial Training Institute (Iti)",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டடம் கட்டும் பணி",
       "block": "Neyveli",
       "panchayat": "Neyveli",
       "panchayat_ta": "Neyveli",
@@ -1560,13 +1560,13 @@
       "year": "2020-2025",
       "status": "Completed",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹4.03 Cr",
+      "rawBudget": 40275000
     },
     {
       "id": "3030",
       "title": "Construction of Health and Wellness Centre Building at Madhanagopalapuram",
-      "title_ta": "",
+      "title_ta": "மதன்கோபாலபுரம் சுகாதார மற்றும் ஆரோக்கியம் கட்டடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "Indira Nagar",
@@ -1581,7 +1581,7 @@
     {
       "id": "3029",
       "title": "Construction of Health and Wellness Centre Building at Vadakkuthu",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து சுகாதார மற்றும் ஆரோக்கியம் கட்டடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1596,7 +1596,7 @@
     {
       "id": "3028",
       "title": "Construction of Girls Toilet Building at Kattukkudalur Government High School",
-      "title_ta": "",
+      "title_ta": "காட்டுக்கூடலூர் அரசு உயர்நிலைப்பள்ளியில் பெண்கள் கழிவறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "Kattukudalur",
@@ -1611,7 +1611,7 @@
     {
       "id": "3027",
       "title": "Construction of Girls Toilet Building at Kadampuliyur R.k. Government Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "காடாம்புலியூர் R.K.அரசு மேல்நிலைப்பள்ளியில் பெண்கள் கழிவறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -1626,7 +1626,7 @@
     {
       "id": "3026",
       "title": "Construction of Girls Toilet Building at Kudiyiruppu Government High School",
-      "title_ta": "",
+      "title_ta": "குடியிருப்பு அரசு உயர்நிலைப்பள்ளியில் பெண்கள் கழிவறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kudiyiruppu",
       "panchayat_ta": "Kudiyiruppu",
@@ -1641,7 +1641,7 @@
     {
       "id": "3025",
       "title": "Construction of Girls Toilet Building at Peruperiyankuppam Government Girls Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "பேர்பெரியான்குப்பம் அரசு பெண்கள் மேல்நிலைப்பள்ளியில் பெண்கள் கழிவறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Perperiyankuppam",
       "panchayat_ta": "Perperiyankuppam",
@@ -1656,7 +1656,7 @@
     {
       "id": "3024",
       "title": "Construction of Additional Classroom Building at Indira Nagar Government Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "இந்திராநகர் அரசு மேல்நிலைப்பள்ளியில் கூடுதல் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "Indira Nagar",
@@ -1671,7 +1671,7 @@
     {
       "id": "3023",
       "title": "Construction of Kgbv (Kasturba Gandhi Balika Vidyalaya) Type Building at Kadampuliyur",
-      "title_ta": "",
+      "title_ta": "காடாம்புலியூரில் KGBV வகை கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -1686,7 +1686,7 @@
     {
       "id": "3022",
       "title": "Construction of Building for the Neyveli Mla Constituency Office Including E-seva Center Room, Visitor Waiting Area, and Computer Room",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி சட்டமன்ற உறுப்பினர்களின் தொகுதி அலுவலகத்திற்கான இ-சேவை மையத்திற்கான அறை, பார்வையாளர்கள் காத்திருப்போர் கொட்டகை மற்றும் கணினி அறை ஆகிய உபவசதி அறைகள் கொண்ட கட்டடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -1701,7 +1701,7 @@
     {
       "id": "3021",
       "title": "Construction of 2 Classroom Buildings at Panruti, Keelkangeyankuppam Government Middle School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி, கீழ்காங்கேயன்குப்பம் அரசு நடுநிலைப்பள்ளியில் 2 வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Keelkankeyankuppam",
       "panchayat_ta": "Keelkankeyankuppam",
@@ -1716,7 +1716,7 @@
     {
       "id": "3020",
       "title": "Construction of 4 Classroom Buildings at Kurinjipadi Taluk, Indira Nagar Government Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "குறிஞ்சிப்பாடி தாலுக்கா, இந்திராநகர் அரசு மேல்நிலைப்பள்ளியில் 4 வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "Indira Nagar",
@@ -1731,7 +1731,7 @@
     {
       "id": "3019",
       "title": "Construction of 2 Classroom Buildings at Panruti, Mettukuppam Government High School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி, மேட்டுக்குப்பம் அரசு உயர்நிலைப்பள்ளியில் 2 வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Mettukuppam",
       "panchayat_ta": "Mettukuppam",
@@ -1746,7 +1746,7 @@
     {
       "id": "3018",
       "title": "Construction of 2 Classroom Buildings at Panruti, Peruperiyankuppam Government Boys Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி, பேர்பெரியான்குப்பம் அரசு ஆண்கள் மேல்நிலைப்பள்ளியில் 2 வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Perperiyankuppam",
       "panchayat_ta": "Perperiyankuppam",
@@ -1761,7 +1761,7 @@
     {
       "id": "3017",
       "title": "Construction of 2 Classroom Buildings at Panruti, Kadampuliyur Government Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி, காடாம்புலியூர் அரசு மேல்நிலைப்பள்ளியில் 2 வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -1776,7 +1776,7 @@
     {
       "id": "3016",
       "title": "Construction of 2 Classroom Buildings at Panruti, Puthupalayam Government High School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி, புதுப்பாளையம் அரசு உயர்நிலைப்பள்ளியில் 2 வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Pudupalayam",
       "panchayat_ta": "Pudupalayam",
@@ -1790,8 +1790,8 @@
     },
     {
       "id": "3015",
-      "title": "Construction of 2 Classroom Buildings at Panruti, Kudiyiruppu Government Higher Secondary School &#8211; Phase 2",
-      "title_ta": "",
+      "title": "Construction of 2 Classroom Buildings at Panruti, Kudiyiruppu Government Higher Secondary School - Phase 2",
+      "title_ta": "பண்ருட்டி, குடியிருப்பு அரசு மேல்நிலைப்பள்ளியில் 2 வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kudiyiruppu",
       "panchayat_ta": "Kudiyiruppu",
@@ -1806,7 +1806,7 @@
     {
       "id": "3014",
       "title": "Construction of 2 Classroom Buildings at Panruti, Keelmampattu Government High School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி, கீழ்மாம்பட்டு அரசு உயர்நிலைப்பள்ளியில் 2 வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Keelmampattu",
       "panchayat_ta": "Keelmampattu",
@@ -1821,7 +1821,7 @@
     {
       "id": "3013",
       "title": "Construction of 2 Classroom Buildings at Panruti, Kudiyiruppu Government Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி, குடியிருப்பு அரசு மேல்நிலைப்பள்ளியில் 2 வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kudiyiruppu",
       "panchayat_ta": "Kudiyiruppu",
@@ -1836,7 +1836,7 @@
     {
       "id": "3012",
       "title": "Construction of a Science Laboratory Building at Kattukkudalur Government High School",
-      "title_ta": "",
+      "title_ta": "காட்டுக்கூடலூர் அரசு உயர்நிலைப்பள்ளியில் அறிவியல் ஆய்வகக்கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "Kattukudalur",
@@ -1851,7 +1851,7 @@
     {
       "id": "3011",
       "title": "Construction of 2 Classroom Buildings and a Science Laboratory Building at Kattukkudalur Government High School",
-      "title_ta": "",
+      "title_ta": "காட்டுக்கூடலூர் அரசு உயர்நிலைப்பள்ளியில் 2 வகுப்பறைக்கட்டடம் மற்றும் அறிவியல் ஆய்வகக்கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "Kattukudalur",
@@ -1866,7 +1866,7 @@
     {
       "id": "3010",
       "title": "Construction of a New Veterinary Dispensary Building at Kadampuliyur",
-      "title_ta": "",
+      "title_ta": "காடாம்புலியூரில் புதிய கால்நடை மருந்தகக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -1881,7 +1881,7 @@
     {
       "id": "3009",
       "title": "Construction of Classroom Buildings at Thalampattu Government High School",
-      "title_ta": "",
+      "title_ta": "தாழம்பட்டு அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Thalampattu",
       "panchayat_ta": "Thalampattu",
@@ -1896,7 +1896,7 @@
     {
       "id": "3008",
       "title": "Construction of Classroom Buildings at Karukkai Government High School",
-      "title_ta": "",
+      "title_ta": "கருக்கை அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Karukkai",
       "panchayat_ta": "Karukkai",
@@ -1911,7 +1911,7 @@
     {
       "id": "3007",
       "title": "Construction of Classroom Buildings at Keelmampattu Government High School",
-      "title_ta": "",
+      "title_ta": "கீழ்மாம்பட்டு அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Keelmampattu",
       "panchayat_ta": "Keelmampattu",
@@ -1926,7 +1926,7 @@
     {
       "id": "3006",
       "title": "Construction of Classroom Buildings at Meliruppu Government High School",
-      "title_ta": "",
+      "title_ta": "மேலிருப்பு அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Meliruppu",
       "panchayat_ta": "Meliruppu",
@@ -1941,7 +1941,7 @@
     {
       "id": "3005",
       "title": "Construction of Classroom Buildings at Maaligampattu Government High School",
-      "title_ta": "",
+      "title_ta": "மாளிகம்பட்டு அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Maligampattu",
       "panchayat_ta": "Maligampattu",
@@ -1956,7 +1956,7 @@
     {
       "id": "3004",
       "title": "Construction of Classroom Buildings at Kadampuliyur Government High School",
-      "title_ta": "",
+      "title_ta": "காடாம்புலியூர் அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -1971,7 +1971,7 @@
     {
       "id": "3003",
       "title": "Construction of Classroom Buildings at Thiruvamoor Government High School",
-      "title_ta": "",
+      "title_ta": "திருவாமூர் அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Thiruvamoor",
       "panchayat_ta": "Thiruvamoor",
@@ -1986,7 +1986,7 @@
     {
       "id": "3002",
       "title": "Construction of Classroom Buildings at Indira Nagar Government High School",
-      "title_ta": "",
+      "title_ta": "இந்திராநகர் அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "Indira Nagar",
@@ -2001,7 +2001,7 @@
     {
       "id": "3001",
       "title": "Construction of Classroom Buildings at Puthupalayam Government High School",
-      "title_ta": "",
+      "title_ta": "புதுப்பாளையத்தில் அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Pudupalayam",
       "panchayat_ta": "Pudupalayam",
@@ -2016,7 +2016,7 @@
     {
       "id": "3000",
       "title": "Construction of Most Backward Classes (Mbc) School and Girls Hostel Building at Peruperiyankuppam",
-      "title_ta": "",
+      "title_ta": "பேர்பெரியான்குப்பம் மிகவும் பிற்படுத்தப்பட்ட வகுப்பினர் பள்ளி மற்றும் பெண்கள் தங்கும் விடுதி கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Perperiyankuppam",
       "panchayat_ta": "Perperiyankuppam",
@@ -2031,7 +2031,7 @@
     {
       "id": "2999",
       "title": "Construction of Classroom Buildings at Kadampuliyur Government High School",
-      "title_ta": "",
+      "title_ta": "காடாம்புலியூர் அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக்கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -2046,7 +2046,7 @@
     {
       "id": "2998",
       "title": "Construction of a New Veterinary Dispensary Building at Maaligampattu",
-      "title_ta": "",
+      "title_ta": "மாளிகம்பட்டு புதிய கால்நடை மருந்தகக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Maligampattu",
       "panchayat_ta": "Maligampattu",
@@ -2061,7 +2061,7 @@
     {
       "id": "2997",
       "title": "Construction of a New Veterinary Dispensary Building at Kadampuliyur",
-      "title_ta": "",
+      "title_ta": "காடாம்புலியூரில் புதிய கால்நடை மருந்தகக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -2076,7 +2076,7 @@
     {
       "id": "2996",
       "title": "Construction of a New Veterinary Dispensary Building at Perperiyankuppam",
-      "title_ta": "",
+      "title_ta": "பேர்பெரியான்குப்பத்தில் புதிய கால்நடை மருந்தகக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Perperiyankuppam",
       "panchayat_ta": "Perperiyankuppam",
@@ -2091,7 +2091,7 @@
     {
       "id": "2995",
       "title": "Construction of Classroom Buildings at Thalampattu Government High School",
-      "title_ta": "",
+      "title_ta": "தாழம்பட்டு அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Thalampattu",
       "panchayat_ta": "Thalampattu",
@@ -2106,7 +2106,7 @@
     {
       "id": "2994",
       "title": "Construction of Classroom Buildings at Karukkai Government High School",
-      "title_ta": "",
+      "title_ta": "கருக்கை அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Karukkai",
       "panchayat_ta": "Karukkai",
@@ -2121,7 +2121,7 @@
     {
       "id": "2993",
       "title": "Construction of Classroom Buildings at Keelmampattu Government High School",
-      "title_ta": "",
+      "title_ta": "கீழ்மாம்பட்டு அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Keelmampattu",
       "panchayat_ta": "Keelmampattu",
@@ -2136,7 +2136,7 @@
     {
       "id": "2992",
       "title": "Construction of Classroom Buildings at Meliruppu Government High School",
-      "title_ta": "",
+      "title_ta": "மேலிருப்பு அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Meliruppu",
       "panchayat_ta": "Meliruppu",
@@ -2151,7 +2151,7 @@
     {
       "id": "2991",
       "title": "Construction of Classroom Buildings at Maaligampattu Government High School",
-      "title_ta": "",
+      "title_ta": "மாளிகம்பட்டு அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Maligampattu",
       "panchayat_ta": "Maligampattu",
@@ -2166,7 +2166,7 @@
     {
       "id": "2990",
       "title": "Construction of Classroom Buildings at Kadampuliyur Government High School",
-      "title_ta": "",
+      "title_ta": "காடாம்புலியூர் அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -2181,7 +2181,7 @@
     {
       "id": "2989",
       "title": "Construction of Classroom Buildings at Thiruvamoor Government High School",
-      "title_ta": "",
+      "title_ta": "திருவாமூர் அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Thiruvamoor",
       "panchayat_ta": "Thiruvamoor",
@@ -2196,7 +2196,7 @@
     {
       "id": "2988",
       "title": "Construction of Classroom Buildings at Indira Nagar Government High School",
-      "title_ta": "",
+      "title_ta": "இந்திராநகர் அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "Indira Nagar",
@@ -2211,7 +2211,7 @@
     {
       "id": "2987",
       "title": "Construction of Classroom Buildings at Puthupalayam Government High School",
-      "title_ta": "",
+      "title_ta": "புதுப்பாளையத்தில் அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Pudupalayam",
       "panchayat_ta": "Pudupalayam",
@@ -2226,7 +2226,7 @@
     {
       "id": "2986",
       "title": "Construction of Most Backward Classes (Mbc) School and Girls Hostel Building at Peruperiyankuppam",
-      "title_ta": "",
+      "title_ta": "பேர்பெரியான்குப்பம் மிகவும் பிற்படுத்தப்பட்ட வகுப்பினர் பள்ளி மற்றும் பெண்கள் தங்கும் விடுதி கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Perperiyankuppam",
       "panchayat_ta": "Perperiyankuppam",
@@ -2241,7 +2241,7 @@
     {
       "id": "2985",
       "title": "Construction of Classroom Buildings at Kadampuliyur Government High School",
-      "title_ta": "",
+      "title_ta": "காடாம்புலியூர் அரசு உயர்நிலைப்பள்ளியில் வகுப்பறைக்கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -2256,7 +2256,7 @@
     {
       "id": "2984",
       "title": "Construction of a New Veterinary Dispensary Building at Maaligampattu",
-      "title_ta": "",
+      "title_ta": "மாளிகம்பட்டு புதிய கால்நடை மருந்தகக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Maligampattu",
       "panchayat_ta": "Maligampattu",
@@ -2271,7 +2271,7 @@
     {
       "id": "2983",
       "title": "Construction of a New Veterinary Dispensary Building at Kadampuliyur",
-      "title_ta": "",
+      "title_ta": "காடாம்புலியூரில் புதிய கால்நடை மருந்தகக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -2286,7 +2286,7 @@
     {
       "id": "2982",
       "title": "Construction of a New Veterinary Dispensary Building at Perperiyankuppam",
-      "title_ta": "",
+      "title_ta": "பேர்பெரியான்குப்பத்தில் புதிய கால்நடை மருந்தகக் கட்டடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Perperiyankuppam",
       "panchayat_ta": "Perperiyankuppam",
@@ -2300,8 +2300,8 @@
     },
     {
       "id": "2980",
-      "title": "Widening From Intermediate Lane to Two Lane and Strengthening at Km 14/0 &#8211; 16/0 of Kurinjipady &#8211; Palur Road Including Reconstruction of Culvert at Km 14/10",
-      "title_ta": "",
+      "title": "Widening From Intermediate Lane to Two Lane and Strengthening at Km 14/0 - 16/0 of Kurinjipady - Palur Road Including Reconstruction of Culvert at Km 14/10",
+      "title_ta": "குறிஞ்சிப்பாடி-பார்வதி சாலை கிமீ 14/0 – 16/0 வரை இடைவழித்தடத்தை இருவழித்தடமாக அகலப்படுத்தி உறுதிப்படுத்துதல் பணி மற்றும் கிமீ 14/10-ல் சிறுபாலம் திரும்பக்கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Nallathur",
       "panchayat_ta": "Nallathur",
@@ -2317,7 +2317,7 @@
     {
       "id": "2979",
       "title": "Reconstruction of Box Culvert at Km 3/8 of the Road From Km 34/4 of Cuddalore–chithoor Road to Sendanadu Road (Via) Somasipalayam Road",
-      "title_ta": "",
+      "title_ta": "கடலூர்-சித்தூர் சாலை கி.மீ.34/4ல் பிரிந்து செல்லும் சேந்தநாடு சாலை (வழி) சோமாசிப்பாளையம் சாலை கி.மீ. 3/8ல் சிறுபாலம் திரும்ப கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Somasipalayam",
       "panchayat_ta": "Somasipalayam",
@@ -2327,13 +2327,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹45.00 L",
+      "rawBudget": 4500000
     },
     {
       "id": "2977",
-      "title": "Cridp 2021-2022&#8243;,widening From Il to 2l and Strengthening at Km 4/0-5/0 of Kurinjipady-palur Road Including Cd Works at Km 4/6",
-      "title_ta": "",
+      "title": "Cridp 2021-2022\",widening From Il to 2l and Strengthening at Km 4/0-5/0 of Kurinjipady-palur Road Including Cd Works at Km 4/6",
+      "title_ta": "குறிஞ்சிப்பாடி-பாலூர் சாலை கி.மீ. 4/0-5/0 வரை இடைவழித்தடத்தை இருவழித்தடமாக அகலப்படுத்தி உறுதிப்படுத்துதல் பணி மற்றும் கிமீ 4/6 -ல் சிறுபாலம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vazhuthalampattu",
       "panchayat_ta": "Vazhuthalampattu",
@@ -2349,7 +2349,7 @@
     {
       "id": "2976",
       "title": "Reconstruction of Box Culvert at 7/6 of the Road From Km. 31/6 of Vikkiravandi-kumbakonam- Thanjavur Road to C.n.palayam (Via) Sathipattu Road",
-      "title_ta": "",
+      "title_ta": "விக்கிரவாண்டி - கும்பகோணம் - தஞ்சாவூர் சாலை கி.மீ. 31/6 ல் பிரிந்து செல்லும் சி. என். பாளையம் (வ) சாத்திப்பட்டு சாலை கி. மீ 7/6-ல் பெட்டி வடிவ கல்வெட் கட்டுதல் பணி",
       "block": "Panruti",
       "panchayat": "Sathipattu",
       "panchayat_ta": "Sathipattu",
@@ -2365,7 +2365,7 @@
     {
       "id": "2972",
       "title": "Reconstruction of Box Culvert at Km 0/2 at Km 34/4 of Cuddalore–chithoor Road to Sendanadu Road (Via) Somasipalayam Road",
-      "title_ta": "",
+      "title_ta": "கடலூர்-சித்தூர் சாலை சாலை கி.மீ. 34/4 ல் பிரிந்து செல்லும் சேந்தநாடு சாலை (வழி) சோமாசிப்பாளையம் சாலை கி.மீ. 0/2-ல் பெட்டி வடிவ கல்வெட் கட்டுதல்",
       "panchayat": "Somasipalayam",
       "panchayat_ta": "Somasipalayam",
       "village": "Somasipalayam",
@@ -2379,8 +2379,8 @@
     },
     {
       "id": "2971",
-      "title": "Improvements to Riding Quality at Km 0/0 &#8211; 2/2, 3/2 &#8211; 4/0 of the Road From Km.34/4 of Cuddalore-chittoor Road to Sendanadu (Via) Somasipalayam",
-      "title_ta": "",
+      "title": "Improvements to Riding Quality at Km 0/0 - 2/2, 3/2 - 4/0 of the Road From Km.34/4 of Cuddalore-chittoor Road to Sendanadu (Via) Somasipalayam",
+      "title_ta": "கடலூர்-சித்தூர் சாலை சாலை கி.மீ. 34/4 ல் பிரிந்து செல்லும் சேந்தநாடு சாலை (வழி) சோமாட்சிப்பாளையம் சாலை கி.மீ. 0/0-2/2 மற்றும் கி. மீ 3/2-4/0-ல் ஒருதளபகுதி தரம் மேம்பாடு செய்தல் பணி",
       "block": "Panruti",
       "panchayat": "Somasipalayam",
       "panchayat_ta": "Somasipalayam",
@@ -2390,13 +2390,13 @@
       "status": "Ongoing",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹70.00 L",
+      "rawBudget": 7000000
     },
     {
       "id": "2970",
       "title": "Widening From Single Lane to Intermediate Lane and Strengthening at Km 6/6-7/6 of Vadakkumelur-keelur-pacharapalayam Road Including Reconstruction of Culvert at Km 6/6",
-      "title_ta": "",
+      "title_ta": "வடக்குமேலூர்-கீழூர்-பாச்சாரப்பாளையம் சாலையின் கி.மீ 6/6-7/6 இல் ஒற்றைப் பாதையிலிருந்து இடைப்பட்ட பாதையாக அகலப்படுத்துதல் மற்றும் வலுப்படுத்துதல், கி.மீ 6/6 இல் வடிகால் புனரமைப்பு உட்பட",
       "block": "Panruti",
       "panchayat": "Vadakkumelur",
       "panchayat_ta": "Vadakkumelur",
@@ -2406,13 +2406,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.45 Cr",
+      "rawBudget": 14500000
     },
     {
       "id": "2969",
       "title": "Widening From Single Lane to Intermediate Lane and Strengthening at Km 9/520-13/0 of Periyakattusagai-silambinathanpettai -Kadampuliyur Road (Md1220)",
-      "title_ta": "",
+      "title_ta": "பெரியக் காட்டுசாகை சிலம்பினாதன்பேட்டை -காடாம்பூலியூர் சாலை (MD1220) கி.மீ 9/520-13/0 இல் ஒற்றைப் பாதையிலிருந்து இடைப்பட்ட பாதையாக அகலப்படுத்துதல் மற்றும் வலுப்படுத்துதல்",
       "block": "Kurinjipadi",
       "panchayat": "Silambinathanpettai",
       "panchayat_ta": "Silambinathanpettai",
@@ -2427,8 +2427,8 @@
     },
     {
       "id": "2968",
-      "title": "Strengthening at Km 7/5 &#8211; 10/4 of S.pudukuppam-puliyurkattusagai Road Including Reconstruction of Culverts at Km 7/6,8/4, 9/4 &#038; 10/2",
-      "title_ta": "",
+      "title": "Strengthening at Km 7/5 - 10/4 of S.pudukuppam-puliyurkattusagai Road Including Reconstruction of Culverts at Km 7/6,8/4, 9/4 & 10/2",
+      "title_ta": "எஸ்.புதுக்குப்பம்-புலியூர்க காட்டுசாகை சாலையின் கி.மீ 7/5 - 10/4 இல் வலுப்படுத்துதல், கி.மீ 7/6, 8/4, 9/4 & 10/2 இல் வடிகால்கள் புனரமைப்பு உட்பட",
       "block": "Panruti",
       "panchayat": "Silambinathanpettai",
       "panchayat_ta": "Silambinathanpettai",
@@ -2437,13 +2437,13 @@
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹3.85 Cr",
+      "rawBudget": 38500000
     },
     {
       "id": "2967",
-      "title": "Widening From Intermediate Lane to Two Lane and Strengthening at Km 12/0-14/0 of Kurinjipady &#8211; Palur Road",
-      "title_ta": "",
+      "title": "Widening From Intermediate Lane to Two Lane and Strengthening at Km 12/0-14/0 of Kurinjipady - Palur Road",
+      "title_ta": "குறிஞ்சிப்பாடி - பாலூர் சாலையின் கி.மீ 12/0-14/0 இல் இடைப்பட்ட பாதையிலிருந்து இருவழிப் பாதையாக அகலப்படுத்துதல் மற்றும் வலுப்படுத்துதல்",
       "block": "Kurinjipadi",
       "panchayat": "Vengadampettai",
       "panchayat_ta": "Vengadampettai",
@@ -2453,13 +2453,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.80 Cr",
+      "rawBudget": 28000000
     },
     {
       "id": "2966",
-      "title": "Improvements to Riding Quality at Km 5/9 &#8211; 8/2 of Vegakollai Road",
-      "title_ta": "",
+      "title": "Improvements to Riding Quality at Km 5/9 - 8/2 of Vegakollai Road",
+      "title_ta": "வேகாக்கொல்லை சாலையின் கி.மீ 5/9 - 8/2 இல் சாலை தரத்தை மேம்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "Vegakollai",
       "panchayat_ta": "Vegakollai",
@@ -2469,26 +2469,26 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹68.00 L",
+      "rawBudget": 6800000
     },
     {
       "id": "2965",
-      "title": "Improvements to Riding Quality at Km 0/0 &#8211; 1/2 of Vasanankuppam Road",
-      "title_ta": "",
+      "title": "Improvements to Riding Quality at Km 0/0 - 1/2 of Vasanankuppam Road",
+      "title_ta": "வசனாங்குப்பம் சாலையின் கி.மீ 0/0 - 1/2 இல் சாலை தரத்தை மேம்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "",
       "village": "Unknown Village",
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹37.00 L",
+      "rawBudget": 3700000
     },
     {
       "id": "2964",
-      "title": "Widening From Single Lane to Intermediate Lane and Strengthening at Km 4/6 &#8211; 5/0 of Ambalavananpettai-puliyur-othiyadikuppam Road Including Reconstruction of Cd Work at Km 4/8",
-      "title_ta": "",
+      "title": "Widening From Single Lane to Intermediate Lane and Strengthening at Km 4/6 - 5/0 of Ambalavananpettai-puliyur-othiyadikuppam Road Including Reconstruction of Cd Work at Km 4/8",
+      "title_ta": "அம்பலவானன்பேட்டை-புலியூர்-ஓதியடிக்குப்பம் சாலையின் கி.மீ 4/6 - 5/0 இல் ஒற்றைப் பாதையிலிருந்து இடைப்பட்ட பாதையாக அகலப்படுத்துதல் மற்றும் வலுப்படுத்துதல், கி.மீ 4/8 இல் சி.டி. (குறுக்கு வடிகால்) பணி புனரமைப்பு உட்பட",
       "block": "Kurinjipadi",
       "panchayat": "Annadanampettai",
       "panchayat_ta": "Annadanampettai",
@@ -2503,8 +2503,8 @@
     },
     {
       "id": "2963",
-      "title": "Widening From Intermediate Lane to Two Lane and Strengthening at Km 19/950 &#8211; 21/0 of Kullanchavady-kattugudalore Road",
-      "title_ta": "",
+      "title": "Widening From Intermediate Lane to Two Lane and Strengthening at Km 19/950 - 21/0 of Kullanchavady-kattugudalore Road",
+      "title_ta": "குள்ளஞ்சாவடி-காட்டுக்கூடலூர் சாலையின் கி.மீ 19/950 - 21/0 இல் இடைப்பட்ட பாதையிலிருந்து இருவழிப் பாதையாக அகலப்படுத்துதல் மற்றும் வலுப்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "Kattukudalur",
@@ -2514,13 +2514,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.60 Cr",
+      "rawBudget": 16000000
     },
     {
       "id": "2962",
-      "title": "Strengthening at Km 0/0 &#8211; 1/6 Keeliruppu – Kattupalayam Road",
-      "title_ta": "",
+      "title": "Strengthening at Km 0/0 - 1/6 Keeliruppu – Kattupalayam Road",
+      "title_ta": "கீழிருப்பு – காட்டுப்பாளையம் சாலையின் கி.மீ 0/0 - 1/6 இல் வலுப்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "Kattukudalur",
@@ -2530,13 +2530,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.05 Cr",
+      "rawBudget": 10500000
     },
     {
       "id": "2961",
-      "title": "Strengthening at Km 0/0 &#8211; 3/0 of Vallam Road",
-      "title_ta": "",
+      "title": "Strengthening at Km 0/0 - 3/0 of Vallam Road",
+      "title_ta": "வல்லம் சாலையின் கி.மீ 0/0 - 3/0 இல் வலுப்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "Keeliruppu",
       "panchayat_ta": "Keeliruppu",
@@ -2546,13 +2546,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.30 Cr",
+      "rawBudget": 13000000
     },
     {
       "id": "2960",
-      "title": "Strengthening at Km 16/0 -18/4 &#038; 18/8 &#8211; 19/950 of Kullanchavadi – Kattugudalore Road",
-      "title_ta": "",
+      "title": "Strengthening at Km 16/0 -18/4 & 18/8 - 19/950 of Kullanchavadi – Kattugudalore Road",
+      "title_ta": "குள்ளஞ்சாவடி – காட்டுக்கூடலூர் சாலையின் கி.மீ 16/0 -18/4 & 18/8 - 19/950 இல் வலுப்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "Vallam",
       "panchayat_ta": "Vallam",
@@ -2562,13 +2562,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.85 Cr",
+      "rawBudget": 28500000
     },
     {
       "id": "2959",
-      "title": "Widening From Intermediate Lane to Two Lane and Strengthening at Km 24/5 &#8211; 26/475 of Kullanchavady- Kattugudalore Road Including Reconstruction of Box Retaining Wall at Km 25/6, 25/8, 25/10, 26/2 &#038; 26/4",
-      "title_ta": "",
+      "title": "Widening From Intermediate Lane to Two Lane and Strengthening at Km 24/5 - 26/475 of Kullanchavady- Kattugudalore Road Including Reconstruction of Box Retaining Wall at Km 25/6, 25/8, 25/10, 26/2 & 26/4",
+      "title_ta": "குள்ளஞ்சாவடி-காட்டுக்கூடலூர் சாலையின் கி.மீ 24/5 - 26/475 இல் இடைப்பட்ட பாதையிலிருந்து இருவழிப் பாதையாக அகலப்படுத்துதல் மற்றும் வலுப்படுத்துதல், கி.மீ 25/6, 25/8, 25/10, 26/2 & 26/4 இல் பெட்டி தடுப்பு சுவர் புனரமைப்பு உட்பட",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "Kattukudalur",
@@ -2577,13 +2577,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹3.77 Cr",
+      "rawBudget": 37700000
     },
     {
       "id": "2958",
-      "title": "Improvements at Km 5/0 &#8211; 7/8 of the Road From Km.30/8 of Vkt Road to Including Construction of Drain at Km 7/2",
-      "title_ta": "",
+      "title": "Improvements at Km 5/0 - 7/8 of the Road From Km.30/8 of Vkt Road to Including Construction of Drain at Km 7/2",
+      "title_ta": "வி.கே.டி சாலையின் கி.மீ.30/8 இலிருந்து செல்லும் சாலையின் கி.மீ 5/0 - 7/8 மேம்படுத்துதல், கி.மீ 7/2 இல் வடிகால் கட்டுமானம் உட்பட",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "Kattukudalur",
@@ -2593,13 +2593,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.61 Cr",
+      "rawBudget": 16100000
     },
     {
       "id": "2957",
-      "title": "Reconstruction of Box Culvert at 15/4 of Kadampuliyur &#8211; Ulundurpettai Road (Via) Perperiyankuppam &#8211; Senthamangalam Including Construction of Drain at Km 15/4 &#8211; 15/6",
-      "title_ta": "",
+      "title": "Reconstruction of Box Culvert at 15/4 of Kadampuliyur - Ulundurpettai Road (Via) Perperiyankuppam - Senthamangalam Including Construction of Drain at Km 15/4 - 15/6",
+      "title_ta": "காடாம்பூலியூர் - உளுந்தூர்பேட்டை சாலை (பெரும்பிரியன்குப்பம் - சேந்தமங்கலம் வழியாக) கி.மீ 15/4 இல் பெட்டி வடிகால் புனரமைப்பு, கி.மீ 15/4 - 15/6 இல் வடிகால் கட்டுமானம் உட்பட",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -2609,13 +2609,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹80.00 L",
+      "rawBudget": 8000000
     },
     {
       "id": "2956",
-      "title": "Improvements to Riding Quality at Km 0/0 &#8211; 1/2 of Nadukuppam Road",
-      "title_ta": "",
+      "title": "Improvements to Riding Quality at Km 0/0 - 1/2 of Nadukuppam Road",
+      "title_ta": "நடுக்குப்பம் சாலையின் கி.மீ 0/0 - 1/2 இல் சாலை தரத்தை மேம்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "Nadukuppam",
       "panchayat_ta": "Nadukuppam",
@@ -2625,13 +2625,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹29.00 L",
+      "rawBudget": 2900000
     },
     {
       "id": "2955",
       "title": "Providing Junction Improvement at Km 18/6 of Kullanchavady- Kattugudalore Road",
-      "title_ta": "",
+      "title_ta": "குள்ளஞ்சாவடி-காட்டுக்கூடலூர் சாலையின் கி.மீ 18/6 இல் சந்திப்பு மேம்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "Kattukudalur",
@@ -2641,13 +2641,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.00 Cr",
+      "rawBudget": 10000000
     },
     {
       "id": "2954",
       "title": "Construction of Box Culvert at Km 1/8 of Melmampattu Road",
-      "title_ta": "",
+      "title_ta": "மேல்மாம்பட்டு சாலையின் கி.மீ 1/8 இல் பெட்டி வடிகால் கட்டுமானம்",
       "block": "Panruti",
       "panchayat": "Melmampattu",
       "panchayat_ta": "Melmampattu",
@@ -2657,13 +2657,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹11.00 L",
+      "rawBudget": 1100000
     },
     {
       "id": "2953",
-      "title": "Reconstruction of Box Culvert at 13/6 of Neyveli Limit &#8211; Karukkai Road (Via) Muthandikuppam-kudiyiruppu Including Construction of V Shape Drain at Km 13/4 &#038; 13/6",
-      "title_ta": "",
+      "title": "Reconstruction of Box Culvert at 13/6 of Neyveli Limit - Karukkai Road (Via) Muthandikuppam-kudiyiruppu Including Construction of V Shape Drain at Km 13/4 & 13/6",
+      "title_ta": "நெய்வேலி எல்லை - கருக்கை சாலை (முத்தாண்டிக்குப்பம்- குடியிருப்பு வழியாக) கி.மீ 13/6 இல் பெட்டி வடிகால் புனரமைப்பு, கி.மீ 13/4 & 13/6 இல் V வடிவ வடிகால் கட்டுமானம் உட்பட",
       "block": "Panruti",
       "panchayat": "Karukkai",
       "panchayat_ta": "Karukkai",
@@ -2673,13 +2673,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹80.00 L",
+      "rawBudget": 8000000
     },
     {
       "id": "2952",
       "title": "Reconstruction of Box Culvert at 1/4 of the Road From Km.29/8 of Vikkiravandi-kumbakonam- Thanjavur Road to Sathipattu Road (Via) Erulankuppam",
-      "title_ta": "",
+      "title_ta": "விக்கிரவாண்டி-கும்பகோணம்-தஞ்சாவூர் சாலையின் கி.மீ.29/8 இலிருந்து சாத்திப்பட்டு சாலை (இருளங்குப்பம் வழியாக) வரையிலான சாலையின் கி.மீ 1/4 இல் பெட்டி வடிகால் புனரமைப்பு",
       "block": "Panruti",
       "panchayat": "Sathipattu",
       "panchayat_ta": "Sathipattu",
@@ -2688,13 +2688,13 @@
       "year": "2021-2022",
       "status": "Completed",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.25 Cr",
+      "rawBudget": 12500000
     },
     {
       "id": "2951",
-      "title": "Improvements to Riding Quality at Km 0/0 &#8211; 2/0 of Melmampattu Road",
-      "title_ta": "",
+      "title": "Improvements to Riding Quality at Km 0/0 - 2/0 of Melmampattu Road",
+      "title_ta": "மேல்மாம்பட்டு சாலையின் கி.மீ 0/0 - 2/0 இல் சாலை தரத்தை மேம்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "Melmampattu",
       "panchayat_ta": "Melmampattu",
@@ -2704,13 +2704,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹47.00 L",
+      "rawBudget": 4700000
     },
     {
       "id": "2950",
-      "title": "Improvements to Riding Quality at Km 12/0 &#8211; 13/6 of Neyveli Limit &#8211; Karukkai Road (Via) Muthandikuppam-kudiyiruppu",
-      "title_ta": "",
+      "title": "Improvements to Riding Quality at Km 12/0 - 13/6 of Neyveli Limit - Karukkai Road (Via) Muthandikuppam-kudiyiruppu",
+      "title_ta": "நெய்வேலி எல்லை - கருக்கை சாலை (முத்தாண்டிக்குப்பம்- குடியிருப்பு வழியாக) கி.மீ 12/0 - 13/6 இல் சாலை தரத்தை மேம்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "Karukkai",
       "panchayat_ta": "Karukkai",
@@ -2720,13 +2720,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹39.00 L",
+      "rawBudget": 3900000
     },
     {
       "id": "2949",
-      "title": "Improvements to Riding Quality at Km 1/4 &#8211; 2/4 of the Road From Km.8/6 of Kullanchavadi- Kattugudalore Road to Siruthondamadevi Road (Via) A.pudur Road",
-      "title_ta": "",
+      "title": "Improvements to Riding Quality at Km 1/4 - 2/4 of the Road From Km.8/6 of Kullanchavadi- Kattugudalore Road to Siruthondamadevi Road (Via) A.pudur Road",
+      "title_ta": "குள்ளஞ்சாவடி-காட்டுக்கூடலூர் சாலையின் கி.மீ.8/6 இலிருந்து சிறுதொண்டமாதேவி சாலை (ஏ.புதூர் சாலை வழியாக) வரையிலான சாலையின் கி.மீ 1/4 - 2/4 இல் சாலை தரத்தை மேம்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "Vazhuthalampattu",
       "panchayat_ta": "Vazhuthalampattu",
@@ -2735,13 +2735,13 @@
       "year": "2021-2022",
       "status": "Completed",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹26.00 L",
+      "rawBudget": 2600000
     },
     {
       "id": "2948",
       "title": "Construction of Box Culvert at Km 3/4 of the Road From Km 37/9 of Vikkiravandi –Alagappasamuthiram Road",
-      "title_ta": "",
+      "title_ta": "விக்கிரவாண்டி – அழகப்பசமுத்திரம் சாலையின் கி.மீ 37/9 இலிருந்து செல்லும் சாலையின் கி.மீ 3/4 இல் பெட்டி வடிகால் கட்டுமானம்",
       "block": "Panruti",
       "panchayat": "Alagappasamuthiram",
       "panchayat_ta": "Alagappasamuthiram",
@@ -2751,13 +2751,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹15.00 L",
+      "rawBudget": 1500000
     },
     {
       "id": "2947",
-      "title": "Improvements at Km 3/0 &#8211; 5/0 of the Road From Km.30/8 of Vkt Road to Keeliruppu Road (Via) Panikkankuppam",
-      "title_ta": "",
+      "title": "Improvements at Km 3/0 - 5/0 of the Road From Km.30/8 of Vkt Road to Keeliruppu Road (Via) Panikkankuppam",
+      "title_ta": "வி.கே.டி சாலையின் கி.மீ.30/8 இலிருந்து கீழிருப்பு சாலை (பணிக்கன்குப்பம் வழியாக) வரையிலான சாலையின் கி.மீ 3/0 - 5/0 மேம்படுத்துதல்",
       "block": "Panruti",
       "panchayat": "Panikkankuppam",
       "panchayat_ta": "Panikkankuppam",
@@ -2767,13 +2767,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "CRIDP",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.00 Cr",
+      "rawBudget": 10000000
     },
     {
       "id": "2934",
       "title": "Construction of Health and Wellness Centre Building at Madhanagopalapuram",
-      "title_ta": "",
+      "title_ta": "மதனகோபாலபுரம் சுகாதார மற்றும் ஆரோக்கியம் கட்டடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Madhanagopalpuram",
       "panchayat_ta": "Madhanagopalpuram",
@@ -2782,13 +2782,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹30.00 L",
+      "rawBudget": 3000000
     },
     {
       "id": "2933",
       "title": "Construction of Health and Wellness Centre Building at Vadakkuthu",
-      "title_ta": "",
+      "title_ta": "வடக்குத்து கிராமத்தில் சுகாதாரம் மற்றும் நல்வாழ்வு மையக் கட்டிடம் கட்டுதல்",
       "block": "Kurinjipadi",
       "panchayat": "Vadakuthu",
       "panchayat_ta": "Vadakuthu",
@@ -2798,13 +2798,13 @@
       "status": "Ongoing",
       "type": "Infrastructure",
       "scheme": "Medical and Family Welfare Department",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹20.00 L",
+      "rawBudget": 2000000
     },
     {
       "id": "2932",
-      "title": "Construction of Girls&#8217; Toilet Building at Kattukudalur Government High School",
-      "title_ta": "",
+      "title": "Construction of Girls' Toilet Building at Kattukudalur Government High School",
+      "title_ta": "காட்டுக்கூடலூர் அரசு மேல்நிலைப் பள்ளியில் மகளிர் கழிவறை கட்டடம் அமைத்தல்",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "Kattukudalur",
@@ -2813,13 +2813,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹4.10 L",
+      "rawBudget": 410000
     },
     {
       "id": "2931",
-      "title": "Construction of Girls&#8217; Toilet Building at Kadampuliyur R.k. Government Higher Secondary School",
-      "title_ta": "",
+      "title": "Construction of Girls' Toilet Building at Kadampuliyur R.k. Government Higher Secondary School",
+      "title_ta": "கடம்புளியூர் ஆர்.கே. அரசு மேல்நிலைப் பள்ளியில் பெண்கள் கழிவறை கட்டடம் கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -2828,13 +2828,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.20 L",
+      "rawBudget": 520000
     },
     {
       "id": "2930",
-      "title": "Construction of Girls&#8217; Toilet Building at Perperiyankuppam Government Girls Higher Secondary School",
-      "title_ta": "",
+      "title": "Construction of Girls' Toilet Building at Perperiyankuppam Government Girls Higher Secondary School",
+      "title_ta": "பெர்பெரியன்குப்பம் அரசு பெண்கள் மேல்நிலைப் பள்ளியில் பெண்கள் கழிவறை கட்டடம் அமைத்தல்",
       "block": "Panruti",
       "panchayat": "Perperiyankuppam",
       "panchayat_ta": "Perperiyankuppam",
@@ -2843,13 +2843,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.20 L",
+      "rawBudget": 520000
     },
     {
       "id": "2929",
       "title": "Construction of Additional Classroom Building at Indira Nagar Government Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "இந்திராநகர் அரசு மேல்நிலைப்பள்ளியில் கூடுதல் வகுப்பறைக் கட்டடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "Indira Nagar",
@@ -2858,13 +2858,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹21.50 L",
+      "rawBudget": 2150000
     },
     {
       "id": "2928",
       "title": "Construction of Kgbv (Kasturba Gandhi Balika Vidyalaya) Type Building at Kadampuliyur",
-      "title_ta": "",
+      "title_ta": "கடம்புலியூரில் KGBV (கஸ்தூர்பா காந்தி பாலிகா வித்யாலயா) வகை கட்டடம் கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -2873,13 +2873,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.25 Cr",
+      "rawBudget": 12450000
     },
     {
       "id": "2926",
       "title": "Construction of 2 Classroom Buildings at Panruti Keelkangeyankuppam Government Middle School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி கீழ்காங்கேயன்குப்பம் அரசு நடுநிலைப் பள்ளியில் 2 வகுப்பறை கட்டடங்கள் கட்டுமானம்",
       "block": "Panruti",
       "panchayat": "Keelkankeyankuppam",
       "panchayat_ta": "Keelkankeyankuppam",
@@ -2888,13 +2888,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹38.00 L",
+      "rawBudget": 3800000
     },
     {
       "id": "2925",
       "title": "Construction of 4 Classroom Buildings at Kurinjipadi Taluk Indira Nagar Government Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "குறிஞ்சிப்பாடி வட்டம், இந்திரா நகர் அரசு மேல்நிலைப் பள்ளியில் 4 வகுப்பறைக் கட்டிடங்கள் கட்டுதல்",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "Indira Nagar",
@@ -2903,13 +2903,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹90.00 L",
+      "rawBudget": 9000000
     },
     {
       "id": "2924",
       "title": "Construction of 2 Classroom Buildings at Panruti Mettukuppam Government High School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி மேட்டுக்குப்பம் அரசு மேல்நிலைப் பள்ளியில் 2 வகுப்பறை கட்டடங்கள் கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Mettukuppam",
       "panchayat_ta": "Mettukuppam",
@@ -2918,13 +2918,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹34.00 L",
+      "rawBudget": 3400000
     },
     {
       "id": "2923",
       "title": "Construction of 2 Classroom Buildings at Panruti Perperiyankuppam Government Boys Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி பெர்பெரியன்குப்பம் அரசு மகளிர் மேல்நிலைப் பள்ளியில் 2 வகுப்பறை கட்டடங்கள் அமைத்தல்",
       "block": "Panruti",
       "panchayat": "Perperiyankuppam",
       "panchayat_ta": "Perperiyankuppam",
@@ -2933,13 +2933,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹34.00 L",
+      "rawBudget": 3400000
     },
     {
       "id": "2922",
       "title": "Construction of 2 Classroom Buildings at Panruti Kadampuliyur Government Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி கடம்புளியூர் அரசு மேல்நிலைப் பள்ளியில் 2 வகுப்பறை கட்டடங்கள் கட்டுமானம்",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -2948,13 +2948,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹34.00 L",
+      "rawBudget": 3400000
     },
     {
       "id": "2921",
       "title": "Construction of 2 Classroom Buildings at Panruti Pudupalayam Government High School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி புதுப்பாளையம் அரசு மேல்நிலைப் பள்ளியில் 2 வகுப்பறை கட்டடங்கள் அமைத்தல்",
       "block": "Panruti",
       "panchayat": "Keelmampattu",
       "panchayat_ta": "Keelmampattu",
@@ -2963,13 +2963,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹34.00 L",
+      "rawBudget": 3400000
     },
     {
       "id": "2920",
       "title": "Construction of 2 Classroom Buildings at Panruti Keelmampattu Government High School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி கீழ்மாம்பட்டு அரசு உயர்நிலைப்பள்ளியில் 2 வகுப்பறைக் கட்டிடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Keelmampattu",
       "panchayat_ta": "Keelmampattu",
@@ -2978,13 +2978,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹34.00 L",
+      "rawBudget": 3400000
     },
     {
       "id": "2919",
       "title": "Construction of 2 Classroom Buildings at Panruti Kudiyiruppu Government Higher Secondary School",
-      "title_ta": "",
+      "title_ta": "பண்ருட்டி குடியிருப்பு அரசு மேல்நிலைப்பள்ளியில் 2 வகுப்பறைக் கட்டிடம் கட்டும் பணி",
       "block": "Panruti",
       "panchayat": "Keelkankeyankuppam",
       "panchayat_ta": "Keelkankeyankuppam",
@@ -2993,13 +2993,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹34.00 L",
+      "rawBudget": 3400000
     },
     {
       "id": "2918",
       "title": "Construction of a Science Laboratory Building at Kattukudalur Government High School",
-      "title_ta": "",
+      "title_ta": "கட்டுக்குடலூர் அரசு மேல்நிலைப் பள்ளியில் அறிவியல் ஆய்வகக் கட்டடம் கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "Kattukudalur",
@@ -3008,13 +3008,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹17.34 L",
+      "rawBudget": 1734000
     },
     {
       "id": "2917",
       "title": "Construction of 2 Classroom Buildings and a Science Laboratory Building at Kattukudalur Government High School",
-      "title_ta": "",
+      "title_ta": "காட்டுகூடலூர் அரசு உயர்நிலைப் பள்ளியில் 2 வகுப்பறைக் கட்டிடங்கள் மற்றும் ஓர் அறிவியல் ஆய்வகக் கட்டிடம் கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Kattukudalur",
       "panchayat_ta": "Kattukudalur",
@@ -3023,13 +3023,13 @@
       "year": "2020-2025",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹78.24 L",
+      "rawBudget": 7824000
     },
     {
       "id": "2916",
       "title": "Construction of Classroom Buildings at Thalampattu Government High School",
-      "title_ta": "",
+      "title_ta": "தலம்பட்டு அரசு உயர்நிலைப் பள்ளியில் வகுப்பறைக் கட்டடங்கள் அமைத்தல்",
       "block": "Panruti",
       "panchayat": "Thalampattu",
       "panchayat_ta": "Thalampattu",
@@ -3038,13 +3038,13 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.61 Cr",
+      "rawBudget": 16081000
     },
     {
       "id": "2915",
       "title": "Construction of Classroom Buildings at Karukkai Government High School",
-      "title_ta": "",
+      "title_ta": "கருக்காய் அரசு மேல்நிலைப் பள்ளியில் வகுப்பறைக் கட்டடங்கள் கட்டுமானம்",
       "block": "Panruti",
       "panchayat": "Karukkai",
       "panchayat_ta": "Karukkai",
@@ -3053,13 +3053,13 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.61 Cr",
+      "rawBudget": 16081000
     },
     {
       "id": "2914",
       "title": "Construction of Classroom Buildings at Keelmampattu Government High School",
-      "title_ta": "",
+      "title_ta": "கீழ்மாம்பட்டு அரசு மேல்நிலைப் பள்ளியில் வகுப்பறைக் கட்டடங்கள் கட்டுமானம்",
       "block": "Panruti",
       "panchayat": "Keelmampattu",
       "panchayat_ta": "Keelmampattu",
@@ -3068,13 +3068,13 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.61 Cr",
+      "rawBudget": 16081000
     },
     {
       "id": "2913",
       "title": "Construction of Classroom Buildings at Meliruppu Government High School",
-      "title_ta": "",
+      "title_ta": "மேலிருப்பு அரசு மேல்நிலைப் பள்ளியில் வகுப்பறைக் கட்டடங்கள் அமைத்தல்",
       "block": "Panruti",
       "panchayat": "Meliruppu",
       "panchayat_ta": "Meliruppu",
@@ -3083,13 +3083,13 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.61 Cr",
+      "rawBudget": 16081000
     },
     {
       "id": "2912",
       "title": "Construction of Classroom Buildings at Maligampattu Government High School",
-      "title_ta": "",
+      "title_ta": "மாலிகம்பட்டு அரசு மேல்நிலைப் பள்ளியில் வகுப்பறைக் கட்டடங்கள் கட்டுமானப் பணி",
       "block": "Panruti",
       "panchayat": "Maligampattu",
       "panchayat_ta": "Maligampattu",
@@ -3098,13 +3098,13 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.61 Cr",
+      "rawBudget": 16081000
     },
     {
       "id": "2911",
       "title": "Construction of Classroom Buildings at Thiruvaamur Government High School",
-      "title_ta": "",
+      "title_ta": "திருவாமூர் அரசு உயர்நிலைப் பள்ளியில் வகுப்பறைக் கட்டிடங்கள் கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Thiruvamoor",
       "panchayat_ta": "Thiruvamoor",
@@ -3113,13 +3113,13 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.61 Cr",
+      "rawBudget": 16081000
     },
     {
       "id": "2910",
       "title": "Construction of Classroom Buildings at Indira Nagar Government High School",
-      "title_ta": "",
+      "title_ta": "இந்திரா நகர் அரசு உயர்நிலைப் பள்ளியில் வகுப்பறைக் கட்டிடங்கள் கட்டுதல்",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "Indira Nagar",
@@ -3128,13 +3128,13 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.61 Cr",
+      "rawBudget": 16081000
     },
     {
       "id": "2909",
       "title": "Construction of Classroom Buildings at Pudupalayam Government High School",
-      "title_ta": "",
+      "title_ta": "புதுப்பாளையம் அரசு மேல்நிலைப் பள்ளியில் வகுப்பறை கட்டடங்கள் கட்டுமானம்",
       "block": "Panruti",
       "panchayat": "Keelmampattu",
       "panchayat_ta": "Keelmampattu",
@@ -3143,13 +3143,13 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.42 Cr",
+      "rawBudget": 14182000
     },
     {
       "id": "2908",
-      "title": "Construction of Most Backward Classes (Mbc) School and Girls&#8217; Hostel Building at Perperiyankuppam",
-      "title_ta": "",
+      "title": "Construction of Most Backward Classes (Mbc) School and Girls' Hostel Building at Perperiyankuppam",
+      "title_ta": "மிகவும் பிற்படுத்தப்பட்ட வகுப்பினர் (MBC) பள்ளி மற்றும் பெண்கள் விடுதி கட்டடம் பெர்பெரியன்குப்பம் அமைத்தல்",
       "block": "Panruti",
       "panchayat": "Perperiyankuppam",
       "panchayat_ta": "Perperiyankuppam",
@@ -3158,8 +3158,8 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.11 Cr",
+      "rawBudget": 11055000
     },
     {
       "id": "2907",
@@ -3173,8 +3173,8 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹34.00 L",
+      "rawBudget": 3400000
     },
     {
       "id": "2906",
@@ -3188,8 +3188,8 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹24.00 L",
+      "rawBudget": 2400000
     },
     {
       "id": "2905",
@@ -3203,8 +3203,8 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹24.00 L",
+      "rawBudget": 2400000
     },
     {
       "id": "2904",
@@ -3218,13 +3218,13 @@
       "year": "2016-2020",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹24.00 L",
+      "rawBudget": 2400000
     },
     {
       "id": "2903",
       "title": "Renovation of the Thiruvaamur Bed Dam and Construction of Flood Protection Walls on the Banks of the South Malattar and the Siruvathur Lake Inflow Channel in Thiruvaamur Village, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title_ta": "திருவாமூர் தரைமட்டத் தடுப்பணையைச் சீரமைத்தல் மற்றும் தெற்கு மலட்டாறு மற்றும் சிறுவத்தூர் ஏரி வரத்துக் கால்வாயின் கரைகளில் வெள்ளத் தடுப்புச் சுவர்கள் கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Thiruvamoor",
       "panchayat_ta": "Thiruvamoor",
@@ -3233,13 +3233,13 @@
       "year": "2021-2026",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹14.00 Cr",
+      "rawBudget": 140000000
     },
     {
       "id": "2902",
       "title": "Construction of a Check Dam Across the Gadilam River in Kamatchipettai Village, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title_ta": "காமாட்சிப்பேட்டை கிராமத்தில் கெடிலம் ஆற்றின் குறுக்கே தடுப்பணை கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Thiruvamoor",
       "panchayat_ta": "Thiruvamoor",
@@ -3248,13 +3248,13 @@
       "year": "2021-2026",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹37.00 Cr",
+      "rawBudget": 370000000
     },
     {
       "id": "2901",
-      "title": "Construction of a Drainage Sluice and Flood Protection Wall to Strengthen the Banks of the Gadilam River in Elanthampattu, Semmedu, and Siruvathur Villages, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title": "Construction of a Drainage Sluice and Flood Protection Wall to Strengthen the Banks of the Gadilam River in Elanthampattu, Semmedu, and Siruvathur Villages",
+      "title_ta": "இலந்தம்பட்டு, செம்மேடு மற்றும் சிறுவத்தூர் கிராமங்களில் கெடிலம் ஆற்றின் கரைகளை வலுப்படுத்த, வடிகால் மதகு மற்றும் வெள்ளத் தடுப்புச் சுவர் கட்டுதல்.",
       "block": "Panruti",
       "panchayat": "Elanthampattu",
       "panchayat_ta": "Elanthampattu",
@@ -3263,13 +3263,13 @@
       "year": "2021-2026",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹36.00 Cr",
+      "rawBudget": 360000000
     },
     {
       "id": "2900",
       "title": "Flood Protection Work in the Meliruppu Stream, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title_ta": "கடலூர் மாவட்டம், பண்ருட்டி வட்டம், மேலிருப்பு ஓடையில் வெள்ளத் தடுப்புப் பணிகள்",
       "block": "Panruti",
       "panchayat": "Meliruppu",
       "panchayat_ta": "Meliruppu",
@@ -3278,13 +3278,13 @@
       "year": "2021-2026",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.00 Cr",
+      "rawBudget": 20000000
     },
     {
       "id": "2899",
-      "title": "Construction of a Check Dam Across the Visoor Stream in Visoor Village, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title": "Construction of a Check Dam Across the Visoor Stream",
+      "title_ta": "வீசூர் ஓடையின் குறுக்கே தடுப்பணை கட்டுதல்.",
       "block": "Panruti",
       "panchayat": "Visoor",
       "panchayat_ta": "Visoor",
@@ -3293,13 +3293,13 @@
       "year": "2021-2026",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹9.00 Cr",
+      "rawBudget": 90000000
     },
     {
       "id": "2898",
-      "title": "Construction of a Flood Protection Wall and Restoration Work in the Keeliruppu Stream, Panruti Taluk, Cuddalore District.",
-      "title_ta": "",
+      "title": "Construction of a Flood Protection Wall and Restoration Work in the Keeliruppu Stream, Panruti Taluk, Cuddalore District",
+      "title_ta": "கடலூர் மாவட்டம், பண்ருட்டி வட்டம், கீழிருப்பு ஓடையில் வெள்ளத் தடுப்புச் சுவர் கட்டுதல் மற்றும் சீரமைப்புப் பணிகள்",
       "block": "Panruti",
       "panchayat": "Keeliruppu",
       "panchayat_ta": "Keeliruppu",
@@ -3308,13 +3308,13 @@
       "year": "2021-2026",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.00 Cr",
+      "rawBudget": 50000000
     },
     {
       "id": "2873",
       "title": "New Govt Transport Bus Depot",
-      "title_ta": "",
+      "title_ta": "புதிய அரசு போக்குவரத்து பேருந்து பணிமனை",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "Indira Nagar",
@@ -3323,13 +3323,13 @@
       "year": "2021-2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.00 Cr",
+      "rawBudget": 20000000
     },
     {
       "id": "2872",
       "title": "33-acre Sidco Industrial Estate",
-      "title_ta": "",
+      "title_ta": "33 ஏக்கர் பரப்பளவிலான சிட்கோ (SIDCO) தொழிற்பேட்டை",
       "block": "Panruti",
       "panchayat": "Kadampuliyur",
       "panchayat_ta": "Kadampuliyur",
@@ -3338,13 +3338,13 @@
       "year": "2021-2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.50 Cr",
+      "rawBudget": 75000000
     },
     {
       "id": "2871",
       "title": "60 Cashew Nut Shelling Machines",
-      "title_ta": "",
+      "title_ta": "60 முந்திரி ஓடு நீக்கும் இயந்திரங்கள்",
       "block": "Panruti",
       "panchayat": "Keeliruppu",
       "panchayat_ta": "Keeliruppu",
@@ -3353,13 +3353,13 @@
       "year": "2021-2024",
       "status": "Completed",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.00 Cr",
+      "rawBudget": 20000000
     },
     {
       "id": "2870",
       "title": "10-acre Special Cashew Research Centre",
-      "title_ta": "",
+      "title_ta": "10 ஏக்கர் பரப்பளவிலான சிறப்பு முந்திரி ஆராய்ச்சி மையம்",
       "block": "Panruti",
       "panchayat": "Keelakuppam",
       "panchayat_ta": "Keelakuppam",
@@ -3368,13 +3368,13 @@
       "year": "2021-2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹10.00 Cr",
+      "rawBudget": 100000000
     },
     {
       "id": "2846",
       "title": "840 Housing Units (Tnuhdb)",
-      "title_ta": "",
+      "title_ta": "840 அடுக்குமாடி குடியிருப்புகள் (தமிழ்நாடு நகர்ப்புற வாழ்விட மேம்பாட்டு வாரியம்)",
       "block": "Panruti",
       "panchayat": "Keelakuppam",
       "panchayat_ta": "Keelakuppam",
@@ -3383,13 +3383,13 @@
       "year": "2021-2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹83.63 Cr",
+      "rawBudget": 836300000
     },
     {
       "id": "2843",
       "title": "Keeliruppu Canal Flood Restoration",
-      "title_ta": "",
+      "title_ta": "கீழிருப்பு கால்வாய் வெள்ளச் சீரமைப்புப் பணிகள்",
       "block": "Panruti",
       "panchayat": "Keeliruppu",
       "panchayat_ta": "Keeliruppu",
@@ -3398,13 +3398,13 @@
       "year": "2021-2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.00 Cr",
+      "rawBudget": 50000000
     },
     {
       "id": "2842",
       "title": "Koranapattu Lake Renovation",
-      "title_ta": "",
+      "title_ta": "கோரணப்பட்டு ஏரி சீரமைத்தல்",
       "block": "Kurinjipadi",
       "panchayat": "Koranapattu",
       "panchayat_ta": "Koranapattu",
@@ -3413,13 +3413,13 @@
       "year": "2021-2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹68.96 L",
+      "rawBudget": 6896000
     },
     {
       "id": "2841",
-      "title": "Flood Protection Walls (4 Areas &#8211; Elanthampattu, Siruvathur, S.eripalayam, Semmedu)",
-      "title_ta": "",
+      "title": "Flood Protection Walls (4 Areas - Elanthampattu, Siruvathur, S.eripalayam, Semmedu)",
+      "title_ta": "4 பகுதிகளில் வெள்ளத் தடுப்புச் சுவர்கள் கட்டியது",
       "block": "Panruti",
       "panchayat": "Elanthampattu",
       "panchayat_ta": "Elanthampattu",
@@ -3428,13 +3428,13 @@
       "year": "2021-2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹37.00 Cr",
+      "rawBudget": 370000000
     },
     {
       "id": "2840",
       "title": "Retaining Walls in 4 Villages (Keeliruppu, Visoor, Meliruppu, Panikkankuppam)",
-      "title_ta": "",
+      "title_ta": "4 கிராமங்களில் தாங்கு சுவர்கள் (கீழிருப்பு, வீசூர், மேலிருப்பு, பணிக்கன்குப்பம்)",
       "block": "Panruti",
       "panchayat": "Keeliruppu",
       "panchayat_ta": "Keeliruppu",
@@ -3443,13 +3443,13 @@
       "year": "2021-2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹40.00 Cr",
+      "rawBudget": 400000000
     },
     {
       "id": "2839",
       "title": "Check Dams Construction at Visur",
-      "title_ta": "",
+      "title_ta": "வீசூரில் தடுப்பணைகள் கட்டுதல்",
       "block": "Panruti",
       "panchayat": "Visoor",
       "panchayat_ta": "Visoor",
@@ -3458,13 +3458,13 @@
       "year": "2021-2024",
       "status": "Completed",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹10.00 Cr",
+      "rawBudget": 100000000
     },
     {
       "id": "2838",
       "title": "New Check Dams (2 Locations)",
-      "title_ta": "",
+      "title_ta": "புதிய தடுப்பணைகள் (2 இடங்கள்)",
       "block": "Panruti",
       "panchayat": "Thiruvamoor",
       "panchayat_ta": "Thiruvamoor",
@@ -3473,13 +3473,13 @@
       "year": "2021-2024",
       "status": "Completed",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹10.00 Cr",
+      "rawBudget": 100000000
     },
     {
       "id": "2832",
       "title": "2 Govt Primary Health Centres",
-      "title_ta": "",
+      "title_ta": "2 அரசு ஆரம்ப சுகாதார நிலையங்கள்",
       "block": "Panruti",
       "panchayat": "Marungur",
       "panchayat_ta": "Marungur",
@@ -3488,13 +3488,13 @@
       "year": "2021-2024",
       "status": "Completed",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.50 Cr",
+      "rawBudget": 15000000
     },
     {
       "id": "2831",
-      "title": "Integrated Court &#038; Residential Complex",
-      "title_ta": "",
+      "title": "Integrated Court & Residential Complex",
+      "title_ta": "ஒருங்கிணைந்த நீதிமன்றம் மற்றும் குடியிருப்பு வளாகம்",
       "block": "Kurinjipadi",
       "panchayat": "Indira Nagar",
       "panchayat_ta": "Indira Nagar",
@@ -3503,13 +3503,13 @@
       "year": "2021-2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹18.00 Cr",
+      "rawBudget": 180000000
     },
     {
       "id": "2814",
       "title": "Repair of Panchayat Union Middle School Kitchen",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Samattikkuppam",
       "panchayat_ta": "Samattikkuppam",
@@ -3518,13 +3518,13 @@
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹78000",
+      "rawBudget": 78000
     },
     {
       "id": "2810",
       "title": "Construction of Drainage Channel at North Street",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Samattikkuppam",
       "panchayat_ta": "Samattikkuppam",
@@ -3533,13 +3533,13 @@
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹3.08 L",
+      "rawBudget": 308000
     },
     {
       "id": "2786",
       "title": "Providing 150 Numbers of Drinking Water Pipeline Connections at Appiyampettai",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Koranapattu",
       "panchayat_ta": "Koranapattu",
@@ -3548,13 +3548,13 @@
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹6.58 L",
+      "rawBudget": 658122
     },
     {
       "id": "2780",
       "title": "8 Sets of Benches and Desks for the Panchayat Union Primary School",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Koranapattu",
       "panchayat_ta": "Koranapattu",
@@ -3563,13 +3563,13 @@
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.56 L",
+      "rawBudget": 156352
     },
     {
       "id": "2659",
       "title": "Construction of Drainage Channel",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Madhanagopalpuram",
       "panchayat_ta": "Madhanagopalpuram",
@@ -3578,13 +3578,13 @@
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹4.50 L",
+      "rawBudget": 450000
     },
     {
       "id": "2657",
       "title": "Construction of Drainage Channel in Rc Adi Dravidar Paguthi",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Madhanagopalpuram",
       "panchayat_ta": "Madhanagopalpuram",
@@ -3593,13 +3593,13 @@
       "year": "2024",
       "status": "Ongoing",
       "type": "Infrastructure",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹2.97 L",
+      "rawBudget": 297000
     },
     {
       "id": "2607",
       "title": "Construction of Toilet for Girls at Union Middle School",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3609,13 +3609,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "அனைத்து கிராம அண்ணா மறுமலர்ச்சி திட்டம் - II",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹6.18 L",
+      "rawBudget": 618000
     },
     {
       "id": "2605",
       "title": "Laying of Cement Road at Kallukuzhi 1st Cross Street",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3625,13 +3625,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "அனைத்து கிராம அண்ணா மறுமலர்ச்சி திட்டம் - II",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹6.00 L",
+      "rawBudget": 599500
     },
     {
       "id": "2604",
       "title": "Renovation of Library",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3641,13 +3641,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "அனைத்து கிராம அண்ணா மறுமலர்ச்சி திட்டம் - II",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.72 L",
+      "rawBudget": 172000
     },
     {
       "id": "2602",
       "title": "Sinking of Borewell at Thenkuthu North Street",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3657,13 +3657,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "15-வது நிதிக்குழு மான்ய திட்டம் (கிராம ஊராட்சி)",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹16.00 L",
+      "rawBudget": 1600000
     },
     {
       "id": "2600",
       "title": "Renovation of Kitchen at Union Primary School",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3673,13 +3673,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "15-வது நிதிக்குழு மான்ய திட்டம் (கிராம ஊராட்சி)",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.24 L",
+      "rawBudget": 124000
     },
     {
       "id": "2599",
       "title": "Renovation of Kitchen at Thenkuthu Union Primary School",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3689,13 +3689,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "15-வது நிதிக்குழு மான்ய திட்டம் (கிராம ஊராட்சி)",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.25 L",
+      "rawBudget": 125000
     },
     {
       "id": "2598",
       "title": "Construction of Drainage Canal at Thenkuthu North Street",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3705,13 +3705,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "15-வது நிதிக்குழு மான்ய திட்டம் (கிராம ஊராட்சி)",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹4.87 L",
+      "rawBudget": 487000
     },
     {
       "id": "2597",
       "title": "Laying of Tar Road at North Street",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3721,13 +3721,13 @@
       "status": "Ongoing",
       "type": "Infrastructure",
       "scheme": "பொது நிதி (வ.ஊ.)",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.00 L",
+      "rawBudget": 700000
     },
     {
       "id": "2595",
       "title": "Construction of Retaining Wall at Thenkuthu",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3737,13 +3737,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "பிரதம மந்திரி ஆவாஸ் கிராம யோஜனா",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹7.46 L",
+      "rawBudget": 746000
     },
     {
       "id": "2593",
       "title": "Sinking of Borewell",
-      "title_ta": "",
+      "title_ta": "ஆழ்துளை கிணறு அமைத்தல்",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3753,13 +3753,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "பிரதம மந்திரி ஆவாஸ் கிராம யோஜனா",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹18.80 L",
+      "rawBudget": 1880000
     },
     {
       "id": "2591",
       "title": "Construction of Pump Room",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3769,13 +3769,13 @@
       "status": "Ongoing",
       "type": "Infrastructure",
       "scheme": "பிரதம மந்திரி ஆவாஸ் கிராம யோஜனா",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹1.20 L",
+      "rawBudget": 120000
     },
     {
       "id": "2590",
       "title": "Providing Drinking Water Connections to 109 Houses at Thenkuthu",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3785,13 +3785,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "15-வது நிதிக்குழு மான்ய திட்டம் (கிராம ஊராட்சி)",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹8.31 L",
+      "rawBudget": 831000
     },
     {
       "id": "2582",
       "title": "Providing Drinking Water Connections to Houses",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3801,13 +3801,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "15-வது நிதிக்குழு மான்ய திட்டம் (கிராம ஊராட்சி)",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹8.31 L",
+      "rawBudget": 831000
     },
     {
       "id": "2576",
       "title": "Laying of Paver Block Road at Thenkuthu North Street",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3817,13 +3817,13 @@
       "status": "Completed",
       "type": "Infrastructure",
       "scheme": "15-வது நிதிக்குழு மான்ய திட்டம் (கிராம ஊராட்சி)",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹3.98 L",
+      "rawBudget": 398000
     },
     {
       "id": "2575",
       "title": "Construction of Drainage Canal at Thenkuthu",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3833,13 +3833,13 @@
       "status": "Ongoing",
       "type": "Infrastructure",
       "scheme": "15-வது நிதிக்குழு மான்ய திட்டம் (கிராம ஊராட்சி)",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹8.31 L",
+      "rawBudget": 831000
     },
     {
       "id": "2574",
       "title": "Laying of Tar Road Near Main Road",
-      "title_ta": "",
+      "title_ta": "நெய்வேலி அரசு தொழில்துறை பயிற்சி நிறுவனம் முன்பினைவுக் கட்டமைப்புகள் பணிமனைக் கட்டிடம் கட்டும் பணி",
       "block": "Kurinjipadi",
       "panchayat": "Vanathirayapuram",
       "panchayat_ta": "Vanathirayapuram",
@@ -3849,8 +3849,8 @@
       "status": "Ongoing",
       "type": "Infrastructure",
       "scheme": "பொது நிதி (வ.ஊ.)",
-      "budget": "₹0",
-      "rawBudget": 0
+      "budget": "₹5.00 L",
+      "rawBudget": 500000
     },
     {
       "id": "1271",
@@ -23414,7 +23414,7 @@
   ],
   "meta": {
     "total": 1505,
-    "generatedAt": "2026-02-02T10:47:45.968Z",
+    "generatedAt": "2026-02-02T11:05:05.098Z",
     "version": "1.0.0",
     "blocks": [
       "Kurinjipadi",
