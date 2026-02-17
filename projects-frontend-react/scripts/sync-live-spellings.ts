@@ -6,9 +6,15 @@
 
 import { tamilSpellingCorrections } from './tamil-spelling-corrections';
 
-const WP_BASE_URL = 'https://projects.sabarajendran.com';
-const WP_USERNAME = 'data_entry';
-const WP_PASSWORD = 'data@123';
+const WP_BASE_URL = process.env.WP_BASE_URL || 'https://projects.sabarajendran.com';
+const WP_USERNAME = process.env.WP_USERNAME!;
+const WP_PASSWORD = process.env.WP_PASSWORD!;
+
+if (!WP_USERNAME || !WP_PASSWORD) {
+  console.error('❌ Missing WP_USERNAME or WP_PASSWORD environment variables.');
+  console.error('   Set them before running: WP_USERNAME=xxx WP_PASSWORD=xxx tsx scripts/sync-live-spellings.ts');
+  process.exit(1);
+}
 
 interface WPProject {
   id: number;

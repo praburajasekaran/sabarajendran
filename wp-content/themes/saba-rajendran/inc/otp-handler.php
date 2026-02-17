@@ -8,9 +8,16 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-// MSG91 Configuration
-define('MSG91_AUTH_KEY', '482113AL5vggVqbK693bf446P1');
-define('MSG91_TEMPLATE_ID', '693bf2b85039190dff64c134');
+// MSG91 Configuration - loaded from wp-config.php (which is gitignored)
+// Add these defines to your wp-config.php:
+//   define('MSG91_AUTH_KEY', 'your-msg91-auth-key');
+//   define('MSG91_TEMPLATE_ID', 'your-msg91-template-id');
+if (!defined('MSG91_AUTH_KEY')) {
+    define('MSG91_AUTH_KEY', getenv('MSG91_AUTH_KEY') ?: '');
+}
+if (!defined('MSG91_TEMPLATE_ID')) {
+    define('MSG91_TEMPLATE_ID', getenv('MSG91_TEMPLATE_ID') ?: '');
+}
 define('MSG91_OTP_EXPIRY', 15); // minutes
 define('MAX_SUBMISSIONS_PER_DAY', 3);
 define('MAX_RESEND_ATTEMPTS', 5);

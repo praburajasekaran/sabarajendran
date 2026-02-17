@@ -49,5 +49,10 @@ translate_*.php
 
 # Local Netlify folder
 .netlify
-!sync-from-live.sh
+# sync-from-live.sh contains DB credentials - keep it gitignored
+
+# Sensitive config files
+wp-config.php
+create_data_user.php
+
 wp-content/debug.log
