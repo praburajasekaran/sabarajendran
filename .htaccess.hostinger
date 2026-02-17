@@ -1,3 +1,17 @@
+# BEGIN Maintenance Mode - Remove this block to restore site
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Allow access to wp-admin and wp-login for site admin
+  RewriteCond %{REQUEST_URI} !^/wp-admin
+  RewriteCond %{REQUEST_URI} !^/wp-login\.php
+  RewriteCond %{REQUEST_URI} !^/wp-includes
+  RewriteCond %{REQUEST_URI} !^/wp-content
+  # Return 503 Service Unavailable for all other requests
+  RewriteRule ^(.*)$ - [R=503,L]
+</IfModule>
+ErrorDocument 503 "<html><body style='font-family:sans-serif;text-align:center;padding:50px'><h1>Under Maintenance</h1><p>We will be back soon.</p></body></html>"
+# END Maintenance Mode
+
 # BEGIN iThemes Security - Do not modify or remove this line
 # iThemes Security Config Details: 2
 	# Protect System Files - Security > Settings > System Tweaks > System Files

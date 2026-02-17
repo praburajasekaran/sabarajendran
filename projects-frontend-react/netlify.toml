@@ -2,10 +2,19 @@
   command = "npm run build"
   publish = "dist"
 
+# MAINTENANCE MODE - Redirect all traffic to maintenance page
+# To restore: remove the first [[redirects]] block and uncomment the second one
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/maintenance.html"
+  status = 503
+  force = true
+
+# ORIGINAL REDIRECT - Uncomment when restoring site
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
 
 # Only set cache headers, let Netlify handle Content-Type automatically
 [[headers]]
