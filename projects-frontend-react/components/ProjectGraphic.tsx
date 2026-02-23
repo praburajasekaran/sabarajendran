@@ -202,20 +202,7 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
                 position: 'relative'
               }}
             >
-              {/* Budget Label - Only show on first project */}
-              {index === 0 && (
-                <div style={{
-                  position: 'absolute',
-                  top: '-32px',
-                  right: '36px',
-                  fontSize: '20px',
-                  fontWeight: '700',
-                  color: '#6b7280',
-                  letterSpacing: '0.5px'
-                }}>
-                  {t.budget}
-                </div>
-              )}
+              {/* Budget Label hidden */}
               <p translate="no" style={{
                 fontSize: '30px', // Larger text
                 lineHeight: '1.5',
@@ -227,20 +214,6 @@ export const ProjectGraphic: React.FC<ProjectGraphicProps> = ({
                 justifyContent: 'space-between'
               }}>
                 <span style={{ flex: 1 }}>{description}</span>
-                <span style={{ margin: '0 16px', color: '#9ca3af' }}>-</span>
-                <span style={{
-                  color: '#b91c1c', // Darker red for better contrast
-                  fontWeight: '800',
-                  fontSize: '42px', // Larger budget text
-                  whiteSpace: 'nowrap'
-                }}>
-                  {project.rawBudget >= 10000000
-                    ? `₹${(project.rawBudget / 10000000).toFixed(2)} ${t.crore}.`
-                    : project.rawBudget >= 100000
-                      ? `₹${(project.rawBudget / 100000).toFixed(2)} ${t.lakhs}.`
-                      : `₹${project.rawBudget}.`
-                  }
-                </span>
               </p>
             </div>
           );

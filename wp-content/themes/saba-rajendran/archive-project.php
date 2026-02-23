@@ -57,10 +57,7 @@ get_header(); ?>
 					<div class="stat-number"><?php echo count($completed_projects); ?></div>
 					<div class="stat-label"><?php _e('Completed', 'saba-rajendran'); ?></div>
 				</div>
-				<div class="stat-card">
-					<div class="stat-number">₹<?php echo number_format($total_budget / 10000000, 1); ?>Cr</div>
-					<div class="stat-label"><?php _e('Total Investment', 'saba-rajendran'); ?></div>
-				</div>
+<?php /* Total Investment stat card hidden */ ?>
 			</div>
 		</header>
 

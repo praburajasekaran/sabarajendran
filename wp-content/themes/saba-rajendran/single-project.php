@@ -109,14 +109,14 @@ get_header(); ?>
 								echo '</div>';
 							}
 
-							// Budget
-							$budget = get_post_meta( get_the_ID(), '_project_budget', true );
-							if ( $budget ) {
-								echo '<div class="meta-item budget-large">';
-								echo '<strong>' . __( 'Budget:', 'saba-rajendran' ) . '</strong> ';
-								echo '<span class="project-budget-amount">' . saba_rajendran_format_currency( $budget ) . '</span>';
-								echo '</div>';
-							}
+							// Budget hidden
+							// $budget = get_post_meta( get_the_ID(), '_project_budget', true );
+							// if ( $budget ) {
+							// 	echo '<div class="meta-item budget-large">';
+							// 	echo '<strong>' . __( 'Budget:', 'saba-rajendran' ) . '</strong> ';
+							// 	echo '<span class="project-budget-amount">' . saba_rajendran_format_currency( $budget ) . '</span>';
+							// 	echo '</div>';
+							// }
 							?>
 						</div>
 					</div>

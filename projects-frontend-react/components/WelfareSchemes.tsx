@@ -56,17 +56,7 @@ export const WelfareSchemes: React.FC = () => {
                                 </p>
                             </div>
 
-                            {/* Budget Badge (if exists) */}
-                            {scheme.budget && (
-                                <div className="pt-4 border-t-2 border-dashed border-neutral-200 mt-2">
-                                    <div className="flex items-center gap-2 font-bold text-black">
-                                        <div className="bg-green-100 p-1.5 rounded-full border border-black">
-                                            <IndianRupee size={14} className="text-green-700" />
-                                        </div>
-                                        <span>{scheme.budget}</span>
-                                    </div>
-                                </div>
-                            )}
+                            {/* Budget Badge hidden */}
 
                             {/* Decoration */}
                             <div className={`absolute top-0 right-0 w-16 h-16 opacity-5 pointer-events-none ${scheme.color || 'bg-neutral-500'} -mr-8 -mt-8 rounded-full blur-xl group-hover:opacity-20 transition-opacity`}></div>

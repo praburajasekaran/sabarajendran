@@ -705,10 +705,7 @@ get_header(); ?>
                 <div class="stat-number"><?php echo count($completed_projects); ?></div>
                 <div class="stat-label">Completed</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">₹<?php echo number_format($total_budget / 10000000, 1); ?>Cr</div>
-                <div class="stat-label">Total Investment</div>
-            </div>
+<?php /* Total Investment stat card hidden */ ?>
         </div>
     </div>
 </section>
@@ -947,14 +944,7 @@ get_header(); ?>
                             </div>
 
                             <?php
-                            $budget = get_post_meta(get_the_ID(), '_project_budget', true);
-                            if ($budget) {
-                                ?>
-                                <div class="project-budget">
-                                    <?php echo saba_rajendran_format_currency($budget); ?>
-                                </div>
-                                <?php
-                            }
+                            // Budget hidden
                             ?>
 
                             <?php if (has_excerpt()) : ?>

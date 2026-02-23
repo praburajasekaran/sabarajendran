@@ -116,13 +116,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               </div>
             </div>
 
-            {/* Budget */}
-            <div className="flex flex-col items-end">
-              <span className="text-[10px] uppercase font-bold text-neutral-500 mb-1">{t.graphic.budget}</span>
-              <div className="flex items-center gap-1.5 font-mono font-black text-lg text-white bg-primary-600 px-3 py-1 border-2 border-black transform -rotate-1 shadow-md">
-                {project.budget}
-              </div>
-            </div>
+            {/* Budget hidden */}
           </div>
         </div>
       </div>

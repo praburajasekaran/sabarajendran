@@ -101,18 +101,7 @@
 				?>
 			</div>
 
-			<!-- Project Budget -->
-			<?php
-			$budget = get_post_meta( get_the_ID(), '_project_budget', true );
-			if ( $budget ) {
-				?>
-				<div class="project-budget">
-					<span class="budget-label">Budget:</span>
-					<span class="budget-amount"><?php echo saba_rajendran_format_currency( $budget ); ?></span>
-				</div>
-				<?php
-			}
-			?>
+			<!-- Project Budget hidden -->
 
 			<!-- Project Excerpt -->
 			<?php if ( has_excerpt() ) : ?>

@@ -445,20 +445,7 @@ export const ProjectsPage: React.FC = () => {
                         </div>
                       </div>
 
-                      {/* Total Budget Card */}
-                      <div className="bg-gradient-to-br from-yellow-400 to-orange-500 border-2 border-black shadow-[4px_4px_0_0_#000] px-4 py-2 flex items-center gap-3">
-                        <div className="bg-white p-2 border-2 border-black">
-                          <Banknote size={20} className="text-orange-600" strokeWidth={3} />
-                        </div>
-                        <div>
-                          <div className="text-[10px] uppercase font-black text-black tracking-wider">
-                            {t.projects.totalBudget}
-                          </div>
-                          <div className="text-2xl font-black text-black font-mono">
-                            {formatBudgetTotal(totalBudget, language)}
-                          </div>
-                        </div>
-                      </div>
+                      {/* Total Budget Card hidden */}
                     </div>
                   )}
                 </div>
