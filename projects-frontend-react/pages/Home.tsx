@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { ArrowRight, Users, CheckCircle, Clock, PieChart, ChevronRight, Building2, Play } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -22,6 +22,8 @@ export const Home: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showWelcomeVideo, setShowWelcomeVideo] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   // Get language prefix for all links
   const langPrefix = language === 'en' ? '/en' : '';
@@ -93,6 +95,35 @@ export const Home: React.FC = () => {
           {JSON.stringify(generatePersonSchema())}
         </script>
       </Helmet>
+
+      {/* Vertical Video Section - Mobile Only */}
+      <section className="md:hidden bg-black">
+        <div className="relative w-full">
+          <video
+            ref={videoRef}
+            src="/assets/video/mla-video-web.mp4"
+            poster="/assets/video/mla-video-poster.jpg"
+            playsInline
+            preload="metadata"
+            className="w-full h-auto"
+            onClick={() => { if (isVideoPlaying) videoRef.current?.pause(); }}
+            onPlay={() => setIsVideoPlaying(true)}
+            onPause={() => setIsVideoPlaying(false)}
+            onEnded={() => setIsVideoPlaying(false)}
+          />
+          {!isVideoPlaying && (
+            <button
+              onClick={() => videoRef.current?.play()}
+              className="absolute inset-0 flex items-center justify-center bg-black/30"
+              aria-label="Play video"
+            >
+              <div className="w-20 h-20 rounded-full bg-primary-600 flex items-center justify-center shadow-lg border-4 border-white">
+                <Play size={36} className="text-white ml-1" fill="white" />
+              </div>
+            </button>
+          )}
+        </div>
+      </section>
 
       {/* Hero Section - Political Mass Appeal */}
       <section className="relative bg-secondary-900 text-white overflow-hidden border-b-8 border-primary-600">
