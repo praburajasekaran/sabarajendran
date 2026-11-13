@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { ProjectCard } from '../components/ProjectCard';
 import { SEO } from '../components/SEO';
 import { useLanguage } from '../contexts/LanguageContext';
-import { wpService } from '../services/wpService';
+import { projectDataService } from '../services/projectDataService';
 import { Project, ProjectStatus } from '../types';
 import { generateOrganizationSchema, generatePersonSchema } from '../utils/seo';
 import { slugify } from '../utils/urlBuilder';
@@ -29,21 +29,11 @@ export const Home: React.FC = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       setIsLoading(true);
-      const data = await wpService.getAllProjects();
+      const data = await projectDataService.getAllProjects();
       setProjects(data);
       setIsLoading(false);
     };
     fetchProjects();
-
-    // Subscribe to background updates
-    const unsubscribe = wpService.onUpdate((freshData) => {
-      console.log('[Home] Received fresh data from background fetch');
-      setProjects(freshData);
-    });
-
-    return () => {
-      unsubscribe();
-    };
   }, []);
 
   const completedCount = projects.filter(p => p.status === ProjectStatus.COMPLETED).length;

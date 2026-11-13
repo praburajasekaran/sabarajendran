@@ -17,7 +17,6 @@ export const Navbar: React.FC = () => {
     { name: t.nav.about, path: `${langPrefix}/about` },
     { name: t.nav.projects, path: `${langPrefix}/projects` },
     { name: t.nav.gallery, path: `${langPrefix}/gallery` },
-    // { name: t.nav.grievance, path: `${langPrefix}/grievance` },
   ];
 
   const toggleLanguage = () => {
