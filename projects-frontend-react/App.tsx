@@ -8,7 +8,6 @@ import { PageLoader } from './components/PageLoader';
 const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const About = lazy(() => import('./pages/About').then(module => ({ default: module.About })));
 const ProjectsPage = lazy(() => import('./pages/Projects').then(module => ({ default: module.ProjectsPage })));
-// const GrievancePage = lazy(() => import('./pages/Grievance').then(module => ({ default: module.GrievancePage })));
 const GalleryPage = lazy(() => import('./pages/Gallery').then(module => ({ default: module.GalleryPage })));
 
 import { LanguageProvider, LanguageSync } from './contexts/LanguageContext';
@@ -31,7 +30,6 @@ const AppContent: React.FC = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/projects" element={<ProjectsPage />} />
-                {/* <Route path="/grievance" element={<GrievancePage />} /> */}
                 <Route path="/gallery" element={<GalleryPage />} />
                 <Route path="/projects/:blockSlug" element={<ProjectsPage />} />
                 <Route path="/projects/:blockSlug/:panchayatSlug" element={<ProjectsPage />} />
@@ -41,7 +39,6 @@ const AppContent: React.FC = () => {
                 <Route path="/en" element={<Home />} />
                 <Route path="/en/about" element={<About />} />
                 <Route path="/en/projects" element={<ProjectsPage />} />
-                {/* <Route path="/en/grievance" element={<GrievancePage />} /> */}
                 <Route path="/en/gallery" element={<GalleryPage />} />
                 <Route path="/en/projects/:blockSlug" element={<ProjectsPage />} />
                 <Route path="/en/projects/:blockSlug/:panchayatSlug" element={<ProjectsPage />} />

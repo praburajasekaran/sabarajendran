@@ -1,0 +1,2 @@
+# SPA fallback (matches root netlify.toml [[redirects]])
+/*    /index.html   200

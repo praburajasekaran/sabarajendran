@@ -9,7 +9,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useUrlFilters } from '../hooks/useUrlFilters';
 import { validateFilters } from '../utils/urlValidation';
 
-import { wpService } from '../services/wpService';
+import { projectDataService } from '../services/projectDataService';
 import { Project } from '../types';
 import { formatBudgetTotal } from '../utils/formatBudget';
 import { NEYVELI_BLOCK_PROJECTS, NeyveliBlockProject } from '../data/neyveliBlockProjects';
@@ -60,7 +60,7 @@ export const ProjectsPage: React.FC = () => {
       try {
         // 1. Instant Load: Fetch only the first page
         // This allows the user to see content immediately (within ~500ms)
-        const { projects: initialProjects } = await wpService.getProjects(1, ITEMS_PER_PAGE);
+        const { projects: initialProjects } = await projectDataService.getProjects(1, ITEMS_PER_PAGE);
 
         if (initialProjects.length > 0) {
           setProjects(initialProjects);
@@ -78,7 +78,7 @@ export const ProjectsPage: React.FC = () => {
       // 2. Full Load: Fetch all remaining projects in background
       // This ensures filters, stats, and search work across the entire dataset
       try {
-        const fullData = await wpService.getAllProjects();
+        const fullData = await projectDataService.getAllProjects();
         setProjects(fullData);
       } catch (error) {
         console.error('Error fetching full projects:', error);
