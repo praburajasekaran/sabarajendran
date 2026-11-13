@@ -4,7 +4,6 @@
   publish = "dist"
 
 [build.environment]
-  VITE_WP_API_URL = "https://tan-emu-358425.hostingersite.com/wp-json/wp/v2"
   VITE_SITE_URL = "https://sabarajendran.com"
   NODE_VERSION = "22"
 

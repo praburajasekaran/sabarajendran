@@ -34,16 +34,6 @@ export const Home: React.FC = () => {
       setIsLoading(false);
     };
     fetchProjects();
-
-    // Subscribe to background updates
-    const unsubscribe = wpService.onUpdate((freshData) => {
-      console.log('[Home] Received fresh data from background fetch');
-      setProjects(freshData);
-    });
-
-    return () => {
-      unsubscribe();
-    };
   }, []);
 
   const completedCount = projects.filter(p => p.status === ProjectStatus.COMPLETED).length;

@@ -52,7 +52,7 @@ export const ProjectsPage: React.FC = () => {
   const [isGraphicModalOpen, setIsGraphicModalOpen] = useState(false);
   const { state: generatorState, generateImage, shareImage, downloadImage, clearImage } = useGraphicGenerator();
 
-  // Fetch Projects from WP - Hybrid Strategy (Fast First Paint + Full Data)
+  // Load projects from frozen /data/projects.json (bundled at build time)
   useEffect(() => {
     const fetchProjects = async () => {
       setIsLoading(true);
@@ -88,16 +88,6 @@ export const ProjectsPage: React.FC = () => {
     };
 
     fetchProjects();
-
-    // Subscribe to background updates from stale-while-revalidate strategy
-    const unsubscribe = wpService.onUpdate((freshData) => {
-      console.log('[ProjectsPage] Received fresh data update');
-      setProjects(freshData);
-    });
-
-    return () => {
-      unsubscribe();
-    };
   }, []);
 
   // Validate URL parameters after projects are loaded AND filters are initialized from URL
